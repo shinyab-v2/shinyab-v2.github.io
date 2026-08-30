@@ -11,5 +11,17 @@
     "targetUrl": "https://script.google.com/macros/s/AKfycbyVnHyGWx2VKB18MaQV4B6K1Bt8yWQICHtVJC-tFw2SpOkyImTOTckMV7RdXlAg8-Y/exec",
     "status": "active",
     "requiresGoogleAuthentication": true
+  },
+  "dailyReport": {
+    "title": "Daily Report",
+    "targetUrl": "https://app.notion.com/p/d4c977cd00504bd78733ecf184620e82?pvs=204",
+    "status": "active",
+    "service": "notion"
+  },
+  "chartLearning": {
+    "title": "차트 공부 학습 기록",
+    "targetUrl": "https://app.notion.com/p/e7faf6d7cf0d40ca9f6646d7126fd23b",
+    "status": "active",
+    "service": "notion"
   }
 }

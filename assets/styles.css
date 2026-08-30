@@ -71,6 +71,9 @@ h2 { margin: 0; font-size: 24px; letter-spacing: -.035em; }
 .learning-list { border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: white; }
 .learning-item { display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 16px; padding: 19px 22px; border-bottom: 1px solid var(--line); }
 .learning-item:last-child { border-bottom: 0; }
+.learning-item-link { transition: background-color .18s ease; }
+.learning-item-link:hover, .learning-item-link:focus-visible { background: #f8f9fc; outline: none; }
+.learning-item-link .learning-state { color: var(--blue); font-weight: 700; }
 .learning-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: var(--soft); font-weight: 800; color: #4f5868; }
 .learning-item h3 { margin: 0 0 4px; font-size: 15px; }
 .learning-item p { margin: 0; color: var(--muted); font-size: 12px; }
@@ -93,5 +96,5 @@ footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 28px 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-card { transition: none; }
+  .project-card, .learning-item-link { transition: none; }
 }

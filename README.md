@@ -6,11 +6,13 @@ GitHub Pages 기반의 개인 프로젝트·학습 링크 허브입니다.
 
 - `/investment/` — Investment Workstation
 - `/vocab/` — Vocab English
+- `Daily Report` — Notion의 `Investment Workstation Briefings` 연결
+- `차트 공부` — Notion의 `차트 공부 학습 기록` 연결
 
-사용자 사이트 저장소(`shinyab-v2.github.io`)로 배포하면 주소는 다음과 같습니다.
+프로젝트 사이트 저장소(`shinyab-v2.github`)로 배포하면 주소는 다음과 같습니다.
 
-- `https://shinyab-v2.github.io/investment/`
-- `https://shinyab-v2.github.io/vocab/`
+- `https://shinyab-v2.github.io/shinyab-v2.github/investment/`
+- `https://shinyab-v2.github.io/shinyab-v2.github/vocab/`
 
 ## Investment Workstation 보안 설정
 
@@ -26,7 +28,7 @@ GitHub Pages는 정적 사이트이므로 금융 데이터의 접근 권한을 �
 
 ## 배포
 
-1. GitHub에 `shinyab-v2.github.io` 저장소를 만듭니다.
+1. GitHub의 `shinyab-v2.github` 저장소를 사용합니다.
 2. 이 디렉터리의 파일을 저장소 루트에 올립니다.
 3. 저장소 **Settings > Pages > Source**를 `Deploy from a branch`로 선택합니다.
 4. Branch는 `main`, 폴더는 `/ (root)`로 선택하고 저장합니다.
@@ -34,4 +36,4 @@ GitHub Pages는 정적 사이트이므로 금융 데이터의 접근 권한을 �
 
 ## 학습 이력
 
-초기 이력 파일은 `data/learning-history.json`입니다. 향후 Notion 데이터베이스 또는 예약 작업 결과를 연결할 때 이 구조를 확장합니다.
+`data/learning-history.json`에는 홈페이지에서 사용할 Notion 페이지 링크와 공개 가능한 학습 이력만 기록합니다. 데이터 소스 ID와 중복 방지 규칙은 공개 저장소에 저장하지 않고 예약 작업에서 관리합니다.
