@@ -9,10 +9,10 @@ GitHub Pages 기반의 개인 프로젝트·학습 링크 허브입니다.
 - `Daily Report` — Notion의 `Investment Workstation Briefings` 연결
 - `차트 공부` — Notion의 `차트 공부 학습 기록` 연결
 
-프로젝트 사이트 저장소(`shinyab-v2.github`)로 배포하면 주소는 다음과 같습니다.
+사용자 사이트 저장소(`shinyab-v2.github.io`)로 배포하면 주소는 다음과 같습니다.
 
-- `https://shinyab-v2.github.io/shinyab-v2.github/investment/`
-- `https://shinyab-v2.github.io/shinyab-v2.github/vocab/`
+- `https://shinyab-v2.github.io/investment/`
+- `https://shinyab-v2.github.io/vocab/`
 
 ## Investment Workstation 보안 설정
 
@@ -28,7 +28,7 @@ GitHub Pages는 정적 사이트이므로 금융 데이터의 접근 권한을 �
 
 ## 배포
 
-1. GitHub의 `shinyab-v2.github` 저장소를 사용합니다.
+1. GitHub의 `shinyab-v2.github.io` 저장소를 사용합니다.
 2. 이 디렉터리의 파일을 저장소 루트에 올립니다.
 3. 저장소 **Settings > Pages > Source**를 `Deploy from a branch`로 선택합니다.
 4. Branch는 `main`, 폴더는 `/ (root)`로 선택하고 저장합니다.
