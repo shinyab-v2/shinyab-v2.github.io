@@ -1,0 +1,15 @@
+{
+  "vocab": {
+    "title": "Vocab English",
+    "path": "/vocab/",
+    "targetUrl": "https://script.google.com/macros/s/AKfycbzoAvbHLrZ4X1u_Ox6SDNHrox9Rsagjvwm1LV8AdPaOXv0JvJfurmW1damOC2nf3LzWPg/exec",
+    "status": "active"
+  },
+  "investment": {
+    "title": "Investment Workstation",
+    "path": "/investment/",
+    "targetUrl": "https://script.google.com/macros/s/AKfycbyVnHyGWx2VKB18MaQV4B6K1Bt8yWQICHtVJC-tFw2SpOkyImTOTckMV7RdXlAg8-Y/exec",
+    "status": "active",
+    "requiresGoogleAuthentication": true
+  }
+}
