@@ -6,7 +6,13 @@ const learningItems = [
     state: "Notion 열기 →",
     url: "https://app.notion.com/p/d4c977cd00504bd78733ecf184620e82?pvs=204"
   },
-  { icon: "E", title: "영어 공부", description: "문법, 이디엄, 읽기와 퀴즈", state: "매일 08:00" },
+  {
+    icon: "E",
+    title: "영어 공부",
+    description: "문법, 이디엄, 읽기와 인터랙티브 퀴즈",
+    state: "Notion 열기 →",
+    url: "https://app.notion.com/p/683d2e2f57534e8281b2d56e6915b05a"
+  },
   {
     icon: "C",
     title: "차트 공부",
