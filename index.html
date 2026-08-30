@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="프로젝트 링크와 ChatGPT 학습 결과를 한곳에서 관리하는 개인 허브">
+  <title>Project & Learning Hub</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="홈으로 이동">
+      <span class="brand-mark">S</span>
+      <span>Project & Learning Hub</span>
+    </a>
+    <span class="status"><span class="status-dot"></span>Personal workspace</span>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">MY WORKSPACE</p>
+      <h1 id="page-title">프로젝트와 학습을<br>한곳에서 시작하세요.</h1>
+      <p class="intro-copy">자주 사용하는 Google 웹앱과 예약 학습 결과를 짧은 주소로 연결합니다.</p>
+    </section>
+
+    <section aria-labelledby="projects-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">PROJECTS</p>
+          <h2 id="projects-title">주요 프로젝트</h2>
+        </div>
+        <span class="count">2 projects</span>
+      </div>
+      <div class="project-grid">
+        <a class="project-card investment" href="investment/">
+          <div class="card-top">
+            <span class="icon" aria-hidden="true">↗</span>
+            <span class="secure">Google 인증</span>
+          </div>
+          <div>
+            <p class="tag">FINANCE</p>
+            <h3>Investment Workstation</h3>
+            <p>포트폴리오, 거래 이력과 투자 대시보드</p>
+          </div>
+          <span class="card-link">워크스테이션 열기 <span>→</span></span>
+        </a>
+
+        <a class="project-card vocab" href="vocab/">
+          <div class="card-top">
+            <span class="icon" aria-hidden="true">Aa</span>
+            <span class="available">사용 가능</span>
+          </div>
+          <div>
+            <p class="tag">ENGLISH</p>
+            <h3>Vocab English</h3>
+            <p>단어 학습과 테스트를 위한 영어 학습 페이지</p>
+          </div>
+          <span class="card-link">단어 시험 시작 <span>→</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="learning" aria-labelledby="learning-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">LEARNING HISTORY</p>
+          <h2 id="learning-title">학습 및 보고서</h2>
+        </div>
+        <span class="count">예약 작업 연동 예정</span>
+      </div>
+      <div class="learning-list" id="learning-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Project & Learning Hub</span>
+    <span>Updated <time id="updated-at">—</time></span>
+  </footer>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
