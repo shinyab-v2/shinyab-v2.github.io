@@ -28,8 +28,9 @@ GitHub Pages는 정적 사이트이므로 금융 데이터의 접근 권한을 �
 
 1. GitHub에 `shinyab-v2.github.io` 저장소를 만듭니다.
 2. 이 디렉터리의 파일을 저장소 루트에 올립니다.
-3. 저장소 **Settings > Pages > Source**를 `GitHub Actions`로 선택합니다.
-4. `main` 브랜치에 변경 사항을 반영하면 자동으로 배포됩니다.
+3. 저장소 **Settings > Pages > Source**를 `Deploy from a branch`로 선택합니다.
+4. Branch는 `main`, 폴더는 `/ (root)`로 선택하고 저장합니다.
+5. 이후 `main` 브랜치에 변경 사항을 반영하면 자동으로 배포됩니다.
 
 ## 학습 이력
 
