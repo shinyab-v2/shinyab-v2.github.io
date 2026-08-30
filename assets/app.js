@@ -20,7 +20,7 @@ const learningItems = [
     state: "Notion 열기 →",
     url: "https://app.notion.com/p/e7faf6d7cf0d40ca9f6646d7126fd23b"
   },
-  { icon: "AI", title: "AI 학습", description: "전문 개발 역량을 위한 커리큘럼", state: "학습 이력 준비" }
+  {\n    icon: "AI",\n    title: "AI 학습",\n    description: "모델 분석, 파인튜닝, 최적화와 프로젝트 실습",\n    state: "Notion 열기 →",\n    url: "https://app.notion.com/p/e407f1c0d6c5489c95056aac40c613af"\n  }
 ];
 
 const list = document.querySelector("#learning-list");
