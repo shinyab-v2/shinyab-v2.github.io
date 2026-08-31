@@ -1,6 +1,5 @@
 {
   "dailyReport": {
-    "notionUrl": "https://app.notion.com/p/d4c977cd00504bd78733ecf184620e82?pvs=204",
     "entries": []
   },
   "english": [
@@ -8,8 +7,52 @@
       "date": "2026-08-31",
       "title": "Daily English — 2026-08-31",
       "grammarTopic": "Conditionals and Mixed Conditionals",
+      "grammar": {
+        "title": "Conditionals and Mixed Conditionals",
+        "summary": "조건문은 실제 가능성, 가상의 현재, 과거의 후회와 그 결과를 구분해 표현합니다. 핵심은 if절과 결과절이 가리키는 시간의 관계를 정확히 파악하는 것입니다.",
+        "points": [
+          {
+            "title": "First conditional — 실제 가능성",
+            "explanation": "미래에 일어날 가능성이 충분한 조건과 결과에는 if + 현재형, will + 동사원형을 사용합니다. if절에서는 미래 의미라도 보통 will을 쓰지 않습니다.",
+            "examples": [
+              "If I finish the report today, I will send it before dinner.",
+              "If the market improves, more companies will start hiring."
+            ]
+          },
+          {
+            "title": "Second conditional — 가상의 현재·미래",
+            "explanation": "현재 사실과 다르거나 실현 가능성이 낮은 상황에는 if + 과거형, would + 동사원형을 사용합니다. 격식 있는 영어에서는 모든 주어에 were를 쓸 수 있습니다.",
+            "examples": [
+              "If I were in Lina's position, I would keep my options open.",
+              "If the course were cheaper, more people would enroll."
+            ]
+          },
+          {
+            "title": "Third conditional — 과거의 반대 상황",
+            "explanation": "이미 끝난 과거를 다르게 상상하거나 후회할 때 if + had + 과거분사, would have + 과거분사를 사용합니다.",
+            "examples": [
+              "If she had ignored the temporary job, she would not have discovered UX.",
+              "If we had prepared earlier, we would have avoided the delay."
+            ]
+          },
+          {
+            "title": "Mixed conditional — 시간이 섞인 결과",
+            "explanation": "과거의 선택이 현재에 미치는 결과는 if + had + 과거분사와 would + 동사원형을 결합합니다. 반대로 현재 상태가 과거 결과에 영향을 주었다고 상상할 수도 있습니다.",
+            "examples": [
+              "If Lina had taken the first job, she might not be a UX researcher now.",
+              "If I were more organized, I would have submitted the form yesterday."
+            ]
+          }
+        ]
+      },
+      "idioms": [
+        {"term": "keep your options open", "meaning": "가능성을 열어 두다", "example": "I am applying to several industries because I want to keep my options open."},
+        {"term": "be on the fence", "meaning": "결정을 못 내리고 망설이다", "example": "I'm still on the fence about accepting the overseas assignment."},
+        {"term": "take it with a grain of salt", "meaning": "곧이곧대로 믿지 않다", "example": "Take promises of instant success with a grain of salt."},
+        {"term": "a blessing in disguise", "meaning": "처음에는 나빠 보였지만 결과적으로 좋은 일", "example": "Losing that position was a blessing in disguise because it led me to a better career."},
+        {"term": "cross that bridge when we come to it", "meaning": "문제가 실제로 생기면 그때 해결하다", "example": "We don't know whether the deadline will change, so we'll cross that bridge when we come to it."}
+      ],
       "readingTitle": "When a Career Detour Becomes an Advantage",
-      "notionUrl": "https://app.notion.com/p/3cd981c2b18f81799071daa26dba8294?pvs=204",
       "paragraphs": [
         "When Lina graduated from university, she had a clear plan. She would join a large technology company, gain experience for several years, and eventually become a project manager. She believed that if she followed this path carefully, her career would develop in a predictable way.",
         "However, the job market was weaker than she had expected. Lina applied for more than thirty positions, but she received only two interviews. One company rejected her after the final round, while the other postponed recruitment indefinitely.",
@@ -38,11 +81,22 @@
         {"term": "redirected", "partOfSpeech": "verb", "meaning": "방향을 바꾸었다", "context": "기존 진로에서 더 적합한 다른 진로로 향하게 했다"},
         {"term": "detour", "partOfSpeech": "noun", "meaning": "우회로; 예상과 다른 진로", "context": "원래 계획했던 경로에서 잠시 벗어난 과정"},
         {"term": "cross that bridge when they come to it", "partOfSpeech": "idiom", "meaning": "문제가 생기면 그때 해결하다", "context": "아직 일어나지 않은 문제를 미리 지나치게 걱정하지 않는 태도"}
+      ],
+      "quiz": [
+        {"question": "Choose the correct first conditional sentence.", "choices": ["If I will finish early, I call you.", "If I finish early, I will call you.", "If I finished early, I will call you.", "If I had finished early, I call you."], "answer": 1, "explanation": "실현 가능한 미래 조건은 if + 현재형, will + 동사원형을 사용합니다."},
+        {"question": "If I _____ in her position, I would consider the temporary role.", "choices": ["am", "was being", "were", "had been"], "answer": 2, "explanation": "현재의 가상 상황이므로 second conditional의 were가 알맞습니다."},
+        {"question": "Which sentence expresses regret about a completed past event?", "choices": ["If she studies, she will pass.", "If she studied, she would pass.", "If she had studied, she would have passed.", "If she studies, she passes."], "answer": 2, "explanation": "과거의 반대 상황은 if + had p.p., would have p.p.로 표현합니다."},
+        {"question": "If Lina had taken the first software job, she _____ a UX researcher now.", "choices": ["might not be", "will not be", "had not been", "is not"], "answer": 0, "explanation": "과거의 선택이 현재에 미치는 결과를 나타내는 mixed conditional입니다."},
+        {"question": "What does “on the fence” mean?", "choices": ["Feeling confident", "Unable to decide", "Being excluded", "Working outdoors"], "answer": 1, "explanation": "두 선택 사이에서 결정을 내리지 못하고 망설인다는 뜻입니다."},
+        {"question": "When should you take a claim “with a grain of salt”?", "choices": ["When it needs careful skepticism", "When it is legally binding", "When it is easy to prove", "When everyone agrees"], "answer": 0, "explanation": "정보를 그대로 믿지 말고 어느 정도 의심하며 받아들이라는 표현입니다."},
+        {"question": "Why did Lina first accept the education-center position?", "choices": ["It was her dream job.", "She wanted to become a teacher.", "She needed a temporary option while job hunting.", "A technology company required it."], "answer": 2, "explanation": "기술직을 찾는 동안 임시 해결책으로 그 일을 받아들였습니다."},
+        {"question": "What insight led Lina toward UX research?", "choices": ["Most beginners disliked technology.", "Poor design, not low intelligence, caused many user difficulties.", "Technical projects were no longer valuable.", "Adults learned faster than university students."], "answer": 1, "explanation": "사용자의 능력이 아니라 초보자를 고려하지 않은 제품 설계가 문제라는 점을 발견했습니다."},
+        {"question": "Why were the interviewers interested in Lina's community-center experience?", "choices": ["It showed practical research and redesign skills.", "It proved she could work without pay.", "It was completed at a famous company.", "It focused only on programming."], "answer": 0, "explanation": "학습자를 관찰하고 반복되는 문제를 찾아 피드백에 따라 수업을 개선한 실무 경험이었기 때문입니다."},
+        {"question": "What is the main message of the reading?", "choices": ["A career plan should never change.", "Temporary jobs always lead to better careers.", "A flexible route can still serve a stable long-term goal.", "Economic changes can be predicted accurately."], "answer": 2, "explanation": "목표는 유지하되 상황과 발견에 따라 경로를 유연하게 바꿀 수 있다는 내용입니다."}
       ]
     }
   ],
   "chart": {
-    "notionUrl": "https://app.notion.com/p/e7faf6d7cf0d40ca9f6646d7126fd23b",
     "entries": []
   },
   "ai": []
