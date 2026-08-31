@@ -9,9 +9,9 @@ const learningItems = [
   {
     icon: "E",
     title: "영어 공부",
-    description: "문법, 이디엄, 읽기와 인터랙티브 퀴즈",
-    state: "Notion 열기 →",
-    url: "https://app.notion.com/p/683d2e2f57534e8281b2d56e6915b05a"
+    description: "문법, 이디엄, 읽기와 단어 뜻 풍선",
+    state: "오늘의 읽기 →",
+    url: "english/"
   },
   {
     icon: "C",
@@ -20,7 +20,13 @@ const learningItems = [
     state: "Notion 열기 →",
     url: "https://app.notion.com/p/e7faf6d7cf0d40ca9f6646d7126fd23b"
   },
-  {\n    icon: "AI",\n    title: "AI 학습",\n    description: "모델 분석, 파인튜닝, 최적화와 프로젝트 실습",\n    state: "Notion 열기 →",\n    url: "https://app.notion.com/p/e407f1c0d6c5489c95056aac40c613af"\n  }
+  {
+    icon: "AI",
+    title: "AI 학습",
+    description: "모델 분석, 파인튜닝, 최적화와 프로젝트 실습",
+    state: "Notion 열기 →",
+    url: "https://app.notion.com/p/e407f1c0d6c5489c95056aac40c613af"
+  }
 ];
 
 const list = document.querySelector("#learning-list");

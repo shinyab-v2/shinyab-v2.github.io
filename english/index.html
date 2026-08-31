@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="B2 Daily English 읽기와 터치형 단어 뜻 풍선">
+  <title>Daily English Reader</title>
+  <link rel="stylesheet" href="english.css">
+</head>
+<body>
+  <header class="reader-topbar">
+    <a class="brand" href="../" aria-label="학습 허브로 돌아가기">
+      <span class="brand-mark">E</span>
+      <span>Daily English</span>
+    </a>
+    <a class="home-link" href="../">학습 허브</a>
+  </header>
+
+  <main>
+    <section class="lesson-head" aria-labelledby="lesson-title">
+      <div>
+        <p class="eyebrow">B2 READING</p>
+        <time id="lesson-date">—</time>
+        <h1 id="lesson-title">오늘의 읽기를 불러오는 중입니다.</h1>
+        <p class="grammar-topic" id="grammar-topic"></p>
+      </div>
+      <a class="notion-link" id="notion-link" href="#" target="_blank" rel="noopener noreferrer">전체 수업 보기 <span>↗</span></a>
+    </section>
+
+    <section class="reader-shell" aria-label="영어 읽기 지문">
+      <div class="reading-guide">
+        <span class="guide-mark" aria-hidden="true">Aa</span>
+        <div>
+          <strong>점선 단어를 눌러보세요</strong>
+          <p>PC에서는 마우스를 올리고, 모바일에서는 터치하면 문맥에 맞는 뜻이 표시됩니다.</p>
+        </div>
+        <span class="word-count" id="word-count"></span>
+      </div>
+      <article class="reading-content" id="reading-content"></article>
+    </section>
+
+    <section class="glossary" aria-labelledby="glossary-title">
+      <p class="eyebrow">QUICK REVIEW</p>
+      <h2 id="glossary-title">오늘의 핵심 어휘</h2>
+      <div class="glossary-grid" id="glossary-grid"></div>
+    </section>
+
+    <div class="error-state" id="error-state" hidden>
+      <strong>읽기를 불러오지 못했습니다.</strong>
+      <p>잠시 후 다시 시도해 주세요.</p>
+    </div>
+  </main>
+
+  <div class="word-popover" id="word-popover" role="tooltip" aria-hidden="true">
+    <div class="popover-top">
+      <strong id="popover-term"></strong>
+      <span id="popover-pos"></span>
+    </div>
+    <p class="popover-meaning" id="popover-meaning"></p>
+    <p class="popover-context" id="popover-context"></p>
+  </div>
+
+  <script src="english.js" defer></script>
+</body>
+</html>

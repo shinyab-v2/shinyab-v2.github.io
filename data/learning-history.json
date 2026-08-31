@@ -3,7 +3,44 @@
     "notionUrl": "https://app.notion.com/p/d4c977cd00504bd78733ecf184620e82?pvs=204",
     "entries": []
   },
-  "english": [],
+  "english": [
+    {
+      "date": "2026-08-31",
+      "title": "Daily English — 2026-08-31",
+      "grammarTopic": "Conditionals and Mixed Conditionals",
+      "readingTitle": "When a Career Detour Becomes an Advantage",
+      "notionUrl": "https://app.notion.com/p/3cd981c2b18f81799071daa26dba8294?pvs=204",
+      "paragraphs": [
+        "When Lina graduated from university, she had a clear plan. She would join a large technology company, gain experience for several years, and eventually become a project manager. She believed that if she followed this path carefully, her career would develop in a predictable way.",
+        "However, the job market was weaker than she had expected. Lina applied for more than thirty positions, but she received only two interviews. One company rejected her after the final round, while the other postponed recruitment indefinitely.",
+        "At first, Lina felt that she had failed. If she had graduated one year earlier, she thought, she might have entered the industry more easily. She also blamed herself for focusing too narrowly on large companies. If she had kept her options open, she might have discovered other opportunities sooner.",
+        "While searching for work, Lina accepted a temporary position at a community education center. Her main responsibility was to help adults learn basic digital skills. She showed them how to use email, recognize suspicious online messages, join video calls, and organize files.",
+        "The position paid less than a technology job, and Lina initially viewed it as a short-term solution. Nevertheless, she soon discovered that she enjoyed explaining complicated ideas in simple language. If a learner did not understand her first explanation, she would find a different example. If someone felt embarrassed about making mistakes, Lina would share a story about one of her own mistakes.",
+        "After several months, the center asked her to design a complete digital literacy course. Lina was on the fence. Accepting the project would take time away from her job search, but it would also give her experience in course design and leadership. She decided to accept while continuing to apply for technology positions.",
+        "During the project, Lina interviewed learners about the problems they faced. She discovered that many digital products were difficult to use not because the users lacked intelligence, but because the products had been designed without considering beginners. Instructions were unclear, buttons were poorly labeled, and error messages did not explain how to solve problems.",
+        "This observation changed Lina's career interests. She began reading about user experience, or UX, which focuses on making products useful and understandable. She took online claims about becoming a UX expert in two weeks with a grain of salt. Instead, she followed a structured course and created a portfolio based on her work at the education center.",
+        "Six months later, Lina applied for a junior UX research position. During the interview, she described how she had observed learners, identified recurring difficulties, and redesigned lessons based on their feedback. The interviewers were more interested in this practical experience than in the technical projects she had completed at university.",
+        "Lina received the job. Looking back, she realized that the difficult job market had been a blessing in disguise. If she had obtained the first software position she applied for, she might never have discovered UX research. The temporary role had not delayed her career; it had redirected her toward work that suited her strengths better.",
+        "Her experience also changed the way she thought about career planning. A plan can provide direction, but it should not become a prison. People cannot predict every economic change, technological development, or unexpected opportunity. If they insist on following one fixed route, they may overlook useful alternatives.",
+        "This does not mean people should abandon long-term goals whenever they experience difficulty. Instead, they can distinguish between the goal and the route. Lina's original goal was to build a meaningful career in technology. That goal remained, but the route changed from software project management to UX research.",
+        "Today, Lina advises students to prepare seriously while keeping their options open. When they worry about problems that have not occurred, she tells them they can cross that bridge when they come to it. She also reminds them that an unexpected detour is not automatically a failure. Under the right circumstances, it may lead somewhere more suitable than the original destination."
+      ],
+      "vocabulary": [
+        {"term": "predictable", "partOfSpeech": "adjective", "meaning": "예측 가능한", "context": "계획대로 진행되어 결과를 예상할 수 있는 상태"},
+        {"term": "indefinitely", "partOfSpeech": "adverb", "meaning": "무기한으로", "context": "종료 시점이 정해지지 않은 채 계속되는 것"},
+        {"term": "temporary", "partOfSpeech": "adjective", "meaning": "임시의", "context": "영구적이지 않고 짧은 기간만 지속되는 것"},
+        {"term": "digital literacy", "partOfSpeech": "noun", "meaning": "디지털 활용 능력", "context": "디지털 정보와 도구를 이해하고 안전하게 활용하는 능력"},
+        {"term": "on the fence", "partOfSpeech": "idiom", "meaning": "결정을 못 내리고 망설이는", "context": "두 선택 사이에서 아직 어느 쪽도 택하지 않은 상태"},
+        {"term": "with a grain of salt", "partOfSpeech": "idiom", "meaning": "어느 정도 의심해서", "context": "정보를 그대로 믿지 않고 비판적으로 받아들이는 태도"},
+        {"term": "structured", "partOfSpeech": "adjective", "meaning": "체계적으로 구성된", "context": "명확한 순서와 계획에 따라 조직된 상태"},
+        {"term": "recurring", "partOfSpeech": "adjective", "meaning": "반복해서 발생하는", "context": "같은 문제나 사건이 여러 번 다시 나타나는 것"},
+        {"term": "a blessing in disguise", "partOfSpeech": "idiom", "meaning": "전화위복", "context": "처음에는 나빠 보였지만 결과적으로 도움이 된 일"},
+        {"term": "redirected", "partOfSpeech": "verb", "meaning": "방향을 바꾸었다", "context": "기존 진로에서 더 적합한 다른 진로로 향하게 했다"},
+        {"term": "detour", "partOfSpeech": "noun", "meaning": "우회로; 예상과 다른 진로", "context": "원래 계획했던 경로에서 잠시 벗어난 과정"},
+        {"term": "cross that bridge when they come to it", "partOfSpeech": "idiom", "meaning": "문제가 생기면 그때 해결하다", "context": "아직 일어나지 않은 문제를 미리 지나치게 걱정하지 않는 태도"}
+      ]
+    }
+  ],
   "chart": {
     "notionUrl": "https://app.notion.com/p/e7faf6d7cf0d40ca9f6646d7126fd23b",
     "entries": []
