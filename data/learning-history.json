@@ -94,6 +94,528 @@
         {"question": "Why were the interviewers interested in Lina's community-center experience?", "choices": ["It showed practical research and redesign skills.", "It proved she could work without pay.", "It was completed at a famous company.", "It focused only on programming."], "answer": 0, "explanation": "학습자를 관찰하고 반복되는 문제를 찾아 피드백에 따라 수업을 개선한 실무 경험이었기 때문입니다."},
         {"question": "What is the main message of the reading?", "choices": ["A career plan should never change.", "Temporary jobs always lead to better careers.", "A flexible route can still serve a stable long-term goal.", "Economic changes can be predicted accurately."], "answer": 2, "explanation": "목표는 유지하되 상황과 발견에 따라 경로를 유연하게 바꿀 수 있다는 내용입니다."}
       ]
+    },
+    {
+      "date": "2026-09-01",
+      "title": "Daily English — 2026-09-01",
+      "grammarTopic": "Relative Clauses and Reduced Relative Clauses",
+      "grammar": {
+        "title": "Relative Clauses: 더 정확하고 자연스럽게 정보 연결하기",
+        "summary": "관계절은 사람이나 사물에 정보를 덧붙여 문장을 자연스럽게 연결합니다. B2 단계에서는 defining과 non-defining의 의미 차이, 전치사 위치, 관계대명사 생략, 분사로 줄이는 reduced relative clause까지 구분해야 합니다.",
+        "points": [
+          {
+            "title": "Defining relative clauses",
+            "explanation": "대상을 구별하는 데 반드시 필요한 정보입니다. 쉼표를 쓰지 않으며 사람에는 who 또는 that, 사물에는 which 또는 that을 사용할 수 있습니다. 목적격 관계대명사는 생략할 수 있습니다.",
+            "examples": [
+              "The colleague who designed the survey works in our research team. — 그 설문을 설계한 동료는 연구팀에서 일합니다.",
+              "The method we tested yesterday improved retention. — 어제 시험한 방법은 기억 유지력을 높였습니다."
+            ]
+          },
+          {
+            "title": "Non-defining relative clauses",
+            "explanation": "이미 누구인지 무엇인지 분명한 대상에 부가 정보를 제공합니다. 앞뒤에 쉼표를 쓰며 that은 사용할 수 없습니다. 이 정보를 빼도 문장의 핵심 대상은 변하지 않습니다.",
+            "examples": [
+              "Mina, who recently joined the team, suggested a smaller experiment. — 최근 팀에 합류한 Mina가 더 작은 실험을 제안했습니다.",
+              "The pilot course, which lasted four weeks, produced useful evidence. — 4주간 진행된 시범 과정은 유용한 근거를 만들었습니다."
+            ]
+          },
+          {
+            "title": "Prepositions and whose",
+            "explanation": "격식체에서는 전치사를 관계대명사 앞에 둘 수 있고, 회화에서는 문장 끝에 두는 경우가 많습니다. whose는 사람뿐 아니라 조직이나 사물의 소유 관계에도 사용할 수 있습니다.",
+            "examples": [
+              "The mentor to whom I spoke recommended deliberate practice. — 제가 상담한 멘토는 의도적 연습을 권했습니다.",
+              "We studied a company whose training system emphasizes feedback. — 우리는 피드백을 강조하는 교육 시스템을 가진 회사를 연구했습니다."
+            ]
+          },
+          {
+            "title": "Reduced relative clauses",
+            "explanation": "관계절의 주어가 앞의 명사와 같으면 능동 의미는 -ing, 수동 의미는 과거분사로 줄일 수 있습니다. 완료나 시간 관계가 모호해지지 않는지 확인해야 합니다.",
+            "examples": [
+              "Students using retrieval practice remembered more. — 인출 연습을 사용한 학생들이 더 많이 기억했습니다.",
+              "The results collected during the pilot changed our plan. — 시범 과정에서 수집된 결과가 계획을 바꾸었습니다."
+            ]
+          }
+        ]
+      },
+      "idioms": [
+        {"term": "get the hang of", "meaning": "요령을 익히다", "example": "Once you get the hang of retrieval practice, it becomes much easier. — 인출 연습의 요령을 익히면 훨씬 쉬워집니다."},
+        {"term": "hit the nail on the head", "meaning": "핵심을 정확히 짚다", "example": "You hit the nail on the head when you said that rereading felt easier but taught us less. — 다시 읽기가 편하지만 덜 배운다고 말했을 때 핵심을 정확히 짚었습니다."},
+        {"term": "on the right track", "meaning": "올바른 방향으로 가는", "example": "The first results suggest that our study plan is on the right track. — 첫 결과를 보면 학습 계획이 올바른 방향으로 가고 있습니다."},
+        {"term": "take it step by step", "meaning": "한 단계씩 진행하다", "example": "Do not redesign everything at once; take it step by step. — 모든 것을 한꺼번에 바꾸지 말고 한 단계씩 진행하세요."},
+        {"term": "learn the hard way", "meaning": "힘든 경험을 통해 깨닫다", "example": "I learned the hard way that long study sessions do not guarantee retention. — 긴 학습 시간이 기억을 보장하지 않는다는 것을 힘든 경험으로 깨달았습니다."}
+      ],
+      "readingTitle": "Why Small Learning Experiments Beat Perfect Plans",
+      "paragraphs": [
+        "Many learners spend more time designing the perfect study plan than testing whether it actually works. They choose attractive notebooks, arrange detailed calendars, and collect recommended resources. These activities can feel productive, but they provide little evidence about learning. A plan that looks impressive may still fail if it does not help the learner retrieve and use information.",
+        "A better approach is to treat learning as a series of small experiments. An experiment does not need a laboratory. It simply requires a specific change, a result that can be observed, and a short period after which the learner reviews the outcome. The learner who changes one part of a routine can identify what produced the difference.",
+        "Consider Jae, an engineer who was studying technical English. He usually read each article twice and highlighted unfamiliar expressions. Although this routine felt manageable, he often forgot the material within a few days. His main misconception was that familiar-looking sentences had been learned. Recognition felt like knowledge, but it did not guarantee that he could produce the language himself.",
+        "Jae decided to run a one-week experiment using deliberate practice. After reading an article once, he closed it and wrote a short summary from memory. He then reopened the article, compared the two versions, and marked the missing ideas. This created a feedback loop: every attempt revealed a weakness, and the weakness guided the next practice session.",
+        "The new method initially felt slower and more difficult. However, difficulty was part of its value. Each time Jae tried to retrieve a phrase without looking, he strengthened access to it. At the end of the week, he waited two days and summarized the main ideas again. His retention was noticeably better than it had been after repeated reading.",
+        "Jae did not immediately conclude that the method was perfect. One successful week was useful evidence, but it was not enough to prove that the same technique would work for every subject. He repeated the experiment with a programming tutorial and discovered a limitation. Written summaries helped conceptual understanding, but coding skill required him to rebuild examples and fix errors himself.",
+        "This discovery showed why learners must adjust a method to the skill they want. A technique that supports factual memory may not automatically transfer to practical performance. For vocabulary, recalling a definition may be helpful. For conversation, however, the learner must retrieve the expression quickly inside a meaningful sentence while paying attention to another person.",
+        "Small experiments also reduce the emotional cost of change. Replacing an entire routine can feel risky, especially when a learner has invested months in it. Testing one change for a week is less threatening. If the change fails, the learner has lost little. If it succeeds, there is a clear reason to continue and expand it.",
+        "Reflection completes the experiment. At the end of each week, learners can ask three questions: What did I change? What result did I observe? What will I keep, remove, or modify? Answers should be based on performance rather than comfort alone. Easy activities are not always useless, but a pleasant feeling should not be confused with progress.",
+        "Over time, these experiments create a personal learning system. The goal is not to discover one universal trick. It is to become skilled at observing, testing, and adapting. Learners who take the process step by step are more likely to remain on the right track because their decisions are connected to evidence rather than assumptions."
+      ],
+      "vocabulary": [
+        {"term": "evidence", "partOfSpeech": "noun", "meaning": "근거, 증거", "context": "학습법이 실제로 효과가 있는지 판단하게 해주는 관찰 결과"},
+        {"term": "retrieve", "partOfSpeech": "verb", "meaning": "기억에서 인출하다", "context": "자료를 보지 않고 배운 내용을 스스로 떠올리는 것"},
+        {"term": "manageable", "partOfSpeech": "adjective", "meaning": "감당할 수 있는", "context": "부담이 지나치게 크지 않아 실행할 수 있는 상태"},
+        {"term": "misconception", "partOfSpeech": "noun", "meaning": "잘못된 생각", "context": "익숙하게 보이는 정보를 이미 배웠다고 착각하는 것"},
+        {"term": "deliberate practice", "partOfSpeech": "noun phrase", "meaning": "의도적 연습", "context": "약점을 확인하고 개선하도록 설계된 집중적인 연습"},
+        {"term": "feedback loop", "partOfSpeech": "noun phrase", "meaning": "피드백 순환 구조", "context": "시도 결과가 다음 연습 방향을 계속 수정해 주는 과정"},
+        {"term": "retention", "partOfSpeech": "noun", "meaning": "기억 유지", "context": "시간이 지난 뒤에도 학습 내용을 기억하는 능력"},
+        {"term": "transfer", "partOfSpeech": "verb", "meaning": "다른 상황에 전이되다", "context": "한 방식으로 익힌 능력이 다른 실제 과제에도 적용되는 것"},
+        {"term": "adjust", "partOfSpeech": "verb", "meaning": "조정하다", "context": "목표와 결과에 맞게 학습 방법을 수정하는 것"},
+        {"term": "reflection", "partOfSpeech": "noun", "meaning": "성찰, 되돌아보기", "context": "무엇이 효과적이었는지 검토하고 다음 행동을 정하는 과정"}
+      ],
+      "quiz": [
+        {"question": "The students _____ used retrieval practice remembered more after two days.", "choices": ["which", "who", "whose", "whom they"], "answer": 1, "explanation": "사람을 주어로 받는 defining relative clause이므로 who가 알맞습니다."},
+        {"question": "Choose the correct non-defining relative clause.", "choices": ["The pilot that lasted four weeks, produced evidence.", "The pilot, that lasted four weeks, produced evidence.", "The pilot, which lasted four weeks, produced evidence.", "The pilot which lasted four weeks produced, evidence."], "answer": 2, "explanation": "부가 정보에는 쉼표와 which를 사용하며 non-defining clause에서 that은 쓰지 않습니다."},
+        {"question": "Which sentence correctly omits the object relative pronoun?", "choices": ["The mentor spoke to helped me.", "The method we tested improved retention.", "The learner studies works hard.", "The article was useful explained the method."], "answer": 1, "explanation": "we tested의 목적어인 관계대명사 that 또는 which는 생략할 수 있습니다."},
+        {"question": "Choose the best reduced relative clause.", "choices": ["Students use the method improved.", "Students who using the method improved.", "Students using the method improved.", "Students were using the method improved."], "answer": 2, "explanation": "능동 의미의 who were using을 using으로 줄일 수 있습니다."},
+        {"question": "What does “get the hang of” mean?", "choices": ["To forget a rule", "To understand how to do something", "To stop an experiment", "To criticize a learner"], "answer": 1, "explanation": "어떤 활동을 수행하는 방법이나 요령을 익힌다는 뜻입니다."},
+        {"question": "If a teammate identifies the exact cause of a problem, which idiom fits best?", "choices": ["Learn the hard way", "Take it step by step", "Hit the nail on the head", "Get cold feet"], "answer": 2, "explanation": "문제의 핵심이나 정확한 원인을 짚었을 때 hit the nail on the head를 사용합니다."},
+        {"question": "What was Jae's main misconception?", "choices": ["Technical English required no practice.", "Familiar-looking material had already been learned.", "Writing summaries was always ineffective.", "Programming and vocabulary were identical skills."], "answer": 1, "explanation": "익숙하게 알아보는 것을 실제로 기억하고 사용할 수 있는 능력과 혼동했습니다."},
+        {"question": "Why did Jae close the article before writing a summary?", "choices": ["To test retrieval from memory", "To shorten the original article", "To avoid technical vocabulary", "To improve the article's design"], "answer": 0, "explanation": "자료를 보지 않고 내용을 인출하게 하여 실제 기억 상태를 확인하려는 목적이었습니다."},
+        {"question": "What limitation did the programming experiment reveal?", "choices": ["Concepts cannot be learned through writing.", "Every subject requires repeated reading.", "A memory technique may not transfer directly to practical performance.", "Coding should be studied without examples."], "answer": 2, "explanation": "개념을 기억하는 방법만으로는 코드를 직접 작성하고 오류를 수정하는 실기 능력이 충분히 생기지 않았습니다."},
+        {"question": "What is the reading's main recommendation?", "choices": ["Design one perfect plan and never change it.", "Choose the easiest activity available.", "Test small changes and adjust using observed results.", "Replace the entire routine every week."], "answer": 2, "explanation": "작은 변화를 시험하고 수행 결과를 근거로 유지·수정하는 학습 방식을 권합니다."}
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "title": "Daily English — 2026-09-02",
+      "grammarTopic": "Gerunds and Infinitives: Meaning Changes",
+      "grammar": {
+        "title": "Gerunds vs. Infinitives: 동사 뒤 형태가 의미를 바꾸는 경우",
+        "summary": "어떤 동사는 동명사만, 어떤 동사는 to부정사만 목적어로 취합니다. 더 어려운 부분은 remember, stop, try, regret처럼 두 형태가 모두 가능하지만 의미가 달라지는 동사입니다. 문맥 속 시간 순서와 의도를 기준으로 선택해야 합니다.",
+        "points": [
+          {
+            "title": "Remember, forget, and regret",
+            "explanation": "remember doing은 이미 한 일을 기억한다는 뜻이고 remember to do는 해야 할 일을 잊지 않고 수행한다는 뜻입니다. regret doing은 과거 행동을 후회하고, regret to say는 지금 좋지 않은 소식을 전할 때 사용합니다.",
+            "examples": [
+              "I remember testing the first prototype with real users. — 첫 시제품을 실제 사용자와 시험했던 것이 기억납니다.",
+              "Remember to back up the files before updating the system. — 시스템을 업데이트하기 전에 파일을 백업하는 것을 잊지 마세요."
+            ]
+          },
+          {
+            "title": "Stop and go on",
+            "explanation": "stop doing은 하던 행동을 중단하는 것이고 stop to do는 다른 행동을 하기 위해 잠시 멈추는 것입니다. go on doing은 같은 행동을 계속하고, go on to do는 다음 단계로 넘어갑니다.",
+            "examples": [
+              "The team stopped adding features and focused on usability. — 팀은 기능 추가를 중단하고 사용성에 집중했습니다.",
+              "We stopped to review the feedback before making another change. — 다음 변경 전에 피드백을 검토하려고 잠시 멈췄습니다."
+            ]
+          },
+          {
+            "title": "Try doing vs. try to do",
+            "explanation": "try doing은 해결책을 시험해 보라는 의미이고, try to do는 어렵더라도 어떤 목표를 달성하려고 노력한다는 뜻입니다. 성공 여부에 대한 초점이 다릅니다.",
+            "examples": [
+              "Try reducing the number of steps if users seem confused. — 사용자가 혼란스러워하면 단계 수를 줄여 보세요.",
+              "We tried to meet the original deadline, but the safety test took longer. — 원래 마감일을 맞추려고 노력했지만 안전 시험이 더 오래 걸렸습니다."
+            ]
+          },
+          {
+            "title": "Perfect gerunds and infinitives",
+            "explanation": "having + 과거분사는 본동사보다 먼저 끝난 행동을 강조합니다. to have + 과거분사는 예상·주장·평가보다 앞선 사건을 나타내며 보고 문장과 함께 자주 쓰입니다.",
+            "examples": [
+              "She admitted having ignored the early warning signs. — 그녀는 초기 경고 신호를 무시했음을 인정했습니다.",
+              "The update appears to have solved the main problem. — 그 업데이트가 주요 문제를 해결한 것으로 보입니다."
+            ]
+          }
+        ]
+      },
+      "idioms": [
+        {"term": "cut corners", "meaning": "시간이나 비용을 아끼려고 필요한 절차를 생략하다", "example": "We cannot cut corners on accessibility testing. — 접근성 시험에서 필요한 절차를 생략할 수는 없습니다."},
+        {"term": "go back to the drawing board", "meaning": "계획을 처음부터 다시 세우다", "example": "The prototype failed, so we had to go back to the drawing board. — 시제품이 실패해서 계획을 처음부터 다시 세워야 했습니다."},
+        {"term": "get down to business", "meaning": "본격적으로 일을 시작하다", "example": "After reviewing the complaints, the team got down to business. — 불만 사항을 검토한 뒤 팀은 본격적으로 일을 시작했습니다."},
+        {"term": "keep an eye on", "meaning": "계속 주의 깊게 살피다", "example": "Keep an eye on the error rate after the new release. — 새 버전 출시 후 오류율을 계속 살펴보세요."},
+        {"term": "in the same boat", "meaning": "같은 어려운 상황에 처한", "example": "The designers and developers were in the same boat because the requirements kept changing. — 요구사항이 계속 바뀌어 디자이너와 개발자가 같은 어려움을 겪었습니다."}
+      ],
+      "readingTitle": "The Product Team That Learned to Stop Adding Features",
+      "paragraphs": [
+        "A small software company had spent eighteen months building a scheduling application for clinics. The team believed that success depended on offering more functions than competing products. Every month they added another dashboard, reminder, or reporting option. As the launch deadline approached, the application looked powerful, but new users found it difficult to complete basic tasks.",
+        "The first prototype had been tested mainly by employees who already understood the system. They knew where controls were hidden and had developed a workaround for several confusing steps. Because they could finish each task, the team assumed that customers would do the same. This assumption survived until an independent usability study invited clinic staff who had never seen the product.",
+        "During the study, participants hesitated at almost every screen. Some could not create an appointment without help. Others accidentally changed settings while trying to return to the home page. One nurse was reluctant to continue after losing information she had entered. The observers were surprised because none of the individual problems had seemed serious during internal testing.",
+        "Afterward, the product manager asked everyone to stop defending their own features. She played recordings of the sessions and listed every point at which a participant became confused. The meeting was uncomfortable, but it allowed the team to get down to business. They finally agreed that the product's main constraint was not missing functionality; it was unnecessary complexity.",
+        "The team postponed the release and went back to the drawing board. Rather than redesigning every screen at once, they identified the three tasks that clinic staff performed most often: booking an appointment, changing a time, and sending a reminder. They decided to prioritize these journeys and temporarily hide advanced options that most users did not need every day.",
+        "Developers initially worried that simplifying the interface would waste previous work. Designers pointed out that the code did not need to be deleted. Advanced functions could remain available in a separate area. The objective was to revise the route through the system so that common actions required fewer decisions. Everyone was in the same boat because a failed launch would affect the entire company.",
+        "The second study produced a different atmosphere. Participants completed tasks faster and asked fewer questions. The team kept an eye on moments of hesitation rather than looking only at completion rates. This detail mattered because a user might finish a task while still feeling uncertain. Confidence, not just technical success, influenced whether a clinic would adopt the product.",
+        "The revised application was released six weeks later. Early adoption was slower than the sales team had originally predicted, but customers required less training and contacted support less often. The company avoided promising that the product was perfect. Instead, it added a simple feedback button and reviewed patterns in the comments every two weeks.",
+        "The experience changed the company's development process. Teams were required to test unfinished ideas before investing heavily in them. They were also discouraged from trying to impress users with the number of features. A feature was considered valuable only when it helped a real user complete an important task more clearly, safely, or efficiently.",
+        "Most importantly, the company learned not to cut corners by replacing external testing with employee opinions. Internal expertise was still useful, but familiarity made certain problems invisible. The strongest product was not the one with the longest feature list. It was the one whose design reduced effort for the people who depended on it."
+      ],
+      "vocabulary": [
+        {"term": "deadline", "partOfSpeech": "noun", "meaning": "마감일", "context": "제품을 완성해 출시하기로 정한 최종 시점"},
+        {"term": "prototype", "partOfSpeech": "noun", "meaning": "시제품", "context": "정식 개발 전에 아이디어와 사용성을 시험하는 초기 제품"},
+        {"term": "workaround", "partOfSpeech": "noun", "meaning": "임시 해결책", "context": "근본 문제를 고치지 않고 우회해서 작업을 끝내는 방법"},
+        {"term": "assumption", "partOfSpeech": "noun", "meaning": "가정, 추정", "context": "충분한 검증 없이 사실이라고 받아들인 생각"},
+        {"term": "usability", "partOfSpeech": "noun", "meaning": "사용성", "context": "사용자가 제품을 쉽고 효과적으로 이용할 수 있는 정도"},
+        {"term": "reluctant", "partOfSpeech": "adjective", "meaning": "꺼리는, 내키지 않는", "context": "실패를 경험한 사용자가 계속 시험하기를 주저하는 상태"},
+        {"term": "constraint", "partOfSpeech": "noun", "meaning": "제약 조건", "context": "제품의 성과와 설계를 제한하는 핵심 요인"},
+        {"term": "prioritize", "partOfSpeech": "verb", "meaning": "우선순위를 두다", "context": "가장 중요한 사용자 작업부터 먼저 개선하는 것"},
+        {"term": "revise", "partOfSpeech": "verb", "meaning": "수정하다", "context": "사용자 피드백에 따라 화면 이동 경로를 다시 설계하는 것"},
+        {"term": "adoption", "partOfSpeech": "noun", "meaning": "도입, 채택", "context": "고객이 새 제품을 실제 업무에 사용하기 시작하는 것"}
+      ],
+      "quiz": [
+        {"question": "I remember _____ the first prototype with clinic staff.", "choices": ["to test", "testing", "test", "to have test"], "answer": 1, "explanation": "이미 수행한 과거 경험을 기억한다는 뜻이므로 remember testing을 사용합니다."},
+        {"question": "Please remember _____ the session before you leave.", "choices": ["saving", "to save", "having saved", "save to"], "answer": 1, "explanation": "앞으로 해야 할 일을 잊지 말라는 의미이므로 remember to save가 알맞습니다."},
+        {"question": "The team stopped _____ features and focused on usability.", "choices": ["to add", "add", "adding", "having to add"], "answer": 2, "explanation": "기능을 추가하던 행동 자체를 중단했으므로 stop adding을 사용합니다."},
+        {"question": "If users are confused, try _____ the number of steps.", "choices": ["reducing", "to have reduced", "reduce", "having reduce"], "answer": 0, "explanation": "문제 해결 방법을 시험해 보라는 의미에서는 try doing을 사용합니다."},
+        {"question": "The update appears _____ the main navigation problem.", "choices": ["solving", "to solve yesterday", "to have solved", "having solve"], "answer": 2, "explanation": "현재의 판단보다 먼저 해결된 사건이므로 to have solved가 알맞습니다."},
+        {"question": "What does “cut corners” mean in this context?", "choices": ["To improve a visual design", "To skip necessary work to save time or money", "To divide a project equally", "To remove unused screen space"], "answer": 1, "explanation": "필요한 절차를 생략해 시간이나 비용을 줄이는 행동을 뜻합니다."},
+        {"question": "When do people go “back to the drawing board”?", "choices": ["When a plan needs to be redesigned from the beginning", "When a task is almost complete", "When everyone agrees immediately", "When a product needs no testing"], "answer": 0, "explanation": "기존 계획이 효과가 없어 처음부터 다시 설계할 때 사용하는 표현입니다."},
+        {"question": "Why did internal testing fail to reveal the main problems?", "choices": ["Employees had no access to the product.", "Employees were too familiar with the system.", "The prototype had no advanced features.", "Clinic staff had designed the interface."], "answer": 1, "explanation": "직원들은 시스템에 익숙해 숨겨진 기능과 우회 방법을 이미 알고 있었습니다."},
+        {"question": "What did the team prioritize after the first study?", "choices": ["Adding more dashboards", "Three common clinic tasks", "Removing all advanced functions permanently", "Increasing the original sales target"], "answer": 1, "explanation": "예약 생성, 시간 변경, 알림 전송이라는 가장 빈번한 세 가지 작업을 우선했습니다."},
+        {"question": "What broader lesson did the company learn?", "choices": ["More features always increase adoption.", "Employee opinions can replace user testing.", "Value depends on helping users complete important tasks effectively.", "A launch should never be postponed."], "answer": 2, "explanation": "기능 수보다 실제 사용자가 중요한 작업을 쉽고 안전하게 완료하도록 돕는지가 중요하다는 교훈입니다."}
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "title": "Daily English — 2026-09-03",
+      "grammarTopic": "Advanced Passive Voice and Causatives",
+      "grammar": {
+        "title": "Advanced Passive Voice: 과정·보고·서비스를 중심으로 말하기",
+        "summary": "수동태는 행위자보다 과정이나 결과가 중요할 때 사용합니다. B2 수준에서는 기본 수동태뿐 아니라 reporting passive, get-passive, have/get something done과 수동태의 시제 선택을 실제 업무 문맥에서 구별해야 합니다.",
+        "points": [
+          {
+            "title": "Passive across tenses",
+            "explanation": "수동태는 be + 과거분사를 유지하면서 be의 시제를 바꿉니다. 완료 여부와 진행 여부를 먼저 정한 뒤 수동형을 만듭니다. 행위자가 중요할 때만 by를 덧붙입니다.",
+            "examples": [
+              "All ultrasound clips were anonymized before review. — 모든 초음파 클립은 검토 전에 익명화되었습니다.",
+              "The model is being evaluated at three clinical sites. — 해당 모델은 세 임상 기관에서 평가되고 있습니다."
+            ]
+          },
+          {
+            "title": "Reporting passive",
+            "explanation": "It is believed that 또는 주어 + is believed to 형태로 일반적인 보고나 주장을 중립적으로 전달합니다. 앞선 사건은 to have + 과거분사를 사용합니다.",
+            "examples": [
+              "The new protocol is believed to reduce labeling errors. — 새 프로토콜은 라벨링 오류를 줄이는 것으로 여겨집니다.",
+              "The earlier dataset is reported to have included duplicate cases. — 이전 데이터셋에는 중복 사례가 포함됐던 것으로 보고됩니다."
+            ]
+          },
+          {
+            "title": "Get-passive",
+            "explanation": "get + 과거분사는 예상 밖의 사건이나 변화, 특히 사람에게 영향을 준 일을 회화적으로 강조합니다. 격식 있는 보고서에서는 be-passive가 더 안전합니다.",
+            "examples": [
+              "Two files got mixed up during the transfer. — 전송 과정에서 파일 두 개가 뒤섞였습니다.",
+              "No patient data should get exposed during testing. — 시험 중 환자 데이터가 노출되어서는 안 됩니다."
+            ]
+          },
+          {
+            "title": "Have/Get something done",
+            "explanation": "주어가 직접 하지 않고 전문가나 다른 사람에게 서비스를 받거나 일을 맡길 때 have/get + 목적어 + 과거분사를 사용합니다. 불쾌한 일을 당한 경우에도 쓰입니다.",
+            "examples": [
+              "We had the annotation guidelines reviewed by two radiologists. — 방사선과 전문의 두 명에게 주석 지침을 검토받았습니다.",
+              "The clinic got its network upgraded before deployment. — 병원은 배포 전에 네트워크를 업그레이드받았습니다."
+            ]
+          }
+        ]
+      },
+      "idioms": [
+        {"term": "behind the scenes", "meaning": "보이지 않는 곳에서", "example": "A large amount of validation happens behind the scenes. — 보이지 않는 곳에서 많은 검증 작업이 진행됩니다."},
+        {"term": "take something for granted", "meaning": "당연하게 여기다", "example": "We should not take clean labels for granted. — 정확한 라벨을 당연하게 여겨서는 안 됩니다."},
+        {"term": "keep someone in the loop", "meaning": "진행 상황을 계속 공유하다", "example": "Keep the clinical team in the loop whenever the protocol changes. — 프로토콜이 바뀔 때마다 임상팀에 진행 상황을 공유하세요."},
+        {"term": "raise the bar", "meaning": "기준을 높이다", "example": "Independent review raised the bar for model validation. — 독립적인 검토가 모델 검증 기준을 높였습니다."},
+        {"term": "by the book", "meaning": "규정과 절차대로", "example": "Patient data must be handled by the book. — 환자 데이터는 규정과 절차에 따라 다뤄야 합니다."}
+      ],
+      "readingTitle": "Behind the Scenes of an Ultrasound AI Evaluation",
+      "paragraphs": [
+        "A hospital research team wanted to evaluate an AI system that highlighted possible findings on ultrasound images. The purpose was not to let the system make independent diagnoses. Instead, the researchers designed a prospective study to observe how consistently the model performed on new examinations and how clinicians interacted with its output under a controlled protocol.",
+        "Before the first case was collected, the study plan was reviewed by clinical, technical, and ethics teams. Patient consent procedures were defined, and every image was assigned a study code. Identifying details were removed before the data reached the developers. This work happened behind the scenes, but it was essential to protecting participants and preserving trust.",
+        "The team created an annotation guide that defined exactly what should be marked and what should be excluded. Two experienced clinicians labeled a sample independently. When a discrepancy appeared, they discussed the reason and refined the guide. The researchers did not take agreement for granted, because two experts can interpret an unclear rule differently even when both are careful.",
+        "The main evaluation was blinded. Clinicians reviewing the reference images could not see the model's prediction, and the developers could not alter cases after observing the result. This separation reduced the risk that expectations would influence the reference standard. An audit trail recorded which version of the software, model weights, and instructions had been used for every case.",
+        "Early results showed that average performance alone did not tell the full story. The model performed well on examinations from one scanner but less consistently on images from another manufacturer. It also struggled when a view was incomplete. These findings raised an important question: could the system generalize beyond the data distribution on which it had been developed?",
+        "To investigate, the researchers divided results by site, device type, acquisition setting, and patient group. They avoided drawing conclusions from very small subgroups, but they looked for repeated patterns that might indicate a systematic weakness. The clinical team was kept in the loop because a technical difference was not automatically a clinically meaningful difference.",
+        "The team also examined calibration. A model can rank cases correctly while producing confidence values that are too high. If a score of ninety percent is shown, users may assume the prediction is extremely reliable. Calibration analysis compares confidence with observed outcomes, helping developers decide whether displayed scores need adjustment or whether a different communication method is safer.",
+        "Several errors were traced not to the neural network but to the surrounding pipeline. One image conversion changed orientation metadata, and an older preprocessing script normalized pixel values differently. Because each step had been recorded, the team could reproduce the problem. They had the pipeline audited and added automated checks before repeating the affected analysis.",
+        "Independent reviewers later examined the study materials and a sample of results. Their questions raised the bar. They asked whether excluded cases had been documented, whether model updates had been locked before evaluation, and whether the proposed deployment workflow included a clear response when the AI result conflicted with the clinician's judgment.",
+        "The study did not end with a single accuracy number. It produced a map of where the system was useful, where uncertainty remained, and what safeguards would be required before deployment. The researchers learned that responsible medical AI evaluation is a coordinated process. Models matter, but data handling, clinical definitions, human factors, and traceable decisions matter just as much."
+      ],
+      "vocabulary": [
+        {"term": "prospective", "partOfSpeech": "adjective", "meaning": "전향적인", "context": "계획을 먼저 정하고 이후 새로 수집되는 사례를 관찰하는 연구 방식"},
+        {"term": "protocol", "partOfSpeech": "noun", "meaning": "연구 절차서", "context": "데이터 수집과 평가 방법을 미리 정한 공식 계획"},
+        {"term": "consent", "partOfSpeech": "noun", "meaning": "동의", "context": "연구 참여와 데이터 사용에 대해 환자가 이해하고 허락하는 절차"},
+        {"term": "annotation", "partOfSpeech": "noun", "meaning": "주석, 라벨링", "context": "초음파 영상에서 평가 대상을 규칙에 따라 표시하는 작업"},
+        {"term": "discrepancy", "partOfSpeech": "noun", "meaning": "불일치", "context": "두 임상 전문가의 표시나 판단이 서로 다른 경우"},
+        {"term": "blinded", "partOfSpeech": "adjective", "meaning": "정보가 차단된", "context": "기대가 판단에 영향을 주지 않도록 모델 결과를 보지 못하게 한 상태"},
+        {"term": "audit trail", "partOfSpeech": "noun phrase", "meaning": "감사 추적 기록", "context": "각 사례에 사용된 버전과 처리 과정을 나중에 확인할 수 있는 기록"},
+        {"term": "generalize", "partOfSpeech": "verb", "meaning": "새로운 환경에도 일반화되다", "context": "개발 데이터와 다른 장비·기관에서도 성능을 유지하는 것"},
+        {"term": "calibration", "partOfSpeech": "noun", "meaning": "확률 보정", "context": "모델의 신뢰도 점수가 실제 발생 비율과 얼마나 일치하는지 보는 것"},
+        {"term": "deployment", "partOfSpeech": "noun", "meaning": "배포, 실제 적용", "context": "연구용 모델을 실제 임상 작업 흐름에 적용하는 단계"}
+      ],
+      "quiz": [
+        {"question": "Choose the correct passive sentence.", "choices": ["The clips anonymized before review.", "The clips were anonymized before review.", "The clips were anonymize before review.", "The clips have anonymizing before review."], "answer": 1, "explanation": "과거에 완료된 수동 사건이므로 were + 과거분사 anonymized를 사용합니다."},
+        {"question": "The model _____ at three clinical sites right now.", "choices": ["is evaluating", "is being evaluated", "has evaluate", "was being evaluate"], "answer": 1, "explanation": "현재 진행 중인 수동 평가이므로 is being evaluated가 알맞습니다."},
+        {"question": "Choose the correct reporting passive for an earlier event.", "choices": ["The dataset reports to include duplicates.", "The dataset is reported to have included duplicates.", "The dataset is reporting to included duplicates.", "The dataset was report having duplicates."], "answer": 1, "explanation": "현재 보고보다 앞선 사건은 is reported to have + 과거분사로 표현합니다."},
+        {"question": "We _____ the guidelines reviewed by two clinicians.", "choices": ["had", "made to", "were", "did having"], "answer": 0, "explanation": "다른 전문가에게 검토를 맡겼다는 causative 의미로 had the guidelines reviewed를 사용합니다."},
+        {"question": "Which expression means following rules and procedures exactly?", "choices": ["Behind the scenes", "By the book", "In the same boat", "On the fence"], "answer": 1, "explanation": "by the book은 정해진 규정과 절차를 그대로 따른다는 뜻입니다."},
+        {"question": "What does “keep the clinical team in the loop” mean?", "choices": ["Exclude them from technical decisions", "Continue sharing relevant updates with them", "Repeat the same experiment", "Ask them to write code"], "answer": 1, "explanation": "관련자가 진행 상황과 변경 사항을 계속 알 수 있도록 공유한다는 뜻입니다."},
+        {"question": "Why were the reference reviewers blinded?", "choices": ["To shorten the study", "To prevent model expectations from influencing their judgment", "To hide scanner information from developers forever", "To avoid obtaining consent"], "answer": 1, "explanation": "모델 예측을 본 기대가 기준 라벨 판단에 영향을 주는 편향을 줄이려는 목적입니다."},
+        {"question": "What concern appeared when performance differed by scanner?", "choices": ["Whether the model could generalize to other data environments", "Whether all images should be deleted", "Whether clinicians needed less training", "Whether calibration was unnecessary"], "answer": 0, "explanation": "개발 데이터와 다른 장비나 기관에서도 성능을 유지할 수 있는지가 핵심 문제였습니다."},
+        {"question": "Why did the team examine calibration?", "choices": ["To make images brighter", "To compare confidence scores with observed outcomes", "To replace clinical labels", "To increase the number of cases automatically"], "answer": 1, "explanation": "표시된 신뢰도 점수가 실제 정답 비율과 맞는지 확인하기 위해서였습니다."},
+        {"question": "What is the main message of the reading?", "choices": ["One accuracy number is enough for medical AI.", "Model architecture is the only important factor.", "Responsible evaluation combines model testing, data governance, clinical definitions, and traceability.", "Deployment should occur before independent review."], "answer": 2, "explanation": "의료 AI 평가는 모델 성능뿐 아니라 데이터 처리, 임상 기준, 인간 요소와 추적 가능한 절차를 함께 검증해야 합니다."}
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "title": "Daily English — 2026-09-04",
+      "grammarTopic": "Past Modals: Regret, Expectation, and Missed Possibilities",
+      "grammar": {
+        "title": "Past Modals: 지나간 선택·의무·가능성을 정확하게 평가하기",
+        "summary": "과거 조동사는 이미 일어난 일을 돌아보며 후회, 비판, 불필요한 행동, 지켜지지 않은 기대와 놓친 가능성을 표현합니다. 핵심 구조는 조동사 + have + 과거분사이지만, 표현마다 실제로 일어난 일에 대한 함의가 다릅니다.",
+        "points": [
+          {
+            "title": "Should have / ought to have",
+            "explanation": "과거에 더 바람직했던 행동을 말할 때 should have + 과거분사를 사용합니다. 긍정형은 보통 그 행동을 하지 않았다는 후회나 비판을, 부정형은 실제로 했지만 하지 않는 편이 나았다는 뜻을 암시합니다.",
+            "examples": [
+              "I should have checked the departure gate before breakfast. — 아침을 먹기 전에 출발 게이트를 확인했어야 했어요.",
+              "You shouldn't have paid for another ticket without asking the airline. — 항공사에 묻지 않고 다른 표를 결제하지 말았어야 했어요."
+            ]
+          },
+          {
+            "title": "Needn't have vs. didn't need to",
+            "explanation": "needn't have + 과거분사는 불필요했지만 실제로 한 행동입니다. didn't need to는 필요가 없었다는 사실만 말하므로 행동을 했는지는 문맥이 결정합니다. 이 차이는 여행 준비나 업무 평가에서 특히 유용합니다.",
+            "examples": [
+              "We needn't have rushed; the flight was delayed for three hours. — 서두를 필요가 없었는데 실제로 서둘렀어요. 비행기가 세 시간 지연됐거든요.",
+              "We didn't need to print the forms, so we used the digital copies. — 양식을 인쇄할 필요가 없어서 디지털 사본을 사용했어요."
+            ]
+          },
+          {
+            "title": "Was/Were supposed to",
+            "explanation": "was/were supposed to + 동사원형은 과거의 계획, 약속, 규칙 또는 기대를 나타냅니다. 흔히 실제 결과가 달랐다는 뉘앙스를 전달하며, 질문과 부정형으로 책임이나 오해를 확인할 수 있습니다.",
+            "examples": [
+              "The shuttle was supposed to arrive at six, but it never came. — 셔틀은 6시에 도착하기로 되어 있었지만 오지 않았어요.",
+              "Weren't we supposed to meet near the information desk? — 우리 안내 데스크 근처에서 만나기로 한 것 아니었나요?"
+            ]
+          },
+          {
+            "title": "Could have / might have / would have",
+            "explanation": "could have는 실현되지 않은 능력이나 기회, might have는 불확실한 과거 가능성, would have는 특정 조건에서 예상되는 가상 결과를 나타냅니다. would have에는 보통 명시적이거나 문맥상 분명한 조건이 필요합니다.",
+            "examples": [
+              "We could have taken the night train, but all the seats were sold out. — 야간 열차를 탈 수도 있었지만 좌석이 모두 매진됐어요.",
+              "I would have stayed at the airport if the delay had been shorter. — 지연이 더 짧았더라면 공항에 머물렀을 거예요."
+            ]
+          }
+        ]
+      },
+      "idioms": [
+        {"term": "miss the boat", "meaning": "좋은 기회나 적절한 때를 놓치다", "example": "We missed the boat on the last direct train. — 마지막 직행 열차를 탈 기회를 놓쳤어요."},
+        {"term": "dodge a bullet", "meaning": "큰 문제나 불운을 가까스로 피하다", "example": "We dodged a bullet when we found a room before the storm arrived. — 폭풍이 오기 전에 방을 찾아 큰 곤란을 피했어요."},
+        {"term": "better late than never", "meaning": "늦더라도 안 하는 것보다 낫다", "example": "I finally bought travel insurance—better late than never. — 마침내 여행자 보험을 샀어요. 늦더라도 안 하는 것보다 낫죠."},
+        {"term": "make up for", "meaning": "손실·실수·불편을 보상하다", "example": "The friendly welcome made up for the long delay. — 친절한 환대가 긴 지연의 불편을 보상해 주었어요."},
+        {"term": "come in handy", "meaning": "뜻밖의 상황에서 유용하게 쓰이다", "example": "The offline map came in handy when the station Wi-Fi failed. — 역의 와이파이가 끊겼을 때 오프라인 지도가 유용했어요."}
+      ],
+      "readingTitle": "The Journey That Continued After the Train Stopped",
+      "paragraphs": [
+        "Nora was supposed to travel from Edinburgh to a small coastal town for a friend's wedding. She had booked the last direct train on Friday evening because she could not leave work earlier. Twenty minutes after departure, however, the train stopped outside a rural station. A severe storm had damaged the electrical line, and the conductor announced that the service could not continue.",
+        "At first, Nora blamed herself. She should have taken the afternoon train, and she shouldn't have scheduled such a tight connection. Several passengers immediately searched for taxis, but demand was high and mobile reception was weak. Nora tried to reserve the only room listed nearby, only to discover that someone else had booked it seconds earlier. She had missed the boat again.",
+        "The railway company provided water and arranged buses back to the city, but the buses would not reach the wedding town. Nora could have returned home and travelled the next morning, yet she would have missed the ceremony. A retired teacher named Malcolm overheard her phone call. His destination was a village fifteen kilometers from hers, and his daughter was coming to collect him.",
+        "Malcolm offered Nora a seat if his daughter agreed. Nora hesitated because she had always been told not to accept rides from strangers. They spoke with the conductor, exchanged contact details, and shared their live location with family members. These sensible precautions reduced the risk, and Malcolm's daughter confirmed that she could drive Nora to a guesthouse near the wedding venue.",
+        "While they waited, two other stranded travelers joined the conversation. One had a paper road map, which everyone had considered old-fashioned until mobile data disappeared. It came in handy. Another passenger had packed sandwiches for a journey that was supposed to include dinner service. She needn't have prepared so much food, but now there was enough to share with the group.",
+        "The drive was slow, and fallen branches forced them to take a long detour. Still, the atmosphere in the car became surprisingly warm. Malcolm told stories about teaching in remote schools, his daughter described local rescue work, and Nora shared details of the wedding. What had begun as an inconvenient interruption turned into an evening of generous conversation.",
+        "They reached the guesthouse shortly before midnight. The owner had already closed reception, but Malcolm called a neighbor who knew her. Better late than never, the owner said as she returned with a key and a dry towel. Nora realized they had dodged a bullet: ten minutes later, the police closed the road because floodwater had risen across a low bridge.",
+        "The next morning, Nora arrived at the wedding with muddy shoes but enough time to help the bride. The railway later refunded her ticket. It also offered a travel voucher, although the compensation could not fully make up for the uncertainty of the previous night. Nora appreciated the refund, but she valued the strangers' practical kindness more.",
+        "Looking back, she distinguished useful reflection from pointless self-criticism. She should have allowed more time, and travel insurance might have reduced her anxiety. However, she could not have predicted the damaged power line. Not every bad outcome proves that a decision was careless; sometimes an unusual event simply defeats a reasonable plan.",
+        "Nora now prepares a backup route, downloads offline maps, and shares her itinerary before long trips. She does not expect preparation to remove every difficulty. Instead, it gives her more choices when a plan fails. The journey taught her that past mistakes deserve honest evaluation, but unexpected problems can also reveal resources and relationships that no schedule could have created."
+      ],
+      "vocabulary": [
+        {"term": "coastal", "partOfSpeech": "adjective", "meaning": "해안의", "context": "결혼식이 열리는 바닷가 마을을 설명하는 표현"},
+        {"term": "conductor", "partOfSpeech": "noun", "meaning": "열차 승무원, 차장", "context": "열차 운행 중단을 알리고 승객을 돕는 직원"},
+        {"term": "reception", "partOfSpeech": "noun", "meaning": "접수처; 통신 수신 상태", "context": "본문에서는 휴대전화 수신 상태와 숙소 접수처 두 의미로 사용됨"},
+        {"term": "stranded", "partOfSpeech": "adjective", "meaning": "오도 가도 못하게 된", "context": "교통 중단으로 목적지까지 갈 수 없게 된 여행객"},
+        {"term": "precautions", "partOfSpeech": "noun", "meaning": "예방 조치", "context": "낯선 사람의 차를 탈 때 위험을 줄이기 위한 행동"},
+        {"term": "detour", "partOfSpeech": "noun", "meaning": "우회로", "context": "쓰러진 나뭇가지를 피해 돌아간 길"},
+        {"term": "floodwater", "partOfSpeech": "noun", "meaning": "홍수로 불어난 물", "context": "다리를 덮어 도로 폐쇄를 일으킨 물"},
+        {"term": "compensation", "partOfSpeech": "noun", "meaning": "보상", "context": "철도 회사가 지연과 불편에 대해 제공한 환불과 바우처"},
+        {"term": "itinerary", "partOfSpeech": "noun", "meaning": "여행 일정", "context": "긴 여행 전에 가족과 공유하는 이동 계획"},
+        {"term": "uncertainty", "partOfSpeech": "noun", "meaning": "불확실성", "context": "목적지에 도착할 수 있을지 알 수 없었던 상태"}
+      ],
+      "quiz": [
+        {"question": "I _____ the earlier train, but I decided to finish my work first.", "choices": ["could have taken", "could take yesterday", "should taking", "would took"], "answer": 0, "explanation": "과거에 가능했지만 실현되지 않은 선택은 could have + 과거분사로 표현합니다."},
+        {"question": "We _____ so much food; dinner was provided, but we packed it anyway.", "choices": ["didn't need pack", "needn't have packed", "mustn't have packed", "weren't packing"], "answer": 1, "explanation": "불필요했지만 실제로 한 행동이므로 needn't have packed가 알맞습니다."},
+        {"question": "The shuttle _____ arrive at six, but it never came.", "choices": ["was supposed to", "should have to", "could arriving", "was suppose"], "answer": 0, "explanation": "지켜지지 않은 과거 계획이나 기대는 was supposed to + 동사원형으로 나타냅니다."},
+        {"question": "You _____ without checking the refund policy.", "choices": ["shouldn't have booked", "shouldn't booked", "didn't should book", "wouldn't have booking"], "answer": 0, "explanation": "과거 행동에 대한 비판은 shouldn't have + 과거분사를 사용합니다."},
+        {"question": "Which idiom means losing an opportunity because you acted too late?", "choices": ["Come in handy", "Make up for", "Miss the boat", "Dodge a bullet"], "answer": 2, "explanation": "miss the boat는 적절한 시기나 좋은 기회를 놓친다는 뜻입니다."},
+        {"question": "The offline map really _____ when our mobile data stopped working.", "choices": ["came in handy", "missed the boat", "raised the bar", "read between the lines"], "answer": 0, "explanation": "예상 밖의 상황에서 유용했다는 뜻으로 came in handy가 자연스럽습니다."},
+        {"question": "Why did Nora accept the ride?", "choices": ["She ignored all safety concerns.", "The driver promised to pay her.", "They took precautions and the route could bring her near the wedding.", "The train conductor ordered her to go."], "answer": 2, "explanation": "연락처와 위치를 공유하고 승무원과 확인하는 안전 조치를 취했으며 목적지 가까이 갈 수 있었기 때문입니다."},
+        {"question": "What did the paper map demonstrate?", "choices": ["Old tools are always better than phones.", "A tool that seems outdated can become useful in the right situation.", "Passengers should never use mobile data.", "The storm had been predicted incorrectly."], "answer": 1, "explanation": "평소에는 구식처럼 보였지만 통신이 끊기자 종이 지도가 실제로 유용해졌습니다."},
+        {"question": "What did Nora conclude about responsibility?", "choices": ["Every bad result proves a careless decision.", "Preparation can prevent all travel problems.", "Reasonable plans can still fail because of unpredictable events.", "Self-criticism is the best form of planning."], "answer": 2, "explanation": "복기와 준비는 필요하지만 예측 불가능한 사건 때문에 합리적인 계획도 실패할 수 있다고 보았습니다."},
+        {"question": "What is the central message of the reading?", "choices": ["Travel disruptions are never worth discussing.", "A failed plan can be handled through preparation, judgment, and cooperation.", "Strangers should always travel together.", "Compensation solves every inconvenience."], "answer": 1, "explanation": "계획 실패를 현실적으로 평가하고 안전한 판단과 협력으로 대응하는 과정이 글의 중심입니다."}
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "title": "Daily English — 2026-09-05",
+      "grammarTopic": "Inversion for Emphasis",
+      "grammar": {
+        "title": "Inversion for Emphasis: 도치로 핵심을 힘 있게 전달하기",
+        "summary": "도치는 부정적·제한적 표현을 문장 앞에 놓고 조동사와 주어의 순서를 바꾸어 강조하는 구조입니다. 뉴스, 발표, 이야기와 격식 있는 말에서 효과적이지만, 모든 부사 뒤에 사용하는 것은 아닙니다. 일반 의문문처럼 조동사를 선택하되 문장 전체는 진술입니다.",
+        "points": [
+          {
+            "title": "Negative adverbials: rarely, never, little",
+            "explanation": "rarely, never, seldom, little처럼 부정이나 제한을 나타내는 표현이 문두에 오면 조동사 + 주어 + 본동사 순서로 도치합니다. 조동사가 없던 문장은 do/does/did를 추가합니다.",
+            "examples": [
+              "Rarely do volunteers face such a complicated situation. — 자원봉사자들이 이렇게 복잡한 상황을 겪는 일은 드뭅니다.",
+              "Never had the team managed an event of this size. — 그 팀은 이전에 이 정도 규모의 행사를 운영해 본 적이 전혀 없었습니다."
+            ]
+          },
+          {
+            "title": "Not only ... but also",
+            "explanation": "Not only가 첫 번째 절의 앞에 오면 그 절만 도치하고, but also 뒤 절은 보통 평서문 어순을 유지합니다. 두 가지 놀라운 결과를 연결할 때 발표와 스토리텔링에서 자주 씁니다.",
+            "examples": [
+              "Not only did the students repair the stage, but they also redesigned the schedule. — 학생들은 무대를 고쳤을 뿐 아니라 일정도 다시 설계했습니다.",
+              "Not only was the hall full, but several people were waiting outside. — 강당이 가득 찼을 뿐 아니라 여러 사람이 밖에서 기다리고 있었습니다."
+            ]
+          },
+          {
+            "title": "No sooner / Hardly / Only after",
+            "explanation": "No sooner had + 주어 + 과거분사 + than, Hardly had + 주어 + 과거분사 + when은 한 사건 직후 다른 사건이 일어났음을 강조합니다. Only after/when/by 뒤의 정보 자체는 도치하지 않고, 이어지는 주절을 도치합니다.",
+            "examples": [
+              "No sooner had the doors opened than the fire alarm sounded. — 문이 열리자마자 화재경보가 울렸습니다.",
+              "Only after the technician arrived did we identify the fault. — 기술자가 도착한 뒤에야 문제를 찾아냈습니다."
+            ]
+          },
+          {
+            "title": "So / Such ... that",
+            "explanation": "형용사를 강하게 강조하려면 So + 형용사 + be동사 + 주어 + that을, 명사구를 강조하려면 Such + be동사 + 주어 + that을 사용할 수 있습니다. 다소 문어적이므로 발표의 핵심 순간이나 극적인 이야기에 선택적으로 사용합니다.",
+            "examples": [
+              "So calm was the coordinator that everyone followed her instructions. — 진행자가 매우 침착해서 모두가 그녀의 지시를 따랐습니다.",
+              "Such was the demand that the team added a second session. — 수요가 매우 커서 팀은 두 번째 세션을 추가했습니다."
+            ]
+          }
+        ]
+      },
+      "idioms": [
+        {"term": "out of your comfort zone", "meaning": "익숙하고 편한 범위를 벗어난", "example": "Speaking on stage pushed Leo out of his comfort zone. — 무대에서 말하는 일은 Leo를 익숙한 영역 밖으로 밀어냈습니다."},
+        {"term": "rise to the occasion", "meaning": "중요하거나 어려운 상황에서 기대 이상으로 잘해내다", "example": "The student volunteers rose to the occasion when the schedule collapsed. — 일정이 무너졌을 때 학생 자원봉사자들이 훌륭하게 대처했습니다."},
+        {"term": "keep your cool", "meaning": "곤란한 상황에서도 침착함을 유지하다", "example": "Keep your cool and give the audience clear instructions. — 침착함을 유지하고 관객에게 명확하게 안내하세요."},
+        {"term": "think on your feet", "meaning": "예상 밖 상황에서 즉석으로 빠르게 판단하다", "example": "A host must think on her feet when a speaker is late. — 진행자는 연사가 늦을 때 즉석에서 빠르게 판단해야 합니다."},
+        {"term": "pull together", "meaning": "공동의 목표를 위해 힘을 합치다", "example": "The whole community pulled together to reopen the hall. — 지역사회 전체가 강당을 다시 열기 위해 힘을 합쳤습니다."}
+      ],
+      "readingTitle": "The Festival That Nearly Lost Its Stage",
+      "paragraphs": [
+        "Every autumn, Brookfield Secondary School hosts a community science festival. Students demonstrate experiments, local engineers give short talks, and families build simple machines together. This year, demand was so high that the organizers moved the event into the municipal hall. Never had the student committee managed such a large audience, but months of preparation made them feel ready.",
+        "Two hours before the doors opened, a delivery worker rolled a heavy display across the stage. One wheel struck a hidden access panel, and part of the platform dropped several centimeters. The stage was no longer safe for speakers. The facility manager said a specialist could inspect it, but the earliest arrival time was late afternoon—after most of the program was supposed to finish.",
+        "At first, the committee went silent. Their coordinator, Ms. Patel, kept her cool. She stopped anyone from stepping onto the damaged area and asked volunteers to establish a clear boundary. Only after the immediate hazard had been isolated did she gather the team to consider alternatives. Canceling was possible, but it would disappoint hundreds of visitors and waste the exhibitors' preparation.",
+        "Leo, a quiet student responsible for slides, suggested moving the talks to a wide staircase in the entrance atrium. Public speaking was far out of his comfort zone, yet he explained how the landing could serve as a small platform. The audience could sit on portable chairs below, while experiments that required electricity could remain in the main hall.",
+        "The idea created a logistical challenge. Sound from the exhibition might overwhelm the speakers, and the emergency route had to remain unobstructed. The team measured the available space, consulted the fire officer, and revised the floor plan. Rarely had they needed to think on their feet so quickly. Each volunteer received one specific responsibility to prevent confusion.",
+        "No sooner had they begun moving chairs than the scheduled keynote speaker called to say her train had been delayed. Rather than panic, Ms. Patel asked two student teams to present first. Not only did this fill the gap, but it also gave the young presenters a larger audience than they had expected. Nervous at first, they soon rose to the occasion.",
+        "Meanwhile, local technicians arrived earlier than predicted. They examined the stage and discovered that the damage was limited to one modular section. A replacement panel could be installed within an hour. Such was the volunteers' momentum that they continued using the atrium while the repair took place, avoiding another disruptive change for visitors.",
+        "The altered format created unexpected benefits. Speakers stood closer to the audience, so questions felt more conversational. Families walking through the entrance stopped to listen, and several joined workshops afterward. Exhibitors adjusted their demonstrations to connect with points from the talks. What looked like a compromise became one of the festival's most engaging features.",
+        "By the time the keynote speaker arrived, the stage had passed a safety inspection. The committee could have returned to the original schedule, but participants preferred the more intimate atrium setup. The speaker agreed to present there. Afterward, she praised the students' judgment: they had protected safety, communicated clearly, and pulled together without pretending that the disruption was minor.",
+        "During the review meeting, Ms. Patel emphasized that improvisation works best when basic principles are firm. The team could change rooms and timing because safety roles, communication channels, and decision authority were already defined. Thinking on your feet does not mean guessing carelessly. It means adapting quickly while respecting the constraints that matter."
+      ],
+      "vocabulary": [
+        {"term": "municipal", "partOfSpeech": "adjective", "meaning": "시립의", "context": "지역 정부가 운영하는 행사장을 설명하는 말"},
+        {"term": "access panel", "partOfSpeech": "noun phrase", "meaning": "점검용 덮개", "context": "시설 내부를 점검하기 위해 열 수 있는 무대 바닥 부분"},
+        {"term": "hazard", "partOfSpeech": "noun", "meaning": "위험 요소", "context": "사람이 밟으면 다칠 수 있는 손상된 무대 구역"},
+        {"term": "atrium", "partOfSpeech": "noun", "meaning": "건물 중앙의 넓은 홀", "context": "강연 장소로 임시 전환한 입구의 개방 공간"},
+        {"term": "logistical", "partOfSpeech": "adjective", "meaning": "운영·수송상의", "context": "좌석, 음향, 이동 동선을 조정하는 실무 문제"},
+        {"term": "unobstructed", "partOfSpeech": "adjective", "meaning": "막히지 않은", "context": "비상 상황에 대비해 물건 없이 열어 둔 통로"},
+        {"term": "keynote", "partOfSpeech": "noun", "meaning": "기조연설; 기조연설자", "context": "행사의 중심이 되는 주요 강연"},
+        {"term": "modular", "partOfSpeech": "adjective", "meaning": "조립식의, 모듈식의", "context": "손상된 한 부분만 교체할 수 있는 무대 구조"},
+        {"term": "momentum", "partOfSpeech": "noun", "meaning": "추진력, 탄력", "context": "문제를 해결하며 계속 이어진 자원봉사자들의 활력"},
+        {"term": "constraints", "partOfSpeech": "noun", "meaning": "제약 조건", "context": "즉흥적으로 바꾸더라도 반드시 지켜야 하는 안전과 운영 기준"}
+      ],
+      "quiz": [
+        {"question": "_____ had the team faced such a complex emergency.", "choices": ["Never", "Never they", "Not", "Only they"], "answer": 0, "explanation": "부정 부사 Never가 문두에 오면 had the team faced처럼 조동사와 주어를 도치합니다."},
+        {"question": "Rarely _____ such clear leadership from a student committee.", "choices": ["we see", "do we see", "we do see", "see we"], "answer": 1, "explanation": "일반현재 문장을 Rarely로 시작하면 do + 주어 + 동사원형 어순을 사용합니다."},
+        {"question": "Not only _____ the plan, but they also explained it to visitors.", "choices": ["they revised", "did they revise", "they did revised", "revised they"], "answer": 1, "explanation": "문두의 Not only 뒤 첫 절은 did + 주어 + 동사원형으로 도치합니다."},
+        {"question": "Only after the officer approved the route _____ moving the chairs.", "choices": ["they began", "did they begin", "they did began", "began they"], "answer": 1, "explanation": "Only after가 문두에 오면 뒤의 주절을 did they begin처럼 도치합니다."},
+        {"question": "No sooner had the doors opened _____ the alarm sounded.", "choices": ["when", "that", "than", "then"], "answer": 2, "explanation": "정형 구조는 No sooner ... than이며, 두 사건이 거의 연속으로 발생했음을 강조합니다."},
+        {"question": "Which idiom means performing well in an important, difficult moment?", "choices": ["Miss the boat", "Rise to the occasion", "Take for granted", "Keep options open"], "answer": 1, "explanation": "rise to the occasion은 중요한 어려움에 맞서 기대 이상으로 잘해낸다는 뜻입니다."},
+        {"question": "If you 'think on your feet,' what do you do?", "choices": ["Make a quick, sensible decision in an unexpected situation", "Avoid every difficult decision", "Follow an old plan without change", "Work only while standing"], "answer": 0, "explanation": "예상하지 못한 상황에서 즉석으로 빠르고 적절하게 판단한다는 비유적 표현입니다."},
+        {"question": "Why did Ms. Patel isolate the damaged area first?", "choices": ["To hide the accident", "To protect people before discussing the schedule", "To reserve it for speakers", "To wait for the audience"], "answer": 1, "explanation": "일정 논의보다 먼저 즉각적인 안전 위험을 통제하기 위해 접근을 막았습니다."},
+        {"question": "What unexpected benefit did the atrium create?", "choices": ["It eliminated the need for safety checks.", "It made talks more conversational and attracted passing families.", "It allowed the keynote to arrive earlier.", "It reduced the number of workshops."], "answer": 1, "explanation": "연사와 관객의 거리가 가까워지고 지나가던 가족도 강연과 워크숍에 참여했습니다."},
+        {"question": "According to the final paragraph, effective improvisation requires _____.", "choices": ["ignoring all procedures", "waiting until every detail is certain", "flexibility built on clear principles and roles", "letting one person do every task"], "answer": 2, "explanation": "안전 기준, 소통 경로, 역할이 분명했기 때문에 중요한 제약을 지키면서 유연하게 바꿀 수 있었습니다."}
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "title": "Daily English — 2026-09-06",
+      "grammarTopic": "Hedging and Stance Language",
+      "grammar": {
+        "title": "Hedging and Stance: 단정하지 않으면서도 분명하게 의견 말하기",
+        "summary": "헤징은 확신이 제한적일 때 주장의 강도를 조절하는 표현입니다. 책임을 피하기 위한 모호함이 아니라 증거의 수준, 예외 가능성, 개인의 관점을 정확히 표시하는 의사소통 기술입니다. 토론, 업무 보고, 학술적 설명과 AI 결과 평가에서 특히 중요합니다.",
+        "points": [
+          {
+            "title": "Seem, appear, tend to",
+            "explanation": "seem/appear to는 현재 관찰로부터 조심스럽게 판단할 때, tend to는 여러 사례에서 보이는 일반적 경향을 말할 때 사용합니다. 한 번의 사건을 tend to로 과도하게 일반화하지 않도록 주의합니다.",
+            "examples": [
+              "The answer seems convincing, but one source is missing. — 그 답은 설득력 있어 보이지만 출처 하나가 빠져 있습니다.",
+              "Language models tend to sound confident even when the evidence is weak. — 언어 모델은 근거가 약할 때도 자신 있게 말하는 경향이 있습니다."
+            ]
+          },
+          {
+            "title": "Likely, unlikely, apparently",
+            "explanation": "be likely/unlikely to는 가능성에 대한 평가이고, apparently는 이용 가능한 정보상 그렇게 보이지만 직접 확인하지 못했다는 신호입니다. likely는 부사처럼 단독 사용하기보다 be likely to 또는 It is likely that 구조가 B2 단계에서 안전합니다.",
+            "examples": [
+              "This recommendation is likely to change when more context is added. — 문맥이 더해지면 이 권고는 바뀔 가능성이 큽니다.",
+              "Apparently, the policy was updated last month, although I haven't checked the official notice yet. — 공식 공지를 아직 확인하지 않았지만, 알려진 바로는 정책이 지난달 갱신됐습니다."
+            ]
+          },
+          {
+            "title": "May well, might, could potentially",
+            "explanation": "may well은 상당한 가능성을, might는 더 열린 가능성을 나타냅니다. could potentially는 가능성을 매우 조심스럽게 제시하지만 potential 자체에 가능성 의미가 있어 남용하면 문장이 불필요하게 약해질 수 있습니다.",
+            "examples": [
+              "The tool may well save time on routine summaries. — 그 도구는 일상적인 요약 작업에서 시간을 상당히 절약할 수 있습니다.",
+              "A confident response might still contain an invented detail. — 자신감 있는 답변에도 지어낸 세부 정보가 포함될 수 있습니다."
+            ]
+          },
+          {
+            "title": "Framing scope: in my view, to some extent, based on",
+            "explanation": "주장의 범위와 근거를 밝혀 책임 있게 입장을 제시합니다. In my view는 개인 판단, to some extent는 부분적 동의, based on the available evidence는 현재 근거의 한계를 나타냅니다. 핵심 결론까지 지나치게 약화하지 말고 확실한 사실과 추론을 구분하세요.",
+            "examples": [
+              "To some extent, the advice is useful, but it ignores local regulations. — 어느 정도는 유용한 조언이지만 현지 규정을 고려하지 않습니다.",
+              "Based on the available evidence, the lower-cost option appears more practical. — 현재 이용 가능한 근거를 바탕으로 보면 더 저렴한 선택지가 더 실용적으로 보입니다."
+            ]
+          }
+        ]
+      },
+      "idioms": [
+        {"term": "read between the lines", "meaning": "말이나 글에 직접 드러나지 않은 뜻을 파악하다", "example": "Read between the lines and notice which limitations the review avoids mentioning. — 행간을 읽고 그 리뷰가 어떤 한계를 언급하지 않는지 살펴보세요."},
+        {"term": "take a step back", "meaning": "잠시 거리를 두고 전체 상황을 다시 생각하다", "example": "Before following the advice, take a step back and check the goal. — 조언을 따르기 전에 잠시 물러나 목표를 확인하세요."},
+        {"term": "see the bigger picture", "meaning": "세부 사항을 넘어 전체 맥락을 보다", "example": "Cost matters, but we also need to see the bigger picture. — 비용도 중요하지만 전체적인 상황도 봐야 합니다."},
+        {"term": "food for thought", "meaning": "더 생각해 볼 만한 내용", "example": "The model's alternative gave us food for thought, not a final decision. — 모델의 대안은 최종 결정이 아니라 생각할 거리를 주었습니다."},
+        {"term": "a grey area", "meaning": "옳고 그름이나 규칙이 명확하지 않은 영역", "example": "Using generated text without disclosure can be a grey area in some workplaces. — 생성된 글을 밝히지 않고 사용하는 것은 일부 직장에서 애매한 영역일 수 있습니다."}
+      ],
+      "readingTitle": "When AI Advice Sounds More Certain Than It Is",
+      "paragraphs": [
+        "People increasingly ask generative AI systems for recommendations about study plans, purchases, workplace decisions, and personal projects. The answers often arrive in seconds and appear neatly organized. Because fluent language sounds authoritative, users may assume that a clear response reflects strong evidence. Yet style and reliability are separate qualities, and the distinction is easy to miss.",
+        "Consider a student choosing an online data-science course. She asks an AI assistant to compare three programs. The system states that one course is 'the best choice' because it apparently offers recognized certification, weekly mentoring, and lifetime access. The recommendation seems useful, but the answer provides no dates or direct sources. One of the programs may well have changed its terms since the model's information was collected.",
+        "A careful user first takes a step back. What does 'best' mean in this decision? The cheapest course, the strongest mathematical content, and the most flexible schedule are different goals. An answer is unlikely to be genuinely personalized unless the system knows which criteria matter, what the learner already understands, and how much time she can invest.",
+        "Next, the student separates verifiable claims from interpretation. Tuition, course length, refund rules, and instructor names can be checked on official pages. Statements such as 'excellent career value' are judgments that require context. Reviews may offer useful food for thought, but readers should read between the lines: Was the reviewer given free access? Did the review measure actual learning or only initial satisfaction?",
+        "The same discipline matters when AI advice concerns work. Suppose a manager asks whether a customer message should receive a refund. A model could potentially summarize the policy and identify relevant facts, but the final decision may depend on local law, recent exceptions, or authority limits. Those details might not be present in the prompt, and confidential customer data should not be pasted into an unapproved system.",
+        "Hedging helps communicate these boundaries. 'Based on the policy excerpt provided, the request appears eligible' is more accurate than 'The customer is definitely entitled to a refund.' The first version identifies both the evidence and its scope. However, responsible hedging should not hide a known fact. If the written policy clearly states a thirty-day deadline, saying that a deadline 'might exist' would be unnecessarily vague.",
+        "Users also need to see the bigger picture. A recommendation can be factually correct but poorly suited to the real situation. The fastest software might require skills the team lacks; the lowest-priced service might create additional support costs. To some extent, AI can help expose trade-offs by generating alternatives. It cannot decide which values an organization should prioritize unless people provide those values.",
+        "Some decisions remain a grey area even after facts are verified. There may be no single correct balance between speed and thoroughness, privacy and convenience, or innovation and consistency. In these cases, an AI response is best treated as one contribution to a structured discussion. A human decision-maker remains accountable for the outcome and should document the reasoning behind high-impact choices.",
+        "A practical verification routine has four steps: define the decision, identify checkable claims, consult current authoritative sources, and compare the advice with real constraints. For high-stakes medical, legal, or financial questions, a qualified professional is likely to be necessary. Verification effort should rise with the potential harm of an error.",
+        "AI advice is neither automatically trustworthy nor automatically useless. It tends to be most valuable when users treat it as a tool for organizing questions, discovering alternatives, and challenging assumptions. Confident wording should invite examination rather than obedience. The goal is not to remove uncertainty from every decision, but to describe uncertainty honestly and act with evidence appropriate to the consequences."
+      ],
+      "vocabulary": [
+        {"term": "authoritative", "partOfSpeech": "adjective", "meaning": "권위 있어 보이는; 신뢰할 만한", "context": "유창한 문체 때문에 답변이 강한 근거를 가진 것처럼 들리는 상태"},
+        {"term": "reliability", "partOfSpeech": "noun", "meaning": "신뢰성", "context": "답변의 문체와 별개로 정보가 정확하고 믿을 만한 정도"},
+        {"term": "criteria", "partOfSpeech": "noun", "meaning": "기준들", "context": "여러 강의 중 최선의 선택을 판단할 때 중요하게 보는 조건"},
+        {"term": "verifiable", "partOfSpeech": "adjective", "meaning": "검증 가능한", "context": "공식 페이지에서 사실 여부를 직접 확인할 수 있는 주장"},
+        {"term": "confidential", "partOfSpeech": "adjective", "meaning": "기밀의", "context": "승인되지 않은 시스템에 입력하면 안 되는 고객 정보"},
+        {"term": "scope", "partOfSpeech": "noun", "meaning": "범위", "context": "현재 근거가 어디까지 결론을 뒷받침하는지 나타내는 한계"},
+        {"term": "trade-offs", "partOfSpeech": "noun", "meaning": "상충 관계, 절충", "context": "한 장점을 얻기 위해 다른 장점을 일부 포기해야 하는 선택"},
+        {"term": "accountable", "partOfSpeech": "adjective", "meaning": "책임을 지는", "context": "영향이 큰 결정의 결과에 대해 인간 담당자가 책임지는 상태"},
+        {"term": "high-stakes", "partOfSpeech": "adjective", "meaning": "위험 부담이 큰", "context": "오류가 건강·법률·재정에 큰 피해를 줄 수 있는 질문"},
+        {"term": "consequences", "partOfSpeech": "noun", "meaning": "결과, 파급 효과", "context": "잘못된 조언을 따랐을 때 실제로 발생할 수 있는 영향"}
+      ],
+      "quiz": [
+        {"question": "The answer _____ convincing, but it does not cite a source.", "choices": ["seems", "is seem", "seeming to", "tends"], "answer": 0, "explanation": "현재 관찰에 근거한 조심스러운 판단에는 seems + 형용사를 사용합니다."},
+        {"question": "Language models _____ produce fluent answers even with limited evidence.", "choices": ["tend to", "are tend", "likely", "appear that"], "answer": 0, "explanation": "반복적으로 나타나는 일반 경향은 tend to + 동사원형으로 표현합니다."},
+        {"question": "Choose the grammatically correct sentence.", "choices": ["The policy likely to change.", "The policy is likely changing yesterday.", "The policy is likely to change.", "The policy likely changes to."], "answer": 2, "explanation": "가능성이 높다는 평가는 be likely to + 동사원형 구조가 자연스럽습니다."},
+        {"question": "Which sentence best limits a conclusion to the evidence provided?", "choices": ["This is definitely the only solution.", "Based on the available evidence, this option appears practical.", "Everyone knows this option works.", "There can be no uncertainty."], "answer": 1, "explanation": "근거의 범위를 밝히고 appears로 판단의 강도를 정확히 조절합니다."},
+        {"question": "Which idiom means looking beyond individual details to understand the whole situation?", "choices": ["Read between the lines", "See the bigger picture", "Miss the boat", "Keep your cool"], "answer": 1, "explanation": "see the bigger picture는 세부 사항을 넘어 전체 맥락과 장기적 영향을 본다는 뜻입니다."},
+        {"question": "The proposal is not a final answer, but it gives us _____.", "choices": ["a grey boat", "food for thought", "the book", "a hidden stage"], "answer": 1, "explanation": "food for thought는 더 깊이 생각하거나 논의해 볼 만한 내용을 뜻합니다."},
+        {"question": "Why was the course recommendation potentially unreliable?", "choices": ["It used complete official data from that day.", "It gave dates and direct sources for every claim.", "Its claims may have been outdated and 'best' was not defined.", "The student had already completed every course."], "answer": 2, "explanation": "현재 출처와 날짜가 없었고 학생에게 중요한 선택 기준도 정의되지 않았습니다."},
+        {"question": "What is the purpose of responsible hedging?", "choices": ["To avoid every clear statement", "To match the strength of a claim to its evidence and scope", "To make false information sound polite", "To remove accountability from the speaker"], "answer": 1, "explanation": "헤징은 근거 수준과 적용 범위를 정확히 표시하는 것이며 책임을 피하거나 사실을 흐리는 기술이 아닙니다."},
+        {"question": "When should verification effort increase?", "choices": ["When an answer is shorter", "When the potential harm of an error is greater", "When the language sounds friendly", "When no decision will be made"], "answer": 1, "explanation": "오류가 초래할 피해가 클수록 더 권위 있는 출처와 전문가 확인이 필요합니다."},
+        {"question": "What is the writer's main view of AI advice?", "choices": ["It should always be obeyed because it is fluent.", "It is useless unless it removes all uncertainty.", "It is valuable as input for structured judgment when claims and limits are checked.", "It should make all high-impact decisions independently."], "answer": 2, "explanation": "AI 조언은 질문과 대안을 정리하는 입력으로 유용하지만 사실 검증, 맥락 판단과 인간의 책임이 필요합니다."}
+      ]
     }
   ],
   "chart": {
