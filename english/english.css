@@ -72,7 +72,16 @@ h2 { margin: 0 0 20px; font-size: 27px; letter-spacing: -.04em; }
 .word-count { color: var(--muted); font-size: 11px; }
 .reading-content { max-width: 790px; margin: 0 auto; padding: 52px 38px 62px; }
 .reading-content p { margin: 0 0 1.45em; font: clamp(18px, 2.1vw, 21px)/1.9 Georgia, "Times New Roman", serif; color: #283044; }
-.reading-content p:first-child::first-letter { float: left; margin: .08em .1em 0 0; color: var(--blue); font-size: 3.25em; font-weight: 700; line-height: .78; }
+.reading-content > p:first-child::first-letter { float: left; margin: .08em .1em 0 0; color: var(--blue); font-size: 3.25em; font-weight: 700; line-height: .78; }
+.reading-translation { margin-top: 42px; overflow: hidden; border: 1px solid #dce2f3; border-radius: 16px; background: #f8f9fc; }
+.reading-translation summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 20px; color: #24469d; background: var(--blue-soft); font: 800 13px/1.4 system-ui, sans-serif; cursor: pointer; list-style: none; }
+.reading-translation summary::-webkit-details-marker { display: none; }
+.reading-translation summary:focus-visible { outline: 3px solid rgba(36, 77, 184, .25); outline-offset: -3px; }
+.translation-chevron { font-size: 19px; line-height: 1; transition: transform .2s ease; }
+.reading-translation[open] .translation-chevron { transform: rotate(180deg); }
+.translation-content { padding: 24px 22px 10px; border-top: 1px solid #dce2f3; }
+.reading-content .translation-content p { position: relative; margin: 0 0 1.35em; padding-left: 34px; color: #4d576a; font: 15px/1.82 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.translation-number { position: absolute; left: 0; top: .17em; width: 23px; height: 23px; display: grid; place-items: center; border-radius: 7px; color: #516caf; background: #e8edfb; font-size: 10px; font-weight: 850; }
 .vocab-word { appearance: none; display: inline; margin: 0; padding: 0 1px; border: 0; border-bottom: 1.5px dotted var(--blue); background: transparent; color: #244db8; font: inherit; line-height: inherit; cursor: help; border-radius: 2px; }
 .vocab-word:hover, .vocab-word:focus-visible, .vocab-word[aria-expanded="true"] { background: var(--blue-soft); outline: none; }
 
@@ -163,6 +172,10 @@ h2 { margin: 0 0 20px; font-size: 27px; letter-spacing: -.04em; }
   .word-count { grid-column: 2; }
   .reading-content { padding: 34px 22px 44px; }
   .reading-content p { font-size: 18px; line-height: 1.82; }
+  .reading-translation { margin-top: 32px; }
+  .reading-translation summary { padding: 15px 17px; }
+  .translation-content { padding: 20px 16px 7px; }
+  .reading-content .translation-content p { padding-left: 31px; font-size: 14px; line-height: 1.78; }
   .glossary-grid, .wordbook-grid { grid-template-columns: 1fr 1fr; }
   .word-popover { left: 14px !important; right: 14px; bottom: 14px !important; top: auto !important; width: auto; }
   .wordbook-head { padding-top: 44px; display: block; }
