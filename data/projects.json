@@ -23,5 +23,13 @@
     "targetUrl": "https://app.notion.com/p/e7faf6d7cf0d40ca9f6646d7126fd23b",
     "status": "active",
     "service": "notion"
+  },
+  "aiLearning": {
+    "title": "AI 전문 개발 학습",
+    "path": "/ai/",
+    "status": "active",
+    "service": "github-pages",
+    "publishedLessons": 4,
+    "lastPublishedDate": "2026-09-03"
   }
 }

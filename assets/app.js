@@ -23,9 +23,9 @@ const learningItems = [
   {
     icon: "AI",
     title: "AI 학습",
-    description: "모델 분석, 파인튜닝, 최적화와 프로젝트 실습",
-    state: "Notion 열기 →",
-    url: "https://app.notion.com/p/e407f1c0d6c5489c95056aac40c613af"
+    description: "커리큘럼과 날짜별 모델 분석·수정 실습",
+    state: "학습 목록 열기 →",
+    url: "ai/"
   }
 ];
 
@@ -36,9 +36,11 @@ learningItems.forEach((item) => {
   if (item.url) {
     row.classList.add("learning-item-link");
     row.href = item.url;
-    row.target = "_blank";
-    row.rel = "noopener noreferrer";
-    row.setAttribute("aria-label", `${item.title} Notion에서 열기`);
+    if (/^https?:\/\//.test(item.url)) {
+      row.target = "_blank";
+      row.rel = "noopener noreferrer";
+    }
+    row.setAttribute("aria-label", `${item.title} 열기`);
   }
   row.innerHTML = `
     <span class="learning-icon" aria-hidden="true">${item.icon}</span>
