@@ -4,14 +4,18 @@ const STORAGE_PROGRESS = "dailyEnglish.progress.v1";
 const nodes = {
   content: document.querySelector("#reading-content"),
   glossary: document.querySelector("#glossary-grid"),
+  lessonList: document.querySelector("#lesson-list"),
   popover: document.querySelector("#word-popover"),
   quiz: document.querySelector("#quiz-list"),
-  toast: document.querySelector("#toast")
+  toast: document.querySelector("#toast"),
+  voicePrompt: document.querySelector("#voice-prompt-preview"),
+  voiceStatus: document.querySelector("#voice-status")
 };
 
 let activeWord = null;
 let activeEntry = null;
 let currentLesson = null;
+let allLessons = [];
 let savedWords = readStorage(STORAGE_WORDS, []);
 let progressStore = readStorage(STORAGE_PROGRESS, {});
 
@@ -41,6 +45,29 @@ function showToast(message) {
   showToast.timer = setTimeout(() => nodes.toast.classList.remove("is-visible"), 1800);
 }
 
+function localToday() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kuala_Lumpur", year: "numeric", month: "2-digit", day: "2-digit"
+  }).format(new Date());
+}
+
+function formatLessonDate(date, options = {}) {
+  return new Intl.DateTimeFormat("ko-KR", {
+    year: "numeric", month: options.short ? "short" : "long", day: "numeric",
+    ...(options.weekday ? { weekday: "short" } : {})
+  }).format(new Date(`${date}T00:00:00`));
+}
+
+function calculateProgress(lesson) {
+  const progress = progressStore[lesson.date] || { answers: {}, sections: {}, complete: false };
+  const questions = lesson.quiz || [];
+  const answered = Object.keys(progress.answers || {}).length;
+  const sectionCount = Object.keys(progress.sections || {}).length;
+  const quizPart = questions.length ? answered / questions.length * 50 : 50;
+  const studyPart = Math.min(sectionCount, 4) / 4 * 40;
+  return Math.round(Math.min(100, quizPart + studyPart + (progress.complete ? 10 : 0)));
+}
+
 function lessonProgress() {
   if (!currentLesson) return { answers: {}, sections: {}, complete: false };
   return progressStore[currentLesson.date] || { answers: {}, sections: {}, complete: false };
@@ -57,12 +84,7 @@ function updateProgressUI() {
   if (!currentLesson) return;
   const progress = lessonProgress();
   const questions = currentLesson.quiz || [];
-  const answered = Object.keys(progress.answers || {}).length;
-  const sectionCount = Object.keys(progress.sections || {}).length;
-  const quizPart = questions.length ? answered / questions.length * 50 : 50;
-  const studyPart = Math.min(sectionCount, 4) / 4 * 40;
-  const completePart = progress.complete ? 10 : 0;
-  const percent = Math.round(Math.min(100, quizPart + studyPart + completePart));
+  const percent = calculateProgress(currentLesson);
   document.querySelector("#progress-text").textContent = `${percent}% 완료`;
   document.querySelector("#progress-bar").style.width = `${percent}%`;
   document.querySelector("#complete-lesson").textContent = progress.complete ? "✓ 오늘 학습 완료" : "오늘 학습 완료하기";
@@ -267,19 +289,121 @@ function exportWords() {
   URL.revokeObjectURL(link.href);
 }
 
-function switchView(view) {
-  const wordbook = view === "wordbook";
-  document.querySelector("#lesson-view").hidden = wordbook;
-  document.querySelector("#wordbook-view").hidden = !wordbook;
-  document.querySelectorAll("[data-view]").forEach((button) => button.classList.toggle("is-active", button.dataset.view === view));
-  if (wordbook) renderWordbook(document.querySelector("#word-search").value);
-  history.replaceState(null, "", wordbook ? "#wordbook" : "#lesson");
+function renderArchive() {
+  const today = localToday();
+  document.querySelector("#lesson-count").textContent = allLessons.length;
+  document.querySelector("#archive-total").textContent = `${allLessons.length} lessons`;
+  nodes.lessonList.innerHTML = allLessons.map((lesson, index) => {
+    const percent = calculateProgress(lesson);
+    const isCurrent = lesson.date === currentLesson?.date;
+    const timing = lesson.date === today ? "오늘" : lesson.date < today ? "지난 수업" : "이번 주";
+    return `<article class="lesson-row ${isCurrent ? "is-current" : ""}">
+      <div class="lesson-index">${String(allLessons.length - index).padStart(2, "0")}</div>
+      <div class="lesson-date"><time datetime="${lesson.date}">${escapeHtml(formatLessonDate(lesson.date, { short: true, weekday: true }))}</time><span>${timing}</span></div>
+      <div class="lesson-summary"><p>${escapeHtml(lesson.grammarTopic)}</p><h2>${escapeHtml(lesson.readingTitle)}</h2></div>
+      <div class="lesson-progress" aria-label="학습 진도 ${percent}%"><span><i style="width:${percent}%"></i></span><strong>${percent}%</strong></div>
+      <button class="lesson-open" type="button" data-lesson-date="${lesson.date}">${isCurrent ? "현재 학습" : "학습 열기"}</button>
+    </article>`;
+  }).join("");
+  document.querySelectorAll("[data-lesson-date]").forEach((button) => button.addEventListener("click", () => openLesson(button.dataset.lessonDate)));
+}
+
+function buildVoicePrompt(lesson) {
+  const grammarPoints = (lesson.grammar?.points || []).map((point, index) => {
+    const examples = (point.examples || []).map((example) => `     - ${example}`).join("\n");
+    return `  ${index + 1}. ${point.title}: ${point.explanation}\n${examples}`;
+  }).join("\n");
+  const idioms = (lesson.idioms || []).map((item, index) => `  ${index + 1}. ${item.term} — ${item.meaning}\n     Example: ${item.example}`).join("\n");
+  const reading = (lesson.paragraphs || []).map((paragraph, index) => `  ${index + 1}. ${paragraph}`).join("\n");
+
+  return `You are my B2 English speaking coach. I already completed this Daily English lesson by myself on mobile. Now conduct a focused 12–15 minute review in Voice.
+
+Follow these rules strictly:
+1. Speak mainly in English. Use short Korean explanations only when a correction would otherwise be unclear.
+2. Ask exactly one question at a time and wait until I finish my whole answer. Do not interrupt a short pause. If you are unsure whether I finished, ask, “Are you finished?”
+3. After every answer, give brief feedback in this order: meaning → grammar → a more natural expression → one pronunciation point.
+4. Then ask me to repeat the corrected sentence. Confirm it briefly before moving to the next question.
+5. Do not reteach the full mobile lesson. Review it through speaking: a short warm-up, grammar use, idioms, reading comprehension, and pronunciation.
+6. If you cannot judge pronunciation reliably, say so instead of inventing an error.
+7. At the end, summarize my three most important corrections and two items to review again.
+8. Begin immediately with one warm-up question connected to the reading. Do not explain these instructions back to me.
+
+LESSON
+Date: ${lesson.date}
+Reading: ${lesson.readingTitle}
+Grammar: ${lesson.grammarTopic}
+
+GRAMMAR NOTES
+${grammarPoints}
+
+IDIOMS
+${idioms}
+
+READING PASSAGE
+${reading}`;
+}
+
+function renderVoiceReview() {
+  if (!currentLesson) return;
+  document.querySelector("#voice-lesson-date").textContent = formatLessonDate(currentLesson.date, { weekday: true });
+  document.querySelector("#voice-lesson-title").textContent = currentLesson.readingTitle;
+  document.querySelector("#voice-lesson-topic").textContent = `Grammar · ${currentLesson.grammarTopic}`;
+  nodes.voicePrompt.textContent = buildVoicePrompt(currentLesson);
+  nodes.voiceStatus.textContent = "";
+}
+
+async function copyVoicePrompt() {
+  if (!currentLesson) return;
+  const prompt = buildVoicePrompt(currentLesson);
+  try {
+    await navigator.clipboard.writeText(prompt);
+  } catch (_) {
+    const textarea = document.createElement("textarea");
+    textarea.value = prompt;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.append(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    textarea.remove();
+  }
+  nodes.voiceStatus.textContent = "✓ 프롬프트를 복사했습니다. ChatGPT 새 채팅에 붙여넣어 전송한 뒤 Voice를 시작하세요.";
+  showToast("음성 리뷰 프롬프트를 복사했습니다.");
+}
+
+function updateLocation(view) {
+  const url = new URL(location.href);
+  if (currentLesson) url.searchParams.set("date", currentLesson.date);
+  url.hash = view === "lesson" ? "lesson" : view;
+  history.replaceState(null, "", url);
+}
+
+function switchView(view, updateUrl = true) {
+  const supported = ["lesson", "archive", "voice", "wordbook"];
+  const nextView = supported.includes(view) ? view : "lesson";
+  supported.forEach((name) => {
+    document.querySelector(`#${name}-view`).hidden = name !== nextView;
+  });
+  document.querySelectorAll("[data-view]").forEach((button) => button.classList.toggle("is-active", button.dataset.view === nextView));
+  if (nextView === "wordbook") renderWordbook(document.querySelector("#word-search").value);
+  if (nextView === "archive") renderArchive();
+  if (nextView === "voice") renderVoiceReview();
+  if (updateUrl) updateLocation(nextView);
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function openLesson(date) {
+  const lesson = allLessons.find((item) => item.date === date);
+  if (!lesson) return;
+  renderLesson(lesson);
+  renderArchive();
+  switchView("lesson");
 }
 
 function renderLesson(lesson) {
   currentLesson = lesson;
-  document.querySelector("#lesson-date").textContent = new Intl.DateTimeFormat("ko-KR", { year: "numeric", month: "long", day: "numeric" }).format(new Date(`${lesson.date}T00:00:00`));
+  document.querySelector("#lesson-date").textContent = formatLessonDate(lesson.date, { weekday: true });
   document.querySelector("#lesson-title").textContent = lesson.readingTitle;
   document.querySelector("#grammar-topic").textContent = `Grammar · ${lesson.grammarTopic}`;
   document.querySelector("#word-count").textContent = `${lesson.vocabulary.length} words`;
@@ -295,6 +419,7 @@ function renderLesson(lesson) {
   renderQuiz(lesson.quiz || []);
   attachWordInteractions(lesson.vocabulary);
   renderWordbook();
+  renderVoiceReview();
   updateProgressUI();
 
   const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
@@ -307,10 +432,12 @@ document.querySelectorAll("[data-view]").forEach((button) => button.addEventList
 document.querySelector("#word-search").addEventListener("input", (event) => renderWordbook(event.target.value));
 document.querySelector("#export-words").addEventListener("click", exportWords);
 document.querySelector("#print-lesson").addEventListener("click", () => window.print());
+document.querySelector("#copy-voice-prompt").addEventListener("click", copyVoicePrompt);
 document.querySelector("#save-popover-word").addEventListener("click", (event) => { event.stopPropagation(); saveWord(activeEntry); });
 document.querySelector("#complete-lesson").addEventListener("click", () => {
   const progress = lessonProgress();
   saveProgress({ ...progress, complete: !progress.complete });
+  renderArchive();
   showToast(progress.complete ? "완료 표시를 해제했습니다." : "오늘 학습을 완료했습니다!");
 });
 document.addEventListener("click", closePopover);
@@ -322,15 +449,17 @@ fetch("../data/learning-history.json")
   .then((response) => { if (!response.ok) throw new Error("Learning history request failed"); return response.json(); })
   .then((data) => {
     if (!data.english?.length) throw new Error("No English lessons available");
-    const today = new Intl.DateTimeFormat("en-CA", {
-      timeZone: "Asia/Kuala_Lumpur", year: "numeric", month: "2-digit", day: "2-digit"
-    }).format(new Date());
-    const ordered = [...data.english].sort((a, b) => b.date.localeCompare(a.date));
-    const lesson = ordered.find((item) => item.date === today)
-      || ordered.find((item) => item.date < today)
-      || ordered[ordered.length - 1];
+    const today = localToday();
+    allLessons = [...data.english].sort((a, b) => b.date.localeCompare(a.date));
+    const requestedDate = new URLSearchParams(location.search).get("date");
+    const lesson = allLessons.find((item) => item.date === requestedDate)
+      || allLessons.find((item) => item.date === today)
+      || allLessons.find((item) => item.date < today)
+      || allLessons[allLessons.length - 1];
     renderLesson(lesson);
-    if (location.hash === "#wordbook") switchView("wordbook");
+    renderArchive();
+    const initialView = location.hash.replace("#", "");
+    switchView(["archive", "voice", "wordbook"].includes(initialView) ? initialView : "lesson", false);
   })
   .catch(() => {
     document.querySelector("#error-state").hidden = false;
