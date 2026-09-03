@@ -1,1 +1,860 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="NCHW와 tensor/Conv stride를 구분하고 Conv2d 출력 크기·파라미터 수를 계산한다. residual/add/concat의 shape 계약을 이해하며 forward hook으로 중간 shape를 추적하고, 입력 채널·해상도·분류 head를 안전하게 수정한다."><title>AI 전문 개발 학습 #01 — Tensor Shape로 모델 구조 읽기</title><link rel="stylesheet" href="ai.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><div class="lesson-meta"><span class="pill">2026.08.31</span><span class="pill">딥러닝 기초·수학</span><span class="pill">Intermediate</span></div><h1 class="lesson-title">AI 전문 개발 학습 #01 — Tensor Shape로 모델 구조 읽기</h1><p class="lesson-summary">NCHW와 tensor/Conv stride를 구분하고 Conv2d 출력 크기·파라미터 수를 계산한다. residual/add/concat의 shape 계약을 이해하며 forward hook으로 중간 shape를 추적하고, 입력 채널·해상도·분류 head를 안전하게 수정한다.</p><div class="lesson-body" id="lesson-body"></div></article><aside class="toc"><strong>이 페이지에서</strong><nav id="toc-links"></nav></aside></main><footer><a href="./">← AI 학습 목록으로 돌아가기</a></footer><script type="application/json" id="lesson-source">"# 학습 개요\n<callout icon=\"🎯\" color=\"blue_bg\">\n\t**예상 시간: 38분**  \n\t오늘의 핵심은 모델을 레이어 이름이 아니라 **tensor shape의 변환 그래프**로 읽는 것입니다. 공개 모델을 가져와 학습·배포한 경험이 있다면, 이제부터는 각 연산이 `(N, C, H, W)`를 어떻게 바꾸고 어느 지점에서 계약(contract)이 깨지는지를 추적합니다.\n</callout>\n## 1. 시간표와 학습 목표\n<table fit-page-width=\"true\" header-row=\"true\">\n<tr>\n<td>시간</td>\n<td>학습 내용</td>\n<td>완료 기준</td>\n</tr>\n<tr>\n<td>0–4분</td>\n<td>NCHW, rank, tensor stride</td>\n<td>`shape`, `ndim`, `stride()`를 구분한다</td>\n</tr>\n<tr>\n<td>4–11분</td>\n<td>Conv2d 출력 크기와 파라미터 수</td>\n<td>손으로 계산하고 코드 결과를 예측한다</td>\n</tr>\n<tr>\n<td>11–16분</td>\n<td>residual/add/concat 제약</td>\n<td>merge 전 shape 계약을 설명한다</td>\n</tr>\n<tr>\n<td>16–25분</td>\n<td>forward hook 실습</td>\n<td>모델 중간 shape를 자동 출력한다</td>\n</tr>\n<tr>\n<td>25–31분</td>\n<td>입력·해상도·head 수정</td>\n<td>수정 범위와 trade-off를 판단한다</td>\n</tr>\n<tr>\n<td>31–35분</td>\n<td>의도적 shape 오류 디버깅</td>\n<td>오류 지점을 찾고 projection으로 고친다</td>\n</tr>\n<tr>\n<td>35–38분</td>\n<td>체크리스트와 복습 문제</td>\n<td>5문제 중 4문제 이상 설명한다</td>\n</tr>\n</table>\n학습 후에는 다음을 할 수 있어야 합니다.\n- 4D 이미지 tensor를 `NCHW`로 읽고 rank와 memory stride를 구분한다.\n- `Conv2d`의 출력 공간 크기와 학습 파라미터 수를 계산한다.\n- residual addition과 channel concatenation이 요구하는 shape 조건을 판단한다.\n- forward hook으로 기존 PyTorch 모델의 중간 tensor shape를 추적한다.\n- 입력 채널, 입력 해상도, 출력 head를 바꿀 때 무엇이 깨질 수 있는지 사전에 점검한다.\n- shape 오류 메시지를 결과가 아니라 **최초로 계약이 깨진 지점**까지 역추적한다.\n---\n# 2. Tensor shape를 모델의 인터페이스로 읽기\n## 2.1 NCHW와 rank\n이미지용 PyTorch `Conv2d`의 대표 입력 형식은 `(N, C, H, W)`입니다.\n<table fit-page-width=\"true\" header-row=\"true\">\n<tr>\n<td>축</td>\n<td>의미</td>\n<td>예: (8, 3, 224, 224)</td>\n</tr>\n<tr>\n<td>N</td>\n<td>batch size</td>\n<td>이미지 8장</td>\n</tr>\n<tr>\n<td>C</td>\n<td>channel/feature map 수</td>\n<td>RGB 3채널</td>\n</tr>\n<tr>\n<td>H</td>\n<td>height</td>\n<td>224 pixels</td>\n</tr>\n<tr>\n<td>W</td>\n<td>width</td>\n<td>224 pixels</td>\n</tr>\n</table>\n**Rank**는 축의 개수입니다. `(8, 3, 224, 224)`는 rank 4이고, `x.ndim == 4`입니다. Rank와 각 축의 크기는 다릅니다. 예를 들어 `(1, 1, 512, 512)`와 `(32, 128, 7, 7)`은 모두 rank 4입니다.\n```python\nimport torch\n\nx = torch.randn(8, 3, 224, 224)\nprint(x.shape)    # torch.Size([8, 3, 224, 224])\nprint(x.ndim)     # 4\nprint(x.numel())  # 8 * 3 * 224 * 224\n```\n실무에서는 각 tensor에 의미가 드러나는 주석을 붙이십시오.\n```python\n# x: [N, C, H, W]\n# logits: [N, num_classes]\n# mask_logits: [N, num_classes, H, W]\n```\n`[8, 1]`과 `[8]`은 원소 수는 같아도 다른 계약입니다. `squeeze()`를 축 지정 없이 사용하면 batch size가 1일 때 batch 축까지 사라질 수 있으므로 `squeeze(dim=...)` 또는 `flatten(start_dim=1)`처럼 의도를 명시합니다.\n## 2.2 두 종류의 stride를 구분하기\n딥러닝 코드에서 `stride`는 두 의미로 쓰입니다.\n1. **Tensor memory stride**: 특정 축을 1만큼 이동할 때 저장소에서 몇 원소를 건너뛰는지 나타냅니다.\n2. **Convolution stride**: kernel이 입력 공간을 몇 칸씩 이동하는지 나타냅니다.\n```python\nx = torch.randn(2, 3, 32, 32)\nprint(x.shape)          # [2, 3, 32, 32]\nprint(x.stride())       # 보통 (3072, 1024, 32, 1)\nprint(x.is_contiguous())\n\ny = x.permute(0, 2, 3, 1)  # NCHW -> NHWC view\nprint(y.shape)               # [2, 32, 32, 3]\nprint(y.stride())            # 메모리 배치는 그대로이므로 stride가 달라짐\nprint(y.is_contiguous())     # False\n\ny = y.contiguous()           # 필요할 때만 실제 연속 메모리로 복사\n```\n`permute`는 축의 해석을 바꾸지만 대개 데이터를 즉시 복사하지 않습니다. 이 때문에 non-contiguous tensor에 `view()`가 실패할 수 있습니다. `reshape()`는 가능한 경우 view를 만들고 필요하면 복사할 수 있으므로 더 관대하지만, 복사 비용이 숨어 있을 수 있습니다. 성능 문제를 볼 때는 `shape`뿐 아니라 `stride()`와 `is_contiguous()`도 확인합니다.\n---\n# 3. Conv2d 출력 크기와 파라미터 수\n입력이 `(N, C_in, H_in, W_in)`이고 kernel, stride, padding, dilation이 축별로 각각 `K, S, P, D`일 때 출력 높이는 다음과 같습니다.\n$$\nH_{out}=\\left\\lfloor\\frac{H_{in}+2P_h-D_h(K_h-1)-1}{S_h}+1\\right\\rfloor\n$$\n폭 `W_out`도 같은 식을 사용합니다. 출력 tensor는 `(N, C_out, H_out, W_out)`입니다. 공식 `Conv2d` 문서도 같은 규칙을 정의합니다: [PyTorch Conv2d](https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)\n## 3.1 계산 예제\n```python\nconv = torch.nn.Conv2d(\n    in_channels=3,\n    out_channels=64,\n    kernel_size=7,\n    stride=2,\n    padding=3,\n    bias=True,\n)\nx = torch.randn(8, 3, 224, 224)\ny = conv(x)\nprint(y.shape)  # [8, 64, 112, 112]\n```\n높이 계산:\n`floor((224 + 2×3 - 1×(7-1) - 1) / 2 + 1) = floor(112.5) = 112`\n파라미터 수는 `groups`까지 포함하면 다음과 같습니다.\n$$\n\\text{weight params}=C_{out}\\times\\frac{C_{in}}{groups}\\times K_h\\times K_w\n$$\nBias가 있으면 `C_out`을 더합니다. 위 레이어는 `64×3×7×7 + 64 = 9,472`개입니다. Batch size와 입력 해상도는 **파라미터 수를 바꾸지 않지만**, activation memory와 연산량은 바꿉니다.\n## 3.2 바로 풀어보기\n입력이 `(8, 32, 55, 73)`이고 `Conv2d(32, 64, kernel_size=3, stride=2, padding=1, bias=False)`라면:\n- `H_out = 28`\n- `W_out = 37`\n- 출력 shape = `(8, 64, 28, 37)`\n- 파라미터 수 = `64×32×3×3 = 18,432`\n가장 흔한 실수는 `padding=1이면 무조건 공간 크기가 유지된다`고 생각하는 것입니다. 이는 보통 `kernel=3, dilation=1, stride=1`일 때만 맞습니다. `stride=2`이면 대략 절반이 되고, 홀수 입력은 floor 규칙 때문에 한 칸 차이가 날 수 있습니다.\n---\n# 4. residual/add/concat의 shape 계약\n## 4.1 Add: 원칙적으로 모든 축이 같아야 한다\nResidual block의 `out + identity`는 `(N, C, H, W)`가 정확히 같아야 합니다.\n```python\nassert out.shape == identity.shape\nout = out + identity\n```\nPyTorch의 일반 덧셈은 broadcasting을 지원하므로 `(N,C,H,W) + (N,C,1,1)`도 실행됩니다. 하지만 residual 연결에서 우연한 broadcasting은 설계 오류를 숨길 수 있습니다. 따라서 merge 직전에 exact-shape assertion을 두는 것이 안전합니다.\n채널 또는 해상도가 달라지면 skip branch에 projection을 둡니다.\n```python\nprojection = torch.nn.Conv2d(\n    in_channels=16,\n    out_channels=32,\n    kernel_size=1,\n    stride=2,\n    bias=False,\n)\n```\n`1×1, stride=2` projection은 `C:16→32`, `H/W:56→28`을 동시에 맞춥니다. 대신 파라미터와 연산이 늘며 identity가 더 이상 완전한 무변환 경로는 아닙니다.\n## 4.2 Concat: 합칠 축 이외의 모든 축이 같아야 한다\n```python\na = torch.randn(4, 32, 28, 28)\nb = torch.randn(4, 16, 28, 28)\nc = torch.cat([a, b], dim=1)\nprint(c.shape)  # [4, 48, 28, 28]\n```\nChannel concat에서는 `N`, `H`, `W`가 같아야 하고 출력 channel은 합이 됩니다. 따라서 다음 레이어의 `in_channels`도 48이어야 합니다. 공식 문서: [PyTorch torch.cat](https://docs.pytorch.org/docs/stable/generated/torch.cat.html)\n<table fit-page-width=\"true\" header-row=\"true\">\n<tr>\n<td>연산</td>\n<td>입력 조건</td>\n<td>출력</td>\n<td>주요 trade-off</td>\n</tr>\n<tr>\n<td>`add`</td>\n<td>보통 전체 shape 동일</td>\n<td>shape 유지</td>\n<td>채널 수 증가 없이 정보 결합</td>\n</tr>\n<tr>\n<td>`cat(dim=1)`</td>\n<td>N/H/W 동일</td>\n<td>채널 합</td>\n<td>정보 보존이 좋지만 메모리와 다음 Conv 비용 증가</td>\n</tr>\n<tr>\n<td>`stack`</td>\n<td>전체 shape 동일</td>\n<td>새 축 추가</td>\n<td>concat과 의미가 다름</td>\n</tr>\n</table>\nU-Net 계열에서는 encoder와 decoder feature의 H/W가 한 칸 다를 수 있습니다. 입력 크기가 downsampling 배수와 맞지 않거나 padding 규칙이 다르기 때문입니다. `interpolate`나 crop으로 억지로 맞추기 전에 **어느 branch의 좌표계와 해상도를 기준으로 삼을지** 먼저 결정해야 합니다.\n---\n# 5. 실습 A — forward hook으로 중간 tensor shape 추적\n아래 코드는 그대로 실행할 수 있는 독립 예제입니다. Leaf module마다 hook을 달고 입력·출력 shape를 출력합니다. Hook은 `forward()`가 끝난 뒤 호출되며, 반환된 handle의 `remove()`로 해제해야 합니다. 공식 문서: [PyTorch Module.register_forward_hook](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook)\n```python\nimport torch\nimport torch.nn as nn\n\n\ndef shape_tree(obj):\n    \"\"\"Tensor, tuple/list, dict가 섞인 입출력을 읽기 좋은 shape로 변환.\"\"\"\n    if isinstance(obj, torch.Tensor):\n        return tuple(obj.shape)\n    if isinstance(obj, (tuple, list)):\n        return [shape_tree(item) for item in obj]\n    if isinstance(obj, dict):\n        return {key: shape_tree(value) for key, value in obj.items()}\n    return type(obj).__name__\n\n\nclass Add(nn.Module):\n    \"\"\"함수형 add도 hook에서 보이게 만든 작은 module.\"\"\"\n    def forward(self, left, right):\n        if left.shape != right.shape:\n            raise RuntimeError(\n                f\"Residual shape mismatch: {tuple(left.shape)} vs {tuple(right.shape)}\"\n            )\n        return left + right\n\n\nclass ResidualBlock(nn.Module):\n    def __init__(self, in_ch, out_ch, stride=1):\n        super().__init__()\n        self.conv1 = nn.Conv2d(\n            in_ch, out_ch, kernel_size=3, stride=stride, padding=1, bias=False\n        )\n        self.bn1 = nn.BatchNorm2d(out_ch)\n        self.relu1 = nn.ReLU(inplace=False)\n        self.conv2 = nn.Conv2d(\n            out_ch, out_ch, kernel_size=3, stride=1, padding=1, bias=False\n        )\n        self.bn2 = nn.BatchNorm2d(out_ch)\n\n        if stride != 1 or in_ch != out_ch:\n            self.skip = nn.Sequential(\n                nn.Conv2d(\n                    in_ch, out_ch, kernel_size=1, stride=stride, bias=False\n                ),\n                nn.BatchNorm2d(out_ch),\n            )\n        else:\n            self.skip = nn.Identity()\n\n        self.add = Add()\n        self.relu2 = nn.ReLU(inplace=False)\n\n    def forward(self, x):\n        identity = self.skip(x)\n        out = self.relu1(self.bn1(self.conv1(x)))\n        out = self.bn2(self.conv2(out))\n        out = self.add(out, identity)\n        return self.relu2(out)\n\n\nclass ShapeNet(nn.Module):\n    def __init__(self, in_channels=3, num_classes=5):\n        super().__init__()\n        self.stem = nn.Sequential(\n            nn.Conv2d(\n                in_channels, 16, kernel_size=3, stride=2, padding=1, bias=False\n            ),\n            nn.BatchNorm2d(16),\n            nn.ReLU(inplace=False),\n        )\n        self.block1 = ResidualBlock(16, 16, stride=1)\n        self.block2 = ResidualBlock(16, 32, stride=2)\n        self.pool = nn.AdaptiveAvgPool2d((1, 1))\n        self.flatten = nn.Flatten(start_dim=1)\n        self.head = nn.Linear(32, num_classes)\n\n    def forward(self, x):\n        x = self.stem(x)\n        x = self.block1(x)\n        x = self.block2(x)\n        x = self.pool(x)\n        x = self.flatten(x)\n        return self.head(x)\n\n\ndef install_shape_hooks(model):\n    handles = []\n\n    def make_hook(name):\n        def hook(module, args, output):\n            print(\n                f\"{name:24s} {module.__class__.__name__:18s} \"\n                f\"in={shape_tree(args)} -> out={shape_tree(output)}\"\n            )\n        return hook\n\n    for name, module in model.named_modules():\n        # 중복 출력을 줄이기 위해 자식이 없는 leaf module만 추적한다.\n        if name and len(list(module.children())) == 0:\n            handles.append(module.register_forward_hook(make_hook(name)))\n    return handles\n\n\nif __name__ == \"__main__\":\n    torch.manual_seed(0)\n    model = ShapeNet(in_channels=3, num_classes=5).eval()\n    x = torch.randn(2, 3, 224, 224)\n    handles = install_shape_hooks(model)\n\n    try:\n        with torch.inference_mode():\n            logits = model(x)\n        print(\"final:\", tuple(logits.shape))\n    finally:\n        for handle in handles:\n            handle.remove()\n```\n## 예상 결과의 핵심 줄\n```plain text\nstem.0                   Conv2d             in=[(2, 3, 224, 224)] -> out=(2, 16, 112, 112)\nblock1.add               Add                in=[(2, 16, 112, 112), (2, 16, 112, 112)] -> out=(2, 16, 112, 112)\nblock2.conv1             Conv2d             in=[(2, 16, 112, 112)] -> out=(2, 32, 56, 56)\nblock2.skip.0            Conv2d             in=[(2, 16, 112, 112)] -> out=(2, 32, 56, 56)\nblock2.add               Add                in=[(2, 32, 56, 56), (2, 32, 56, 56)] -> out=(2, 32, 56, 56)\npool                     AdaptiveAvgPool2d  in=[(2, 32, 56, 56)] -> out=(2, 32, 1, 1)\nflatten                  Flatten            in=[(2, 32, 1, 1)] -> out=(2, 32)\nhead                     Linear             in=[(2, 32)] -> out=(2, 5)\nfinal: (2, 5)\n```\n실제 출력에는 BatchNorm과 ReLU 줄도 포함됩니다. Hook 사용 시 주의점:\n- `torch.add`, `torch.cat`, `F.interpolate`, `torch.flatten` 같은 **함수형 연산은 module hook만으로 보이지 않습니다**. 중요한 연산은 `Add`, `nn.Flatten`처럼 module로 감싸거나 `forward()`에 assertion/log를 둡니다.\n- 한 module이 여러 번 재사용되면 같은 이름의 hook이 여러 번 호출됩니다.\n- hook에서 output을 반환하면 output을 바꿀 수 있습니다. 관찰 목적이라면 아무것도 반환하지 않습니다.\n- 학습 루프에 hook을 계속 남겨두면 로그·메모리·속도 문제가 생길 수 있으므로 `finally`에서 제거합니다.\n- 복잡한 모델은 모든 레이어를 찍지 말고 Conv/Linear/Pooling/merge 지점으로 필터링합니다.\n---\n# 6. 입력 채널·해상도·출력 head를 안전하게 수정하기\n## 6.1 입력 채널 변경\nRGB pretrained backbone을 1채널 초음파 입력에 적용할 때 확인할 항목은 세 가지입니다.\n1. 첫 Conv의 `in_channels`\n2. 입력 normalization의 mean/std와 intensity scaling\n3. pretrained weight를 새 채널에 어떻게 매핑할지\nRGB 3채널을 grayscale 1채널로 직접 바꾸는 예:\n```python\ndef rgb_conv_to_grayscale(old_conv: nn.Conv2d) -> nn.Conv2d:\n    if old_conv.in_channels != 3 or old_conv.groups != 1:\n        raise ValueError(\"이 예제는 일반적인 groups=1 RGB Conv2d만 지원합니다.\")\n\n    new_conv = nn.Conv2d(\n        in_channels=1,\n        out_channels=old_conv.out_channels,\n        kernel_size=old_conv.kernel_size,\n        stride=old_conv.stride,\n        padding=old_conv.padding,\n        dilation=old_conv.dilation,\n        groups=1,\n        bias=old_conv.bias is not None,\n        padding_mode=old_conv.padding_mode,\n    ).to(device=old_conv.weight.device, dtype=old_conv.weight.dtype)\n\n    with torch.no_grad():\n        # RGB filter의 평균을 초기값으로 사용해 activation scale을 과도하게 키우지 않는다.\n        new_conv.weight.copy_(old_conv.weight.mean(dim=1, keepdim=True))\n        if old_conv.bias is not None:\n            new_conv.bias.copy_(old_conv.bias)\n    return new_conv\n\n\nmodel = ShapeNet(in_channels=3, num_classes=5)\nmodel.stem[0] = rgb_conv_to_grayscale(model.stem[0])\ntest_x = torch.randn(2, 1, 224, 224)\nassert model(test_x).shape == (2, 5)\n```\n평균 대신 RGB weight의 합을 쓰면 동일 grayscale 영상을 RGB 세 채널에 복제했을 때 첫 Conv의 출력을 더 가깝게 보존할 수 있지만 activation 크기가 커질 수 있습니다. 어느 쪽이 최선인지는 입력 분포와 normalization에 따라 달라집니다. 짧은 calibration set으로 첫 레이어 activation의 평균·표준편차를 비교하십시오.\n새 modality가 4채널 이상이고 기존 RGB와 의미가 다르면 backbone 첫 Conv를 억지로 확장하는 대신 **학습 가능한 1×1 channel adapter**를 앞에 둘 수 있습니다.\n```python\nadapter = nn.Conv2d(new_input_channels, 3, kernel_size=1, bias=False)\nmodel = nn.Sequential(adapter, pretrained_rgb_backbone)\n```\n이 방식은 backbone checkpoint를 그대로 유지하고 adapter만 먼저 학습할 수 있다는 장점이 있습니다. 반면 입력 채널을 3차원으로 압축하면서 정보 손실이 생길 수 있고 한 레이어의 비용이 추가됩니다. Depthwise/grouped Conv는 `in_channels`, `out_channels`, `groups`의 나눗셈 조건이 함께 묶이므로 일반 Conv처럼 첫 채널만 바꾸면 안 됩니다.\n## 6.2 입력 해상도 변경\n입력 해상도를 바꿀 때 Conv 파라미터 수는 그대로지만 다음은 변합니다.\n- activation memory와 FLOPs: 대체로 `H×W`에 비례\n- 물체가 feature map에서 차지하는 상대 크기와 effective receptive field\n- 여러 번 stride-2 downsampling 후의 홀수/짝수 정렬\n- absolute positional embedding을 쓰는 ViT 계열의 token grid\n- 고정 크기 flatten 뒤 Linear를 쓰는 head의 `in_features`\nCNN classifier는 `AdaptiveAvgPool2d`를 head 앞에 두면 해상도 의존성을 크게 줄일 수 있습니다. 하지만 detection/segmentation처럼 위치 정보가 필요한 모델에서 `(1,1)` global pooling을 넣으면 안 됩니다. 또한 입력 크기가 자유로워져도 batch 내부 tensor 크기는 일반적인 batching에서 같아야 합니다. 서로 다른 크기는 pad, resize, bucketing 또는 list 입력을 지원하는 별도 pipeline이 필요합니다.\n## 6.3 출력 head 변경\n```python\nmodel = ShapeNet(in_channels=3, num_classes=5)\nold_in_features = model.head.in_features\nmodel.head = nn.Linear(old_in_features, 3)\n```\n안전 점검:\n- class index와 label mapping을 새로 정의합니다.\n- loss가 출력 의미와 맞는지 확인합니다. 단일 다중분류는 보통 `[N,C]` logits + `CrossEntropyLoss`, multi-label은 `[N,C]` logits + `BCEWithLogitsLoss`입니다.\n- optimizer를 만든 **뒤에** head를 교체했다면 새 파라미터가 optimizer에 들어 있지 않습니다. head 교체 후 optimizer를 다시 생성하거나 param group을 추가합니다.\n- shape가 다른 기존 head weight는 `strict=False`만으로 항상 무시되지 않습니다. checkpoint에서 해당 key를 제거한 뒤 backbone을 로드합니다.\n```python\nstate = torch.load(\"checkpoint.pt\", map_location=\"cpu\", weights_only=True)\nstate.pop(\"head.weight\", None)\nstate.pop(\"head.bias\", None)\nmissing, unexpected = model.load_state_dict(state, strict=False)\nprint(\"missing:\", missing)\nprint(\"unexpected:\", unexpected)\n```\n모델 구현에 따라 key가 `fc.*`, `classifier.*`, `heads.head.*`일 수 있으므로 `state_dict().keys()`로 실제 이름을 확인합니다.\n---\n# 7. 실습 B — AdaptiveAvgPool로 해상도 의존성 줄이기\n`AdaptiveAvgPool2d((1,1))`은 입력 H/W가 무엇이든 출력 공간 크기를 1×1로 맞추고 채널 수는 유지합니다. 공식 문서: [PyTorch AdaptiveAvgPool2d](https://docs.pytorch.org/docs/stable/generated/torch.nn.AdaptiveAvgPool2d.html)\n```python\nimport torch\nimport torch.nn as nn\n\n\nclass FlexibleClassifier(nn.Module):\n    def __init__(self, in_channels=1, num_classes=7):\n        super().__init__()\n        self.features = nn.Sequential(\n            nn.Conv2d(in_channels, 16, 3, stride=2, padding=1),\n            nn.ReLU(),\n            nn.Conv2d(16, 32, 3, stride=2, padding=1),\n            nn.ReLU(),\n        )\n        self.pool = nn.AdaptiveAvgPool2d((1, 1))\n        self.flatten = nn.Flatten(1)\n        self.head = nn.Linear(32, num_classes)\n\n    def forward(self, x):\n        x = self.features(x)\n        x = self.pool(x)\n        x = self.flatten(x)\n        return self.head(x)\n\n\nmodel = FlexibleClassifier().eval()\nfor height, width in [(128, 160), (224, 224), (320, 512)]:\n    x = torch.randn(4, 1, height, width)\n    with torch.inference_mode():\n        y = model(x)\n    print((height, width), \"->\", tuple(y.shape))\n    assert y.shape == (4, 7)\n```\n예상 결과:\n```plain text\n(128, 160) -> (4, 7)\n(224, 224) -> (4, 7)\n(320, 512) -> (4, 7)\n```\n추가 실습:\n1. `pool = nn.AdaptiveAvgPool2d((4,4))`로 바꿉니다.\n2. `head = nn.Linear(32*4*4, num_classes)`로 바꿉니다.\n3. 세 해상도를 다시 테스트합니다.\n`(4,4)` pooling은 거친 공간 정보를 더 보존하지만 head 파라미터가 `32×16`배의 입력을 받습니다. `(1,1)`은 가장 가볍지만 작은 병변 위치 같은 공간 정보를 global average에서 희석할 수 있습니다.\n---\n# 8. 실습 C — 의도적으로 shape 오류 만들고 고치기\n아래 block은 main branch에서 채널과 해상도를 바꾸지만 skip branch는 그대로 두므로 실패합니다.\n```python\nclass BrokenResidual(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.main = nn.Conv2d(16, 32, kernel_size=3, stride=2, padding=1)\n        self.skip = nn.Identity()  # 의도적인 오류\n        self.add = Add()\n\n    def forward(self, x):\n        return self.add(self.main(x), self.skip(x))\n\n\nbroken = BrokenResidual()\nhandles = install_shape_hooks(broken)\ntry:\n    broken(torch.randn(2, 16, 56, 56))\nfinally:\n    for handle in handles:\n        handle.remove()\n```\n예상 진단:\n```plain text\nmain ... out=(2, 32, 28, 28)\nskip ... out=(2, 16, 56, 56)\nRuntimeError: Residual shape mismatch: (2, 32, 28, 28) vs (2, 16, 56, 56)\n```\n과제:\n1. 어느 축이 다른지 적습니다: `C`, `H`, `W`가 다릅니다.\n2. `main`의 어떤 인자가 각 차이를 만들었는지 찾습니다: `out_channels=32`, `stride=2`입니다.\n3. skip을 아래 projection으로 교체합니다.\n4. hook 결과와 최종 output `(2,32,28,28)`을 확인합니다.\n```python\nself.skip = nn.Conv2d(16, 32, kernel_size=1, stride=2, bias=False)\n```\n**추가 도전:** 두 branch를 `torch.cat(..., dim=1)`으로 합치면 출력 채널은 64입니다. 이때 다음 Conv를 `nn.Conv2d(32, ...)`로 두어 새로운 오류를 만들고, 왜 `in_channels=64`여야 하는지 설명해 보십시오.\n---\n# 9. 디버깅 체크리스트\n오류가 난 마지막 줄부터 임의 수정하지 말고 아래 순서로 좁힙니다.\n- [ ] **입력 계약**: `shape`, `ndim`, dtype, device, value range, channel 순서가 모델 기대와 같은가?\n- [ ] **batch 축**: `squeeze()`로 N이 사라지거나 `unsqueeze()` 위치가 틀리지 않았는가?\n- [ ] **첫 Conv**: 데이터 채널 수와 `in_channels`가 같은가? grouped/depthwise 조건도 맞는가?\n- [ ] **공간 크기 계산**: kernel/stride/padding/dilation을 공식에 넣었는가? 홀수 크기의 floor 효과를 확인했는가?\n- [ ] **merge 직전**: add는 exact shape, concat은 합칠 축 이외 shape가 같은가?\n- [ ] **concat 직후**: 다음 Conv의 `in_channels`가 채널 합과 같은가?\n- [ ] **flatten 경계**: `flatten(start_dim=1)` 이후 feature 수와 Linear의 `in_features`가 같은가?\n- [ ] **출력–loss 계약**: logits/target shape와 dtype이 loss의 요구사항에 맞는가?\n- [ ] **메모리 배치**: permute 뒤 non-contiguous tensor를 `view()`하고 있지 않은가?\n- [ ] **hook 사각지대**: 함수형 add/cat/interpolate/reshape가 로그에서 빠진 것은 아닌가?\n- [ ] **작은 재현 입력**: batch 2의 synthetic tensor로 forward만 먼저 통과하는가?\n- [ ] **여러 해상도 검사**: 짝수, 홀수, 비정사각형 입력을 각각 테스트했는가?\n추천 assertion:\n```python\nassert x.ndim == 4, f\"expected NCHW, got {tuple(x.shape)}\"\nassert x.shape[1] == expected_channels\nassert left.shape == right.shape, (left.shape, right.shape)\nassert logits.shape == (targets.shape[0], num_classes)\n```\n---\n# 10. 복습 문제 5개\n## 문제 1\n입력 `(4, 3, 64, 80)`에 `Conv2d(3, 16, kernel_size=5, stride=2, padding=2, bias=True)`를 적용할 때 출력 shape와 파라미터 수는?\n## 문제 2\nResidual main branch가 `(8, 64, 28, 28)`, skip branch가 `(8, 32, 56, 56)`입니다. 단순 add가 실패하는 이유와 가장 일반적인 수정은?\n## 문제 3\n`a.shape=(2,32,40,40)`, `b.shape=(2,16,40,40)`일 때 `torch.cat([a,b], dim=1)`의 출력 shape는? 이어지는 Conv의 `in_channels`는?\n## 문제 4\n`AdaptiveAvgPool2d((1,1))`이 고정 해상도 flatten+Linear보다 입력 해상도 변경에 강한 이유와 한 가지 손실은?\n## 문제 5\nForward hook을 달았는데 `torch.cat` 지점이 출력되지 않았습니다. 이유와 두 가지 관찰 방법은?\n<details>\n<summary>정답과 해설</summary>\n\t### 정답 1\n\t`H_out=floor((64+4-4-1)/2+1)=32`, `W_out=floor((80+4-4-1)/2+1)=40`이므로 출력은 `(4,16,32,40)`입니다. 파라미터는 `16×3×5×5+16=1,216`개입니다. Batch size와 공간 크기는 파라미터 수에 들어가지 않습니다.\n\t### 정답 2\n\tAdd는 대응 원소끼리 더해야 하므로 C/H/W가 다르면 residual 계약을 만족하지 않습니다. skip에 `Conv2d(32,64,kernel_size=1,stride=2)` projection을 두어 `(8,64,28,28)`로 맞추는 것이 일반적입니다.\n\t### 정답 3\n\t출력은 `(2,48,40,40)`, 다음 Conv의 `in_channels`는 48입니다. Channel concat은 채널을 합치고 나머지 축을 유지합니다.\n\t### 정답 4\n\tAdaptive pooling이 임의 H/W feature map을 고정된 1×1로 바꾸므로 Linear 입력 feature 수가 채널 수 C로 고정됩니다. 손실은 공간 위치 정보가 평균으로 압축되어 작은 국소 신호가 희석될 수 있다는 점입니다.\n\t### 정답 5\n\tModule forward hook은 `nn.Module` 호출을 관찰하며 함수형 `torch.cat`은 module이 아닙니다. `Cat(nn.Module)` wrapper로 감싸 hook을 달거나, merge 직전에 명시적 shape assertion/log를 둡니다. `torch.fx` 같은 graph 도구로 함수형 연산을 추적하는 방법도 있습니다.\n</details>\n---\n# 11. 오늘의 완료 기준과 다음 회차\n오늘 학습을 완료한 것으로 표시할 기준:\n- [ ] Conv2d 예제 두 개의 출력 크기와 파라미터 수를 손으로 계산했다.\n- [ ] ShapeNet hook 코드를 실행해 `block2`의 main/skip shape가 같음을 확인했다.\n- [ ] FlexibleClassifier를 세 가지 해상도로 실행했다.\n- [ ] BrokenResidual의 오류를 재현하고 projection으로 수정했다.\n- [ ] 복습 문제 5개 중 4개 이상을 설명했다.\n**다음 회차 예고 — #02: Forward/Backward graph로 모델 내부 읽기**\n`autograd`가 계산 그래프를 만드는 방식, `requires_grad`, leaf tensor, `detach`, in-place 연산 오류, gradient hook을 다룹니다. 단순히 loss가 감소하는지를 넘어 어느 layer에서 gradient가 사라지거나 폭발하는지 추적합니다.\n---\n# 참고 자료\n- [PyTorch Conv2d 공식 문서](https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)\n- [PyTorch Module과 forward hook 공식 문서](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook)\n- [PyTorch AdaptiveAvgPool2d 공식 문서](https://docs.pytorch.org/docs/stable/generated/torch.nn.AdaptiveAvgPool2d.html)\n- [PyTorch torch.cat 공식 문서](https://docs.pytorch.org/docs/stable/generated/torch.cat.html)\n문서 동작은 2026-08-31에 PyTorch stable 공식 문서 기준으로 확인했습니다."</script><script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script><script defer src="lesson.js"></script></body></html>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="NCHW와 tensor/Conv stride를 구분하고 Conv2d 출력 크기·파라미터 수를 계산한다. residual/add/concat의 shape 계약을 이해하며 forward hook으로 중간 shape를 추적하고, 입력 채널·해상도·분류 head를 안전하게 수정한다."><title>AI 전문 개발 학습 #01 — Tensor Shape로 모델 구조 읽기</title><link rel="stylesheet" href="ai.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><div class="lesson-meta"><span class="pill">2026.08.31</span><span class="pill">딥러닝 기초·수학</span><span class="pill">Intermediate</span></div><h1 class="lesson-title">AI 전문 개발 학습 #01 — Tensor Shape로 모델 구조 읽기</h1><p class="lesson-summary">NCHW와 tensor/Conv stride를 구분하고 Conv2d 출력 크기·파라미터 수를 계산한다. residual/add/concat의 shape 계약을 이해하며 forward hook으로 중간 shape를 추적하고, 입력 채널·해상도·분류 head를 안전하게 수정한다.</p><div class="lesson-body" id="lesson-body">
+<h1 id="학습-개요">학습 개요</h1>
+<div class="callout">
+<p><strong>예상 시간: 38분</strong><br />
+오늘의 핵심은 모델을 레이어 이름이 아니라 <strong>tensor shape의 변환
+그래프</strong>로 읽는 것입니다. 공개 모델을 가져와 학습·배포한 경험이
+있다면, 이제부터는 각 연산이 <code>(N, C, H, W)</code>를 어떻게 바꾸고
+어느 지점에서 계약(contract)이 깨지는지를 추적합니다.</p>
+</div>
+<h2 id="시간표와-학습-목표">1. 시간표와 학습 목표</h2>
+<table>
+<tr>
+<td>
+시간
+</td>
+<td>
+학습 내용
+</td>
+<td>
+완료 기준
+</td>
+</tr>
+<tr>
+<td>
+0–4분
+</td>
+<td>
+NCHW, rank, tensor stride
+</td>
+<td>
+<code>shape</code>, <code>ndim</code>, <code>stride()</code>를 구분한다
+</td>
+</tr>
+<tr>
+<td>
+4–11분
+</td>
+<td>
+Conv2d 출력 크기와 파라미터 수
+</td>
+<td>
+손으로 계산하고 코드 결과를 예측한다
+</td>
+</tr>
+<tr>
+<td>
+11–16분
+</td>
+<td>
+residual/add/concat 제약
+</td>
+<td>
+merge 전 shape 계약을 설명한다
+</td>
+</tr>
+<tr>
+<td>
+16–25분
+</td>
+<td>
+forward hook 실습
+</td>
+<td>
+모델 중간 shape를 자동 출력한다
+</td>
+</tr>
+<tr>
+<td>
+25–31분
+</td>
+<td>
+입력·해상도·head 수정
+</td>
+<td>
+수정 범위와 trade-off를 판단한다
+</td>
+</tr>
+<tr>
+<td>
+31–35분
+</td>
+<td>
+의도적 shape 오류 디버깅
+</td>
+<td>
+오류 지점을 찾고 projection으로 고친다
+</td>
+</tr>
+<tr>
+<td>
+35–38분
+</td>
+<td>
+체크리스트와 복습 문제
+</td>
+<td>
+5문제 중 4문제 이상 설명한다
+</td>
+</tr>
+</table>
+<p>학습 후에는 다음을 할 수 있어야 합니다.</p>
+<ul>
+<li><p>4D 이미지 tensor를 <code>NCHW</code>로 읽고 rank와 memory
+stride를 구분한다.</p></li>
+<li><p><code>Conv2d</code>의 출력 공간 크기와 학습 파라미터 수를
+계산한다.</p></li>
+<li><p>residual addition과 channel concatenation이 요구하는 shape 조건을
+판단한다.</p></li>
+<li><p>forward hook으로 기존 PyTorch 모델의 중간 tensor shape를
+추적한다.</p></li>
+<li><p>입력 채널, 입력 해상도, 출력 head를 바꿀 때 무엇이 깨질 수 있는지
+사전에 점검한다.</p></li>
+<li><h2
+id="shape-오류-메시지를-결과가-아니라-최초로-계약이-깨진-지점까지-역추적한다.">shape
+오류 메시지를 결과가 아니라 <strong>최초로 계약이 깨진 지점</strong>까지
+역추적한다.</h2></li>
+</ul>
+<h1 id="tensor-shape를-모델의-인터페이스로-읽기">2. Tensor shape를
+모델의 인터페이스로 읽기</h1>
+<h2 id="nchw와-rank">2.1 NCHW와 rank</h2>
+이미지용 PyTorch <code>Conv2d</code>의 대표 입력 형식은
+<code>(N, C, H, W)</code>입니다.
+<table>
+<tr>
+<td>
+축
+</td>
+<td>
+의미
+</td>
+<td>
+예: (8, 3, 224, 224)
+</td>
+</tr>
+<tr>
+<td>
+N
+</td>
+<td>
+batch size
+</td>
+<td>
+이미지 8장
+</td>
+</tr>
+<tr>
+<td>
+C
+</td>
+<td>
+channel/feature map 수
+</td>
+<td>
+RGB 3채널
+</td>
+</tr>
+<tr>
+<td>
+H
+</td>
+<td>
+height
+</td>
+<td>
+224 pixels
+</td>
+</tr>
+<tr>
+<td>
+W
+</td>
+<td>
+width
+</td>
+<td>
+224 pixels
+</td>
+</tr>
+</table>
+<p><strong>Rank</strong>는 축의 개수입니다.
+<code>(8, 3, 224, 224)</code>는 rank 4이고,
+<code>x.ndim == 4</code>입니다. Rank와 각 축의 크기는 다릅니다. 예를
+들어 <code>(1, 1, 512, 512)</code>와 <code>(32, 128, 7, 7)</code>은 모두
+rank 4입니다.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.randn(<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">224</span>, <span class="dv">224</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.shape)    <span class="co"># torch.Size([8, 3, 224, 224])</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.ndim)     <span class="co"># 4</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.numel())  <span class="co"># 8 * 3 * 224 * 224</span></span></code></pre></div>
+<p>실무에서는 각 tensor에 의미가 드러나는 주석을 붙이십시오.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># x: [N, C, H, W]</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># logits: [N, num_classes]</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mask_logits: [N, num_classes, H, W]</span></span></code></pre></div>
+<p><code>[8, 1]</code>과 <code>[8]</code>은 원소 수는 같아도 다른
+계약입니다. <code>squeeze()</code>를 축 지정 없이 사용하면 batch size가
+1일 때 batch 축까지 사라질 수 있으므로 <code>squeeze(dim=...)</code>
+또는 <code>flatten(start_dim=1)</code>처럼 의도를 명시합니다.</p>
+<h2 id="두-종류의-stride를-구분하기">2.2 두 종류의 stride를
+구분하기</h2>
+<p>딥러닝 코드에서 <code>stride</code>는 두 의미로 쓰입니다.</p>
+<ol type="1">
+<li><p><strong>Tensor memory stride</strong>: 특정 축을 1만큼 이동할 때
+저장소에서 몇 원소를 건너뛰는지 나타냅니다.</p></li>
+<li><p><strong>Convolution stride</strong>: kernel이 입력 공간을 몇 칸씩
+이동하는지 나타냅니다.</p></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.randn(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">32</span>, <span class="dv">32</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.shape)          <span class="co"># [2, 3, 32, 32]</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.stride())       <span class="co"># 보통 (3072, 1024, 32, 1)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.is_contiguous())</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x.permute(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)  <span class="co"># NCHW -&gt; NHWC view</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y.shape)               <span class="co"># [2, 32, 32, 3]</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y.stride())            <span class="co"># 메모리 배치는 그대로이므로 stride가 달라짐</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y.is_contiguous())     <span class="co"># False</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> y.contiguous()           <span class="co"># 필요할 때만 실제 연속 메모리로 복사</span></span></code></pre></div>
+<h2
+id="permute는-축의-해석을-바꾸지만-대개-데이터를-즉시-복사하지-않습니다.-이-때문에-non-contiguous-tensor에-view가-실패할-수-있습니다.-reshape는-가능한-경우-view를-만들고-필요하면-복사할-수-있으므로-더-관대하지만-복사-비용이-숨어-있을-수-있습니다.-성능-문제를-볼-때는-shape뿐-아니라-stride와-is_contiguous도-확인합니다."><code>permute</code>는
+축의 해석을 바꾸지만 대개 데이터를 즉시 복사하지 않습니다. 이 때문에
+non-contiguous tensor에 <code>view()</code>가 실패할 수 있습니다.
+<code>reshape()</code>는 가능한 경우 view를 만들고 필요하면 복사할 수
+있으므로 더 관대하지만, 복사 비용이 숨어 있을 수 있습니다. 성능 문제를
+볼 때는 <code>shape</code>뿐 아니라 <code>stride()</code>와
+<code>is_contiguous()</code>도 확인합니다.</h2>
+<h1 id="conv2d-출력-크기와-파라미터-수">3. Conv2d 출력 크기와 파라미터
+수</h1>
+<p>입력이 <code>(N, C_in, H_in, W_in)</code>이고 kernel, stride,
+padding, dilation이 축별로 각각 <code>K, S, P, D</code>일 때 출력 높이는
+다음과 같습니다. <span class="math display">$
+H_{out}=\left\lfloor\frac{H_{in}+2P_h-D_h(K_h-1)-1}{S_h}+1\right\rfloor
+$</span> 폭 <code>W_out</code>도 같은 식을 사용합니다. 출력 tensor는
+<code>(N, C_out, H_out, W_out)</code>입니다. 공식 <code>Conv2d</code>
+문서도 같은 규칙을 정의합니다: <a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">PyTorch
+Conv2d</a></p>
+<h2 id="계산-예제">3.1 계산 예제</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conv <span class="op">=</span> torch.nn.Conv2d(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    in_channels<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    out_channels<span class="op">=</span><span class="dv">64</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    kernel_size<span class="op">=</span><span class="dv">7</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    padding<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    bias<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.randn(<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">224</span>, <span class="dv">224</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> conv(x)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y.shape)  <span class="co"># [8, 64, 112, 112]</span></span></code></pre></div>
+<p>높이 계산:
+<code>floor((224 + 2×3 - 1×(7-1) - 1) / 2 + 1) = floor(112.5) = 112</code>
+파라미터 수는 <code>groups</code>까지 포함하면 다음과 같습니다. <span
+class="math display">$
+\text{weight params}=C_{out}\times\frac{C_{in}}{groups}\times K_h\times
+K_w
+$</span> Bias가 있으면 <code>C_out</code>을 더합니다. 위 레이어는
+<code>64×3×7×7 + 64 = 9,472</code>개입니다. Batch size와 입력 해상도는
+<strong>파라미터 수를 바꾸지 않지만</strong>, activation memory와
+연산량은 바꿉니다.</p>
+<h2 id="바로-풀어보기">3.2 바로 풀어보기</h2>
+<p>입력이 <code>(8, 32, 55, 73)</code>이고
+<code>Conv2d(32, 64, kernel_size=3, stride=2, padding=1, bias=False)</code>라면:</p>
+<ul>
+<li><p><code>H_out = 28</code></p></li>
+<li><p><code>W_out = 37</code></p></li>
+<li><p>출력 shape = <code>(8, 64, 28, 37)</code></p></li>
+<li><p>파라미터 수 = <code>64×32×3×3 = 18,432</code> 가장 흔한 실수는
+<code>padding=1이면 무조건 공간 크기가 유지된다</code>고 생각하는
+것입니다. 이는 보통 <code>kernel=3, dilation=1, stride=1</code>일 때만
+맞습니다. <code>stride=2</code>이면 대략 절반이 되고, 홀수 입력은 floor
+규칙 때문에 한 칸 차이가 날 수 있습니다. —</p></li>
+</ul>
+<h1 id="residualaddconcat의-shape-계약">4. residual/add/concat의 shape
+계약</h1>
+<h2 id="add-원칙적으로-모든-축이-같아야-한다">4.1 Add: 원칙적으로 모든
+축이 같아야 한다</h2>
+<p>Residual block의 <code>out + identity</code>는
+<code>(N, C, H, W)</code>가 정확히 같아야 합니다.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> out.shape <span class="op">==</span> identity.shape</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>out <span class="op">=</span> out <span class="op">+</span> identity</span></code></pre></div>
+<p>PyTorch의 일반 덧셈은 broadcasting을 지원하므로
+<code>(N,C,H,W) + (N,C,1,1)</code>도 실행됩니다. 하지만 residual
+연결에서 우연한 broadcasting은 설계 오류를 숨길 수 있습니다. 따라서
+merge 직전에 exact-shape assertion을 두는 것이 안전합니다. 채널 또는
+해상도가 달라지면 skip branch에 projection을 둡니다.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>projection <span class="op">=</span> torch.nn.Conv2d(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    in_channels<span class="op">=</span><span class="dv">16</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    out_channels<span class="op">=</span><span class="dv">32</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    kernel_size<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    bias<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><code>1×1, stride=2</code> projection은 <code>C:16→32</code>,
+<code>H/W:56→28</code>을 동시에 맞춥니다. 대신 파라미터와 연산이 늘며
+identity가 더 이상 완전한 무변환 경로는 아닙니다.</p>
+<h2 id="concat-합칠-축-이외의-모든-축이-같아야-한다">4.2 Concat: 합칠 축
+이외의 모든 축이 같아야 한다</h2>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> torch.randn(<span class="dv">4</span>, <span class="dv">32</span>, <span class="dv">28</span>, <span class="dv">28</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> torch.randn(<span class="dv">4</span>, <span class="dv">16</span>, <span class="dv">28</span>, <span class="dv">28</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> torch.cat([a, b], dim<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c.shape)  <span class="co"># [4, 48, 28, 28]</span></span></code></pre></div>
+Channel concat에서는 <code>N</code>, <code>H</code>, <code>W</code>가
+같아야 하고 출력 channel은 합이 됩니다. 따라서 다음 레이어의
+<code>in_channels</code>도 48이어야 합니다. 공식 문서: <a
+href="https://docs.pytorch.org/docs/stable/generated/torch.cat.html">PyTorch
+torch.cat</a>
+<table>
+<tr>
+<td>
+연산
+</td>
+<td>
+입력 조건
+</td>
+<td>
+출력
+</td>
+<td>
+주요 trade-off
+</td>
+</tr>
+<tr>
+<td>
+<code>add</code>
+</td>
+<td>
+보통 전체 shape 동일
+</td>
+<td>
+shape 유지
+</td>
+<td>
+채널 수 증가 없이 정보 결합
+</td>
+</tr>
+<tr>
+<td>
+<code>cat(dim=1)</code>
+</td>
+<td>
+N/H/W 동일
+</td>
+<td>
+채널 합
+</td>
+<td>
+정보 보존이 좋지만 메모리와 다음 Conv 비용 증가
+</td>
+</tr>
+<tr>
+<td>
+<code>stack</code>
+</td>
+<td>
+전체 shape 동일
+</td>
+<td>
+새 축 추가
+</td>
+<td>
+concat과 의미가 다름
+</td>
+</tr>
+</table>
+<h2
+id="u-net-계열에서는-encoder와-decoder-feature의-hw가-한-칸-다를-수-있습니다.-입력-크기가-downsampling-배수와-맞지-않거나-padding-규칙이-다르기-때문입니다.-interpolate나-crop으로-억지로-맞추기-전에-어느-branch의-좌표계와-해상도를-기준으로-삼을지-먼저-결정해야-합니다.">U-Net
+계열에서는 encoder와 decoder feature의 H/W가 한 칸 다를 수 있습니다.
+입력 크기가 downsampling 배수와 맞지 않거나 padding 규칙이 다르기
+때문입니다. <code>interpolate</code>나 crop으로 억지로 맞추기 전에
+<strong>어느 branch의 좌표계와 해상도를 기준으로 삼을지</strong> 먼저
+결정해야 합니다.</h2>
+<h1 id="실습-a-forward-hook으로-중간-tensor-shape-추적">5. 실습 A —
+forward hook으로 중간 tensor shape 추적</h1>
+<p>아래 코드는 그대로 실행할 수 있는 독립 예제입니다. Leaf module마다
+hook을 달고 입력·출력 shape를 출력합니다. Hook은
+<code>forward()</code>가 끝난 뒤 호출되며, 반환된 handle의
+<code>remove()</code>로 해제해야 합니다. 공식 문서: <a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook">PyTorch
+Module.register_forward_hook</a></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> shape_tree(obj):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Tensor, tuple/list, dict가 섞인 입출력을 읽기 좋은 shape로 변환.&quot;&quot;&quot;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(obj, torch.Tensor):</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">tuple</span>(obj.shape)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(obj, (<span class="bu">tuple</span>, <span class="bu">list</span>)):</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [shape_tree(item) <span class="cf">for</span> item <span class="kw">in</span> obj]</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(obj, <span class="bu">dict</span>):</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {key: shape_tree(value) <span class="cf">for</span> key, value <span class="kw">in</span> obj.items()}</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">type</span>(obj).<span class="va">__name__</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Add(nn.Module):</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;함수형 add도 hook에서 보이게 만든 작은 module.&quot;&quot;&quot;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, left, right):</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> left.shape <span class="op">!=</span> right.shape:</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">RuntimeError</span>(</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>                <span class="ss">f&quot;Residual shape mismatch: </span><span class="sc">{</span><span class="bu">tuple</span>(left.shape)<span class="sc">}</span><span class="ss"> vs </span><span class="sc">{</span><span class="bu">tuple</span>(right.shape)<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> left <span class="op">+</span> right</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ResidualBlock(nn.Module):</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, in_ch, out_ch, stride<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conv1 <span class="op">=</span> nn.Conv2d(</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>            in_ch, out_ch, kernel_size<span class="op">=</span><span class="dv">3</span>, stride<span class="op">=</span>stride, padding<span class="op">=</span><span class="dv">1</span>, bias<span class="op">=</span><span class="va">False</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.bn1 <span class="op">=</span> nn.BatchNorm2d(out_ch)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.relu1 <span class="op">=</span> nn.ReLU(inplace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conv2 <span class="op">=</span> nn.Conv2d(</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>            out_ch, out_ch, kernel_size<span class="op">=</span><span class="dv">3</span>, stride<span class="op">=</span><span class="dv">1</span>, padding<span class="op">=</span><span class="dv">1</span>, bias<span class="op">=</span><span class="va">False</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.bn2 <span class="op">=</span> nn.BatchNorm2d(out_ch)</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> stride <span class="op">!=</span> <span class="dv">1</span> <span class="kw">or</span> in_ch <span class="op">!=</span> out_ch:</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.skip <span class="op">=</span> nn.Sequential(</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>                nn.Conv2d(</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>                    in_ch, out_ch, kernel_size<span class="op">=</span><span class="dv">1</span>, stride<span class="op">=</span>stride, bias<span class="op">=</span><span class="va">False</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>                nn.BatchNorm2d(out_ch),</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.skip <span class="op">=</span> nn.Identity()</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.add <span class="op">=</span> Add()</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.relu2 <span class="op">=</span> nn.ReLU(inplace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>        identity <span class="op">=</span> <span class="va">self</span>.skip(x)</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> <span class="va">self</span>.relu1(<span class="va">self</span>.bn1(<span class="va">self</span>.conv1(x)))</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> <span class="va">self</span>.bn2(<span class="va">self</span>.conv2(out))</span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> <span class="va">self</span>.add(out, identity)</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.relu2(out)</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ShapeNet(nn.Module):</span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, in_channels<span class="op">=</span><span class="dv">3</span>, num_classes<span class="op">=</span><span class="dv">5</span>):</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stem <span class="op">=</span> nn.Sequential(</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>            nn.Conv2d(</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>                in_channels, <span class="dv">16</span>, kernel_size<span class="op">=</span><span class="dv">3</span>, stride<span class="op">=</span><span class="dv">2</span>, padding<span class="op">=</span><span class="dv">1</span>, bias<span class="op">=</span><span class="va">False</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>            nn.BatchNorm2d(<span class="dv">16</span>),</span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(inplace<span class="op">=</span><span class="va">False</span>),</span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.block1 <span class="op">=</span> ResidualBlock(<span class="dv">16</span>, <span class="dv">16</span>, stride<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.block2 <span class="op">=</span> ResidualBlock(<span class="dv">16</span>, <span class="dv">32</span>, stride<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.pool <span class="op">=</span> nn.AdaptiveAvgPool2d((<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.flatten <span class="op">=</span> nn.Flatten(start_dim<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.head <span class="op">=</span> nn.Linear(<span class="dv">32</span>, num_classes)</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.stem(x)</span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.block1(x)</span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.block2(x)</span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.pool(x)</span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.flatten(x)</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.head(x)</span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> install_shape_hooks(model):</span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>    handles <span class="op">=</span> []</span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> make_hook(name):</span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> hook(module, args, output):</span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>                <span class="ss">f&quot;</span><span class="sc">{</span>name<span class="sc">:24s}</span><span class="ss"> </span><span class="sc">{</span>module<span class="sc">.</span>__class__<span class="sc">.</span><span class="va">__name__</span><span class="sc">:18s}</span><span class="ss"> &quot;</span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>                <span class="ss">f&quot;in=</span><span class="sc">{</span>shape_tree(args)<span class="sc">}</span><span class="ss"> -&gt; out=</span><span class="sc">{</span>shape_tree(output)<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> hook</span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, module <span class="kw">in</span> model.named_modules():</span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 중복 출력을 줄이기 위해 자식이 없는 leaf module만 추적한다.</span></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> name <span class="kw">and</span> <span class="bu">len</span>(<span class="bu">list</span>(module.children())) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>            handles.append(module.register_forward_hook(make_hook(name)))</span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> handles</span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>    torch.manual_seed(<span class="dv">0</span>)</span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> ShapeNet(in_channels<span class="op">=</span><span class="dv">3</span>, num_classes<span class="op">=</span><span class="dv">5</span>).<span class="bu">eval</span>()</span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> torch.randn(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">224</span>, <span class="dv">224</span>)</span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>    handles <span class="op">=</span> install_shape_hooks(model)</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> torch.inference_mode():</span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>            logits <span class="op">=</span> model(x)</span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;final:&quot;</span>, <span class="bu">tuple</span>(logits.shape))</span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a>    <span class="cf">finally</span>:</span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> handle <span class="kw">in</span> handles:</span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a>            handle.remove()</span></code></pre></div>
+<h2 id="예상-결과의-핵심-줄">예상 결과의 핵심 줄</h2>
+<p><code>plain text stem.0                   Conv2d             in=[(2, 3, 224, 224)] -&gt; out=(2, 16, 112, 112) block1.add               Add                in=[(2, 16, 112, 112), (2, 16, 112, 112)] -&gt; out=(2, 16, 112, 112) block2.conv1             Conv2d             in=[(2, 16, 112, 112)] -&gt; out=(2, 32, 56, 56) block2.skip.0            Conv2d             in=[(2, 16, 112, 112)] -&gt; out=(2, 32, 56, 56) block2.add               Add                in=[(2, 32, 56, 56), (2, 32, 56, 56)] -&gt; out=(2, 32, 56, 56) pool                     AdaptiveAvgPool2d  in=[(2, 32, 56, 56)] -&gt; out=(2, 32, 1, 1) flatten                  Flatten            in=[(2, 32, 1, 1)] -&gt; out=(2, 32) head                     Linear             in=[(2, 32)] -&gt; out=(2, 5) final: (2, 5)</code>
+실제 출력에는 BatchNorm과 ReLU 줄도 포함됩니다. Hook 사용 시 주의점:</p>
+<ul>
+<li><p><code>torch.add</code>, <code>torch.cat</code>,
+<code>F.interpolate</code>, <code>torch.flatten</code> 같은
+<strong>함수형 연산은 module hook만으로 보이지 않습니다</strong>. 중요한
+연산은 <code>Add</code>, <code>nn.Flatten</code>처럼 module로 감싸거나
+<code>forward()</code>에 assertion/log를 둡니다.</p></li>
+<li><p>한 module이 여러 번 재사용되면 같은 이름의 hook이 여러 번
+호출됩니다.</p></li>
+<li><p>hook에서 output을 반환하면 output을 바꿀 수 있습니다. 관찰
+목적이라면 아무것도 반환하지 않습니다.</p></li>
+<li><p>학습 루프에 hook을 계속 남겨두면 로그·메모리·속도 문제가 생길 수
+있으므로 <code>finally</code>에서 제거합니다.</p></li>
+<li><h2
+id="복잡한-모델은-모든-레이어를-찍지-말고-convlinearpoolingmerge-지점으로-필터링합니다.">복잡한
+모델은 모든 레이어를 찍지 말고 Conv/Linear/Pooling/merge 지점으로
+필터링합니다.</h2></li>
+</ul>
+<h1 id="입력-채널해상도출력-head를-안전하게-수정하기">6. 입력
+채널·해상도·출력 head를 안전하게 수정하기</h1>
+<h2 id="입력-채널-변경">6.1 입력 채널 변경</h2>
+<p>RGB pretrained backbone을 1채널 초음파 입력에 적용할 때 확인할 항목은
+세 가지입니다.</p>
+<ol type="1">
+<li><p>첫 Conv의 <code>in_channels</code></p></li>
+<li><p>입력 normalization의 mean/std와 intensity scaling</p></li>
+<li><p>pretrained weight를 새 채널에 어떻게 매핑할지 RGB 3채널을
+grayscale 1채널로 직접 바꾸는 예:</p></li>
+</ol>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rgb_conv_to_grayscale(old_conv: nn.Conv2d) <span class="op">-&gt;</span> nn.Conv2d:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> old_conv.in_channels <span class="op">!=</span> <span class="dv">3</span> <span class="kw">or</span> old_conv.groups <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;이 예제는 일반적인 groups=1 RGB Conv2d만 지원합니다.&quot;</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    new_conv <span class="op">=</span> nn.Conv2d(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        in_channels<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        out_channels<span class="op">=</span>old_conv.out_channels,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        kernel_size<span class="op">=</span>old_conv.kernel_size,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        stride<span class="op">=</span>old_conv.stride,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        padding<span class="op">=</span>old_conv.padding,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        dilation<span class="op">=</span>old_conv.dilation,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        groups<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        bias<span class="op">=</span>old_conv.bias <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        padding_mode<span class="op">=</span>old_conv.padding_mode,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    ).to(device<span class="op">=</span>old_conv.weight.device, dtype<span class="op">=</span>old_conv.weight.dtype)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># RGB filter의 평균을 초기값으로 사용해 activation scale을 과도하게 키우지 않는다.</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        new_conv.weight.copy_(old_conv.weight.mean(dim<span class="op">=</span><span class="dv">1</span>, keepdim<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> old_conv.bias <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>            new_conv.bias.copy_(old_conv.bias)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_conv</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> ShapeNet(in_channels<span class="op">=</span><span class="dv">3</span>, num_classes<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>model.stem[<span class="dv">0</span>] <span class="op">=</span> rgb_conv_to_grayscale(model.stem[<span class="dv">0</span>])</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>test_x <span class="op">=</span> torch.randn(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">224</span>, <span class="dv">224</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> model(test_x).shape <span class="op">==</span> (<span class="dv">2</span>, <span class="dv">5</span>)</span></code></pre></div>
+<p>평균 대신 RGB weight의 합을 쓰면 동일 grayscale 영상을 RGB 세 채널에
+복제했을 때 첫 Conv의 출력을 더 가깝게 보존할 수 있지만 activation
+크기가 커질 수 있습니다. 어느 쪽이 최선인지는 입력 분포와
+normalization에 따라 달라집니다. 짧은 calibration set으로 첫 레이어
+activation의 평균·표준편차를 비교하십시오. 새 modality가 4채널 이상이고
+기존 RGB와 의미가 다르면 backbone 첫 Conv를 억지로 확장하는 대신
+<strong>학습 가능한 1×1 channel adapter</strong>를 앞에 둘 수
+있습니다.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>adapter <span class="op">=</span> nn.Conv2d(new_input_channels, <span class="dv">3</span>, kernel_size<span class="op">=</span><span class="dv">1</span>, bias<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> nn.Sequential(adapter, pretrained_rgb_backbone)</span></code></pre></div>
+<p>이 방식은 backbone checkpoint를 그대로 유지하고 adapter만 먼저 학습할
+수 있다는 장점이 있습니다. 반면 입력 채널을 3차원으로 압축하면서 정보
+손실이 생길 수 있고 한 레이어의 비용이 추가됩니다. Depthwise/grouped
+Conv는 <code>in_channels</code>, <code>out_channels</code>,
+<code>groups</code>의 나눗셈 조건이 함께 묶이므로 일반 Conv처럼 첫
+채널만 바꾸면 안 됩니다.</p>
+<h2 id="입력-해상도-변경">6.2 입력 해상도 변경</h2>
+<p>입력 해상도를 바꿀 때 Conv 파라미터 수는 그대로지만 다음은
+변합니다.</p>
+<ul>
+<li><p>activation memory와 FLOPs: 대체로 <code>H×W</code>에
+비례</p></li>
+<li><p>물체가 feature map에서 차지하는 상대 크기와 effective receptive
+field</p></li>
+<li><p>여러 번 stride-2 downsampling 후의 홀수/짝수 정렬</p></li>
+<li><p>absolute positional embedding을 쓰는 ViT 계열의 token
+grid</p></li>
+<li><p>고정 크기 flatten 뒤 Linear를 쓰는 head의
+<code>in_features</code> CNN classifier는
+<code>AdaptiveAvgPool2d</code>를 head 앞에 두면 해상도 의존성을 크게
+줄일 수 있습니다. 하지만 detection/segmentation처럼 위치 정보가 필요한
+모델에서 <code>(1,1)</code> global pooling을 넣으면 안 됩니다. 또한 입력
+크기가 자유로워져도 batch 내부 tensor 크기는 일반적인 batching에서
+같아야 합니다. 서로 다른 크기는 pad, resize, bucketing 또는 list 입력을
+지원하는 별도 pipeline이 필요합니다.</p></li>
+</ul>
+<h2 id="출력-head-변경">6.3 출력 head 변경</h2>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> ShapeNet(in_channels<span class="op">=</span><span class="dv">3</span>, num_classes<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>old_in_features <span class="op">=</span> model.head.in_features</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>model.head <span class="op">=</span> nn.Linear(old_in_features, <span class="dv">3</span>)</span></code></pre></div>
+<p>안전 점검:</p>
+<ul>
+<li><p>class index와 label mapping을 새로 정의합니다.</p></li>
+<li><p>loss가 출력 의미와 맞는지 확인합니다. 단일 다중분류는 보통
+<code>[N,C]</code> logits + <code>CrossEntropyLoss</code>, multi-label은
+<code>[N,C]</code> logits +
+<code>BCEWithLogitsLoss</code>입니다.</p></li>
+<li><p>optimizer를 만든 <strong>뒤에</strong> head를 교체했다면 새
+파라미터가 optimizer에 들어 있지 않습니다. head 교체 후 optimizer를 다시
+생성하거나 param group을 추가합니다.</p></li>
+<li><p>shape가 다른 기존 head weight는 <code>strict=False</code>만으로
+항상 무시되지 않습니다. checkpoint에서 해당 key를 제거한 뒤 backbone을
+로드합니다.</p></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> torch.load(<span class="st">&quot;checkpoint.pt&quot;</span>, map_location<span class="op">=</span><span class="st">&quot;cpu&quot;</span>, weights_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>state.pop(<span class="st">&quot;head.weight&quot;</span>, <span class="va">None</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>state.pop(<span class="st">&quot;head.bias&quot;</span>, <span class="va">None</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>missing, unexpected <span class="op">=</span> model.load_state_dict(state, strict<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;missing:&quot;</span>, missing)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;unexpected:&quot;</span>, unexpected)</span></code></pre></div>
+<h2
+id="모델-구현에-따라-key가-fc.-classifier.-heads.head.일-수-있으므로-state_dict.keys로-실제-이름을-확인합니다.">모델
+구현에 따라 key가 <code>fc.*</code>, <code>classifier.*</code>,
+<code>heads.head.*</code>일 수 있으므로
+<code>state_dict().keys()</code>로 실제 이름을 확인합니다.</h2>
+<h1 id="실습-b-adaptiveavgpool로-해상도-의존성-줄이기">7. 실습 B —
+AdaptiveAvgPool로 해상도 의존성 줄이기</h1>
+<p><code>AdaptiveAvgPool2d((1,1))</code>은 입력 H/W가 무엇이든 출력 공간
+크기를 1×1로 맞추고 채널 수는 유지합니다. 공식 문서: <a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.AdaptiveAvgPool2d.html">PyTorch
+AdaptiveAvgPool2d</a></p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> FlexibleClassifier(nn.Module):</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, in_channels<span class="op">=</span><span class="dv">1</span>, num_classes<span class="op">=</span><span class="dv">7</span>):</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.features <span class="op">=</span> nn.Sequential(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>            nn.Conv2d(in_channels, <span class="dv">16</span>, <span class="dv">3</span>, stride<span class="op">=</span><span class="dv">2</span>, padding<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>            nn.Conv2d(<span class="dv">16</span>, <span class="dv">32</span>, <span class="dv">3</span>, stride<span class="op">=</span><span class="dv">2</span>, padding<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>            nn.ReLU(),</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.pool <span class="op">=</span> nn.AdaptiveAvgPool2d((<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.flatten <span class="op">=</span> nn.Flatten(<span class="dv">1</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.head <span class="op">=</span> nn.Linear(<span class="dv">32</span>, num_classes)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.features(x)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.pool(x)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.flatten(x)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.head(x)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> FlexibleClassifier().<span class="bu">eval</span>()</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> height, width <span class="kw">in</span> [(<span class="dv">128</span>, <span class="dv">160</span>), (<span class="dv">224</span>, <span class="dv">224</span>), (<span class="dv">320</span>, <span class="dv">512</span>)]:</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> torch.randn(<span class="dv">4</span>, <span class="dv">1</span>, height, width)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> torch.inference_mode():</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> model(x)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>((height, width), <span class="st">&quot;-&gt;&quot;</span>, <span class="bu">tuple</span>(y.shape))</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> y.shape <span class="op">==</span> (<span class="dv">4</span>, <span class="dv">7</span>)</span></code></pre></div>
+<p>예상 결과:
+<code>plain text (128, 160) -&gt; (4, 7) (224, 224) -&gt; (4, 7) (320, 512) -&gt; (4, 7)</code>
+추가 실습:</p>
+<ol type="1">
+<li><p><code>pool = nn.AdaptiveAvgPool2d((4,4))</code>로
+바꿉니다.</p></li>
+<li><p><code>head = nn.Linear(32*4*4, num_classes)</code>로
+바꿉니다.</p></li>
+<li><p>세 해상도를 다시 테스트합니다. <code>(4,4)</code> pooling은 거친
+공간 정보를 더 보존하지만 head 파라미터가 <code>32×16</code>배의 입력을
+받습니다. <code>(1,1)</code>은 가장 가볍지만 작은 병변 위치 같은 공간
+정보를 global average에서 희석할 수 있습니다. —</p></li>
+</ol>
+<h1 id="실습-c-의도적으로-shape-오류-만들고-고치기">8. 실습 C —
+의도적으로 shape 오류 만들고 고치기</h1>
+<p>아래 block은 main branch에서 채널과 해상도를 바꾸지만 skip branch는
+그대로 두므로 실패합니다.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BrokenResidual(nn.Module):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.main <span class="op">=</span> nn.Conv2d(<span class="dv">16</span>, <span class="dv">32</span>, kernel_size<span class="op">=</span><span class="dv">3</span>, stride<span class="op">=</span><span class="dv">2</span>, padding<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.skip <span class="op">=</span> nn.Identity()  <span class="co"># 의도적인 오류</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.add <span class="op">=</span> Add()</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.add(<span class="va">self</span>.main(x), <span class="va">self</span>.skip(x))</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>broken <span class="op">=</span> BrokenResidual()</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>handles <span class="op">=</span> install_shape_hooks(broken)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    broken(torch.randn(<span class="dv">2</span>, <span class="dv">16</span>, <span class="dv">56</span>, <span class="dv">56</span>))</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> handle <span class="kw">in</span> handles:</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        handle.remove()</span></code></pre></div>
+<p>예상 진단:
+<code>plain text main ... out=(2, 32, 28, 28) skip ... out=(2, 16, 56, 56) RuntimeError: Residual shape mismatch: (2, 32, 28, 28) vs (2, 16, 56, 56)</code>
+과제:</p>
+<ol type="1">
+<li><p>어느 축이 다른지 적습니다: <code>C</code>, <code>H</code>,
+<code>W</code>가 다릅니다.</p></li>
+<li><p><code>main</code>의 어떤 인자가 각 차이를 만들었는지 찾습니다:
+<code>out_channels=32</code>, <code>stride=2</code>입니다.</p></li>
+<li><p>skip을 아래 projection으로 교체합니다.</p></li>
+<li><p>hook 결과와 최종 output <code>(2,32,28,28)</code>을
+확인합니다.</p></li>
+</ol>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.skip <span class="op">=</span> nn.Conv2d(<span class="dv">16</span>, <span class="dv">32</span>, kernel_size<span class="op">=</span><span class="dv">1</span>, stride<span class="op">=</span><span class="dv">2</span>, bias<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<h2
+id="추가-도전-두-branch를-torch.cat...-dim1으로-합치면-출력-채널은-64입니다.-이때-다음-conv를-nn.conv2d32-...로-두어-새로운-오류를-만들고-왜-in_channels64여야-하는지-설명해-보십시오."><strong>추가
+도전:</strong> 두 branch를 <code>torch.cat(..., dim=1)</code>으로 합치면
+출력 채널은 64입니다. 이때 다음 Conv를 <code>nn.Conv2d(32, ...)</code>로
+두어 새로운 오류를 만들고, 왜 <code>in_channels=64</code>여야 하는지
+설명해 보십시오.</h2>
+<h1 id="디버깅-체크리스트">9. 디버깅 체크리스트</h1>
+<p>오류가 난 마지막 줄부터 임의 수정하지 말고 아래 순서로 좁힙니다.</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox" /><strong>입력 계약</strong>:
+<code>shape</code>, <code>ndim</code>, dtype, device, value range,
+channel 순서가 모델 기대와 같은가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>batch 축</strong>:
+<code>squeeze()</code>로 N이 사라지거나 <code>unsqueeze()</code> 위치가
+틀리지 않았는가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>첫 Conv</strong>: 데이터
+채널 수와 <code>in_channels</code>가 같은가? grouped/depthwise 조건도
+맞는가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>공간 크기 계산</strong>:
+kernel/stride/padding/dilation을 공식에 넣었는가? 홀수 크기의 floor
+효과를 확인했는가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>merge 직전</strong>:
+add는 exact shape, concat은 합칠 축 이외 shape가
+같은가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>concat 직후</strong>:
+다음 Conv의 <code>in_channels</code>가 채널 합과
+같은가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>flatten 경계</strong>:
+<code>flatten(start_dim=1)</code> 이후 feature 수와 Linear의
+<code>in_features</code>가 같은가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>출력–loss 계약</strong>:
+logits/target shape와 dtype이 loss의 요구사항에 맞는가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>메모리 배치</strong>:
+permute 뒤 non-contiguous tensor를 <code>view()</code>하고 있지
+않은가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>hook 사각지대</strong>:
+함수형 add/cat/interpolate/reshape가 로그에서 빠진 것은
+아닌가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>작은 재현 입력</strong>:
+batch 2의 synthetic tensor로 forward만 먼저 통과하는가?</label></p></li>
+<li><p><label><input type="checkbox" /><strong>여러 해상도
+검사</strong>: 짝수, 홀수, 비정사각형 입력을 각각 테스트했는가? 추천
+assertion:</label></p></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> x.ndim <span class="op">==</span> <span class="dv">4</span>, <span class="ss">f&quot;expected NCHW, got </span><span class="sc">{</span><span class="bu">tuple</span>(x.shape)<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> x.shape[<span class="dv">1</span>] <span class="op">==</span> expected_channels</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> left.shape <span class="op">==</span> right.shape, (left.shape, right.shape)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> logits.shape <span class="op">==</span> (targets.shape[<span class="dv">0</span>], num_classes)</span></code></pre></div>
+<hr />
+<h1 id="복습-문제-5개">10. 복습 문제 5개</h1>
+<h2 id="문제-1">문제 1</h2>
+<p>입력 <code>(4, 3, 64, 80)</code>에
+<code>Conv2d(3, 16, kernel_size=5, stride=2, padding=2, bias=True)</code>를
+적용할 때 출력 shape와 파라미터 수는?</p>
+<h2 id="문제-2">문제 2</h2>
+<p>Residual main branch가 <code>(8, 64, 28, 28)</code>, skip branch가
+<code>(8, 32, 56, 56)</code>입니다. 단순 add가 실패하는 이유와 가장
+일반적인 수정은?</p>
+<h2 id="문제-3">문제 3</h2>
+<p><code>a.shape=(2,32,40,40)</code>,
+<code>b.shape=(2,16,40,40)</code>일 때
+<code>torch.cat([a,b], dim=1)</code>의 출력 shape는? 이어지는 Conv의
+<code>in_channels</code>는?</p>
+<h2 id="문제-4">문제 4</h2>
+<p><code>AdaptiveAvgPool2d((1,1))</code>이 고정 해상도
+flatten+Linear보다 입력 해상도 변경에 강한 이유와 한 가지 손실은?</p>
+<h2 id="문제-5">문제 5</h2>
+Forward hook을 달았는데 <code>torch.cat</code> 지점이 출력되지
+않았습니다. 이유와 두 가지 관찰 방법은?
+<details>
+<summary>
+정답과 해설
+</summary>
+<h3 id="정답-1">정답 1</h3>
+<p><code>H_out=floor((64+4-4-1)/2+1)=32</code>,
+<code>W_out=floor((80+4-4-1)/2+1)=40</code>이므로 출력은
+<code>(4,16,32,40)</code>입니다. 파라미터는
+<code>16×3×5×5+16=1,216</code>개입니다. Batch size와 공간 크기는
+파라미터 수에 들어가지 않습니다.</p>
+<h3 id="정답-2">정답 2</h3>
+<p>Add는 대응 원소끼리 더해야 하므로 C/H/W가 다르면 residual 계약을
+만족하지 않습니다. skip에
+<code>Conv2d(32,64,kernel_size=1,stride=2)</code> projection을 두어
+<code>(8,64,28,28)</code>로 맞추는 것이 일반적입니다.</p>
+<h3 id="정답-3">정답 3</h3>
+<p>출력은 <code>(2,48,40,40)</code>, 다음 Conv의
+<code>in_channels</code>는 48입니다. Channel concat은 채널을 합치고
+나머지 축을 유지합니다.</p>
+<h3 id="정답-4">정답 4</h3>
+<p>Adaptive pooling이 임의 H/W feature map을 고정된 1×1로 바꾸므로
+Linear 입력 feature 수가 채널 수 C로 고정됩니다. 손실은 공간 위치 정보가
+평균으로 압축되어 작은 국소 신호가 희석될 수 있다는 점입니다.</p>
+<h3 id="정답-5">정답 5</h3>
+Module forward hook은 <code>nn.Module</code> 호출을 관찰하며 함수형
+<code>torch.cat</code>은 module이 아닙니다. <code>Cat(nn.Module)</code>
+wrapper로 감싸 hook을 달거나, merge 직전에 명시적 shape assertion/log를
+둡니다. <code>torch.fx</code> 같은 graph 도구로 함수형 연산을 추적하는
+방법도 있습니다.
+</details>
+<hr />
+<h1 id="오늘의-완료-기준과-다음-회차">11. 오늘의 완료 기준과 다음
+회차</h1>
+<p>오늘 학습을 완료한 것으로 표시할 기준:</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox" />Conv2d 예제 두 개의 출력 크기와
+파라미터 수를 손으로 계산했다.</label></p></li>
+<li><p><label><input type="checkbox" />ShapeNet hook 코드를 실행해
+<code>block2</code>의 main/skip shape가 같음을
+확인했다.</label></p></li>
+<li><p><label><input type="checkbox" />FlexibleClassifier를 세 가지
+해상도로 실행했다.</label></p></li>
+<li><p><label><input type="checkbox" />BrokenResidual의 오류를 재현하고
+projection으로 수정했다.</label></p></li>
+<li><p><label><input type="checkbox" />복습 문제 5개 중 4개 이상을
+설명했다. <strong>다음 회차 예고 — #02: Forward/Backward graph로 모델
+내부 읽기</strong> <code>autograd</code>가 계산 그래프를 만드는 방식,
+<code>requires_grad</code>, leaf tensor, <code>detach</code>, in-place
+연산 오류, gradient hook을 다룹니다. 단순히 loss가 감소하는지를 넘어
+어느 layer에서 gradient가 사라지거나 폭발하는지 추적합니다.
+—</label></p></li>
+</ul>
+<h1 id="참고-자료">참고 자료</h1>
+<ul>
+<li><p><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">PyTorch
+Conv2d 공식 문서</a></p></li>
+<li><p><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook">PyTorch
+Module과 forward hook 공식 문서</a></p></li>
+<li><p><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.AdaptiveAvgPool2d.html">PyTorch
+AdaptiveAvgPool2d 공식 문서</a></p></li>
+<li><p><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.cat.html">PyTorch
+torch.cat 공식 문서</a> 문서 동작은 2026-08-31에 PyTorch stable 공식
+문서 기준으로 확인했습니다.</p></li>
+</ul>
+</div></article><aside class="toc"><strong>이 페이지에서</strong><nav id="toc-links"></nav></aside></main><footer><a href="./">← AI 학습 목록으로 돌아가기</a></footer><script type="application/json" id="lesson-source">"# 학습 개요\n<callout icon=\"🎯\" color=\"blue_bg\">\n\t**예상 시간: 38분**  \n\t오늘의 핵심은 모델을 레이어 이름이 아니라 **tensor shape의 변환 그래프**로 읽는 것입니다. 공개 모델을 가져와 학습·배포한 경험이 있다면, 이제부터는 각 연산이 `(N, C, H, W)`를 어떻게 바꾸고 어느 지점에서 계약(contract)이 깨지는지를 추적합니다.\n</callout>\n## 1. 시간표와 학습 목표\n<table fit-page-width=\"true\" header-row=\"true\">\n<tr>\n<td>시간</td>\n<td>학습 내용</td>\n<td>완료 기준</td>\n</tr>\n<tr>\n<td>0–4분</td>\n<td>NCHW, rank, tensor stride</td>\n<td>`shape`, `ndim`, `stride()`를 구분한다</td>\n</tr>\n<tr>\n<td>4–11분</td>\n<td>Conv2d 출력 크기와 파라미터 수</td>\n<td>손으로 계산하고 코드 결과를 예측한다</td>\n</tr>\n<tr>\n<td>11–16분</td>\n<td>residual/add/concat 제약</td>\n<td>merge 전 shape 계약을 설명한다</td>\n</tr>\n<tr>\n<td>16–25분</td>\n<td>forward hook 실습</td>\n<td>모델 중간 shape를 자동 출력한다</td>\n</tr>\n<tr>\n<td>25–31분</td>\n<td>입력·해상도·head 수정</td>\n<td>수정 범위와 trade-off를 판단한다</td>\n</tr>\n<tr>\n<td>31–35분</td>\n<td>의도적 shape 오류 디버깅</td>\n<td>오류 지점을 찾고 projection으로 고친다</td>\n</tr>\n<tr>\n<td>35–38분</td>\n<td>체크리스트와 복습 문제</td>\n<td>5문제 중 4문제 이상 설명한다</td>\n</tr>\n</table>\n학습 후에는 다음을 할 수 있어야 합니다.\n- 4D 이미지 tensor를 `NCHW`로 읽고 rank와 memory stride를 구분한다.\n- `Conv2d`의 출력 공간 크기와 학습 파라미터 수를 계산한다.\n- residual addition과 channel concatenation이 요구하는 shape 조건을 판단한다.\n- forward hook으로 기존 PyTorch 모델의 중간 tensor shape를 추적한다.\n- 입력 채널, 입력 해상도, 출력 head를 바꿀 때 무엇이 깨질 수 있는지 사전에 점검한다.\n- shape 오류 메시지를 결과가 아니라 **최초로 계약이 깨진 지점**까지 역추적한다.\n---\n# 2. Tensor shape를 모델의 인터페이스로 읽기\n## 2.1 NCHW와 rank\n이미지용 PyTorch `Conv2d`의 대표 입력 형식은 `(N, C, H, W)`입니다.\n<table fit-page-width=\"true\" header-row=\"true\">\n<tr>\n<td>축</td>\n<td>의미</td>\n<td>예: (8, 3, 224, 224)</td>\n</tr>\n<tr>\n<td>N</td>\n<td>batch size</td>\n<td>이미지 8장</td>\n</tr>\n<tr>\n<td>C</td>\n<td>channel/feature map 수</td>\n<td>RGB 3채널</td>\n</tr>\n<tr>\n<td>H</td>\n<td>height</td>\n<td>224 pixels</td>\n</tr>\n<tr>\n<td>W</td>\n<td>width</td>\n<td>224 pixels</td>\n</tr>\n</table>\n**Rank**는 축의 개수입니다. `(8, 3, 224, 224)`는 rank 4이고, `x.ndim == 4`입니다. Rank와 각 축의 크기는 다릅니다. 예를 들어 `(1, 1, 512, 512)`와 `(32, 128, 7, 7)`은 모두 rank 4입니다.\n```python\nimport torch\n\nx = torch.randn(8, 3, 224, 224)\nprint(x.shape)    # torch.Size([8, 3, 224, 224])\nprint(x.ndim)     # 4\nprint(x.numel())  # 8 * 3 * 224 * 224\n```\n실무에서는 각 tensor에 의미가 드러나는 주석을 붙이십시오.\n```python\n# x: [N, C, H, W]\n# logits: [N, num_classes]\n# mask_logits: [N, num_classes, H, W]\n```\n`[8, 1]`과 `[8]`은 원소 수는 같아도 다른 계약입니다. `squeeze()`를 축 지정 없이 사용하면 batch size가 1일 때 batch 축까지 사라질 수 있으므로 `squeeze(dim=...)` 또는 `flatten(start_dim=1)`처럼 의도를 명시합니다.\n## 2.2 두 종류의 stride를 구분하기\n딥러닝 코드에서 `stride`는 두 의미로 쓰입니다.\n1. **Tensor memory stride**: 특정 축을 1만큼 이동할 때 저장소에서 몇 원소를 건너뛰는지 나타냅니다.\n2. **Convolution stride**: kernel이 입력 공간을 몇 칸씩 이동하는지 나타냅니다.\n```python\nx = torch.randn(2, 3, 32, 32)\nprint(x.shape)          # [2, 3, 32, 32]\nprint(x.stride())       # 보통 (3072, 1024, 32, 1)\nprint(x.is_contiguous())\n\ny = x.permute(0, 2, 3, 1)  # NCHW -> NHWC view\nprint(y.shape)               # [2, 32, 32, 3]\nprint(y.stride())            # 메모리 배치는 그대로이므로 stride가 달라짐\nprint(y.is_contiguous())     # False\n\ny = y.contiguous()           # 필요할 때만 실제 연속 메모리로 복사\n```\n`permute`는 축의 해석을 바꾸지만 대개 데이터를 즉시 복사하지 않습니다. 이 때문에 non-contiguous tensor에 `view()`가 실패할 수 있습니다. `reshape()`는 가능한 경우 view를 만들고 필요하면 복사할 수 있으므로 더 관대하지만, 복사 비용이 숨어 있을 수 있습니다. 성능 문제를 볼 때는 `shape`뿐 아니라 `stride()`와 `is_contiguous()`도 확인합니다.\n---\n# 3. Conv2d 출력 크기와 파라미터 수\n입력이 `(N, C_in, H_in, W_in)`이고 kernel, stride, padding, dilation이 축별로 각각 `K, S, P, D`일 때 출력 높이는 다음과 같습니다.\n$$\nH_{out}=\\left\\lfloor\\frac{H_{in}+2P_h-D_h(K_h-1)-1}{S_h}+1\\right\\rfloor\n$$\n폭 `W_out`도 같은 식을 사용합니다. 출력 tensor는 `(N, C_out, H_out, W_out)`입니다. 공식 `Conv2d` 문서도 같은 규칙을 정의합니다: [PyTorch Conv2d](https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)\n## 3.1 계산 예제\n```python\nconv = torch.nn.Conv2d(\n    in_channels=3,\n    out_channels=64,\n    kernel_size=7,\n    stride=2,\n    padding=3,\n    bias=True,\n)\nx = torch.randn(8, 3, 224, 224)\ny = conv(x)\nprint(y.shape)  # [8, 64, 112, 112]\n```\n높이 계산:\n`floor((224 + 2×3 - 1×(7-1) - 1) / 2 + 1) = floor(112.5) = 112`\n파라미터 수는 `groups`까지 포함하면 다음과 같습니다.\n$$\n\\text{weight params}=C_{out}\\times\\frac{C_{in}}{groups}\\times K_h\\times K_w\n$$\nBias가 있으면 `C_out`을 더합니다. 위 레이어는 `64×3×7×7 + 64 = 9,472`개입니다. Batch size와 입력 해상도는 **파라미터 수를 바꾸지 않지만**, activation memory와 연산량은 바꿉니다.\n## 3.2 바로 풀어보기\n입력이 `(8, 32, 55, 73)`이고 `Conv2d(32, 64, kernel_size=3, stride=2, padding=1, bias=False)`라면:\n- `H_out = 28`\n- `W_out = 37`\n- 출력 shape = `(8, 64, 28, 37)`\n- 파라미터 수 = `64×32×3×3 = 18,432`\n가장 흔한 실수는 `padding=1이면 무조건 공간 크기가 유지된다`고 생각하는 것입니다. 이는 보통 `kernel=3, dilation=1, stride=1`일 때만 맞습니다. `stride=2`이면 대략 절반이 되고, 홀수 입력은 floor 규칙 때문에 한 칸 차이가 날 수 있습니다.\n---\n# 4. residual/add/concat의 shape 계약\n## 4.1 Add: 원칙적으로 모든 축이 같아야 한다\nResidual block의 `out + identity`는 `(N, C, H, W)`가 정확히 같아야 합니다.\n```python\nassert out.shape == identity.shape\nout = out + identity\n```\nPyTorch의 일반 덧셈은 broadcasting을 지원하므로 `(N,C,H,W) + (N,C,1,1)`도 실행됩니다. 하지만 residual 연결에서 우연한 broadcasting은 설계 오류를 숨길 수 있습니다. 따라서 merge 직전에 exact-shape assertion을 두는 것이 안전합니다.\n채널 또는 해상도가 달라지면 skip branch에 projection을 둡니다.\n```python\nprojection = torch.nn.Conv2d(\n    in_channels=16,\n    out_channels=32,\n    kernel_size=1,\n    stride=2,\n    bias=False,\n)\n```\n`1×1, stride=2` projection은 `C:16→32`, `H/W:56→28`을 동시에 맞춥니다. 대신 파라미터와 연산이 늘며 identity가 더 이상 완전한 무변환 경로는 아닙니다.\n## 4.2 Concat: 합칠 축 이외의 모든 축이 같아야 한다\n```python\na = torch.randn(4, 32, 28, 28)\nb = torch.randn(4, 16, 28, 28)\nc = torch.cat([a, b], dim=1)\nprint(c.shape)  # [4, 48, 28, 28]\n```\nChannel concat에서는 `N`, `H`, `W`가 같아야 하고 출력 channel은 합이 됩니다. 따라서 다음 레이어의 `in_channels`도 48이어야 합니다. 공식 문서: [PyTorch torch.cat](https://docs.pytorch.org/docs/stable/generated/torch.cat.html)\n<table fit-page-width=\"true\" header-row=\"true\">\n<tr>\n<td>연산</td>\n<td>입력 조건</td>\n<td>출력</td>\n<td>주요 trade-off</td>\n</tr>\n<tr>\n<td>`add`</td>\n<td>보통 전체 shape 동일</td>\n<td>shape 유지</td>\n<td>채널 수 증가 없이 정보 결합</td>\n</tr>\n<tr>\n<td>`cat(dim=1)`</td>\n<td>N/H/W 동일</td>\n<td>채널 합</td>\n<td>정보 보존이 좋지만 메모리와 다음 Conv 비용 증가</td>\n</tr>\n<tr>\n<td>`stack`</td>\n<td>전체 shape 동일</td>\n<td>새 축 추가</td>\n<td>concat과 의미가 다름</td>\n</tr>\n</table>\nU-Net 계열에서는 encoder와 decoder feature의 H/W가 한 칸 다를 수 있습니다. 입력 크기가 downsampling 배수와 맞지 않거나 padding 규칙이 다르기 때문입니다. `interpolate`나 crop으로 억지로 맞추기 전에 **어느 branch의 좌표계와 해상도를 기준으로 삼을지** 먼저 결정해야 합니다.\n---\n# 5. 실습 A — forward hook으로 중간 tensor shape 추적\n아래 코드는 그대로 실행할 수 있는 독립 예제입니다. Leaf module마다 hook을 달고 입력·출력 shape를 출력합니다. Hook은 `forward()`가 끝난 뒤 호출되며, 반환된 handle의 `remove()`로 해제해야 합니다. 공식 문서: [PyTorch Module.register_forward_hook](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook)\n```python\nimport torch\nimport torch.nn as nn\n\n\ndef shape_tree(obj):\n    \"\"\"Tensor, tuple/list, dict가 섞인 입출력을 읽기 좋은 shape로 변환.\"\"\"\n    if isinstance(obj, torch.Tensor):\n        return tuple(obj.shape)\n    if isinstance(obj, (tuple, list)):\n        return [shape_tree(item) for item in obj]\n    if isinstance(obj, dict):\n        return {key: shape_tree(value) for key, value in obj.items()}\n    return type(obj).__name__\n\n\nclass Add(nn.Module):\n    \"\"\"함수형 add도 hook에서 보이게 만든 작은 module.\"\"\"\n    def forward(self, left, right):\n        if left.shape != right.shape:\n            raise RuntimeError(\n                f\"Residual shape mismatch: {tuple(left.shape)} vs {tuple(right.shape)}\"\n            )\n        return left + right\n\n\nclass ResidualBlock(nn.Module):\n    def __init__(self, in_ch, out_ch, stride=1):\n        super().__init__()\n        self.conv1 = nn.Conv2d(\n            in_ch, out_ch, kernel_size=3, stride=stride, padding=1, bias=False\n        )\n        self.bn1 = nn.BatchNorm2d(out_ch)\n        self.relu1 = nn.ReLU(inplace=False)\n        self.conv2 = nn.Conv2d(\n            out_ch, out_ch, kernel_size=3, stride=1, padding=1, bias=False\n        )\n        self.bn2 = nn.BatchNorm2d(out_ch)\n\n        if stride != 1 or in_ch != out_ch:\n            self.skip = nn.Sequential(\n                nn.Conv2d(\n                    in_ch, out_ch, kernel_size=1, stride=stride, bias=False\n                ),\n                nn.BatchNorm2d(out_ch),\n            )\n        else:\n            self.skip = nn.Identity()\n\n        self.add = Add()\n        self.relu2 = nn.ReLU(inplace=False)\n\n    def forward(self, x):\n        identity = self.skip(x)\n        out = self.relu1(self.bn1(self.conv1(x)))\n        out = self.bn2(self.conv2(out))\n        out = self.add(out, identity)\n        return self.relu2(out)\n\n\nclass ShapeNet(nn.Module):\n    def __init__(self, in_channels=3, num_classes=5):\n        super().__init__()\n        self.stem = nn.Sequential(\n            nn.Conv2d(\n                in_channels, 16, kernel_size=3, stride=2, padding=1, bias=False\n            ),\n            nn.BatchNorm2d(16),\n            nn.ReLU(inplace=False),\n        )\n        self.block1 = ResidualBlock(16, 16, stride=1)\n        self.block2 = ResidualBlock(16, 32, stride=2)\n        self.pool = nn.AdaptiveAvgPool2d((1, 1))\n        self.flatten = nn.Flatten(start_dim=1)\n        self.head = nn.Linear(32, num_classes)\n\n    def forward(self, x):\n        x = self.stem(x)\n        x = self.block1(x)\n        x = self.block2(x)\n        x = self.pool(x)\n        x = self.flatten(x)\n        return self.head(x)\n\n\ndef install_shape_hooks(model):\n    handles = []\n\n    def make_hook(name):\n        def hook(module, args, output):\n            print(\n                f\"{name:24s} {module.__class__.__name__:18s} \"\n                f\"in={shape_tree(args)} -> out={shape_tree(output)}\"\n            )\n        return hook\n\n    for name, module in model.named_modules():\n        # 중복 출력을 줄이기 위해 자식이 없는 leaf module만 추적한다.\n        if name and len(list(module.children())) == 0:\n            handles.append(module.register_forward_hook(make_hook(name)))\n    return handles\n\n\nif __name__ == \"__main__\":\n    torch.manual_seed(0)\n    model = ShapeNet(in_channels=3, num_classes=5).eval()\n    x = torch.randn(2, 3, 224, 224)\n    handles = install_shape_hooks(model)\n\n    try:\n        with torch.inference_mode():\n            logits = model(x)\n        print(\"final:\", tuple(logits.shape))\n    finally:\n        for handle in handles:\n            handle.remove()\n```\n## 예상 결과의 핵심 줄\n```plain text\nstem.0                   Conv2d             in=[(2, 3, 224, 224)] -> out=(2, 16, 112, 112)\nblock1.add               Add                in=[(2, 16, 112, 112), (2, 16, 112, 112)] -> out=(2, 16, 112, 112)\nblock2.conv1             Conv2d             in=[(2, 16, 112, 112)] -> out=(2, 32, 56, 56)\nblock2.skip.0            Conv2d             in=[(2, 16, 112, 112)] -> out=(2, 32, 56, 56)\nblock2.add               Add                in=[(2, 32, 56, 56), (2, 32, 56, 56)] -> out=(2, 32, 56, 56)\npool                     AdaptiveAvgPool2d  in=[(2, 32, 56, 56)] -> out=(2, 32, 1, 1)\nflatten                  Flatten            in=[(2, 32, 1, 1)] -> out=(2, 32)\nhead                     Linear             in=[(2, 32)] -> out=(2, 5)\nfinal: (2, 5)\n```\n실제 출력에는 BatchNorm과 ReLU 줄도 포함됩니다. Hook 사용 시 주의점:\n- `torch.add`, `torch.cat`, `F.interpolate`, `torch.flatten` 같은 **함수형 연산은 module hook만으로 보이지 않습니다**. 중요한 연산은 `Add`, `nn.Flatten`처럼 module로 감싸거나 `forward()`에 assertion/log를 둡니다.\n- 한 module이 여러 번 재사용되면 같은 이름의 hook이 여러 번 호출됩니다.\n- hook에서 output을 반환하면 output을 바꿀 수 있습니다. 관찰 목적이라면 아무것도 반환하지 않습니다.\n- 학습 루프에 hook을 계속 남겨두면 로그·메모리·속도 문제가 생길 수 있으므로 `finally`에서 제거합니다.\n- 복잡한 모델은 모든 레이어를 찍지 말고 Conv/Linear/Pooling/merge 지점으로 필터링합니다.\n---\n# 6. 입력 채널·해상도·출력 head를 안전하게 수정하기\n## 6.1 입력 채널 변경\nRGB pretrained backbone을 1채널 초음파 입력에 적용할 때 확인할 항목은 세 가지입니다.\n1. 첫 Conv의 `in_channels`\n2. 입력 normalization의 mean/std와 intensity scaling\n3. pretrained weight를 새 채널에 어떻게 매핑할지\nRGB 3채널을 grayscale 1채널로 직접 바꾸는 예:\n```python\ndef rgb_conv_to_grayscale(old_conv: nn.Conv2d) -> nn.Conv2d:\n    if old_conv.in_channels != 3 or old_conv.groups != 1:\n        raise ValueError(\"이 예제는 일반적인 groups=1 RGB Conv2d만 지원합니다.\")\n\n    new_conv = nn.Conv2d(\n        in_channels=1,\n        out_channels=old_conv.out_channels,\n        kernel_size=old_conv.kernel_size,\n        stride=old_conv.stride,\n        padding=old_conv.padding,\n        dilation=old_conv.dilation,\n        groups=1,\n        bias=old_conv.bias is not None,\n        padding_mode=old_conv.padding_mode,\n    ).to(device=old_conv.weight.device, dtype=old_conv.weight.dtype)\n\n    with torch.no_grad():\n        # RGB filter의 평균을 초기값으로 사용해 activation scale을 과도하게 키우지 않는다.\n        new_conv.weight.copy_(old_conv.weight.mean(dim=1, keepdim=True))\n        if old_conv.bias is not None:\n            new_conv.bias.copy_(old_conv.bias)\n    return new_conv\n\n\nmodel = ShapeNet(in_channels=3, num_classes=5)\nmodel.stem[0] = rgb_conv_to_grayscale(model.stem[0])\ntest_x = torch.randn(2, 1, 224, 224)\nassert model(test_x).shape == (2, 5)\n```\n평균 대신 RGB weight의 합을 쓰면 동일 grayscale 영상을 RGB 세 채널에 복제했을 때 첫 Conv의 출력을 더 가깝게 보존할 수 있지만 activation 크기가 커질 수 있습니다. 어느 쪽이 최선인지는 입력 분포와 normalization에 따라 달라집니다. 짧은 calibration set으로 첫 레이어 activation의 평균·표준편차를 비교하십시오.\n새 modality가 4채널 이상이고 기존 RGB와 의미가 다르면 backbone 첫 Conv를 억지로 확장하는 대신 **학습 가능한 1×1 channel adapter**를 앞에 둘 수 있습니다.\n```python\nadapter = nn.Conv2d(new_input_channels, 3, kernel_size=1, bias=False)\nmodel = nn.Sequential(adapter, pretrained_rgb_backbone)\n```\n이 방식은 backbone checkpoint를 그대로 유지하고 adapter만 먼저 학습할 수 있다는 장점이 있습니다. 반면 입력 채널을 3차원으로 압축하면서 정보 손실이 생길 수 있고 한 레이어의 비용이 추가됩니다. Depthwise/grouped Conv는 `in_channels`, `out_channels`, `groups`의 나눗셈 조건이 함께 묶이므로 일반 Conv처럼 첫 채널만 바꾸면 안 됩니다.\n## 6.2 입력 해상도 변경\n입력 해상도를 바꿀 때 Conv 파라미터 수는 그대로지만 다음은 변합니다.\n- activation memory와 FLOPs: 대체로 `H×W`에 비례\n- 물체가 feature map에서 차지하는 상대 크기와 effective receptive field\n- 여러 번 stride-2 downsampling 후의 홀수/짝수 정렬\n- absolute positional embedding을 쓰는 ViT 계열의 token grid\n- 고정 크기 flatten 뒤 Linear를 쓰는 head의 `in_features`\nCNN classifier는 `AdaptiveAvgPool2d`를 head 앞에 두면 해상도 의존성을 크게 줄일 수 있습니다. 하지만 detection/segmentation처럼 위치 정보가 필요한 모델에서 `(1,1)` global pooling을 넣으면 안 됩니다. 또한 입력 크기가 자유로워져도 batch 내부 tensor 크기는 일반적인 batching에서 같아야 합니다. 서로 다른 크기는 pad, resize, bucketing 또는 list 입력을 지원하는 별도 pipeline이 필요합니다.\n## 6.3 출력 head 변경\n```python\nmodel = ShapeNet(in_channels=3, num_classes=5)\nold_in_features = model.head.in_features\nmodel.head = nn.Linear(old_in_features, 3)\n```\n안전 점검:\n- class index와 label mapping을 새로 정의합니다.\n- loss가 출력 의미와 맞는지 확인합니다. 단일 다중분류는 보통 `[N,C]` logits + `CrossEntropyLoss`, multi-label은 `[N,C]` logits + `BCEWithLogitsLoss`입니다.\n- optimizer를 만든 **뒤에** head를 교체했다면 새 파라미터가 optimizer에 들어 있지 않습니다. head 교체 후 optimizer를 다시 생성하거나 param group을 추가합니다.\n- shape가 다른 기존 head weight는 `strict=False`만으로 항상 무시되지 않습니다. checkpoint에서 해당 key를 제거한 뒤 backbone을 로드합니다.\n```python\nstate = torch.load(\"checkpoint.pt\", map_location=\"cpu\", weights_only=True)\nstate.pop(\"head.weight\", None)\nstate.pop(\"head.bias\", None)\nmissing, unexpected = model.load_state_dict(state, strict=False)\nprint(\"missing:\", missing)\nprint(\"unexpected:\", unexpected)\n```\n모델 구현에 따라 key가 `fc.*`, `classifier.*`, `heads.head.*`일 수 있으므로 `state_dict().keys()`로 실제 이름을 확인합니다.\n---\n# 7. 실습 B — AdaptiveAvgPool로 해상도 의존성 줄이기\n`AdaptiveAvgPool2d((1,1))`은 입력 H/W가 무엇이든 출력 공간 크기를 1×1로 맞추고 채널 수는 유지합니다. 공식 문서: [PyTorch AdaptiveAvgPool2d](https://docs.pytorch.org/docs/stable/generated/torch.nn.AdaptiveAvgPool2d.html)\n```python\nimport torch\nimport torch.nn as nn\n\n\nclass FlexibleClassifier(nn.Module):\n    def __init__(self, in_channels=1, num_classes=7):\n        super().__init__()\n        self.features = nn.Sequential(\n            nn.Conv2d(in_channels, 16, 3, stride=2, padding=1),\n            nn.ReLU(),\n            nn.Conv2d(16, 32, 3, stride=2, padding=1),\n            nn.ReLU(),\n        )\n        self.pool = nn.AdaptiveAvgPool2d((1, 1))\n        self.flatten = nn.Flatten(1)\n        self.head = nn.Linear(32, num_classes)\n\n    def forward(self, x):\n        x = self.features(x)\n        x = self.pool(x)\n        x = self.flatten(x)\n        return self.head(x)\n\n\nmodel = FlexibleClassifier().eval()\nfor height, width in [(128, 160), (224, 224), (320, 512)]:\n    x = torch.randn(4, 1, height, width)\n    with torch.inference_mode():\n        y = model(x)\n    print((height, width), \"->\", tuple(y.shape))\n    assert y.shape == (4, 7)\n```\n예상 결과:\n```plain text\n(128, 160) -> (4, 7)\n(224, 224) -> (4, 7)\n(320, 512) -> (4, 7)\n```\n추가 실습:\n1. `pool = nn.AdaptiveAvgPool2d((4,4))`로 바꿉니다.\n2. `head = nn.Linear(32*4*4, num_classes)`로 바꿉니다.\n3. 세 해상도를 다시 테스트합니다.\n`(4,4)` pooling은 거친 공간 정보를 더 보존하지만 head 파라미터가 `32×16`배의 입력을 받습니다. `(1,1)`은 가장 가볍지만 작은 병변 위치 같은 공간 정보를 global average에서 희석할 수 있습니다.\n---\n# 8. 실습 C — 의도적으로 shape 오류 만들고 고치기\n아래 block은 main branch에서 채널과 해상도를 바꾸지만 skip branch는 그대로 두므로 실패합니다.\n```python\nclass BrokenResidual(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.main = nn.Conv2d(16, 32, kernel_size=3, stride=2, padding=1)\n        self.skip = nn.Identity()  # 의도적인 오류\n        self.add = Add()\n\n    def forward(self, x):\n        return self.add(self.main(x), self.skip(x))\n\n\nbroken = BrokenResidual()\nhandles = install_shape_hooks(broken)\ntry:\n    broken(torch.randn(2, 16, 56, 56))\nfinally:\n    for handle in handles:\n        handle.remove()\n```\n예상 진단:\n```plain text\nmain ... out=(2, 32, 28, 28)\nskip ... out=(2, 16, 56, 56)\nRuntimeError: Residual shape mismatch: (2, 32, 28, 28) vs (2, 16, 56, 56)\n```\n과제:\n1. 어느 축이 다른지 적습니다: `C`, `H`, `W`가 다릅니다.\n2. `main`의 어떤 인자가 각 차이를 만들었는지 찾습니다: `out_channels=32`, `stride=2`입니다.\n3. skip을 아래 projection으로 교체합니다.\n4. hook 결과와 최종 output `(2,32,28,28)`을 확인합니다.\n```python\nself.skip = nn.Conv2d(16, 32, kernel_size=1, stride=2, bias=False)\n```\n**추가 도전:** 두 branch를 `torch.cat(..., dim=1)`으로 합치면 출력 채널은 64입니다. 이때 다음 Conv를 `nn.Conv2d(32, ...)`로 두어 새로운 오류를 만들고, 왜 `in_channels=64`여야 하는지 설명해 보십시오.\n---\n# 9. 디버깅 체크리스트\n오류가 난 마지막 줄부터 임의 수정하지 말고 아래 순서로 좁힙니다.\n- [ ] **입력 계약**: `shape`, `ndim`, dtype, device, value range, channel 순서가 모델 기대와 같은가?\n- [ ] **batch 축**: `squeeze()`로 N이 사라지거나 `unsqueeze()` 위치가 틀리지 않았는가?\n- [ ] **첫 Conv**: 데이터 채널 수와 `in_channels`가 같은가? grouped/depthwise 조건도 맞는가?\n- [ ] **공간 크기 계산**: kernel/stride/padding/dilation을 공식에 넣었는가? 홀수 크기의 floor 효과를 확인했는가?\n- [ ] **merge 직전**: add는 exact shape, concat은 합칠 축 이외 shape가 같은가?\n- [ ] **concat 직후**: 다음 Conv의 `in_channels`가 채널 합과 같은가?\n- [ ] **flatten 경계**: `flatten(start_dim=1)` 이후 feature 수와 Linear의 `in_features`가 같은가?\n- [ ] **출력–loss 계약**: logits/target shape와 dtype이 loss의 요구사항에 맞는가?\n- [ ] **메모리 배치**: permute 뒤 non-contiguous tensor를 `view()`하고 있지 않은가?\n- [ ] **hook 사각지대**: 함수형 add/cat/interpolate/reshape가 로그에서 빠진 것은 아닌가?\n- [ ] **작은 재현 입력**: batch 2의 synthetic tensor로 forward만 먼저 통과하는가?\n- [ ] **여러 해상도 검사**: 짝수, 홀수, 비정사각형 입력을 각각 테스트했는가?\n추천 assertion:\n```python\nassert x.ndim == 4, f\"expected NCHW, got {tuple(x.shape)}\"\nassert x.shape[1] == expected_channels\nassert left.shape == right.shape, (left.shape, right.shape)\nassert logits.shape == (targets.shape[0], num_classes)\n```\n---\n# 10. 복습 문제 5개\n## 문제 1\n입력 `(4, 3, 64, 80)`에 `Conv2d(3, 16, kernel_size=5, stride=2, padding=2, bias=True)`를 적용할 때 출력 shape와 파라미터 수는?\n## 문제 2\nResidual main branch가 `(8, 64, 28, 28)`, skip branch가 `(8, 32, 56, 56)`입니다. 단순 add가 실패하는 이유와 가장 일반적인 수정은?\n## 문제 3\n`a.shape=(2,32,40,40)`, `b.shape=(2,16,40,40)`일 때 `torch.cat([a,b], dim=1)`의 출력 shape는? 이어지는 Conv의 `in_channels`는?\n## 문제 4\n`AdaptiveAvgPool2d((1,1))`이 고정 해상도 flatten+Linear보다 입력 해상도 변경에 강한 이유와 한 가지 손실은?\n## 문제 5\nForward hook을 달았는데 `torch.cat` 지점이 출력되지 않았습니다. 이유와 두 가지 관찰 방법은?\n<details>\n<summary>정답과 해설</summary>\n\t### 정답 1\n\t`H_out=floor((64+4-4-1)/2+1)=32`, `W_out=floor((80+4-4-1)/2+1)=40`이므로 출력은 `(4,16,32,40)`입니다. 파라미터는 `16×3×5×5+16=1,216`개입니다. Batch size와 공간 크기는 파라미터 수에 들어가지 않습니다.\n\t### 정답 2\n\tAdd는 대응 원소끼리 더해야 하므로 C/H/W가 다르면 residual 계약을 만족하지 않습니다. skip에 `Conv2d(32,64,kernel_size=1,stride=2)` projection을 두어 `(8,64,28,28)`로 맞추는 것이 일반적입니다.\n\t### 정답 3\n\t출력은 `(2,48,40,40)`, 다음 Conv의 `in_channels`는 48입니다. Channel concat은 채널을 합치고 나머지 축을 유지합니다.\n\t### 정답 4\n\tAdaptive pooling이 임의 H/W feature map을 고정된 1×1로 바꾸므로 Linear 입력 feature 수가 채널 수 C로 고정됩니다. 손실은 공간 위치 정보가 평균으로 압축되어 작은 국소 신호가 희석될 수 있다는 점입니다.\n\t### 정답 5\n\tModule forward hook은 `nn.Module` 호출을 관찰하며 함수형 `torch.cat`은 module이 아닙니다. `Cat(nn.Module)` wrapper로 감싸 hook을 달거나, merge 직전에 명시적 shape assertion/log를 둡니다. `torch.fx` 같은 graph 도구로 함수형 연산을 추적하는 방법도 있습니다.\n</details>\n---\n# 11. 오늘의 완료 기준과 다음 회차\n오늘 학습을 완료한 것으로 표시할 기준:\n- [ ] Conv2d 예제 두 개의 출력 크기와 파라미터 수를 손으로 계산했다.\n- [ ] ShapeNet hook 코드를 실행해 `block2`의 main/skip shape가 같음을 확인했다.\n- [ ] FlexibleClassifier를 세 가지 해상도로 실행했다.\n- [ ] BrokenResidual의 오류를 재현하고 projection으로 수정했다.\n- [ ] 복습 문제 5개 중 4개 이상을 설명했다.\n**다음 회차 예고 — #02: Forward/Backward graph로 모델 내부 읽기**\n`autograd`가 계산 그래프를 만드는 방식, `requires_grad`, leaf tensor, `detach`, in-place 연산 오류, gradient hook을 다룹니다. 단순히 loss가 감소하는지를 넘어 어느 layer에서 gradient가 사라지거나 폭발하는지 추적합니다.\n---\n# 참고 자료\n- [PyTorch Conv2d 공식 문서](https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)\n- [PyTorch Module과 forward hook 공식 문서](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook)\n- [PyTorch AdaptiveAvgPool2d 공식 문서](https://docs.pytorch.org/docs/stable/generated/torch.nn.AdaptiveAvgPool2d.html)\n- [PyTorch torch.cat 공식 문서](https://docs.pytorch.org/docs/stable/generated/torch.cat.html)\n문서 동작은 2026-08-31에 PyTorch stable 공식 문서 기준으로 확인했습니다."</script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script><script defer src="lesson.js"></script></body></html>

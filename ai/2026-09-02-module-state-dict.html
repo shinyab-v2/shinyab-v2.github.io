@@ -1,1 +1,816 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="nn.Module의 submodule·parameter·buffer 등록 원리, ModuleList와 일반 list의 차이, state_dict key·checkpoint 호환성, hook lifecycle, head 교체 시 안전한 partial load를 초음파 CNN 예제로 실습한다."><title>AI 전문 개발 학습 #03 — nn.Module 등록 구조와 state_dict 해부</title><link rel="stylesheet" href="ai.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><div class="lesson-meta"><span class="pill">2026.09.02</span><span class="pill">모델 아키텍처</span><span class="pill">Intermediate</span></div><h1 class="lesson-title">AI 전문 개발 학습 #03 — nn.Module 등록 구조와 state_dict 해부</h1><p class="lesson-summary">nn.Module의 submodule·parameter·buffer 등록 원리, ModuleList와 일반 list의 차이, state_dict key·checkpoint 호환성, hook lifecycle, head 교체 시 안전한 partial load를 초음파 CNN 예제로 실습한다.</p><div class="lesson-body" id="lesson-body"></div></article><aside class="toc"><strong>이 페이지에서</strong><nav id="toc-links"></nav></aside></main><footer><a href="./">← AI 학습 목록으로 돌아가기</a></footer><script type="application/json" id="lesson-source">"예상 학습 시간: **35분**  \n난이도: **Intermediate**  \n사용 기술: **PyTorch**\n지난 두 회차에서 Tensor Shape와 Gradient Flow를 추적했습니다. 오늘은 그 두 분석이 성립하기 위한 기반인 `nn.Module`의 등록 시스템을 해부합니다. 모델 객체에 레이어가 “들어 있다”는 것과 PyTorch가 그 레이어를 parameter·device 이동·checkpoint의 대상으로 “알고 있다”는 것은 다릅니다.\n## 1. 학습 목표\n오늘 학습을 마치면 다음을 할 수 있어야 합니다.\n- `nn.Module`이 submodule, parameter, buffer를 추적하는 방식을 설명한다.\n- 일반 Python `list`와 `ModuleList`, `ModuleDict`, `Sequential`의 차이를 판단한다.\n- `nn.Parameter`, 일반 Tensor, registered buffer를 용도에 맞게 선택한다.\n- `state_dict` key가 모델의 속성 경로에서 어떻게 만들어지는지 추적한다.\n- `strict=False`가 해결하는 문제와 해결하지 못하는 문제를 구분한다.\n- forward hook을 안전하게 등록하고 반드시 해제한다.\n- 출력 head나 block을 바꾸면서 pretrained checkpoint의 호환 가능한 부분만 로드한다.\n## 2. 핵심 이론\n### 2.1 `nn.Module`은 단순한 Python 객체가 아니다\n`nn.Module`의 핵심 역할은 forward 함수를 제공하는 것만이 아닙니다. 내부적으로 다음 세 종류의 상태를 이름과 함께 등록합니다.\n1. **Submodule**: `nn.Conv2d`, `nn.Sequential`, 사용자 정의 `nn.Module` 등\n2. **Parameter**: optimizer가 갱신할 학습 가능한 Tensor\n3. **Buffer**: 학습하지 않지만 모델과 함께 device를 이동하거나 저장해야 하는 Tensor\n```python\nself.stem = nn.Conv2d(1, 16, kernel_size=3, padding=1)\nself.temperature = nn.Parameter(torch.ones(()))\nself.register_buffer(\"mean\", torch.tensor(0.45))\n```\n이 세 줄은 각각 `_modules`, `_parameters`, `_buffers`라는 내부 registry에 이름을 등록합니다. 일반적으로 직접 이 dictionary를 수정하지 않고 attribute 할당이나 공식 등록 API를 사용합니다.\n중요한 결과는 다음과 같습니다.\n- `model.parameters()`가 optimizer 대상 parameter를 찾을 수 있습니다.\n- `model.to(\"cuda\")`가 parameter와 buffer를 함께 옮깁니다.\n- `model.train()`과 `model.eval()`이 모든 등록된 자식 모듈에 재귀적으로 전달됩니다.\n- `model.state_dict()`가 안정적인 이름으로 checkpoint state를 만듭니다.\n즉, **등록되지 않은 객체는 forward에서 계산될 수는 있어도 모델 관리 체계 밖에 있습니다.** 이것이 가장 위험한 종류의 조용한 버그입니다.\n### 2.2 일반 `list`와 `ModuleList`\n다음 코드는 Python 문법상 정상입니다.\n```python\nself.blocks = [\n    ConvBlock(16),\n    ConvBlock(16),\n]\n```\nforward에서 반복하면 결과도 나옵니다.\n```python\nfor block in self.blocks:\n    x = block(x)\n```\n그러나 일반 `list` 안의 모듈은 부모 `nn.Module`에 등록되지 않습니다. 그 결과:\n- `model.parameters()`에서 block parameter가 누락됩니다.\n- optimizer가 해당 weight를 갱신하지 않습니다.\n- `model.to(device)`가 block을 이동시키지 않습니다.\n- `state_dict()`에 block weight가 없습니다.\n- `train()`과 `eval()` 모드가 block 내부의 BatchNorm·Dropout에 전달되지 않습니다.\n수정 방법은 `nn.ModuleList`입니다.\n```python\nself.blocks = nn.ModuleList([\n    ConvBlock(16),\n    ConvBlock(16),\n])\n```\n`ModuleList`는 모듈을 등록하지만 실행 순서를 스스로 정의하지 않습니다. forward에서 반복·조건·skip connection을 직접 구현할 수 있습니다.\n`Sequential`은 등록과 데이터 흐름을 함께 정의합니다.\n```python\nself.encoder = nn.Sequential(\n    ConvBlock(16),\n    ConvBlock(16),\n)\n```\n선택 기준:\n- 단순 직렬 실행이면 `Sequential`\n- 반복, 분기, attention, residual 등 사용자 정의 흐름이면 `ModuleList`\n- 문자열 key로 여러 branch나 head를 선택하면 `ModuleDict`\n### 2.3 Parameter와 buffer\n#### `nn.Parameter`\n학습을 통해 값이 변해야 하고 gradient를 받아 optimizer가 갱신해야 하는 값입니다.\n```python\nself.logit_scale = nn.Parameter(torch.tensor(1.0))\n```\nattribute에 `nn.Parameter`를 할당하면 `named_parameters()`와 `state_dict()`에 등록됩니다.\n#### 일반 Tensor\n```python\nself.mean = torch.tensor(0.45)\n```\nPython attribute로는 존재하지만 parameter도 buffer도 아닙니다. `model.to(\"cuda\")`를 호출해도 자동 이동하지 않고 `state_dict()`에도 들어가지 않습니다. CPU에서는 문제없이 실행되다가 GPU에서 device mismatch가 발생할 수 있습니다.\n#### Registered buffer\n```python\nself.register_buffer(\n    \"mean\",\n    torch.tensor(0.45).view(1, 1, 1, 1)\n)\n```\n학습되지는 않지만 모델 상태의 일부인 Tensor입니다. 예:\n- 입력 정규화 mean/std\n- BatchNorm의 `running_mean`, `running_var`\n- 고정된 positional encoding\n- 고정 convolution kernel\n- class weight나 calibration constant\n기본값 `persistent=True`이면 `state_dict()`에도 포함됩니다. 실행 중 다시 계산할 수 있는 cache처럼 checkpoint에 저장할 필요가 없다면 다음처럼 지정합니다.\n```python\nself.register_buffer(\n    \"feature_cache\",\n    torch.empty(0),\n    persistent=False,\n)\n```\n이 buffer는 device 이동은 따르지만 checkpoint key에는 포함되지 않습니다.\n### 2.4 Module tree를 읽는 API\n```python\nmodel.named_children()\n```\n바로 아래의 자식 모듈만 반환합니다.\n```python\nmodel.named_modules()\n```\n자기 자신을 포함해 전체 module tree를 재귀적으로 순회합니다.\n```python\nmodel.named_parameters()\nmodel.named_buffers()\n```\n각각 등록된 parameter와 buffer를 이름과 함께 반환합니다. 모델 수정 전후에는 총 parameter 수만 비교하지 말고 **이름과 shape 목록**을 비교하는 편이 좋습니다.\n```python\nfor name, parameter in model.named_parameters():\n    print(name, tuple(parameter.shape), parameter.requires_grad)\n```\n이름은 attribute 경로를 반영합니다.\n```plain text\nstem.0.weight\nblocks.0.conv.weight\nblocks.1.bn.running_mean\nhead.weight\n```\n이 경로가 checkpoint API 계약의 일부가 됩니다. 계산이 같더라도 모듈을 감싸거나 이름을 바꾸면 key가 달라집니다.\n### 2.5 `state_dict`의 정체\n`state_dict()`는 다음을 포함하는 flat mapping입니다.\n- 등록된 parameter\n- persistent buffer\n다음은 포함하지 않습니다.\n- 일반 Tensor attribute\n- `persistent=False` buffer\n- 일반 list 안의 미등록 module\n- forward 중의 임시 activation\n- Python 설정값 자체\n```python\nfor key, value in model.state_dict().items():\n    print(key, tuple(value.shape), value.dtype)\n```\n주의: 메모리 안에서 `best_state = model.state_dict()`만 저장하면 독립적인 snapshot이라고 가정해서는 안 됩니다. 학습을 계속하는 동안 underlying tensor가 바뀔 수 있으므로 파일에 즉시 저장하거나 clone/deepcopy가 필요합니다.\n```python\nbest_state = {\n    key: value.detach().cpu().clone()\n    for key, value in model.state_dict().items()\n}\n```\n### 2.6 `load_state_dict`: strict의 정확한 의미\n```python\nresult = model.load_state_dict(checkpoint, strict=True)\n```\n`strict=True`는 model key와 checkpoint key가 정확히 일치해야 합니다.\n- model에는 있지만 checkpoint에는 없는 key: `missing_keys`\n- checkpoint에는 있지만 model에는 없는 key: `unexpected_keys`\n`strict=False`는 missing/unexpected key를 허용하고 결과 객체로 목록을 돌려줍니다.\n```python\nresult = model.load_state_dict(checkpoint, strict=False)\nprint(result.missing_keys)\nprint(result.unexpected_keys)\n```\n하지만 **같은 key의 shape가 다른 문제는 일반적으로 해결하지 못합니다.** 예를 들어 `head.weight`가 `[2, 16]`에서 `[3, 16]`으로 바뀌면 해당 key를 먼저 checkpoint에서 제외해야 합니다.\n따라서 `strict=False`는 “대충 로드” 옵션이 아니라, 의도적으로 허용할 key 차이를 검사하기 위한 도구로 사용해야 합니다.\n### 2.7 Hook의 lifecycle\nHook은 원본 forward 코드를 바꾸지 않고 중간 입력·출력·gradient를 관찰할 수 있게 합니다.\n- `register_forward_pre_hook`: 모듈 forward 직전의 입력\n- `register_forward_hook`: 모듈 forward 직후의 입력과 출력\n- `register_full_backward_hook`: 모듈 단위의 `grad_input`, `grad_output`\n```python\nhandle = module.register_forward_hook(hook_fn)\n```\n등록 함수는 `RemovableHandle`을 반환합니다. 진단이 끝나면 반드시 해제합니다.\n```python\nhandle.remove()\n```\nJupyter 셀을 반복 실행하면서 hook을 계속 추가하면 한 번의 forward에서 같은 로그가 여러 번 출력될 수 있습니다. Hook 내부에서 activation을 그대로 list에 보관하면 computation graph 참조가 유지되어 메모리 사용이 커질 수도 있습니다. 통계만 필요하다면 `output.detach()` 또는 scalar 요약을 저장합니다.\n## 3. 실제 모델 구조 분석\n초음파 grayscale 입력을 받는 작은 CNN을 사용합니다.\n```python\nimport torch\nimport torch.nn as nn\n\n\nclass ConvBlock(nn.Module):\n    def __init__(self, channels):\n        super().__init__()\n        self.conv = nn.Conv2d(\n            channels, channels, 3,\n            padding=1, bias=False\n        )\n        self.bn = nn.BatchNorm2d(channels)\n        self.act = nn.SiLU(inplace=False)\n\n    def forward(self, x):\n        return self.act(self.bn(self.conv(x)))\n\n\nclass UltrasoundNet(nn.Module):\n    def __init__(self, num_classes=2):\n        super().__init__()\n\n        self.stem = nn.Sequential(\n            nn.Conv2d(1, 16, 3, padding=1, bias=False),\n            nn.BatchNorm2d(16),\n            nn.SiLU(inplace=False),\n        )\n\n        self.blocks = nn.ModuleList([\n            ConvBlock(16),\n            ConvBlock(16),\n        ])\n\n        self.register_buffer(\n            \"input_mean\",\n            torch.tensor(0.45).view(1, 1, 1, 1),\n        )\n        self.register_buffer(\n            \"input_std\",\n            torch.tensor(0.20).view(1, 1, 1, 1),\n        )\n        self.register_buffer(\n            \"feature_cache\",\n            torch.empty(0),\n            persistent=False,\n        )\n\n        self.pool = nn.AdaptiveAvgPool2d(1)\n        self.head = nn.Linear(16, num_classes)\n\n    def forward(self, x):\n        x = (x - self.input_mean) / self.input_std.clamp_min(1e-6)\n        x = self.stem(x)\n\n        for block in self.blocks:\n            x = x + block(x)\n\n        x = self.pool(x).flatten(1)\n        return self.head(x)\n```\n등록 tree는 다음과 같습니다.\n```plain text\nUltrasoundNet\n├─ stem: Sequential\n│  ├─ 0: Conv2d\n│  ├─ 1: BatchNorm2d\n│  └─ 2: SiLU\n├─ blocks: ModuleList\n│  ├─ 0: ConvBlock\n│  │  ├─ conv: Conv2d\n│  │  ├─ bn: BatchNorm2d\n│  │  └─ act: SiLU\n│  └─ 1: ConvBlock\n├─ pool: AdaptiveAvgPool2d\n└─ head: Linear\n```\n`input_mean`, `input_std`는 module tree에는 나타나지 않지만 `named_buffers()`와 `state_dict()`에 나타납니다. `feature_cache`는 `named_buffers()`에는 있지만 non-persistent이므로 `state_dict()`에는 없습니다.\n등록 상태를 확인하는 최소 점검 코드입니다.\n```python\nmodel = UltrasoundNet()\n\nprint(\"[children]\")\nfor name, module in model.named_children():\n    print(name, type(module).__name__)\n\nprint(\"\\n[buffers]\")\nfor name, buffer in model.named_buffers():\n    print(name, tuple(buffer.shape))\n\nprint(\"\\n[state_dict]\")\nfor key, value in model.state_dict().items():\n    print(key, tuple(value.shape))\n```\n## 4. 수정 가능한 지점과 trade-off\n### 4.1 `ModuleList`와 `Sequential`\n`ModuleList`를 사용하면 block별 stochastic depth, conditional branch, deep supervision을 쉽게 넣을 수 있습니다. 반면 forward 흐름이 코드에 흩어져 정적 분석이나 export가 더 까다로울 수 있습니다.\n`Sequential`은 단순하고 tooling이 이해하기 쉽지만 입력이 하나에서 하나로 흐르는 구조에 가장 적합합니다. residual이나 여러 tensor를 주고받는 block에는 별도 wrapper가 필요할 수 있습니다.\n### 4.2 Parameter와 buffer\n입력 normalization 값이 학습되어야 한다면 Parameter로 바꿀 수 있습니다. 그러나 학습 가능한 normalization은 데이터 분포에 적응하는 장점과 함께 다음 위험을 만듭니다.\n- 값이 불안정하게 변해 입력 scale이 무너질 수 있음\n- pretrained checkpoint와 전처리 계약이 달라짐\n- optimizer weight decay 적용 여부를 별도로 설계해야 함\n고정 통계는 buffer, 학습 대상은 Parameter라는 의미 구분을 유지해야 합니다.\n### 4.3 Persistent buffer\n통계나 calibration 값처럼 재현에 필요한 상태는 persistent buffer가 적합합니다. 크기가 큰 cache를 persistent로 저장하면 checkpoint가 불필요하게 커지고 오래된 cache가 복원될 수 있습니다. 반대로 재현에 필요한 값을 non-persistent로 두면 재시작 후 결과가 달라질 수 있습니다.\n### 4.4 Attribute 이름과 checkpoint 호환성\n```python\nself.head = nn.Linear(16, 2)\n```\n을 다음처럼 감싸면:\n```python\nself.head = nn.Sequential(nn.Linear(16, 2))\n```\n계산은 거의 같지만 key가 `head.weight`에서 `head.0.weight`로 바뀝니다. 장기 운영 모델에서는 module 경로를 public API처럼 관리하거나 checkpoint migration 함수를 제공해야 합니다.\n### 4.5 `strict=False`\n장점은 backbone 재사용과 head 교체가 쉽다는 것입니다. 위험은 예상하지 않은 parameter 누락도 조용히 허용한다는 점입니다. 실제 코드에서는 허용 가능한 missing key를 assertion으로 제한합니다.\n```python\nresult = model.load_state_dict(checkpoint, strict=False)\nassert all(k.startswith(\"head.\") for k in result.missing_keys)\nassert not result.unexpected_keys\n```\n### 4.6 Hook과 명시적 forward\nHook은 관찰·디버깅에 좋지만 핵심 학습 로직이나 feature routing을 hook에 의존하면 실행 순서가 숨겨지고 `torch.compile`, export, 분산 실행에서 관리가 어려워질 수 있습니다. 모델 동작은 가능하면 forward에 명시하고, hook은 진단용으로 제한합니다.\n## 5. 직접 실행 실습\n### 실습 A: 미등록 module 버그 재현\n```python\nimport torch\nimport torch.nn as nn\n\n\nclass BrokenNet(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.stem = nn.Conv2d(1, 8, 3, padding=1)\n\n        # 부모 모델에 등록되지 않는다.\n        self.blocks = [\n            nn.Conv2d(8, 8, 3, padding=1),\n            nn.Conv2d(8, 8, 3, padding=1),\n        ]\n\n        # 자동 device 이동·checkpoint 저장 대상이 아니다.\n        self.mean = torch.tensor(0.45)\n\n    def forward(self, x):\n        x = self.stem(x - self.mean)\n        for block in self.blocks:\n            x = block(x)\n        return x\n\n\nclass FixedNet(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.stem = nn.Conv2d(1, 8, 3, padding=1)\n\n        self.blocks = nn.ModuleList([\n            nn.Conv2d(8, 8, 3, padding=1),\n            nn.Conv2d(8, 8, 3, padding=1),\n        ])\n\n        self.register_buffer(\"mean\", torch.tensor(0.45))\n\n    def forward(self, x):\n        x = self.stem(x - self.mean)\n        for block in self.blocks:\n            x = block(x)\n        return x\n\n\ndef report(model):\n    print(f\"\\n[{type(model).__name__}]\")\n    print(\"parameter names:\")\n    for name, parameter in model.named_parameters():\n        print(\" \", name, tuple(parameter.shape))\n\n    print(\"buffer names:\")\n    for name, buffer in model.named_buffers():\n        print(\" \", name, tuple(buffer.shape))\n\n    print(\"state_dict keys:\")\n    for key in model.state_dict():\n        print(\" \", key)\n\n\nbroken = BrokenNet()\nfixed = FixedNet()\n\nreport(broken)\nreport(fixed)\n```\n예상 결과:\n- `BrokenNet`에는 `stem.weight`, `stem.bias`만 등록됩니다.\n- `BrokenNet.blocks.0/1`의 weight는 출력에 없습니다.\n- `BrokenNet.mean`은 buffer와 `state_dict`에 없습니다.\n- `FixedNet`에는 `blocks.0.weight`, `blocks.1.weight`, `mean`이 모두 나타납니다.\nCUDA가 있다면 device 문제도 확인합니다.\n```python\nif torch.cuda.is_available():\n    broken = BrokenNet().cuda()\n    fixed = FixedNet().cuda()\n    x = torch.randn(2, 1, 32, 32, device=\"cuda\")\n\n    try:\n        broken(x)\n    except RuntimeError as error:\n        print(\"BrokenNet error:\", error)\n\n    y = fixed(x)\n    print(\"FixedNet output device:\", y.device)\n```\n`BrokenNet`은 CPU에 남아 있는 `mean` 또는 list 내부 convolution 때문에 device mismatch가 발생합니다.\n### 실습 B: Hook으로 shape 추적 후 해제\n```python\nimport torch\nimport torch.nn as nn\n\n\nmodel = UltrasoundNet(num_classes=2)\nrecords = []\nhandles = []\n\n\ndef make_hook(name):\n    def hook(module, inputs, output):\n        input_shape = tuple(inputs[0].shape)\n        output_shape = tuple(output.shape)\n        records.append((name, input_shape, output_shape))\n    return hook\n\n\nfor name, module in model.named_modules():\n    if isinstance(module, (nn.Conv2d, nn.AdaptiveAvgPool2d, nn.Linear)):\n        handles.append(module.register_forward_hook(make_hook(name)))\n\n\nwith torch.no_grad():\n    logits = model(torch.randn(2, 1, 64, 64))\n\nfor name, input_shape, output_shape in records:\n    print(f\"{name:20s} {input_shape} -> {output_shape}\")\n\nprint(\"logits:\", tuple(logits.shape))\n\nfor handle in handles:\n    handle.remove()\n\nbefore = len(records)\n\nwith torch.no_grad():\n    model(torch.randn(2, 1, 64, 64))\n\nprint(\"new records after remove:\", len(records) - before)\n```\n예상 결과:\n- convolution의 spatial shape는 `[64, 64]`로 유지됩니다.\n- pool 출력은 `[2, 16, 1, 1]`입니다.\n- head 출력은 `[2, 2]`입니다.\n- handle을 제거한 뒤 추가 record 수는 0입니다.\n### 실습 C: Head 교체와 안전한 partial load\n```python\nimport torch\n\n\nsource = UltrasoundNet(num_classes=2)\n\n# 독립적인 메모리 snapshot\ncheckpoint = {\n    key: value.detach().cpu().clone()\n    for key, value in source.state_dict().items()\n}\n\ntarget = UltrasoundNet(num_classes=3)\ntarget_state = target.state_dict()\n\n\ndef compatible_state_dict(checkpoint, model_state):\n    compatible = {}\n    mismatched = {}\n    unexpected = []\n\n    for key, value in checkpoint.items():\n        if key not in model_state:\n            unexpected.append(key)\n        elif value.shape != model_state[key].shape:\n            mismatched[key] = (\n                tuple(value.shape),\n                tuple(model_state[key].shape),\n            )\n        else:\n            compatible[key] = value\n\n    return compatible, mismatched, unexpected\n\n\ncompatible, mismatched, unexpected = compatible_state_dict(\n    checkpoint,\n    target_state,\n)\n\nprint(\"mismatched:\", mismatched)\nprint(\"unexpected:\", unexpected)\n\nresult = target.load_state_dict(compatible, strict=False)\n\nprint(\"missing:\", result.missing_keys)\nprint(\"unexpected after load:\", result.unexpected_keys)\n\nassert set(result.missing_keys) == {\"head.weight\", \"head.bias\"}\nassert not result.unexpected_keys\n\nwith torch.no_grad():\n    output = target(torch.randn(2, 1, 64, 64))\n\nprint(\"new output shape:\", tuple(output.shape))\n```\n예상 결과:\n- `head.weight`: checkpoint `[2, 16]`, target `[3, 16]`\n- `head.bias`: checkpoint `[2]`, target `[3]`\n- 나머지 backbone과 buffer는 정상 로드\n- 새 출력 shape는 `[2, 3]`\n### 선택 과제: Optimizer가 모든 parameter를 보는지 검증\n```python\ndef trainable_parameter_ids(model):\n    return {\n        id(parameter)\n        for parameter in model.parameters()\n        if parameter.requires_grad\n    }\n\n\ndef optimizer_parameter_ids(optimizer):\n    return {\n        id(parameter)\n        for group in optimizer.param_groups\n        for parameter in group[\"params\"]\n    }\n\n\nmodel = UltrasoundNet()\noptimizer = torch.optim.AdamW(model.parameters(), lr=3e-4)\n\nmissing = trainable_parameter_ids(model) - optimizer_parameter_ids(optimizer)\nextra = optimizer_parameter_ids(optimizer) - trainable_parameter_ids(model)\n\nprint(\"missing trainable parameters:\", len(missing))\nprint(\"extra optimizer parameters:\", len(extra))\n```\n둘 다 0이어야 합니다. 모델을 만든 뒤 parameter를 새로 추가하거나 optimizer 생성 후 모듈을 교체했다면 이 검사가 실패할 수 있습니다. 그 경우 optimizer를 다시 구성하거나 의도적으로 새 parameter group을 추가해야 합니다.\n## 6. 예상 결과와 디버깅 포인트\n### 증상별 점검표\n<table header-row=\"true\">\n<tr>\n<td>증상</td>\n<td>먼저 확인할 것</td>\n<td>대표 원인</td>\n</tr>\n<tr>\n<td>Loss는 계산되지만 특정 block weight가 변하지 않음</td>\n<td>`named_parameters()`</td>\n<td>일반 list에 모듈 저장</td>\n</tr>\n<tr>\n<td>CUDA device mismatch</td>\n<td>`named_buffers()`, 각 모듈 parameter device</td>\n<td>일반 Tensor 또는 미등록 module</td>\n</tr>\n<tr>\n<td>`missing_keys`가 대량 발생</td>\n<td>state_dict key prefix</td>\n<td>모듈 이름 변경, wrapper 추가</td>\n</tr>\n<tr>\n<td>`unexpected_keys`에 `module.` prefix</td>\n<td>checkpoint 생성 환경</td>\n<td>DataParallel/DDP wrapper 차이</td>\n</tr>\n<tr>\n<td>`strict=False`인데 size mismatch</td>\n<td>동일 key의 두 shape</td>\n<td>head/channel 수 변경</td>\n</tr>\n<tr>\n<td>hook 출력이 여러 번 반복</td>\n<td>handle 개수와 셀 재실행</td>\n<td>hook 중복 등록</td>\n</tr>\n<tr>\n<td>디버깅 중 GPU 메모리 증가</td>\n<td>hook이 저장하는 객체</td>\n<td>graph가 붙은 activation 보관</td>\n</tr>\n<tr>\n<td>best checkpoint가 마지막 모델과 같아짐</td>\n<td>snapshot 생성 방식</td>\n<td>`state_dict()` reference를 보관</td>\n</tr>\n</table>\n### 권장 진단 순서\n1. `named_parameters()`와 `named_buffers()`의 이름·shape·device를 출력합니다.\n2. 모델과 checkpoint의 key 집합 차이를 계산합니다.\n3. 공통 key는 shape와 dtype까지 비교합니다.\n4. 허용할 missing/unexpected key를 명시적으로 assertion합니다.\n5. optimizer가 모든 trainable parameter를 포함하는지 확인합니다.\n6. hook은 좁은 모듈에만 등록하고 `try/finally` 또는 context manager 형태로 해제합니다.\n7. 수정 후 작은 입력으로 forward와 backward 한 step을 실행합니다.\n8. 저장한 checkpoint를 새 Python process에서 다시 로드해 재현성을 검증합니다.\n### 실무 체크포인트\n모델 구조를 바꿀 때는 정확도 실험 전에 다음 네 가지 계약을 먼저 확인합니다.\n- **Registration 계약**: 학습할 모듈과 parameter가 모두 등록되었는가?\n- **Device 계약**: parameter와 buffer가 입력과 같은 device/dtype에 있는가?\n- **Checkpoint 계약**: key 이름과 shape 변경이 의도된 것인가?\n- **Execution 계약**: hook이나 wrapper가 forward 의미를 몰래 바꾸지 않는가?\n이 네 가지가 깨지면 학습률이나 loss function을 조정해도 원인을 해결할 수 없습니다.\n## 7. 복습 문제\n1. `forward()`에서 정상 실행되는 convolution이 `model.parameters()`에는 나타나지 않을 수 있는 대표적인 이유는 무엇인가요?\n2. 학습되지는 않지만 `model.to(\"cuda\")`와 checkpoint 저장을 모두 따라야 하는 Tensor에는 어떤 등록 방식을 사용해야 하나요?\n3. `ModuleList`와 `Sequential`의 핵심 차이는 무엇인가요?\n4. 출력 class 수를 2에서 3으로 바꾼 뒤 `strict=False`만 사용해도 `head.weight`의 shape mismatch가 자동으로 무시되나요?\n5. Jupyter에서 forward hook을 여러 번 등록한 뒤 로그가 중복되고 메모리가 늘어납니다. 무엇을 확인하고 어떻게 수정해야 하나요?\n### 정답과 해설\n1. 일반 Python `list`나 `dict` 안에 모듈을 넣어 부모 `nn.Module`에 등록하지 않았을 가능성이 큽니다. `ModuleList` 또는 `ModuleDict`를 사용하거나 attribute로 직접 할당해야 합니다.\n2. `register_buffer(name, tensor, persistent=True)`를 사용합니다. Buffer는 optimizer 대상은 아니지만 model의 device 이동을 따르고 persistent이면 `state_dict`에 저장됩니다.\n3. 두 container 모두 모듈을 등록합니다. `Sequential`은 모듈을 순서대로 실행하는 forward 흐름까지 제공하지만 `ModuleList`는 등록만 하므로 반복·분기·residual 흐름을 사용자가 forward에서 작성합니다.\n4. 아닙니다. `strict=False`는 missing/unexpected key를 허용하지만 동일한 key의 tensor shape 불일치는 별도로 필터링해야 합니다. 호환되지 않는 `head.weight`와 `head.bias`를 checkpoint에서 제외한 뒤 결과의 missing key가 그 둘뿐인지 검사합니다.\n5. hook 등록이 반환한 `RemovableHandle`을 보관하고 `handle.remove()`를 호출했는지 확인합니다. Hook 안에서는 graph가 붙은 activation 전체 대신 `detach()`한 값이나 shape·mean 같은 요약만 저장합니다. 반복 실행 전 기존 handle도 정리해야 합니다.\n## 8. 다음 학습 예고\n다음 회차는 **PyTorch forward 코드 추적과 ****`torch.fx`**** 그래프 읽기**입니다.\n- 실제 ResNet `BasicBlock`의 forward를 line-by-line 추적\n- runtime hook과 symbolic trace의 차이\n- `torch.fx.GraphModule`의 node와 target 해석\n- functional operation과 submodule call 구분\n- graph rewrite로 activation을 교체하는 방법\n- trace가 실패하는 data-dependent control flow와 디버깅 전략\n## 참고 자료\n- [PyTorch ](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html)[`nn.Module`](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html)[ API](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html)\n- [PyTorch ](https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html)[`nn.ModuleList`](https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html)[ API](https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html)\n- [PyTorch 모델 저장과 불러오기](https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html)"</script><script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script><script defer src="lesson.js"></script></body></html>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="nn.Module의 submodule·parameter·buffer 등록 원리, ModuleList와 일반 list의 차이, state_dict key·checkpoint 호환성, hook lifecycle, head 교체 시 안전한 partial load를 초음파 CNN 예제로 실습한다."><title>AI 전문 개발 학습 #03 — nn.Module 등록 구조와 state_dict 해부</title><link rel="stylesheet" href="ai.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><div class="lesson-meta"><span class="pill">2026.09.02</span><span class="pill">모델 아키텍처</span><span class="pill">Intermediate</span></div><h1 class="lesson-title">AI 전문 개발 학습 #03 — nn.Module 등록 구조와 state_dict 해부</h1><p class="lesson-summary">nn.Module의 submodule·parameter·buffer 등록 원리, ModuleList와 일반 list의 차이, state_dict key·checkpoint 호환성, hook lifecycle, head 교체 시 안전한 partial load를 초음파 CNN 예제로 실습한다.</p><div class="lesson-body" id="lesson-body">
+<p>예상 학습 시간: <strong>35분</strong><br />
+난이도: <strong>Intermediate</strong><br />
+사용 기술: <strong>PyTorch</strong> 지난 두 회차에서 Tensor Shape와
+Gradient Flow를 추적했습니다. 오늘은 그 두 분석이 성립하기 위한 기반인
+<code>nn.Module</code>의 등록 시스템을 해부합니다. 모델 객체에 레이어가
+“들어 있다”는 것과 PyTorch가 그 레이어를 parameter·device
+이동·checkpoint의 대상으로 “알고 있다”는 것은 다릅니다.</p>
+<h2 id="학습-목표">1. 학습 목표</h2>
+<p>오늘 학습을 마치면 다음을 할 수 있어야 합니다.</p>
+<ul>
+<li><p><code>nn.Module</code>이 submodule, parameter, buffer를 추적하는
+방식을 설명한다.</p></li>
+<li><p>일반 Python <code>list</code>와 <code>ModuleList</code>,
+<code>ModuleDict</code>, <code>Sequential</code>의 차이를
+판단한다.</p></li>
+<li><p><code>nn.Parameter</code>, 일반 Tensor, registered buffer를
+용도에 맞게 선택한다.</p></li>
+<li><p><code>state_dict</code> key가 모델의 속성 경로에서 어떻게
+만들어지는지 추적한다.</p></li>
+<li><p><code>strict=False</code>가 해결하는 문제와 해결하지 못하는
+문제를 구분한다.</p></li>
+<li><p>forward hook을 안전하게 등록하고 반드시 해제한다.</p></li>
+<li><p>출력 head나 block을 바꾸면서 pretrained checkpoint의 호환 가능한
+부분만 로드한다.</p></li>
+</ul>
+<h2 id="핵심-이론">2. 핵심 이론</h2>
+<h3 id="nn.module은-단순한-python-객체가-아니다">2.1
+<code>nn.Module</code>은 단순한 Python 객체가 아니다</h3>
+<p><code>nn.Module</code>의 핵심 역할은 forward 함수를 제공하는 것만이
+아닙니다. 내부적으로 다음 세 종류의 상태를 이름과 함께 등록합니다.</p>
+<ol type="1">
+<li><p><strong>Submodule</strong>: <code>nn.Conv2d</code>,
+<code>nn.Sequential</code>, 사용자 정의 <code>nn.Module</code>
+등</p></li>
+<li><p><strong>Parameter</strong>: optimizer가 갱신할 학습 가능한
+Tensor</p></li>
+<li><p><strong>Buffer</strong>: 학습하지 않지만 모델과 함께 device를
+이동하거나 저장해야 하는 Tensor</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.stem <span class="op">=</span> nn.Conv2d(<span class="dv">1</span>, <span class="dv">16</span>, kernel_size<span class="op">=</span><span class="dv">3</span>, padding<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.temperature <span class="op">=</span> nn.Parameter(torch.ones(()))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.register_buffer(<span class="st">&quot;mean&quot;</span>, torch.tensor(<span class="fl">0.45</span>))</span></code></pre></div>
+<p>이 세 줄은 각각 <code>_modules</code>, <code>_parameters</code>,
+<code>_buffers</code>라는 내부 registry에 이름을 등록합니다. 일반적으로
+직접 이 dictionary를 수정하지 않고 attribute 할당이나 공식 등록 API를
+사용합니다. 중요한 결과는 다음과 같습니다.</p>
+<ul>
+<li><p><code>model.parameters()</code>가 optimizer 대상 parameter를 찾을
+수 있습니다.</p></li>
+<li><p><code>model.to("cuda")</code>가 parameter와 buffer를 함께
+옮깁니다.</p></li>
+<li><p><code>model.train()</code>과 <code>model.eval()</code>이 모든
+등록된 자식 모듈에 재귀적으로 전달됩니다.</p></li>
+<li><p><code>model.state_dict()</code>가 안정적인 이름으로 checkpoint
+state를 만듭니다. 즉, <strong>등록되지 않은 객체는 forward에서 계산될
+수는 있어도 모델 관리 체계 밖에 있습니다.</strong> 이것이 가장 위험한
+종류의 조용한 버그입니다.</p></li>
+</ul>
+<h3 id="일반-list와-modulelist">2.2 일반 <code>list</code>와
+<code>ModuleList</code></h3>
+<p>다음 코드는 Python 문법상 정상입니다.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.blocks <span class="op">=</span> [</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    ConvBlock(<span class="dv">16</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    ConvBlock(<span class="dv">16</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<p>forward에서 반복하면 결과도 나옵니다.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> block <span class="kw">in</span> <span class="va">self</span>.blocks:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> block(x)</span></code></pre></div>
+<p>그러나 일반 <code>list</code> 안의 모듈은 부모
+<code>nn.Module</code>에 등록되지 않습니다. 그 결과:</p>
+<ul>
+<li><p><code>model.parameters()</code>에서 block parameter가
+누락됩니다.</p></li>
+<li><p>optimizer가 해당 weight를 갱신하지 않습니다.</p></li>
+<li><p><code>model.to(device)</code>가 block을 이동시키지
+않습니다.</p></li>
+<li><p><code>state_dict()</code>에 block weight가 없습니다.</p></li>
+<li><p><code>train()</code>과 <code>eval()</code> 모드가 block 내부의
+BatchNorm·Dropout에 전달되지 않습니다. 수정 방법은
+<code>nn.ModuleList</code>입니다.</p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.blocks <span class="op">=</span> nn.ModuleList([</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    ConvBlock(<span class="dv">16</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    ConvBlock(<span class="dv">16</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div>
+<p><code>ModuleList</code>는 모듈을 등록하지만 실행 순서를 스스로
+정의하지 않습니다. forward에서 반복·조건·skip connection을 직접 구현할
+수 있습니다. <code>Sequential</code>은 등록과 데이터 흐름을 함께
+정의합니다.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.encoder <span class="op">=</span> nn.Sequential(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    ConvBlock(<span class="dv">16</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    ConvBlock(<span class="dv">16</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>선택 기준:</p>
+<ul>
+<li><p>단순 직렬 실행이면 <code>Sequential</code></p></li>
+<li><p>반복, 분기, attention, residual 등 사용자 정의 흐름이면
+<code>ModuleList</code></p></li>
+<li><p>문자열 key로 여러 branch나 head를 선택하면
+<code>ModuleDict</code></p></li>
+</ul>
+<h3 id="parameter와-buffer">2.3 Parameter와 buffer</h3>
+<h4 id="nn.parameter"><code>nn.Parameter</code></h4>
+<p>학습을 통해 값이 변해야 하고 gradient를 받아 optimizer가 갱신해야
+하는 값입니다.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.logit_scale <span class="op">=</span> nn.Parameter(torch.tensor(<span class="fl">1.0</span>))</span></code></pre></div>
+<p>attribute에 <code>nn.Parameter</code>를 할당하면
+<code>named_parameters()</code>와 <code>state_dict()</code>에
+등록됩니다.</p>
+<h4 id="일반-tensor">일반 Tensor</h4>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.mean <span class="op">=</span> torch.tensor(<span class="fl">0.45</span>)</span></code></pre></div>
+<p>Python attribute로는 존재하지만 parameter도 buffer도 아닙니다.
+<code>model.to("cuda")</code>를 호출해도 자동 이동하지 않고
+<code>state_dict()</code>에도 들어가지 않습니다. CPU에서는 문제없이
+실행되다가 GPU에서 device mismatch가 발생할 수 있습니다.</p>
+<h4 id="registered-buffer">Registered buffer</h4>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.register_buffer(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;mean&quot;</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    torch.tensor(<span class="fl">0.45</span>).view(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>학습되지는 않지만 모델 상태의 일부인 Tensor입니다. 예:</p>
+<ul>
+<li><p>입력 정규화 mean/std</p></li>
+<li><p>BatchNorm의 <code>running_mean</code>,
+<code>running_var</code></p></li>
+<li><p>고정된 positional encoding</p></li>
+<li><p>고정 convolution kernel</p></li>
+<li><p>class weight나 calibration constant 기본값
+<code>persistent=True</code>이면 <code>state_dict()</code>에도
+포함됩니다. 실행 중 다시 계산할 수 있는 cache처럼 checkpoint에 저장할
+필요가 없다면 다음처럼 지정합니다.</p></li>
+</ul>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.register_buffer(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;feature_cache&quot;</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    torch.empty(<span class="dv">0</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    persistent<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>이 buffer는 device 이동은 따르지만 checkpoint key에는 포함되지
+않습니다.</p>
+<h3 id="module-tree를-읽는-api">2.4 Module tree를 읽는 API</h3>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>model.named_children()</span></code></pre></div>
+<p>바로 아래의 자식 모듈만 반환합니다.</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model.named_modules()</span></code></pre></div>
+<p>자기 자신을 포함해 전체 module tree를 재귀적으로 순회합니다.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>model.named_parameters()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>model.named_buffers()</span></code></pre></div>
+<p>각각 등록된 parameter와 buffer를 이름과 함께 반환합니다. 모델 수정
+전후에는 총 parameter 수만 비교하지 말고 <strong>이름과 shape
+목록</strong>을 비교하는 편이 좋습니다.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, parameter <span class="kw">in</span> model.named_parameters():</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name, <span class="bu">tuple</span>(parameter.shape), parameter.requires_grad)</span></code></pre></div>
+<p>이름은 attribute 경로를 반영합니다.
+<code>plain text stem.0.weight blocks.0.conv.weight blocks.1.bn.running_mean head.weight</code>
+이 경로가 checkpoint API 계약의 일부가 됩니다. 계산이 같더라도 모듈을
+감싸거나 이름을 바꾸면 key가 달라집니다.</p>
+<h3 id="state_dict의-정체">2.5 <code>state_dict</code>의 정체</h3>
+<p><code>state_dict()</code>는 다음을 포함하는 flat mapping입니다.</p>
+<ul>
+<li><p>등록된 parameter</p></li>
+<li><p>persistent buffer 다음은 포함하지 않습니다.</p></li>
+<li><p>일반 Tensor attribute</p></li>
+<li><p><code>persistent=False</code> buffer</p></li>
+<li><p>일반 list 안의 미등록 module</p></li>
+<li><p>forward 중의 임시 activation</p></li>
+<li><p>Python 설정값 자체</p></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> model.state_dict().items():</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="bu">tuple</span>(value.shape), value.dtype)</span></code></pre></div>
+<p>주의: 메모리 안에서 <code>best_state = model.state_dict()</code>만
+저장하면 독립적인 snapshot이라고 가정해서는 안 됩니다. 학습을 계속하는
+동안 underlying tensor가 바뀔 수 있으므로 파일에 즉시 저장하거나
+clone/deepcopy가 필요합니다.</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>best_state <span class="op">=</span> {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    key: value.detach().cpu().clone()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> model.state_dict().items()</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h3 id="load_state_dict-strict의-정확한-의미">2.6
+<code>load_state_dict</code>: strict의 정확한 의미</h3>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> model.load_state_dict(checkpoint, strict<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<p><code>strict=True</code>는 model key와 checkpoint key가 정확히
+일치해야 합니다.</p>
+<ul>
+<li><p>model에는 있지만 checkpoint에는 없는 key:
+<code>missing_keys</code></p></li>
+<li><p>checkpoint에는 있지만 model에는 없는 key:
+<code>unexpected_keys</code> <code>strict=False</code>는
+missing/unexpected key를 허용하고 결과 객체로 목록을
+돌려줍니다.</p></li>
+</ul>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> model.load_state_dict(checkpoint, strict<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.missing_keys)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.unexpected_keys)</span></code></pre></div>
+<p>하지만 <strong>같은 key의 shape가 다른 문제는 일반적으로 해결하지
+못합니다.</strong> 예를 들어 <code>head.weight</code>가
+<code>[2, 16]</code>에서 <code>[3, 16]</code>으로 바뀌면 해당 key를 먼저
+checkpoint에서 제외해야 합니다. 따라서 <code>strict=False</code>는 “대충
+로드” 옵션이 아니라, 의도적으로 허용할 key 차이를 검사하기 위한 도구로
+사용해야 합니다.</p>
+<h3 id="hook의-lifecycle">2.7 Hook의 lifecycle</h3>
+<p>Hook은 원본 forward 코드를 바꾸지 않고 중간 입력·출력·gradient를
+관찰할 수 있게 합니다.</p>
+<ul>
+<li><p><code>register_forward_pre_hook</code>: 모듈 forward 직전의
+입력</p></li>
+<li><p><code>register_forward_hook</code>: 모듈 forward 직후의 입력과
+출력</p></li>
+<li><p><code>register_full_backward_hook</code>: 모듈 단위의
+<code>grad_input</code>, <code>grad_output</code></p></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>handle <span class="op">=</span> module.register_forward_hook(hook_fn)</span></code></pre></div>
+<p>등록 함수는 <code>RemovableHandle</code>을 반환합니다. 진단이 끝나면
+반드시 해제합니다.</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>handle.remove()</span></code></pre></div>
+<p>Jupyter 셀을 반복 실행하면서 hook을 계속 추가하면 한 번의 forward에서
+같은 로그가 여러 번 출력될 수 있습니다. Hook 내부에서 activation을
+그대로 list에 보관하면 computation graph 참조가 유지되어 메모리 사용이
+커질 수도 있습니다. 통계만 필요하다면 <code>output.detach()</code> 또는
+scalar 요약을 저장합니다.</p>
+<h2 id="실제-모델-구조-분석">3. 실제 모델 구조 분석</h2>
+<p>초음파 grayscale 입력을 받는 작은 CNN을 사용합니다.</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ConvBlock(nn.Module):</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, channels):</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conv <span class="op">=</span> nn.Conv2d(</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>            channels, channels, <span class="dv">3</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>            padding<span class="op">=</span><span class="dv">1</span>, bias<span class="op">=</span><span class="va">False</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.bn <span class="op">=</span> nn.BatchNorm2d(channels)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.act <span class="op">=</span> nn.SiLU(inplace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.act(<span class="va">self</span>.bn(<span class="va">self</span>.conv(x)))</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UltrasoundNet(nn.Module):</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, num_classes<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stem <span class="op">=</span> nn.Sequential(</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>            nn.Conv2d(<span class="dv">1</span>, <span class="dv">16</span>, <span class="dv">3</span>, padding<span class="op">=</span><span class="dv">1</span>, bias<span class="op">=</span><span class="va">False</span>),</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>            nn.BatchNorm2d(<span class="dv">16</span>),</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>            nn.SiLU(inplace<span class="op">=</span><span class="va">False</span>),</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.blocks <span class="op">=</span> nn.ModuleList([</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>            ConvBlock(<span class="dv">16</span>),</span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>            ConvBlock(<span class="dv">16</span>),</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>        ])</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.register_buffer(</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;input_mean&quot;</span>,</span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>            torch.tensor(<span class="fl">0.45</span>).view(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.register_buffer(</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;input_std&quot;</span>,</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>            torch.tensor(<span class="fl">0.20</span>).view(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.register_buffer(</span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;feature_cache&quot;</span>,</span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>            torch.empty(<span class="dv">0</span>),</span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>            persistent<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.pool <span class="op">=</span> nn.AdaptiveAvgPool2d(<span class="dv">1</span>)</span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.head <span class="op">=</span> nn.Linear(<span class="dv">16</span>, num_classes)</span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> (x <span class="op">-</span> <span class="va">self</span>.input_mean) <span class="op">/</span> <span class="va">self</span>.input_std.clamp_min(<span class="fl">1e-6</span>)</span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.stem(x)</span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> block <span class="kw">in</span> <span class="va">self</span>.blocks:</span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> x <span class="op">+</span> block(x)</span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.pool(x).flatten(<span class="dv">1</span>)</span>
+<span id="cb20-59"><a href="#cb20-59" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.head(x)</span></code></pre></div>
+<p>등록 tree는 다음과 같습니다.
+<code>plain text UltrasoundNet ├─ stem: Sequential │  ├─ 0: Conv2d │  ├─ 1: BatchNorm2d │  └─ 2: SiLU ├─ blocks: ModuleList │  ├─ 0: ConvBlock │  │  ├─ conv: Conv2d │  │  ├─ bn: BatchNorm2d │  │  └─ act: SiLU │  └─ 1: ConvBlock ├─ pool: AdaptiveAvgPool2d └─ head: Linear</code>
+<code>input_mean</code>, <code>input_std</code>는 module tree에는
+나타나지 않지만 <code>named_buffers()</code>와
+<code>state_dict()</code>에 나타납니다. <code>feature_cache</code>는
+<code>named_buffers()</code>에는 있지만 non-persistent이므로
+<code>state_dict()</code>에는 없습니다. 등록 상태를 확인하는 최소 점검
+코드입니다.</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> UltrasoundNet()</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;[children]&quot;</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, module <span class="kw">in</span> model.named_children():</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name, <span class="bu">type</span>(module).<span class="va">__name__</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">[buffers]&quot;</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, <span class="bu">buffer</span> <span class="kw">in</span> model.named_buffers():</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name, <span class="bu">tuple</span>(<span class="bu">buffer</span>.shape))</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">[state_dict]&quot;</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> model.state_dict().items():</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="bu">tuple</span>(value.shape))</span></code></pre></div>
+<h2 id="수정-가능한-지점과-trade-off">4. 수정 가능한 지점과
+trade-off</h2>
+<h3 id="modulelist와-sequential">4.1 <code>ModuleList</code>와
+<code>Sequential</code></h3>
+<p><code>ModuleList</code>를 사용하면 block별 stochastic depth,
+conditional branch, deep supervision을 쉽게 넣을 수 있습니다. 반면
+forward 흐름이 코드에 흩어져 정적 분석이나 export가 더 까다로울 수
+있습니다. <code>Sequential</code>은 단순하고 tooling이 이해하기 쉽지만
+입력이 하나에서 하나로 흐르는 구조에 가장 적합합니다. residual이나 여러
+tensor를 주고받는 block에는 별도 wrapper가 필요할 수 있습니다.</p>
+<h3 id="parameter와-buffer-1">4.2 Parameter와 buffer</h3>
+<p>입력 normalization 값이 학습되어야 한다면 Parameter로 바꿀 수
+있습니다. 그러나 학습 가능한 normalization은 데이터 분포에 적응하는
+장점과 함께 다음 위험을 만듭니다.</p>
+<ul>
+<li><p>값이 불안정하게 변해 입력 scale이 무너질 수 있음</p></li>
+<li><p>pretrained checkpoint와 전처리 계약이 달라짐</p></li>
+<li><p>optimizer weight decay 적용 여부를 별도로 설계해야 함 고정 통계는
+buffer, 학습 대상은 Parameter라는 의미 구분을 유지해야 합니다.</p></li>
+</ul>
+<h3 id="persistent-buffer">4.3 Persistent buffer</h3>
+<p>통계나 calibration 값처럼 재현에 필요한 상태는 persistent buffer가
+적합합니다. 크기가 큰 cache를 persistent로 저장하면 checkpoint가
+불필요하게 커지고 오래된 cache가 복원될 수 있습니다. 반대로 재현에
+필요한 값을 non-persistent로 두면 재시작 후 결과가 달라질 수
+있습니다.</p>
+<h3 id="attribute-이름과-checkpoint-호환성">4.4 Attribute 이름과
+checkpoint 호환성</h3>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.head <span class="op">=</span> nn.Linear(<span class="dv">16</span>, <span class="dv">2</span>)</span></code></pre></div>
+<p>을 다음처럼 감싸면:</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.head <span class="op">=</span> nn.Sequential(nn.Linear(<span class="dv">16</span>, <span class="dv">2</span>))</span></code></pre></div>
+<p>계산은 거의 같지만 key가 <code>head.weight</code>에서
+<code>head.0.weight</code>로 바뀝니다. 장기 운영 모델에서는 module
+경로를 public API처럼 관리하거나 checkpoint migration 함수를 제공해야
+합니다.</p>
+<h3 id="strictfalse">4.5 <code>strict=False</code></h3>
+<p>장점은 backbone 재사용과 head 교체가 쉽다는 것입니다. 위험은 예상하지
+않은 parameter 누락도 조용히 허용한다는 점입니다. 실제 코드에서는 허용
+가능한 missing key를 assertion으로 제한합니다.</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> model.load_state_dict(checkpoint, strict<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">all</span>(k.startswith(<span class="st">&quot;head.&quot;</span>) <span class="cf">for</span> k <span class="kw">in</span> result.missing_keys)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> result.unexpected_keys</span></code></pre></div>
+<h3 id="hook과-명시적-forward">4.6 Hook과 명시적 forward</h3>
+<p>Hook은 관찰·디버깅에 좋지만 핵심 학습 로직이나 feature routing을
+hook에 의존하면 실행 순서가 숨겨지고 <code>torch.compile</code>, export,
+분산 실행에서 관리가 어려워질 수 있습니다. 모델 동작은 가능하면
+forward에 명시하고, hook은 진단용으로 제한합니다.</p>
+<h2 id="직접-실행-실습">5. 직접 실행 실습</h2>
+<h3 id="실습-a-미등록-module-버그-재현">실습 A: 미등록 module 버그
+재현</h3>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BrokenNet(nn.Module):</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stem <span class="op">=</span> nn.Conv2d(<span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">3</span>, padding<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 부모 모델에 등록되지 않는다.</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.blocks <span class="op">=</span> [</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>            nn.Conv2d(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">3</span>, padding<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>            nn.Conv2d(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">3</span>, padding<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 자동 device 이동·checkpoint 저장 대상이 아니다.</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.mean <span class="op">=</span> torch.tensor(<span class="fl">0.45</span>)</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.stem(x <span class="op">-</span> <span class="va">self</span>.mean)</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> block <span class="kw">in</span> <span class="va">self</span>.blocks:</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> block(x)</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> x</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> FixedNet(nn.Module):</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stem <span class="op">=</span> nn.Conv2d(<span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">3</span>, padding<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.blocks <span class="op">=</span> nn.ModuleList([</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>            nn.Conv2d(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">3</span>, padding<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>            nn.Conv2d(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">3</span>, padding<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>        ])</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.register_buffer(<span class="st">&quot;mean&quot;</span>, torch.tensor(<span class="fl">0.45</span>))</span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.stem(x <span class="op">-</span> <span class="va">self</span>.mean)</span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> block <span class="kw">in</span> <span class="va">self</span>.blocks:</span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> block(x)</span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> x</span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> report(model):</span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">[</span><span class="sc">{</span><span class="bu">type</span>(model)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">]&quot;</span>)</span>
+<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;parameter names:&quot;</span>)</span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, parameter <span class="kw">in</span> model.named_parameters():</span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot; &quot;</span>, name, <span class="bu">tuple</span>(parameter.shape))</span>
+<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;buffer names:&quot;</span>)</span>
+<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, <span class="bu">buffer</span> <span class="kw">in</span> model.named_buffers():</span>
+<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot; &quot;</span>, name, <span class="bu">tuple</span>(<span class="bu">buffer</span>.shape))</span>
+<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;state_dict keys:&quot;</span>)</span>
+<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key <span class="kw">in</span> model.state_dict():</span>
+<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot; &quot;</span>, key)</span>
+<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a>broken <span class="op">=</span> BrokenNet()</span>
+<span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a>fixed <span class="op">=</span> FixedNet()</span>
+<span id="cb25-62"><a href="#cb25-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a>report(broken)</span>
+<span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a>report(fixed)</span></code></pre></div>
+<p>예상 결과:</p>
+<ul>
+<li><p><code>BrokenNet</code>에는 <code>stem.weight</code>,
+<code>stem.bias</code>만 등록됩니다.</p></li>
+<li><p><code>BrokenNet.blocks.0/1</code>의 weight는 출력에
+없습니다.</p></li>
+<li><p><code>BrokenNet.mean</code>은 buffer와 <code>state_dict</code>에
+없습니다.</p></li>
+<li><p><code>FixedNet</code>에는 <code>blocks.0.weight</code>,
+<code>blocks.1.weight</code>, <code>mean</code>이 모두 나타납니다.
+CUDA가 있다면 device 문제도 확인합니다.</p></li>
+</ul>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> torch.cuda.is_available():</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    broken <span class="op">=</span> BrokenNet().cuda()</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    fixed <span class="op">=</span> FixedNet().cuda()</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> torch.randn(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">32</span>, <span class="dv">32</span>, device<span class="op">=</span><span class="st">&quot;cuda&quot;</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        broken(x)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">RuntimeError</span> <span class="im">as</span> error:</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;BrokenNet error:&quot;</span>, error)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> fixed(x)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;FixedNet output device:&quot;</span>, y.device)</span></code></pre></div>
+<p><code>BrokenNet</code>은 CPU에 남아 있는 <code>mean</code> 또는 list
+내부 convolution 때문에 device mismatch가 발생합니다.</p>
+<h3 id="실습-b-hook으로-shape-추적-후-해제">실습 B: Hook으로 shape 추적
+후 해제</h3>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> UltrasoundNet(num_classes<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>records <span class="op">=</span> []</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>handles <span class="op">=</span> []</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_hook(name):</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hook(module, inputs, output):</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        input_shape <span class="op">=</span> <span class="bu">tuple</span>(inputs[<span class="dv">0</span>].shape)</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        output_shape <span class="op">=</span> <span class="bu">tuple</span>(output.shape)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        records.append((name, input_shape, output_shape))</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hook</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, module <span class="kw">in</span> model.named_modules():</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(module, (nn.Conv2d, nn.AdaptiveAvgPool2d, nn.Linear)):</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>        handles.append(module.register_forward_hook(make_hook(name)))</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    logits <span class="op">=</span> model(torch.randn(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">64</span>, <span class="dv">64</span>))</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, input_shape, output_shape <span class="kw">in</span> records:</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name<span class="sc">:20s}</span><span class="ss"> </span><span class="sc">{</span>input_shape<span class="sc">}</span><span class="ss"> -&gt; </span><span class="sc">{</span>output_shape<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;logits:&quot;</span>, <span class="bu">tuple</span>(logits.shape))</span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> handle <span class="kw">in</span> handles:</span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>    handle.remove()</span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a>before <span class="op">=</span> <span class="bu">len</span>(records)</span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>    model(torch.randn(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">64</span>, <span class="dv">64</span>))</span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;new records after remove:&quot;</span>, <span class="bu">len</span>(records) <span class="op">-</span> before)</span></code></pre></div>
+<p>예상 결과:</p>
+<ul>
+<li><p>convolution의 spatial shape는 <code>[64, 64]</code>로
+유지됩니다.</p></li>
+<li><p>pool 출력은 <code>[2, 16, 1, 1]</code>입니다.</p></li>
+<li><p>head 출력은 <code>[2, 2]</code>입니다.</p></li>
+<li><p>handle을 제거한 뒤 추가 record 수는 0입니다.</p></li>
+</ul>
+<h3 id="실습-c-head-교체와-안전한-partial-load">실습 C: Head 교체와
+안전한 partial load</h3>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> UltrasoundNet(num_classes<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 독립적인 메모리 snapshot</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>checkpoint <span class="op">=</span> {</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    key: value.detach().cpu().clone()</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> source.state_dict().items()</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> UltrasoundNet(num_classes<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>target_state <span class="op">=</span> target.state_dict()</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compatible_state_dict(checkpoint, model_state):</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>    compatible <span class="op">=</span> {}</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    mismatched <span class="op">=</span> {}</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>    unexpected <span class="op">=</span> []</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> checkpoint.items():</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> key <span class="kw">not</span> <span class="kw">in</span> model_state:</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>            unexpected.append(key)</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> value.shape <span class="op">!=</span> model_state[key].shape:</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>            mismatched[key] <span class="op">=</span> (</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>                <span class="bu">tuple</span>(value.shape),</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>                <span class="bu">tuple</span>(model_state[key].shape),</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>            compatible[key] <span class="op">=</span> value</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> compatible, mismatched, unexpected</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>compatible, mismatched, unexpected <span class="op">=</span> compatible_state_dict(</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>    checkpoint,</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>    target_state,</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;mismatched:&quot;</span>, mismatched)</span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;unexpected:&quot;</span>, unexpected)</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> target.load_state_dict(compatible, strict<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;missing:&quot;</span>, result.missing_keys)</span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;unexpected after load:&quot;</span>, result.unexpected_keys)</span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">set</span>(result.missing_keys) <span class="op">==</span> {<span class="st">&quot;head.weight&quot;</span>, <span class="st">&quot;head.bias&quot;</span>}</span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> result.unexpected_keys</span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>    output <span class="op">=</span> target(torch.randn(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">64</span>, <span class="dv">64</span>))</span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;new output shape:&quot;</span>, <span class="bu">tuple</span>(output.shape))</span></code></pre></div>
+<p>예상 결과:</p>
+<ul>
+<li><p><code>head.weight</code>: checkpoint <code>[2, 16]</code>, target
+<code>[3, 16]</code></p></li>
+<li><p><code>head.bias</code>: checkpoint <code>[2]</code>, target
+<code>[3]</code></p></li>
+<li><p>나머지 backbone과 buffer는 정상 로드</p></li>
+<li><p>새 출력 shape는 <code>[2, 3]</code></p></li>
+</ul>
+<h3 id="선택-과제-optimizer가-모든-parameter를-보는지-검증">선택 과제:
+Optimizer가 모든 parameter를 보는지 검증</h3>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> trainable_parameter_ids(model):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">id</span>(parameter)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> parameter <span class="kw">in</span> model.parameters()</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> parameter.requires_grad</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> optimizer_parameter_ids(optimizer):</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">id</span>(parameter)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> group <span class="kw">in</span> optimizer.param_groups</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> parameter <span class="kw">in</span> group[<span class="st">&quot;params&quot;</span>]</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> UltrasoundNet()</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> torch.optim.AdamW(model.parameters(), lr<span class="op">=</span><span class="fl">3e-4</span>)</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> trainable_parameter_ids(model) <span class="op">-</span> optimizer_parameter_ids(optimizer)</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>extra <span class="op">=</span> optimizer_parameter_ids(optimizer) <span class="op">-</span> trainable_parameter_ids(model)</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;missing trainable parameters:&quot;</span>, <span class="bu">len</span>(missing))</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;extra optimizer parameters:&quot;</span>, <span class="bu">len</span>(extra))</span></code></pre></div>
+<p>둘 다 0이어야 합니다. 모델을 만든 뒤 parameter를 새로 추가하거나
+optimizer 생성 후 모듈을 교체했다면 이 검사가 실패할 수 있습니다. 그
+경우 optimizer를 다시 구성하거나 의도적으로 새 parameter group을
+추가해야 합니다.</p>
+<h2 id="예상-결과와-디버깅-포인트">6. 예상 결과와 디버깅 포인트</h2>
+<h3 id="증상별-점검표">증상별 점검표</h3>
+<table>
+<tr>
+<td>
+증상
+</td>
+<td>
+먼저 확인할 것
+</td>
+<td>
+대표 원인
+</td>
+</tr>
+<tr>
+<td>
+Loss는 계산되지만 특정 block weight가 변하지 않음
+</td>
+<td>
+<code>named_parameters()</code>
+</td>
+<td>
+일반 list에 모듈 저장
+</td>
+</tr>
+<tr>
+<td>
+CUDA device mismatch
+</td>
+<td>
+<code>named_buffers()</code>, 각 모듈 parameter device
+</td>
+<td>
+일반 Tensor 또는 미등록 module
+</td>
+</tr>
+<tr>
+<td>
+<code>missing_keys</code>가 대량 발생
+</td>
+<td>
+state_dict key prefix
+</td>
+<td>
+모듈 이름 변경, wrapper 추가
+</td>
+</tr>
+<tr>
+<td>
+<code>unexpected_keys</code>에 <code>module.</code> prefix
+</td>
+<td>
+checkpoint 생성 환경
+</td>
+<td>
+DataParallel/DDP wrapper 차이
+</td>
+</tr>
+<tr>
+<td>
+<code>strict=False</code>인데 size mismatch
+</td>
+<td>
+동일 key의 두 shape
+</td>
+<td>
+head/channel 수 변경
+</td>
+</tr>
+<tr>
+<td>
+hook 출력이 여러 번 반복
+</td>
+<td>
+handle 개수와 셀 재실행
+</td>
+<td>
+hook 중복 등록
+</td>
+</tr>
+<tr>
+<td>
+디버깅 중 GPU 메모리 증가
+</td>
+<td>
+hook이 저장하는 객체
+</td>
+<td>
+graph가 붙은 activation 보관
+</td>
+</tr>
+<tr>
+<td>
+best checkpoint가 마지막 모델과 같아짐
+</td>
+<td>
+snapshot 생성 방식
+</td>
+<td>
+<code>state_dict()</code> reference를 보관
+</td>
+</tr>
+</table>
+<h3 id="권장-진단-순서">권장 진단 순서</h3>
+<ol type="1">
+<li><p><code>named_parameters()</code>와 <code>named_buffers()</code>의
+이름·shape·device를 출력합니다.</p></li>
+<li><p>모델과 checkpoint의 key 집합 차이를 계산합니다.</p></li>
+<li><p>공통 key는 shape와 dtype까지 비교합니다.</p></li>
+<li><p>허용할 missing/unexpected key를 명시적으로
+assertion합니다.</p></li>
+<li><p>optimizer가 모든 trainable parameter를 포함하는지
+확인합니다.</p></li>
+<li><p>hook은 좁은 모듈에만 등록하고 <code>try/finally</code> 또는
+context manager 형태로 해제합니다.</p></li>
+<li><p>수정 후 작은 입력으로 forward와 backward 한 step을
+실행합니다.</p></li>
+<li><p>저장한 checkpoint를 새 Python process에서 다시 로드해 재현성을
+검증합니다.</p></li>
+</ol>
+<h3 id="실무-체크포인트">실무 체크포인트</h3>
+<p>모델 구조를 바꿀 때는 정확도 실험 전에 다음 네 가지 계약을 먼저
+확인합니다.</p>
+<ul>
+<li><p><strong>Registration 계약</strong>: 학습할 모듈과 parameter가
+모두 등록되었는가?</p></li>
+<li><p><strong>Device 계약</strong>: parameter와 buffer가 입력과 같은
+device/dtype에 있는가?</p></li>
+<li><p><strong>Checkpoint 계약</strong>: key 이름과 shape 변경이 의도된
+것인가?</p></li>
+<li><p><strong>Execution 계약</strong>: hook이나 wrapper가 forward
+의미를 몰래 바꾸지 않는가? 이 네 가지가 깨지면 학습률이나 loss
+function을 조정해도 원인을 해결할 수 없습니다.</p></li>
+</ul>
+<h2 id="복습-문제">7. 복습 문제</h2>
+<ol type="1">
+<li><p><code>forward()</code>에서 정상 실행되는 convolution이
+<code>model.parameters()</code>에는 나타나지 않을 수 있는 대표적인
+이유는 무엇인가요?</p></li>
+<li><p>학습되지는 않지만 <code>model.to("cuda")</code>와 checkpoint
+저장을 모두 따라야 하는 Tensor에는 어떤 등록 방식을 사용해야
+하나요?</p></li>
+<li><p><code>ModuleList</code>와 <code>Sequential</code>의 핵심 차이는
+무엇인가요?</p></li>
+<li><p>출력 class 수를 2에서 3으로 바꾼 뒤 <code>strict=False</code>만
+사용해도 <code>head.weight</code>의 shape mismatch가 자동으로
+무시되나요?</p></li>
+<li><p>Jupyter에서 forward hook을 여러 번 등록한 뒤 로그가 중복되고
+메모리가 늘어납니다. 무엇을 확인하고 어떻게 수정해야 하나요?</p></li>
+</ol>
+<h3 id="정답과-해설">정답과 해설</h3>
+<ol type="1">
+<li><p>일반 Python <code>list</code>나 <code>dict</code> 안에 모듈을
+넣어 부모 <code>nn.Module</code>에 등록하지 않았을 가능성이 큽니다.
+<code>ModuleList</code> 또는 <code>ModuleDict</code>를 사용하거나
+attribute로 직접 할당해야 합니다.</p></li>
+<li><p><code>register_buffer(name, tensor, persistent=True)</code>를
+사용합니다. Buffer는 optimizer 대상은 아니지만 model의 device 이동을
+따르고 persistent이면 <code>state_dict</code>에 저장됩니다.</p></li>
+<li><p>두 container 모두 모듈을 등록합니다. <code>Sequential</code>은
+모듈을 순서대로 실행하는 forward 흐름까지 제공하지만
+<code>ModuleList</code>는 등록만 하므로 반복·분기·residual 흐름을
+사용자가 forward에서 작성합니다.</p></li>
+<li><p>아닙니다. <code>strict=False</code>는 missing/unexpected key를
+허용하지만 동일한 key의 tensor shape 불일치는 별도로 필터링해야 합니다.
+호환되지 않는 <code>head.weight</code>와 <code>head.bias</code>를
+checkpoint에서 제외한 뒤 결과의 missing key가 그 둘뿐인지
+검사합니다.</p></li>
+<li><p>hook 등록이 반환한 <code>RemovableHandle</code>을 보관하고
+<code>handle.remove()</code>를 호출했는지 확인합니다. Hook 안에서는
+graph가 붙은 activation 전체 대신 <code>detach()</code>한 값이나
+shape·mean 같은 요약만 저장합니다. 반복 실행 전 기존 handle도 정리해야
+합니다.</p></li>
+</ol>
+<h2 id="다음-학습-예고">8. 다음 학습 예고</h2>
+<p>다음 회차는 <strong>PyTorch forward 코드 추적과
+<code>torch.fx</code></strong>** 그래프 읽기**입니다.</p>
+<ul>
+<li><p>실제 ResNet <code>BasicBlock</code>의 forward를 line-by-line
+추적</p></li>
+<li><p>runtime hook과 symbolic trace의 차이</p></li>
+<li><p><code>torch.fx.GraphModule</code>의 node와 target 해석</p></li>
+<li><p>functional operation과 submodule call 구분</p></li>
+<li><p>graph rewrite로 activation을 교체하는 방법</p></li>
+<li><p>trace가 실패하는 data-dependent control flow와 디버깅
+전략</p></li>
+</ul>
+<h2 id="참고-자료">참고 자료</h2>
+<ul>
+<li><p><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html">PyTorch</a><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html"><code>nn.Module</code></a><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html">API</a></p></li>
+<li><p><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html">PyTorch</a><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html"><code>nn.ModuleList</code></a><a
+href="https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html">API</a></p></li>
+<li><p><a
+href="https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html">PyTorch
+모델 저장과 불러오기</a></p></li>
+</ul>
+</div></article><aside class="toc"><strong>이 페이지에서</strong><nav id="toc-links"></nav></aside></main><footer><a href="./">← AI 학습 목록으로 돌아가기</a></footer><script type="application/json" id="lesson-source">"예상 학습 시간: **35분**  \n난이도: **Intermediate**  \n사용 기술: **PyTorch**\n지난 두 회차에서 Tensor Shape와 Gradient Flow를 추적했습니다. 오늘은 그 두 분석이 성립하기 위한 기반인 `nn.Module`의 등록 시스템을 해부합니다. 모델 객체에 레이어가 “들어 있다”는 것과 PyTorch가 그 레이어를 parameter·device 이동·checkpoint의 대상으로 “알고 있다”는 것은 다릅니다.\n## 1. 학습 목표\n오늘 학습을 마치면 다음을 할 수 있어야 합니다.\n- `nn.Module`이 submodule, parameter, buffer를 추적하는 방식을 설명한다.\n- 일반 Python `list`와 `ModuleList`, `ModuleDict`, `Sequential`의 차이를 판단한다.\n- `nn.Parameter`, 일반 Tensor, registered buffer를 용도에 맞게 선택한다.\n- `state_dict` key가 모델의 속성 경로에서 어떻게 만들어지는지 추적한다.\n- `strict=False`가 해결하는 문제와 해결하지 못하는 문제를 구분한다.\n- forward hook을 안전하게 등록하고 반드시 해제한다.\n- 출력 head나 block을 바꾸면서 pretrained checkpoint의 호환 가능한 부분만 로드한다.\n## 2. 핵심 이론\n### 2.1 `nn.Module`은 단순한 Python 객체가 아니다\n`nn.Module`의 핵심 역할은 forward 함수를 제공하는 것만이 아닙니다. 내부적으로 다음 세 종류의 상태를 이름과 함께 등록합니다.\n1. **Submodule**: `nn.Conv2d`, `nn.Sequential`, 사용자 정의 `nn.Module` 등\n2. **Parameter**: optimizer가 갱신할 학습 가능한 Tensor\n3. **Buffer**: 학습하지 않지만 모델과 함께 device를 이동하거나 저장해야 하는 Tensor\n```python\nself.stem = nn.Conv2d(1, 16, kernel_size=3, padding=1)\nself.temperature = nn.Parameter(torch.ones(()))\nself.register_buffer(\"mean\", torch.tensor(0.45))\n```\n이 세 줄은 각각 `_modules`, `_parameters`, `_buffers`라는 내부 registry에 이름을 등록합니다. 일반적으로 직접 이 dictionary를 수정하지 않고 attribute 할당이나 공식 등록 API를 사용합니다.\n중요한 결과는 다음과 같습니다.\n- `model.parameters()`가 optimizer 대상 parameter를 찾을 수 있습니다.\n- `model.to(\"cuda\")`가 parameter와 buffer를 함께 옮깁니다.\n- `model.train()`과 `model.eval()`이 모든 등록된 자식 모듈에 재귀적으로 전달됩니다.\n- `model.state_dict()`가 안정적인 이름으로 checkpoint state를 만듭니다.\n즉, **등록되지 않은 객체는 forward에서 계산될 수는 있어도 모델 관리 체계 밖에 있습니다.** 이것이 가장 위험한 종류의 조용한 버그입니다.\n### 2.2 일반 `list`와 `ModuleList`\n다음 코드는 Python 문법상 정상입니다.\n```python\nself.blocks = [\n    ConvBlock(16),\n    ConvBlock(16),\n]\n```\nforward에서 반복하면 결과도 나옵니다.\n```python\nfor block in self.blocks:\n    x = block(x)\n```\n그러나 일반 `list` 안의 모듈은 부모 `nn.Module`에 등록되지 않습니다. 그 결과:\n- `model.parameters()`에서 block parameter가 누락됩니다.\n- optimizer가 해당 weight를 갱신하지 않습니다.\n- `model.to(device)`가 block을 이동시키지 않습니다.\n- `state_dict()`에 block weight가 없습니다.\n- `train()`과 `eval()` 모드가 block 내부의 BatchNorm·Dropout에 전달되지 않습니다.\n수정 방법은 `nn.ModuleList`입니다.\n```python\nself.blocks = nn.ModuleList([\n    ConvBlock(16),\n    ConvBlock(16),\n])\n```\n`ModuleList`는 모듈을 등록하지만 실행 순서를 스스로 정의하지 않습니다. forward에서 반복·조건·skip connection을 직접 구현할 수 있습니다.\n`Sequential`은 등록과 데이터 흐름을 함께 정의합니다.\n```python\nself.encoder = nn.Sequential(\n    ConvBlock(16),\n    ConvBlock(16),\n)\n```\n선택 기준:\n- 단순 직렬 실행이면 `Sequential`\n- 반복, 분기, attention, residual 등 사용자 정의 흐름이면 `ModuleList`\n- 문자열 key로 여러 branch나 head를 선택하면 `ModuleDict`\n### 2.3 Parameter와 buffer\n#### `nn.Parameter`\n학습을 통해 값이 변해야 하고 gradient를 받아 optimizer가 갱신해야 하는 값입니다.\n```python\nself.logit_scale = nn.Parameter(torch.tensor(1.0))\n```\nattribute에 `nn.Parameter`를 할당하면 `named_parameters()`와 `state_dict()`에 등록됩니다.\n#### 일반 Tensor\n```python\nself.mean = torch.tensor(0.45)\n```\nPython attribute로는 존재하지만 parameter도 buffer도 아닙니다. `model.to(\"cuda\")`를 호출해도 자동 이동하지 않고 `state_dict()`에도 들어가지 않습니다. CPU에서는 문제없이 실행되다가 GPU에서 device mismatch가 발생할 수 있습니다.\n#### Registered buffer\n```python\nself.register_buffer(\n    \"mean\",\n    torch.tensor(0.45).view(1, 1, 1, 1)\n)\n```\n학습되지는 않지만 모델 상태의 일부인 Tensor입니다. 예:\n- 입력 정규화 mean/std\n- BatchNorm의 `running_mean`, `running_var`\n- 고정된 positional encoding\n- 고정 convolution kernel\n- class weight나 calibration constant\n기본값 `persistent=True`이면 `state_dict()`에도 포함됩니다. 실행 중 다시 계산할 수 있는 cache처럼 checkpoint에 저장할 필요가 없다면 다음처럼 지정합니다.\n```python\nself.register_buffer(\n    \"feature_cache\",\n    torch.empty(0),\n    persistent=False,\n)\n```\n이 buffer는 device 이동은 따르지만 checkpoint key에는 포함되지 않습니다.\n### 2.4 Module tree를 읽는 API\n```python\nmodel.named_children()\n```\n바로 아래의 자식 모듈만 반환합니다.\n```python\nmodel.named_modules()\n```\n자기 자신을 포함해 전체 module tree를 재귀적으로 순회합니다.\n```python\nmodel.named_parameters()\nmodel.named_buffers()\n```\n각각 등록된 parameter와 buffer를 이름과 함께 반환합니다. 모델 수정 전후에는 총 parameter 수만 비교하지 말고 **이름과 shape 목록**을 비교하는 편이 좋습니다.\n```python\nfor name, parameter in model.named_parameters():\n    print(name, tuple(parameter.shape), parameter.requires_grad)\n```\n이름은 attribute 경로를 반영합니다.\n```plain text\nstem.0.weight\nblocks.0.conv.weight\nblocks.1.bn.running_mean\nhead.weight\n```\n이 경로가 checkpoint API 계약의 일부가 됩니다. 계산이 같더라도 모듈을 감싸거나 이름을 바꾸면 key가 달라집니다.\n### 2.5 `state_dict`의 정체\n`state_dict()`는 다음을 포함하는 flat mapping입니다.\n- 등록된 parameter\n- persistent buffer\n다음은 포함하지 않습니다.\n- 일반 Tensor attribute\n- `persistent=False` buffer\n- 일반 list 안의 미등록 module\n- forward 중의 임시 activation\n- Python 설정값 자체\n```python\nfor key, value in model.state_dict().items():\n    print(key, tuple(value.shape), value.dtype)\n```\n주의: 메모리 안에서 `best_state = model.state_dict()`만 저장하면 독립적인 snapshot이라고 가정해서는 안 됩니다. 학습을 계속하는 동안 underlying tensor가 바뀔 수 있으므로 파일에 즉시 저장하거나 clone/deepcopy가 필요합니다.\n```python\nbest_state = {\n    key: value.detach().cpu().clone()\n    for key, value in model.state_dict().items()\n}\n```\n### 2.6 `load_state_dict`: strict의 정확한 의미\n```python\nresult = model.load_state_dict(checkpoint, strict=True)\n```\n`strict=True`는 model key와 checkpoint key가 정확히 일치해야 합니다.\n- model에는 있지만 checkpoint에는 없는 key: `missing_keys`\n- checkpoint에는 있지만 model에는 없는 key: `unexpected_keys`\n`strict=False`는 missing/unexpected key를 허용하고 결과 객체로 목록을 돌려줍니다.\n```python\nresult = model.load_state_dict(checkpoint, strict=False)\nprint(result.missing_keys)\nprint(result.unexpected_keys)\n```\n하지만 **같은 key의 shape가 다른 문제는 일반적으로 해결하지 못합니다.** 예를 들어 `head.weight`가 `[2, 16]`에서 `[3, 16]`으로 바뀌면 해당 key를 먼저 checkpoint에서 제외해야 합니다.\n따라서 `strict=False`는 “대충 로드” 옵션이 아니라, 의도적으로 허용할 key 차이를 검사하기 위한 도구로 사용해야 합니다.\n### 2.7 Hook의 lifecycle\nHook은 원본 forward 코드를 바꾸지 않고 중간 입력·출력·gradient를 관찰할 수 있게 합니다.\n- `register_forward_pre_hook`: 모듈 forward 직전의 입력\n- `register_forward_hook`: 모듈 forward 직후의 입력과 출력\n- `register_full_backward_hook`: 모듈 단위의 `grad_input`, `grad_output`\n```python\nhandle = module.register_forward_hook(hook_fn)\n```\n등록 함수는 `RemovableHandle`을 반환합니다. 진단이 끝나면 반드시 해제합니다.\n```python\nhandle.remove()\n```\nJupyter 셀을 반복 실행하면서 hook을 계속 추가하면 한 번의 forward에서 같은 로그가 여러 번 출력될 수 있습니다. Hook 내부에서 activation을 그대로 list에 보관하면 computation graph 참조가 유지되어 메모리 사용이 커질 수도 있습니다. 통계만 필요하다면 `output.detach()` 또는 scalar 요약을 저장합니다.\n## 3. 실제 모델 구조 분석\n초음파 grayscale 입력을 받는 작은 CNN을 사용합니다.\n```python\nimport torch\nimport torch.nn as nn\n\n\nclass ConvBlock(nn.Module):\n    def __init__(self, channels):\n        super().__init__()\n        self.conv = nn.Conv2d(\n            channels, channels, 3,\n            padding=1, bias=False\n        )\n        self.bn = nn.BatchNorm2d(channels)\n        self.act = nn.SiLU(inplace=False)\n\n    def forward(self, x):\n        return self.act(self.bn(self.conv(x)))\n\n\nclass UltrasoundNet(nn.Module):\n    def __init__(self, num_classes=2):\n        super().__init__()\n\n        self.stem = nn.Sequential(\n            nn.Conv2d(1, 16, 3, padding=1, bias=False),\n            nn.BatchNorm2d(16),\n            nn.SiLU(inplace=False),\n        )\n\n        self.blocks = nn.ModuleList([\n            ConvBlock(16),\n            ConvBlock(16),\n        ])\n\n        self.register_buffer(\n            \"input_mean\",\n            torch.tensor(0.45).view(1, 1, 1, 1),\n        )\n        self.register_buffer(\n            \"input_std\",\n            torch.tensor(0.20).view(1, 1, 1, 1),\n        )\n        self.register_buffer(\n            \"feature_cache\",\n            torch.empty(0),\n            persistent=False,\n        )\n\n        self.pool = nn.AdaptiveAvgPool2d(1)\n        self.head = nn.Linear(16, num_classes)\n\n    def forward(self, x):\n        x = (x - self.input_mean) / self.input_std.clamp_min(1e-6)\n        x = self.stem(x)\n\n        for block in self.blocks:\n            x = x + block(x)\n\n        x = self.pool(x).flatten(1)\n        return self.head(x)\n```\n등록 tree는 다음과 같습니다.\n```plain text\nUltrasoundNet\n├─ stem: Sequential\n│  ├─ 0: Conv2d\n│  ├─ 1: BatchNorm2d\n│  └─ 2: SiLU\n├─ blocks: ModuleList\n│  ├─ 0: ConvBlock\n│  │  ├─ conv: Conv2d\n│  │  ├─ bn: BatchNorm2d\n│  │  └─ act: SiLU\n│  └─ 1: ConvBlock\n├─ pool: AdaptiveAvgPool2d\n└─ head: Linear\n```\n`input_mean`, `input_std`는 module tree에는 나타나지 않지만 `named_buffers()`와 `state_dict()`에 나타납니다. `feature_cache`는 `named_buffers()`에는 있지만 non-persistent이므로 `state_dict()`에는 없습니다.\n등록 상태를 확인하는 최소 점검 코드입니다.\n```python\nmodel = UltrasoundNet()\n\nprint(\"[children]\")\nfor name, module in model.named_children():\n    print(name, type(module).__name__)\n\nprint(\"\\n[buffers]\")\nfor name, buffer in model.named_buffers():\n    print(name, tuple(buffer.shape))\n\nprint(\"\\n[state_dict]\")\nfor key, value in model.state_dict().items():\n    print(key, tuple(value.shape))\n```\n## 4. 수정 가능한 지점과 trade-off\n### 4.1 `ModuleList`와 `Sequential`\n`ModuleList`를 사용하면 block별 stochastic depth, conditional branch, deep supervision을 쉽게 넣을 수 있습니다. 반면 forward 흐름이 코드에 흩어져 정적 분석이나 export가 더 까다로울 수 있습니다.\n`Sequential`은 단순하고 tooling이 이해하기 쉽지만 입력이 하나에서 하나로 흐르는 구조에 가장 적합합니다. residual이나 여러 tensor를 주고받는 block에는 별도 wrapper가 필요할 수 있습니다.\n### 4.2 Parameter와 buffer\n입력 normalization 값이 학습되어야 한다면 Parameter로 바꿀 수 있습니다. 그러나 학습 가능한 normalization은 데이터 분포에 적응하는 장점과 함께 다음 위험을 만듭니다.\n- 값이 불안정하게 변해 입력 scale이 무너질 수 있음\n- pretrained checkpoint와 전처리 계약이 달라짐\n- optimizer weight decay 적용 여부를 별도로 설계해야 함\n고정 통계는 buffer, 학습 대상은 Parameter라는 의미 구분을 유지해야 합니다.\n### 4.3 Persistent buffer\n통계나 calibration 값처럼 재현에 필요한 상태는 persistent buffer가 적합합니다. 크기가 큰 cache를 persistent로 저장하면 checkpoint가 불필요하게 커지고 오래된 cache가 복원될 수 있습니다. 반대로 재현에 필요한 값을 non-persistent로 두면 재시작 후 결과가 달라질 수 있습니다.\n### 4.4 Attribute 이름과 checkpoint 호환성\n```python\nself.head = nn.Linear(16, 2)\n```\n을 다음처럼 감싸면:\n```python\nself.head = nn.Sequential(nn.Linear(16, 2))\n```\n계산은 거의 같지만 key가 `head.weight`에서 `head.0.weight`로 바뀝니다. 장기 운영 모델에서는 module 경로를 public API처럼 관리하거나 checkpoint migration 함수를 제공해야 합니다.\n### 4.5 `strict=False`\n장점은 backbone 재사용과 head 교체가 쉽다는 것입니다. 위험은 예상하지 않은 parameter 누락도 조용히 허용한다는 점입니다. 실제 코드에서는 허용 가능한 missing key를 assertion으로 제한합니다.\n```python\nresult = model.load_state_dict(checkpoint, strict=False)\nassert all(k.startswith(\"head.\") for k in result.missing_keys)\nassert not result.unexpected_keys\n```\n### 4.6 Hook과 명시적 forward\nHook은 관찰·디버깅에 좋지만 핵심 학습 로직이나 feature routing을 hook에 의존하면 실행 순서가 숨겨지고 `torch.compile`, export, 분산 실행에서 관리가 어려워질 수 있습니다. 모델 동작은 가능하면 forward에 명시하고, hook은 진단용으로 제한합니다.\n## 5. 직접 실행 실습\n### 실습 A: 미등록 module 버그 재현\n```python\nimport torch\nimport torch.nn as nn\n\n\nclass BrokenNet(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.stem = nn.Conv2d(1, 8, 3, padding=1)\n\n        # 부모 모델에 등록되지 않는다.\n        self.blocks = [\n            nn.Conv2d(8, 8, 3, padding=1),\n            nn.Conv2d(8, 8, 3, padding=1),\n        ]\n\n        # 자동 device 이동·checkpoint 저장 대상이 아니다.\n        self.mean = torch.tensor(0.45)\n\n    def forward(self, x):\n        x = self.stem(x - self.mean)\n        for block in self.blocks:\n            x = block(x)\n        return x\n\n\nclass FixedNet(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.stem = nn.Conv2d(1, 8, 3, padding=1)\n\n        self.blocks = nn.ModuleList([\n            nn.Conv2d(8, 8, 3, padding=1),\n            nn.Conv2d(8, 8, 3, padding=1),\n        ])\n\n        self.register_buffer(\"mean\", torch.tensor(0.45))\n\n    def forward(self, x):\n        x = self.stem(x - self.mean)\n        for block in self.blocks:\n            x = block(x)\n        return x\n\n\ndef report(model):\n    print(f\"\\n[{type(model).__name__}]\")\n    print(\"parameter names:\")\n    for name, parameter in model.named_parameters():\n        print(\" \", name, tuple(parameter.shape))\n\n    print(\"buffer names:\")\n    for name, buffer in model.named_buffers():\n        print(\" \", name, tuple(buffer.shape))\n\n    print(\"state_dict keys:\")\n    for key in model.state_dict():\n        print(\" \", key)\n\n\nbroken = BrokenNet()\nfixed = FixedNet()\n\nreport(broken)\nreport(fixed)\n```\n예상 결과:\n- `BrokenNet`에는 `stem.weight`, `stem.bias`만 등록됩니다.\n- `BrokenNet.blocks.0/1`의 weight는 출력에 없습니다.\n- `BrokenNet.mean`은 buffer와 `state_dict`에 없습니다.\n- `FixedNet`에는 `blocks.0.weight`, `blocks.1.weight`, `mean`이 모두 나타납니다.\nCUDA가 있다면 device 문제도 확인합니다.\n```python\nif torch.cuda.is_available():\n    broken = BrokenNet().cuda()\n    fixed = FixedNet().cuda()\n    x = torch.randn(2, 1, 32, 32, device=\"cuda\")\n\n    try:\n        broken(x)\n    except RuntimeError as error:\n        print(\"BrokenNet error:\", error)\n\n    y = fixed(x)\n    print(\"FixedNet output device:\", y.device)\n```\n`BrokenNet`은 CPU에 남아 있는 `mean` 또는 list 내부 convolution 때문에 device mismatch가 발생합니다.\n### 실습 B: Hook으로 shape 추적 후 해제\n```python\nimport torch\nimport torch.nn as nn\n\n\nmodel = UltrasoundNet(num_classes=2)\nrecords = []\nhandles = []\n\n\ndef make_hook(name):\n    def hook(module, inputs, output):\n        input_shape = tuple(inputs[0].shape)\n        output_shape = tuple(output.shape)\n        records.append((name, input_shape, output_shape))\n    return hook\n\n\nfor name, module in model.named_modules():\n    if isinstance(module, (nn.Conv2d, nn.AdaptiveAvgPool2d, nn.Linear)):\n        handles.append(module.register_forward_hook(make_hook(name)))\n\n\nwith torch.no_grad():\n    logits = model(torch.randn(2, 1, 64, 64))\n\nfor name, input_shape, output_shape in records:\n    print(f\"{name:20s} {input_shape} -> {output_shape}\")\n\nprint(\"logits:\", tuple(logits.shape))\n\nfor handle in handles:\n    handle.remove()\n\nbefore = len(records)\n\nwith torch.no_grad():\n    model(torch.randn(2, 1, 64, 64))\n\nprint(\"new records after remove:\", len(records) - before)\n```\n예상 결과:\n- convolution의 spatial shape는 `[64, 64]`로 유지됩니다.\n- pool 출력은 `[2, 16, 1, 1]`입니다.\n- head 출력은 `[2, 2]`입니다.\n- handle을 제거한 뒤 추가 record 수는 0입니다.\n### 실습 C: Head 교체와 안전한 partial load\n```python\nimport torch\n\n\nsource = UltrasoundNet(num_classes=2)\n\n# 독립적인 메모리 snapshot\ncheckpoint = {\n    key: value.detach().cpu().clone()\n    for key, value in source.state_dict().items()\n}\n\ntarget = UltrasoundNet(num_classes=3)\ntarget_state = target.state_dict()\n\n\ndef compatible_state_dict(checkpoint, model_state):\n    compatible = {}\n    mismatched = {}\n    unexpected = []\n\n    for key, value in checkpoint.items():\n        if key not in model_state:\n            unexpected.append(key)\n        elif value.shape != model_state[key].shape:\n            mismatched[key] = (\n                tuple(value.shape),\n                tuple(model_state[key].shape),\n            )\n        else:\n            compatible[key] = value\n\n    return compatible, mismatched, unexpected\n\n\ncompatible, mismatched, unexpected = compatible_state_dict(\n    checkpoint,\n    target_state,\n)\n\nprint(\"mismatched:\", mismatched)\nprint(\"unexpected:\", unexpected)\n\nresult = target.load_state_dict(compatible, strict=False)\n\nprint(\"missing:\", result.missing_keys)\nprint(\"unexpected after load:\", result.unexpected_keys)\n\nassert set(result.missing_keys) == {\"head.weight\", \"head.bias\"}\nassert not result.unexpected_keys\n\nwith torch.no_grad():\n    output = target(torch.randn(2, 1, 64, 64))\n\nprint(\"new output shape:\", tuple(output.shape))\n```\n예상 결과:\n- `head.weight`: checkpoint `[2, 16]`, target `[3, 16]`\n- `head.bias`: checkpoint `[2]`, target `[3]`\n- 나머지 backbone과 buffer는 정상 로드\n- 새 출력 shape는 `[2, 3]`\n### 선택 과제: Optimizer가 모든 parameter를 보는지 검증\n```python\ndef trainable_parameter_ids(model):\n    return {\n        id(parameter)\n        for parameter in model.parameters()\n        if parameter.requires_grad\n    }\n\n\ndef optimizer_parameter_ids(optimizer):\n    return {\n        id(parameter)\n        for group in optimizer.param_groups\n        for parameter in group[\"params\"]\n    }\n\n\nmodel = UltrasoundNet()\noptimizer = torch.optim.AdamW(model.parameters(), lr=3e-4)\n\nmissing = trainable_parameter_ids(model) - optimizer_parameter_ids(optimizer)\nextra = optimizer_parameter_ids(optimizer) - trainable_parameter_ids(model)\n\nprint(\"missing trainable parameters:\", len(missing))\nprint(\"extra optimizer parameters:\", len(extra))\n```\n둘 다 0이어야 합니다. 모델을 만든 뒤 parameter를 새로 추가하거나 optimizer 생성 후 모듈을 교체했다면 이 검사가 실패할 수 있습니다. 그 경우 optimizer를 다시 구성하거나 의도적으로 새 parameter group을 추가해야 합니다.\n## 6. 예상 결과와 디버깅 포인트\n### 증상별 점검표\n<table header-row=\"true\">\n<tr>\n<td>증상</td>\n<td>먼저 확인할 것</td>\n<td>대표 원인</td>\n</tr>\n<tr>\n<td>Loss는 계산되지만 특정 block weight가 변하지 않음</td>\n<td>`named_parameters()`</td>\n<td>일반 list에 모듈 저장</td>\n</tr>\n<tr>\n<td>CUDA device mismatch</td>\n<td>`named_buffers()`, 각 모듈 parameter device</td>\n<td>일반 Tensor 또는 미등록 module</td>\n</tr>\n<tr>\n<td>`missing_keys`가 대량 발생</td>\n<td>state_dict key prefix</td>\n<td>모듈 이름 변경, wrapper 추가</td>\n</tr>\n<tr>\n<td>`unexpected_keys`에 `module.` prefix</td>\n<td>checkpoint 생성 환경</td>\n<td>DataParallel/DDP wrapper 차이</td>\n</tr>\n<tr>\n<td>`strict=False`인데 size mismatch</td>\n<td>동일 key의 두 shape</td>\n<td>head/channel 수 변경</td>\n</tr>\n<tr>\n<td>hook 출력이 여러 번 반복</td>\n<td>handle 개수와 셀 재실행</td>\n<td>hook 중복 등록</td>\n</tr>\n<tr>\n<td>디버깅 중 GPU 메모리 증가</td>\n<td>hook이 저장하는 객체</td>\n<td>graph가 붙은 activation 보관</td>\n</tr>\n<tr>\n<td>best checkpoint가 마지막 모델과 같아짐</td>\n<td>snapshot 생성 방식</td>\n<td>`state_dict()` reference를 보관</td>\n</tr>\n</table>\n### 권장 진단 순서\n1. `named_parameters()`와 `named_buffers()`의 이름·shape·device를 출력합니다.\n2. 모델과 checkpoint의 key 집합 차이를 계산합니다.\n3. 공통 key는 shape와 dtype까지 비교합니다.\n4. 허용할 missing/unexpected key를 명시적으로 assertion합니다.\n5. optimizer가 모든 trainable parameter를 포함하는지 확인합니다.\n6. hook은 좁은 모듈에만 등록하고 `try/finally` 또는 context manager 형태로 해제합니다.\n7. 수정 후 작은 입력으로 forward와 backward 한 step을 실행합니다.\n8. 저장한 checkpoint를 새 Python process에서 다시 로드해 재현성을 검증합니다.\n### 실무 체크포인트\n모델 구조를 바꿀 때는 정확도 실험 전에 다음 네 가지 계약을 먼저 확인합니다.\n- **Registration 계약**: 학습할 모듈과 parameter가 모두 등록되었는가?\n- **Device 계약**: parameter와 buffer가 입력과 같은 device/dtype에 있는가?\n- **Checkpoint 계약**: key 이름과 shape 변경이 의도된 것인가?\n- **Execution 계약**: hook이나 wrapper가 forward 의미를 몰래 바꾸지 않는가?\n이 네 가지가 깨지면 학습률이나 loss function을 조정해도 원인을 해결할 수 없습니다.\n## 7. 복습 문제\n1. `forward()`에서 정상 실행되는 convolution이 `model.parameters()`에는 나타나지 않을 수 있는 대표적인 이유는 무엇인가요?\n2. 학습되지는 않지만 `model.to(\"cuda\")`와 checkpoint 저장을 모두 따라야 하는 Tensor에는 어떤 등록 방식을 사용해야 하나요?\n3. `ModuleList`와 `Sequential`의 핵심 차이는 무엇인가요?\n4. 출력 class 수를 2에서 3으로 바꾼 뒤 `strict=False`만 사용해도 `head.weight`의 shape mismatch가 자동으로 무시되나요?\n5. Jupyter에서 forward hook을 여러 번 등록한 뒤 로그가 중복되고 메모리가 늘어납니다. 무엇을 확인하고 어떻게 수정해야 하나요?\n### 정답과 해설\n1. 일반 Python `list`나 `dict` 안에 모듈을 넣어 부모 `nn.Module`에 등록하지 않았을 가능성이 큽니다. `ModuleList` 또는 `ModuleDict`를 사용하거나 attribute로 직접 할당해야 합니다.\n2. `register_buffer(name, tensor, persistent=True)`를 사용합니다. Buffer는 optimizer 대상은 아니지만 model의 device 이동을 따르고 persistent이면 `state_dict`에 저장됩니다.\n3. 두 container 모두 모듈을 등록합니다. `Sequential`은 모듈을 순서대로 실행하는 forward 흐름까지 제공하지만 `ModuleList`는 등록만 하므로 반복·분기·residual 흐름을 사용자가 forward에서 작성합니다.\n4. 아닙니다. `strict=False`는 missing/unexpected key를 허용하지만 동일한 key의 tensor shape 불일치는 별도로 필터링해야 합니다. 호환되지 않는 `head.weight`와 `head.bias`를 checkpoint에서 제외한 뒤 결과의 missing key가 그 둘뿐인지 검사합니다.\n5. hook 등록이 반환한 `RemovableHandle`을 보관하고 `handle.remove()`를 호출했는지 확인합니다. Hook 안에서는 graph가 붙은 activation 전체 대신 `detach()`한 값이나 shape·mean 같은 요약만 저장합니다. 반복 실행 전 기존 handle도 정리해야 합니다.\n## 8. 다음 학습 예고\n다음 회차는 **PyTorch forward 코드 추적과 ****`torch.fx`**** 그래프 읽기**입니다.\n- 실제 ResNet `BasicBlock`의 forward를 line-by-line 추적\n- runtime hook과 symbolic trace의 차이\n- `torch.fx.GraphModule`의 node와 target 해석\n- functional operation과 submodule call 구분\n- graph rewrite로 activation을 교체하는 방법\n- trace가 실패하는 data-dependent control flow와 디버깅 전략\n## 참고 자료\n- [PyTorch ](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html)[`nn.Module`](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html)[ API](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html)\n- [PyTorch ](https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html)[`nn.ModuleList`](https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html)[ API](https://docs.pytorch.org/docs/stable/generated/torch.nn.ModuleList.html)\n- [PyTorch 모델 저장과 불러오기](https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html)"</script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script><script defer src="lesson.js"></script></body></html>
