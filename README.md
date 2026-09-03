@@ -6,7 +6,7 @@ GitHub Pages 기반의 개인 프로젝트·학습 링크 허브입니다.
 
 - `/investment/` — Investment Workstation
 - `/vocab/` — Vocab English
-- `/english/` — Daily English 읽기와 터치형 단어 뜻 풍선
+- `/english/` — Daily English 전체 자료, 모바일 자율학습, PC Advanced Voice 리뷰와 개인 단어장
 - `/ai/` — AI 전문 개발 커리큘럼과 날짜별 전체 학습 자료
 - `Daily Report` — Notion의 `Investment Workstation Briefings` 연결
 - `차트 공부` — Notion의 `차트 공부 학습 기록` 연결
@@ -40,4 +40,4 @@ GitHub Pages는 정적 사이트이므로 금융 데이터의 접근 권한을 �
 
 ## 학습 이력
 
-`data/learning-history.json`에는 홈페이지에서 사용할 공개 가능한 학습 이력만 기록합니다. `english` 항목의 읽기 지문과 어휘 데이터는 `/english/`에서 최신 수업과 터치형 뜻 풍선을 만드는 데 사용합니다. AI 전문 개발 자료는 `/ai/` 아래 정적 HTML로 게시하며, 목록에는 실제 생성된 수업만 연결합니다. 데이터 소스 ID와 중복 방지 규칙은 공개 저장소에 저장하지 않습니다.
+`data/learning-history.json`에는 홈페이지에서 사용할 공개 가능한 학습 이력만 기록합니다. `english` 항목의 문법·이디엄·읽기·어휘 데이터는 `/english/`의 날짜별 수업 목록과 PC Voice 리뷰 프롬프트를 만드는 데 사용합니다. 음성 리뷰는 선택한 수업 내용을 복사한 뒤 ChatGPT 새 채팅에서 Voice를 시작하는 방식이며, 한 번에 한 문제씩 답하고 문법·표현·발음을 교정하도록 구성되어 있습니다. AI 전문 개발 자료는 `/ai/` 아래 정적 HTML로 게시하며, 목록에는 실제 생성된 수업만 연결합니다. 데이터 소스 ID와 중복 방지 규칙은 공개 저장소에 저장하지 않습니다.
