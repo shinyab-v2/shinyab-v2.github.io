@@ -1,0 +1,67 @@
+name: Quant Signal 60m
+
+on:
+  pull_request:
+    paths:
+      - "quant/**"
+      - ".github/workflows/quant-signal.yml"
+  schedule:
+    # Broad UTC window covering US DST/EST. Python gates actual 10:45-15:59 ET runs.
+    - cron: "50 14-21 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quant-signal-60m-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: quant/requirements.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r quant/requirements.txt
+
+      - name: Run unit tests
+        run: python -m pytest -q quant/tests
+
+  signal:
+    if: github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: quant/requirements.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r quant/requirements.txt
+
+      - name: Calculate 60m signals
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
+        run: python -m quant.main
