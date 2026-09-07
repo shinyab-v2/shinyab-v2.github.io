@@ -1,0 +1,78 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Residual Block의 stride, dilation, projection을 직접 수정하고 receptive field와 shape contract를 검증하는 PyTorch 심화 학습"><title>AI 전문 개발 학습 #05 · Residual Block 수정</title><link rel="stylesheet" href="ai.css"><style>.callout{background:#f4f7fb;border-left:4px solid #2563eb;border-radius:10px;padding:14px 16px;margin:18px 0}.warn{background:#fff7ed;border-left-color:#f59e0b}.diagram{background:#0f172a;color:#e2e8f0;border-radius:18px;padding:18px;margin:22px 0;overflow:auto}.diagram svg{min-width:720px;width:100%;height:auto}.lesson-main table{width:100%;border-collapse:collapse}.lesson-main th,.lesson-main td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:18px 0}.toc a{text-decoration:none;color:#1d4ed8;background:#eff6ff;padding:9px 11px;border-radius:10px;font-weight:700}</style></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><p class="eyebrow">2026.09.04 · ADVANCED · PYTORCH</p><h1 class="lesson-title">AI 전문 개발 학습 #05<br>Residual Block 수정: Dilation·Stride·Projection</h1><p class="lesson-summary">작은 병변의 위치 정보는 덜 잃으면서 더 넓은 문맥을 보기 위해 stride·dilation·projection을 어떻게 조합해야 하는지 Tensor shape와 receptive field 관점에서 해부합니다.</p><div class="toc"><a href="#shape">출력 Shape 공식</a><a href="#rf">Receptive Field</a><a href="#residual">Residual 계약</a><a href="#code">PyTorch 구현</a><a href="#tradeoff">Trade-off</a><a href="#practice">실습·검증</a></div><div class="diagram"><svg viewBox="0 0 1000 310" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#93c5fd"/></marker></defs><rect x="28" y="42" width="180" height="86" rx="14" fill="#1e3a8a"/><text x="118" y="75" text-anchor="middle" fill="white" font-size="22" font-weight="700">Input</text><text x="118" y="106" text-anchor="middle" fill="#bfdbfe" font-size="19">[N,16,64,64]</text><line x1="210" y1="85" x2="325" y2="85" stroke="#93c5fd" stroke-width="4" marker-end="url(#a)"/><rect x="340" y="25" width="230" height="120" rx="14" fill="#0f766e"/><text x="455" y="58" text-anchor="middle" fill="white" font-size="21" font-weight="700">Stride Block</text><text x="455" y="86" text-anchor="middle" fill="#ccfbf1" font-size="18">Conv s=2 → Conv s=1</text><text x="455" y="116" text-anchor="middle" fill="#ccfbf1" font-size="18">[N,32,32,32]</text><line x1="570" y1="85" x2="686" y2="85" stroke="#93c5fd" stroke-width="4" marker-end="url(#a)"/><rect x="700" y="25" width="260" height="120" rx="14" fill="#7c2d12"/><text x="830" y="58" text-anchor="middle" fill="white" font-size="21" font-weight="700">High-res Dilated</text><text x="830" y="86" text-anchor="middle" fill="#ffedd5" font-size="18">stride=1, dilation=2</text><text x="830" y="116" text-anchor="middle" fill="#ffedd5" font-size="18">[N,32,64,64]</text><text x="40" y="205" fill="#e2e8f0" font-size="20" font-weight="700">핵심 비교</text><text x="40" y="237" fill="#cbd5e1" font-size="18">Stride 2: 해상도↓ · jump↑ · 연산량↓</text><text x="40" y="268" fill="#cbd5e1" font-size="18">Dilation 2: 해상도 유지 · nominal RF↑ · parameter 수는 동일하지만 activation compute↑</text></svg></div><h2 id="shape">1. Conv2d 출력 크기</h2><p>한 축의 입력 크기를 <code>H_in</code>이라 할 때 출력은 다음과 같습니다.</p><pre><code>H_out = floor((H_in + 2p - d(k-1) - 1) / s + 1)</code></pre><p><code>k</code>는 kernel, <code>s</code>는 stride, <code>p</code>는 padding, <code>d</code>는 dilation입니다. 입력 64, kernel 3, padding 1, dilation 1이면 stride 1에서 64, stride 2에서 32가 됩니다. kernel 3, dilation 2에서 공간 크기를 유지하려면 일반적으로 padding 2를 사용합니다.</p><h2 id="rf">2. Dilation과 Receptive Field</h2><p>Dilation은 parameter 수를 늘리지 않고 커널이 보는 nominal 범위를 넓힙니다.</p><pre><code>k_eff = d * (k - 1) + 1
+
+3x3, d=1 -> effective 3x3
+3x3, d=2 -> effective 5x5
+3x3, d=3 -> effective 7x7</code></pre><div class="callout"><strong>중요:</strong> 3×3 dilation=2가 5×5의 모든 25개 위치를 읽는 것은 아닙니다. 5×5 범위 안에서 간격을 둔 9개 위치만 sampling합니다. 따라서 weight parameter 수는 일반 3×3과 같습니다.</div><p>레이어를 통과할 때 입력 좌표 간격 <code>j</code>와 receptive field <code>r</code>은 다음처럼 누적할 수 있습니다.</p><pre><code>j_l = j_(l-1) * stride_l
+r_l = r_(l-1) + (k_eff_l - 1) * j_(l-1)</code></pre><table><thead><tr><th>구성</th><th>최종 r</th><th>최종 jump</th><th>출력 해상도</th></tr></thead><tbody><tr><td>Conv3 s=2 → Conv3 s=1</td><td>7</td><td>2</td><td>절반</td></tr><tr><td>Conv3 d=2 → Conv3 d=2</td><td>9</td><td>1</td><td>유지</td></tr></tbody></table><h2 id="residual">3. Residual addition의 Shape 계약</h2><p>Residual block은 <code>y = F(x) + P(x)</code>를 계산합니다. 덧셈 직전 main path와 identity/projection path의 <strong>N, C, H, W가 의도대로 같아야</strong> 합니다.</p><ul><li>channel·공간 크기 동일 → <code>nn.Identity()</code></li><li>channel만 다름 → 1×1 Conv, stride 1</li><li>channel과 공간 크기 모두 변경 → 1×1 Conv, main path와 같은 stride</li></ul><div class="callout warn"><strong>흔한 오류:</strong> main path의 stride를 2→1로 바꾸고 projection stride를 2로 그대로 두면 main과 skip의 H/W가 달라져 residual addition이 실패합니다.</div><h2 id="code">4. 수정 가능한 Residual Block</h2><pre><code>import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class ResidualBlock(nn.Module):
+    def __init__(self, in_channels, out_channels,
+                 stride=1, dilation=1):
+        super().__init__()
+        padding = dilation
+
+        self.conv1 = nn.Conv2d(
+            in_channels, out_channels, 3,
+            stride=stride, padding=padding,
+            dilation=dilation, bias=False)
+        self.bn1 = nn.BatchNorm2d(out_channels)
+        self.conv2 = nn.Conv2d(
+            out_channels, out_channels, 3,
+            stride=1, padding=padding,
+            dilation=dilation, bias=False)
+        self.bn2 = nn.BatchNorm2d(out_channels)
+
+        needs_projection = stride != 1 or in_channels != out_channels
+        self.projection = (
+            nn.Sequential(
+                nn.Conv2d(in_channels, out_channels, 1,
+                          stride=stride, bias=False),
+                nn.BatchNorm2d(out_channels))
+            if needs_projection else nn.Identity())
+
+    def forward(self, x):
+        identity = self.projection(x)
+        out = F.relu(self.bn1(self.conv1(x)), inplace=False)
+        out = self.bn2(self.conv2(out))
+        if out.shape != identity.shape:
+            raise RuntimeError(
+                f"Residual shape mismatch: main={out.shape}, skip={identity.shape}")
+        return F.relu(out + identity, inplace=False)</code></pre><h3>두 변형을 직접 비교</h3><pre><code>x = torch.randn(2, 16, 64, 64)
+
+stride_block = ResidualBlock(16, 32, stride=2, dilation=1)
+dilated_block = ResidualBlock(16, 32, stride=1, dilation=2)
+
+print(stride_block(x).shape)   # [2, 32, 32, 32]
+print(dilated_block(x).shape)  # [2, 32, 64, 64]</code></pre><p>두 block의 convolution weight shape는 같습니다. stride·padding·dilation은 weight Tensor의 차원을 바꾸지 않기 때문입니다. 그러나 dilated block은 더 큰 feature map을 유지하므로 activation memory와 이후 연산량이 크게 증가합니다.</p><h2 id="tradeoff">5. 설계 Trade-off</h2><table><thead><tr><th>설계</th><th>장점</th><th>위험</th></tr></thead><tbody><tr><td>Stride 2 유지</td><td>메모리·연산량 감소, 빠른 문맥 압축</td><td>작은 병변·얇은 경계 손실 가능</td></tr><tr><td>Stride 1 + Dilation 2</td><td>공간 해상도 유지, nominal RF 확대</td><td>activation/MAC 증가, gridding 가능성</td></tr><tr><td>혼합 dilation [1,2,3] 또는 [1,2,4]</td><td>local/context 균형, sampling hole 완화</td><td>설계 복잡도 증가, 작은 feature map에서 padding 비중 증가</td></tr></tbody></table><h3>Pretrained checkpoint 호환성</h3><p>stride 2→1, dilation 1→2, padding 1→2는 일반적으로 convolution weight shape를 유지하므로 기존 weight를 로드할 수 있습니다. 하지만 계산 위치와 activation 분포가 달라지므로 <strong>shape 호환이 의미 호환을 보장하지 않습니다.</strong></p><h2 id="practice">6. 직접 실행 실습</h2><h3>A. 출력 shape 공식 검증</h3><pre><code>from math import floor
+
+def conv2d_output_size(size, kernel_size=3,
+                       stride=1, padding=0, dilation=1):
+    return floor((size + 2*padding
+                  - dilation*(kernel_size-1) - 1)
+                 / stride + 1)
+
+cases = [
+    dict(stride=1, padding=1, dilation=1),
+    dict(stride=2, padding=1, dilation=1),
+    dict(stride=1, padding=2, dilation=2),
+    dict(stride=1, padding=3, dilation=3),
+]
+for case in cases:
+    print(case, conv2d_output_size(64, **case))</code></pre><h3>B. parameter와 activation 비교</h3><pre><code>def count_params(m):
+    return sum(p.numel() for p in m.parameters())
+
+print(count_params(stride_block))
+print(count_params(dilated_block))
+
+with torch.no_grad():
+    a = stride_block(x)
+    b = dilated_block(x)
+    print(a.numel(), b.numel())  # high-res activation은 4배</code></pre><h3>C. Gradient 확인</h3><pre><code>for model in [stride_block, dilated_block]:
+    model.train()
+    y = model(x)
+    loss = y.square().mean()
+    loss.backward()
+    for name, p in model.named_parameters():
+        assert p.grad is not None, name</code></pre><h2>7. 초음파 AI에 적용할 때</h2><p>작은 breast lesion, 얇은 경계, B-line처럼 위치 정보가 중요한 target은 early downsampling에서 사라질 수 있습니다. 하지만 모든 stage의 stride를 제거하면 memory/latency가 급증합니다. 따라서 baseline 대비 특정 stage 하나만 stride→dilation으로 바꾸고 lesion size별 sensitivity, localization error, GPU memory, latency를 함께 비교하는 실험이 현실적입니다.</p><div class="callout"><strong>추천 실험:</strong> Baseline / Stage3만 dilation / Stage3+4 dilation 세 모델을 동일 seed·augmentation·optimizer로 비교하고, 전체 성능뿐 아니라 작은 병변 subgroup을 별도로 평가합니다.</div><h2>8. 복습 문제</h2><ol><li><strong>3×3, dilation=2의 effective kernel은?</strong> 5×5.</li><li><strong>stride 2가 jump에 미치는 영향은?</strong> 인접 feature 중심의 입력 좌표 간격을 두 배로 만듭니다.</li><li><strong>main stride를 2→1로 바꿀 때 projection에서 무엇을 확인해야 하나?</strong> projection stride도 같은 spatial contract를 유지하도록 수정해야 합니다.</li><li><strong>dilation이 parameter 수를 늘리지 않는 이유는?</strong> weight element 수는 여전히 3×3×Cin×Cout이기 때문입니다.</li><li><strong>shape가 같은 pretrained weight를 로드했다고 동일 의미인가?</strong> 아닙니다. sampling 위치와 activation distribution이 바뀝니다.</li></ol><h2>9. 다음 학습 예고</h2><p>다음 회차에서는 구조를 수정한 뒤 small batch 의료영상 학습에서 자주 문제가 되는 <strong>BatchNorm / Frozen BN / GroupNorm</strong>을 비교하고 실제 모델의 normalization layer를 안전하게 교체합니다.</p><h2>참고 자료</h2><ul><li><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">PyTorch Conv2d</a></li><li><a href="https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py">TorchVision ResNet implementation</a></li><li><a href="https://arxiv.org/abs/1512.03385">Deep Residual Learning for Image Recognition</a></li></ul></article></main><footer>AI 전문 개발 학습 · Project &amp; Learning Hub</footer></body></html>
