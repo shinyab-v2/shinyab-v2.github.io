@@ -1,0 +1,103 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="의료영상 small-batch 환경에서 BatchNorm, Frozen BN, GroupNorm을 Tensor 통계와 checkpoint 관점에서 해부하고 PyTorch 모델에 안전하게 적용하는 심화 실습"><title>AI 전문 개발 학습 #06 · Small-Batch Normalization Deep Dive</title><link rel="stylesheet" href="ai.css"><style>.callout{background:#eef6ff;border-left:4px solid #2563eb;border-radius:10px;padding:15px 17px;margin:18px 0}.warn{background:#fff7ed;border-left-color:#f59e0b}.danger{background:#fef2f2;border-left-color:#ef4444}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{border:1px solid #e2e8f0;background:#fff;border-radius:15px;padding:15px}.diagram{background:#0f172a;border-radius:18px;padding:15px;margin:22px 0;overflow:auto}.diagram svg{min-width:820px;width:100%;height:auto}.lesson-main table{width:100%;border-collapse:collapse;margin:14px 0}.lesson-main th,.lesson-main td{border-bottom:1px solid #e5e7eb;padding:10px;text-align:left;vertical-align:top}.lesson-main th{background:#f8fafc}.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:20px 0}.toc a{background:#eff6ff;color:#1d4ed8;border-radius:10px;padding:9px 11px;text-decoration:none;font-weight:800}.lab{border:1px solid #cbd5e1;border-radius:16px;padding:18px;margin:20px 0}.lab h3{margin-top:0}.small{font-size:14px;color:#64748b}</style></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><p class="eyebrow">2026.09.07 · ADVANCED · PYTORCH · MEDICAL IMAGING</p><h1 class="lesson-title">AI 전문 개발 학습 #06<br>Small-Batch Normalization Deep Dive</h1><p class="lesson-summary">고해상도 초음파 detection/segmentation에서 GPU당 batch가 1~4로 줄어들 때 BatchNorm의 통계가 어떻게 바뀌고, Frozen BN·GroupNorm·SyncBN 중 무엇을 선택해야 하는지 모델 구조·checkpoint·optimizer·DDP 관점에서 직접 검증합니다.</p><div class="callout"><strong>핵심 질문</strong><br>“batch size가 작다”는 한 문장만으로 BN을 GN으로 바꿀 것인가? 아니면 pretrained running statistics를 유지할 것인가? 구조를 바꾼 뒤 성능 차이가 normalization 때문인지 optimizer·augmentation·device distribution 때문인지 어떻게 구분할 것인가?</div><div class="toc"><a href="#mental">1. Mental Model</a><a href="#bn">2. BatchNorm</a><a href="#gn">3. GroupNorm</a><a href="#choice">4. 선택 전략</a><a href="#replace">5. BN→GN 교체</a><a href="#checkpoint">6. Checkpoint</a><a href="#optimizer">7. Optimizer/DDP</a><a href="#labs">8. 실험</a><a href="#medical">9. 초음파 적용</a><a href="#quiz">10. 복습</a></div><div class="diagram"><svg viewBox="0 0 1120 420" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#93c5fd"/></marker></defs><text x="35" y="45" fill="#f8fafc" font-size="25" font-weight="800">같은 Tensor [N,C,H,W], 통계를 모으는 축이 다르다</text><rect x="40" y="90" width="320" height="245" rx="18" fill="#1e3a8a"/><text x="200" y="130" text-anchor="middle" fill="white" font-size="23" font-weight="800">BatchNorm2d</text><text x="200" y="165" text-anchor="middle" fill="#bfdbfe" font-size="18">channel C별 정규화</text><text x="200" y="198" text-anchor="middle" fill="#bfdbfe" font-size="18">통계: N × H × W</text><text x="200" y="238" text-anchor="middle" fill="#fff" font-size="18">train: current batch</text><text x="200" y="270" text-anchor="middle" fill="#fff" font-size="18">eval: running stats</text><text x="200" y="310" text-anchor="middle" fill="#fbbf24" font-size="17">small N → batch 구성 영향↑</text><rect x="400" y="90" width="320" height="245" rx="18" fill="#065f46"/><text x="560" y="130" text-anchor="middle" fill="white" font-size="23" font-weight="800">GroupNorm</text><text x="560" y="165" text-anchor="middle" fill="#d1fae5" font-size="18">sample 내부 channel 그룹</text><text x="560" y="198" text-anchor="middle" fill="#d1fae5" font-size="18">통계: group C × H × W</text><text x="560" y="238" text-anchor="middle" fill="#fff" font-size="18">train: input stats</text><text x="560" y="270" text-anchor="middle" fill="#fff" font-size="18">eval: input stats</text><text x="560" y="310" text-anchor="middle" fill="#a7f3d0" font-size="17">다른 sample 수에 직접 의존 X</text><rect x="760" y="90" width="320" height="245" rx="18" fill="#7c2d12"/><text x="920" y="130" text-anchor="middle" fill="white" font-size="23" font-weight="800">Frozen BN</text><text x="920" y="165" text-anchor="middle" fill="#ffedd5" font-size="18">pretrained BN 유지</text><text x="920" y="198" text-anchor="middle" fill="#ffedd5" font-size="18">running stats 업데이트 X</text><text x="920" y="238" text-anchor="middle" fill="#fff" font-size="18">affine 학습 여부 별도 결정</text><text x="920" y="278" text-anchor="middle" fill="#fff" font-size="18">도메인 변화가 크면 주의</text><text x="920" y="310" text-anchor="middle" fill="#fed7aa" font-size="17">pretraining 보존의 절충안</text><line x1="360" y1="212" x2="395" y2="212" stroke="#93c5fd" stroke-width="4" marker-end="url(#arr)"/><line x1="720" y1="212" x2="755" y2="212" stroke="#93c5fd" stroke-width="4" marker-end="url(#arr)"/><text x="35" y="385" fill="#cbd5e1" font-size="18">선택 기준: effective batch · pretraining · domain shift · task · DDP 구성 · deployment recipe를 함께 본다.</text></svg></div><h2 id="mental">1. Normalization을 Tensor 축으로 이해하기</h2><p>입력이 <code>x.shape = [N, C, H, W]</code>라고 합시다. Normalization layer의 핵심은 “어떤 축에서 평균과 분산을 모으는가?”입니다. 이름을 외우기보다 통계 집합을 생각하면 BN·GN·LN의 차이가 명확해집니다.</p><table><thead><tr><th>Layer</th><th>통계 범위</th><th>Batch size 영향</th><th>running stats</th></tr></thead><tbody><tr><td>BatchNorm2d</td><td>각 C에 대해 N,H,W</td><td>직접 영향</td><td>기본 설정에서 사용</td></tr><tr><td>GroupNorm</td><td>각 sample 내부 channel group,H,W</td><td>직접 영향 없음</td><td>없음</td></tr><tr><td>LayerNorm</td><td>normalized_shape로 지정한 마지막 축</td><td>직접 영향 없음</td><td>없음</td></tr></tbody></table><h2 id="bn">2. BatchNorm2d — train과 eval은 다른 시스템이다</h2><p>BatchNorm의 개념식은 다음과 같습니다.</p><pre><code>y = gamma * (x - mu) / sqrt(var + eps) + beta</code></pre><p><code>gamma</code>와 <code>beta</code>는 channel별 학습 가능한 affine parameter입니다. 중요한 것은 <code>mu</code>, <code>var</code>가 train/eval에서 어디서 오는가입니다.</p><pre><code>model.train()
+# current mini-batch statistics 사용
+# running_mean / running_var 업데이트
+
+model.eval()
+# 저장된 running_mean / running_var 사용</code></pre><h3>왜 small batch가 문제가 될 수 있는가?</h3><p>BN 통계는 N만 보는 것이 아니라 N×H×W 위치에서 모이므로 “batch=2이면 무조건 실패”처럼 단순화할 수는 없습니다. 그러나 sample 간 영상 분포가 크게 다르거나 spatial map이 작은 late stage, 강한 augmentation, device/vendor가 batch마다 달라지는 환경에서는 mini-batch 통계가 training distribution을 불안정하게 대표할 수 있습니다.</p><div class="callout warn"><strong>실무 경고 신호</strong><ul><li>batch 16→2 변경 뒤 validation metric 급락</li><li>train mode inference와 eval mode inference 간 gap이 비정상적으로 큼</li><li>fine-tuning loss는 감소하지만 실제 inference 성능이 나쁨</li><li>GPU별 batch 구성에 따라 metric variance가 큼</li><li>vendor/device/protocol별 subgroup 성능이 크게 갈림</li></ul></div><h3>running_mean 업데이트를 직접 관찰</h3><pre><code>import torch
+import torch.nn as nn
+
+bn = nn.BatchNorm2d(4)
+bn.train()
+
+for step in range(5):
+    # 매 step 분포를 의도적으로 바꿈
+    x = torch.randn(2, 4, 8, 8) + step * 2
+    _ = bn(x)
+    print(step, bn.running_mean.detach().clone())</code></pre><p>이 실습을 하면 current batch의 분포 변화가 running stats에 누적되는 것을 볼 수 있습니다. 실제 의료영상에서는 augmentation·기관·장비 배치가 이 역할을 할 수 있습니다.</p><h2 id="gn">3. GroupNorm — sample 내부에서 통계를 만든다</h2><p>GroupNorm은 channel을 여러 그룹으로 나누고 sample별로 그룹 안의 통계를 계산합니다.</p><pre><code>x = torch.randn(2, 32, 64, 64)
+gn = nn.GroupNorm(num_groups=8, num_channels=32)
+y = gn(x)
+print(y.shape)  # [2,32,64,64]</code></pre><p><code>num_channels % num_groups == 0</code>이어야 합니다. “32 groups”를 규칙처럼 외우면 channel 24 같은 layer에서 바로 실패합니다.</p><pre><code>def choose_groups(channels, preferred=8):
+    for g in [preferred, 32, 16, 8, 4, 2, 1]:
+        if g <= channels and channels % g == 0:
+            return g
+    return 1</code></pre><div class="callout"><strong>GN의 중요한 특성:</strong> PyTorch GroupNorm은 train/eval 모두 현재 input 통계를 사용합니다. 따라서 GN 자체 때문에 train/eval normalization 정책이 달라지지는 않습니다. 단, Dropout 등 다른 layer가 있으면 전체 모델 출력은 여전히 달라질 수 있습니다.</div><h2 id="choice">4. BN 유지 / Frozen BN / GN / SyncBN 선택</h2><div class="grid"><div class="card"><strong>BN 유지</strong><p>충분한 effective batch와 안정적인 recipe, pretraining domain이 비슷한 경우 가장 단순합니다.</p></div><div class="card"><strong>Frozen BN</strong><p>pretrained running stats를 신뢰하고 작은 fine-tuning batch에서 통계 업데이트를 막고 싶을 때 절충안입니다.</p></div><div class="card"><strong>GroupNorm</strong><p>high-resolution detection/segmentation처럼 per-GPU batch가 작고 batch composition 영향이 큰 경우 강한 후보입니다.</p></div><div class="card"><strong>SyncBatchNorm</strong><p>DDP 여러 GPU의 BN 통계를 동기화해 effective batch를 늘릴 수 있지만 통신 비용과 deployment recipe를 고려해야 합니다.</p></div></div><table><thead><tr><th>상황</th><th>우선 비교할 후보</th><th>이유</th></tr></thead><tbody><tr><td>ImageNet pretrained backbone, batch 2, dataset 작음</td><td>Frozen BN vs GN</td><td>pretrained 통계 보존과 small-batch 독립성 비교</td></tr><tr><td>8 GPU × 2 images, BN recipe 유지 필요</td><td>SyncBN</td><td>global effective batch 통계 확보 가능</td></tr><tr><td>새 architecture, pretraining 없음, batch 2</td><td>GN</td><td>running stats 의존 제거</td></tr><tr><td>classification, batch 64</td><td>BN baseline</td><td>검증된 효율적 기본값</td></tr></tbody></table><h2 id="replace">5. PyTorch 모델의 BN을 GN으로 안전하게 재귀 교체</h2><pre><code>import torch
+import torch.nn as nn
+
+def choose_groups(channels, preferred=8):
+    candidates = [preferred, 32, 16, 8, 4, 2, 1]
+    for g in candidates:
+        if g <= channels and channels % g == 0:
+            return g
+    return 1
+
+
+def replace_bn_with_gn(module,
+                       preferred_groups=8,
+                       copy_affine=True):
+    for name, child in list(module.named_children()):
+        if isinstance(child, nn.BatchNorm2d):
+            c = child.num_features
+            groups = choose_groups(c, preferred_groups)
+            gn = nn.GroupNorm(
+                num_groups=groups,
+                num_channels=c,
+                eps=child.eps,
+                affine=child.affine,
+            )
+            if copy_affine and child.affine:
+                with torch.no_grad():
+                    gn.weight.copy_(child.weight)
+                    gn.bias.copy_(child.bias)
+            setattr(module, name, gn)
+        else:
+            replace_bn_with_gn(
+                child,
+                preferred_groups,
+                copy_affine)
+    return module</code></pre><h3>왜 named_children 재귀인가?</h3><p>Residual main path의 <code>bn1/bn2</code>뿐 아니라 projection shortcut, stem, decoder, FPN lateral block처럼 깊은 module hierarchy에 숨어 있는 BN까지 모두 찾기 위해서입니다. 일부만 교체하면 모델은 실행되더라도 normalization 정책이 섞입니다.</p><h2 id="checkpoint">6. Checkpoint 호환성 — affine은 복사 가능, running stats는 불가</h2><table><thead><tr><th>BN state</th><th>GN으로 이동</th><th>설명</th></tr></thead><tbody><tr><td>weight (γ)</td><td>가능</td><td>shape [C], GN affine과 대응</td></tr><tr><td>bias (β)</td><td>가능</td><td>shape [C], GN affine과 대응</td></tr><tr><td>running_mean</td><td>불가</td><td>GN에 해당 buffer 없음</td></tr><tr><td>running_var</td><td>불가</td><td>GN에 해당 buffer 없음</td></tr><tr><td>num_batches_tracked</td><td>불가</td><td>GN에 해당 buffer 없음</td></tr></tbody></table><p>따라서 가장 안전한 순서는 <strong>원본 BN 모델에 checkpoint를 먼저 load → affine을 가진 BN 객체를 GN으로 교체하면서 γ/β copy</strong>입니다.</p><pre><code>model = build_bn_model()
+ckpt = torch.load('pretrained.pt', map_location='cpu')
+model.load_state_dict(ckpt, strict=True)
+model = replace_bn_with_gn(model, copy_affine=True)</code></pre><div class="callout danger"><strong>주의:</strong> weight shape가 맞아서 load 가능하다는 것과 동일 inference 의미는 완전히 다른 문제입니다. BN의 running statistics가 사라지고 normalization statistics 계산 방식이 바뀌므로 반드시 fine-tuning과 validation이 필요합니다.</div><h2 id="optimizer">7. Optimizer · DDP · freeze에서 생기는 숨은 버그</h2><h3>7.1 Optimizer는 layer 교체 뒤 생성</h3><pre><code># BAD
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+model = replace_bn_with_gn(model)
+
+# GOOD
+model = replace_bn_with_gn(model)
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)</code></pre><p>새 GN module은 새로운 Parameter 객체를 만듭니다. 기존 optimizer가 교체 전 BN parameter를 계속 참조하는 상황을 피하려면 optimizer를 다시 만듭니다.</p><h3>7.2 model.train()이 Frozen BN을 다시 train으로 바꾼다</h3><p>fine-tuning loop에서 매 epoch <code>model.train()</code>을 호출하면 앞서 <code>bn.eval()</code>한 상태가 다시 train으로 돌아갑니다. Frozen BN을 원한다면 train mode 설정 뒤 BN만 다시 eval로 고정하거나 별도 FrozenBatchNorm 구현을 사용하는 방식이 필요합니다.</p><pre><code>def set_bn_eval(m):
+    if isinstance(m, nn.BatchNorm2d):
+        m.eval()
+
+for epoch in range(num_epochs):
+    model.train()
+    model.apply(set_bn_eval)
+    ...</code></pre><h3>7.3 Gradient accumulation은 BN batch를 키우지 않는다</h3><p>gradient accumulation으로 optimizer step의 effective batch는 커지지만 각 forward에서 BN이 보는 mini-batch 통계는 그대로입니다. 따라서 batch=2를 8 step accumulate해도 BN이 한 번에 16 samples의 통계를 계산하는 것은 아닙니다.</p><div class="callout"><strong>중요 구분:</strong> optimizer effective batch와 normalization statistics batch는 같은 개념이 아닙니다.</div><h2 id="labs">8. 직접 실행하는 4개 실험</h2><div class="lab"><h3>Lab A — BN vs GN train/eval gap</h3><pre><code>@torch.no_grad()
+def train_eval_gap(model, x):
+    model.train()
+    y1 = model(x).detach().clone()
+    model.eval()
+    y2 = model(x).detach().clone()
+    return (y1 - y2).abs().mean().item()</code></pre><p>Dropout 없는 작은 모델로 BN/GN을 비교해 normalization 정책 차이를 직접 확인합니다.</p></div><div class="lab"><h3>Lab B — batch composition sensitivity</h3><pre><code># 같은 target image x0를 서로 다른 companion image와 batch 구성
+batch_a = torch.cat([x0, normal_image], dim=0)
+batch_b = torch.cat([x0, shifted_vendor_image], dim=0)
+
+model.train()
+y_a = model(batch_a)[0]
+y_b = model(batch_b)[0]
+print((y_a-y_b).abs().mean())</code></pre><p>BN train mode에서 같은 x0의 output이 batch 동료 구성에 얼마나 민감한지 확인합니다. GN과 비교하면 차이를 더 명확히 볼 수 있습니다.</p></div><div class="lab"><h3>Lab C — layer 교체 완전성 검사</h3><pre><code>def count_norms(model):
+    result = {'bn':0, 'gn':0}
+    for m in model.modules():
+        if isinstance(m, nn.BatchNorm2d): result['bn'] += 1
+        if isinstance(m, nn.GroupNorm): result['gn'] += 1
+    return result
+
+print('before', count_norms(model))
+model = replace_bn_with_gn(model)
+print('after ', count_norms(model))</code></pre><p>projection·decoder·stem에 BN이 남아 있지 않은지 검증합니다.</p></div><div class="lab"><h3>Lab D — gradient와 optimizer membership 검사</h3><pre><code>known = {id(p) for group in optimizer.param_groups for p in group['params']}
+for name, p in model.named_parameters():
+    if p.requires_grad:
+        assert id(p) in known, f'optimizer missing: {name}'
+
+loss.backward()
+for name, p in model.named_parameters():
+    if p.requires_grad and p.grad is None:
+        print('NO GRAD:', name)</code></pre><p>모델은 실행되는데 새 GN parameter가 optimizer에 들어가지 않은 종류의 조용한 버그를 잡습니다.</p></div><h2 id="medical">9. 의료 초음파 프로젝트의 실험 설계</h2><p>Breast lesion detection, lung ultrasound B-line/LUS, segmentation처럼 고해상도 입력을 쓰면 per-GPU batch가 작아지는 경우가 많습니다. 단순 전체 metric만 비교하면 normalization의 subgroup 안정성 차이를 놓칠 수 있습니다.</p><table><thead><tr><th>Experiment</th><th>Normalization</th><th>확인 목적</th></tr></thead><tbody><tr><td>A</td><td>Pretrained BN 그대로</td><td>기존 baseline 유지</td></tr><tr><td>B</td><td>BN running stats freeze</td><td>pretrained 통계 보존 효과</td></tr><tr><td>C</td><td>BN→GN, affine copy</td><td>small-batch 독립성</td></tr><tr><td>D</td><td>SyncBN (multi-GPU 가능 시)</td><td>global batch statistics 효과</td></tr></tbody></table><p>모든 실험에서 seed, augmentation, optimizer, learning rate, scheduler, data split을 동일하게 유지하고 다음을 비교합니다.</p><ul><li>전체 Dice / IoU / mAP / sensitivity / specificity</li><li>small lesion / large lesion subgroup</li><li>vendor·device·probe·site subgroup</li><li>validation loss variance와 seed variance</li><li>calibration / confidence distribution</li><li>train-eval prediction gap</li><li>GPU memory, throughput, inference latency</li></ul><div class="callout"><strong>실전 판단:</strong> 평균 metric이 같더라도 특정 장비에서 BN 성능이 크게 흔들리고 GN이 안정적이라면 의료 배포 관점에서는 GN의 가치가 클 수 있습니다. 반대로 pretrained BN이 모든 subgroup에서 우수하다면 단순히 batch가 작다는 이유만으로 교체할 필요는 없습니다.</div><h2 id="quiz">10. 복습 문제 5개</h2><ol><li><strong>BN train과 eval의 가장 큰 차이는?</strong><br>train은 current mini-batch statistics를 사용하며 running stats를 갱신하고, eval은 저장된 running stats를 사용합니다.</li><li><strong>Gradient accumulation 8회면 BN도 8배 큰 batch 통계를 보나?</strong><br>아닙니다. BN은 각 forward의 실제 mini-batch 통계를 봅니다.</li><li><strong>BN→GN에서 그대로 옮길 수 있는 것은?</strong><br>affine=True일 때 channel별 weight γ와 bias β입니다.</li><li><strong>Frozen BN에서 model.train() 호출 후 주의할 것은?</strong><br>BN이 다시 train mode가 될 수 있으므로 BN eval 고정을 재적용하거나 Frozen BN 구현을 사용합니다.</li><li><strong>GN이 무조건 BN보다 좋은가?</strong><br>아닙니다. pretraining, effective batch, domain shift, task와 subgroup validation으로 비교해야 합니다.</li></ol><h2>11. 다음 학습 예고</h2><p>다음 회차는 <strong>학습은 돌아가는데 성능이 오르지 않는 모델의 gradient failure 분석</strong>입니다. <code>register_full_backward_hook</code>, gradient norm, dead activation, exploding/vanishing gradient, <code>torch.autograd.detect_anomaly()</code>를 이용해 backward graph를 추적합니다.</p><h2>참고 자료</h2><ul><li><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html">PyTorch BatchNorm2d</a></li><li><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GroupNorm.html">PyTorch GroupNorm</a></li><li><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.SyncBatchNorm.html">PyTorch SyncBatchNorm</a></li><li><a href="https://arxiv.org/abs/1803.08494">Group Normalization · Wu &amp; He</a></li></ul><p class="small">이 페이지는 기존 상세 학습 자료 수준을 기준으로 복원한 심화 버전입니다. 코드 실행 시 사용 중인 PyTorch 버전과 실제 모델 구조에 맞춰 module type과 optimizer 구성을 확인하세요.</p></article></main><footer>AI 전문 개발 학습 · Project &amp; Learning Hub</footer></body></html>
