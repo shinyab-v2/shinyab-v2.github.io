@@ -1,1 +1,72 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=./?date=2026-09-07"><link rel="canonical" href="./?date=2026-09-07"><title>RSI 다이버전스 상세 학습으로 이동</title><script>location.replace('./?date=2026-09-07');</script></head><body><p><a href="./?date=2026-09-07">고해상도 RSI 다이버전스 상세 학습 열기</a></p></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="RSI 다이버전스를 Lower Low와 Higher Low로 읽고 가격 확인, 진입, 무효화까지 연결하는 상세 차트 학습">
+  <title>차트 공부 #10 · RSI 다이버전스</title>
+  <link rel="stylesheet" href="chart.css?v=20260907-2">
+  <style>
+    .lesson-page{display:block}.lesson-page .content pre{white-space:pre-wrap;background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:12px;overflow:auto}.lesson-page .rule{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:16px 0}.lesson-page .rule div{border:1px solid #e2e8f0;border-radius:14px;padding:14px;background:#f8fafc}.lesson-page .rule strong{display:block;margin-bottom:5px}.lesson-page .scenario{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:16px;margin:14px 0}.lesson-page .formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:800;background:#eff6ff;border-radius:10px;padding:12px 14px;margin:10px 0}.lesson-page .checklist li{padding:10px 0}.lesson-page table{width:100%;border-collapse:collapse;margin:14px 0}.lesson-page th,.lesson-page td{padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top}.lesson-page th{background:#f8fafc}
+  </style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark">C</span><span>Chart Study</span></a><nav class="topnav"><a href="./">전체 자료</a><a class="wide" href="../">학습 허브</a></nav></header>
+<main class="lesson-page">
+  <section class="lesson-head">
+    <a class="back" href="./">← 전체 자료</a>
+    <p class="eyebrow">2026.09.07 · CHART STUDY #10</p>
+    <h1>RSI 다이버전스<br>Lower Low와 Higher Low로 모멘텀 약화 읽기</h1>
+    <p class="summary">가격은 더 낮은 저점을 만들지만 RSI는 더 높은 저점을 만들 때 하락 모멘텀 약화를 읽습니다. 다이버전스 자체를 매수 신호로 쓰지 않고 지지·반전 캔들·MA20·직전 고점·RSI 50·거래량으로 가격 전환을 확인합니다.</p>
+    <div class="meta"><span>실전 차트 분석</span><span>예상 20–25분</span><span>난이도 ★★★☆☆</span><span>교육용 합성 예시</span></div>
+  </section>
+
+  <div class="chart-shell">
+    <svg viewBox="0 0 1500 830" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RSI bullish divergence 교육용 합성 차트">
+      <rect width="1500" height="830" fill="#f8fafc"/><rect x="18" y="18" width="1464" height="790" rx="18" fill="white" stroke="#cbd5e1"/>
+      <text x="55" y="58" font-family="sans-serif" font-size="26" font-weight="900" fill="#0f172a">교육용 가상 차트 · 실제 종목 데이터 아님</text>
+      <g stroke="#e2e8f0"><line x1="70" y1="130" x2="1430" y2="130"/><line x1="70" y1="230" x2="1430" y2="230"/><line x1="70" y1="330" x2="1430" y2="330"/><line x1="70" y1="430" x2="1430" y2="430"/></g>
+      <path d="M100 220 C220 190 300 250 390 235 S570 315 650 385 S790 410 860 360 S1010 345 1100 280 S1260 190 1400 165" fill="none" stroke="#2563eb" stroke-width="5"/>
+      <g fill="#ef4444" stroke="#ef4444"><line x1="530" y1="360" x2="530" y2="455" stroke-width="4"/><rect x="513" y="382" width="34" height="54"/><line x1="765" y1="378" x2="765" y2="478" stroke-width="4"/><rect x="748" y="400" width="34" height="55"/></g>
+      <g fill="#0f9f7a" stroke="#0f9f7a"><line x1="950" y1="330" x2="950" y2="410" stroke-width="4"/><rect x="933" y="345" width="34" height="42"/><line x1="1100" y1="275" x2="1100" y2="352" stroke-width="4"/><rect x="1083" y="290" width="34" height="42"/></g>
+      <line x1="530" y1="450" x2="765" y2="475" stroke="#dc2626" stroke-width="6" stroke-dasharray="14 9"/>
+      <rect x="420" y="480" width="310" height="58" rx="12" fill="#b91c1c"/><text x="448" y="517" fill="white" font-size="27" font-family="sans-serif" font-weight="800">① 가격: Lower Low</text>
+      <line x1="70" y1="590" x2="1430" y2="590" stroke="#94a3b8"/><text x="82" y="625" font-family="sans-serif" font-size="23" font-weight="800" fill="#475569">RSI(14)</text>
+      <line x1="70" y1="665" x2="1430" y2="665" stroke="#ef4444" stroke-dasharray="8 7"/><line x1="70" y1="745" x2="1430" y2="745" stroke="#16a34a" stroke-dasharray="8 7"/><line x1="70" y1="705" x2="1430" y2="705" stroke="#64748b" stroke-dasharray="8 7"/>
+      <polyline points="100,705 230,680 360,725 520,760 650,720 765,735 900,690 1040,660 1190,640 1400,670" fill="none" stroke="#7c3aed" stroke-width="5"/>
+      <line x1="520" y1="760" x2="765" y2="735" stroke="#16a34a" stroke-width="6" stroke-dasharray="14 9"/>
+      <rect x="690" y="752" width="340" height="55" rx="12" fill="#047857"/><text x="717" y="788" fill="white" font-size="25" font-family="sans-serif" font-weight="800">② RSI: Higher Low</text>
+      <rect x="1000" y="105" width="370" height="82" rx="12" fill="#075985"/><text x="1028" y="140" fill="white" font-size="25" font-family="sans-serif" font-weight="800">③ 확인: MA20 + 직전 고점</text><text x="1028" y="170" fill="#dbeafe" font-size="21" font-family="sans-serif">다이버전스만으로 즉시 매수하지 않는다</text>
+    </svg>
+    <div class="chart-tools"><span class="synthetic">교육용 합성 차트 · 실제 종목 데이터 아님</span><span>SVG 벡터 · 확대 가능</span></div>
+  </div>
+
+  <div class="article">
+    <article class="content">
+      <section><h2>1. 오늘의 학습 목표</h2><p>RSI의 절대값이 아니라 <strong>가격 swing과 RSI swing의 방향 차이</strong>를 이용해 모멘텀 약화를 읽습니다. 학습 후에는 Bullish/Bearish Divergence를 구분하고, 다이버전스 뒤에 어떤 가격 확인이 필요한지 설명할 수 있어야 합니다.</p><div class="rule"><div><strong>가격 구조</strong>Lower Low / Higher High를 먼저 본다.</div><div><strong>RSI 구조</strong>Higher Low / Lower High가 나타나는지 본다.</div><div><strong>가격 확인</strong>MA20·직전 swing·캔들·거래량을 확인한다.</div></div></section>
+      <section><h2>2. RSI를 정확히 이해하기</h2><p>RSI(Relative Strength Index)는 최근 일정 기간의 상승폭과 하락폭을 비교해 가격 움직임의 속도와 강도를 0~100으로 표현하는 모멘텀 지표입니다. 기본 설정은 보통 14기간입니다.</p><div class="callout"><strong>중요:</strong> RSI 70은 자동 매도, RSI 30은 자동 매수 신호가 아닙니다. 강한 상승에서는 70 이상이 오래 유지될 수 있고, 강한 하락에서는 30 이하가 지속될 수 있습니다.</div></section>
+      <section><h2>3. Bullish Divergence</h2><div class="formula">가격: Low 1 → 더 낮은 Low 2 = Lower Low<br>RSI: RSI Low 1 → 더 높은 RSI Low 2 = Higher Low</div><p>가격은 새 저점을 만들었지만 두 번째 하락의 모멘텀은 첫 번째보다 약해졌다는 뜻입니다. 즉 매도세가 가격을 더 낮게 밀어내기는 했지만 힘의 크기는 약해졌습니다.</p><div class="callout warn"><strong>다이버전스 ≠ 바닥 확정.</strong> 하락 힘이 약해졌다는 것과 매수세가 추세를 뒤집었다는 것은 다른 문제입니다.</div></section>
+      <section><h2>4. Bearish Divergence</h2><div class="formula">가격: High 1 → 더 높은 High 2 = Higher High<br>RSI: RSI High 1 → 더 낮은 RSI High 2 = Lower High</div><p>가격은 신고점을 만들지만 상승 모멘텀은 이전보다 약한 구조입니다. 강한 상승 추세에서는 여러 번 나타나도 가격이 더 오를 수 있으므로 실제 하락 확인은 가격 구조에서 해야 합니다.</p></section>
+      <section><h2>5. 다이버전스 뒤 가격 확인 순서</h2><ol><li><strong>지지선 유지:</strong> 두 번째 저점이 주요 지지 Zone에서 멈추는지 확인합니다.</li><li><strong>반전 캔들:</strong> 긴 아래꼬리, 상승 장악형 등 매도 거부 흔적을 봅니다.</li><li><strong>직전 swing high 돌파:</strong> 단기 고점 구조가 실제로 깨지는지 확인합니다.</li><li><strong>MA20 회복:</strong> 종가 기준으로 단기 평균선을 회복하는지 봅니다.</li><li><strong>RSI 50 회복:</strong> 모멘텀이 중립선 위로 돌아오는지 확인합니다.</li><li><strong>거래량:</strong> 반등 거래량 증가, 눌림 거래량 감소가 더 좋습니다.</li></ol></section>
+      <section><h2>6. 실전 예시</h2><div class="scenario"><pre>1차 하락 저점: $92 / RSI 24
+반등 고점   : $101
+2차 하락 저점: $90 / RSI 33
+
+가격: 92 → 90  = Lower Low
+RSI : 24 → 33  = Higher Low</pre></div><p>이 구조는 Bullish Divergence입니다. 그러나 $90 부근 자체를 진입 신호로 두지 않습니다.</p><table><thead><tr><th>접근</th><th>예시 확인</th><th>특징</th></tr></thead><tbody><tr><td>공격적</td><td>지지 + 반전 캔들 고가 회복</td><td>빠르지만 실패 위험 큼</td></tr><tr><td>중립</td><td>MA20 위 종가 회복</td><td>속도와 확인의 균형</td></tr><tr><td>보수적</td><td>직전 swing high $96 돌파 + RSI 50 회복</td><td>늦지만 구조 확인 강함</td></tr></tbody></table></section>
+      <section><h2>7. 무효화와 손절</h2><p>두 번째 저점이 Bullish Divergence의 기준 swing low입니다. 이후 가격이 해당 저점 Zone을 의미 있게 재이탈하고 RSI도 다시 약해지면 기존 반전 시나리오를 재평가합니다.</p><div class="callout danger"><strong>반복 물타기 금지:</strong> 강한 하락 추세에서 divergence가 여러 번 나타날 수 있습니다. 가격 구조 회복이 없는데 divergence만 근거로 추가매수하지 않습니다.</div></section>
+      <section><h2>8. 흔한 실수</h2><ul><li>RSI 30 아래만 보고 Bullish Divergence라고 부르기</li><li>서로 관계없는 저점을 억지로 연결하기</li><li>다른 timeframe의 swing을 섞어 비교하기</li><li>다이버전스 발생 즉시 진입하고 가격 확인을 생략하기</li><li>두 번째 저점이 무너졌는데도 기존 시나리오 유지하기</li></ul></section>
+      <section><h2>9. 핵심 한 줄</h2><div class="callout"><strong>다이버전스는 반전 신호가 아니라 기존 추세의 모멘텀이 약해지고 있다는 경고이며, 실제 매매 판단은 가격 구조·MA20·거래량·확인 캔들이 결정합니다.</strong></div></section>
+      <section><h2>10. 참고</h2><p>이 페이지의 개념·구성은 사용자의 기존 Notion `차트 공부 학습 기록`의 2026-09-07 RSI 다이버전스 상세 학습을 기준으로 HTML로 복원했습니다. 대표 차트의 숫자는 교육용 합성 예시이며 실제 종목의 현재 가격이 아닙니다.</p></section>
+    </article>
+    <aside class="sidebox">
+      <h3>오늘의 체크리스트</h3>
+      <ul class="checklist"><li>가격의 두 저점이 실제 swing low인가?</li><li>가격은 Lower Low인가?</li><li>RSI는 Higher Low인가?</li><li>두 번째 저점이 주요 지지와 겹치는가?</li><li>반전 캔들이 확인되는가?</li><li>MA20 또는 직전 swing high를 회복했는가?</li><li>RSI가 50을 회복하는가?</li><li>반등 거래량이 증가하는가?</li><li>두 번째 저점 재이탈 시 시나리오를 무효화했는가?</li></ul>
+      <h3 style="margin-top:24px">복습 퀴즈</h3>
+      <div class="quiz"><details><summary>Q1. 가격 Lower Low + RSI Higher Low는?</summary><p>Regular Bullish Divergence.</p></details><details><summary>Q2. Bullish Divergence가 바닥 확정인가?</summary><p>아닙니다. 하락 모멘텀 약화 경고입니다.</p></details><details><summary>Q3. 그 뒤 가장 중요한 확인은?</summary><p>가격 구조 회복과 거래량 확인입니다.</p></details><details><summary>Q4. 가격 Higher High + RSI Lower High는?</summary><p>Bearish Divergence입니다.</p></details><details><summary>Q5. 두 번째 저점을 다시 깨면?</summary><p>기존 bullish divergence 시나리오를 재평가합니다.</p></details></div>
+    </aside>
+  </div>
+  <p class="footer-note">교육 목적의 차트 학습 자료이며 투자 권유가 아닙니다.</p>
+</main>
+</body>
+</html>
