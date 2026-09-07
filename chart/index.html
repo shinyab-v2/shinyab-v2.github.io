@@ -3,45 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="고해상도 차트와 상세 원문을 결합한 날짜별 기술적 분석 학습 아카이브">
+  <meta name="description" content="날짜별 독립 HTML로 제공되는 기술적 분석 학습 아카이브">
   <title>차트 분석 공부 · Technical Analysis Lab</title>
-  <link rel="stylesheet" href="chart.css?v=20260907-2">
+  <link rel="stylesheet" href="chart.css?v=20260907-3">
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="./"><span class="brand-mark">C</span><span>Chart Study</span></a>
-  <nav class="topnav"><button id="archive-btn">전체 자료</button><a class="wide" href="../">학습 허브</a></nav>
-</header>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark">C</span><span>Chart Study</span></a><nav class="topnav"><a class="wide" href="../">학습 허브</a></nav></header>
 <main>
 <section id="archive">
-  <div class="hero">
-    <p class="eyebrow">TECHNICAL ANALYSIS LAB</p>
-    <h1>차트를 외우지 않고<br>가격의 구조를 읽습니다.</h1>
-    <p>기존 Notion 상세 학습 원문과 고해상도 차트 자산을 기준으로 복원한 정식 아카이브입니다. 캔들·이동평균선·거래량·RSI·MACD·갭·돌파를 하나의 가격 행동으로 연결해 학습합니다.</p>
-    <div class="hero-metrics"><span>10개 학습 기록</span><span>고해상도 SVG/JPG</span><span>실전 체크리스트</span><span>복습 퀴즈</span><span>모바일 확대 지원</span></div>
+  <div class="hero"><p class="eyebrow">TECHNICAL ANALYSIS LAB</p><h1>차트를 외우지 않고<br>가격의 구조를 읽습니다.</h1><p>각 학습은 Notion이나 JavaScript 라우팅을 거치지 않고 GitHub Pages의 독립 HTML 파일로 직접 열립니다. 고해상도 차트, 상세 설명, 실전 체크리스트와 복습 퀴즈를 함께 제공합니다.</p><div class="hero-metrics"><span>10개 독립 HTML</span><span>고해상도 SVG/JPG</span><span>실전 체크리스트</span><span>복습 퀴즈</span><span>모바일 확대 지원</span></div></div>
+  <div class="archive-head"><div><p class="eyebrow">LEARNING ARCHIVE</p><h2>날짜별 실제 학습</h2></div><p>카드를 누르면 상세 HTML로 직접 이동합니다.</p></div>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="2026-09-07-rsi-divergence.html"><time>2026.09.07</time><br><span class="badge">실전 차트 분석 · #10</span><h3>RSI 다이버전스</h3><p>Lower Low와 Higher Low로 모멘텀 약화를 읽고 MA20·직전 고점·RSI50·거래량으로 가격 전환을 확인합니다.</p></a>
+    <a class="lesson-card" href="2026-09-04-breakout.html"><time>2026.09.04</time><br><span class="badge">실전 차트 분석 · #09</span><h3>돌파와 실패 돌파</h3><p>거래량·종가·재테스트로 진짜 돌파와 Bull Trap을 구별합니다.</p></a>
+    <a class="lesson-card" href="2026-09-03-reversal-candles.html"><time>2026.09.03</time><br><span class="badge">캔들 · #08</span><h3>반전 캔들</h3><p>망치형·상승 장악형·유성형을 위치·거래량·확인 캔들과 함께 판별합니다.</p></a>
+    <a class="lesson-card" href="2026-09-02-gap.html"><time>2026.09.02</time><br><span class="badge">실전 차트 분석 · #07</span><h3>갭(Gap)</h3><p>Common·Breakaway·Continuation·Exhaustion Gap을 위치와 거래량으로 구분합니다.</p></a>
+    <a class="lesson-card" href="2026-09-01-macd.html"><time>2026.09.01</time><br><span class="badge">실전 차트 분석 · #06</span><h3>MACD</h3><p>교차보다 중요한 0선·히스토그램·가격 구조를 연결해 읽습니다.</p></a>
+    <a class="lesson-card" href="2026-08-31-rsi.html"><time>2026.08.31</time><br><span class="badge">실전 차트 분석 · #05</span><h3>RSI(14)</h3><p>30·70 자동 신호 대신 상승 추세의 40~50 지지와 하락 추세의 50~60 저항을 학습합니다.</p></a>
+    <a class="lesson-card" href="2026-08-30-trend-lines.html"><time>2026.08.30</time><br><span class="badge">추세·이동평균 · #04</span><h3>추세선과 추세 훼손 판단</h3><p>추세선 이탈, MA20 회복 실패, Higher Low 붕괴를 단계적으로 봅니다.</p></a>
+    <a class="lesson-card" href="2026-08-29-candles-volume.html"><time>2026.08.29</time><br><span class="badge">캔들 · #03</span><h3>캔들 패턴과 거래량</h3><p>지지선·반전 캔들·평균 이상 거래량·다음 캔들 확인을 연결합니다.</p></a>
+    <a class="lesson-card" href="2026-08-29-soxl.html"><time>2026.08.29</time><br><span class="badge">실전 차트 분석 · #02</span><h3>SOXL 실전 차트 분석</h3><p>2026-08-29 당시 차트에서 MA30·거래량·볼린저 밴드·RSI를 결합해 분석합니다.</p></a>
+    <a class="lesson-card" href="2026-08-27-bollinger.html"><time>2026.08.27</time><br><span class="badge">볼린저 밴드 · #01</span><h3>볼린저 밴드 완전 정리</h3><p>SMA20, 밴드 폭, 거래량과 추세를 함께 보는 기본기를 정리합니다.</p></a>
   </div>
-  <div class="archive-head"><div><p class="eyebrow">LEARNING ARCHIVE</p><h2>날짜별 상세 학습</h2></div><p>최신 학습부터 표시</p></div>
-  <div id="lesson-grid" class="lesson-grid">
-    <a class="lesson-card" href="2026-09-07-rsi-divergence.html"><time>2026.09.07</time><br><span class="badge">실전 차트 분석 · #10</span><h3>RSI 다이버전스 — Lower Low와 Higher Low로 모멘텀 약화 읽기</h3><p>가격은 새 저점을 만들지만 RSI는 더 높은 저점을 만들 때의 의미와 실제 가격 확인 절차를 학습합니다.</p></a>
-    <a class="lesson-card" href="?date=2026-09-04"><time>2026.09.04</time><br><span class="badge">실전 차트 분석 · #09</span><h3>돌파와 실패 돌파</h3><p>거래량·종가·재테스트로 진짜 돌파와 Bull Trap을 구별합니다.</p></a>
-    <a class="lesson-card" href="?date=2026-09-03"><time>2026.09.03</time><br><span class="badge">캔들 · #08</span><h3>반전 캔들</h3><p>망치형·장악형·유성형을 위치·거래량·확인 캔들과 함께 판별합니다.</p></a>
-    <a class="lesson-card" href="?date=2026-09-02"><time>2026.09.02</time><br><span class="badge">실전 차트 분석 · #07</span><h3>갭(Gap)</h3><p>보통·돌파·지속·소진 갭을 발생 위치와 거래량, 갭 메움으로 구분합니다.</p></a>
-    <a class="lesson-card" href="?date=2026-09-01"><time>2026.09.01</time><br><span class="badge">실전 차트 분석 · #06</span><h3>MACD</h3><p>교차보다 중요한 0선·히스토그램·가격 구조를 연결해 읽습니다.</p></a>
-    <a class="lesson-card" href="?date=2026-08-31"><time>2026.08.31</time><br><span class="badge">실전 차트 분석 · #05</span><h3>RSI(14)</h3><p>30·70 자동 신호 대신 추세별 RSI 구간과 가격 구조를 학습합니다.</p></a>
-    <a class="lesson-card" href="?date=2026-08-30"><time>2026.08.30</time><br><span class="badge">추세·이동평균 · #04</span><h3>추세선과 추세 훼손 판단</h3><p>추세선 이탈과 Higher Low 붕괴, MA20 회복 실패를 단계적으로 봅니다.</p></a>
-    <a class="lesson-card" href="?date=2026-08-29b"><time>2026.08.29</time><br><span class="badge">캔들 · #03</span><h3>캔들 패턴과 거래량 분석</h3><p>지지선·반전 캔들·평균 이상 거래량·다음 캔들 확인을 연결합니다.</p></a>
-    <a class="lesson-card" href="?date=2026-08-29"><time>2026.08.29</time><br><span class="badge">실전 차트 분석 · #02</span><h3>SOXL 실전 차트 분석</h3><p>MA30·거래량·볼린저 밴드·RSI를 실제 당시 차트에서 결합합니다.</p></a>
-    <a class="lesson-card" href="?date=2026-08-27"><time>2026.08.27</time><br><span class="badge">볼린저 밴드 · #01</span><h3>볼린저 밴드 완전 정리</h3><p>SMA20, 밴드 폭, 거래량과 추세를 함께 보는 기본기를 정리합니다.</p></a>
-  </div>
-  <noscript><p class="footer-note">JavaScript를 사용하지 않아도 위 목록에서 2026.09.07 상세 학습은 직접 열 수 있습니다.</p></noscript>
 </section>
-<section id="lesson" class="lesson">
-  <div class="lesson-head"><a class="back" href="./">← 전체 자료</a><p class="eyebrow" id="lesson-eyebrow"></p><h1 id="lesson-title"></h1><p class="summary" id="lesson-summary"></p><div class="meta" id="lesson-meta"></div></div>
-  <div id="chart-shell" class="chart-shell"></div>
-  <div class="article"><article class="content" id="lesson-content"></article><aside class="sidebox"><h3>오늘의 체크리스트</h3><ul class="checklist" id="lesson-checklist"></ul><h3 style="margin-top:24px">복습 퀴즈</h3><div class="quiz" id="lesson-quiz"></div></aside></div>
-  <p class="footer-note">교육 목적의 차트 학습 자료입니다. 실제 종목 데이터가 사용된 페이지는 해당 날짜의 당시 데이터임을 별도로 표시하며 현재 투자 권유가 아닙니다.</p>
-</section>
+<p class="footer-note">모든 학습 카드는 독립 HTML 파일로 직접 연결됩니다. 과거 실제 종목 데이터가 사용된 페이지는 당시 기준임을 별도로 표시합니다.</p>
 </main>
-<script src="chart-app.js?v=20260907-2" defer></script>
 </body>
 </html>
