@@ -9,23 +9,23 @@ const learningItems = [
   {
     icon: "E",
     title: "영어 공부",
-    description: "B2 Daily English · 2026.09.07–09.13 주간 학습",
-    state: "이번 주 학습 →",
-    url: "english/week-2026-09-07.html"
+    description: "B2 Daily English · 문법·이디엄·5분 읽기·숨김 번역·퀴즈·Voice 리뷰·개인 단어장",
+    state: "정식 학습 앱 →",
+    url: "english/"
   },
   {
     icon: "C",
     title: "차트 공부",
-    description: "추세·지지저항·거래량·RSI·MACD·돌파·멀티 타임프레임",
-    state: "이번 주 학습 →",
-    url: "chart/week-2026-09-07.html"
+    description: "고해상도 실제형 차트와 상세 설명으로 배우는 기술적 분석 아카이브",
+    state: "정식 학습 앱 →",
+    url: "chart/"
   },
   {
     icon: "AI",
     title: "AI 학습",
-    description: "Conv2d부터 U-Net·runtime instrumentation까지 7일 실습",
-    state: "이번 주 학습 →",
-    url: "ai/week-2026-09-07.html"
+    description: "PyTorch 모델 구조 해부·수정·디버깅·배포까지 이어지는 날짜별 심화 학습",
+    state: "정식 학습 앱 →",
+    url: "ai/"
   }
 ];
 
