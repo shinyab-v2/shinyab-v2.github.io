@@ -1,0 +1,105 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Small-batch 의료영상 학습에서 BatchNorm과 GroupNorm을 비교하고 PyTorch 모델의 BN을 GN으로 안전하게 교체하는 실습"><title>AI 전문 개발 학습 #06 · Small-Batch Normalization</title><link rel="stylesheet" href="ai.css"><style>.lesson-main h2{margin-top:34px}.lesson-main h3{margin-top:24px}.callout{background:#f4f7fb;border-left:4px solid #2563eb;border-radius:10px;padding:14px 16px;margin:16px 0}.warn{background:#fff7ed;border-left-color:#f59e0b}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{border:1px solid #e5e7eb;border-radius:14px;padding:14px;background:#fff}.lesson-main table{width:100%;border-collapse:collapse}.lesson-main th,.lesson-main td{border-bottom:1px solid #e5e7eb;padding:10px;text-align:left;vertical-align:top}.src{font-size:14px;color:#475569}@media(max-width:720px){.grid2{grid-template-columns:1fr}}</style></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><p class="eyebrow">2026.09.07 · ADVANCED · PYTORCH</p><h1 class="lesson-title">AI 전문 개발 학습 #06<br>Small-Batch Normalization</h1><p class="lesson-summary">BatchNorm을 GroupNorm으로 안전하게 교체하기 — 고해상도 의료 초음파처럼 GPU당 batch size가 작아지는 환경에서 normalization 정책을 설계하고 검증합니다.</p><div class="callout"><strong>핵심 질문</strong><br>batch size가 2~4밖에 나오지 않는 detection/segmentation 모델에서 BatchNorm을 그대로 써도 되는가? 바꾼다면 pretrained weight를 최대한 보존하면서 어떻게 GroupNorm으로 교체하고 검증할 것인가?</div><h2>1. 학습 목표</h2><ul><li>BatchNorm2d의 train/eval 통계 사용 방식을 설명한다.</li><li>small batch에서 BatchNorm이 불안정해질 수 있는 이유를 이해한다.</li><li>GroupNorm이 batch size와 독립적으로 동작하는 이유를 설명한다.</li><li>BatchNorm 유지 / Frozen BN / GroupNorm 교체의 trade-off를 비교한다.</li><li>PyTorch 모델의 BatchNorm2d를 GroupNorm으로 재귀 교체한다.</li><li>pretrained BN affine parameter 중 무엇을 GN으로 옮길 수 있는지 구분한다.</li><li>교체 전후 shape, parameter, gradient, train/eval 동작을 검증한다.</li></ul><h2>2. 핵심 이론</h2><h3>2.1 BatchNorm2d가 계산하는 것</h3><p>입력이 <code>[N, C, H, W]</code>라면 BatchNorm2d는 channel별로 정규화를 수행합니다.</p><pre><code>y = gamma * (x - mean) / sqrt(var + eps) + beta</code></pre><p><code>gamma</code>와 <code>beta</code>는 channel별 학습 parameter입니다. 학습 시에는 현재 mini-batch의 통계를 사용하고 기본 설정에서 running mean/variance도 갱신합니다. 평가 시에는 저장된 running statistics를 사용합니다.</p><pre><code>model.train()
+# 현재 mini-batch statistics 사용
+# running_mean / running_var 갱신
+
+model.eval()
+# 저장된 running statistics 사용</code></pre><div class="callout warn"><strong>초음파 프로젝트에서 의심할 신호</strong><br>batch 16→2로 줄인 뒤 성능 급락, train loss 대비 validation 흔들림, fine-tuning 중에는 정상인데 inference에서 성능 저하, vendor/device가 다른 영상이 batch마다 불균일하게 섞이는 경우.</div><h3>2.2 GroupNorm은 무엇이 다른가?</h3><p>GroupNorm은 batch끼리 통계를 섞지 않고 한 sample 내부의 channel들을 여러 group으로 나눠 group별 mean/variance를 계산합니다. 예를 들어 <code>C=32</code>, <code>num_groups=8</code>이면 group당 4 channel입니다.</p><pre><code>nn.GroupNorm(num_groups=8, num_channels=32)
+
+# 필수 조건
+num_channels % num_groups == 0</code></pre><p>GroupNorm은 train/eval 모두 현재 입력에서 통계를 계산하므로 BN처럼 running mean/variance에 의존하지 않습니다.</p><h3>2.3 Group 수 선택</h3><pre><code>def choose_groups(channels, preferred=8):
+    candidates = [preferred, 32, 16, 8, 4, 2, 1]
+    for g in candidates:
+        if g &lt;= channels and channels % g == 0:
+            return g
+    return 1</code></pre><p><code>32 groups</code>를 절대 규칙처럼 쓰면 안 됩니다. channel 24에서는 32 groups가 불가능합니다.</p><h2>3. 실제 모델에서 어디를 바꿔야 하나?</h2><pre><code>class BasicBlock(nn.Module):
+    def __init__(self, in_ch, out_ch, stride=1):
+        super().__init__()
+        self.conv1 = nn.Conv2d(in_ch, out_ch, 3, stride, 1, bias=False)
+        self.bn1 = nn.BatchNorm2d(out_ch)
+        self.conv2 = nn.Conv2d(out_ch, out_ch, 3, 1, 1, bias=False)
+        self.bn2 = nn.BatchNorm2d(out_ch)
+
+        if stride != 1 or in_ch != out_ch:
+            self.proj = nn.Sequential(
+                nn.Conv2d(in_ch, out_ch, 1, stride, bias=False),
+                nn.BatchNorm2d(out_ch),
+            )
+        else:
+            self.proj = nn.Identity()</code></pre><p>Normalization은 main path의 두 위치뿐 아니라 projection path에도 있습니다. 일부만 바꾸면 같은 residual block 안에서 서로 다른 normalization 정책이 섞일 수 있으므로 전체 module tree를 재귀적으로 검사하는 편이 안전합니다.</p><h2>4. 세 가지 전략의 trade-off</h2><div class="grid2"><div class="card"><strong>A. BatchNorm 유지</strong><p>충분한 batch, 안정적인 pretrained recipe가 있을 때. running statistics까지 그대로 쓸 수 있습니다.</p></div><div class="card"><strong>B. BN statistics freeze</strong><p>small fine-tuning dataset에서 pretrained running statistics를 유지하는 절충안입니다.</p></div><div class="card"><strong>C. GroupNorm 교체</strong><p>고해상도 detection/segmentation처럼 batch 1~4가 흔할 때 강한 후보입니다.</p></div><div class="card"><strong>주의</strong><p>GN이 항상 더 좋은 것은 아닙니다. BN baseline / Frozen BN / GN을 동일 조건에서 비교해야 합니다.</p></div></div><h3>4.1 BN statistics freeze</h3><pre><code>def freeze_bn_stats(model):
+    for m in model.modules():
+        if isinstance(m, nn.BatchNorm2d):
+            m.eval()</code></pre><p><code>eval()</code>만으로는 <code>weight</code>, <code>bias</code>의 gradient가 꺼지지 않습니다.</p><pre><code>for m in model.modules():
+    if isinstance(m, nn.BatchNorm2d):
+        m.eval()
+        if m.weight is not None:
+            m.weight.requires_grad_(False)
+        if m.bias is not None:
+            m.bias.requires_grad_(False)</code></pre><h2>5. 실습 — BN을 GN으로 재귀 교체</h2><pre><code>import torch
+import torch.nn as nn
+
+
+def choose_groups(channels, preferred=8):
+    candidates = [preferred, 32, 16, 8, 4, 2, 1]
+    for g in candidates:
+        if g &lt;= channels and channels % g == 0:
+            return g
+    return 1
+
+
+def replace_bn_with_gn(module, preferred_groups=8, copy_affine=True):
+    for name, child in list(module.named_children()):
+        if isinstance(child, nn.BatchNorm2d):
+            c = child.num_features
+            groups = choose_groups(c, preferred_groups)
+
+            gn = nn.GroupNorm(
+                num_groups=groups,
+                num_channels=c,
+                eps=child.eps,
+                affine=child.affine,
+            )
+
+            if copy_affine and child.affine:
+                with torch.no_grad():
+                    gn.weight.copy_(child.weight)
+                    gn.bias.copy_(child.bias)
+
+            setattr(module, name, gn)
+        else:
+            replace_bn_with_gn(child, preferred_groups, copy_affine)
+
+    return module</code></pre><h3>5.1 무엇을 복사할 수 있는가?</h3><table><thead><tr><th>BN 항목</th><th>GN으로 복사</th><th>이유</th></tr></thead><tbody><tr><td>weight (gamma)</td><td>가능</td><td>둘 다 channel별 affine parameter</td></tr><tr><td>bias (beta)</td><td>가능</td><td>둘 다 channel별 affine parameter</td></tr><tr><td>running_mean</td><td>불가</td><td>GN에는 running statistics가 없음</td></tr><tr><td>running_var</td><td>불가</td><td>GN에는 running statistics가 없음</td></tr><tr><td>num_batches_tracked</td><td>불가</td><td>GN에는 해당 buffer가 없음</td></tr></tbody></table><div class="callout"><strong>핵심</strong><br>checkpoint tensor shape가 호환된다는 것과 inference 의미가 동일하다는 것은 다른 문제입니다. affine parameter를 복사해도 normalization 통계 정책 자체는 바뀝니다.</div><h2>6. 교체 검증</h2><h3>6.1 BN/GN 개수 확인</h3><pre><code>def count_norms(model):
+    result = {"bn": 0, "gn": 0}
+    for m in model.modules():
+        if isinstance(m, nn.BatchNorm2d):
+            result["bn"] += 1
+        elif isinstance(m, nn.GroupNorm):
+            result["gn"] += 1
+    return result
+
+print("before:", count_norms(model))
+model = replace_bn_with_gn(model)
+print("after :", count_norms(model))</code></pre><p>예상: <code>{'bn': 7, 'gn': 0}</code> → <code>{'bn': 0, 'gn': 7}</code>.</p><h3>6.2 Shape contract</h3><pre><code>x = torch.randn(2, 1, 256, 256)
+y = model(x)
+print(y.shape)</code></pre><p>Normalization 교체는 일반적으로 Tensor shape를 바꾸면 안 됩니다.</p><h3>6.3 Train/Eval gap</h3><pre><code>@torch.no_grad()
+def train_eval_gap(model, x):
+    model.train()
+    y_train = model(x).detach().clone()
+
+    model.eval()
+    y_eval = model(x).detach().clone()
+
+    return (y_train - y_eval).abs().mean().item()</code></pre><p>BN에서는 running stats 사용 차이가 output gap에 영향을 줄 수 있습니다. GN 자체는 train/eval 모두 현재 input stats를 쓰지만 Dropout 등 다른 layer가 있으면 전체 모델 출력은 여전히 달라질 수 있습니다.</p><h3>6.4 Gradient 연결</h3><pre><code>model.train()
+x = torch.randn(2, 1, 256, 256)
+target = torch.randint(0, 2, (2,))
+out = model(x)
+loss = nn.CrossEntropyLoss()(out, target)
+loss.backward()
+
+for name, p in model.named_parameters():
+    if p.requires_grad and p.grad is None:
+        print("no grad:", name)</code></pre><h2>7. 매우 중요한 실무 포인트 — optimizer 생성 순서</h2><div class="callout warn"><strong>잘못된 순서</strong><pre><code>optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+model = replace_bn_with_gn(model)</code></pre></div><div class="callout"><strong>안전한 순서</strong><pre><code>model = replace_bn_with_gn(model)
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)</code></pre></div><p>새 GN layer는 새로운 <code>Parameter</code> 객체를 만들기 때문에 module 교체 뒤 optimizer를 새로 만드는 습관이 안전합니다.</p><h2>8. 초음파 AI 프로젝트 실험 설계</h2><pre><code>Experiment A: Pretrained BN 그대로
+Experiment B: Pretrained BN + running stats freeze
+Experiment C: BN → GN + affine gamma/beta copy</code></pre><p>비교 항목: validation loss variance, Dice/IoU/mAP/sensitivity, lesion size별 성능, vendor/device별 성능, external validation, calibration, train/eval prediction gap, GPU memory, throughput.</p><h2>9. 복습 문제</h2><ol><li><strong>BatchNorm2d의 train/eval 차이는?</strong><br>train은 mini-batch statistics를 사용하며 running stats를 갱신하고, eval은 저장된 running statistics를 사용합니다.</li><li><strong>GroupNorm이 small batch에 상대적으로 적합한 이유는?</strong><br>통계를 batch dimension이 아니라 각 sample 내부 channel group에서 계산하기 때문입니다.</li><li><strong>BN→GN에서 복사 가능한 parameter는?</strong><br>affine=True라면 weight(gamma)와 bias(beta).</li><li><strong>running_mean/var를 복사하지 않는 이유는?</strong><br>GN에는 running statistics 개념이 없기 때문입니다.</li><li><strong>layer 교체 후 optimizer를 다시 만드는 이유는?</strong><br>새 layer가 새로운 Parameter 객체를 가지므로 기존 optimizer가 추적하지 못할 수 있기 때문입니다.</li></ol><h2>10. 다음 학습 예고</h2><p><strong>Loss와 gradient를 직접 추적하는 학습 실패 디버깅</strong> — <code>register_full_backward_hook</code>, gradient norm, exploding/vanishing gradient, <code>torch.autograd.detect_anomaly()</code>로 이어집니다.</p><h2>참고 자료</h2><ul class="src"><li><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html">PyTorch · BatchNorm2d</a></li><li><a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GroupNorm.html">PyTorch · GroupNorm</a></li><li><a href="https://arxiv.org/abs/1803.08494">Group Normalization · Wu &amp; He, ECCV 2018</a></li></ul></article></main><footer>AI 전문 개발 학습 · Project &amp; Learning Hub</footer></body></html>
