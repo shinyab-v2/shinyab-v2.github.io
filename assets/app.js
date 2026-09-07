@@ -9,23 +9,23 @@ const learningItems = [
   {
     icon: "E",
     title: "영어 공부",
-    description: "문법, 이디엄, 읽기와 단어 뜻 풍선",
-    state: "오늘의 읽기 →",
-    url: "english/"
+    description: "B2 Daily English · 2026.09.07–09.13 주간 학습",
+    state: "이번 주 학습 →",
+    url: "english/week-2026-09-07.html"
   },
   {
     icon: "C",
     title: "차트 공부",
-    description: "실전 차트 분석과 한 장 요약",
-    state: "Notion 열기 →",
-    url: "https://app.notion.com/p/e7faf6d7cf0d40ca9f6646d7126fd23b"
+    description: "추세·지지저항·거래량·RSI·MACD·돌파·멀티 타임프레임",
+    state: "이번 주 학습 →",
+    url: "chart/week-2026-09-07.html"
   },
   {
     icon: "AI",
     title: "AI 학습",
-    description: "커리큘럼과 날짜별 모델 분석·수정 실습",
-    state: "학습 목록 열기 →",
-    url: "ai/"
+    description: "Conv2d부터 U-Net·runtime instrumentation까지 7일 실습",
+    state: "이번 주 학습 →",
+    url: "ai/week-2026-09-07.html"
   }
 ];
 
