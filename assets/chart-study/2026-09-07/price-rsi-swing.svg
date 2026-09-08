@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" role="img" aria-labelledby="title desc">
+<title id="title">가격 Swing과 RSI Swing 이해하기</title>
+<desc id="desc">같은 시점의 가격 Swing Low와 RSI Swing Low를 세로선으로 연결해 Bullish Divergence를 설명하는 교육용 합성 차트</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#eef4fb"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity=".12"/></filter>
+  <style><![CDATA[
+    .txt{font-family:Inter,'Noto Sans KR','Apple SD Gothic Neo',Arial,sans-serif;fill:#0f172a}
+    .muted{fill:#64748b}.axis{font-size:17px;fill:#64748b}.small{font-size:19px}.body{font-size:21px}.label{font-size:23px;font-weight:800}.title{font-size:42px;font-weight:900}
+  ]]></style>
+</defs>
+<rect width="1600" height="1060" fill="url(#bg)"/>
+<rect x="32" y="30" width="1536" height="1000" rx="28" fill="#fff" filter="url(#shadow)"/>
+<text x="70" y="88" class="txt title">가격 Swing과 RSI Swing 이해하기</text>
+<text x="70" y="127" class="txt muted" font-size="24" font-weight="700">같은 시점의 가격 Swing과 RSI Swing을 비교해야 다이버전스를 정확히 읽을 수 있습니다.</text>
+
+<!-- main chart panel -->
+<rect x="70" y="160" width="1120" height="620" rx="18" fill="#fbfdff" stroke="#dbe4ef"/>
+<rect x="92" y="180" width="1074" height="350" rx="12" fill="#fff" stroke="#e5e7eb"/>
+<text x="110" y="214" class="txt label" fill="#0f3b78">가격 차트 · Price Swing</text>
+<text x="110" y="242" class="txt small muted">내려오다 상승으로 방향을 바꾸면 Swing Low · 올라가다 하락으로 바꾸면 Swing High</text>
+
+<!-- price grid -->
+<g stroke="#e8eef5" stroke-width="1">
+  <line x1="120" y1="285" x2="1135" y2="285"/><line x1="120" y1="345" x2="1135" y2="345"/><line x1="120" y1="405" x2="1135" y2="405"/><line x1="120" y1="465" x2="1135" y2="465"/>
+</g>
+<text x="82" y="291" class="axis">106</text><text x="82" y="351" class="axis">100</text><text x="82" y="411" class="axis">94</text><text x="82" y="471" class="axis">88</text>
+
+<!-- price path -->
+<path d="M140 315 C200 300 245 320 300 350 C360 382 420 435 485 438 C540 440 585 395 630 355 C685 305 730 300 775 335 C825 373 855 430 900 458 C945 485 990 438 1030 390 C1070 345 1110 330 1140 350" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+<!-- MA20 -->
+<path d="M140 305 C260 315 365 342 470 370 C575 398 690 395 805 410 C920 425 1030 405 1140 380" fill="none" stroke="#f97316" stroke-width="4"/>
+<text x="1000" y="292" class="txt small" font-weight="800" fill="#f97316">MA20</text>
+
+<!-- swing markers price -->
+<circle cx="485" cy="438" r="12" fill="#dc2626" stroke="#fff" stroke-width="4"/>
+<circle cx="900" cy="458" r="12" fill="#dc2626" stroke="#fff" stroke-width="4"/>
+<circle cx="730" cy="307" r="12" fill="#0f3b78" stroke="#fff" stroke-width="4"/>
+<rect x="390" y="390" width="180" height="72" rx="12" fill="#dc2626"/>
+<text x="412" y="420" font-family="sans-serif" font-size="21" font-weight="900" fill="#fff">Price Swing Low 1</text>
+<text x="448" y="448" font-family="sans-serif" font-size="22" font-weight="900" fill="#fff">$92</text>
+<rect x="820" y="410" width="182" height="74" rx="12" fill="#b91c1c"/>
+<text x="840" y="440" font-family="sans-serif" font-size="21" font-weight="900" fill="#fff">Price Swing Low 2</text>
+<text x="879" y="468" font-family="sans-serif" font-size="22" font-weight="900" fill="#fff">$90</text>
+<rect x="645" y="248" width="170" height="62" rx="12" fill="#0f3b78"/>
+<text x="669" y="276" font-family="sans-serif" font-size="20" font-weight="900" fill="#fff">Swing High</text>
+<text x="683" y="299" font-family="sans-serif" font-size="18" fill="#dbeafe">방향 전환 고점</text>
+
+<!-- price lower low line -->
+<line x1="485" y1="438" x2="900" y2="458" stroke="#dc2626" stroke-width="5" stroke-dasharray="12 8"/>
+<text x="594" y="487" class="txt label" fill="#b91c1c">가격: 92 → 90 = Lower Low</text>
+
+<!-- RSI panel -->
+<rect x="92" y="555" width="1074" height="198" rx="12" fill="#fff" stroke="#e5e7eb"/>
+<text x="110" y="590" class="txt label" fill="#6d28d9">RSI(14) · RSI Swing</text>
+<text x="110" y="618" class="txt small muted">RSI도 상승·하락을 반복하며 의미 있는 고점과 저점을 만듭니다.</text>
+<line x1="120" y1="655" x2="1135" y2="655" stroke="#94a3b8" stroke-dasharray="8 7"/>
+<line x1="120" y1="705" x2="1135" y2="705" stroke="#c4b5fd" stroke-dasharray="8 7"/>
+<text x="82" y="661" class="axis">50</text><text x="82" y="711" class="axis">30</text>
+<polyline points="140,670 230,650 320,682 400,640 485,720 585,670 685,650 775,675 900,695 1010,655 1140,645" fill="none" stroke="#7c3aed" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="485" cy="720" r="11" fill="#7c3aed" stroke="#fff" stroke-width="4"/>
+<circle cx="900" cy="695" r="11" fill="#7c3aed" stroke="#fff" stroke-width="4"/>
+<line x1="485" y1="720" x2="900" y2="695" stroke="#16a34a" stroke-width="5" stroke-dasharray="12 8"/>
+<rect x="398" y="686" width="176" height="56" rx="10" fill="#7c3aed"/>
+<text x="422" y="711" font-family="sans-serif" font-size="19" font-weight="900" fill="#fff">RSI Swing Low 1</text><text x="468" y="733" font-family="sans-serif" font-size="18" fill="#fff">24</text>
+<rect x="816" y="664" width="180" height="56" rx="10" fill="#6d28d9"/>
+<text x="840" y="689" font-family="sans-serif" font-size="19" font-weight="900" fill="#fff">RSI Swing Low 2</text><text x="887" y="711" font-family="sans-serif" font-size="18" fill="#fff">33</text>
+<text x="595" y="740" class="txt label" fill="#047857">RSI: 24 → 33 = Higher Low</text>
+
+<!-- same-time vertical guides -->
+<line x1="485" y1="265" x2="485" y2="742" stroke="#0ea5e9" stroke-width="3" stroke-dasharray="8 8"/>
+<line x1="900" y1="265" x2="900" y2="742" stroke="#0ea5e9" stroke-width="3" stroke-dasharray="8 8"/>
+<rect x="397" y="255" width="176" height="32" rx="8" fill="#e0f2fe"/><text x="421" y="277" class="txt small" font-weight="800" fill="#0369a1">같은 시점 ①</text>
+<rect x="812" y="255" width="176" height="32" rx="8" fill="#e0f2fe"/><text x="836" y="277" class="txt small" font-weight="800" fill="#0369a1">같은 시점 ②</text>
+
+<!-- right explainer -->
+<rect x="1220" y="160" width="310" height="620" rx="18" fill="#f8fafc" stroke="#dbe4ef"/>
+<rect x="1220" y="160" width="310" height="58" rx="18" fill="#0f3b78"/>
+<text x="1242" y="197" font-family="sans-serif" font-size="28" font-weight="900" fill="#fff">Swing이란?</text>
+<g class="txt body">
+  <text x="1242" y="253" font-weight="900" fill="#2563eb">Price Swing</text>
+  <text x="1242" y="285">가격이 한 방향으로</text><text x="1242" y="312">움직이다가 방향을 바꾸며</text><text x="1242" y="339">만든 의미 있는 고점·저점.</text>
+  <text x="1242" y="390" font-weight="900" fill="#7c3aed">RSI Swing</text>
+  <text x="1242" y="422">RSI 그래프에서도 같은</text><text x="1242" y="449">방식으로 생기는 의미 있는</text><text x="1242" y="476">고점·저점.</text>
+  <text x="1242" y="527" font-weight="900" fill="#0284c7">핵심 규칙</text>
+  <text x="1242" y="559">가격 저점 1의 날짜와</text><text x="1242" y="586">RSI 저점 1을 연결하고,</text><text x="1242" y="613">가격 저점 2의 날짜와</text><text x="1242" y="640">RSI 저점 2를 비교한다.</text>
+</g>
+<rect x="1240" y="682" width="270" height="74" rx="12" fill="#ecfdf5" stroke="#86efac"/>
+<text x="1258" y="711" class="txt small" font-weight="900" fill="#047857">Bullish Divergence 후보</text>
+<text x="1258" y="738" class="txt small" font-weight="800">Price: Lower Low</text><text x="1402" y="738" class="txt small" font-weight="800" fill="#7c3aed">RSI: Higher Low</text>
+
+<!-- bottom learning cards -->
+<rect x="70" y="815" width="460" height="170" rx="18" fill="#eff6ff" stroke="#bfdbfe"/>
+<text x="95" y="855" class="txt" font-size="27" font-weight="900" fill="#1d4ed8">① Swing 찾는 방법</text>
+<text x="95" y="895" class="txt body">• 내려오다 상승으로 바뀌면 Swing Low</text>
+<text x="95" y="928" class="txt body">• 올라가다 하락으로 바뀌면 Swing High</text>
+<text x="95" y="961" class="txt body">• 하루 고가·저가가 아니라 ‘방향 전환점’</text>
+
+<rect x="550" y="815" width="460" height="170" rx="18" fill="#f5f3ff" stroke="#ddd6fe"/>
+<text x="575" y="855" class="txt" font-size="27" font-weight="900" fill="#6d28d9">② 다이버전스 찾는 순서</text>
+<text x="575" y="895" class="txt body">1. 가격의 두 Swing Low를 찾는다</text>
+<text x="575" y="928" class="txt body">2. 같은 시점의 RSI Swing Low를 찾는다</text>
+<text x="575" y="961" class="txt body">3. Price LL + RSI HL인지 확인한다</text>
+
+<rect x="1030" y="815" width="500" height="170" rx="18" fill="#fff7ed" stroke="#fed7aa"/>
+<text x="1055" y="855" class="txt" font-size="27" font-weight="900" fill="#c2410c">③ 매수 신호로 단정하지 않기</text>
+<text x="1055" y="895" class="txt body">• 다이버전스 = 하락 모멘텀 약화 경고</text>
+<text x="1055" y="928" class="txt body">• MA20 회복 · 직전 Swing High 돌파 확인</text>
+<text x="1055" y="961" class="txt body">• 반전 캔들 · 거래량 증가까지 함께 본다</text>
+
+<rect x="70" y="997" width="1460" height="1" fill="#e2e8f0"/>
+<text x="70" y="1024" class="txt small" fill="#64748b">교육용 합성 차트 · 실제 종목 데이터 아님 · 핵심: 같은 시점의 Price Swing과 RSI Swing을 비교한다.</text>
+</svg>
