@@ -226,7 +226,7 @@ function renderGrammar(grammar) {
 }
 
 function renderIdioms(idioms = []) {
-  document.querySelector("#idiom-list").innerHTML = idioms.map((item, index) => `
+  document.querySelector("#idiom-list").innerHTML = idioms.slice(0, 3).map((item, index) => `
     <article class="idiom-row"><span class="idiom-number">${index + 1}</span><div><h3>${escapeHtml(item.term)}</h3><strong>${escapeHtml(item.meaning)}</strong><p>${escapeHtml(item.example)}</p></div></article>`).join("");
 }
 
@@ -313,7 +313,7 @@ function buildVoicePrompt(lesson) {
     const examples = (point.examples || []).map((example) => `     - ${example}`).join("\n");
     return `  ${index + 1}. ${point.title}: ${point.explanation}\n${examples}`;
   }).join("\n");
-  const idioms = (lesson.idioms || []).map((item, index) => `  ${index + 1}. ${item.term} — ${item.meaning}\n     Example: ${item.example}`).join("\n");
+  const idioms = (lesson.idioms || []).slice(0, 3).map((item, index) => `  ${index + 1}. ${item.term} — ${item.meaning}\n     Example: ${item.example}`).join("\n");
   const reading = (lesson.paragraphs || []).map((paragraph, index) => `  ${index + 1}. ${paragraph}`).join("\n");
 
   return `You are my B2 English speaking coach. I already completed this Daily English lesson by myself on mobile. Now conduct a focused 12–15 minute review in Voice.
