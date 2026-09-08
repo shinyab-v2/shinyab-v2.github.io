@@ -46,11 +46,9 @@
         ]
       },
       "idioms": [
-        {"term": "keep your options open", "meaning": "가능성을 열어 두다", "example": "I am applying to several industries because I want to keep my options open."},
         {"term": "be on the fence", "meaning": "결정을 못 내리고 망설이다", "example": "I'm still on the fence about accepting the overseas assignment."},
         {"term": "take it with a grain of salt", "meaning": "곧이곧대로 믿지 않다", "example": "Take promises of instant success with a grain of salt."},
-        {"term": "a blessing in disguise", "meaning": "처음에는 나빠 보였지만 결과적으로 좋은 일", "example": "Losing that position was a blessing in disguise because it led me to a better career."},
-        {"term": "cross that bridge when we come to it", "meaning": "문제가 실제로 생기면 그때 해결하다", "example": "We don't know whether the deadline will change, so we'll cross that bridge when we come to it."}
+        {"term": "a blessing in disguise", "meaning": "처음에는 나빠 보였지만 결과적으로 좋은 일", "example": "Losing that position was a blessing in disguise because it led me to a better career."}
       ],
       "readingTitle": "When a Career Detour Becomes an Advantage",
       "paragraphs": [
@@ -155,9 +153,7 @@
       "idioms": [
         {"term": "get the hang of", "meaning": "요령을 익히다", "example": "Once you get the hang of retrieval practice, it becomes much easier. — 인출 연습의 요령을 익히면 훨씬 쉬워집니다."},
         {"term": "hit the nail on the head", "meaning": "핵심을 정확히 짚다", "example": "You hit the nail on the head when you said that rereading felt easier but taught us less. — 다시 읽기가 편하지만 덜 배운다고 말했을 때 핵심을 정확히 짚었습니다."},
-        {"term": "on the right track", "meaning": "올바른 방향으로 가는", "example": "The first results suggest that our study plan is on the right track. — 첫 결과를 보면 학습 계획이 올바른 방향으로 가고 있습니다."},
-        {"term": "take it step by step", "meaning": "한 단계씩 진행하다", "example": "Do not redesign everything at once; take it step by step. — 모든 것을 한꺼번에 바꾸지 말고 한 단계씩 진행하세요."},
-        {"term": "learn the hard way", "meaning": "힘든 경험을 통해 깨닫다", "example": "I learned the hard way that long study sessions do not guarantee retention. — 긴 학습 시간이 기억을 보장하지 않는다는 것을 힘든 경험으로 깨달았습니다."}
+        {"term": "take it step by step", "meaning": "한 단계씩 진행하다", "example": "Do not redesign everything at once; take it step by step. — 모든 것을 한꺼번에 바꾸지 말고 한 단계씩 진행하세요."}
       ],
       "readingTitle": "Why Small Learning Experiments Beat Perfect Plans",
       "paragraphs": [
@@ -254,8 +250,6 @@
       "idioms": [
         {"term": "cut corners", "meaning": "시간이나 비용을 아끼려고 필요한 절차를 생략하다", "example": "We cannot cut corners on accessibility testing. — 접근성 시험에서 필요한 절차를 생략할 수는 없습니다."},
         {"term": "go back to the drawing board", "meaning": "계획을 처음부터 다시 세우다", "example": "The prototype failed, so we had to go back to the drawing board. — 시제품이 실패해서 계획을 처음부터 다시 세워야 했습니다."},
-        {"term": "get down to business", "meaning": "본격적으로 일을 시작하다", "example": "After reviewing the complaints, the team got down to business. — 불만 사항을 검토한 뒤 팀은 본격적으로 일을 시작했습니다."},
-        {"term": "keep an eye on", "meaning": "계속 주의 깊게 살피다", "example": "Keep an eye on the error rate after the new release. — 새 버전 출시 후 오류율을 계속 살펴보세요."},
         {"term": "in the same boat", "meaning": "같은 어려운 상황에 처한", "example": "The designers and developers were in the same boat because the requirements kept changing. — 요구사항이 계속 바뀌어 디자이너와 개발자가 같은 어려움을 겪었습니다."}
       ],
       "readingTitle": "The Product Team That Learned to Stop Adding Features",
@@ -352,9 +346,7 @@
       },
       "idioms": [
         {"term": "behind the scenes", "meaning": "보이지 않는 곳에서", "example": "A large amount of validation happens behind the scenes. — 보이지 않는 곳에서 많은 검증 작업이 진행됩니다."},
-        {"term": "take something for granted", "meaning": "당연하게 여기다", "example": "We should not take clean labels for granted. — 정확한 라벨을 당연하게 여겨서는 안 됩니다."},
         {"term": "keep someone in the loop", "meaning": "진행 상황을 계속 공유하다", "example": "Keep the clinical team in the loop whenever the protocol changes. — 프로토콜이 바뀔 때마다 임상팀에 진행 상황을 공유하세요."},
-        {"term": "raise the bar", "meaning": "기준을 높이다", "example": "Independent review raised the bar for model validation. — 독립적인 검토가 모델 검증 기준을 높였습니다."},
         {"term": "by the book", "meaning": "규정과 절차대로", "example": "Patient data must be handled by the book. — 환자 데이터는 규정과 절차에 따라 다뤄야 합니다."}
       ],
       "readingTitle": "Behind the Scenes of an Ultrasound AI Evaluation",
@@ -451,8 +443,6 @@
       },
       "idioms": [
         {"term": "miss the boat", "meaning": "좋은 기회나 적절한 때를 놓치다", "example": "We missed the boat on the last direct train. — 마지막 직행 열차를 탈 기회를 놓쳤어요."},
-        {"term": "dodge a bullet", "meaning": "큰 문제나 불운을 가까스로 피하다", "example": "We dodged a bullet when we found a room before the storm arrived. — 폭풍이 오기 전에 방을 찾아 큰 곤란을 피했어요."},
-        {"term": "better late than never", "meaning": "늦더라도 안 하는 것보다 낫다", "example": "I finally bought travel insurance—better late than never. — 마침내 여행자 보험을 샀어요. 늦더라도 안 하는 것보다 낫죠."},
         {"term": "make up for", "meaning": "손실·실수·불편을 보상하다", "example": "The friendly welcome made up for the long delay. — 친절한 환대가 긴 지연의 불편을 보상해 주었어요."},
         {"term": "come in handy", "meaning": "뜻밖의 상황에서 유용하게 쓰이다", "example": "The offline map came in handy when the station Wi-Fi failed. — 역의 와이파이가 끊겼을 때 오프라인 지도가 유용했어요."}
       ],
@@ -549,9 +539,7 @@
         ]
       },
       "idioms": [
-        {"term": "out of your comfort zone", "meaning": "익숙하고 편한 범위를 벗어난", "example": "Speaking on stage pushed Leo out of his comfort zone. — 무대에서 말하는 일은 Leo를 익숙한 영역 밖으로 밀어냈습니다."},
         {"term": "rise to the occasion", "meaning": "중요하거나 어려운 상황에서 기대 이상으로 잘해내다", "example": "The student volunteers rose to the occasion when the schedule collapsed. — 일정이 무너졌을 때 학생 자원봉사자들이 훌륭하게 대처했습니다."},
-        {"term": "keep your cool", "meaning": "곤란한 상황에서도 침착함을 유지하다", "example": "Keep your cool and give the audience clear instructions. — 침착함을 유지하고 관객에게 명확하게 안내하세요."},
         {"term": "think on your feet", "meaning": "예상 밖 상황에서 즉석으로 빠르게 판단하다", "example": "A host must think on her feet when a speaker is late. — 진행자는 연사가 늦을 때 즉석에서 빠르게 판단해야 합니다."},
         {"term": "pull together", "meaning": "공동의 목표를 위해 힘을 합치다", "example": "The whole community pulled together to reopen the hall. — 지역사회 전체가 강당을 다시 열기 위해 힘을 합쳤습니다."}
       ],
@@ -649,10 +637,8 @@
       },
       "idioms": [
         {"term": "read between the lines", "meaning": "말이나 글에 직접 드러나지 않은 뜻을 파악하다", "example": "Read between the lines and notice which limitations the review avoids mentioning. — 행간을 읽고 그 리뷰가 어떤 한계를 언급하지 않는지 살펴보세요."},
-        {"term": "take a step back", "meaning": "잠시 거리를 두고 전체 상황을 다시 생각하다", "example": "Before following the advice, take a step back and check the goal. — 조언을 따르기 전에 잠시 물러나 목표를 확인하세요."},
         {"term": "see the bigger picture", "meaning": "세부 사항을 넘어 전체 맥락을 보다", "example": "Cost matters, but we also need to see the bigger picture. — 비용도 중요하지만 전체적인 상황도 봐야 합니다."},
-        {"term": "food for thought", "meaning": "더 생각해 볼 만한 내용", "example": "The model's alternative gave us food for thought, not a final decision. — 모델의 대안은 최종 결정이 아니라 생각할 거리를 주었습니다."},
-        {"term": "a grey area", "meaning": "옳고 그름이나 규칙이 명확하지 않은 영역", "example": "Using generated text without disclosure can be a grey area in some workplaces. — 생성된 글을 밝히지 않고 사용하는 것은 일부 직장에서 애매한 영역일 수 있습니다."}
+        {"term": "food for thought", "meaning": "더 생각해 볼 만한 내용", "example": "The model's alternative gave us food for thought, not a final decision. — 모델의 대안은 최종 결정이 아니라 생각할 거리를 주었습니다."}
       ],
       "readingTitle": "When AI Advice Sounds More Certain Than It Is",
       "paragraphs": [
