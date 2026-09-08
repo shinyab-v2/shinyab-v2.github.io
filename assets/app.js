@@ -1,10 +1,10 @@
 const learningItems = [
   {
-    icon: "D",
-    title: "Daily Report",
-    description: "투자 브리핑과 일일 보고서",
-    state: "Notion 열기 →",
-    url: "https://app.notion.com/p/d4c977cd00504bd78733ecf184620e82?pvs=204"
+    icon: "S",
+    title: "섹터 분석",
+    description: "섹터별 구조·기업 비교·공식 근거를 분석일과 함께 축적하는 투자 리서치 아카이브",
+    state: "섹터 분석 열기 →",
+    url: "sector/"
   },
   {
     icon: "E",
