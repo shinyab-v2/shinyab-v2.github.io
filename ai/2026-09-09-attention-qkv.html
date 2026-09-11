@@ -1,0 +1,30 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI 전문 개발 학습 #08 — Self-Attention Q/K/V</title><link rel="stylesheet" href="ai.css"><style>.viz{margin:24px 0;border-radius:22px;overflow:auto;background:#0b1220}.viz svg{display:block;min-width:780px;width:100%;height:auto}</style></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><div class="lesson-meta"><span class="pill">2026.09.09</span><span class="pill">#08</span><span class="pill">Transformer</span></div><h1 class="lesson-title">Self-Attention<br>Q · K · V를 Tensor로 이해하기</h1><p class="lesson-summary">Q/K/V를 암기하지 않고 “현재 token이 무엇을 찾는가(Q), 각 token이 무엇을 대표하는가(K), 실제 전달할 정보가 무엇인가(V)”라는 관점에서 matrix multiplication과 shape를 추적합니다.</p><div class="viz"><svg viewBox="0 0 1050 390" xmlns="http://www.w3.org/2000/svg"><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#93c5fd"/></marker></defs><rect width="1050" height="390" fill="#0b1220"/><text x="38" y="40" fill="#93c5fd" font-size="16" font-weight="700">SELF-ATTENTION · INFORMATION ROUTING</text><rect x="40" y="92" width="180" height="88" rx="16" fill="#1d4ed8"/><text x="130" y="127" text-anchor="middle" fill="white" font-size="22" font-weight="800">Input X</text><text x="130" y="156" text-anchor="middle" fill="#dbeafe" font-size="16">[B, N, D]</text><line x1="220" y1="136" x2="310" y2="136" stroke="#93c5fd" stroke-width="4" marker-end="url(#a)"/><rect x="325" y="72" width="160" height="72" rx="14" fill="#7c3aed"/><text x="405" y="102" text-anchor="middle" fill="white" font-size="20" font-weight="800">Q</text><text x="405" y="126" text-anchor="middle" fill="#ede9fe" font-size="14">What I seek</text><rect x="325" y="160" width="160" height="72" rx="14" fill="#0f766e"/><text x="405" y="190" text-anchor="middle" fill="white" font-size="20" font-weight="800">K</text><text x="405" y="214" text-anchor="middle" fill="#ccfbf1" font-size="14">What I represent</text><rect x="325" y="248" width="160" height="72" rx="14" fill="#c2410c"/><text x="405" y="278" text-anchor="middle" fill="white" font-size="20" font-weight="800">V</text><text x="405" y="302" text-anchor="middle" fill="#ffedd5" font-size="14">What I deliver</text><line x1="485" y1="108" x2="610" y2="153" stroke="#c4b5fd" stroke-width="3" marker-end="url(#a)"/><line x1="485" y1="196" x2="610" y2="170" stroke="#99f6e4" stroke-width="3" marker-end="url(#a)"/><rect x="625" y="112" width="190" height="92" rx="16" fill="#1e293b" stroke="#64748b"/><text x="720" y="147" text-anchor="middle" fill="white" font-size="18" font-weight="700">QKᵀ / √d</text><text x="720" y="177" text-anchor="middle" fill="#cbd5e1" font-size="15">Softmax → weights</text><line x1="815" y1="158" x2="890" y2="158" stroke="#93c5fd" stroke-width="4" marker-end="url(#a)"/><line x1="485" y1="284" x2="890" y2="214" stroke="#fdba74" stroke-width="3" marker-end="url(#a)"/><rect x="905" y="128" width="110" height="112" rx="16" fill="#2563eb"/><text x="960" y="169" text-anchor="middle" fill="white" font-size="18" font-weight="800">Output</text><text x="960" y="197" text-anchor="middle" fill="#dbeafe" font-size="14">A · V</text><text x="38" y="356" fill="#cbd5e1" font-size="16">Attention = “어디를 볼지”를 계산한 뒤 그 위치의 V 정보를 가중합하는 연산</text></svg></div><h2>1. 기본 수식</h2><pre><code>Q = X Wq
+K = X Wk
+V = X Wv
+
+Attention(Q,K,V) = softmax(Q Kᵀ / sqrt(d_k)) V</code></pre><p>입력 X가 [B,N,D]라면 N은 token 수, D는 embedding dimension입니다. Q와 K의 내적은 token-to-token 유사도 행렬 [B,N,N]을 만듭니다.</p><h2>2. 왜 sqrt(d_k)로 나누나?</h2><p>d가 커질수록 dot product의 분산도 커져 softmax가 지나치게 뾰족해질 수 있습니다. sqrt(d_k) scaling은 logit scale을 안정화하여 gradient가 지나치게 작아지는 문제를 완화합니다.</p><h2>3. Shape walkthrough</h2><pre><code>X  : [B, 196, 768]
+Q  : [B, 196, 768]
+K  : [B, 196, 768]
+V  : [B, 196, 768]
+
+Q @ K.transpose(-2,-1)
+   : [B,196,196]
+
+A @ V
+   : [B,196,768]</code></pre><h2>4. Multi-Head Attention</h2><p>768차원을 예를 들어 12개의 head로 나누면 head당 64차원입니다. 각 head가 서로 다른 관계를 학습할 수 있고 마지막에 concatenate합니다.</p><pre><code>[B,N,768]
+→ reshape [B,N,12,64]
+→ transpose [B,12,N,64]
+→ attention per head
+→ concat → [B,N,768]</code></pre><h2>5. PyTorch 직접 구현</h2><pre><code>def attention(q, k, v):
+    d = q.shape[-1]
+    score = q @ k.transpose(-2, -1) / (d ** 0.5)
+    weight = score.softmax(dim=-1)
+    return weight @ v, weight</code></pre><h2>6. CNN과 차이</h2><table><thead><tr><th>CNN</th><th>Self-Attention</th></tr></thead><tbody><tr><td>kernel 주변 local 영역</td><td>모든 token 간 직접 관계</td></tr><tr><td>translation-friendly inductive bias</td><td>content-dependent interaction</td></tr><tr><td>고해상도에서 효율적</td><td>기본 attention은 N² 비용</td></tr></tbody></table><h2>7. Ultrasound 관점</h2><p>병변 내부와 posterior acoustic region처럼 공간적으로 떨어진 영역의 관계를 학습할 수 있다는 점은 attention의 장점입니다. 하지만 고해상도 초음파를 작은 patch로 쪼개면 N이 커져 N² attention memory가 급증합니다. 따라서 patch size, window attention, hybrid CNN-Transformer의 trade-off가 중요합니다.</p><h2>8. 실습</h2><pre><code>B, N, D = 2, 196, 768
+x = torch.randn(B, N, D)
+q = x @ torch.randn(D, D)
+k = x @ torch.randn(D, D)
+v = x @ torch.randn(D, D)
+y, a = attention(q, k, v)
+print(a.shape) # [2,196,196]
+print(y.shape) # [2,196,768]
+print(a.sum(-1)[0,:5]) # 각 query의 attention 합 ≈ 1</code></pre><h2>9. 복습</h2><ol><li>QKᵀ가 만드는 것은? <strong>token 간 similarity/logit matrix.</strong></li><li>V의 역할은? <strong>실제로 전달·가중합되는 정보.</strong></li><li>왜 attention 비용이 N²인가? <strong>모든 query-key 쌍을 계산하기 때문.</strong></li><li>12 heads, D=768이면 head dimension은? <strong>64.</strong></li><li>고해상도 영상에서 주의할 점은? <strong>token 수 증가에 따른 memory/compute.</strong></li></ol><h2>10. 다음 학습</h2><p>#09에서는 image를 token으로 바꾸는 Patch Embedding부터 Transformer Encoder까지 ViT source code를 직접 추적합니다.</p></article><aside class="toc"><strong>이 페이지에서</strong><nav id="toc-links"></nav></aside></main><footer><a href="./">← AI 학습 목록으로</a></footer><script src="lesson.js"></script></body></html>
