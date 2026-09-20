@@ -1,0 +1,18 @@
+Malaysia Driving Theory Quiz — Verification Notes
+
+Question-photo alignment
+- Set 1: captures 11 and 12 were the same photographed Q11. Kept capture 11 (sharper); removed capture 12.
+- Set 1: captures 42 and 43 were the same photographed Q41. Kept capture 43 (slightly sharper); removed capture 42.
+- Set 1: after duplicate removal, the remaining 70 photos map in order to Q1–Q70, including capture 71->Q69 and capture 72->Q70.
+- Set 2: captures 17 and 18 were the same photographed Q17. Kept capture 17 (sharper); removed capture 18.
+- Set 2: after duplicate removal, the remaining 70 photos map in order to Q1–Q70, including capture 71->Q70.
+
+Answer-sheet verification
+- Answers are keyed by the photographed answer-sheet question numbers (1–70), not by raw camera capture position.
+- Set 1 answer sheet: Q1–46 and Q47–70 were read from the uploaded answer-sheet photos.
+- Set 2 answer sheet: Q1–46 and Q47–70 were read from the uploaded answer-sheet photos.
+- The corrected UI applies those answer-sheet numbers to the corrected 1–70 photo sequence.
+
+Text/OCR
+- The original cropped photo remains the primary source shown for each item.
+- OCR text is auxiliary. Where a photographed number was cropped or OCR did not reliably read it, the displayed quiz question number is inferred from the verified corrected sequence.
