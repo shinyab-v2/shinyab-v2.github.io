@@ -315,6 +315,9 @@ function buildVoicePrompt(lesson) {
   }).join("\n");
   const idioms = (lesson.idioms || []).slice(0, 3).map((item, index) => `  ${index + 1}. ${item.term} — ${item.meaning}\n     Example: ${item.example}`).join("\n");
   const reading = (lesson.paragraphs || []).map((paragraph, index) => `  ${index + 1}. ${paragraph}`).join("\n");
+  const discussionQuestions = (lesson.discussionQuestions || []).map((question, index) => `  ${index + 1}. ${question}`).join("\n");
+  const rolePlay = lesson.rolePlay ? `Scenario: ${lesson.rolePlay.scenario}\nYour role: ${lesson.rolePlay.learnerRole}\nCoach role: ${lesson.rolePlay.coachRole}\nGoal: ${lesson.rolePlay.goal}` : "";
+  const speakingPractice = discussionQuestions || rolePlay ? `\n\nDISCUSSION QUESTIONS\n${discussionQuestions || "  Use natural follow-up questions connected to the lesson."}\n\nROLE-PLAY\n${rolePlay || "  No separate role-play is provided for this lesson."}` : "";
 
   return `You are my B2 English speaking coach. I already completed this Daily English lesson by myself on mobile. Now conduct a focused 12–15 minute review in Voice.
 
@@ -327,6 +330,8 @@ Follow these rules strictly:
 6. If you cannot judge pronunciation reliably, say so instead of inventing an error.
 7. At the end, summarize my three most important corrections and two items to review again.
 8. Begin immediately with one warm-up question connected to the reading. Do not explain these instructions back to me.
+9. If discussion questions are provided, use them as a question pool. Prioritize natural follow-up questions rather than rushing through all five.
+10. If a role-play is provided, finish with it and stay in character for two or three exchanges.
 
 LESSON
 Date: ${lesson.date}
@@ -340,7 +345,7 @@ IDIOMS
 ${idioms}
 
 READING PASSAGE
-${reading}`;
+${reading}${speakingPractice}`;
 }
 
 function renderVoiceReview() {

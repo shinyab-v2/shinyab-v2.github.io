@@ -5,7 +5,8 @@
     "week-2026-09-07/2026-09-08.json",
     "week-2026-09-07/2026-09-09.json",
     "week-2026-09-07/rest.json",
-    "week-2026-09-14/week.json"
+    "week-2026-09-14/week.json",
+    "week-2026-09-21/week.json"
   ];
 
   function normalize(payload) {
