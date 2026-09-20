@@ -1,1000 +1,504 @@
-[
-  {
-    "id": 1,
-    "stem": "The name of this Signboard is",
-    "options": {
-      "A": "Right Junction",
-      "B": "Left Junction",
-      "C": "T-Junction"
-    },
-    "correct": "A",
-    "guide_ko": "제시된 교통표지의 명칭 또는 의미를 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Right Junction. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Right Junction)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": ": : The name of this Signboard is A)Right Junction B)Left Junction C)T-Junction",
-    "sprite_col": 0,
-    "sprite_row": 0,
-    "source_file": "20260919_153203.jpg"
+{
+  "set": 2,
+  "unique_questions": 70,
+  "answer_key_verified": true,
+  "duplicate_photo_positions": [
+    17,
+    18
+  ],
+  "duplicate_mapping": {
+    "17/18": "actual question 17"
   },
-  {
-    "id": 2,
-    "stem": "'Give way to the vehicle on the right side' refers to which signboard?",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ""
+  "questions": [
+    {
+      "question": 1,
+      "source_file": "20260919_153203.jpg",
+      "answer": "A",
+      "stem": "The name of this Signboard is",
+      "source_photo_position": 1
     },
-    "correct": "B",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: B. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "'Give way to the vehicle on the right side' refer to which signboard A) B) ©) Gg ip  ' :",
-    "sprite_col": 1,
-    "sprite_row": 0,
-    "source_file": "20260919_153206.jpg"
-  },
-  {
-    "id": 3,
-    "stem": "Choose the signboard of 'Narrow Road Ahead'",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ""
+    {
+      "question": 2,
+      "source_file": "20260919_153206.jpg",
+      "answer": "B",
+      "stem": "'Give way to the vehicle on the right side' refers to which signboard?",
+      "source_photo_position": 2
     },
-    "correct": "A",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: A. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Choose the signboard of 'Narrow Road Ahead' A) B) ©)",
-    "sprite_col": 2,
-    "sprite_row": 0,
-    "source_file": "20260919_153210.jpg"
-  },
-  {
-    "id": 4,
-    "stem": "What action should be taken when see this signboard?",
-    "options": {
-      "A": "Be careful when passing this area",
-      "B": "Stop and witnessed this incident",
-      "C": "On the hazard light and honk"
+    {
+      "question": 3,
+      "source_file": "20260919_153210.jpg",
+      "answer": "A",
+      "stem": "Choose the signboard of 'Narrow Road Ahead'",
+      "source_photo_position": 3
     },
-    "correct": "A",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: A — Be careful when passing this area. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Be careful when passing this area)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What action should be taken when see this signboard? A)Be careful when passing this area B)Stop and witnessed this incident C)On the hazard light and honk",
-    "sprite_col": 3,
-    "sprite_row": 0,
-    "source_file": "20260919_153214.jpg"
-  },
-  {
-    "id": 5,
-    "stem": "Referring to this signboard, choose the CORRECT action",
-    "options": {
-      "A": "Honk to make the blind person cross faster",
-      "B": "Slow and stop while the blind person is crossing",
-      "C": "Stop and get out from the vehicle to help the blind person cross"
+    {
+      "question": 4,
+      "source_file": "20260919_153214.jpg",
+      "answer": "A",
+      "stem": "What action should be taken when see this signboard?",
+      "source_photo_position": 4
     },
-    "correct": "B",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: B — Slow and stop while the blind person is crossing. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Slow and stop while the blind person is crossing)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Referring to this signboard; choose the CORRECT action A) Honk as to make the blind person cross faster B) Slow and stop while the blind person is crossing ©) Stop and get out from the vehicle to help the blind person to cross",
-    "sprite_col": 4,
-    "sprite_row": 0,
-    "source_file": "20260919_153218.jpg"
-  },
-  {
-    "id": 6,
-    "stem": "This signboard is",
-    "options": {
-      "A": "Automatic Gated Railway Crossing",
-      "B": "Gated Railway Crossing",
-      "C": "Ungated Railway Crossin,"
+    {
+      "question": 5,
+      "source_file": "20260919_153218.jpg",
+      "answer": "B",
+      "stem": "Referring to this signboard, choose the CORRECT action",
+      "source_photo_position": 5
     },
-    "correct": "C",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: C — Ungated Railway Crossin,. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Ungated Railway Crossin,)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "This signboard is A)Automatic Gated Railway Crossing B)Gated Railway Crossing C)Ungated Railway Crossin,",
-    "sprite_col": 5,
-    "sprite_row": 0,
-    "source_file": "20260919_153222.jpg"
-  },
-  {
-    "id": 7,
-    "stem": "What is the meaning of this signboard?",
-    "options": {
-      "A": "No entry",
-      "B": "Stop before proceed",
-      "C": "Can speed up"
+    {
+      "question": 6,
+      "source_file": "20260919_153222.jpg",
+      "answer": "C",
+      "stem": "This signboard is",
+      "source_photo_position": 6
     },
-    "correct": "C",
-    "guide_ko": "제시된 교통표지의 명칭 또는 의미를 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Can speed up. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Can speed up)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What is the meaning of this signboard? A)No entry B) Stop before proceed C)Can speed up",
-    "sprite_col": 6,
-    "sprite_row": 0,
-    "source_file": "20260919_153226.jpg"
-  },
-  {
-    "id": 8,
-    "stem": "Need to slow down, change to low gear and continue driving when you see",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ""
+    {
+      "question": 7,
+      "source_file": "20260919_153226.jpg",
+      "answer": "C",
+      "stem": "What is the meaning of this signboard?",
+      "source_photo_position": 7
     },
-    "correct": "C",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Need to slow down, change to low gear and continue driving when see A) B) ©)",
-    "sprite_col": 7,
-    "sprite_row": 0,
-    "source_file": "20260919_153230.jpg"
-  },
-  {
-    "id": 9,
-    "stem": "Which signboard refers to 'Driver cannot wait here'?",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ""
+    {
+      "question": 8,
+      "source_file": "20260919_153230.jpg",
+      "answer": "C",
+      "stem": "Need to slow down, change to low gear and continue driving when you see",
+      "source_photo_position": 8
     },
-    "correct": "B",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: B. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Which signboard refers to 'Driver cannot wait here'? A) B) Cc)",
-    "sprite_col": 8,
-    "sprite_row": 0,
-    "source_file": "20260919_153234.jpg"
-  },
-  {
-    "id": 10,
-    "stem": "What is the meaning of this signboard? 80)",
-    "options": {
-      "A": "Compulsory to drive with speed 80km/h all the time",
-      "B": "Speed must be more than 80km/h",
-      "C": "Speed cannot be more than 80km/h"
+    {
+      "question": 9,
+      "source_file": "20260919_153234.jpg",
+      "answer": "B",
+      "stem": "Which signboard refers to 'Driver cannot wait here'?",
+      "source_photo_position": 9
     },
-    "correct": "C",
-    "guide_ko": "제시된 교통표지의 명칭 또는 의미를 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Speed cannot be more than 80km/h. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Speed cannot be more than 80km/h)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What is the meaning of this signboard? 80) A) Compulsory to drive with speed 80km/h all the time B) Speed must be more than 80km/h C) Speed cannot be more than 80km/h",
-    "sprite_col": 9,
-    "sprite_row": 0,
-    "source_file": "20260919_153238.jpg"
-  },
-  {
-    "id": 11,
-    "stem": "Which one is the exact match?",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ""
+    {
+      "question": 10,
+      "source_file": "20260919_153238.jpg",
+      "answer": "C",
+      "stem": "What is the meaning of this signboard?",
+      "source_photo_position": 10
     },
-    "correct": "C",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: C. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Which one is the exact match? A) B) © Pedestrian Disabled Person Playground Crossing Crossing",
-    "sprite_col": 0,
-    "sprite_row": 1,
-    "source_file": "20260919_153242.jpg"
-  },
-  {
-    "id": 12,
-    "stem": "Overtake is prohibited in this area",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ")"
+    {
+      "question": 11,
+      "source_file": "20260919_153242.jpg",
+      "answer": "C",
+      "stem": "Which one is the exact match?",
+      "source_photo_position": 11
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Overtake is prohibited in this area A) B) C))",
-    "sprite_col": 1,
-    "sprite_row": 1,
-    "source_file": "20260919_153246.jpg"
-  },
-  {
-    "id": 13,
-    "stem": "Choose the signboard of 'Cannot over the speed limit'",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ""
+    {
+      "question": 12,
+      "source_file": "20260919_153246.jpg",
+      "answer": "A",
+      "stem": "Overtake is prohibited in this area",
+      "source_photo_position": 12
     },
-    "correct": "B",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: B. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Choose the signboard of 'Cannot over the speed limit' A) B) ()",
-    "sprite_col": 2,
-    "sprite_row": 1,
-    "source_file": "20260919_153250.jpg"
-  },
-  {
-    "id": 14,
-    "stem": "The meaning of this signboard is b",
-    "options": {
-      "A": "Danger is in front or on the right",
-      "B": "Cannot go straight or to the right",
-      "C": "Go straight or to the right only"
+    {
+      "question": 13,
+      "source_file": "20260919_153250.jpg",
+      "answer": "B",
+      "stem": "Choose the signboard of 'Cannot over the speed limit'",
+      "source_photo_position": 13
     },
-    "correct": "C",
-    "guide_ko": "제시된 교통표지의 명칭 또는 의미를 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Go straight or to the right only. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Go straight or to the right only)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "The meaning of this signboard is b A) Danger is in front or on the right B) Cannot go straight or to the right C) Go straight or to the right only",
-    "sprite_col": 3,
-    "sprite_row": 1,
-    "source_file": "20260919_153255.jpg"
-  },
-  {
-    "id": 15,
-    "stem": "What is the meaning of this signboard?",
-    "options": {
-      "A": "Stop Sign is in front",
-      "B": "Red Light is in front",
-      "C": "Traffic Light is in front"
+    {
+      "question": 14,
+      "source_file": "20260919_153255.jpg",
+      "answer": "C",
+      "stem": "The meaning of this signboard is",
+      "source_photo_position": 14
     },
-    "correct": "A",
-    "guide_ko": "제시된 교통표지의 명칭 또는 의미를 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Stop Sign is in front. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Stop Sign is in front)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "= What is the meaning of this signboard? A)Stop Sign is in front B)Red Light is in front C) Traffic Light is in front",
-    "sprite_col": 4,
-    "sprite_row": 1,
-    "source_file": "20260919_153259.jpg"
-  },
-  {
-    "id": 16,
-    "stem": "Choose the signboard of 'Winding Road'",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ""
+    {
+      "question": 15,
+      "source_file": "20260919_153259.jpg",
+      "answer": "A",
+      "stem": "What is the meaning of this signboard?",
+      "source_photo_position": 15
     },
-    "correct": "B",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: B. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Choose the signboard of 'Winding Road' A) B) ©)",
-    "sprite_col": 5,
-    "sprite_row": 1,
-    "source_file": "20260919_153303.jpg"
-  },
-  {
-    "id": 17,
-    "stem": "What is the meaning of this signboard?",
-    "options": {
-      "A": "Low Hill",
-      "B": "Down Hill",
-      "C": "Up Hill"
+    {
+      "question": 16,
+      "source_file": "20260919_153303.jpg",
+      "answer": "B",
+      "stem": "Choose the signboard of 'Winding Road'",
+      "source_photo_position": 16
     },
-    "correct": "C",
-    "guide_ko": "제시된 교통표지의 명칭 또는 의미를 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Up Hill. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Up Hill)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "ey, What is the meaning of this signboard? A) Low Hill B) Down Hill C) Up Hill",
-    "sprite_col": 6,
-    "sprite_row": 1,
-    "source_file": "20260919_153307.jpg"
-  },
-  {
-    "id": 18,
-    "stem": "Choose the name of this signboard",
-    "options": {
-      "A": "Garbage Pile",
-      "B": "Construction Pile",
-      "C": "Dry Leaf Pile"
+    {
+      "question": 17,
+      "source_file": "20260919_153307.jpg",
+      "answer": "C",
+      "stem": "What is the meaning of this signboard?",
+      "source_photo_position": 17
     },
-    "correct": "B",
-    "guide_ko": "제시된 교통표지의 명칭 또는 의미를 묻는 문제입니다.",
-    "explanation_en": "Correct answer: B — Construction Pile. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Construction Pile)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "“aay Choose the name of this signboard | A)Garbage Pile B) Construction Pile C)Dry Leaf Pile",
-    "sprite_col": 7,
-    "sprite_row": 1,
-    "source_file": "20260919_153335.jpg"
-  },
-  {
-    "id": 19,
-    "stem": "Where can you find this signboard?",
-    "options": {
-      "A": "Market area",
-      "B": "Shopping Mall area",
-      "C": "Hospital area"
+    {
+      "question": 18,
+      "source_file": "20260919_153335.jpg",
+      "answer": "B",
+      "stem": "Choose the name of this signboard",
+      "source_photo_position": 19
     },
-    "correct": "C",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: C — Hospital area. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Hospital area)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "— Where can you find this signboard? A)Market area B)Shopping Mall area C) Hospital area",
-    "sprite_col": 8,
-    "sprite_row": 1,
-    "source_file": "20260919_153338.jpg"
-  },
-  {
-    "id": 20,
-    "stem": "Choose the meaning of this signboard",
-    "options": {
-      "A": "No entry for motorcycle",
-      "B": "No parking for motorcycle",
-      "C": "Motorcycle is allowed to enter"
+    {
+      "question": 19,
+      "source_file": "20260919_153338.jpg",
+      "answer": "C",
+      "stem": "Where can you find this signboard?",
+      "source_photo_position": 20
     },
-    "correct": "A",
-    "guide_ko": "제시된 교통표지의 명칭 또는 의미를 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — No entry for motorcycle. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(No entry for motorcycle)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Choose the meaning of this signboard A)No entry for motorcycle B) No parking for motorcycle C) Motorcycle is allowed to enter",
-    "sprite_col": 9,
-    "sprite_row": 1,
-    "source_file": "20260919_153343.jpg"
-  },
-  {
-    "id": 21,
-    "stem": "Signboard of 'Highway Divider Ended' is",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": ""
+    {
+      "question": 20,
+      "source_file": "20260919_153343.jpg",
+      "answer": "A",
+      "stem": "Choose the meaning of this signboard",
+      "source_photo_position": 21
     },
-    "correct": "B",
-    "guide_ko": "설명에 맞는 교통표지를 고르는 문제입니다.",
-    "explanation_en": "Correct answer: B. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Signboard of 'Highway Divider Ended' is A) B) ©)",
-    "sprite_col": 0,
-    "sprite_row": 2,
-    "source_file": "20260919_153347.jpg"
-  },
-  {
-    "id": 22,
-    "stem": "Choose the CORRECT action based on the diagram",
-    "options": {
-      "A": "Car X needs to give way to Car Y",
-      "B": "Car Y needs to give way to Car x",
-      "C": "Car Y needs to give way to Car Z"
+    {
+      "question": 21,
+      "source_file": "20260919_153347.jpg",
+      "answer": "B",
+      "stem": "Signboard of 'Highway Divider Ended' is",
+      "source_photo_position": 22
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Car X needs to give way to Car Y. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Car X needs to give way to Car Y)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "'Choose the CORRECT action | base on the diagram A) Car X needs to give way to Car Y B) Car Y needs to give way to Car x C) Car Y needs to give way to Car Z",
-    "sprite_col": 1,
-    "sprite_row": 2,
-    "source_file": "20260919_153351.jpg"
-  },
-  {
-    "id": 23,
-    "stem": "How do 'Vehicle Factor' could cause accident?",
-    "options": {
-      "A": "Heavy rain at night time",
-      "B": "Tyre tread is worn",
-      "C": "Brake function is in good condition"
+    {
+      "question": 22,
+      "source_file": "20260919_153351.jpg",
+      "answer": "A",
+      "stem": "Choose the CORRECT action based on the diagram",
+      "source_photo_position": 23
     },
-    "correct": "B",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: B — Tyre tread is worn. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Tyre tread is worn)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "How do 'Vehicle Factor' could cause accident? A) Heavy rain at night time B) Tyre tread is worn C) Brake function is in good condition",
-    "sprite_col": 2,
-    "sprite_row": 2,
-    "source_file": "20260919_153355.jpg"
-  },
-  {
-    "id": 24,
-    "stem": "Which situation allowed a driver to overtake on the left side?",
-    "options": {
-      "A": "Front vehicle is too slow",
-      "B": "Front vehicle is too fast",
-      "C": "Front vehicle give the signal to turn to the right"
+    {
+      "question": 23,
+      "source_file": "20260919_153355.jpg",
+      "answer": "B",
+      "stem": "How do 'Vehicle Factor' could cause accident?",
+      "source_photo_position": 24
     },
-    "correct": "C",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Front vehicle give the signal to turn to the right. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Front vehicle give the signal to turn to the right)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Which situation allowed a driver to overtake on the left side? A) Front vehicle is too slow B) Front vehicle is too fast C) Front vehicle give the signal to turn to the right",
-    "sprite_col": 3,
-    "sprite_row": 2,
-    "source_file": "20260919_153359.jpg"
-  },
-  {
-    "id": 25,
-    "stem": "What is the signal you should give when going out from the roundabout?",
-    "options": {
-      "A": "Signal to the right",
-      "B": "Signal to the left",
-      "C": "Turn on hazard light (Left & Right Signal) to indicate others to give way"
+    {
+      "question": 24,
+      "source_file": "20260919_153359.jpg",
+      "answer": "C",
+      "stem": "Which situation allowed a driver to overtake on the left side?",
+      "source_photo_position": 25
     },
-    "correct": "B",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: B — Signal to the left. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Signal to the left)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "————_ What is the signal you should give when going out from the roundabout? A) Signal to the right B) Signal to the left C) Turn on hazard light (Left & Right Signal) to indicate others to give way",
-    "sprite_col": 4,
-    "sprite_row": 2,
-    "source_file": "20260919_153403.jpg"
-  },
-  {
-    "id": 26,
-    "stem": "Choose appropriate gear before start the engine",
-    "options": {
-      "A": "Free Gear",
-      "B": "First Gear",
-      "C": "Second Gear"
+    {
+      "question": 25,
+      "source_file": "20260919_153403.jpg",
+      "answer": "B",
+      "stem": "What is the signal you should give when going out from the roundabout?",
+      "source_photo_position": 26
     },
-    "correct": "A",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: A — Free Gear. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Free Gear)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "} Choose appropriate gear before start the engine A)Free Gear B)First Gear C)Second Gear",
-    "sprite_col": 5,
-    "sprite_row": 2,
-    "source_file": "20260919_153407.jpg"
-  },
-  {
-    "id": 27,
-    "stem": "Driving Reaction Plan (PTP) means",
-    "options": {
-      "A": "Identify all the conditions that could cause accident",
-      "B": "Identify the place that you want to go",
-      "C": "Identify the behavior of other drivers and ensure to drive slowly"
+    {
+      "question": 26,
+      "source_file": "20260919_153407.jpg",
+      "answer": "A",
+      "stem": "Choose appropriate gear before start the engine",
+      "source_photo_position": 27
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Identify all the conditions that could cause accident. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Identify all the conditions that could cause accident)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Driving Reaction Plan (PTP) means A) Identify all the conditions that could cause accident B) Identify the place that you want to go C) Identify the behavior of other drivers and ensure to drive slowly",
-    "sprite_col": 6,
-    "sprite_row": 2,
-    "source_file": "20260919_153411.jpg"
-  },
-  {
-    "id": 28,
-    "stem": "Windscreen is broken while driving, you",
-    "options": {
-      "A": "Slow and stop at the road side. Break the whole screen then continue driving",
-      "B": "Stop immediately in the middle of the road and on hazard light",
-      "C": "Continue driving while breaking the screen at the same time just to ensure can see properly"
+    {
+      "question": 27,
+      "source_file": "20260919_153411.jpg",
+      "answer": "A",
+      "stem": "Driving Reaction Plan (PTP) means",
+      "source_photo_position": 28
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Slow and stop at the road side. Break the whole screen then continue driving. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Slow and stop at the road side. Break the whole screen then continue driving)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Windscreen is broken while driving, you A) Slow and stop at the road side. Break the whole screen then continue driving B) Stop immediately in the middle of the road and on hazard light C) Continue driving while breaking the screen at the same time just to ensure can see properly",
-    "sprite_col": 7,
-    "sprite_row": 2,
-    "source_file": "20260919_153416.jpg"
-  },
-  {
-    "id": 29,
-    "stem": "In Safe Driving Theory, how many type of manuevering?",
-    "options": {
-      "A": "7 types of Manuevering",
-      "B": "10 types of Manuevering",
-      "C": "12 types of Manuevering"
+    {
+      "question": 28,
+      "source_file": "20260919_153416.jpg",
+      "answer": "A",
+      "stem": "Windscreen is broken while driving, you",
+      "source_photo_position": 29
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — 7 types of Manuevering. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(7 types of Manuevering)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "In Safe Driving Theory, how many type of manuevering? A)7 types of Manuevering B) 10 types of Manuevering C) 12 types of Manuevering",
-    "sprite_col": 8,
-    "sprite_row": 2,
-    "source_file": "20260919_153420.jpg"
-  },
-  {
-    "id": 30,
-    "stem": "To start moving a manual car, the best gear is",
-    "options": {
-      "A": "Free Gear",
-      "B": "First Gear",
-      "C": "Second Gear"
+    {
+      "question": 29,
+      "source_file": "20260919_153420.jpg",
+      "answer": "A",
+      "stem": "In Safe Driving Theory, how many type of manuevering?",
+      "source_photo_position": 30
     },
-    "correct": "B",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: B — First Gear. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(First Gear)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Te start moving a manual car, the best gear is A)Free Gear B) First Gear C)Second Gear",
-    "sprite_col": 9,
-    "sprite_row": 2,
-    "source_file": "20260919_153424.jpg"
-  },
-  {
-    "id": 31,
-    "stem": "One of the factor that could cause accident is",
-    "options": {
-      "A": "The brand of vehicle",
-      "B": "The condition of vehicle",
-      "C": "Type of vehicle"
+    {
+      "question": 30,
+      "source_file": "20260919_153424.jpg",
+      "answer": "B",
+      "stem": "To start moving a manual car, the best gear is",
+      "source_photo_position": 31
     },
-    "correct": "B",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: B — The condition of vehicle. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(The condition of vehicle)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "One of the factor that could cause accident is A)The brand of vehicle B)The condition of vehicle C)Type of vehicle",
-    "sprite_col": 0,
-    "sprite_row": 3,
-    "source_file": "20260919_153428.jpg"
-  },
-  {
-    "id": 32,
-    "stem": "When is the right time to use Hazard Light?",
-    "options": {
-      "A": "Heavy rain at night time",
-      "B": "Emergency only",
-      "C": "Heavy fog after rain"
+    {
+      "question": 31,
+      "source_file": "20260919_153428.jpg",
+      "answer": "B",
+      "stem": "One of the factor that could cause accident is",
+      "source_photo_position": 32
     },
-    "correct": "B",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: B — Emergency only. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Emergency only)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "hen is the right time to use Hazard Light? A)Heavy rain at night time B) Emergency only C)Heavy fog after rain",
-    "sprite_col": 1,
-    "sprite_row": 3,
-    "source_file": "20260919_153432.jpg"
-  },
-  {
-    "id": 33,
-    "stem": "What is the factor that cause accident to a rider?",
-    "options": {
-      "A": "Not wearing helmet",
-      "B": "Riding in slow speed",
-      "C": "Speeding while riding under the rain"
+    {
+      "question": 32,
+      "source_file": "20260919_153432.jpg",
+      "answer": "B",
+      "stem": "When is the right time to use Hazard Light?",
+      "source_photo_position": 33
     },
-    "correct": "C",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: C — Speeding while riding under the rain. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Speeding while riding under the rain)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What is the factor that cause accident to a rider? A) Not wearing helmet B) Riding in slow speed C) Speeding while riding under the rain",
-    "sprite_col": 2,
-    "sprite_row": 3,
-    "source_file": "20260919_153436.jpg"
-  },
-  {
-    "id": 34,
-    "stem": "One of the rules at the junction is",
-    "options": {
-      "A": "Give high light to the front car",
-      "B": "Honk",
-      "C": "Stop the vehicle"
+    {
+      "question": 33,
+      "source_file": "20260919_153436.jpg",
+      "answer": "C",
+      "stem": "What is the factor that cause accident to a rider?",
+      "source_photo_position": 34
     },
-    "correct": "C",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Stop the vehicle. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Stop the vehicle)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "7 One of the rule at the junction is A) Give high light to the front car B) Honk C) Stop the vehicle",
-    "sprite_col": 3,
-    "sprite_row": 3,
-    "source_file": "20260919_153440.jpg"
-  },
-  {
-    "id": 35,
-    "stem": "What is the meaning of wearing a bright clothes for rider while riding?",
-    "options": {
-      "A": "To ensure the rider's image is neat and stylish",
-      "B": "To ensure other road users could easily recognize the rider",
-      "C": "To ensure other road users could easily notice the presence of the rider"
+    {
+      "question": 34,
+      "source_file": "20260919_153440.jpg",
+      "answer": "C",
+      "stem": "One of the rules at the junction is",
+      "source_photo_position": 35
     },
-    "correct": "C",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: C — To ensure other road users could easily notice the presence of the rider. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(To ensure other road users could easily notice the presence of the rider)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What is the meaning of wearing a bright clothes for rider while riding? A) To ensure the rider's image is neat and stylish B) To ensure other road users could easily recognize the rider C) To ensure other road users could easily notice the presence of the rider",
-    "sprite_col": 4,
-    "sprite_row": 3,
-    "source_file": "20260919_153444.jpg"
-  },
-  {
-    "id": 36,
-    "stem": "The main factor that cause accident on a straight road is",
-    "options": {
-      "A": "Speeding",
-      "B": "On the radio too loud and sing",
-      "C": "Not wearing seatbelt"
+    {
+      "question": 35,
+      "source_file": "20260919_153444.jpg",
+      "answer": "C",
+      "stem": "What is the meaning of wearing a bright clothes for rider while riding?",
+      "source_photo_position": 36
     },
-    "correct": "A",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: A — Speeding. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Speeding)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "The main factor that cause accident on a straight road is A) Speeding B) On the radio too loud and sing C) Not wearing seatbelt",
-    "sprite_col": 5,
-    "sprite_row": 3,
-    "source_file": "20260919_153448.jpg"
-  },
-  {
-    "id": 37,
-    "stem": "Choose the right rule to avoid accident with the vehicle in front",
-    "options": {
-      "A": "2 Seconds Rule",
-      "B": "Overtaking Rules",
-      "C": "Intersection Rules"
+    {
+      "question": 36,
+      "source_file": "20260919_153448.jpg",
+      "answer": "A",
+      "stem": "The main factor that cause accident on a straight road is",
+      "source_photo_position": 37
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — 2 Seconds Rule. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(2 Seconds Rule)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Choose the right rule to avoid accident with the vehicle in front A) 2 Seconds Rule B) Overtaking Rules C) Intersection Rules",
-    "sprite_col": 6,
-    "sprite_row": 3,
-    "source_file": "20260919_153452.jpg"
-  },
-  {
-    "id": 38,
-    "stem": "A long journey plan needs a driver to",
-    "options": {
-      "A": "Consume enough food",
-      "B": "Get enough rest",
-      "C": "Get enough energy drinks"
+    {
+      "question": 37,
+      "source_file": "20260919_153452.jpg",
+      "answer": "A",
+      "stem": "Choose the right rule to avoid accident with the vehicle in front",
+      "source_photo_position": 38
     },
-    "correct": "B",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: B — Get enough rest. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Get enough rest)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "A long journey plan needs a driver to A)Consume enough food B) Get enough rest C)Get enough energy drinks",
-    "sprite_col": 7,
-    "sprite_row": 3,
-    "source_file": "20260919_153456.jpg"
-  },
-  {
-    "id": 39,
-    "stem": "What is the meaning of Safe Driving?",
-    "options": {
-      "A": "To ensure other road user driving safely",
-      "B": "Can avoid accident in all situation involving negligence of others",
-      "C": "To ensure vehicle in a good condition"
+    {
+      "question": 38,
+      "source_file": "20260919_153456.jpg",
+      "answer": "B",
+      "stem": "A long journey plan needs a driver to",
+      "source_photo_position": 39
     },
-    "correct": "B",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: B — Can avoid accident in all situation involving negligence of others. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Can avoid accident in all situation involving negligence of others)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What is the meaning of Safe Driving? A) To ensure other road user driving safely B) Can avoid accident in all situation involving negligence of others C) To ensure vehicle in a good condition",
-    "sprite_col": 8,
-    "sprite_row": 3,
-    "source_file": "20260919_153500.jpg"
-  },
-  {
-    "id": 40,
-    "stem": "It is hard to see driving under heavy rain, you should",
-    "options": {
-      "A": "Turn on hazard light and continue driving",
-      "B": "Turn on high light to enhance your sight",
-      "C": "Stop at a safe place until the rain stop"
+    {
+      "question": 39,
+      "source_file": "20260919_153500.jpg",
+      "answer": "B",
+      "stem": "What is the meaning of Safe Driving?",
+      "source_photo_position": 40
     },
-    "correct": "C",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Stop at a safe place until the rain stop. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Stop at a safe place until the rain stop)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "It is hard to see driving under heavy rain, you should A) Turn on hazard light and continue driving B) Turn on high light to enhance your sight C) Stop at a safe place until the rain stop",
-    "sprite_col": 9,
-    "sprite_row": 3,
-    "source_file": "20260919_153504.jpg"
-  },
-  {
-    "id": 41,
-    "stem": "What is Blind Spot?",
-    "options": {
-      "A": "Object cannot be seen by driver on the front screen.",
-      "B": "Object cannot be seen by driver through the side and back mirrors",
-      "C": "Object cannot be seen by driver through the driver's window"
+    {
+      "question": 40,
+      "source_file": "20260919_153504.jpg",
+      "answer": "C",
+      "stem": "It is hard to see driving under heavy rain, you should",
+      "source_photo_position": 41
     },
-    "correct": "B",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: B — Object cannot be seen by driver through the side and back mirrors. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Object cannot be seen by driver through the side and back mirrors)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What is Blind Spot? A) Object cannot be seen by driver on the front screen. B) Object cannot be seen by driver through the side and back mirrors C) Object cannot be seen by driver through the driver's window",
-    "sprite_col": 0,
-    "sprite_row": 4,
-    "source_file": "20260919_153508.jpg"
-  },
-  {
-    "id": 42,
-    "stem": "While passing the school area, you should take the action of",
-    "options": {
-      "A": "Change to free gear and be careful",
-      "B": "Change to low gear and be careful",
-      "C": "Change to high gear and be careful"
+    {
+      "question": 41,
+      "source_file": "20260919_153508.jpg",
+      "answer": "B",
+      "stem": "What is Blind Spot?",
+      "source_photo_position": 42
     },
-    "correct": "B",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: B — Change to low gear and be careful. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Change to low gear and be careful)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "ny hile passing the school area, you should take the action of A) Change to free gear and be careful B) Change to low gear and be careful C) Change to high gear and be careful",
-    "sprite_col": 1,
-    "sprite_row": 4,
-    "source_file": "20260919_153512.jpg"
-  },
-  {
-    "id": 43,
-    "stem": "The right action BEFORE overtake is",
-    "options": {
-      "A": "Use suitable gear",
-      "B": "Check 10 seconds ahead before overtake",
-      "C": "Honk and turn on vehicle light"
+    {
+      "question": 42,
+      "source_file": "20260919_153512.jpg",
+      "answer": "B",
+      "stem": "While passing the school area, you should take the action of",
+      "source_photo_position": 43
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Use suitable gear. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Use suitable gear)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "The right action BEFORE overtake is A) Use suitable gear B) Check 10 seconds ahead before overtake C) Honk and turn on vehicle light",
-    "sprite_col": 2,
-    "sprite_row": 4,
-    "source_file": "20260919_153516.jpg"
-  },
-  {
-    "id": 44,
-    "stem": "What should be done by Vehicle A?",
-    "options": {
-      "A": "Vehicle A needs to give way to Vehicle C",
-      "B": "Vehicle A needs to give way to Vehicle B and C",
-      "C": "Vehicle A needs to give way to Vehicle B 4"
+    {
+      "question": 43,
+      "source_file": "20260919_153516.jpg",
+      "answer": "A",
+      "stem": "The right action BEFORE overtake is",
+      "source_photo_position": 44
     },
-    "correct": "C",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Vehicle A needs to give way to Vehicle B 4. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Vehicle A needs to give way to Vehicle B 4)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What should be done iG} by Vehicle A? Vi A A) Vehicle A needs to give way to Vehicle C B) Vehicle A needs to give way to Vehicle B and C C) Vehicle A needs to give way to Vehicle B 4",
-    "sprite_col": 3,
-    "sprite_row": 4,
-    "source_file": "20260919_153520.jpg"
-  },
-  {
-    "id": 45,
-    "stem": "Which pedal(s) to stop a manual transmission vehicle?",
-    "options": {
-      "A": "Brake",
-      "B": "Brake & Accelerator",
-      "C": "Brake & Clutch"
+    {
+      "question": 44,
+      "source_file": "20260919_153520.jpg",
+      "answer": "C",
+      "stem": "What should be done by Vehicle A?",
+      "source_photo_position": 45
     },
-    "correct": "C",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: C — Brake & Clutch. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Brake & Clutch)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Which paddle to stop a manual transmission vehicle? A)Brake B)Brake & Accelerator )Brake & Clutch",
-    "sprite_col": 4,
-    "sprite_row": 4,
-    "source_file": "20260919_153526.jpg"
-  },
-  {
-    "id": 46,
-    "stem": "Your vehicle is being overtaken, you should",
-    "options": {
-      "A": "Speed up",
-      "B": "Slow down",
-      "C": "Stop"
+    {
+      "question": 45,
+      "source_file": "20260919_153526.jpg",
+      "answer": "C",
+      "stem": "Which pedal(s) to stop a manual transmission vehicle?",
+      "source_photo_position": 46
     },
-    "correct": "B",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: B — Slow down. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Slow down)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Your vehicle is being overtake, you should A)Speed up B)Slow down )Stop",
-    "sprite_col": 5,
-    "sprite_row": 4,
-    "source_file": "20260919_153529.jpg"
-  },
-  {
-    "id": 47,
-    "stem": "Accident while overtaking is due to the driver not following Rule of",
-    "options": {
-      "A": "2 seconds",
-      "B": "4 seconds",
-      "C": "12 seconds"
+    {
+      "question": 46,
+      "source_file": "20260919_153529.jpg",
+      "answer": "B",
+      "stem": "Your vehicle is being overtaken, you should",
+      "source_photo_position": 47
     },
-    "correct": "C",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — 12 seconds. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(12 seconds)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Accident while overtaking is due to the driver not following Rule of A)2 seconds B) 4 seconds rw) 12 seconds",
-    "sprite_col": 6,
-    "sprite_row": 4,
-    "source_file": "20260919_153533.jpg"
-  },
-  {
-    "id": 48,
-    "stem": "Van speed limit on the highway is",
-    "options": {
-      "A": "110 km/h",
-      "B": "90 km/h",
-      "C": "80 km/h"
+    {
+      "question": 47,
+      "source_file": "20260919_153533.jpg",
+      "answer": "C",
+      "stem": "Accident while overtaking is due to the driver not following Rule of",
+      "source_photo_position": 48
     },
-    "correct": "B",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: B — 90 km/h. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(90 km/h)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "- Van speed limit on the highway is A)110 km/h B)90 km/h C)80 km/h",
-    "sprite_col": 7,
-    "sprite_row": 4,
-    "source_file": "20260919_153536.jpg"
-  },
-  {
-    "id": 49,
-    "stem": "What is the function of the right lane on the highway?",
-    "options": {
-      "A": "Emergency lane",
-      "B": "Overtaking only",
-      "C": "For drivers who want to accelerate %"
+    {
+      "question": 48,
+      "source_file": "20260919_153536.jpg",
+      "answer": "B",
+      "stem": "Van speed limit on the highway is",
+      "source_photo_position": 49
     },
-    "correct": "B",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: B — Overtaking only. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(Overtaking only)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What is the function of the right lane on the highway? A) Emergency lane B) Overtaking only C) For drivers who want to accelerate %",
-    "sprite_col": 8,
-    "sprite_row": 4,
-    "source_file": "20260919_153541.jpg"
-  },
-  {
-    "id": 50,
-    "stem": "Which one is included in Overtaking Rule?",
-    "options": {
-      "A": "Give signal and turn on hazard light",
-      "B": "Reduce speed and give signal to the right E#",
-      "C": "Speed up and communicate"
+    {
+      "question": 49,
+      "source_file": "20260919_153541.jpg",
+      "answer": "B",
+      "stem": "What is the function of the right lane on the highway?",
+      "source_photo_position": 50
     },
-    "correct": "C",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Speed up and communicate. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Speed up and communicate)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "i Which one included in Overtaking Rule? A) Give signal and turn on hazard light B) Reduce speed and give signal to the right E#C) Speed up and communicate",
-    "sprite_col": 9,
-    "sprite_row": 4,
-    "source_file": "20260919_153544.jpg"
-  },
-  {
-    "id": 51,
-    "stem": "Safe following distance while following the front vehicle before overtake is",
-    "options": {
-      "A": "2 seconds and 4 seconds",
-      "B": "4 seconds and 6 seconds",
-      "C": "6 seconds and 12 seconds"
+    {
+      "question": 50,
+      "source_file": "20260919_153544.jpg",
+      "answer": "C",
+      "stem": "Which one is included in Overtaking Rule?",
+      "source_photo_position": 51
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — 2 seconds and 4 seconds. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(2 seconds and 4 seconds)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "on Safe following distance while following the front vehicle before overtake is | A)2 seconds and 4 seconds B) 4 seconds and 6 seconds MG) 6 seconds and 12 seconds",
-    "sprite_col": 0,
-    "sprite_row": 5,
-    "source_file": "20260919_153548.jpg"
-  },
-  {
-    "id": 52,
-    "stem": "What is your action when you see a herd of cows crossing the road?",
-    "options": {
-      "A": "Slow and stop if necessary",
-      "B": "Slow and honk to make those cows cross faster",
-      "C": "Immediately brake to stop"
+    {
+      "question": 51,
+      "source_file": "20260919_153548.jpg",
+      "answer": "A",
+      "stem": "Safe following distance while following the front vehicle before overtake is",
+      "source_photo_position": 52
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Slow and stop if necessary. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Slow and stop if necessary)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "i hat is your action when you see a herd of cows crossing the road? A) Slow and stop if necessary B) Slow and honk to make those cows cross faster C) Immediately brake to stop",
-    "sprite_col": 1,
-    "sprite_row": 5,
-    "source_file": "20260919_153553.jpg"
-  },
-  {
-    "id": 53,
-    "stem": "What is the best way to reverse a vehicle?",
-    "options": {
-      "A": "Reverse slowly after ensure there is no hazard and ready to brake when necessary",
-      "B": "Reverse slowly and honk",
-      "C": "Reverse slowly and give signal to the right"
+    {
+      "question": 52,
+      "source_file": "20260919_153553.jpg",
+      "answer": "A",
+      "stem": "What is your action when you see a herd of cows crossing the road?",
+      "source_photo_position": 53
     },
-    "correct": "A",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: A — Reverse slowly after ensure there is no hazard and ready to brake when necessary. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Reverse slowly after ensure there is no hazard and ready to brake when necessary)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "What is the best way to reverse a vehicle? A) Reverse slowly after ensure there is no hazard and ready to brake when necessary B) Reverse slowly and honk C) Reverse slowly and give signal to the right",
-    "sprite_col": 2,
-    "sprite_row": 5,
-    "source_file": "20260919_153557.jpg"
-  },
-  {
-    "id": 54,
-    "stem": "The way to make a U-Turn is",
-    "options": {
-      "A": "Be on the right lane, signal to the right and make a U-Turn",
-      "B": "Be on the left lane, signal to the left and make a U-Turn",
-      "C": "Be in the middle lane, without signal and make a U-Turn"
+    {
+      "question": 53,
+      "source_file": "20260919_153557.jpg",
+      "answer": "A",
+      "stem": "What is the best way to reverse a vehicle?",
+      "source_photo_position": 54
     },
-    "correct": "A",
-    "guide_ko": "촬영된 말레이시아 운전면허 이론 문제입니다. 원본 이미지를 기준으로 A/B/C 중 하나를 선택하세요.",
-    "explanation_en": "Correct answer: A — Be on the right lane, signal to the right and make a U-Turn. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Be on the right lane, signal to the right and make a U-Turn)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "The way to make a U-Turn is A) Be on the right lane, signal to the right and make a U-Turn B) Be on the left lane, signal to the left and make a U-Turn C) Be in the middle lane, without signal and make a U-Turn",
-    "sprite_col": 3,
-    "sprite_row": 5,
-    "source_file": "20260919_153601.jpg"
-  },
-  {
-    "id": 55,
-    "stem": "The action to be taken when vehicle's light went out while driving at night is",
-    "options": {
-      "A": "Turn on hazard light and continue driving",
-      "B": "Stop immediately in the middle of the lane and turn on hazard light",
-      "C": "Stop at the road shoulder and turn on hazard light"
+    {
+      "question": 54,
+      "source_file": "20260919_153601.jpg",
+      "answer": "A",
+      "stem": "The way to make a U-Turn is",
+      "source_photo_position": 55
     },
-    "correct": "C",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Stop at the road shoulder and turn on hazard light. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Stop at the road shoulder and turn on hazard light)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "the action to be taken when vehicle's light weut out while driving at night time is A) Turn on hazard light and continue driving B) Stop immediately in the middle of the lane and turn on hazard light C) Stop at the road shoulder and turn on hazard light",
-    "sprite_col": 4,
-    "sprite_row": 5,
-    "source_file": "20260919_153604.jpg"
-  },
-  {
-    "id": 56,
-    "stem": "Perfect driving refers to",
-    "options": {
-      "A": "Following traffic rules",
-      "B": "Vehicle clean and neat",
-      "C": "Driver wear bright clothes"
+    {
+      "question": 55,
+      "source_file": "20260919_153604.jpg",
+      "answer": "C",
+      "stem": "The action to be taken when vehicle's light went out while driving at night is",
+      "source_photo_position": 56
     },
-    "correct": "A",
-    "guide_ko": "도로 상황에서 운전자가 취해야 할 행동 또는 안전 규칙을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Following traffic rules. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Following traffic rules)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Perfect driving refers to A)Following traffic rules B)Vehicle clean and neat C)Driver wear bright clothes",
-    "sprite_col": 5,
-    "sprite_row": 5,
-    "source_file": "20260919_153608.jpg"
-  },
-  {
-    "id": 57,
-    "stem": "Under Kejara System, what is the meaning of license being suspended?",
-    "options": {
-      "A": "Cannot drive any motor vehicle",
-      "B": "The right time to apply vocational license",
-      "C": "Need to renew driving license"
+    {
+      "question": 56,
+      "source_file": "20260919_153608.jpg",
+      "answer": "A",
+      "stem": "Perfect driving refers to",
+      "source_photo_position": 57
     },
-    "correct": "A",
-    "guide_ko": "KEJARA 벌점 제도와 관련된 규정을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: A — Cannot drive any motor vehicle. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 A번(Cannot drive any motor vehicle)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "Under Kejara System, what is the meaning of license being suspended? A) Cannot drive any motor vehicle B) The right time to apply vocational license ) Need to renew driving license",
-    "sprite_col": 6,
-    "sprite_row": 5,
-    "source_file": "20260919_153613.jpg"
-  },
-  {
-    "id": 58,
-    "stem": "The offense with 2 demerit points under Kejara System is",
-    "options": {
-      "A": "Did not give way to ambulance",
-      "B": "Using handphone while driving",
-      "C": "Not wearing helmet"
+    {
+      "question": 57,
+      "source_file": "20260919_153613.jpg",
+      "answer": "A",
+      "stem": "Under Kejara System, what is the meaning of license being suspended?",
+      "source_photo_position": 58
     },
-    "correct": "C",
-    "guide_ko": "KEJARA 벌점 제도와 관련된 규정을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: C — Not wearing helmet. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 C번(Not wearing helmet)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "The offense with 2 demerit points under Kejara System is A) Did not give way to ambulance B) Using handphone while driving ) Not wearing helmet",
-    "sprite_col": 7,
-    "sprite_row": 5,
-    "source_file": "20260919_153617.jpg"
-  },
-  {
-    "id": 59,
-    "stem": "How many demerit points are given to Ali who rides a motorcycle and did not stop at the red light?",
-    "options": {
-      "A": "2 demerit points",
-      "B": "4 demerit points",
-      "C": "6 demerit points"
+    {
+      "question": 58,
+      "source_file": "20260919_153617.jpg",
+      "answer": "C",
+      "stem": "The offense with 2 demerit points under Kejara System is",
+      "source_photo_position": 59
     },
-    "correct": "B",
-    "guide_ko": "KEJARA 벌점 제도와 관련된 규정을 묻는 문제입니다.",
-    "explanation_en": "Correct answer: B — 4 demerit points. Verified against the photographed answer sheet for the same question number.",
-    "explanation_ko": "정답은 B번(4 demerit points)입니다. 촬영된 정답지의 동일 문제 번호와 대조해 확인했습니다.",
-    "raw_ocr": "How many demerit points given to Ali who ride a motorcycle and did not stop at the red light? A)2 demerit points B) 4 demerit points 3C) 6 demerit points",
+    {
+      "question": 59,
+      "source_file": "20260919_153621.jpg",
+      "answer": "B",
+      "stem": "How many demerit points are given to Ali who rides a motorcycle and did not stop at the red light?",
+      "source_photo_position": 60
+    },
+    {
+      "question": 60,
+      "source_file": "20260919_153625.jpg",
+      "answer": "B",
+      "stem": "You need to provide specimen of breath, blood and urine to",
+      "source_photo_position": 61
+    },
+    {
+      "question": 61,
+      "source_file": "20260919_153629.jpg",
+      "answer": "C",
+      "stem": "What is the health requirement to apply for driving license?",
+      "source_photo_position": 62
+    },
+    {
+      "question": 62,
+      "source_file": "20260919_153633.jpg",
+      "answer": "A",
+      "stem": "Ali is 17 years old. Which license could he apply?",
+      "source_photo_position": 63
+    },
+    {
+      "question": 63,
+      "source_file": "20260919_153637.jpg",
+      "answer": "B",
+      "stem": "Driver who has been suspended but still keeps on driving will be penalized with",
+      "source_photo_position": 64
+    },
+    {
+      "question": 64,
+      "source_file": "20260919_153641.jpg",
+      "answer": "A",
+      "stem": "The offence with the highest point under Kejara System is",
+      "source_photo_position": 65
+    },
+    {
+      "question": 65,
+      "source_file": "20260919_153645.jpg",
+      "answer": "B",
+      "stem": "Display 'P' plate on vehicle for",
+      "source_photo_position": 66
+    },
+    {
+      "question": 66,
+      "source_file": "20260919_153649.jpg",
+      "answer": "A",
+      "stem": "Probationary Driving License (PDL) will be cancelled if not changed into Competent Driving License (CDL) after expiring for more than",
+      "source_photo_position": 67
+    },
+    {
+      "question": 67,
+      "source_file": "20260919_153653.jpg",
+      "answer": "C",
+      "stem": "Choose the offence with 10 demerit points under Kejara System",
+      "source_photo_position": 68
+    },
+    {
+      "question": 68,
+      "source_file": "20260919_153657.jpg",
+      "answer": "C",
+      "stem": "What is the bonus given to a driver who owned demerit points but did not commit any scheduled offences for 12 continuous months?",
+      "source_photo_position": 69
+    },
+    {
+      "question": 69,
+      "source_file": "20260919_153701.jpg",
+      "answer": "A",
+      "stem": "You are allowed to sit for Theory Test Part 1 after",
+      "source_photo_position": 70
+    },
+    {
+      "question": 70,
+      "source_file": "20260919_153705.jpg",
+      "answer": "B",
+      "stem": "What is the offence under Road Transport Act 1987?",
+      "source_photo_position": 71
+    }
+  ]
+}
