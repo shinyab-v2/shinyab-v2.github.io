@@ -1,0 +1,1262 @@
+[
+  {
+    "date": "2026-09-21",
+    "title": "Daily English — 2026-09-21",
+    "grammarTopic": "Present Perfect Simple and Continuous",
+    "grammar": {
+      "title": "Present Perfect: 결과와 과정의 초점을 구별하기",
+      "summary": "현재완료 단순형은 완료된 결과·횟수·성과에, 현재완료진행형은 지금까지 이어진 과정·기간·최근 활동의 흔적에 초점을 둡니다. 두 형태가 모두 가능한 경우에도 화자가 무엇을 강조하는지에 따라 의미가 달라집니다.",
+      "points": [
+        {
+          "title": "현재완료 단순형: 완료된 결과와 성과",
+          "explanation": "have/has + 과거분사는 과거 행동의 결과가 현재와 연결될 때 사용합니다. 결과물의 완성, 달성한 횟수, 경험의 유무처럼 '무엇이 얼마나 이루어졌는가'가 중요할 때 자연스럽습니다.",
+          "examples": [
+            "I have finished three lessons this week. — 이번 주에 수업 세 개를 완료했습니다.",
+            "She has written the final summary. — 그녀는 최종 요약을 작성했습니다.",
+            "We have tested the feature on five devices. — 그 기능을 기기 다섯 대에서 시험했습니다.",
+            "Have you ever used spaced repetition? — 간격 반복 학습을 사용해 본 적이 있나요?"
+          ]
+        },
+        {
+          "title": "현재완료진행형: 과정과 지속 시간",
+          "explanation": "have/has been + -ing는 과거에 시작해 현재까지 계속되거나 방금 끝난 활동의 과정에 초점을 둡니다. how long, for, since와 자주 쓰이며 활동이 아직 끝나지 않았을 가능성을 남깁니다.",
+          "examples": [
+            "I have been studying for forty minutes. — 40분 동안 계속 공부하고 있습니다.",
+            "She has been revising the same paragraph since breakfast. — 그녀는 아침 식사 때부터 같은 문단을 계속 수정하고 있습니다.",
+            "How long have you been using this method? — 이 방법을 얼마나 오래 사용해 왔나요?",
+            "They have been testing the new interface all morning. — 그들은 오전 내내 새 인터페이스를 시험하고 있습니다."
+          ]
+        },
+        {
+          "title": "완료 수량과 진행 중 활동 비교",
+          "explanation": "how many나 구체적인 완료 수량은 단순형, how long이나 활동 자체는 진행형이 일반적입니다. 단순형은 결과가 선명하고 진행형은 노력·반복·시간의 흐름을 더 생생하게 보여 줍니다.",
+          "examples": [
+            "I have read four articles. — 논문 네 편을 읽었습니다.",
+            "I have been reading articles all afternoon. — 오후 내내 논문을 읽고 있습니다.",
+            "She has answered ten questions. — 질문 열 개에 답했습니다.",
+            "She has been answering questions since the session began. — 세션이 시작된 뒤 계속 질문에 답하고 있습니다."
+          ]
+        },
+        {
+          "title": "상태동사는 보통 진행형을 쓰지 않기",
+          "explanation": "know, believe, own, understand, need처럼 상태를 나타내는 동사는 일반적으로 현재완료 단순형을 사용합니다. think, have, see처럼 의미에 따라 행동동사가 될 수 있는 경우에는 진행형도 가능합니다.",
+          "examples": [
+            "I have known my colleague for ten years. — 그 동료를 10년 동안 알고 지냈습니다.",
+            "We have owned this device since 2024. — 2024년부터 이 기기를 소유하고 있습니다.",
+            "I have understood the rule since you explained it. — 설명해 준 뒤로 그 규칙을 이해하고 있습니다.",
+            "I have been thinking about changing my routine. — 생활 습관을 바꾸는 것을 계속 생각해 왔습니다."
+          ]
+        },
+        {
+          "title": "최근 흔적과 완료 상태의 차이",
+          "explanation": "진행형은 현재 보이는 흔적이나 일시적인 활동을 설명할 때 자연스럽고, 단순형은 완성 여부를 강조합니다. live, work, study 같은 동사는 장기간 계속되는 상황에서 두 형태가 모두 가능하지만 진행형이 임시성을 더 암시할 수 있습니다.",
+          "examples": [
+            "Your hands are dirty. Have you been gardening? — 손이 더럽네요. 정원 일을 하고 있었나요?",
+            "The garden looks neat. Have you finished gardening? — 정원이 깔끔하네요. 정원 일을 끝냈나요?",
+            "I have worked here for five years. — 이곳에서 5년간 근무했습니다.",
+            "I have been working from home this month. — 이번 달에는 계속 재택근무를 하고 있습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "keep at it",
+        "meaning": "포기하지 않고 계속하다",
+        "example": "The progress feels slow, but keep at it. — 발전이 느리게 느껴져도 계속해 보세요."
+      },
+      {
+        "term": "get back on track",
+        "meaning": "계획이나 정상적인 상태로 돌아오다",
+        "example": "A ten-minute review helped me get back on track. — 10분 복습으로 학습 계획에 다시 복귀했습니다."
+      },
+      {
+        "term": "practice makes perfect",
+        "meaning": "연습을 거듭해야 능숙해진다",
+        "example": "My pronunciation is improving because practice makes perfect. — 꾸준히 연습하니 발음이 좋아지고 있습니다."
+      }
+    ],
+    "readingTitle": "The Learning Streak That Survived an Imperfect Week",
+    "paragraphs": [
+      "For three months, Arin had been using a language app every day. He had completed more than eighty lessons and built a long study streak. The number looked impressive, but recently he had been rushing through easy exercises late at night simply to keep the counter moving.",
+      "One busy Tuesday, Arin missed the lesson entirely. At first, he felt that the whole routine had failed. Then he looked at what he had actually achieved. He had learned useful phrases, had become less nervous in conversations, and had been listening to English more regularly. One missed day had not erased those results.",
+      "Arin changed the rule. Instead of protecting a perfect streak, he would protect a weekly minimum: four focused sessions and one speaking review. On demanding days, a ten-minute vocabulary review was enough to help him get back on track. On quieter days, he studied longer and used the expressions in conversation. The rule gave him structure without making one unpredictable evening look like failure.",
+      "The new system also separated results from effort. Arin recorded how many lessons he had completed, but he also noted how long he had been practising difficult skills. Pronunciation sometimes required several sessions before improvement became noticeable, while a short grammar quiz produced an immediate score.",
+      "By the end of the month, Arin had missed two more days, yet he had been studying with greater attention. His total lesson count grew more slowly, but his speaking became more flexible. The experience taught him to keep at it without confusing consistency with perfection."
+    ],
+    "translations": [
+      "Arin은 3개월 동안 매일 언어 앱을 사용해 왔고 80개가 넘는 수업과 긴 연속 기록을 만들었습니다. 하지만 최근에는 숫자를 유지하려고 밤늦게 쉬운 문제를 서둘러 풀고 있었습니다.",
+      "바쁜 화요일에 수업을 완전히 놓치자 처음에는 전체 루틴이 실패했다고 느꼈습니다. 그러나 실제 성과를 돌아보니 유용한 표현을 익히고 대화 긴장이 줄었으며 영어 듣기를 더 규칙적으로 해 오고 있었습니다. 하루의 누락이 그 결과를 지우지는 않았습니다.",
+      "완벽한 연속 기록 대신 주 4회의 집중 학습과 1회의 말하기 복습을 지키기로 했습니다. 바쁜 날에는 10분 어휘 복습으로 계획에 복귀하고, 여유 있는 날에는 더 오래 공부하며 표현을 대화에 사용했습니다. 이 규칙은 예측하기 어려운 하루를 실패로 만들지 않으면서도 학습의 틀을 제공했습니다.",
+      "새 방식은 결과와 노력도 분리했습니다. 완료한 수업 수와 함께 어려운 기술을 연습한 시간도 기록했습니다. 발음 향상에는 여러 세션이 필요했지만 문법 퀴즈는 즉시 점수를 보여 주었습니다.",
+      "그달 말 두 번 더 빠졌지만 집중도는 높아졌습니다. 수업 수는 느리게 늘었지만 말하기는 더 유연해졌고, 꾸준함을 완벽함과 혼동하지 않으면서 계속하는 법을 배웠습니다."
+    ],
+    "vocabulary": [
+      {"term": "streak", "partOfSpeech": "noun", "meaning": "연속 기록", "context": "매일 이어진 학습 기록"},
+      {"term": "impressive", "partOfSpeech": "adjective", "meaning": "인상적인", "context": "성과가 두드러져 보이는"},
+      {"term": "rushing", "partOfSpeech": "verb", "meaning": "서두르는", "context": "집중하지 않고 빨리 끝냄"},
+      {"term": "erased", "partOfSpeech": "verb", "meaning": "지웠다", "context": "기존 성과를 없애는 것"},
+      {"term": "minimum", "partOfSpeech": "noun", "meaning": "최소 기준", "context": "반드시 지킬 학습량"},
+      {"term": "demanding", "partOfSpeech": "adjective", "meaning": "힘이 많이 드는", "context": "시간과 에너지가 필요한 날"},
+      {"term": "separated", "partOfSpeech": "verb", "meaning": "구분했다", "context": "결과와 노력을 나누어 봄"},
+      {"term": "immediate", "partOfSpeech": "adjective", "meaning": "즉각적인", "context": "바로 확인되는 점수"},
+      {"term": "attention", "partOfSpeech": "noun", "meaning": "집중", "context": "학습 내용에 기울이는 주의"},
+      {"term": "consistency", "partOfSpeech": "noun", "meaning": "꾸준함", "context": "완벽하지 않아도 계속하는 태도"}
+    ],
+    "quiz": [
+      {
+        "question": "I _____ three lessons this week.",
+        "choices": ["have completed", "have been completing", "am completed", "completed since"],
+        "answer": 0,
+        "explanation": "완료된 수업의 구체적인 수량 세 개를 강조하므로 현재완료 단순형이 알맞습니다."
+      },
+      {
+        "question": "She _____ for the exam since breakfast.",
+        "choices": ["has studied twice", "has been studying", "is study", "studied for"],
+        "answer": 1,
+        "explanation": "아침부터 지금까지 이어지는 학습 과정과 기간을 강조하므로 현재완료진행형을 사용합니다."
+      },
+      {
+        "question": "Which sentence is natural with a state verb?",
+        "choices": ["I have been knowing him for years.", "I have known him for years.", "I am knowing him since Monday.", "I have been owned this device."],
+        "answer": 1,
+        "explanation": "know는 상태동사이므로 지속 기간을 말할 때 현재완료 단순형 have known을 씁니다."
+      },
+      {
+        "question": "Your clothes are wet. _____ in the rain?",
+        "choices": ["Have you walked", "Have you been walking", "Did you been walking", "Are you walked"],
+        "answer": 1,
+        "explanation": "현재 보이는 젖은 옷이 최근 활동의 흔적이므로 현재완료진행형이 가장 자연스럽습니다."
+      },
+      {
+        "question": "To “get back on track” means to _____.",
+        "choices": ["stop a plan permanently", "return to the intended plan", "increase a counter", "avoid measuring progress"],
+        "answer": 1,
+        "explanation": "get back on track은 흐트러진 뒤 원래의 계획이나 정상적인 진행 상태로 돌아간다는 뜻입니다."
+      },
+      {
+        "question": "Why had Arin's streak become less meaningful?",
+        "choices": ["He had stopped using English.", "He rushed through easy tasks just to maintain it.", "The app deleted his results.", "He studied only with a teacher."],
+        "answer": 1,
+        "explanation": "학습의 질보다 연속 기록 숫자를 유지하려고 쉬운 문제를 서둘러 풀었기 때문입니다."
+      },
+      {
+        "question": "What did Arin realize after missing one day?",
+        "choices": ["All previous progress had disappeared.", "A missed day did not erase his real achievements.", "Speaking reviews were unnecessary.", "Only daily totals mattered."],
+        "answer": 1,
+        "explanation": "한 번 빠졌어도 이미 얻은 표현, 자신감, 듣기 습관은 사라지지 않았음을 확인했습니다."
+      },
+      {
+        "question": "What was Arin's new weekly minimum?",
+        "choices": ["Seven perfect app days", "Four focused sessions and one speaking review", "One grammar quiz only", "Eighty completed lessons"],
+        "answer": 1,
+        "explanation": "완벽한 매일 기록 대신 집중 학습 네 번과 말하기 복습 한 번을 주간 최소 기준으로 정했습니다."
+      },
+      {
+        "question": "Why did Arin track both completed lessons and practice time?",
+        "choices": ["To separate results from effort", "To avoid pronunciation practice", "To compete with other users", "To make every session the same length"],
+        "answer": 0,
+        "explanation": "완료 수량이라는 결과와 어려운 기술에 들인 과정·노력을 따로 이해하기 위해 두 가지를 기록했습니다."
+      },
+      {
+        "question": "What is the central message of the reading?",
+        "choices": ["A perfect streak guarantees fluency.", "Consistency can survive occasional missed days.", "Easy exercises are always the best choice.", "Progress should be measured only by time."],
+        "answer": 1,
+        "explanation": "꾸준함은 하루도 빠지지 않는 완벽함이 아니라, 누락 후에도 의미 있는 학습으로 돌아오는 능력이라는 내용입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "How have you been studying English differently during the past month?",
+      "Which result have you achieved, and which skill have you been working on without a clear result yet?",
+      "Do learning streaks motivate you or create unnecessary pressure? Why?",
+      "What is a realistic weekly minimum for your English study?",
+      "How would you distinguish consistency from perfection in another part of your life?"
+    ],
+    "rolePlay": {
+      "scenario": "You missed several English sessions and want to redesign your weekly plan.",
+      "learnerRole": "Explain what you have completed, what you have been struggling with, and propose a realistic routine.",
+      "coachRole": "Ask follow-up questions and help turn the plan into measurable actions.",
+      "goal": "Use both present perfect forms naturally while agreeing on a sustainable weekly minimum."
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Daily English — 2026-09-22",
+    "grammarTopic": "Used to, Would, Be Used To, and Get Used To",
+    "grammar": {
+      "title": "Used to의 네 가지 패턴: 과거 습관과 현재의 적응 구별하기",
+      "summary": "used to + 동사원형은 지금은 달라진 과거 상태·습관, would + 동사원형은 반복된 과거 행동, be used to + 명사/-ing는 이미 익숙한 상태, get used to + 명사/-ing는 익숙해지는 과정을 나타냅니다.",
+      "points": [
+        {
+          "title": "used to + 동사원형: 지금은 달라진 과거",
+          "explanation": "과거에는 반복되었거나 사실이었지만 현재는 더 이상 그렇지 않은 행동과 상태를 표현합니다. 부정문과 의문문에서는 did를 사용하므로 use to가 원형으로 돌아갑니다.",
+          "examples": [
+            "I used to drive on the right. — 예전에는 우측통행 국가에서 운전했습니다.",
+            "She used to live near the station. — 그녀는 예전에 역 근처에 살았습니다.",
+            "I didn't use to check both directions carefully. — 예전에는 양쪽을 그렇게 주의 깊게 확인하지 않았습니다.",
+            "Did you use to feel nervous at roundabouts? — 예전에 회전교차로에서 긴장하곤 했나요?"
+          ]
+        },
+        {
+          "title": "would + 동사원형: 반복된 과거 행동",
+          "explanation": "이야기의 과거 배경이 분명할 때 would는 반복 행동을 회상하는 데 사용합니다. know, live, own처럼 상태를 나타내는 동사에는 보통 쓰지 않으므로 그때는 used to가 필요합니다.",
+          "examples": [
+            "Every morning, I would review the route before leaving. — 매일 아침 출발 전에 경로를 확인하곤 했습니다.",
+            "My instructor would remind me to stay close to the left. — 강사는 왼쪽에 붙으라고 늘 알려 주곤 했습니다.",
+            "We would practise parking after the roads became quiet. — 도로가 한산해지면 주차를 연습하곤 했습니다.",
+            "I used to own a smaller car. — 예전에는 더 작은 차를 소유했습니다."
+          ]
+        },
+        {
+          "title": "be used to + 명사/-ing: 이미 익숙한 상태",
+          "explanation": "여기서 to는 전치사이므로 뒤에 명사나 동명사(-ing)가 옵니다. 시제는 be동사로 조절하며 '사용되다'라는 수동태 be used to + 동사원형과 형태를 구별해야 합니다.",
+          "examples": [
+            "I am used to driving on the left now. — 이제 좌측통행 운전에 익숙합니다.",
+            "She wasn't used to the narrow parking spaces. — 그녀는 좁은 주차 공간에 익숙하지 않았습니다.",
+            "Are you used to reading road signs in Malay? — 말레이어 도로표지판을 읽는 데 익숙한가요?",
+            "This lane is used to separate buses from cars. — 이 차선은 버스와 승용차를 분리하는 데 사용됩니다."
+          ]
+        },
+        {
+          "title": "get used to + 명사/-ing: 적응 과정",
+          "explanation": "낯선 것이 점차 자연스러워지는 변화 과정에는 get used to를 씁니다. get은 시제나 조동사에 따라 got, have got, will get, can get 등으로 바뀝니다.",
+          "examples": [
+            "I am getting used to checking the right side first. — 오른쪽을 먼저 확인하는 데 점차 익숙해지고 있습니다.",
+            "It took me a month to get used to the traffic flow. — 교통 흐름에 익숙해지는 데 한 달이 걸렸습니다.",
+            "You will get used to the controls after a few lessons. — 몇 번 수업을 받으면 조작에 익숙해질 것입니다.",
+            "Have you got used to using the parking app yet? — 주차 앱 사용에 이제 익숙해졌나요?"
+          ]
+        },
+        {
+          "title": "형태를 결정하는 의미 질문",
+          "explanation": "'과거와 현재가 다른가?', '반복 행동인가?', '이미 익숙한가?', '적응 중인가?'를 먼저 묻습니다. used to 뒤에는 동사원형, be/get used to 뒤에는 명사나 -ing라는 형태 차이를 반드시 확인합니다.",
+          "examples": [
+            "I used to avoid busy junctions, but now I take them confidently. — 예전에는 복잡한 교차로를 피했지만 지금은 자신 있게 통과합니다.",
+            "I am used to busy junctions now. — 이제 복잡한 교차로에 익숙합니다.",
+            "I am still getting used to judging the distance on my left. — 왼쪽 거리를 판단하는 데 아직 적응 중입니다.",
+            "On quiet Sundays, we would practise unfamiliar routes. — 한산한 일요일이면 낯선 경로를 연습하곤 했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "second nature",
+        "meaning": "너무 익숙해서 저절로 되는 일",
+        "example": "Checking the mirrors has become second nature. — 거울을 확인하는 일이 이제 몸에 배었습니다."
+      },
+      {
+        "term": "a creature of habit",
+        "meaning": "늘 하던 방식대로 행동하는 사람",
+        "example": "I'm a creature of habit, so changing routes felt uncomfortable. — 저는 습관대로 움직이는 사람이라 경로를 바꾸는 것이 불편했습니다."
+      },
+      {
+        "term": "learn the ropes",
+        "meaning": "새로운 일의 기본 요령을 배우다",
+        "example": "A patient instructor helped me learn the ropes. — 인내심 있는 강사가 기본 요령을 익히도록 도와주었습니다."
+      }
+    ],
+    "readingTitle": "Getting Used to Driving on the Other Side",
+    "paragraphs": [
+      "When Tomas moved to Malaysia, he already had fifteen years of driving experience. He used to drive on the right, so the rules of the road were familiar but their physical arrangement felt reversed. During his first week, he sometimes reached toward the wrong side for the seat belt and activated the windscreen wipers instead of the indicator.",
+      "Tomas was a creature of habit. Back home, he would follow the same routes without thinking, and checking familiar mirrors had become second nature. In the new environment, automatic habits could be misleading. He therefore drove short routes at quiet times and spoke each step aloud: mirror, signal, position, turn.",
+      "A local instructor helped him learn the ropes. She did not treat his previous experience as useless, but she explained which habits needed deliberate attention. At junctions, Tomas had to get used to looking right first. In car parks, he practised judging the distance on the passenger side rather than relying on old visual cues.",
+      "After several weeks, Tomas was used to the basic traffic flow, although unfamiliar roundabouts still required concentration. He noticed that adaptation was not one sudden moment. A movement might feel natural on an empty road but become difficult again when rain, motorcycles, or a complicated sign increased the mental load.",
+      "Tomas eventually stopped translating every action from his old driving system. The new checks became their own routine. His experience showed that expertise does not prevent awkwardness during a transition; it provides a foundation, while careful practice builds a new set of automatic habits."
+    ],
+    "translations": [
+      "Tomas는 말레이시아로 이사 왔을 때 운전 경력이 15년이었지만 예전에는 우측통행 환경에서 운전했습니다. 도로 규칙은 익숙해도 물리적 배치가 반대로 느껴져 안전벨트나 방향지시등 대신 다른 장치를 만지기도 했습니다.",
+      "늘 같은 방식대로 행동하던 Tomas에게 기존의 자동 습관은 새 환경에서 오히려 방해가 될 수 있었습니다. 그래서 한산한 시간에 짧은 경로를 운전하며 거울·신호·위치·회전을 소리 내어 확인했습니다.",
+      "현지 강사는 기존 경험을 무시하지 않고 어떤 습관에 의식적 주의가 필요한지 설명했습니다. 교차로에서는 오른쪽을 먼저 보고, 주차장에서는 예전 시각적 기준에 의존하지 않고 조수석 쪽 거리를 판단하는 연습을 했습니다.",
+      "몇 주 후 기본 교통 흐름에는 익숙해졌지만 낯선 회전교차로에서는 여전히 집중이 필요했습니다. 한산한 도로에서 자연스러운 동작도 비나 오토바이, 복잡한 표지판이 더해지면 다시 어려워질 수 있었습니다.",
+      "결국 모든 행동을 예전 운전 방식에서 번역하지 않고 새 확인 절차 자체가 습관이 되었습니다. 전문 경험이 전환기의 어색함을 없애지는 않지만 새 자동 습관을 만드는 기반이 될 수 있었습니다."
+    ],
+    "vocabulary": [
+      {"term": "reversed", "partOfSpeech": "adjective", "meaning": "반대로 된", "context": "교통 배치가 반대로 느껴지는"},
+      {"term": "windscreen", "partOfSpeech": "noun", "meaning": "자동차 앞유리", "context": "와이퍼가 닦는 유리"},
+      {"term": "indicator", "partOfSpeech": "noun", "meaning": "방향지시등", "context": "회전 방향을 알리는 장치"},
+      {"term": "automatic", "partOfSpeech": "adjective", "meaning": "자동적인", "context": "생각하지 않고 나오는 습관"},
+      {"term": "misleading", "partOfSpeech": "adjective", "meaning": "잘못된 판단을 유도하는", "context": "새 환경에서 방해되는 습관"},
+      {"term": "deliberate", "partOfSpeech": "adjective", "meaning": "의식적인", "context": "일부러 주의를 기울이는"},
+      {"term": "junctions", "partOfSpeech": "noun", "meaning": "교차로", "context": "도로가 만나는 지점"},
+      {"term": "adaptation", "partOfSpeech": "noun", "meaning": "적응", "context": "새 교통 환경에 익숙해짐"},
+      {"term": "awkwardness", "partOfSpeech": "noun", "meaning": "어색함", "context": "전환기 동작의 불편함"},
+      {"term": "foundation", "partOfSpeech": "noun", "meaning": "기반", "context": "새 기술을 만드는 기존 경험"}
+    ],
+    "quiz": [
+      {
+        "question": "I _____ drive on the right, but now I drive on the left.",
+        "choices": ["am used to", "used to", "get used to", "would be"],
+        "answer": 1,
+        "explanation": "현재와 달라진 과거의 상태·습관이므로 used to + 동사원형을 사용합니다."
+      },
+      {
+        "question": "Every Sunday, we _____ practise on quiet roads.",
+        "choices": ["would", "were used to", "got used", "use to"],
+        "answer": 0,
+        "explanation": "과거 배경에서 반복적으로 했던 행동을 회상하므로 would + 동사원형이 자연스럽습니다."
+      },
+      {
+        "question": "I am used to _____ on the left now.",
+        "choices": ["drive", "drove", "driving", "have driven"],
+        "answer": 2,
+        "explanation": "be used to의 to는 전치사이므로 뒤에 동명사 driving이 옵니다."
+      },
+      {
+        "question": "It took me several weeks to _____ the new controls.",
+        "choices": ["used to", "get used to", "would", "be use to"],
+        "answer": 1,
+        "explanation": "시간이 지나며 새 조작에 적응하는 과정을 나타내므로 get used to가 알맞습니다."
+      },
+      {
+        "question": "If something becomes “second nature,” it becomes _____.",
+        "choices": ["illegal", "automatic and easy", "temporarily confusing", "physically impossible"],
+        "answer": 1,
+        "explanation": "second nature는 반복으로 몸에 배어 거의 생각하지 않아도 자연스럽게 되는 것을 뜻합니다."
+      },
+      {
+        "question": "What early mistake did Tomas make?",
+        "choices": ["He ignored every traffic sign.", "He activated the wipers instead of the indicator.", "He drove without a seat belt.", "He refused to use mirrors."],
+        "answer": 1,
+        "explanation": "장치 배치가 낯설어 방향지시등 대신 와이퍼를 작동시키는 일이 있었습니다."
+      },
+      {
+        "question": "Why did Tomas speak the driving steps aloud?",
+        "choices": ["To entertain passengers", "To replace old automatic habits with deliberate checks", "To learn Malay vocabulary", "To avoid using mirrors"],
+        "answer": 1,
+        "explanation": "예전 자동 습관에 의존하지 않고 새 절차에 의식적으로 집중하기 위해 단계별 확인을 말로 표현했습니다."
+      },
+      {
+        "question": "What did the instructor do with Tomas's previous experience?",
+        "choices": ["She treated it as completely useless.", "She used it as a base while identifying habits to change.", "She asked him to forget every safety rule.", "She allowed him to skip practice."],
+        "answer": 1,
+        "explanation": "기존 경험을 기반으로 인정하면서 새 환경에서 의식적으로 바꿔야 할 습관을 구체적으로 알려 주었습니다."
+      },
+      {
+        "question": "Why could a familiar action become difficult again?",
+        "choices": ["His licence had expired.", "Extra factors increased the mental load.", "The roads changed direction daily.", "He stopped practising completely."],
+        "answer": 1,
+        "explanation": "비, 오토바이, 복잡한 표지판 같은 요소가 인지 부담을 높이면 익숙해진 행동도 다시 어려워질 수 있었습니다."
+      },
+      {
+        "question": "What is the reading's main lesson?",
+        "choices": ["Expertise removes all transition problems.", "Old habits should always be trusted.", "Existing skill helps, but new automatic habits require careful practice.", "Driving experience cannot transfer between countries."],
+        "answer": 2,
+        "explanation": "기존 전문성은 기반이 되지만 다른 환경에 맞는 새 자동 습관은 의식적인 연습으로 따로 만들어야 한다는 내용입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What activity used to feel difficult but has become second nature to you?",
+      "Which habits from your home country have you had to change while living abroad?",
+      "When is previous experience helpful, and when can it be misleading?",
+      "What are you still getting used to in Malaysia?",
+      "Do you prefer learning a new skill through explanation, observation, or repeated practice?"
+    ],
+    "rolePlay": {
+      "scenario": "You are discussing your first weeks of driving in a country with different traffic rules.",
+      "learnerRole": "Describe old habits, current adjustments, and what has become familiar.",
+      "coachRole": "Act as a driving instructor who asks about difficulties and offers practical advice.",
+      "goal": "Use used to, would, be used to, and get used to accurately in a natural conversation."
+    }
+  },
+  {
+    "date": "2026-09-23",
+    "title": "Daily English — 2026-09-23",
+    "grammarTopic": "Obligation, Necessity, Permission, and Prohibition",
+    "grammar": {
+      "title": "Modal Rules: 해야 하는 일과 하지 않아도 되는 일 정확히 말하기",
+      "summary": "must, have to, should, need to는 의무의 강도가 다르고, mustn't와 don't have to는 정반대 의미입니다. 과거에는 had to, didn't have to, needn't have + 과거분사를 구별해야 실제로 행동했는지까지 정확히 전달할 수 있습니다.",
+      "points": [
+        {
+          "title": "must와 have to: 강한 의무",
+          "explanation": "must는 화자가 중요하다고 판단한 강한 지시나 공식 규칙에, have to는 외부 규정·상황이 요구하는 필요에 자주 쓰입니다. 실제 사용에서는 겹치는 경우가 많지만 must는 과거형이 없어 과거 의무에는 had to를 씁니다.",
+          "examples": [
+            "You must wear eye protection in this area. — 이 구역에서는 반드시 보안경을 착용해야 합니다.",
+            "I have to renew the permit before Friday. — 금요일 전에 허가를 갱신해야 합니다.",
+            "We had to stop the test when the temperature rose. — 온도가 올라가 시험을 중단해야 했습니다.",
+            "Do visitors have to sign the safety form? — 방문객도 안전 서류에 서명해야 하나요?"
+          ]
+        },
+        {
+          "title": "should, ought to, need to: 조언과 필요",
+          "explanation": "should와 ought to는 바람직한 행동이나 조언으로, 강제 의무보다 약합니다. need to는 목표를 위해 필요한 행동을 나타내며 have to보다 화자의 실질적 필요에 초점이 갈 수 있습니다.",
+          "examples": [
+            "You should report small problems before they grow. — 작은 문제도 커지기 전에 보고하는 것이 좋습니다.",
+            "The team ought to review the checklist monthly. — 팀은 매달 체크리스트를 검토하는 것이 좋습니다.",
+            "We need to verify the patient ID twice. — 환자 ID를 두 번 확인할 필요가 있습니다.",
+            "You don't need to memorize every code. — 모든 코드를 외울 필요는 없습니다."
+          ]
+        },
+        {
+          "title": "mustn't와 don't have to: 금지와 불필요",
+          "explanation": "mustn't는 '하면 안 된다'는 금지이고, don't have to는 '할 필요가 없다'는 선택입니다. 의미가 정반대이므로 안전 지침이나 안내문에서 특히 주의해야 합니다.",
+          "examples": [
+            "You mustn't share your access card. — 출입카드를 다른 사람과 공유하면 안 됩니다.",
+            "You don't have to attend both sessions. — 두 세션에 모두 참석할 필요는 없습니다.",
+            "Staff mustn't bypass the warning screen. — 직원은 경고 화면을 우회하면 안 됩니다.",
+            "You don't have to print the form; a digital copy is acceptable. — 서류를 출력할 필요는 없고 전자 사본도 가능합니다."
+          ]
+        },
+        {
+          "title": "can, may, be allowed to: 허가",
+          "explanation": "can은 일상적인 허가, may는 더 격식 있는 허가, be allowed to는 다양한 시제에서 규정상 허용 여부를 나타냅니다. 과거의 일반 허가는 could도 가능하지만 특정 한 번의 허가는 was/were allowed to가 더 명확합니다.",
+          "examples": [
+            "You can use the meeting room after three. — 3시 이후 회의실을 사용해도 됩니다.",
+            "Visitors may take photographs in the lobby. — 방문객은 로비에서 사진을 촬영할 수 있습니다.",
+            "We were allowed to enter after the inspection. — 검사 후 입장이 허용되었습니다.",
+            "Will contractors be allowed to access the server room? — 외부 업체 직원의 서버실 출입이 허용될 예정인가요?"
+          ]
+        },
+        {
+          "title": "didn't need to와 needn't have + p.p.",
+          "explanation": "didn't need to는 과거에 필요가 없었다는 뜻으로 실제 행동 여부가 문맥에 따라 달라집니다. needn't have + 과거분사는 불필요했지만 실제로 행동했다는 뜻입니다.",
+          "examples": [
+            "We didn't need to print the report, so we sent a link. — 출력할 필요가 없어서 링크를 보냈습니다.",
+            "We needn't have printed the report; everyone used the digital copy. — 보고서를 출력했지만 그럴 필요가 없었습니다.",
+            "She didn't need to stay late because the test ended early. — 시험이 일찍 끝나 늦게 남을 필요가 없었습니다.",
+            "You needn't have brought your laptop; spare devices were available. — 노트북을 가져왔지만 예비 기기가 있어 그럴 필요가 없었습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "play by the rules",
+        "meaning": "규칙을 지키다",
+        "example": "Everyone must play by the rules in a clinical environment. — 임상 환경에서는 모두가 규칙을 지켜야 합니다."
+      },
+      {
+        "term": "on the safe side",
+        "meaning": "혹시 모를 위험에 대비해 더 조심하여",
+        "example": "To be on the safe side, we checked the identifier twice. — 혹시 몰라 식별자를 두 번 확인했습니다."
+      },
+      {
+        "term": "have no choice",
+        "meaning": "다른 선택의 여지가 없다",
+        "example": "When the alarm appeared, we had no choice but to pause the test. — 경고가 나타나 시험을 중단할 수밖에 없었습니다."
+      }
+    ],
+    "readingTitle": "The Checklist That Turned Unclear Duties Into Clear Decisions",
+    "paragraphs": [
+      "A small medical research team shared one imaging room with several clinical groups. Everyone understood that safety mattered, but responsibilities were unclear. Researchers knew they had to protect patient information, yet they were not always certain who should confirm consent, clean the equipment, or report a technical warning.",
+      "The problem became visible when a warning appeared during a test. One researcher assumed the technician would record it, while the technician believed the researcher had already done so. The team had no choice but to pause the study until they could reconstruct what had happened.",
+      "Afterward, the team created a short responsibility checklist. Before a session, one named person had to confirm the patient identifier and consent status. Operators mustn't bypass warnings, and any interruption had to be entered into the log. Visitors could observe only if the patient had agreed and the supervisor was present.",
+      "The checklist also clarified what was optional. Staff did not have to print records that were already stored in the approved system. They could ask a second operator to check unusual findings, but routine cases did not require two people. The distinction was written clearly beside each task, preventing both unsafe shortcuts and unnecessary work.",
+      "Three months later, reporting had become more consistent and sessions restarted more quickly after minor issues. The checklist did not replace professional judgment. Instead, it showed when people could decide independently, when they should ask for advice, and when they must stop. Playing by the rules became easier because the rules finally matched real decisions."
+    ],
+    "translations": [
+      "소규모 의료 연구팀은 여러 임상 그룹과 영상실 하나를 공유했습니다. 모두 안전이 중요하다는 것은 알았지만 동의 확인, 장비 청소, 기술 경고 보고의 담당자가 불분명했습니다.",
+      "시험 중 경고가 나타났을 때 연구자는 기술자가 기록할 것이라 생각했고 기술자는 연구자가 이미 기록했다고 생각했습니다. 결국 무슨 일이 있었는지 재구성할 때까지 연구를 중단할 수밖에 없었습니다.",
+      "이후 책임 체크리스트를 만들었습니다. 세션 전 지정 담당자가 환자 식별자와 동의 상태를 확인하고, 경고를 우회하지 않으며, 중단 사항을 로그에 기록하게 했습니다. 방문 관찰도 환자 동의와 감독자 입회가 있을 때만 허용했습니다.",
+      "선택 사항도 분명히 했습니다. 승인 시스템에 저장된 기록은 출력할 필요가 없었고, 특이 소견에는 두 번째 운영자의 확인을 요청할 수 있지만 일반 사례에는 두 명이 필요하지 않았습니다. 이 차이를 각 업무 옆에 명확히 적어 위험한 생략과 불필요한 업무를 모두 줄였습니다.",
+      "3개월 후 보고가 일관되어지고 사소한 문제 뒤 재시작도 빨라졌습니다. 체크리스트는 전문 판단을 대신하지 않고 독립 판단, 조언 요청, 필수 중단의 경계를 보여 주었습니다."
+    ],
+    "vocabulary": [
+      {"term": "responsibility", "partOfSpeech": "noun", "meaning": "책임", "context": "각 역할이 맡아야 할 일"},
+      {"term": "consent", "partOfSpeech": "noun", "meaning": "동의", "context": "환자의 연구 참여 승인"},
+      {"term": "reconstruct", "partOfSpeech": "verb", "meaning": "재구성하다", "context": "발생 과정을 다시 확인함"},
+      {"term": "identifier", "partOfSpeech": "noun", "meaning": "식별자", "context": "환자를 정확히 구분하는 정보"},
+      {"term": "bypass", "partOfSpeech": "verb", "meaning": "우회하다", "context": "경고 절차를 건너뜀"},
+      {"term": "interruption", "partOfSpeech": "noun", "meaning": "중단", "context": "세션이 잠시 멈춘 사건"},
+      {"term": "optional", "partOfSpeech": "adjective", "meaning": "선택 사항인", "context": "반드시 하지 않아도 되는"},
+      {"term": "shortcuts", "partOfSpeech": "noun", "meaning": "절차 생략", "context": "안전 단계를 줄이는 행동"},
+      {"term": "consistent", "partOfSpeech": "adjective", "meaning": "일관된", "context": "같은 기준으로 이루어지는"},
+      {"term": "judgment", "partOfSpeech": "noun", "meaning": "판단", "context": "전문가가 상황에 맞게 내리는 결정"}
+    ],
+    "quiz": [
+      {
+        "question": "Yesterday, we _____ stop the test when the alarm appeared.",
+        "choices": ["must", "had to", "have to", "musted"],
+        "answer": 1,
+        "explanation": "과거의 강한 의무에는 must의 과거형이 없으므로 had to를 사용합니다."
+      },
+      {
+        "question": "You _____ share your access card with anyone.",
+        "choices": ["don't have to", "mustn't", "needn't have", "may"],
+        "answer": 1,
+        "explanation": "출입카드 공유가 금지된 행동이므로 mustn't가 알맞습니다. don't have to는 불필요를 뜻합니다."
+      },
+      {
+        "question": "You _____ print the form; a digital copy is acceptable.",
+        "choices": ["mustn't", "don't have to", "had to", "ought not"],
+        "answer": 1,
+        "explanation": "출력은 금지가 아니라 선택 사항이므로 '할 필요가 없다'는 don't have to를 사용합니다."
+      },
+      {
+        "question": "We _____ printed ten copies; nobody used them.",
+        "choices": ["didn't need to", "needn't have", "mustn't have", "weren't allowed"],
+        "answer": 1,
+        "explanation": "실제로 열 부를 출력했지만 불필요했다는 뜻이므로 needn't have + 과거분사를 사용합니다."
+      },
+      {
+        "question": "To be “on the safe side” means to _____.",
+        "choices": ["ignore a minor risk", "take extra precautions", "avoid every decision", "break a rule carefully"],
+        "answer": 1,
+        "explanation": "on the safe side는 예상하지 못한 위험을 막기 위해 필요 이상으로 한 번 더 조심한다는 뜻입니다."
+      },
+      {
+        "question": "What caused the study to pause?",
+        "choices": ["A patient refused all imaging.", "Nobody clearly recorded a warning.", "The approved system lost every record.", "Two operators cleaned the equipment."],
+        "answer": 1,
+        "explanation": "연구자와 기술자가 서로 상대방이 경고를 기록했을 것으로 생각해 책임 공백이 생겼습니다."
+      },
+      {
+        "question": "Who had to confirm the patient identifier?",
+        "choices": ["Any visitor", "One named person before the session", "The patient after the test", "Two external technicians"],
+        "answer": 1,
+        "explanation": "세션 전에 지정된 한 사람이 환자 식별자와 동의 상태를 확인하도록 책임을 명시했습니다."
+      },
+      {
+        "question": "When could visitors observe?",
+        "choices": ["Whenever the room was available", "Only with patient agreement and supervisor presence", "After bypassing the warning screen", "Only during an interruption"],
+        "answer": 1,
+        "explanation": "환자가 동의하고 감독자가 있는 경우에만 방문자의 관찰이 허용되었습니다."
+      },
+      {
+        "question": "How did the checklist reduce unnecessary work?",
+        "choices": ["It removed every safety check.", "It identified which tasks were optional.", "It required two people for every case.", "It prohibited digital records."],
+        "answer": 1,
+        "explanation": "이미 승인 시스템에 저장된 기록의 출력이나 일반 사례의 이중 확인처럼 불필요한 업무를 선택 사항으로 구분했습니다."
+      },
+      {
+        "question": "What was the checklist's main role?",
+        "choices": ["To replace all professional judgment", "To clarify when staff could decide, ask, or stop", "To make every session longer", "To transfer responsibility to visitors"],
+        "answer": 1,
+        "explanation": "체크리스트는 판단을 대신하지 않고 독립 결정, 조언 요청, 필수 중단이 필요한 경계를 명확히 했습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Which rules in your work are absolute, and which are recommendations?",
+      "Have you ever done something that you needn't have done? What happened?",
+      "How can a checklist reduce both risk and unnecessary work?",
+      "When should an experienced professional be allowed to use personal judgment?",
+      "What responsibilities should always have one clearly named owner?"
+    ],
+    "rolePlay": {
+      "scenario": "A new team member is preparing to enter a controlled testing room.",
+      "learnerRole": "Explain the required actions, prohibited actions, optional steps, and permissions.",
+      "coachRole": "Act as the new team member and ask precise questions about the rules.",
+      "goal": "Distinguish obligation, advice, prohibition, lack of necessity, and permission without ambiguity."
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "title": "Daily English — 2026-09-24",
+    "grammarTopic": "Dependent Prepositions and Prepositional Patterns",
+    "grammar": {
+      "title": "Dependent Prepositions: 동사·형용사·명사와 함께 외우는 전치사",
+      "summary": "영어 전치사는 한국어 조사처럼 단순히 번역해서 고르기 어렵습니다. depend on, responsible for, solution to처럼 앞 단어와 결합한 패턴으로 익혀야 하며, 전치사 뒤에는 명사·대명사·동명사가 옵니다.",
+      "points": [
+        {
+          "title": "동사 + 전치사 패턴",
+          "explanation": "depend on, complain about, apply for, respond to처럼 특정 동사는 정해진 전치사와 결합합니다. 전치사가 바뀌면 의미가 달라지거나 문장이 부자연스러워질 수 있으므로 한 덩어리로 학습합니다.",
+          "examples": [
+            "The decision depends on the evidence. — 결정은 근거에 달려 있습니다.",
+            "I complained about the unclear parking notice. — 불분명한 주차 안내에 대해 항의했습니다.",
+            "She applied for a refund. — 그녀는 환불을 신청했습니다.",
+            "The manager responded to my email the next morning. — 관리자는 다음 날 아침 제 이메일에 답했습니다."
+          ]
+        },
+        {
+          "title": "형용사 + 전치사 패턴",
+          "explanation": "responsible for, aware of, satisfied with, concerned about처럼 형용사 뒤 전치사가 의미 관계를 완성합니다. 사람을 대상으로 할 때와 사물을 대상으로 할 때 전치사가 달라지는 형용사도 있습니다.",
+          "examples": [
+            "Who is responsible for assigning parking spaces? — 주차 공간 배정 책임자는 누구인가요?",
+            "I was not aware of the restriction. — 그 제한 사항을 알지 못했습니다.",
+            "We are satisfied with the proposed solution. — 제안된 해결책에 만족합니다.",
+            "The residents are concerned about unclear enforcement. — 주민들은 불명확한 단속을 우려합니다."
+          ]
+        },
+        {
+          "title": "명사 + 전치사 패턴",
+          "explanation": "reason for, solution to, request for, access to 같은 명사도 특정 전치사를 요구합니다. 특히 solution, answer, key, access 뒤에는 to가 오지만 이때 to는 부정사 표지가 아니라 전치사입니다.",
+          "examples": [
+            "There was no clear reason for the charge. — 그 비용에 대한 명확한 이유가 없었습니다.",
+            "We found a practical solution to the problem. — 문제에 대한 현실적인 해결책을 찾았습니다.",
+            "I submitted a request for written confirmation. — 서면 확인 요청을 제출했습니다.",
+            "Residents need access to the parking policy. — 주민은 주차 규정에 접근할 수 있어야 합니다."
+          ]
+        },
+        {
+          "title": "전치사 뒤에는 명사 또는 -ing",
+          "explanation": "전치사 뒤에 동작을 넣을 때는 동사원형이 아니라 동명사를 사용합니다. look forward to, object to, be accustomed to의 to도 전치사이므로 -ing가 옵니다.",
+          "examples": [
+            "I look forward to receiving your reply. — 답변을 받기를 기대합니다.",
+            "They objected to paying a fee without prior notice. — 사전 안내 없이 비용을 내는 것에 이의를 제기했습니다.",
+            "Thank you for reviewing the attached messages. — 첨부 메시지를 검토해 주셔서 감사합니다.",
+            "She apologized for not replying earlier. — 더 일찍 답하지 못한 점을 사과했습니다."
+          ]
+        },
+        {
+          "title": "목적어 유무에 따른 패턴 변화",
+          "explanation": "explain은 explain something to someone, provide는 provide someone with something 또는 provide something for someone처럼 목적어 위치에 따라 전치사가 달라집니다. discuss는 타동사이므로 discuss about이라고 하지 않습니다.",
+          "examples": [
+            "Please explain the policy to the residents. — 주민에게 규정을 설명해 주세요.",
+            "The office provided me with a registration receipt. — 관리소에서 등록 영수증을 제공했습니다.",
+            "They provided a temporary space for my car. — 제 차를 위한 임시 공간을 제공했습니다.",
+            "We discussed the refund request yesterday. — 어제 환불 요청을 논의했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "put something in writing",
+        "meaning": "내용을 서면으로 남기다",
+        "example": "Please put the parking arrangement in writing. — 주차 배정 내용을 서면으로 남겨 주세요."
+      },
+      {
+        "term": "meet someone halfway",
+        "meaning": "상대와 서로 양보해 타협하다",
+        "example": "The manager met us halfway by refunding part of the charge. — 관리자는 비용 일부를 환불하며 절충했습니다."
+      },
+      {
+        "term": "sort something out",
+        "meaning": "문제나 혼란을 해결하다",
+        "example": "A clear email helped sort the issue out. — 명확한 이메일이 문제 해결에 도움이 됐습니다."
+      }
+    ],
+    "readingTitle": "The Email That Turned a Parking Dispute Into a Clear Record",
+    "paragraphs": [
+      "When Lina moved into a new apartment, she registered her car with the management office. She also asked whether her unit had an assigned parking space. The staff replied that the vehicle had been registered, but they did not respond to her question about the space.",
+      "Several weeks later, Lina's car was clamped for being in the wrong area. She paid the release charge but applied for a refund. In her first draft, frustration filled the message. Before sending it, she reorganized the email around evidence: the date of registration, screenshots of her earlier request, and the absence of a clear response.",
+      "Lina explained that she had not been aware of the restriction and asked who was responsible for communicating assigned spaces to new residents. She avoided accusing one employee of causing the problem. Instead, she described the gap in the process and requested a written explanation of the policy. That request gave the office a specific action instead of a vague demand to \"do something.\"",
+      "The management office responded to the email two days later. It did not agree to a full refund, but it met Lina halfway by returning part of the charge and providing a temporary parking space. More importantly, the office put the assignment in writing and updated its welcome message for future residents.",
+      "The dispute was sorted out because Lina connected each claim to a record. Her email remained firm without becoming personal. A useful complaint does more than express dissatisfaction: it gives the other side enough information to verify the problem, identify responsibility, and propose a practical solution."
+    ],
+    "translations": [
+      "Lina는 새 아파트로 이사하며 차량을 관리소에 등록하고 지정 주차 공간이 있는지도 물었습니다. 직원은 차량 등록만 답하고 주차 공간 질문에는 답하지 않았습니다.",
+      "몇 주 뒤 잘못된 구역에 주차했다는 이유로 차량이 클램프 처리되었습니다. 비용을 낸 뒤 환불을 신청했고, 감정적인 첫 초안을 보내기 전에 등록일·이전 문의 화면·명확한 답변의 부재라는 근거 중심으로 다시 구성했습니다.",
+      "제한 사항을 몰랐다는 점과 신규 입주자에게 지정 공간을 안내할 책임자가 누구인지 물었습니다. 특정 직원을 비난하지 않고 절차상의 공백을 설명하며 규정의 서면 설명을 요청했습니다. 막연히 조치하라는 요구 대신 관리소가 실행할 수 있는 구체적인 행동을 제시한 것입니다.",
+      "관리소는 전액 환불에는 동의하지 않았지만 일부 비용을 돌려주고 임시 공간을 제공했습니다. 또한 배정 내용을 서면으로 남기고 향후 입주자를 위한 안내 메시지를 개선했습니다.",
+      "각 주장을 기록과 연결했기 때문에 분쟁을 해결할 수 있었습니다. 유용한 항의는 불만 표현을 넘어 상대가 문제를 검증하고 책임을 확인하며 해결책을 제안할 정보를 제공합니다."
+    ],
+    "vocabulary": [
+      {"term": "assigned", "partOfSpeech": "adjective", "meaning": "지정된", "context": "특정 세대에 배정된 공간"},
+      {"term": "clamped", "partOfSpeech": "adjective", "meaning": "차량 바퀴가 잠금 처리된", "context": "주차 위반 조치"},
+      {"term": "release", "partOfSpeech": "noun", "meaning": "해제", "context": "클램프를 풀기 위한 비용"},
+      {"term": "frustration", "partOfSpeech": "noun", "meaning": "답답함, 좌절감", "context": "불명확한 안내로 생긴 감정"},
+      {"term": "reorganized", "partOfSpeech": "verb", "meaning": "재구성했다", "context": "이메일 순서를 근거 중심으로 바꿈"},
+      {"term": "absence", "partOfSpeech": "noun", "meaning": "부재", "context": "명확한 답변이 없음"},
+      {"term": "accusing", "partOfSpeech": "verb", "meaning": "비난하는", "context": "특정 직원에게 책임을 돌림"},
+      {"term": "temporary", "partOfSpeech": "adjective", "meaning": "임시의", "context": "문제 해결 전 사용할 공간"},
+      {"term": "dissatisfaction", "partOfSpeech": "noun", "meaning": "불만족", "context": "서비스에 대한 불만"},
+      {"term": "verify", "partOfSpeech": "verb", "meaning": "검증하다", "context": "기록을 통해 사실을 확인함"}
+    ],
+    "quiz": [
+      {
+        "question": "The final decision depends _____ the evidence.",
+        "choices": ["at", "on", "for", "to"],
+        "answer": 1,
+        "explanation": "depend는 전치사 on과 결합해 '…에 달려 있다'는 의미를 만듭니다."
+      },
+      {
+        "question": "Who is responsible _____ communicating the policy?",
+        "choices": ["to", "with", "for", "about"],
+        "answer": 2,
+        "explanation": "responsible for + 명사/-ing는 '…에 책임이 있는'이라는 형용사 패턴입니다."
+      },
+      {
+        "question": "We need a practical solution _____ the problem.",
+        "choices": ["to", "for solving to", "about", "with"],
+        "answer": 0,
+        "explanation": "solution은 전치사 to와 결합합니다. 이 to는 전치사이므로 뒤에 명사가 옵니다."
+      },
+      {
+        "question": "I look forward to _____ your reply.",
+        "choices": ["receive", "received", "receiving", "have receive"],
+        "answer": 2,
+        "explanation": "look forward to의 to는 전치사이므로 뒤에 동명사 receiving을 사용합니다."
+      },
+      {
+        "question": "To “put something in writing” means to _____.",
+        "choices": ["say it quietly", "create a written record", "remove the evidence", "translate it immediately"],
+        "answer": 1,
+        "explanation": "put something in writing은 말로만 전달하지 않고 나중에 확인할 수 있도록 문서나 메시지로 남긴다는 뜻입니다."
+      },
+      {
+        "question": "What question did the office fail to answer initially?",
+        "choices": ["Whether Lina owned a car", "Whether her unit had an assigned parking space", "How much the apartment cost", "When the office opened"],
+        "answer": 1,
+        "explanation": "차량 등록에는 답했지만 Lina의 세대에 지정 주차 공간이 있는지는 답하지 않았습니다."
+      },
+      {
+        "question": "How did Lina improve her first draft?",
+        "choices": ["She removed all dates.", "She organized it around records and evidence.", "She accused one employee personally.", "She requested no specific action."],
+        "answer": 1,
+        "explanation": "감정 중심의 초안을 등록일, 이전 메시지, 답변 부재 같은 검증 가능한 근거 중심으로 바꿨습니다."
+      },
+      {
+        "question": "What compromise did the office offer?",
+        "choices": ["A full refund and a new apartment", "A partial refund and temporary parking", "No refund and no response", "A permanent free parking space"],
+        "answer": 1,
+        "explanation": "전액은 아니지만 비용 일부를 환불하고 임시 주차 공간을 제공했습니다."
+      },
+      {
+        "question": "What process improvement did the office make?",
+        "choices": ["It stopped registering vehicles.", "It updated the welcome message for future residents.", "It removed assigned spaces.", "It required complaints to be verbal."],
+        "answer": 1,
+        "explanation": "같은 혼란을 막기 위해 신규 입주자에게 보내는 안내 메시지를 업데이트했습니다."
+      },
+      {
+        "question": "What made Lina's complaint effective?",
+        "choices": ["It was highly emotional.", "It connected claims to records and requested a solution.", "It avoided explaining the problem.", "It demanded punishment for one employee."],
+        "answer": 1,
+        "explanation": "주장을 구체적인 기록과 연결하고 확인 가능한 책임과 현실적인 해결을 요청한 점이 효과적이었습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What information makes a complaint fair and persuasive?",
+      "Have you ever needed to put an agreement in writing? What happened?",
+      "Which dependent prepositions do you often confuse in English?",
+      "When is it better to meet someone halfway rather than demand a full solution?",
+      "How can an organization learn from one customer's complaint?"
+    ],
+    "rolePlay": {
+      "scenario": "You are asking an apartment manager to review an unclear parking charge.",
+      "learnerRole": "Present the evidence, explain what you were unaware of, and request a fair solution.",
+      "coachRole": "Act as the manager, ask for details, and offer a possible compromise.",
+      "goal": "Use accurate verb, adjective, and noun preposition patterns while remaining firm and polite."
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "title": "Daily English — 2026-09-25",
+    "grammarTopic": "Question Tags, Negative Questions, and Echo Questions",
+    "grammar": {
+      "title": "Interactive Questions: 확인·놀람·기대가 담긴 질문 만들기",
+      "summary": "question tag는 동의나 확인을 요청하고, 부정의문문은 화자의 기대나 놀람을 드러내며, echo question은 들은 내용을 되묻습니다. 억양과 문맥에 따라 진짜 질문인지 동의를 기대하는지 달라집니다.",
+      "points": [
+        {
+          "title": "긍정문 + 부정 tag, 부정문 + 긍정 tag",
+          "explanation": "앞 문장이 긍정이면 tag는 부정, 앞 문장이 부정이면 tag는 긍정으로 만듭니다. 시제와 조동사를 그대로 맞추고, 일반동사에는 do/does/did를 사용합니다.",
+          "examples": [
+            "The meeting starts at two, doesn't it? — 회의가 2시에 시작하죠?",
+            "You sent the updated file, didn't you? — 수정 파일을 보냈죠?",
+            "She isn't joining us, is she? — 그녀는 함께하지 않는 거죠?",
+            "They haven't approved it yet, have they? — 아직 승인하지 않았죠?"
+          ]
+        },
+        {
+          "title": "특수한 tag 형태",
+          "explanation": "I am 뒤에는 aren't I, 명령문에는 will you/can you, Let's 뒤에는 shall we가 일반적입니다. nobody, nothing, never처럼 의미상 부정인 표현 뒤에는 긍정 tag를 사용합니다.",
+          "examples": [
+            "I'm on the right call, aren't I? — 제가 맞는 통화에 들어와 있는 거죠?",
+            "Send me the link, will you? — 링크를 보내 주시겠어요?",
+            "Let's review the decision, shall we? — 그 결정을 검토해 볼까요?",
+            "Nobody objected, did they? — 아무도 이의를 제기하지 않았죠?"
+          ]
+        },
+        {
+          "title": "tag의 억양: 확인과 동의 기대",
+          "explanation": "올라가는 억양은 화자가 답을 확실히 모르고 실제 확인하는 느낌, 내려가는 억양은 화자가 사실이라고 생각하며 동의를 기대하는 느낌입니다. 글에서는 문맥이 이 차이를 대신합니다.",
+          "examples": [
+            "You're the new coordinator, aren't you? ↗ — 새 담당자이신가요?",
+            "That was a useful session, wasn't it? ↘ — 유익한 세션이었죠.",
+            "The fee includes materials, doesn't it? ↗ — 비용에 교재비가 포함되나요?",
+            "We handled that well, didn't we? ↘ — 우리가 잘 대응했죠."
+          ]
+        },
+        {
+          "title": "부정의문문: 기대·놀람·제안",
+          "explanation": "Isn't, Didn't, Haven't로 시작하는 부정의문문은 화자가 긍정 답변을 예상하거나 뜻밖의 상황에 놀랐음을 나타낼 수 있습니다. Yes는 긍정 사실, No는 부정 사실에 답하므로 한국어식으로 바꾸지 않습니다.",
+          "examples": [
+            "Didn't you receive the invitation? — 초대장을 받지 못했나요? 받은 줄 알았습니다.",
+            "Isn't this the latest version? — 이것이 최신 버전 아닌가요?",
+            "Haven't they replied yet? — 아직도 답을 안 했나요?",
+            "Why don't we ask for clarification? — 설명을 요청해 보는 것이 어때요?"
+          ]
+        },
+        {
+          "title": "Echo questions: 들은 내용을 되묻기",
+          "explanation": "상대 말의 일부가 놀랍거나 잘 들리지 않았을 때 같은 조동사나 의문사를 사용해 짧게 되묻습니다. 정보를 요청하는 echo wh-question에서는 평서문 어순을 유지하는 경우가 많습니다.",
+          "examples": [
+            "A: I've resigned. B: You have? — 사직했다고요?",
+            "A: The meeting was cancelled. B: Was it? — 회의가 취소됐다고요?",
+            "A: She sent it to Marcus. B: She sent it to who? — 누구에게 보냈다고요?",
+            "A: We need thirty copies. B: How many copies do we need? — 몇 부가 필요하다고요?"
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "get your wires crossed",
+        "meaning": "서로 말을 잘못 이해하다",
+        "example": "We got our wires crossed about who would present. — 누가 발표할지를 서로 잘못 이해했습니다."
+      },
+      {
+        "term": "read the room",
+        "meaning": "주변 사람들의 분위기나 반응을 파악하다",
+        "example": "A good facilitator reads the room before moving on. — 좋은 진행자는 다음으로 넘어가기 전에 분위기를 살핍니다."
+      },
+      {
+        "term": "on the same wavelength",
+        "meaning": "생각이나 이해가 잘 통하는",
+        "example": "After clarifying the goal, the team was on the same wavelength. — 목표를 명확히 한 뒤 팀의 이해가 일치했습니다."
+      }
+    ],
+    "readingTitle": "The Agreement That Wasn't Actually an Agreement",
+    "paragraphs": [
+      "During a project meeting, the manager presented a new release date and asked, \"We can deliver by Friday, can't we?\" Several people nodded. The manager interpreted the silence as agreement, but the engineers thought the question was only asking whether Friday was theoretically possible.",
+      "After the meeting, work began to drift. One engineer planned for a limited internal build, while another assumed the team had promised a customer release. They had got their wires crossed, yet each believed everyone was on the same wavelength.",
+      "A designer finally asked, \"We're talking about an internal build, aren't we?\" The room became quiet. The manager replied, \"An internal build? I thought we had agreed on the public release.\" That echo question exposed the misunderstanding before the team had invested another full day in the wrong plan.",
+      "The group returned to the decision and used direct checks. What exactly had to be ready by Friday? Who had authority to approve it? Had the customer been informed? Rather than asking another leading question, the facilitator invited each person to describe the decision in their own words. The different answers made the remaining gaps visible. This process separated technical possibility from commitment and gave quieter members a clear opportunity to disagree.",
+      "The team chose Friday for the internal build and the following Tuesday for public release. More importantly, every future decision ended with one person restating the action, owner, and date. The written summary removed any final doubt. A question tag can invite agreement, but it cannot create shared understanding by itself."
+    ],
+    "translations": [
+      "프로젝트 회의에서 관리자가 새 출시일을 제시하며 금요일까지 가능하죠라고 물었습니다. 여러 사람이 고개를 끄덕였지만 관리자는 이를 동의로, 엔지니어는 이론적 가능성에 대한 질문으로 이해했습니다.",
+      "회의 후 한 사람은 제한된 내부 빌드를, 다른 사람은 고객 공개 출시를 준비했습니다. 서로 말을 잘못 이해했지만 모두 같은 생각이라고 믿었습니다.",
+      "디자이너가 내부 빌드를 말하는 거죠라고 확인하자 관리자는 공개 출시로 합의한 줄 알았다고 되물었습니다. 이 echo question이 하루를 더 잘못된 계획에 쓰기 전에 오해를 드러냈습니다.",
+      "팀은 금요일까지 정확히 무엇이 준비되어야 하는지, 승인 권한은 누구에게 있는지, 고객에게 알렸는지를 직접 확인했습니다. 진행자는 또 다른 유도 질문 대신 각자 자신의 말로 결정을 설명하게 했고, 서로 다른 답변을 통해 남은 이해 차이를 확인했습니다. 이 과정은 기술적 가능성과 실제 확약을 구분하고 조용한 구성원도 이견을 말할 기회를 주었습니다.",
+      "금요일은 내부 빌드, 다음 화요일은 공개 출시로 정했습니다. 이후 모든 결정은 한 사람이 행동·담당자·날짜를 다시 말하며 끝냈고 서면 요약으로 마지막 의문도 제거했습니다. 부가의문문은 동의를 요청할 수 있지만 공유 이해를 자동으로 만들지는 못합니다."
+    ],
+    "vocabulary": [
+      {"term": "theoretically", "partOfSpeech": "adverb", "meaning": "이론적으로", "context": "실행 약속이 아닌 가능성"},
+      {"term": "interpreted", "partOfSpeech": "verb", "meaning": "해석했다", "context": "침묵의 의미를 판단함"},
+      {"term": "drift", "partOfSpeech": "verb", "meaning": "방향이 흐트러지다", "context": "공통 목표 없이 진행됨"},
+      {"term": "limited", "partOfSpeech": "adjective", "meaning": "제한된", "context": "내부에서만 사용하는 빌드"},
+      {"term": "exposed", "partOfSpeech": "verb", "meaning": "드러냈다", "context": "숨은 오해를 확인함"},
+      {"term": "invested", "partOfSpeech": "verb", "meaning": "투입했다", "context": "시간과 노력을 사용함"},
+      {"term": "authority", "partOfSpeech": "noun", "meaning": "권한", "context": "출시를 승인할 자격"},
+      {"term": "facilitator", "partOfSpeech": "noun", "meaning": "진행자", "context": "회의 논의를 이끄는 사람"},
+      {"term": "commitment", "partOfSpeech": "noun", "meaning": "약속, 책임 있는 확약", "context": "일정 수행에 대한 합의"},
+      {"term": "restating", "partOfSpeech": "verb", "meaning": "다시 명확히 말하는", "context": "결정 내용을 반복 확인함"}
+    ],
+    "quiz": [
+      {
+        "question": "The meeting starts at two, _____?",
+        "choices": ["is it", "doesn't it", "isn't the meeting", "didn't it"],
+        "answer": 1,
+        "explanation": "앞 문장이 일반동사 starts의 긍정문이므로 does를 사용한 부정 tag doesn't it이 알맞습니다."
+      },
+      {
+        "question": "They haven't approved it, _____?",
+        "choices": ["haven't they", "have they", "did they", "are they"],
+        "answer": 1,
+        "explanation": "앞 문장이 현재완료 부정문이므로 같은 조동사 have를 사용한 긍정 tag를 붙입니다."
+      },
+      {
+        "question": "Let's review the plan, _____?",
+        "choices": ["will we", "do we", "shall we", "aren't we"],
+        "answer": 2,
+        "explanation": "Let's로 제안한 문장의 부가의문문은 관용적으로 shall we를 사용합니다."
+      },
+      {
+        "question": "A: I've accepted the offer. B: _____?",
+        "choices": ["Did you accepted", "You have", "Have you accept", "You did it"],
+        "answer": 1,
+        "explanation": "상대의 현재완료 발언에 놀라 되묻는 echo question은 주어 + 같은 조동사 형태인 You have?가 자연스럽습니다."
+      },
+      {
+        "question": "To “get your wires crossed” means to _____.",
+        "choices": ["repair a device", "misunderstand each other", "agree immediately", "avoid asking questions"],
+        "answer": 1,
+        "explanation": "get your wires crossed는 서로 다른 내용을 이해해 의사소통이 엇갈렸다는 뜻입니다."
+      },
+      {
+        "question": "What did the manager think the nods meant?",
+        "choices": ["The engineers needed a break.", "The team agreed to a Friday customer release.", "Friday was impossible.", "The release had already happened."],
+        "answer": 1,
+        "explanation": "관리자는 고개 끄덕임을 금요일 공개 출시에 대한 확약으로 해석했습니다."
+      },
+      {
+        "question": "What did some engineers think the question meant?",
+        "choices": ["Whether Friday was theoretically possible", "Whether the meeting was cancelled", "Whether the customer had paid", "Whether Tuesday was a holiday"],
+        "answer": 0,
+        "explanation": "엔지니어들은 실제 약속이 아니라 금요일이 이론적으로 가능한지를 묻는 질문으로 이해했습니다."
+      },
+      {
+        "question": "Which question exposed the misunderstanding?",
+        "choices": ["Why don't we cancel?", "We're talking about an internal build, aren't we?", "The customer agrees, doesn't it?", "Nobody objected, did we?"],
+        "answer": 1,
+        "explanation": "디자이너의 내부 빌드 확인 질문에 관리자가 놀라 되물으면서 서로 다른 전제가 드러났습니다."
+      },
+      {
+        "question": "What new meeting habit did the team adopt?",
+        "choices": ["Ending without questions", "Restating the action, owner, and date", "Treating every nod as approval", "Avoiding release dates"],
+        "answer": 1,
+        "explanation": "결정 때마다 한 사람이 해야 할 행동, 담당자, 날짜를 다시 말해 공유 이해를 확인했습니다."
+      },
+      {
+        "question": "What is the reading's main warning?",
+        "choices": ["Question tags are grammatically incorrect.", "Silence or nodding does not guarantee shared understanding.", "Managers should never ask questions.", "Internal builds are always safer."],
+        "answer": 1,
+        "explanation": "부가의문문과 고개 끄덕임만으로는 각자가 같은 내용에 동의했는지 보장할 수 없다는 점을 보여 줍니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Have you ever thought a group had agreed when it had not?",
+      "How can a meeting leader check commitment without sounding aggressive?",
+      "Do question tags work differently in Korean and English communication?",
+      "When is an echo question more useful than pretending you understood?",
+      "What three details should be restated at the end of an important decision?"
+    ],
+    "rolePlay": {
+      "scenario": "A meeting has ended with an unclear agreement about a delivery date.",
+      "learnerRole": "Use question tags and direct checks to clarify the deliverable, owner, and deadline.",
+      "coachRole": "Act as a manager whose original question was ambiguous and respond to the clarification.",
+      "goal": "Repair the misunderstanding using natural confirmation questions and echo questions."
+    }
+  },
+  {
+    "date": "2026-09-26",
+    "title": "Daily English — 2026-09-26",
+    "grammarTopic": "Mandative Subjunctive and Formal Recommendations",
+    "grammar": {
+      "title": "Formal Recommendations: suggest that ... be 구조 정확히 사용하기",
+      "summary": "공식적인 제안·요구·필요를 나타낼 때 suggest, recommend, insist, essential 뒤 that절에서 동사원형을 사용하는 mandative subjunctive가 쓰입니다. 영국식 영어의 should 구조와 동명사 패턴도 함께 구별합니다.",
+      "points": [
+        {
+          "title": "동사 + that + 주어 + 동사원형",
+          "explanation": "suggest, recommend, request, demand, insist 뒤 that절에서 주어와 관계없이 동사원형을 사용할 수 있습니다. be도 is/are가 아니라 be, 부정은 not + 동사원형입니다.",
+          "examples": [
+            "The reviewer recommended that the test be repeated. — 검토자는 시험을 반복할 것을 권고했습니다.",
+            "We suggest that each warning include a clear action. — 각 경고에 명확한 조치를 포함할 것을 제안합니다.",
+            "The committee requested that the team provide more evidence. — 위원회는 팀이 추가 근거를 제공할 것을 요청했습니다.",
+            "She insisted that the result not be published yet. — 그녀는 결과를 아직 공개하지 말아야 한다고 주장했습니다."
+          ]
+        },
+        {
+          "title": "형용사 + that + 동사원형",
+          "explanation": "essential, important, vital, necessary, advisable 뒤에서도 요구되는 행동을 표현할 때 동사원형을 씁니다. 일반적인 사실을 설명하는 that절이라면 보통 시제를 사용할 수 있습니다.",
+          "examples": [
+            "It is essential that patient data remain confidential. — 환자 데이터는 반드시 기밀로 유지되어야 합니다.",
+            "It is important that every operator understand the limit. — 모든 운영자가 한계를 이해하는 것이 중요합니다.",
+            "It is vital that the backup system be available. — 백업 시스템은 반드시 사용 가능해야 합니다.",
+            "It is advisable that the team review the protocol annually. — 팀이 매년 프로토콜을 검토하는 것이 바람직합니다."
+          ]
+        },
+        {
+          "title": "영국식 should + 동사원형",
+          "explanation": "특히 영국식 영어에서는 같은 의미로 that + 주어 + should + 동사원형을 흔히 사용합니다. 여기서 should는 도덕적 조언이라기보다 제안·요구 내용을 표시합니다.",
+          "examples": [
+            "They recommended that the device should be checked again. — 기기를 다시 확인할 것을 권고했습니다.",
+            "It is essential that users should receive clear instructions. — 사용자가 명확한 안내를 받는 것이 필수적입니다.",
+            "The board requested that the report should include limitations. — 이사회는 보고서에 한계를 포함하도록 요청했습니다.",
+            "She insisted that no data should be removed. — 어떤 데이터도 삭제해서는 안 된다고 주장했습니다."
+          ]
+        },
+        {
+          "title": "suggest/recommend + -ing 또는 명사",
+          "explanation": "행동의 주체를 따로 밝힐 필요가 없으면 suggest/recommend + -ing가 간결합니다. recommend someone to do는 일반적으로 피하고 recommend that someone do 또는 advise someone to do를 사용합니다.",
+          "examples": [
+            "We recommend repeating the measurement. — 측정을 반복할 것을 권합니다.",
+            "The report suggests adding a confirmation step. — 보고서는 확인 단계를 추가할 것을 제안합니다.",
+            "I recommend that you document the change. — 변경 사항을 기록할 것을 권합니다.",
+            "I advise you to document the change. — 변경 사항을 기록하라고 조언합니다."
+          ]
+        },
+        {
+          "title": "사실 보고와 권고 구별",
+          "explanation": "suggest가 '암시하다'라는 사실 판단 의미이면 일반 시제를 사용합니다. insist도 사실이 맞다고 강하게 주장하는 의미라면 일반 시제가 옵니다. 동사원형은 어떤 행동을 요구할 때 사용합니다.",
+          "examples": [
+            "The evidence suggests that the model is unstable. — 근거는 모델이 불안정함을 시사합니다.",
+            "The reviewer suggests that the model be tested again. — 검토자는 모델을 다시 시험할 것을 제안합니다.",
+            "He insists that the figures are correct. — 그는 수치가 맞다고 강하게 주장합니다.",
+            "He insists that the figures be checked independently. — 그는 수치를 독립적으로 확인할 것을 요구합니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "raise a red flag",
+        "meaning": "위험이나 문제 가능성을 알리다",
+        "example": "The missing log entry raised a red flag. — 누락된 로그 기록이 문제 가능성을 알렸습니다."
+      },
+      {
+        "term": "leave nothing to chance",
+        "meaning": "우연에 맡기지 않고 철저히 준비하다",
+        "example": "For patient safety, the team left nothing to chance. — 환자 안전을 위해 팀은 철저히 준비했습니다."
+      },
+      {
+        "term": "set the record straight",
+        "meaning": "잘못 알려진 사실을 바로잡다",
+        "example": "The final report set the record straight about the device failure. — 최종 보고서는 기기 장애에 대한 잘못된 사실을 바로잡았습니다."
+      }
+    ],
+    "readingTitle": "The Review That Changed a Safety Recommendation Into a Real Process",
+    "paragraphs": [
+      "After a software warning was missed during a clinical evaluation, the project team held a formal review. No patient had been harmed, but the missing log entry raised a red flag. The team initially concluded that operators simply needed to be more careful.",
+      "An independent reviewer challenged that conclusion. The evidence suggested that the warning was easy to overlook because it looked similar to a routine message. She compared screenshots from several sessions and found the same hesitation pattern. She recommended that the interface be changed and that every critical warning require an explicit response.",
+      "The reviewer also insisted that responsibility not be placed on one operator alone. It was essential that the process include technical controls, training, and a clear escalation route. In British-style wording, the report stated that all staff should receive a short simulation before using the update.",
+      "The team translated each recommendation into an owner and a deadline. Designers would revise the warning, engineers would add an event log, and trainers would create two realistic scenarios. They also defined success: operators had to recognize and respond to every critical warning during simulation. The updated protocol recommended checking the log at the end of every session.",
+      "A month later, the simulation revealed another unclear message before release. The team had left nothing to chance: it corrected the wording, repeated the test, and documented the result. The review set the record straight by showing that safety depends not only on careful individuals but also on systems designed to support them."
+    ],
+    "translations": [
+      "임상 평가 중 소프트웨어 경고를 놓친 뒤 팀은 공식 검토를 열었습니다. 환자 피해는 없었지만 로그 기록 누락이 문제 신호가 되었고, 처음에는 운영자가 더 주의하면 된다고 결론 내렸습니다.",
+      "독립 검토자는 경고가 일반 메시지와 비슷해 놓치기 쉽다는 근거를 제시했습니다. 여러 세션의 화면을 비교해 같은 망설임 패턴도 확인했습니다. 인터페이스를 바꾸고 모든 중요 경고에 명시적 응답을 요구하도록 권고했습니다.",
+      "책임을 한 운영자에게만 두지 말고 기술적 통제, 교육, 명확한 상위 보고 경로를 포함해야 한다고 강조했습니다. 보고서는 모든 직원이 업데이트 사용 전 짧은 시뮬레이션을 받아야 한다고 적었습니다.",
+      "팀은 각 권고에 담당자와 마감일을 정했습니다. 디자이너는 경고를 수정하고 엔지니어는 이벤트 로그를 추가하며 교육 담당자는 현실적인 시나리오 두 개를 만들었습니다. 시뮬레이션에서 모든 중요 경고를 인식하고 응답하는 것을 성공 기준으로 정했습니다.",
+      "한 달 뒤 시뮬레이션에서 출시 전 또 다른 불명확한 메시지를 찾았습니다. 문구를 고치고 시험을 반복해 결과를 기록했으며, 안전은 개인의 주의뿐 아니라 개인을 지원하는 시스템에 달려 있음을 분명히 했습니다."
+    ],
+    "vocabulary": [
+      {"term": "formal", "partOfSpeech": "adjective", "meaning": "공식적인", "context": "정해진 절차에 따른 검토"},
+      {"term": "concluded", "partOfSpeech": "verb", "meaning": "결론 내렸다", "context": "초기 원인을 판단함"},
+      {"term": "independent", "partOfSpeech": "adjective", "meaning": "독립적인", "context": "팀과 분리된 검토자"},
+      {"term": "challenged", "partOfSpeech": "verb", "meaning": "이의를 제기했다", "context": "초기 결론을 다시 검토함"},
+      {"term": "explicit", "partOfSpeech": "adjective", "meaning": "명시적인", "context": "분명한 사용자 응답"},
+      {"term": "escalation", "partOfSpeech": "noun", "meaning": "상위 보고", "context": "문제를 더 높은 책임자에게 전달"},
+      {"term": "translated", "partOfSpeech": "verb", "meaning": "구체적 행동으로 전환했다", "context": "권고를 업무로 바꿈"},
+      {"term": "deadline", "partOfSpeech": "noun", "meaning": "마감일", "context": "개선 작업 완료 시점"},
+      {"term": "simulation", "partOfSpeech": "noun", "meaning": "모의 훈련", "context": "실제와 유사한 시험 상황"},
+      {"term": "documented", "partOfSpeech": "verb", "meaning": "기록했다", "context": "시험 결과를 문서로 남김"}
+    ],
+    "quiz": [
+      {
+        "question": "The reviewer recommended that the test _____ repeated.",
+        "choices": ["is", "be", "was", "being"],
+        "answer": 1,
+        "explanation": "공식 권고를 나타내는 that절의 mandative subjunctive에서는 주어와 관계없이 동사원형 be를 사용합니다."
+      },
+      {
+        "question": "It is essential that every operator _____ the limit.",
+        "choices": ["understands", "understand", "understood", "understanding"],
+        "answer": 1,
+        "explanation": "essential 뒤 요구되는 행동을 나타내는 that절이므로 3인칭 단수 -s 없이 원형 understand를 씁니다."
+      },
+      {
+        "question": "Which is a natural alternative in British English?",
+        "choices": ["They recommended that it should be checked.", "They recommended it to checked.", "They recommended that it checks.", "They recommended should checking it."],
+        "answer": 0,
+        "explanation": "영국식 영어에서는 권고 that절에 should + 동사원형을 자연스럽게 사용할 수 있습니다."
+      },
+      {
+        "question": "The evidence suggests that the model _____ unstable.",
+        "choices": ["be", "is", "being", "should be tested"],
+        "answer": 1,
+        "explanation": "여기서 suggest는 행동을 제안하는 것이 아니라 현재 사실을 시사하므로 일반 시제 is를 사용합니다."
+      },
+      {
+        "question": "To “raise a red flag” means to _____.",
+        "choices": ["complete a routine task", "signal a possible problem", "remove a safety record", "approve a final result"],
+        "answer": 1,
+        "explanation": "raise a red flag는 주의가 필요한 위험이나 문제 가능성을 알린다는 뜻입니다."
+      },
+      {
+        "question": "What was the team's first explanation for the missed warning?",
+        "choices": ["The interface was perfect.", "Operators needed to be more careful.", "The event log contained too much detail.", "Patients had ignored instructions."],
+        "answer": 1,
+        "explanation": "초기에는 시스템보다 운영자 개인의 주의 부족을 원인으로 보았습니다."
+      },
+      {
+        "question": "Why did the reviewer challenge that conclusion?",
+        "choices": ["The warning resembled a routine message.", "The operator had not received any data.", "The software had no warning function.", "The patient requested a new interface."],
+        "answer": 0,
+        "explanation": "중요 경고가 일반 메시지와 비슷해 시스템적으로 놓치기 쉬운 설계였기 때문입니다."
+      },
+      {
+        "question": "What did the reviewer say the process should include?",
+        "choices": ["Only personal attention", "Technical controls, training, and escalation", "Fewer written records", "One operator with all responsibility"],
+        "answer": 1,
+        "explanation": "개인 주의만 요구하지 않고 기술적 통제, 교육, 명확한 상위 보고 경로를 함께 포함하도록 했습니다."
+      },
+      {
+        "question": "How were recommendations made actionable?",
+        "choices": ["They remained general advice.", "Each received an owner and deadline.", "The team delayed them indefinitely.", "Only the reviewer could act."],
+        "answer": 1,
+        "explanation": "각 권고를 담당자와 완료 시점이 있는 구체적인 업무로 전환했습니다."
+      },
+      {
+        "question": "What is the reading's main conclusion?",
+        "choices": ["Safety depends only on careful individuals.", "Warnings should look like routine messages.", "Safe systems must support individuals with controls and clear processes.", "Simulations are unnecessary before release."],
+        "answer": 2,
+        "explanation": "안전은 개인의 주의뿐 아니라 실수를 줄이고 대응을 돕는 기술·교육·절차의 결합에 달려 있습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Why is 'be more careful' often an incomplete safety recommendation?",
+      "Which recommendations in your work need a named owner and deadline?",
+      "How can an interface support people without replacing professional judgment?",
+      "When should an independent reviewer challenge a team's conclusion?",
+      "What should a realistic safety simulation include?"
+    ],
+    "rolePlay": {
+      "scenario": "A review committee is discussing a warning that an operator missed.",
+      "learnerRole": "Present formal recommendations for interface, training, logging, and escalation changes.",
+      "coachRole": "Act as the committee chair and ask why each recommendation is necessary.",
+      "goal": "Use mandative subjunctive, British should structures, and recommendation verbs accurately."
+    }
+  },
+  {
+    "date": "2026-09-27",
+    "title": "Daily English — 2026-09-27",
+    "grammarTopic": "Phrasal Verbs: Meaning, Word Order, and Objects",
+    "grammar": {
+      "title": "Phrasal Verbs: 동사와 particle의 결합을 문장 속에서 다루기",
+      "summary": "구동사는 동사와 particle이 결합해 새로운 의미를 만듭니다. 목적어를 사이에 넣을 수 있는지, 대명사의 위치가 어디인지, 전치사가 하나 더 필요한지를 구분해야 자연스럽고 정확하게 사용할 수 있습니다.",
+      "points": [
+        {
+          "title": "자동사 구동사: 목적어 없이 완성",
+          "explanation": "break down, show up, log in처럼 목적어 없이 의미가 완성되는 구동사가 있습니다. 동사와 particle을 분리할 수 없고, 뒤에 관련 명사를 연결하려면 별도의 전치사가 필요할 수 있습니다.",
+          "examples": [
+            "The printer broke down during setup. — 설정 중 프린터가 고장 났습니다.",
+            "Only three participants showed up on time. — 참가자 세 명만 제시간에 나타났습니다.",
+            "Please log in before the session begins. — 세션 시작 전에 로그인해 주세요.",
+            "The warning popped up again. — 경고가 다시 화면에 나타났습니다."
+          ]
+        },
+        {
+          "title": "분리 가능한 타동사 구동사",
+          "explanation": "turn on, set up, write down처럼 목적어가 명사이면 동사와 particle 사이 또는 뒤에 둘 수 있습니다. 목적어가 대명사이면 반드시 가운데에 놓아야 합니다.",
+          "examples": [
+            "Turn on the device. / Turn the device on. — 기기를 켜세요.",
+            "We set up the new account. / We set the new account up. — 새 계정을 설정했습니다.",
+            "Please write the code down. — 코드를 적어 두세요.",
+            "The device is off. Turn it on. — 기기가 꺼져 있습니다. 그것을 켜세요."
+          ]
+        },
+        {
+          "title": "분리할 수 없는 타동사 구동사",
+          "explanation": "look after, run into, come across처럼 목적어가 항상 particle 뒤에 오는 구동사도 있습니다. 대명사도 가운데 넣지 않으며, 의미를 동사와 전치사의 단순 합으로 해석하기 어려운 경우가 많습니다.",
+          "examples": [
+            "Who will look after the equipment? — 누가 장비를 관리할 건가요?",
+            "We ran into a permissions problem. — 권한 문제를 우연히 만났습니다.",
+            "I came across an older installation guide. — 이전 설치 안내서를 우연히 발견했습니다.",
+            "The technician dealt with it quickly. — 기술자가 그 문제를 신속히 처리했습니다."
+          ]
+        },
+        {
+          "title": "세 단어 구동사",
+          "explanation": "look forward to, come up with, put up with처럼 동사 뒤에 두 particle이 이어지는 표현은 보통 분리하지 않습니다. 마지막 요소가 전치사이면 뒤에 명사·대명사·동명사가 옵니다.",
+          "examples": [
+            "We came up with a temporary solution. — 임시 해결책을 생각해 냈습니다.",
+            "I look forward to trying the new version. — 새 버전을 사용해 보기를 기대합니다.",
+            "We cannot put up with repeated data loss. — 반복적인 데이터 손실을 계속 참을 수 없습니다.",
+            "The guide walks users through the setup. — 안내서는 사용자가 설정을 단계별로 진행하도록 돕습니다."
+          ]
+        },
+        {
+          "title": "문맥으로 의미와 격식 판단",
+          "explanation": "구동사는 하나의 형태가 여러 뜻을 가질 수 있습니다. 공식 문서에서는 investigate, postpone 같은 단일 동사가 더 간결할 수 있지만, 대화와 사용자 안내에서는 look into, put off 같은 구동사가 자연스럽습니다.",
+          "examples": [
+            "We will look into the connection issue. — 연결 문제를 조사하겠습니다.",
+            "The update was put off until Monday. — 업데이트가 월요일까지 연기되었습니다.",
+            "Please back up your files before proceeding. — 진행하기 전에 파일을 백업하세요.",
+            "After two hours, we decided to call it a day. — 두 시간 후 그날 작업을 마치기로 했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "up and running",
+        "meaning": "정상적으로 작동 중인",
+        "example": "The new system was up and running before lunch. — 새 시스템은 점심 전에 정상 작동했습니다."
+      },
+      {
+        "term": "iron out the kinks",
+        "meaning": "초기의 작은 문제들을 해결하다",
+        "example": "We need one more test to iron out the kinks. — 초기 문제를 해결하려면 시험이 한 번 더 필요합니다."
+      },
+      {
+        "term": "call it a day",
+        "meaning": "그날의 일을 마치다",
+        "example": "Once the backup was verified, we called it a day. — 백업 확인 후 그날 일을 마쳤습니다."
+      }
+    ],
+    "readingTitle": "How a Difficult Setup Became a Useful Troubleshooting Guide",
+    "paragraphs": [
+      "A volunteer group bought a new projector for weekend classes. They expected to set it up in twenty minutes, but the device would not connect to the room's wireless network. A warning kept popping up, and the printed guide told users only to \"check the settings.\"",
+      "The group first turned the projector off and turned it on again. When that failed, Mina wrote down each step they had already tried. Another volunteer came across an older online guide that mentioned a permissions screen hidden inside the network menu.",
+      "They logged in as an administrator and found that guest devices were blocked by default. After the building manager approved access, the projector connected, but the sound still did not work. The group then ran into a cable problem and had to come up with a temporary solution using a portable speaker.",
+      "By late afternoon, the projector was finally up and running. Instead of calling it a day immediately, Mina created a one-page guide. It walked users through network access, sound output, cable checks, and the correct order for restarting equipment. Screenshots replaced vague instructions, and a short checklist showed when users should contact the building manager. It also listed the equipment owner.",
+      "The next weekend, a different volunteer completed the setup without assistance. The team still had to iron out a few kinks, but the guide had turned one frustrating experience into reusable knowledge. Good troubleshooting does not merely fix the current problem; it records enough detail so that the next person can solve it faster."
+    ],
+    "translations": [
+      "자원봉사단은 주말 수업용 새 프로젝터를 구입했습니다. 20분이면 설치할 것으로 예상했지만 무선망에 연결되지 않았고 경고가 계속 나타났으며 인쇄 설명서는 설정을 확인하라는 말뿐이었습니다.",
+      "전원을 껐다 켜도 해결되지 않자 Mina는 이미 시도한 단계를 기록했습니다. 다른 봉사자가 네트워크 메뉴 안에 숨은 권한 화면을 언급한 이전 온라인 안내서를 발견했습니다.",
+      "관리자로 로그인하니 손님 기기가 기본 차단되어 있었습니다. 건물 관리자의 승인 후 연결은 됐지만 소리가 나오지 않았고, 케이블 문제에는 휴대용 스피커라는 임시 해결책을 생각해 냈습니다.",
+      "늦은 오후 프로젝터가 정상 작동했습니다. Mina는 바로 일을 끝내지 않고 네트워크 접근, 음향 출력, 케이블 점검, 재시작 순서를 단계별로 안내하는 한 장짜리 문서를 만들고 모호한 문구를 화면 캡처로 바꿨습니다. 건물 관리자에게 연락해야 할 시점과 장비 담당자도 표시했습니다.",
+      "다음 주 다른 봉사자는 도움 없이 설정을 완료했습니다. 작은 문제는 더 해결해야 했지만 한 번의 답답한 경험이 재사용 가능한 지식이 되었습니다. 좋은 문제 해결은 현재 문제를 고치는 데서 끝나지 않고 다음 사람이 더 빨리 해결하도록 기록합니다."
+    ],
+    "vocabulary": [
+      {"term": "projector", "partOfSpeech": "noun", "meaning": "프로젝터", "context": "화면을 투사하는 장비"},
+      {"term": "wireless", "partOfSpeech": "adjective", "meaning": "무선의", "context": "케이블 없는 네트워크"},
+      {"term": "popping", "partOfSpeech": "verb", "meaning": "갑자기 나타나는", "context": "화면에 반복 표시되는 경고"},
+      {"term": "permissions", "partOfSpeech": "noun", "meaning": "권한 설정", "context": "네트워크 접근 허용"},
+      {"term": "administrator", "partOfSpeech": "noun", "meaning": "관리자", "context": "설정 권한이 있는 계정"},
+      {"term": "blocked", "partOfSpeech": "adjective", "meaning": "차단된", "context": "접근할 수 없게 설정된"},
+      {"term": "portable", "partOfSpeech": "adjective", "meaning": "휴대용의", "context": "옮겨 사용할 수 있는 스피커"},
+      {"term": "vague", "partOfSpeech": "adjective", "meaning": "모호한", "context": "구체적 단계가 없는 안내"},
+      {"term": "assistance", "partOfSpeech": "noun", "meaning": "도움", "context": "다른 사람의 지원"},
+      {"term": "reusable", "partOfSpeech": "adjective", "meaning": "재사용 가능한", "context": "다음 설정에도 활용되는 지식"}
+    ],
+    "quiz": [
+      {
+        "question": "The printer _____ during setup.",
+        "choices": ["broke down", "broke it down", "broke down it", "was break down"],
+        "answer": 0,
+        "explanation": "break down은 목적어 없이 '고장 나다'라는 의미가 완성되는 자동사 구동사입니다."
+      },
+      {
+        "question": "The device is off. Please _____.",
+        "choices": ["turn on it", "turn it on", "turn it", "on it turn"],
+        "answer": 1,
+        "explanation": "분리 가능한 구동사의 목적어가 대명사 it이면 반드시 동사와 particle 사이에 둡니다."
+      },
+      {
+        "question": "We _____ a permissions problem.",
+        "choices": ["ran a problem into", "ran into", "ran it into", "into ran"],
+        "answer": 1,
+        "explanation": "run into는 '우연히 문제를 만나다'라는 분리 불가능한 구동사이므로 목적어가 into 뒤에 옵니다."
+      },
+      {
+        "question": "The team came up _____ a temporary solution.",
+        "choices": ["to", "for", "with", "about"],
+        "answer": 2,
+        "explanation": "come up with는 '해결책이나 아이디어를 생각해 내다'라는 세 단어 구동사입니다."
+      },
+      {
+        "question": "If a system is “up and running,” it is _____.",
+        "choices": ["being delivered", "working normally", "permanently damaged", "waiting for approval"],
+        "answer": 1,
+        "explanation": "up and running은 설치나 수리 후 시스템이 정상적으로 작동 중인 상태를 뜻합니다."
+      },
+      {
+        "question": "Why was the printed guide unhelpful?",
+        "choices": ["It contained too many screenshots.", "It only said to check the settings.", "It explained the permissions menu clearly.", "It was written for administrators."],
+        "answer": 1,
+        "explanation": "구체적인 위치나 절차 없이 설정을 확인하라는 모호한 안내만 제공했습니다."
+      },
+      {
+        "question": "What solved the wireless connection problem?",
+        "choices": ["Replacing the projector", "Approving guest-device access", "Buying a new cable", "Turning off the sound"],
+        "answer": 1,
+        "explanation": "기본적으로 차단된 손님 기기의 네트워크 접근을 건물 관리자가 승인하자 연결되었습니다."
+      },
+      {
+        "question": "How did the group handle the sound problem temporarily?",
+        "choices": ["It cancelled the class.", "It used a portable speaker.", "It changed the network password.", "It printed a longer manual."],
+        "answer": 1,
+        "explanation": "케이블 문제를 바로 해결하지 못해 휴대용 스피커를 임시 해결책으로 사용했습니다."
+      },
+      {
+        "question": "What made Mina's new guide more useful?",
+        "choices": ["It removed the restart order.", "It used screenshots and specific steps.", "It required administrator help every time.", "It focused only on wireless access."],
+        "answer": 1,
+        "explanation": "모호한 설명 대신 화면 캡처와 네트워크·소리·케이블·재시작의 구체적인 순서를 제공했습니다."
+      },
+      {
+        "question": "What is the reading's main lesson?",
+        "choices": ["Troubleshooting should end as soon as a device works.", "Useful troubleshooting records help the next person solve the problem.", "Printed guides are never helpful.", "Temporary solutions should become permanent."],
+        "answer": 1,
+        "explanation": "현재 문제를 해결한 과정을 명확히 기록하면 개인 경험이 다음 사람도 활용할 수 있는 재사용 지식이 됩니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Which phrasal verbs do you use most often when explaining technical problems?",
+      "What makes a troubleshooting guide genuinely reusable?",
+      "When should a temporary solution be accepted, and when should it be replaced immediately?",
+      "Have you ever solved a problem using an older guide or another person's notes?",
+      "Do phrasal verbs make technical English easier or harder for you? Why?"
+    ],
+    "rolePlay": {
+      "scenario": "A projector will not connect or produce sound ten minutes before a class.",
+      "learnerRole": "Guide the coach through checks, ask what has already been tried, and propose a backup.",
+      "coachRole": "Act as a volunteer following the instructions and report each result.",
+      "goal": "Use separable, inseparable, and three-word phrasal verbs accurately while solving the problem."
+    }
+  }
+]
