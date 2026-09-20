@@ -16,3 +16,7 @@ Answer-sheet verification
 Text/OCR
 - The original cropped photo remains the primary source shown for each item.
 - OCR text is auxiliary. Where a photographed number was cropped or OCR did not reliably read it, the displayed quiz question number is inferred from the verified corrected sequence.
+
+Answer-sheet visual re-check:
+- Set 1: answers 1-70 visually checked against photographed ANSWER slides.
+- Set 2: answers 1-70 visually checked against photographed ANSWER slides. Corrections from automated extraction: Q27=A, Q49=B, Q60=B.
