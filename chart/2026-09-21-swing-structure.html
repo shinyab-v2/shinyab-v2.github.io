@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>차트 공부 #20 · Swing Structure Deep Dive</title>
+<link rel="stylesheet" href="chart.css?v=20260920-1"><link rel="stylesheet" href="lesson-static.css?v=20260920-1">
+<style>.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.flow>div{padding:14px;border:1px solid #dbe4ef;border-radius:14px;background:#f8fafc}.chart-shell svg{width:100%;height:auto;display:block}.navpair{display:flex;justify-content:space-between;margin:24px 0}.navpair a{padding:10px 14px;border:1px solid #cbd5e1;border-radius:10px;text-decoration:none;font-weight:800}</style>
+</head><body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark">C</span><span>Chart Study</span></a><nav class="topnav"><a href="./">전체 자료</a><a class="wide" href="../">학습 허브</a></nav></header>
+<main class="lesson-static">
+<section class="lesson-head"><a class="back" href="./">← 전체 자료</a><p class="eyebrow">2026.09.21 · CHART STUDY #20</p>
+<h1>Swing Structure Deep Dive<br>유효한 Swing High·Low와 Pivot 확정</h1>
+<p class="summary">작은 흔들림을 모두 Swing으로 잡지 않고, 실제 추세 구조를 만드는 의미 있는 Pivot을 골라 HH·HL·LH·LL로 읽는 방법을 훈련합니다.</p>
+<div class="meta"><span>Price Action</span><span>30~35분</span><span>난이도 ★★★★☆</span><span>교육용 합성 차트</span></div></section>
+<div class="chart-shell">
+<svg viewBox="0 0 1500 820" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect width="1500" height="820" fill="#f8fafc"/><rect x="30" y="30" width="1440" height="760" rx="24" fill="#fff" stroke="#dbe4ef"/>
+<text x="70" y="85" font-family="sans-serif" font-size="34" font-weight="900" fill="#0f172a">Swing 구조 읽기 · 작은 흔들림과 의미 있는 Pivot 구분</text>
+<text x="70" y="120" font-family="sans-serif" font-size="22" fill="#64748b">Swing은 하루 고가/저가가 아니라 방향이 실제로 바뀐 구조적 전환점입니다.</text>
+<g stroke="#e5e7eb"><line x1="90" y1="200" x2="1080" y2="200"/><line x1="90" y1="300" x2="1080" y2="300"/><line x1="90" y1="400" x2="1080" y2="400"/><line x1="90" y1="500" x2="1080" y2="500"/></g>
+<path d="M110 470 C170 430 215 350 270 325 S365 375 410 430 S500 500 555 450 S625 325 690 290 S780 320 825 385 S910 455 975 405 S1030 300 1060 270" fill="none" stroke="#2563eb" stroke-width="7"/>
+<path d="M110 450 C250 420 390 405 520 390 S790 360 1060 335" fill="none" stroke="#f97316" stroke-width="4"/>
+<text x="948" y="322" font-family="sans-serif" font-size="20" font-weight="800" fill="#f97316">MA20</text>
+<circle cx="270" cy="325" r="18" fill="#0f766e"/><circle cx="555" cy="450" r="18" fill="#dc2626"/><circle cx="690" cy="290" r="18" fill="#0f766e"/><circle cx="975" cy="405" r="18" fill="#dc2626"/>
+<text x="195" y="285" font-family="sans-serif" font-size="22" font-weight="900" fill="#047857">Swing High 1</text><text x="465" y="495" font-family="sans-serif" font-size="22" font-weight="900" fill="#b91c1c">Swing Low 1</text><text x="615" y="250" font-family="sans-serif" font-size="22" font-weight="900" fill="#047857">Swing High 2</text><text x="885" y="450" font-family="sans-serif" font-size="22" font-weight="900" fill="#b91c1c">Swing Low 2</text>
+<line x1="270" y1="325" x2="690" y2="290" stroke="#059669" stroke-width="4" stroke-dasharray="12 8"/><line x1="555" y1="450" x2="975" y2="405" stroke="#2563eb" stroke-width="4" stroke-dasharray="12 8"/>
+<text x="355" y="275" font-family="sans-serif" font-size="22" font-weight="800" fill="#047857">Higher High</text><text x="655" y="485" font-family="sans-serif" font-size="22" font-weight="800" fill="#1d4ed8">Higher Low</text>
+<rect x="1120" y="170" width="300" height="400" rx="18" fill="#f8fafc" stroke="#dbe4ef"/><text x="1145" y="215" font-family="sans-serif" font-size="27" font-weight="900" fill="#0f3b78">유효 Swing 판정</text>
+<g font-family="sans-serif" font-size="21" fill="#0f172a"><text x="1145" y="265">① 전후로 방향이 바뀌었나?</text><text x="1145" y="310">② 직전 Pivot과 거리 충분?</text><text x="1145" y="355">③ 지지·저항/MA와 겹치나?</text><text x="1145" y="400">④ 거래량 반응이 있나?</text><text x="1145" y="445">⑤ 이후 구조를 만들었나?</text></g>
+<rect x="1138" y="485" width="264" height="62" rx="12" fill="#ecfdf5" stroke="#86efac"/><text x="1160" y="520" font-family="sans-serif" font-size="20" font-weight="900" fill="#047857">HH + HL = 상승 구조</text>
+<rect x="90" y="600" width="990" height="135" rx="16" fill="#fff7ed" stroke="#fed7aa"/><text x="115" y="640" font-family="sans-serif" font-size="25" font-weight="900" fill="#c2410c">작은 노이즈를 모두 Swing으로 잡지 않는다</text><text x="115" y="682" font-family="sans-serif" font-size="21" fill="#475569">“이 Pivot을 기준으로 다음 HH/LL 구조가 형성됐는가?”를 보면 구조적 Swing을 고르기 쉽습니다.</text>
+</svg>
+<div class="chart-tools"><span>교육용 합성 차트 · 실제 종목 데이터 아님</span><span>SVG 벡터</span></div></div>
+<div class="article"><article class="content">
+<h2>1. Swing을 정확히 고르는 법</h2><p>#10에서 Price Swing과 RSI Swing을 배웠다면, 이제는 <strong>어떤 고점·저점을 Swing으로 인정할지</strong>가 핵심입니다. 차트에는 수많은 고가와 저가가 있지만 전부 Swing은 아닙니다. 이후 가격 구조의 기준점이 되는 Pivot만 골라야 합니다.</p>
+<div class="flow"><div><strong>Direction Change</strong><p>하락→상승 또는 상승→하락으로 실제 방향이 바뀌었는가?</p></div><div><strong>Distance</strong><p>직전 Pivot과 가격·시간 거리가 충분한가?</p></div><div><strong>Context</strong><p>지지·저항, MA20/60, 이전 고점·저점과 겹치는가?</p></div><div><strong>Consequence</strong><p>그 Pivot 이후 HH/HL 또는 LH/LL이 실제 형성됐는가?</p></div></div>
+<h2>2. HH·HL·LH·LL</h2><table><thead><tr><th>구조</th><th>의미</th></tr></thead><tbody><tr><td>Higher High</td><td>이전 Swing High보다 높은 고점</td></tr><tr><td>Higher Low</td><td>이전 Swing Low보다 높은 저점</td></tr><tr><td>Lower High</td><td>이전 Swing High보다 낮은 고점</td></tr><tr><td>Lower Low</td><td>이전 Swing Low보다 낮은 저점</td></tr></tbody></table>
+<h2>3. 실제 차트 적용 순서</h2><ol><li>큰 저점 두 개를 찾습니다.</li><li>그 사이의 반등 고점을 찾습니다.</li><li>저점은 HL/LL, 고점은 HH/LH인지 따로 비교합니다.</li><li>현재 가격이 가장 최근 Swing High를 돌파했는지 봅니다.</li><li>RSI는 같은 날짜의 Swing끼리 비교합니다.</li></ol>
+<div class="callout"><strong>핵심:</strong> Higher Low 하나만으로 상승 추세는 아닙니다. 직전 Lower High를 돌파해 고점 구조까지 바뀌어야 추세 전환 신뢰도가 높아집니다.</div>
+<h2>4. Pivot은 약간 늦게 확정된다</h2><p>Swing Low는 그 당일에는 확정하기 어렵습니다. 이후 반등이 나타나야 의미 있는 저점이었음을 알 수 있습니다. Swing 분석은 예측보다 <strong>구조 확인</strong>에 더 적합합니다.</p>
+<h2>5. 흔한 실수</h2><ul><li>작은 하루 반등도 Swing High로 표시</li><li>RSI와 가격의 서로 다른 날짜를 연결</li><li>Higher Low만 보고 추세 전환 확정</li><li>일봉 Pivot과 60분 Pivot을 같은 급으로 비교</li></ul>
+<h2>참고</h2><p><a href="https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma" target="_blank" rel="noopener">Fidelity · Simple Moving Average</a></p>
+</article><aside class="sidebox"><h3>오늘의 체크리스트</h3><ul class="checklist"><li>전후 방향이 실제로 바뀌었는가?</li><li>직전 Pivot과 거리·시간이 충분한가?</li><li>지지·저항/MA와 겹치는가?</li><li>HH·HL 또는 LH·LL 구조를 만들었는가?</li><li>RSI와 비교할 때 같은 날짜인가?</li></ul><h3 style="margin-top:24px">복습 퀴즈</h3><div class="quiz"><details><summary>Q1. 모든 일중 고점·저점이 Swing인가?</summary><p>아닙니다. 이후 구조의 기준점이 되는 의미 있는 방향 전환점이 중요합니다.</p></details><details><summary>Q2. Higher Low 하나면 상승 추세인가?</summary><p>아닙니다. 직전 Lower High 돌파 등 고점 구조 변화도 필요합니다.</p></details><details><summary>Q3. Pivot은 즉시 확정되는가?</summary><p>보통 이후 반대 방향 움직임이 나타나야 확인됩니다.</p></details><details><summary>Q4. RSI Swing 연결 원칙은?</summary><p>가격 Swing과 같은 시점의 RSI Swing을 비교합니다.</p></details><details><summary>Q5. 상승 구조 기본형은?</summary><p>Higher High + Higher Low입니다.</p></details></div></aside></div>
+<div class="navpair"><a href="2026-09-18-trade-plan.html">← 이전 학습</a><a href="2026-09-22-hidden-divergence.html">다음 학습 →</a></div>
+</main></body></html>
