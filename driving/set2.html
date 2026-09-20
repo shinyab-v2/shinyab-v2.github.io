@@ -1,128 +1,13 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Malaysia Driving Theory Quiz — Set 2</title>
 <style>
-:root { --text:#f8fafc; --muted:#cbd5e1; --accent:#38bdf8; --ok:#22c55e; --bad:#ef4444; --btn:#334155; --border:#475569; }
-* { box-sizing:border-box; }
-body { margin:0; font-family:Arial, Helvetica, sans-serif; background:linear-gradient(180deg,#0b1220,#111827); color:var(--text); }
-.wrap { max-width:1100px; margin:0 auto; padding:24px; }
-.header { display:flex; gap:16px; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; margin-bottom:18px; }
-.title h1 { margin:0 0 8px; font-size:clamp(24px,4vw,36px); }
-.title p { margin:4px 0; color:var(--muted); }
-.toolbar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
-.toolbar button,.toolbar label { background:var(--btn); color:var(--text); border:1px solid var(--border); border-radius:999px; padding:10px 14px; cursor:pointer; }
-.toolbar input { accent-color:var(--accent); }
-.card { background:rgba(17,24,39,.92); border:1px solid rgba(148,163,184,.22); border-radius:20px; padding:18px; box-shadow:0 8px 24px rgba(0,0,0,.25); }
-.progress { display:flex; justify-content:space-between; gap:12px; align-items:center; margin-bottom:12px; }
-.bar { height:10px; background:#1e293b; border-radius:999px; overflow:hidden; flex:1; border:1px solid #334155; }
-.bar>div { height:100%; background:linear-gradient(90deg,#38bdf8,#22c55e); width:0%; }
-.main { display:grid; grid-template-columns:1.2fr .8fr; gap:18px; }
-@media (max-width:900px) { .main { grid-template-columns:1fr; } }
-.figure { background:#0b1325; border-radius:16px; padding:12px; text-align:center; border:1px solid rgba(148,163,184,.2); }
-.qshot { width:100%; aspect-ratio:10/7; background-repeat:no-repeat; background-size:100% 1000%; border-radius:12px; background-color:#fff; }
-.meta { color:var(--muted); font-size:14px; margin-top:8px; }
-.stem { font-size:20px; line-height:1.45; margin:8px 0 14px; }
-.guideko { display:none; padding:12px; background:#132035; border:1px solid #26476a; border-radius:14px; color:#dbeafe; margin:10px 0 14px; line-height:1.5; }
-.options { display:grid; gap:10px; }
-.option { width:100%; text-align:left; padding:14px 16px; border-radius:14px; border:1px solid var(--border); background:#162033; color:var(--text); cursor:pointer; font-size:16px; line-height:1.45; }
-.option:hover { border-color:#93c5fd; }
-.option.selected { outline:2px solid var(--accent); border-color:#67e8f9; }
-.option.correct { background:rgba(34,197,94,.16); border-color:rgba(34,197,94,.7); }
-.option.incorrect { background:rgba(239,68,68,.16); border-color:rgba(239,68,68,.7); }
-.actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
-.actions button { background:var(--btn); color:var(--text); border:1px solid var(--border); border-radius:12px; padding:12px 16px; cursor:pointer; font-size:15px; }
-.actions button.primary { background:#0284c7; border-color:#0ea5e9; }
-.feedback { margin-top:16px; display:none; border-radius:16px; padding:16px; line-height:1.6; }
-.feedback.ok { display:block; background:rgba(34,197,94,.15); border:1px solid rgba(34,197,94,.4); }
-.feedback.bad { display:block; background:rgba(239,68,68,.15); border:1px solid rgba(239,68,68,.4); }
-.feedback h3 { margin:0 0 8px; }
-.feedback .sub { color:var(--muted); }
-.gridnav { margin-top:20px; display:grid; grid-template-columns:repeat(auto-fill,minmax(46px,1fr)); gap:8px; }
-.gridnav button { padding:10px 0; border-radius:12px; background:#1f2937; color:var(--text); border:1px solid var(--border); cursor:pointer; }
-.gridnav button.active { outline:2px solid #67e8f9; }
-.gridnav button.done { background:#0f5132; border-color:#22c55e; }
-.gridnav button.wrong { background:#5b1d1d; border-color:#ef4444; }
-.note { margin-top:16px; color:var(--muted); font-size:14px; line-height:1.5; }
-.small { font-size:13px; color:#cbd5e1; }
-.ocr { display:none; margin-top:10px; padding:10px 12px; background:#0f172a; border:1px dashed #475569; border-radius:12px; color:#cbd5e1; white-space:pre-wrap; font-size:14px; }
-.footer { margin-top:22px; color:var(--muted); font-size:13px; }
-</style>
-</head>
-<body>
-<div class="wrap">
-  <div class="header">
-    <div class="title">
-      <h1>Malaysia Driving Theory Quiz — Set 2</h1>
-      <p>70 verified questions · corrected duplicate captures</p>
-      <p class="small">English quiz with optional Korean guide and answer explanation.</p>
-    </div>
-    <div class="toolbar">
-      <button onclick="location.href='index.html'">Index</button>
-      <label><input type="checkbox" id="toggleKo" /> Show Korean guide</label>
-      <label><input type="checkbox" id="toggleOcr" /> Show OCR text</label>
-      <button onclick="resetQuiz()">Reset</button>
-    </div>
-  </div>
-  <div class="card">
-    <div class="progress">
-      <div><strong id="counter">Question 1 / 70</strong><div class="small" id="score"></div></div>
-      <div class="bar"><div id="barFill"></div></div>
-    </div>
-    <div class="main">
-      <div class="figure"><div id="qShot" class="qshot" role="img" aria-label="Question image"></div><div class="meta">Original photographed question</div></div>
-      <div>
-        <div class="stem" id="stem"></div>
-        <div class="guideko" id="guideko"></div>
-        <div class="options" id="options"></div>
-        <div class="actions">
-          <button class="primary" onclick="checkAnswer()">Check Answer</button>
-          <button onclick="showAnswerOnly()">Show Answer</button>
-          <button onclick="prevQ()">Previous</button>
-          <button onclick="nextQ()">Next</button>
-        </div>
-        <div id="feedback" class="feedback"></div>
-        <div id="ocrBox" class="ocr"></div>
-      </div>
-    </div>
-    <div class="gridnav" id="gridnav"></div>
-    <div class="note">The photographed slide is the primary source. OCR text is optional support and may contain minor recognition errors.</div>
-  </div>
-  <div class="footer">Answers were mapped by the question numbers shown in the photographed answer sheets.</div>
-</div>
-<script src="data/set2-01.js"></script>
-<script src="data/set2-02.js"></script>
-<script src="data/set2-03.js"></script>
-<script src="data/set2-04.js"></script>
-<script src="data/set2-05.js"></script>
-<script src="data/set2-06.js"></script>
-<script src="data/set2-07.js"></script>
-<script>
-const questions=(window.QUIZ_QUESTIONS||[]).slice().sort((a,b)=>a.id-b.id);
-let idx=0, selected={}, checked={};
-function scoreInfo(){let done=0,correct=0;questions.forEach(q=>{if(checked[q.id]){done++;if(selected[q.id]===q.correct)correct++;}});return{done,correct};}
-function renderGrid(){const grid=document.getElementById('gridnav');grid.innerHTML='';questions.forEach((q,i)=>{const b=document.createElement('button');b.textContent=q.id;if(i===idx)b.classList.add('active');if(checked[q.id])b.classList.add(selected[q.id]===q.correct?'done':'wrong');b.onclick=()=>{idx=i;render();};grid.appendChild(b);});}
-function optionLabel(letter,text){return text?`<strong>${letter}.</strong> ${text}`:`<strong>${letter}.</strong>`;}
-function render(){
- const q=questions[idx]; if(!q)return;
- document.getElementById('counter').textContent=`Question ${q.id} / ${questions.length}`;
- document.getElementById('barFill').style.width=`${(q.id/questions.length)*100}%`;
- const s=scoreInfo();document.getElementById('score').textContent=`Checked: ${s.done} / ${questions.length} · Correct: ${s.correct}`;
- const shot=document.getElementById('qShot');shot.style.backgroundImage=`url("${window.QUIZ_SPRITES[q.spriteKey]}")`;shot.style.backgroundPosition=`center ${(q.tile/9)*100}%`;
- document.getElementById('stem').textContent=q.stem||`Question ${q.id}`;
- const ko=document.getElementById('toggleKo').checked;document.getElementById('guideko').textContent=q.guide_ko||'';document.getElementById('guideko').style.display=ko?'block':'none';
- document.getElementById('ocrBox').textContent=q.raw_ocr||'';document.getElementById('ocrBox').style.display=document.getElementById('toggleOcr').checked?'block':'none';
- const ob=document.getElementById('options');ob.innerHTML='';['A','B','C'].forEach(letter=>{const btn=document.createElement('button');btn.className='option';btn.innerHTML=optionLabel(letter,(q.options&&q.options[letter])||'');if(selected[q.id]===letter)btn.classList.add('selected');if(checked[q.id]){if(letter===q.correct)btn.classList.add('correct');if(selected[q.id]===letter&&letter!==q.correct)btn.classList.add('incorrect');}btn.onclick=()=>{selected[q.id]=letter;if(!checked[q.id])render();};ob.appendChild(btn);});
- const fb=document.getElementById('feedback');if(checked[q.id]){const hasSel=!!selected[q.id],ok=selected[q.id]===q.correct;fb.className='feedback '+(ok?'ok':'bad');fb.innerHTML=`<h3>${hasSel?(ok?'Correct':'Not correct'):'Answer'}</h3><div class="sub">${hasSel?`Your answer: <strong>${selected[q.id]}</strong> · `:''}Correct answer: <strong>${q.correct}</strong></div><p>${q.explanation_en||''}</p>${ko?`<p><strong>한국어 설명:</strong> ${q.explanation_ko||''}</p>`:''}`;}else{fb.className='feedback';fb.innerHTML='';}renderGrid();
-}
-function checkAnswer(){const q=questions[idx];if(!selected[q.id]){alert('Please choose A, B, or C first.');return;}checked[q.id]=true;render();}
-function showAnswerOnly(){checked[questions[idx].id]=true;render();}
-function prevQ(){if(idx>0){idx--;render();}}
-function nextQ(){if(idx<questions.length-1){idx++;render();}}
-function resetQuiz(){if(confirm('Reset all selected answers and results?')){selected={};checked={};idx=0;render();}}
-document.getElementById('toggleKo').addEventListener('change',render);document.getElementById('toggleOcr').addEventListener('change',render);
-window.addEventListener('keydown',e=>{if(['a','A','1'].includes(e.key)){selected[questions[idx].id]='A';render();}if(['b','B','2'].includes(e.key)){selected[questions[idx].id]='B';render();}if(['c','C','3'].includes(e.key)){selected[questions[idx].id]='C';render();}if(e.key==='ArrowRight')nextQ();if(e.key==='ArrowLeft')prevQ();});render();
-</script>
-</body></html>
+:root{--text:#f8fafc;--muted:#cbd5e1;--accent:#38bdf8;--ok:#22c55e;--bad:#ef4444;--btn:#334155;--border:#475569}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#0b1220,#111827);color:var(--text)}.wrap{max-width:1100px;margin:auto;padding:24px}.header{display:flex;gap:16px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;margin-bottom:18px}h1{margin:0 0 8px;font-size:clamp(24px,4vw,36px)}.title p{margin:4px 0;color:var(--muted)}.toolbar{display:flex;gap:10px;flex-wrap:wrap}.toolbar button,.toolbar label{background:var(--btn);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:10px 14px;cursor:pointer}.card{background:#111827;border:1px solid #334155;border-radius:20px;padding:18px;box-shadow:0 8px 24px #0004}.progress{display:flex;gap:12px;align-items:center;margin-bottom:12px}.bar{height:10px;background:#1e293b;border-radius:999px;overflow:hidden;flex:1}.bar>div{height:100%;background:linear-gradient(90deg,#38bdf8,#22c55e)}.main{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}@media(max-width:900px){.main{grid-template-columns:1fr}}.figure{background:#0b1325;border-radius:16px;padding:12px;border:1px solid #334155}.sprite-window{position:relative;overflow:hidden;width:100%;aspect-ratio:4/3;border-radius:12px;background:#000}.sprite-window img{position:absolute;width:1000%;height:700%;max-width:none;max-height:none}.meta,.small,.note{color:var(--muted);font-size:13px}.meta{text-align:center;margin-top:8px}.stem{font-size:20px;line-height:1.45;margin:8px 0 14px}.guideko{display:none;padding:12px;background:#132035;border:1px solid #26476a;border-radius:14px;color:#dbeafe;margin:10px 0 14px;line-height:1.5}.options{display:grid;gap:10px}.option{width:100%;text-align:left;padding:14px 16px;border-radius:14px;border:1px solid var(--border);background:#162033;color:var(--text);cursor:pointer;font-size:16px;line-height:1.45}.option.selected{outline:2px solid var(--accent)}.option.correct{background:#14532d66;border-color:var(--ok)}.option.incorrect{background:#7f1d1d66;border-color:var(--bad)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.actions button{background:var(--btn);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:12px 16px;cursor:pointer}.actions .primary{background:#0284c7}.feedback{margin-top:16px;display:none;border-radius:16px;padding:16px;line-height:1.6}.feedback.ok{display:block;background:#14532d55;border:1px solid #22c55e88}.feedback.bad{display:block;background:#7f1d1d55;border:1px solid #ef444488}.gridnav{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:8px}.gridnav button{padding:10px 0;border-radius:12px;background:#1f2937;color:var(--text);border:1px solid var(--border);cursor:pointer}.gridnav button.active{outline:2px solid #67e8f9}.gridnav button.done{background:#0f5132}.gridnav button.wrong{background:#5b1d1d}.ocr{display:none;margin-top:10px;padding:10px;background:#0f172a;border:1px dashed #475569;border-radius:12px;color:#cbd5e1;font-size:14px}.note{margin-top:16px;line-height:1.55}
+</style></head><body><div class="wrap"><div class="header"><div class="title"><h1>Malaysia Driving Theory Quiz — Set 2</h1><p>70 unique questions · duplicate photos removed · answer-key numbering verified</p><p class="small">English first; optional Korean guide and answer explanation.</p></div><div class="toolbar"><button onclick="location.href='index.html'">Index</button><label><input type="checkbox" id="toggleKo"> Show Korean guide</label><label><input type="checkbox" id="toggleOcr"> Show OCR text</label><button onclick="resetQuiz()">Reset</button></div></div><div class="card"><div class="progress"><div><strong id="counter"></strong><div class="small" id="score"></div></div><div class="bar"><div id="barFill"></div></div></div><div class="main"><div class="figure"><div class="sprite-window"><img id="spriteImg" src="sprites/set2.svg" alt="Question photo"></div><div class="meta">Corrected original photo mapping · Question <span id="photoNo"></span></div></div><div><div class="stem" id="stem"></div><div class="guideko" id="guideko"></div><div class="options" id="options"></div><div class="actions"><button class="primary" onclick="checkAnswer()">Check Answer</button><button onclick="showAnswerOnly()">Show Answer</button><button onclick="prevQ()">Previous</button><button onclick="nextQ()">Next</button></div><div id="feedback" class="feedback"></div><div id="ocrBox" class="ocr"></div></div></div><div class="gridnav" id="gridnav"></div><div class="note">The question order follows the slide number shown in the photos, not the raw camera-file order. Duplicate captures were removed before matching the photographed answer key.</div></div></div>
+<script src="data/set2.js"></script><script>
+const questions=(window.QUIZ_QUESTIONS||[]).slice().sort((a,b)=>a.id-b.id);let idx=0,selected={},checked={};
+function scoreInfo(){let d=0,c=0;questions.forEach(q=>{if(checked[q.id]){d++;if(selected[q.id]===q.correct)c++}});return{d,c}}
+function renderGrid(){let g=document.getElementById('gridnav');g.innerHTML='';questions.forEach((q,i)=>{let b=document.createElement('button');b.textContent=q.id;if(i===idx)b.classList.add('active');if(checked[q.id])b.classList.add(selected[q.id]===q.correct?'done':'wrong');b.onclick=()=>{idx=i;render()};g.appendChild(b)})}
+function render(){let q=questions[idx];document.getElementById('counter').textContent=`Question ${q.id} / ${questions.length}`;document.getElementById('photoNo').textContent=q.id;document.getElementById('barFill').style.width=`${q.id/questions.length*100}%`;let s=scoreInfo();document.getElementById('score').textContent=`Checked: ${s.d} / 70 · Correct: ${s.c}`;let im=document.getElementById('spriteImg');im.style.left=`-${q.sprite_col*100}%`;im.style.top=`-${q.sprite_row*100}%`;document.getElementById('stem').textContent=q.stem||`Question ${q.id}`;let ko=document.getElementById('toggleKo').checked;let kg=document.getElementById('guideko');kg.textContent=q.guide_ko||'';kg.style.display=ko?'block':'none';let o=document.getElementById('options');o.innerHTML='';['A','B','C'].forEach(L=>{let b=document.createElement('button');b.className='option';b.innerHTML=`<strong>${L}.</strong>${q.options&&q.options[L]?' '+q.options[L]:''}`;if(selected[q.id]===L)b.classList.add('selected');if(checked[q.id]){if(L===q.correct)b.classList.add('correct');if(selected[q.id]===L&&L!==q.correct)b.classList.add('incorrect')}b.onclick=()=>{selected[q.id]=L;if(!checked[q.id])render()};o.appendChild(b)});let f=document.getElementById('feedback');if(checked[q.id]){let ok=selected[q.id]===q.correct;f.className='feedback '+(ok?'ok':'bad');f.innerHTML=`<h3>${ok?'Correct':'Not correct'}</h3><div>Your answer: <strong>${selected[q.id]||'—'}</strong> · Correct answer: <strong>${q.correct}</strong></div><p>${q.explanation_en}</p>${ko?`<p><strong>한국어 설명:</strong> ${q.explanation_ko}</p>`:''}`}else{f.className='feedback';f.innerHTML=''}let ob=document.getElementById('ocrBox');ob.textContent=q.raw_ocr||'';ob.style.display=document.getElementById('toggleOcr').checked?'block':'none';renderGrid()}
+function checkAnswer(){let q=questions[idx];if(!selected[q.id]){alert('Please choose A, B, or C first.');return}checked[q.id]=true;render()}function showAnswerOnly(){checked[questions[idx].id]=true;render()}function prevQ(){if(idx>0){idx--;render()}}function nextQ(){if(idx<69){idx++;render()}}function resetQuiz(){if(confirm('Reset all answers?')){selected={};checked={};idx=0;render()}}document.getElementById('toggleKo').onchange=render;document.getElementById('toggleOcr').onchange=render;window.onkeydown=e=>{if(['a','A','1'].includes(e.key))selected[questions[idx].id]='A';if(['b','B','2'].includes(e.key))selected[questions[idx].id]='B';if(['c','C','3'].includes(e.key))selected[questions[idx].id]='C';if(e.key==='ArrowRight')nextQ();else if(e.key==='ArrowLeft')prevQ();else render()};render();
+</script></body></html>
