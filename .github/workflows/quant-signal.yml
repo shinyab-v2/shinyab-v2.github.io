@@ -5,9 +5,7 @@ on:
     paths:
       - "quant/**"
       - ".github/workflows/quant-signal.yml"
-  schedule:
-    # Broad UTC window covering US DST/EST. Python gates actual 10:45-15:59 ET runs.
-    - cron: "50 14-21 * * 1-5"
+  # Scheduled runs are paused until required repository secrets are configured.
   workflow_dispatch:
 
 permissions:
@@ -38,9 +36,36 @@ jobs:
       - name: Run unit tests
         run: python -m pytest -q quant/tests
 
-  signal:
+  readiness:
     if: github.event_name != 'pull_request'
     needs: test
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.check.outputs.ready }}
+    steps:
+      - name: Check Quant Signal secrets
+        id: check
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require("node:fs");
+          const names=["GOOGLE_SERVICE_ACCOUNT_JSON","GOOGLE_SHEET_ID","ALPACA_API_KEY","ALPACA_SECRET_KEY"];
+          const missing=names.filter(n=>!String(process.env[n]||"").trim());
+          const ready=missing.length===0;
+          console.log(JSON.stringify({ready,missing},null,2));
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `ready=${ready}\n`);
+          NODE
+
+  signal:
+    if: github.event_name != 'pull_request' && needs.readiness.outputs.ready == 'true'
+    needs:
+      - test
+      - readiness
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -65,3 +90,15 @@ jobs:
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
           FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
         run: python -m quant.main
+
+  not-ready:
+    if: github.event_name != 'pull_request' && needs.readiness.outputs.ready != 'true'
+    needs:
+      - test
+      - readiness
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain disabled Quant Signal run
+        run: |
+          echo "Quant Signal is paused because one or more required repository secrets are missing."
+          echo "Required: GOOGLE_SERVICE_ACCOUNT_JSON, GOOGLE_SHEET_ID, ALPACA_API_KEY, ALPACA_SECRET_KEY"
