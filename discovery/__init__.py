@@ -1,1 +1,0 @@
-"""Investment Discovery scanner package."""
