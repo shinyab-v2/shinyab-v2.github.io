@@ -1,0 +1,78 @@
+name: Investment Discovery Scan
+
+on:
+  pull_request:
+    paths:
+      - "discovery/**"
+      - ".github/workflows/discovery-scan.yml"
+  workflow_dispatch:
+    inputs:
+      symbols:
+        description: "Comma-separated smoke-test tickers; empty uses the universe"
+        required: false
+        default: "MU,STX,WDC,SNDK,NVDA,LRCX,CRDO,MRVL,RKLB,IONQ,OKLO,SMR"
+      max_symbols:
+        description: "Max universe symbols when symbols is empty; 0 = all"
+        required: false
+        default: "0"
+      output_top:
+        description: "Candidate rows written to _DISCOVERY_SIGNAL"
+        required: false
+        default: "500"
+      lookback_days:
+        description: "Calendar lookback for daily bars"
+        required: false
+        default: "240"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: investment-discovery-scan
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: quant/requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r quant/requirements.txt
+      - name: Run discovery unit tests
+        run: python -m pytest -q discovery/tests
+
+  scan:
+    if: github.event_name == 'workflow_dispatch'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: quant/requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r quant/requirements.txt
+      - name: Run discovery scan
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          DISCOVERY_SHEET_ID: ${{ secrets.DISCOVERY_SHEET_ID }}
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          DISCOVERY_SYMBOLS: ${{ inputs.symbols }}
+          DISCOVERY_MAX_SYMBOLS: ${{ inputs.max_symbols }}
+          DISCOVERY_OUTPUT_TOP: ${{ inputs.output_top }}
+          DISCOVERY_LOOKBACK_DAYS: ${{ inputs.lookback_days }}
+        run: python -m discovery.main
