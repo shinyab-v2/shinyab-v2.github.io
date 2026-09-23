@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A1~A2 영어 문장 5형식 연습문제와 오답 설명">
+<title>영어 문장 5형식 ③ 연습 | Grammar English</title>
+
+<style>
+:root{--ink:#172033;--muted:#667085;--line:#e3e7ee;--bg:#f7f8fb;--white:#fff;--blue:#315ee7;--purple:#7547d8;--green:#168269;--orange:#c46b16;--red:#c63c4d;--s:#e9f0ff;--v:#f1eaff;--o:#e8f7f2;--c:#fff1dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Pretendard,"Noto Sans KR",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.72}a{color:inherit}
+.top{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100vw - 1040px)/2));border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}.brand{text-decoration:none;font-weight:850;display:flex;align-items:center;gap:10px}.mark{width:31px;height:31px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:13px}.navback{font-size:13px;color:var(--muted);text-decoration:none}
+.wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}.hero{padding:58px 0 30px}.eyebrow{margin:0 0 11px;font-size:11px;letter-spacing:.16em;font-weight:900;color:var(--purple)}h1{font-size:clamp(38px,7vw,62px);line-height:1.07;letter-spacing:-.05em;margin:0}.lead{font-size:17px;color:var(--muted);max-width:810px;margin:20px 0 0}.notice{margin:24px 0 0;padding:16px 18px;background:#f0edff;border:1px solid #ddd4ff;border-radius:15px;font-size:14px}
+.toc{display:flex;gap:8px;flex-wrap:wrap;padding:0 0 30px}.toc a{text-decoration:none;font-size:12px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:999px;color:#505866}
+.section{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,38px);margin-bottom:18px}.num{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:#eef2ff;color:#3153c7;font-weight:900;font-size:13px;margin-bottom:14px}.section h2{font-size:28px;letter-spacing:-.035em;margin:0 0 12px}.section h3{font-size:19px;margin:28px 0 10px}.section p{margin:9px 0}.muted{color:var(--muted);font-size:14px}
+.pattern{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0}.chip{min-width:44px;text-align:center;padding:9px 12px;border-radius:11px;font-weight:900;border:1px solid rgba(0,0,0,.06)}.s{background:var(--s);color:#3153c7}.v{background:var(--v);color:#7547d8}.o{background:var(--o);color:#14735d}.c{background:var(--c);color:#9a5513}.plus{color:#98a0ad;font-weight:800}
+.examples{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}.ex{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fcfcfd}.en{font-size:18px;font-weight:850;margin-bottom:3px}.ko{font-size:13px;color:var(--muted)}.parse{font-size:12px;margin-top:9px;display:flex;gap:5px;flex-wrap:wrap}.parse span{padding:4px 7px;border-radius:7px;background:#f2f4f7}
+.rule{font-size:clamp(19px,4vw,28px);font-weight:900;letter-spacing:-.02em;text-align:center;background:#f8f9fb;border:1px solid var(--line);padding:18px;border-radius:15px;margin:18px 0}.good{border-left:4px solid var(--green);background:#ebfaf5;padding:14px 16px;border-radius:0 12px 12px 0;margin:18px 0}.warning{border-left:4px solid #f0a638;background:#fff8e8;padding:14px 16px;border-radius:0 12px 12px 0;margin:18px 0}.danger{border-left:4px solid var(--red);background:#fff1f3;padding:14px 16px;border-radius:0 12px 12px 0;margin:18px 0}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:11px 10px;vertical-align:top}th{font-size:12px;color:#555d69;background:#f7f8fa}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}.box{border:1px solid var(--line);border-radius:14px;padding:15px}.box strong{display:block;margin-bottom:5px}
+.steps{counter-reset:step}.step{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.step:before{counter-increment:step;content:counter(step);width:30px;height:30px;border-radius:10px;background:#eef2ff;color:#3153c7;display:grid;place-items:center;font-weight:900}
+.navcards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 54px}.navcard{text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:16px;padding:16px;display:flex;justify-content:space-between;gap:10px}.navcard small{display:block;color:var(--muted);margin-bottom:3px}.navcard b{font-size:15px}
+.q{padding:18px 0;border-top:1px solid var(--line)}.q:first-child{border-top:0}.q p{font-weight:780;margin:0 0 10px}.answer{display:none;margin-top:10px;padding:12px 14px;border-radius:11px;background:#edf8f4;color:#235e50;font-size:14px}.answer.show{display:block}.btn{font:inherit;border:1px solid #ccd2dc;background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer}.btn:hover{background:#f4f6fa}.actions{display:flex;gap:8px;flex-wrap:wrap}
+.sources{font-size:13px;color:var(--muted)}.sources a{color:#315ee7}.footer{padding:24px 0 48px;color:var(--muted);font-size:12px}
+@media(max-width:720px){.hero{padding-top:42px}.examples,.compare,.navcards{grid-template-columns:1fr}.section{border-radius:18px}.top{height:60px}.navback{font-size:12px}table{min-width:620px}.en{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="./"><span class="mark">G</span><span>Grammar English</span></a><a class="navback" href="sentence-patterns-3-5-a1-a2.html">← ② 3·4·5형식</a></header>
+<main class="wrap">
+<section class="hero">
+<p class="eyebrow">A1 → A2 · SENTENCE PATTERNS 3/3</p>
+<h1>5형식 연습<br>“왜?”까지 설명하기</h1>
+<p class="lead">정답 번호를 맞히는 것보다 <b>S·V·O·C를 직접 표시하고 왜 그 형식인지 말하는 것</b>이 목표입니다. 먼저 혼자 풀고 정답 버튼을 눌러 확인하세요.</p>
+<div class="notice"><b>추천 학습법:</b> ① 동사에 동그라미 → ② 주어 찾기 → ③ 목적어 여부 확인 → ④ C가 S/O를 설명하는지 확인 → ⑤ 마지막에 형식 번호를 말하기.</div>
+</section>
+<nav class="toc"><a href="#classify">형식 맞히기</a><a href="#parts">S·V·O·C 찾기</a><a href="#contrast">헷갈리는 문장</a><a href="#order">어순</a><a href="#summary">최종 요약</a></nav>
+
+<section class="section" id="classify">
+<div class="num">01</div><h2>몇 형식인지 맞혀 보세요</h2>
+<div class="actions"><button class="btn" onclick="showAll(true)">모든 정답 보기</button><button class="btn" onclick="showAll(false)">모두 숨기기</button></div>
+<div class="q"><p>1. The dog barked.</p><button class="btn" onclick="reveal('q1')">정답</button><div class="answer" id="q1"><b>1형식.</b> The dog(S) + barked(V). 목적어가 필요하지 않습니다.</div></div>
+<div class="q"><p>2. My sister is kind.</p><button class="btn" onclick="reveal('q2')">정답</button><div class="answer" id="q2"><b>2형식.</b> kind(C)가 My sister(S)의 상태를 설명합니다.</div></div>
+<div class="q"><p>3. I drink milk every morning.</p><button class="btn" onclick="reveal('q3')">정답</button><div class="answer" id="q3"><b>3형식.</b> I(S) + drink(V) + milk(O). every morning은 시간 정보입니다.</div></div>
+<div class="q"><p>4. She sent me an email.</p><button class="btn" onclick="reveal('q4')">정답</button><div class="answer" id="q4"><b>4형식.</b> me(IO)는 받는 사람, an email(DO)은 전달되는 것입니다.</div></div>
+<div class="q"><p>5. The story made me sad.</p><button class="btn" onclick="reveal('q5')">정답</button><div class="answer" id="q5"><b>5형식.</b> sad(C)가 me(O)의 상태를 설명합니다.</div></div>
+<div class="q"><p>6. We arrived late.</p><button class="btn" onclick="reveal('q6')">정답</button><div class="answer" id="q6"><b>1형식.</b> We(S) + arrived(V)가 뼈대이며 late는 “언제/얼마나 늦게”에 해당하는 부가 정보입니다.</div></div>
+<div class="q"><p>7. The cake smells delicious.</p><button class="btn" onclick="reveal('q7')">정답</button><div class="answer" id="q7"><b>2형식.</b> delicious(C)가 cake(S)의 상태·특징을 설명합니다.</div></div>
+<div class="q"><p>8. He opened the window.</p><button class="btn" onclick="reveal('q8')">정답</button><div class="answer" id="q8"><b>3형식.</b> the window가 opened의 목적어입니다.</div></div>
+<div class="q"><p>9. My teacher showed us a picture.</p><button class="btn" onclick="reveal('q9')">정답</button><div class="answer" id="q9"><b>4형식.</b> us(IO) + a picture(DO).</div></div>
+<div class="q"><p>10. They call the cat Coco.</p><button class="btn" onclick="reveal('q10')">정답</button><div class="answer" id="q10"><b>5형식.</b> the cat(O) = Coco(C), 즉 Coco가 목적어의 이름을 설명합니다.</div></div>
+</section>
+
+<section class="section" id="parts">
+<div class="num">02</div><h2>S·V·O·C를 직접 나누기</h2>
+<div class="q"><p>11. Anna became a doctor.</p><button class="btn" onclick="reveal('q11')">분석 보기</button><div class="answer" id="q11"><b>Anna(S) / became(V) / a doctor(C)</b> → 2형식. Anna = a doctor.</div></div>
+<div class="q"><p>12. Tom bought his son a toy.</p><button class="btn" onclick="reveal('q12')">분석 보기</button><div class="answer" id="q12"><b>Tom(S) / bought(V) / his son(IO) / a toy(DO)</b> → 4형식. his son ≠ a toy.</div></div>
+<div class="q"><p>13. I want you to stay.</p><button class="btn" onclick="reveal('q13')">분석 보기</button><div class="answer" id="q13"><b>I(S) / want(V) / you(O) / to stay(C)</b> → 한국식 5형식 학습에서는 O + to-infinitive를 목적격보어로 분석합니다. stay의 의미상 주체가 you입니다.</div></div>
+<div class="q"><p>14. The teacher made us quiet.</p><button class="btn" onclick="reveal('q14')">분석 보기</button><div class="answer" id="q14"><b>The teacher(S) / made(V) / us(O) / quiet(C)</b> → 5형식. quiet가 us의 상태를 설명합니다.</div></div>
+<div class="q"><p>15. The children played in the park.</p><button class="btn" onclick="reveal('q15')">분석 보기</button><div class="answer" id="q15"><b>The children(S) / played(V)</b> + in the park(장소) → 기본 학습 틀에서는 1형식으로 봅니다.</div></div>
+</section>
+
+<section class="section" id="contrast">
+<div class="num">03</div><h2>비슷해 보여도 구조가 달라요</h2>
+<div class="scroll"><table><thead><tr><th>문장</th><th>형식</th><th>핵심 이유</th></tr></thead><tbody>
+<tr><td>I made <b>a cake</b>.</td><td>3형식</td><td>목적어 1개.</td></tr>
+<tr><td>I made <b>my son a cake</b>.</td><td>4형식</td><td>my son(IO) ≠ a cake(DO).</td></tr>
+<tr><td>I made <b>my son happy</b>.</td><td>5형식</td><td>happy가 my son의 상태를 설명.</td></tr>
+<tr><td>I made <b>my son clean his room</b>.</td><td>5형식</td><td>clean의 행동 주체가 my son.</td></tr>
+<tr><td>She <b>looks at me</b>.</td><td>동사+전치사 구조</td><td>look at = ~을 보다.</td></tr>
+<tr><td>She <b>looks tired</b>.</td><td>2형식</td><td>tired가 She의 상태를 설명.</td></tr>
+</tbody></table></div>
+<div class="good"><b>특히 look:</b> <b>look + adjective</b>는 “~해 보이다”의 linking verb 구조, <b>look at + noun</b>은 “~을 보다”라는 동사+전치사 구조입니다.</div>
+</section>
+
+<section class="section" id="order">
+<div class="num">04</div><h2>어순 고치기</h2>
+<div class="q"><p>16. I like very much this song. → 더 자연스러운 기본 어순은?</p><button class="btn" onclick="reveal('q16')">정답</button><div class="answer" id="q16"><b>I like this song very much.</b> Unit 109의 핵심처럼 V + O를 먼저 붙여 둡니다.</div></div>
+<div class="q"><p>17. She gave to me a present. → 기본적인 4형식으로 바꾸면?</p><button class="btn" onclick="reveal('q17')">정답</button><div class="answer" id="q17"><b>She gave me a present.</b> 또는 3형식식 배열로 <b>She gave a present to me.</b>가 가능합니다.</div></div>
+<div class="q"><p>18. The music made me to feel happy. → 무엇이 틀렸을까요?</p><button class="btn" onclick="reveal('q18')">정답</button><div class="answer" id="q18"><b>The music made me feel happy.</b> active voice의 make + O 뒤에는 보통 <b>to 없는 동사원형</b>을 씁니다.</div></div>
+<div class="q"><p>19. I want that you come with me. → 기본적인 want 구조로 고치면?</p><button class="btn" onclick="reveal('q19')">정답</button><div class="answer" id="q19"><b>I want you to come with me.</b> Unit 55가 설명하는 want + somebody + to do 구조입니다.</div></div>
+<div class="q"><p>20. The soup tastes well. → “수프 맛이 좋다”는 뜻으로 고치면?</p><button class="btn" onclick="reveal('q20')">정답</button><div class="answer" id="q20"><b>The soup tastes good.</b> good은 주어 soup의 상태를 설명하는 adjective complement입니다.</div></div>
+</section>
+
+<section class="section" id="summary">
+<div class="num">05</div><h2>5형식 한 장 요약</h2>
+<div class="scroll"><table><thead><tr><th>형식</th><th>구조</th><th>가장 쉬운 질문</th><th>대표 예문</th></tr></thead><tbody>
+<tr><td>1형식</td><td><b>S + V</b></td><td>동사만으로 끝나도 되나?</td><td>Birds fly.</td></tr>
+<tr><td>2형식</td><td><b>S + V + C</b></td><td>C가 S를 설명하나?</td><td>She is kind.</td></tr>
+<tr><td>3형식</td><td><b>S + V + O</b></td><td>무엇을/누구를?</td><td>I like music.</td></tr>
+<tr><td>4형식</td><td><b>S + V + IO + DO</b></td><td>누구에게 + 무엇을?</td><td>She gave me a book.</td></tr>
+<tr><td>5형식</td><td><b>S + V + O + C</b></td><td>C가 O를 설명하나?</td><td>Music makes me happy.</td></tr>
+</tbody></table></div>
+<div class="rule">① V 찾기 → ② S 찾기 → ③ O 확인 → ④ C가 누구를 설명하는지 확인</div>
+<div class="warning"><b>마지막 주의:</b> 실제 영어에는 전치사구, 필수 장소 표현, 절(clause) 등 5개 틀만으로 깔끔하게 설명하기 어려운 구조도 있습니다. A1~A2에서는 5형식을 <b>기본 문장의 뼈대를 읽는 도구</b>로 사용하고, 이후에는 동사별 실제 패턴을 함께 익히는 것이 더 중요합니다.</div>
+</section>
+
+<section class="section sources">
+<h2>학습 근거</h2>
+<p><b>주 교재:</b> Raymond Murphy, <i>English Grammar in Use, Fifth Edition</i> — Unit 55, Unit 67, Unit 99, Unit 109의 구조 설명을 연습문제에 연결했습니다.</p>
+<p><b>보충 기준:</b> Cambridge Dictionary Grammar의 <a href="https://dictionary.cambridge.org/grammar/british-grammar/subordinate-clauses" target="_blank" rel="noopener">Clauses</a>, <a href="https://dictionary.cambridge.org/grammar/british-grammar/direct-objects" target="_blank" rel="noopener">Objects</a>, <a href="https://dictionary.cambridge.org/grammar/british-grammar/complements" target="_blank" rel="noopener">Complements</a>, <a href="https://dictionary.cambridge.org/grammar/british-grammar/make" target="_blank" rel="noopener">Make</a>를 참고했습니다.</p>
+</section>
+
+<div class="navcards"><a class="navcard" href="sentence-patterns-3-5-a1-a2.html"><div><small>이전 학습</small><b>② 3·4·5형식</b></div><span>←</span></a><a class="navcard" href="./"><div><small>완료</small><b>문법 목록으로</b></div><span>→</span></a></div>
+</main>
+<footer class="wrap footer">Grammar English · A1–A2 sentence patterns practice</footer>
+<script>
+function reveal(id){document.getElementById(id).classList.toggle('show')}
+function showAll(show){document.querySelectorAll('.answer').forEach(el=>el.classList.toggle('show',show))}
+</script>
+</body></html>
