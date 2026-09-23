@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A1~A2 영어 문장 5형식 학습 1: S V O C와 1형식, 2형식">
+<title>영어 문장 5형식 ① | Grammar English</title>
+
+<style>
+:root{--ink:#172033;--muted:#667085;--line:#e3e7ee;--bg:#f7f8fb;--white:#fff;--blue:#315ee7;--purple:#7547d8;--green:#168269;--orange:#c46b16;--red:#c63c4d;--s:#e9f0ff;--v:#f1eaff;--o:#e8f7f2;--c:#fff1dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Pretendard,"Noto Sans KR",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.72}a{color:inherit}
+.top{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100vw - 1040px)/2));border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}.brand{text-decoration:none;font-weight:850;display:flex;align-items:center;gap:10px}.mark{width:31px;height:31px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:13px}.navback{font-size:13px;color:var(--muted);text-decoration:none}
+.wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}.hero{padding:58px 0 30px}.eyebrow{margin:0 0 11px;font-size:11px;letter-spacing:.16em;font-weight:900;color:var(--purple)}h1{font-size:clamp(38px,7vw,62px);line-height:1.07;letter-spacing:-.05em;margin:0}.lead{font-size:17px;color:var(--muted);max-width:810px;margin:20px 0 0}.notice{margin:24px 0 0;padding:16px 18px;background:#f0edff;border:1px solid #ddd4ff;border-radius:15px;font-size:14px}
+.toc{display:flex;gap:8px;flex-wrap:wrap;padding:0 0 30px}.toc a{text-decoration:none;font-size:12px;padding:8px 10px;background:#fff;border:1px solid var(--line);border-radius:999px;color:#505866}
+.section{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,38px);margin-bottom:18px}.num{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:#eef2ff;color:#3153c7;font-weight:900;font-size:13px;margin-bottom:14px}.section h2{font-size:28px;letter-spacing:-.035em;margin:0 0 12px}.section h3{font-size:19px;margin:28px 0 10px}.section p{margin:9px 0}.muted{color:var(--muted);font-size:14px}
+.pattern{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0}.chip{min-width:44px;text-align:center;padding:9px 12px;border-radius:11px;font-weight:900;border:1px solid rgba(0,0,0,.06)}.s{background:var(--s);color:#3153c7}.v{background:var(--v);color:#7547d8}.o{background:var(--o);color:#14735d}.c{background:var(--c);color:#9a5513}.plus{color:#98a0ad;font-weight:800}
+.examples{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}.ex{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fcfcfd}.en{font-size:18px;font-weight:850;margin-bottom:3px}.ko{font-size:13px;color:var(--muted)}.parse{font-size:12px;margin-top:9px;display:flex;gap:5px;flex-wrap:wrap}.parse span{padding:4px 7px;border-radius:7px;background:#f2f4f7}
+.rule{font-size:clamp(19px,4vw,28px);font-weight:900;letter-spacing:-.02em;text-align:center;background:#f8f9fb;border:1px solid var(--line);padding:18px;border-radius:15px;margin:18px 0}.good{border-left:4px solid var(--green);background:#ebfaf5;padding:14px 16px;border-radius:0 12px 12px 0;margin:18px 0}.warning{border-left:4px solid #f0a638;background:#fff8e8;padding:14px 16px;border-radius:0 12px 12px 0;margin:18px 0}.danger{border-left:4px solid var(--red);background:#fff1f3;padding:14px 16px;border-radius:0 12px 12px 0;margin:18px 0}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:11px 10px;vertical-align:top}th{font-size:12px;color:#555d69;background:#f7f8fa}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}.box{border:1px solid var(--line);border-radius:14px;padding:15px}.box strong{display:block;margin-bottom:5px}
+.steps{counter-reset:step}.step{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:13px 0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.step:before{counter-increment:step;content:counter(step);width:30px;height:30px;border-radius:10px;background:#eef2ff;color:#3153c7;display:grid;place-items:center;font-weight:900}
+.navcards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 54px}.navcard{text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:16px;padding:16px;display:flex;justify-content:space-between;gap:10px}.navcard small{display:block;color:var(--muted);margin-bottom:3px}.navcard b{font-size:15px}
+.q{padding:18px 0;border-top:1px solid var(--line)}.q:first-child{border-top:0}.q p{font-weight:780;margin:0 0 10px}.answer{display:none;margin-top:10px;padding:12px 14px;border-radius:11px;background:#edf8f4;color:#235e50;font-size:14px}.answer.show{display:block}.btn{font:inherit;border:1px solid #ccd2dc;background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer}.btn:hover{background:#f4f6fa}.actions{display:flex;gap:8px;flex-wrap:wrap}
+.sources{font-size:13px;color:var(--muted)}.sources a{color:#315ee7}.footer{padding:24px 0 48px;color:var(--muted);font-size:12px}
+@media(max-width:720px){.hero{padding-top:42px}.examples,.compare,.navcards{grid-template-columns:1fr}.section{border-radius:18px}.top{height:60px}.navback{font-size:12px}table{min-width:620px}.en{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="./"><span class="mark">G</span><span>Grammar English</span></a><a class="navback" href="./">← 문법 목록</a></header>
+<main class="wrap">
+<section class="hero">
+<p class="eyebrow">A1 → A2 · SENTENCE PATTERNS 1/3</p>
+<h1>영어 문장 5형식<br>문장의 뼈대부터 이해하기</h1>
+<p class="lead">영어 문장을 볼 때 가장 먼저 <b>동사(V)</b>를 찾고, 그 동사가 뒤에 무엇을 필요로 하는지 보면 문장의 구조가 훨씬 쉬워집니다. 첫 페이지에서는 <b>S·V·O·C</b>의 뜻과 <b>1형식, 2형식</b>을 익힙니다.</p>
+<div class="notice"><b>교재와의 연결:</b> <i>English Grammar in Use, 5th Edition</i>은 “1~5형식” 번호로 설명하기보다 <b>verb + object</b>, <b>verb + object + to</b>, <b>adjective after verbs</b>, <b>word order</b>처럼 실제 구조별로 설명합니다. 이 페이지의 “5형식”은 A1~A2 학습자가 그 구조를 한눈에 보기 위한 학습 틀입니다.</div>
+</section>
+<nav class="toc"><a href="#symbols">S·V·O·C</a><a href="#method">찾는 순서</a><a href="#p1">1형식</a><a href="#p2">2형식</a><a href="#compare">1 vs 2</a><a href="#mini">미니 퀴즈</a></nav>
+
+<section class="section" id="symbols">
+<div class="num">01</div><h2>S · V · O · C가 무엇인가요?</h2>
+<p>문장을 “단어 뜻”만으로 보지 않고, 각 단어가 문장에서 <b>무슨 일을 하는지</b> 보는 기호입니다.</p>
+<div class="scroll"><table>
+<thead><tr><th>기호</th><th>이름</th><th>A1~A2에서 쉽게</th><th>예</th></tr></thead>
+<tbody>
+<tr><td><b>S</b></td><td>Subject · 주어</td><td>누가? 무엇이?</td><td><b>Tom</b> runs.</td></tr>
+<tr><td><b>V</b></td><td>Verb · 동사</td><td>한다 / 이다 / 상태가 된다</td><td>Tom <b>runs</b>.</td></tr>
+<tr><td><b>O</b></td><td>Object · 목적어</td><td>동사의 행동이 향하는 사람·것</td><td>I like <b>music</b>.</td></tr>
+<tr><td><b>C</b></td><td>Complement · 보어</td><td>S나 O가 “누구인지 / 어떤 상태인지” 설명</td><td>She is <b>happy</b>.</td></tr>
+</tbody></table></div>
+<div class="good"><b>가장 중요한 생각:</b> 문장 형식은 단어 개수를 세는 문제가 아닙니다. <b>동사가 어떤 자리를 필요로 하는지</b>를 보는 방법입니다.</div>
+</section>
+
+<section class="section" id="method">
+<div class="num">02</div><h2>문장 형식은 이렇게 찾으세요</h2>
+<div class="steps">
+<div class="step"><div><b>동사(V)를 먼저 찾기</b><br><span class="muted">I <b>like</b> music. → 핵심 동사는 like.</span></div></div>
+<div class="step"><div><b>동사 앞에서 “누가/무엇이?” 찾기</b><br><span class="muted"><b>I</b> like music. → I가 S.</span></div></div>
+<div class="step"><div><b>동사 뒤가 꼭 필요한지 보기</b><br><span class="muted">I like … 만으로는 “무엇을 좋아하는지” 빠져 있습니다. music이 O.</span></div></div>
+<div class="step"><div><b>남은 말이 O인지 C인지 확인하기</b><br><span class="muted">O는 행동의 대상, C는 S 또는 O를 설명합니다.</span></div></div>
+</div>
+<div class="warning"><b>시간·장소·방법을 나타내는 말</b>은 문장을 길게 만들지만 기본 형식을 바꾸지 않는 경우가 많습니다. 예: <b>Tom runs every morning.</b> → 핵심은 Tom(S) + runs(V)입니다.</div>
+</section>
+
+<section class="section" id="p1">
+<div class="num">03</div><h2>1형식 — S + V</h2>
+<div class="pattern"><span class="chip s">S</span><span class="plus">+</span><span class="chip v">V</span></div>
+<p>주어와 동사만으로 기본 의미가 완성됩니다. 동사 뒤에 목적어가 필요하지 않습니다.</p>
+<div class="examples">
+<div class="ex"><div class="en">Birds fly.</div><div class="ko">새들은 난다.</div><div class="parse"><span>S Birds</span><span>V fly</span></div></div>
+<div class="ex"><div class="en">The baby cried.</div><div class="ko">아기가 울었다.</div><div class="parse"><span>S The baby</span><span>V cried</span></div></div>
+<div class="ex"><div class="en">My dad works.</div><div class="ko">우리 아빠는 일한다.</div><div class="parse"><span>S My dad</span><span>V works</span></div></div>
+<div class="ex"><div class="en">We arrived at school.</div><div class="ko">우리는 학교에 도착했다.</div><div class="parse"><span>S We</span><span>V arrived</span><span>장소 at school</span></div></div>
+</div>
+<h3>뒤에 말이 더 있어도 1형식일 수 있어요</h3>
+<div class="rule">She sleeps <b>well</b> <b>at night</b>.<br><span class="muted">S + V + 방법 + 시간</span></div>
+<p><b>well</b>과 <b>at night</b>은 “어떻게 / 언제”를 더해 주는 말입니다. 기본 뼈대 <b>She sleeps</b>는 이미 완성되어 있습니다.</p>
+<div class="warning"><b>주의:</b> 같은 동사라도 다른 문장에서는 구조가 달라질 수 있습니다. 예를 들어 <b>run</b>은 “달리다”일 때 목적어가 없지만, <b>run a company</b>(회사를 운영하다)에서는 목적어가 있습니다. 형식은 “동사의 이름”만 보고 외우지 말고 <b>그 문장 속 쓰임</b>을 보세요.</div>
+</section>
+
+<section class="section" id="p2">
+<div class="num">04</div><h2>2형식 — S + V + C</h2>
+<div class="pattern"><span class="chip s">S</span><span class="plus">+</span><span class="chip v">V</span><span class="plus">+</span><span class="chip c">C</span></div>
+<p>동사 뒤의 C가 <b>주어가 누구인지</b> 또는 <b>주어가 어떤 상태인지</b> 설명합니다. C는 목적어가 아닙니다.</p>
+<div class="examples">
+<div class="ex"><div class="en">She is a student.</div><div class="ko">그녀는 학생이다.</div><div class="parse"><span>S She</span><span>V is</span><span>C a student</span></div></div>
+<div class="ex"><div class="en">He is tired.</div><div class="ko">그는 피곤하다.</div><div class="parse"><span>S He</span><span>V is</span><span>C tired</span></div></div>
+<div class="ex"><div class="en">The soup smells good.</div><div class="ko">수프에서 좋은 냄새가 난다.</div><div class="parse"><span>S The soup</span><span>V smells</span><span>C good</span></div></div>
+<div class="ex"><div class="en">She became angry.</div><div class="ko">그녀는 화가 났다.</div><div class="parse"><span>S She</span><span>V became</span><span>C angry</span></div></div>
+</div>
+<h3>2형식에서 자주 보는 linking verbs</h3>
+<div class="scroll"><table><thead><tr><th>동사</th><th>쉬운 뜻</th><th>예문</th></tr></thead><tbody>
+<tr><td>be</td><td>~이다 / ~한 상태이다</td><td>Tom is kind.</td></tr>
+<tr><td>become / get</td><td>~하게 되다</td><td>It got cold.</td></tr>
+<tr><td>look</td><td>~해 보이다</td><td>You look tired.</td></tr>
+<tr><td>feel</td><td>~하게 느끼다</td><td>I feel happy.</td></tr>
+<tr><td>sound</td><td>~하게 들리다</td><td>That sounds good.</td></tr>
+<tr><td>smell / taste</td><td>~한 냄새/맛이 나다</td><td>The cake tastes great.</td></tr>
+<tr><td>seem</td><td>~인 것 같다</td><td>She seems nice.</td></tr>
+</tbody></table></div>
+<div class="good"><b>C 확인법:</b> C가 S를 다시 설명하는지 보세요. <b>She = a student</b>, <b>He → tired</b>, <b>Soup → good</b>이라는 관계입니다.</div>
+<div class="danger"><b>자주 하는 실수:</b> <b>The soup smells well.</b>이라고 하지 않습니다. 여기서 smell은 “수프가 어떤 냄새인지” 주어의 상태를 연결하므로 <b>adjective good</b>을 씁니다. <i>English Grammar in Use</i> Unit 99도 be/get/become/seem 및 look/feel/sound/taste/smell 뒤의 형용사를 설명합니다.</div>
+</section>
+
+<section class="section" id="compare">
+<div class="num">05</div><h2>1형식과 2형식, 무엇이 다를까요?</h2>
+<div class="compare">
+<div class="box"><strong>1형식: S + V</strong><div>Tom <b>runs</b>.</div><div class="muted">runs만으로 행동이 완성.</div></div>
+<div class="box"><strong>2형식: S + V + C</strong><div>Tom <b>is tired</b>.</div><div class="muted">tired가 Tom의 상태를 설명.</div></div>
+</div>
+<div class="rule">“동사 뒤의 말이 <b>주어를 설명</b>하나요?”<br>YES → 2형식 가능성이 큽니다.</div>
+</section>
+
+<section class="section" id="mini">
+<div class="num">06</div><h2>미니 퀴즈</h2>
+<div class="q"><p>1. The children laughed. → 몇 형식?</p><button class="btn" onclick="reveal('a1')">정답 보기</button><div class="answer" id="a1"><b>1형식.</b> The children(S) + laughed(V). 동사만으로 의미가 완성됩니다.</div></div>
+<div class="q"><p>2. Mina looks happy. → happy는 O일까요, C일까요?</p><button class="btn" onclick="reveal('a2')">정답 보기</button><div class="answer" id="a2"><b>C.</b> happy가 Mina의 상태를 설명하므로 2형식입니다.</div></div>
+<div class="q"><p>3. We arrived at the station at nine. → 기본 형식은?</p><button class="btn" onclick="reveal('a3')">정답 보기</button><div class="answer" id="a3"><b>1형식.</b> We(S) + arrived(V)가 뼈대이고, at the station과 at nine은 장소·시간 정보를 더합니다.</div></div>
+</section>
+
+<section class="section sources">
+<h2>학습 근거</h2>
+<p><b>주 교재:</b> Raymond Murphy, <i>English Grammar in Use, Fifth Edition</i>. 이 페이지는 특히 Unit 99(동사 뒤 형용사), Unit 109(verb + object 및 어순)의 설명과 연결됩니다.</p>
+<p><b>보충 기준:</b> Cambridge Dictionary Grammar의 <a href="https://dictionary.cambridge.org/grammar/british-grammar/subordinate-clauses" target="_blank" rel="noopener">Clauses</a>, <a href="https://dictionary.cambridge.org/grammar/british-grammar/direct-objects" target="_blank" rel="noopener">Objects</a>, <a href="https://dictionary.cambridge.org/grammar/british-grammar/complements" target="_blank" rel="noopener">Complements</a> 설명을 참고했습니다.</p>
+<p>“5형식”은 복잡한 모든 영어 절 구조를 완전히 설명하는 체계라기보다, 초급에서 S·V·O·C 관계를 빠르게 읽기 위한 학습 도구로 사용했습니다.</p>
+</section>
+
+<div class="navcards"><a class="navcard" href="./"><div><small>문법 목록</small><b>Grammar English</b></div><span>←</span></a><a class="navcard" href="sentence-patterns-3-5-a1-a2.html"><div><small>다음 학습</small><b>② 3·4·5형식</b></div><span>→</span></a></div>
+</main>
+<footer class="wrap footer">Grammar English · A1–A2 sentence patterns</footer>
+<script>function reveal(id){document.getElementById(id).classList.toggle('show')}</script>
+</body></html>
