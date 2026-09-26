@@ -74,6 +74,14 @@ h2 { margin: 0; font-size: 24px; letter-spacing: -.035em; }
 .learning-item-link { transition: background-color .18s ease; }
 .learning-item-link:hover, .learning-item-link:focus-visible { background: #f8f9fc; outline: none; }
 .learning-item-link .learning-state { color: var(--blue); font-weight: 700; }
+.student-english-item {
+  position: relative;
+  border-left: 5px solid #d65a2f;
+  background: linear-gradient(90deg, #fff7f2 0, #fff 42%);
+}
+.student-english-item .learning-icon { background: #ffeadf; color: #a53d1d; }
+.student-english-item .learning-state { color: #b44722; }
+.student-english-item:hover, .student-english-item:focus-visible { background: #fff4ed; }
 .learning-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: var(--soft); font-weight: 800; color: #4f5868; }
 .learning-item h3 { margin: 0 0 4px; font-size: 15px; }
 .learning-item p { margin: 0; color: var(--muted); font-size: 12px; }

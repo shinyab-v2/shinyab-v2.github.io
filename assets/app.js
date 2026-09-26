@@ -14,6 +14,14 @@ const learningItems = [
     url: "english/"
   },
   {
+    icon: "A1",
+    title: "학생 Daily English",
+    description: "A1–A2 · 쉬운 문법과 예문·3분 읽기·숨김 번역·퀴즈·British English Voice 리뷰",
+    state: "학생 학습 앱 →",
+    url: "student-english/",
+    className: "student-english-item"
+  },
+  {
     icon: "C",
     title: "차트 공부",
     description: "고해상도 실제형 차트와 상세 설명으로 배우는 기술적 분석 아카이브",
@@ -33,6 +41,7 @@ const list = document.querySelector("#learning-list");
 learningItems.forEach((item) => {
   const row = document.createElement(item.url ? "a" : "div");
   row.className = "learning-item";
+  if (item.className) row.classList.add(item.className);
   if (item.url) {
     row.classList.add("learning-item-link");
     row.href = item.url;

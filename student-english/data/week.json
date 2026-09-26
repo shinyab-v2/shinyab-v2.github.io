@@ -1,0 +1,1963 @@
+[
+  {
+    "date": "2026-09-28",
+    "title": "Student Daily English — 2026-09-28",
+    "grammarTopic": "Subject Pronouns and Be: am, is, are",
+    "grammar": {
+      "title": "I am, You are, He is: 사람과 상태를 소개하기",
+      "summary": "be동사는 사람의 이름·나이·기분·장소를 말할 때 씁니다. 주어에 따라 am, is, are를 고르고, 부정문에는 not을 붙이며, 질문에서는 be동사를 주어 앞으로 보냅니다. A1은 짧은 문장을 정확히 말하고, A2는 and, but, because로 정보를 한 문장 더 붙여 봅니다.",
+      "points": [
+        {
+          "title": "I am / You are",
+          "explanation": "I 뒤에는 am, you 뒤에는 are를 씁니다. 말할 때는 I'm, you're로 줄여 쓰는 경우가 많습니다.",
+          "examples": [
+            "[A1] I am new here. — 저는 여기 새로 왔어요.",
+            "[A1] You are in my class. — 너는 우리 반이야.",
+            "[A2] I'm a little nervous, but I'm excited. — 조금 긴장되지만 신이 나요.",
+            "[A2] You're helpful because you show me the room. — 방을 알려 줘서 너는 친절해요."
+          ]
+        },
+        {
+          "title": "He/She/It is",
+          "explanation": "한 사람이나 한 사물을 말할 때 he, she, it 뒤에는 is를 씁니다. 이름 하나도 단수이므로 is가 옵니다.",
+          "examples": [
+            "[A1] He is my teacher. — 그는 제 선생님이에요.",
+            "[A1] She is ten years old. — 그녀는 열 살이에요.",
+            "[A2] Mina is friendly and she is in Year 5. — Mina는 친절하고 5학년이에요.",
+            "[A2] The library is quiet, so it is a good place to read. — 도서관은 조용해서 읽기 좋은 곳이에요."
+          ]
+        },
+        {
+          "title": "We/They are",
+          "explanation": "나를 포함한 여러 사람은 we, 그 밖의 여러 사람이나 사물은 they를 쓰고 뒤에는 are를 씁니다.",
+          "examples": [
+            "[A1] We are classmates. — 우리는 같은 반 친구예요.",
+            "[A1] They are in the playground. — 그들은 운동장에 있어요.",
+            "[A2] We are ready for the first lesson. — 우리는 첫 수업을 할 준비가 됐어요.",
+            "[A2] The books are new, and they are easy to read. — 그 책들은 새것이고 읽기 쉬워요."
+          ]
+        },
+        {
+          "title": "be동사 + not",
+          "explanation": "am/is/are 뒤에 not을 붙이면 '~이 아니다, ~에 있지 않다'가 됩니다. isn't와 aren't는 짧은 형태입니다.",
+          "examples": [
+            "[A1] I am not late. — 저는 늦지 않았어요.",
+            "[A1] He isn't in our class. — 그는 우리 반이 아니에요.",
+            "[A2] We aren't worried because the teacher is kind. — 선생님이 친절해서 우리는 걱정하지 않아요.",
+            "[A2] The classroom isn't large, but it is bright. — 교실은 크지 않지만 밝아요."
+          ]
+        },
+        {
+          "title": "Am/Is/Are로 질문하기",
+          "explanation": "be동사를 주어 앞으로 옮기면 질문이 됩니다. Yes, 주어 + be / No, 주어 + be not으로 짧게 답합니다.",
+          "examples": [
+            "[A1] Are you new here? — 너는 여기 새로 왔니?",
+            "[A1] Is she your friend? — 그녀는 네 친구니?",
+            "[A2] Are the science rooms on this floor? — 과학실들은 이 층에 있나요?",
+            "[A2] Is your first day exciting? Yes, it is. — 첫날이 신나니? 네, 그래요."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Nice to meet you.",
+        "meaning": "만나서 반가워요.",
+        "example": "Hi, I'm Joon. Nice to meet you. — 안녕, 나는 Joon이야. 만나서 반가워."
+      },
+      {
+        "term": "How about you?",
+        "meaning": "너는 어때?",
+        "example": "I'm in Year 5. How about you? — 나는 5학년이야. 너는 어때?"
+      },
+      {
+        "term": "That sounds good.",
+        "meaning": "좋게 들려요, 좋아요.",
+        "example": "We can eat lunch together. That sounds good! — 같이 점심 먹자. 좋아!"
+      }
+    ],
+    "readingTitle": "My First Morning at a New School",
+    "paragraphs": [
+      "Joon is new at Green Hill School. He is in Year 5, and his classroom is on the second floor. He is excited, but he is also a little nervous.",
+      "A girl is standing near the stairs. Her name is Maya. She says, “Hi, I’m Maya. Are you new here?” Joon smiles and says, “Yes, I am. Nice to meet you.”",
+      "Maya is friendly. She shows Joon the library, the hall, and the playground. The science rooms are next to the library. They are bright and full of interesting things.",
+      "At break time, Maya asks, “Are you hungry?” Joon says, “Yes, I am.” They are both in the lunch area, but their other classmates are still outside.",
+      "Joon is not nervous now. He and Maya are classmates, and they are ready for their first lesson. Maya says they can sit together. “That sounds good,” Joon replies."
+    ],
+    "translations": [
+      "Joon은 Green Hill School에 새로 왔습니다. 그는 5학년이고 교실은 2층에 있습니다. 신이 나지만 조금 긴장하기도 합니다.",
+      "계단 근처에 한 여자아이가 서 있습니다. 이름은 Maya입니다. Maya가 새로 왔는지 묻자 Joon은 그렇다고 답하며 만나서 반갑다고 말합니다.",
+      "Maya는 친절합니다. Joon에게 도서관, 강당, 운동장을 보여 줍니다. 과학실들은 도서관 옆에 있고 밝으며 재미있는 물건이 가득합니다.",
+      "쉬는 시간에 Maya는 배가 고픈지 묻습니다. Joon은 그렇다고 답합니다. 두 사람은 점심 공간에 있지만 다른 반 친구들은 아직 밖에 있습니다.",
+      "이제 Joon은 긴장하지 않습니다. Maya와 같은 반 친구이고 첫 수업을 할 준비가 됐습니다. Maya가 같이 앉자고 하자 Joon은 좋다고 답합니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "new",
+        "partOfSpeech": "adjective",
+        "meaning": "새로운, 새로 온",
+        "context": "학교에 처음 온 상태"
+      },
+      {
+        "term": "classroom",
+        "partOfSpeech": "noun",
+        "meaning": "교실",
+        "context": "수업을 듣는 방"
+      },
+      {
+        "term": "floor",
+        "partOfSpeech": "noun",
+        "meaning": "층",
+        "context": "교실이 있는 건물의 위치"
+      },
+      {
+        "term": "nervous",
+        "partOfSpeech": "adjective",
+        "meaning": "긴장한",
+        "context": "첫날이라 걱정되는 기분"
+      },
+      {
+        "term": "stairs",
+        "partOfSpeech": "noun",
+        "meaning": "계단",
+        "context": "층 사이를 오르내리는 곳"
+      },
+      {
+        "term": "friendly",
+        "partOfSpeech": "adjective",
+        "meaning": "친절한",
+        "context": "새 친구를 따뜻하게 돕는 모습"
+      },
+      {
+        "term": "library",
+        "partOfSpeech": "noun",
+        "meaning": "도서관",
+        "context": "책을 읽고 빌리는 장소"
+      },
+      {
+        "term": "playground",
+        "partOfSpeech": "noun",
+        "meaning": "운동장",
+        "context": "쉬는 시간에 노는 장소"
+      },
+      {
+        "term": "hungry",
+        "partOfSpeech": "adjective",
+        "meaning": "배고픈",
+        "context": "음식을 먹고 싶은 상태"
+      },
+      {
+        "term": "classmates",
+        "partOfSpeech": "noun",
+        "meaning": "같은 반 친구들",
+        "context": "함께 수업을 듣는 학생들"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "I _____ new here.",
+        "choices": [
+          "am",
+          "is",
+          "are",
+          "be"
+        ],
+        "answer": 0,
+        "explanation": "주어 I 뒤에는 be동사 am을 씁니다."
+      },
+      {
+        "question": "Maya _____ friendly.",
+        "choices": [
+          "am",
+          "are",
+          "is",
+          "be"
+        ],
+        "answer": 2,
+        "explanation": "한 사람 Maya는 단수 주어이므로 is가 알맞습니다."
+      },
+      {
+        "question": "The science rooms _____ bright.",
+        "choices": [
+          "is",
+          "am",
+          "are",
+          "be"
+        ],
+        "answer": 2,
+        "explanation": "rooms가 복수이므로 are를 씁니다."
+      },
+      {
+        "question": "Choose the correct question.",
+        "choices": [
+          "You are new?",
+          "Are you new?",
+          "Is you new?",
+          "Am you new?"
+        ],
+        "answer": 1,
+        "explanation": "be동사 Are를 주어 you 앞으로 옮겨 질문을 만듭니다."
+      },
+      {
+        "question": "“How about you?” means _____.",
+        "choices": [
+          "다시 말해 줘",
+          "너는 어때?",
+          "어디에 있니?",
+          "도와줄래?"
+        ],
+        "answer": 1,
+        "explanation": "상대방에게 같은 질문이나 의견을 되돌려 물을 때 쓰는 표현입니다."
+      },
+      {
+        "question": "Where is Joon's classroom?",
+        "choices": [
+          "On the first floor",
+          "On the second floor",
+          "Next to the playground",
+          "Inside the library"
+        ],
+        "answer": 1,
+        "explanation": "첫 문단에서 교실이 2층에 있다고 했습니다."
+      },
+      {
+        "question": "Who helps Joon?",
+        "choices": [
+          "A teacher",
+          "Maya",
+          "His brother",
+          "A librarian"
+        ],
+        "answer": 1,
+        "explanation": "Maya가 학교의 여러 장소를 보여 줍니다."
+      },
+      {
+        "question": "Where are the science rooms?",
+        "choices": [
+          "Next to the library",
+          "Under the hall",
+          "Outside the school",
+          "On the playground"
+        ],
+        "answer": 0,
+        "explanation": "과학실은 도서관 옆에 있습니다."
+      },
+      {
+        "question": "Why is Joon not nervous at the end?",
+        "choices": [
+          "School is closed.",
+          "He has a friendly classmate.",
+          "He goes home.",
+          "There is no lesson."
+        ],
+        "answer": 1,
+        "explanation": "Maya가 친구가 되어 도와주고 같이 앉자고 했기 때문입니다."
+      },
+      {
+        "question": "What is the main idea?",
+        "choices": [
+          "Joon has a friendly first morning at a new school.",
+          "Joon misses the bus.",
+          "Maya cannot find her classroom.",
+          "The science room is closed."
+        ],
+        "answer": 0,
+        "explanation": "새 학교 첫날 Maya의 도움으로 편안해지는 내용입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Are you in Year 5 or Year 6?",
+      "How do you feel on the first day at a new place?",
+      "What rooms are in your school?",
+      "Who is friendly in your class, and why?",
+      "What can you say to a new classmate?"
+    ],
+    "rolePlay": {
+      "scenario": "You meet a new student near the school stairs.",
+      "learnerRole": "Introduce yourself, say your year group, and ask two simple questions.",
+      "coachRole": "Be the new student and answer with short A1 sentences, then add one A2 detail.",
+      "goal": "Use am/is/are and one practical expression naturally."
+    }
+  },
+  {
+    "date": "2026-09-29",
+    "title": "Student Daily English — 2026-09-29",
+    "grammarTopic": "Present Simple and Adverbs of Frequency",
+    "grammar": {
+      "title": "매일 하는 일: 현재형과 빈도부사",
+      "summary": "현재형은 반복되는 습관과 사실을 말합니다. I/you/we/they 뒤에는 동사원형을, he/she/it 뒤에는 보통 -s를 붙인 동사를 씁니다. always, usually, sometimes, never로 얼마나 자주 하는지도 표현합니다.",
+      "points": [
+        {
+          "title": "I/You/We/They + 동사원형",
+          "explanation": "여러 번 반복하는 행동은 동사원형으로 말합니다. do not/don't를 쓰면 하지 않는다는 뜻입니다.",
+          "examples": [
+            "[A1] I walk to school. — 나는 학교에 걸어가요.",
+            "[A1] We eat lunch at noon. — 우리는 정오에 점심을 먹어요.",
+            "[A2] I practise English after dinner. — 나는 저녁 식사 후 영어를 연습해요.",
+            "[A2] They don't use phones in class. — 그들은 수업 중 휴대전화를 사용하지 않아요."
+          ]
+        },
+        {
+          "title": "He/She/It + -s",
+          "explanation": "3인칭 단수 현재형에는 보통 -s를 붙입니다. -ch, -sh, -o 뒤에는 -es, 자음+y는 y를 i로 바꾸고 -es를 붙입니다.",
+          "examples": [
+            "[A1] She reads every day. — 그녀는 매일 읽어요.",
+            "[A1] He watches TV after homework. — 그는 숙제 후 TV를 봐요.",
+            "[A2] Mina studies English at the library. — Mina는 도서관에서 영어를 공부해요.",
+            "[A2] My bus goes past the park. — 내 버스는 공원을 지나가요."
+          ]
+        },
+        {
+          "title": "don't / doesn't",
+          "explanation": "I/you/we/they에는 don't, he/she/it에는 doesn't를 씁니다. doesn't 뒤의 본동사는 -s 없이 원형으로 돌아갑니다.",
+          "examples": [
+            "[A1] I don't get up late. — 나는 늦게 일어나지 않아요.",
+            "[A1] He doesn't skip breakfast. — 그는 아침을 거르지 않아요.",
+            "[A2] Our club doesn't meet on Friday. — 우리 동아리는 금요일에 모이지 않아요.",
+            "[A2] She doesn't carry a heavy bag because she uses a locker. — 그녀는 사물함을 써서 무거운 가방을 들지 않아요."
+          ]
+        },
+        {
+          "title": "Do / Does 질문",
+          "explanation": "Do 또는 Does를 문장 앞에 두어 현재형 질문을 만듭니다. Does 뒤에서도 본동사는 원형입니다.",
+          "examples": [
+            "[A1] Do you play football? — 너는 축구를 하니?",
+            "[A1] Does he take the bus? — 그는 버스를 타니?",
+            "[A2] What time do you start school? — 학교를 몇 시에 시작하니?",
+            "[A2] How often does she practise the piano? — 그녀는 피아노를 얼마나 자주 연습하니?"
+          ]
+        },
+        {
+          "title": "always, usually, sometimes, never",
+          "explanation": "빈도부사는 보통 일반동사 앞에 옵니다. be동사와 함께 쓸 때는 be동사 뒤에 둡니다.",
+          "examples": [
+            "[A1] I always pack my bag at night. — 나는 항상 밤에 가방을 싸요.",
+            "[A1] She is usually on time. — 그녀는 보통 제시간에 와요.",
+            "[A2] We sometimes take a break outside. — 우리는 가끔 밖에서 쉬어요.",
+            "[A2] He never forgets his water bottle. — 그는 물병을 절대 잊지 않아요."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "on time",
+        "meaning": "제시간에",
+        "example": "Our bus is usually on time. — 우리 버스는 보통 제시간에 와요."
+      },
+      {
+        "term": "take a break",
+        "meaning": "잠깐 쉬다",
+        "example": "I take a break after finishing my homework. — 숙제를 끝낸 뒤 잠깐 쉬어요."
+      },
+      {
+        "term": "every now and then",
+        "meaning": "가끔",
+        "example": "We eat outside every now and then. — 우리는 가끔 밖에서 먹어요."
+      }
+    ],
+    "readingTitle": "A School Day That Runs Smoothly",
+    "paragraphs": [
+      "Anya usually gets up at half past six. She washes, gets dressed, and eats toast with fruit. She always checks her school bag before she leaves home.",
+      "Her bus arrives at seven twenty. It is usually on time. Anya sits with her friend Leo, and they sometimes talk about their homework on the way to school.",
+      "Lessons start at eight. Anya likes science, but she doesn't enjoy long maths tests. Her teacher gives the class a short break every hour, so everyone can move and drink water.",
+      "After lunch, Anya goes to art club twice a week. Leo doesn't join the club. He plays football on Tuesdays and Thursdays, and he practises with his team for one hour.",
+      "Anya gets home at four. She does her homework before dinner and reads every night. She watches a funny programme every now and then, but she never stays up very late."
+    ],
+    "translations": [
+      "Anya는 보통 6시 30분에 일어납니다. 씻고 옷을 입고 과일과 토스트를 먹습니다. 집을 나서기 전에 항상 학교 가방을 확인합니다.",
+      "버스는 7시 20분에 오며 보통 제시간입니다. Anya는 친구 Leo와 앉아 학교 가는 길에 가끔 숙제 이야기를 합니다.",
+      "수업은 8시에 시작합니다. Anya는 과학을 좋아하지만 긴 수학 시험은 좋아하지 않습니다. 선생님은 매시간 짧은 휴식을 줍니다.",
+      "점심 뒤 Anya는 일주일에 두 번 미술 동아리에 갑니다. Leo는 참여하지 않고 화요일과 목요일에 한 시간씩 축구 연습을 합니다.",
+      "Anya는 4시에 집에 옵니다. 저녁 전에 숙제를 하고 매일 밤 책을 읽습니다. 가끔 재미있는 프로그램을 보지만 아주 늦게까지 깨어 있지는 않습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "usually",
+        "partOfSpeech": "adverb",
+        "meaning": "보통",
+        "context": "대부분의 날에 하는 행동"
+      },
+      {
+        "term": "checks",
+        "partOfSpeech": "verb",
+        "meaning": "확인한다",
+        "context": "가방 안을 살펴봄"
+      },
+      {
+        "term": "arrives",
+        "partOfSpeech": "verb",
+        "meaning": "도착한다",
+        "context": "버스가 오는 시간"
+      },
+      {
+        "term": "homework",
+        "partOfSpeech": "noun",
+        "meaning": "숙제",
+        "context": "집에서 하는 학교 과제"
+      },
+      {
+        "term": "lessons",
+        "partOfSpeech": "noun",
+        "meaning": "수업들",
+        "context": "학교에서 배우는 시간"
+      },
+      {
+        "term": "enjoy",
+        "partOfSpeech": "verb",
+        "meaning": "즐기다",
+        "context": "어떤 활동을 좋아함"
+      },
+      {
+        "term": "break",
+        "partOfSpeech": "noun",
+        "meaning": "휴식",
+        "context": "수업 사이 잠깐 쉬는 시간"
+      },
+      {
+        "term": "club",
+        "partOfSpeech": "noun",
+        "meaning": "동아리",
+        "context": "관심 활동을 함께하는 모임"
+      },
+      {
+        "term": "practises",
+        "partOfSpeech": "verb",
+        "meaning": "연습한다",
+        "context": "실력을 높이려고 반복함"
+      },
+      {
+        "term": "programme",
+        "partOfSpeech": "noun",
+        "meaning": "프로그램",
+        "context": "텔레비전 방송"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Anya _____ up at 6:30.",
+        "choices": [
+          "get",
+          "gets",
+          "getting",
+          "is get"
+        ],
+        "answer": 1,
+        "explanation": "Anya는 3인칭 단수이므로 동사에 -s를 붙입니다."
+      },
+      {
+        "question": "They _____ about homework on the bus.",
+        "choices": [
+          "talk",
+          "talks",
+          "talking",
+          "does talk"
+        ],
+        "answer": 0,
+        "explanation": "주어 they 뒤에는 동사원형 talk를 씁니다."
+      },
+      {
+        "question": "Leo _____ join art club.",
+        "choices": [
+          "don't",
+          "doesn't",
+          "isn't",
+          "not"
+        ],
+        "answer": 1,
+        "explanation": "3인칭 단수의 현재형 부정은 doesn't + 동사원형입니다."
+      },
+      {
+        "question": "_____ she read every night?",
+        "choices": [
+          "Do",
+          "Does",
+          "Is",
+          "Are"
+        ],
+        "answer": 1,
+        "explanation": "주어 she의 현재형 질문은 Does로 시작합니다."
+      },
+      {
+        "question": "“Take a break” means _____.",
+        "choices": [
+          "잠깐 쉬다",
+          "버스를 타다",
+          "늦게 자다",
+          "시험을 보다"
+        ],
+        "answer": 0,
+        "explanation": "일이나 공부를 잠시 멈추고 쉬는 표현입니다."
+      },
+      {
+        "question": "What does Anya check before leaving?",
+        "choices": [
+          "Her bus",
+          "Her school bag",
+          "The art room",
+          "Her football"
+        ],
+        "answer": 1,
+        "explanation": "집을 나서기 전에 학교 가방을 확인합니다."
+      },
+      {
+        "question": "Who sits with Anya on the bus?",
+        "choices": [
+          "Her teacher",
+          "Leo",
+          "Her sister",
+          "The driver"
+        ],
+        "answer": 1,
+        "explanation": "친구 Leo와 함께 앉습니다."
+      },
+      {
+        "question": "Why does the teacher give a break?",
+        "choices": [
+          "To end school",
+          "So students can move and drink water",
+          "To start a test",
+          "So everyone can go home"
+        ],
+        "answer": 1,
+        "explanation": "학생들이 움직이고 물을 마실 수 있게 휴식을 줍니다."
+      },
+      {
+        "question": "When does Leo play football?",
+        "choices": [
+          "Every morning",
+          "Tuesdays and Thursdays",
+          "Only Friday",
+          "At lunch every day"
+        ],
+        "answer": 1,
+        "explanation": "Leo는 화요일과 목요일에 축구를 합니다."
+      },
+      {
+        "question": "Which is true?",
+        "choices": [
+          "Anya never reads.",
+          "Anya stays up very late.",
+          "Anya does homework before dinner.",
+          "Leo joins art club."
+        ],
+        "answer": 2,
+        "explanation": "Anya는 저녁 식사 전에 숙제를 합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What time do you usually get up?",
+      "How do you go to school?",
+      "Which subject do you enjoy most?",
+      "What do you do after school?",
+      "What do you never forget to pack?"
+    ],
+    "rolePlay": {
+      "scenario": "You and a classmate compare your school-day routines.",
+      "learnerRole": "Describe your morning and one after-school activity.",
+      "coachRole": "Ask present-simple questions and compare one habit.",
+      "goal": "Use one frequency adverb and one practical expression."
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Student Daily English — 2026-09-30",
+    "grammarTopic": "Present Continuous: Actions Happening Now",
+    "grammar": {
+      "title": "지금 하고 있는 일: am/is/are + -ing",
+      "summary": "현재진행형은 지금 이 순간 또는 요즘 잠시 하고 있는 일을 말합니다. be동사 뒤에 동사-ing를 붙입니다. 현재형 습관과 현재진행형의 지금 행동을 구별해 봅니다.",
+      "points": [
+        {
+          "title": "am/is/are + -ing",
+          "explanation": "주어에 맞는 be동사와 -ing형을 함께 씁니다. 둘 중 하나를 빼면 완전한 현재진행형이 아닙니다.",
+          "examples": [
+            "[A1] I am reading now. — 나는 지금 읽고 있어요.",
+            "[A1] She is drawing a cat. — 그녀는 고양이를 그리고 있어요.",
+            "[A2] We are working inside because it is raining. — 비가 와서 우리는 안에서 활동하고 있어요.",
+            "[A2] The teacher is helping a small group. — 선생님은 작은 모둠을 돕고 있어요."
+          ]
+        },
+        {
+          "title": "-ing 철자 변화",
+          "explanation": "대부분은 -ing를 붙입니다. e로 끝나면 e를 빼고, 짧은 모음+자음 동사는 마지막 자음을 한 번 더 씁니다.",
+          "examples": [
+            "[A1] make → making — 만들고 있는",
+            "[A1] run → running — 달리고 있는",
+            "[A2] The children are sitting in a circle. — 아이들이 원으로 앉아 있어요.",
+            "[A2] Leo is writing a message. — Leo는 메시지를 쓰고 있어요."
+          ]
+        },
+        {
+          "title": "부정문: be + not + -ing",
+          "explanation": "be동사 뒤에 not을 넣으면 지금 그 행동을 하지 않는다는 뜻입니다.",
+          "examples": [
+            "[A1] I am not sleeping. — 나는 자고 있지 않아요.",
+            "[A1] They aren't playing outside. — 그들은 밖에서 놀고 있지 않아요.",
+            "[A2] Maya isn't using paint today. — Maya는 오늘 물감을 쓰고 있지 않아요.",
+            "[A2] We aren't waiting for the rain to stop. — 우리는 비가 그치기를 기다리고 있지 않아요."
+          ]
+        },
+        {
+          "title": "질문: Be + 주어 + -ing?",
+          "explanation": "be동사를 주어 앞으로 옮겨 지금 무엇을 하는지 묻습니다. Wh- 질문은 What/Where를 맨 앞에 둡니다.",
+          "examples": [
+            "[A1] Are you listening? — 듣고 있니?",
+            "[A1] Is he running? — 그는 달리고 있니?",
+            "[A2] What are they making? — 그들은 무엇을 만들고 있나요?",
+            "[A2] Why is she looking for scissors? — 그녀는 왜 가위를 찾고 있나요?"
+          ]
+        },
+        {
+          "title": "습관과 지금 행동 비교",
+          "explanation": "현재형은 반복 습관, 현재진행형은 지금 진행 중인 행동입니다. every day와 now 같은 시간 표현이 힌트가 됩니다.",
+          "examples": [
+            "[A1] I read every day. — 나는 매일 읽어요.",
+            "[A1] I am reading now. — 나는 지금 읽고 있어요.",
+            "[A2] We usually play outside, but we are staying inside today. — 보통 밖에서 놀지만 오늘은 안에 있어요.",
+            "[A2] Dad works at home, and he is talking to a client now. — 아빠는 집에서 일하고 지금 고객과 통화 중이에요."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "right now",
+        "meaning": "바로 지금",
+        "example": "We are making a poster right now. — 우리는 바로 지금 포스터를 만들고 있어요."
+      },
+      {
+        "term": "wait a minute",
+        "meaning": "잠깐만",
+        "example": "Wait a minute. I am finding the blue paper. — 잠깐만. 파란 종이를 찾고 있어."
+      },
+      {
+        "term": "look for",
+        "meaning": "찾다",
+        "example": "Maya is looking for the scissors. — Maya는 가위를 찾고 있어요."
+      }
+    ],
+    "readingTitle": "A Busy Rainy Break",
+    "paragraphs": [
+      "It is raining heavily, so the pupils are staying inside at break time. Their classroom is busy, but everyone is finding something useful or fun to do.",
+      "Maya is making a large poster for the reading corner. She is cutting yellow stars, and Ben is drawing a moon. They are looking for the blue paper right now.",
+      "Near the window, two pupils are playing a quiet board game. They aren't arguing. They are taking turns and helping each other understand the rules.",
+      "The teacher is reading with a small group. One boy is not reading aloud yet because he is checking a difficult word. His friend is waiting and listening patiently.",
+      "The rain is still falling, but nobody is bored. Some pupils usually run outside at break, yet today they are enjoying a calm indoor activity together."
+    ],
+    "translations": [
+      "비가 많이 와서 학생들은 쉬는 시간에 실내에 있습니다. 교실은 바쁘지만 모두 유용하거나 재미있는 일을 찾습니다.",
+      "Maya는 독서 공간 포스터를 만들고 있습니다. 노란 별을 자르고 Ben은 달을 그립니다. 두 사람은 지금 파란 종이를 찾고 있습니다.",
+      "창가에서는 두 학생이 조용한 보드게임을 합니다. 다투지 않고 번갈아 하며 규칙 이해를 돕습니다.",
+      "선생님은 작은 모둠과 책을 읽습니다. 한 남학생은 어려운 단어를 확인 중이라 아직 소리 내어 읽지 않습니다. 친구는 기다리며 잘 듣습니다.",
+      "비는 계속 오지만 아무도 지루하지 않습니다. 보통 밖에서 뛰는 학생들도 오늘은 차분한 실내 활동을 함께 즐깁니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "heavily",
+        "partOfSpeech": "adverb",
+        "meaning": "세차게",
+        "context": "비가 많이 오는 모습"
+      },
+      {
+        "term": "pupils",
+        "partOfSpeech": "noun",
+        "meaning": "학생들",
+        "context": "학교에서 배우는 아이들"
+      },
+      {
+        "term": "useful",
+        "partOfSpeech": "adjective",
+        "meaning": "유용한",
+        "context": "도움이 되는 활동"
+      },
+      {
+        "term": "poster",
+        "partOfSpeech": "noun",
+        "meaning": "포스터",
+        "context": "벽에 붙이는 큰 그림 자료"
+      },
+      {
+        "term": "cutting",
+        "partOfSpeech": "verb",
+        "meaning": "자르고 있는",
+        "context": "가위로 종이를 나누는 행동"
+      },
+      {
+        "term": "arguing",
+        "partOfSpeech": "verb",
+        "meaning": "다투고 있는",
+        "context": "서로 화내며 말하는 행동"
+      },
+      {
+        "term": "rules",
+        "partOfSpeech": "noun",
+        "meaning": "규칙들",
+        "context": "게임 방법을 정한 약속"
+      },
+      {
+        "term": "aloud",
+        "partOfSpeech": "adverb",
+        "meaning": "소리 내어",
+        "context": "다른 사람이 들리게 읽는 방식"
+      },
+      {
+        "term": "patiently",
+        "partOfSpeech": "adverb",
+        "meaning": "참을성 있게",
+        "context": "서두르지 않고 기다리는 모습"
+      },
+      {
+        "term": "bored",
+        "partOfSpeech": "adjective",
+        "meaning": "지루한",
+        "context": "할 일이 재미없다고 느끼는 상태"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Maya _____ a poster now.",
+        "choices": [
+          "makes",
+          "is making",
+          "making",
+          "make"
+        ],
+        "answer": 1,
+        "explanation": "지금 진행 중인 행동이므로 is making을 씁니다."
+      },
+      {
+        "question": "The pupils _____ inside.",
+        "choices": [
+          "are staying",
+          "is staying",
+          "stay now every",
+          "staying"
+        ],
+        "answer": 0,
+        "explanation": "복수 주어 pupils에는 are + staying이 알맞습니다."
+      },
+      {
+        "question": "run의 -ing형은?",
+        "choices": [
+          "runing",
+          "running",
+          "runeing",
+          "runs"
+        ],
+        "answer": 1,
+        "explanation": "짧은 모음+자음 형태라 마지막 n을 한 번 더 쓰고 -ing를 붙입니다."
+      },
+      {
+        "question": "Choose the question.",
+        "choices": [
+          "What they are making?",
+          "What are they making?",
+          "What do they making?",
+          "What is they make?"
+        ],
+        "answer": 1,
+        "explanation": "What 뒤에 be동사 are, 주어 they, -ing형 순서로 씁니다."
+      },
+      {
+        "question": "“Look for” means _____.",
+        "choices": [
+          "기다리다",
+          "찾다",
+          "자르다",
+          "읽다"
+        ],
+        "answer": 1,
+        "explanation": "필요한 물건이나 사람을 찾는다는 뜻입니다."
+      },
+      {
+        "question": "Why are the pupils inside?",
+        "choices": [
+          "It is raining heavily.",
+          "The school is closed.",
+          "They have a test.",
+          "It is dark."
+        ],
+        "answer": 0,
+        "explanation": "비가 많이 와서 실내에서 쉬고 있습니다."
+      },
+      {
+        "question": "What are Maya and Ben making?",
+        "choices": [
+          "A board game",
+          "A poster",
+          "A book",
+          "A window"
+        ],
+        "answer": 1,
+        "explanation": "독서 공간을 위한 큰 포스터를 만들고 있습니다."
+      },
+      {
+        "question": "How do the game players behave?",
+        "choices": [
+          "They argue.",
+          "They take turns and help each other.",
+          "They leave the room.",
+          "They shout."
+        ],
+        "answer": 1,
+        "explanation": "번갈아 하며 서로 규칙을 이해하도록 돕습니다."
+      },
+      {
+        "question": "Why is one boy not reading aloud yet?",
+        "choices": [
+          "He is checking a difficult word.",
+          "He is sleeping.",
+          "He lost the book.",
+          "He is outside."
+        ],
+        "answer": 0,
+        "explanation": "어려운 단어를 확인하고 있어 아직 소리 내어 읽지 않습니다."
+      },
+      {
+        "question": "What is the main contrast?",
+        "choices": [
+          "Outside is sunny.",
+          "They usually run outside, but today they enjoy indoor activities.",
+          "Nobody likes games.",
+          "The teacher is not working."
+        ],
+        "answer": 1,
+        "explanation": "평소 야외 활동과 오늘의 실내 활동을 현재형과 진행형으로 대비합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What are you doing right now?",
+      "What is someone near you doing?",
+      "What do you usually do at break time?",
+      "Which indoor activity do you enjoy?",
+      "What can pupils do when it rains?"
+    ],
+    "rolePlay": {
+      "scenario": "You call a friend during a rainy school break.",
+      "learnerRole": "Say what you and two classmates are doing now.",
+      "coachRole": "Ask what is happening and suggest one indoor activity.",
+      "goal": "Use three present continuous sentences and one contrast with usually."
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Student Daily English — 2026-10-01",
+    "grammarTopic": "Past Simple: Regular and Irregular Verbs",
+    "grammar": {
+      "title": "어제 있었던 일: 과거형",
+      "summary": "과거형은 어제, 지난주처럼 이미 끝난 일을 말합니다. 규칙동사에는 -ed를 붙이고, go–went처럼 모양이 달라지는 불규칙동사는 따로 익힙니다. 부정문과 질문의 did 뒤에는 동사원형을 씁니다.",
+      "points": [
+        {
+          "title": "규칙동사 + -ed",
+          "explanation": "대부분의 동사는 -ed를 붙여 과거를 만듭니다. e로 끝나면 -d, 자음+y는 y를 i로 바꾸고 -ed를 붙입니다.",
+          "examples": [
+            "[A1] We played after school. — 우리는 방과 후 놀았어요.",
+            "[A1] She visited the library. — 그녀는 도서관을 방문했어요.",
+            "[A2] I carried the books to the desk. — 나는 책을 책상으로 옮겼어요.",
+            "[A2] The teacher smiled because we finished early. — 우리가 일찍 끝내서 선생님이 웃었어요."
+          ]
+        },
+        {
+          "title": "불규칙 과거형",
+          "explanation": "일부 동사는 -ed가 아니라 특별한 형태를 씁니다. go–went, see–saw, find–found, have–had를 문장으로 익힙니다.",
+          "examples": [
+            "[A1] I went to the library. — 나는 도서관에 갔어요.",
+            "[A1] We saw a new display. — 우리는 새 전시를 봤어요.",
+            "[A2] Mina found her library card under a book. — Mina는 책 아래에서 도서관 카드를 찾았어요.",
+            "[A2] The class had a short reading lesson. — 반은 짧은 읽기 수업을 했어요."
+          ]
+        },
+        {
+          "title": "was / were",
+          "explanation": "be동사의 과거형은 I/he/she/it에 was, you/we/they에 were를 씁니다.",
+          "examples": [
+            "[A1] I was tired. — 나는 피곤했어요.",
+            "[A1] They were at school. — 그들은 학교에 있었어요.",
+            "[A2] The card was under the blue book. — 카드는 파란 책 아래에 있었어요.",
+            "[A2] We were happy when we found it. — 그것을 찾았을 때 우리는 기뻤어요."
+          ]
+        },
+        {
+          "title": "didn't + 동사원형",
+          "explanation": "과거 부정은 didn't + 동사원형입니다. went나 found 같은 과거형을 didn't 뒤에 다시 쓰지 않습니다.",
+          "examples": [
+            "[A1] I didn't go home. — 나는 집에 가지 않았어요.",
+            "[A1] She didn't find it at first. — 그녀는 처음에는 그것을 찾지 못했어요.",
+            "[A2] We didn't stop looking because the card was important. — 카드가 중요해서 우리는 찾기를 멈추지 않았어요.",
+            "[A2] Leo didn't borrow a book yesterday. — Leo는 어제 책을 빌리지 않았어요."
+          ]
+        },
+        {
+          "title": "Did + 주어 + 동사원형?",
+          "explanation": "과거 질문은 Did로 시작하고 본동사는 원형을 씁니다. What/Where/When을 앞에 붙일 수도 있습니다.",
+          "examples": [
+            "[A1] Did you see it? — 그것을 봤니?",
+            "[A1] Did she find her card? — 그녀는 카드를 찾았니?",
+            "[A2] Where did you look first? — 처음에 어디를 찾아봤니?",
+            "[A2] What did the librarian say? — 사서 선생님이 무엇이라고 말했니?"
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "have a good time",
+        "meaning": "즐거운 시간을 보내다",
+        "example": "We had a good time at the library. — 우리는 도서관에서 즐거운 시간을 보냈어요."
+      },
+      {
+        "term": "all of a sudden",
+        "meaning": "갑자기",
+        "example": "All of a sudden, Mina remembered the blue book. — 갑자기 Mina가 파란 책을 기억했어요."
+      },
+      {
+        "term": "in the end",
+        "meaning": "마침내, 결국",
+        "example": "In the end, we found the card. — 결국 우리는 카드를 찾았어요."
+      }
+    ],
+    "readingTitle": "The Missing Library Card",
+    "paragraphs": [
+      "Yesterday, Mina went to the school library with her class. She chose two adventure books and walked to the desk, but her library card was not in her pocket.",
+      "She checked her bag and looked under the table. Her friend Leo helped her, but they didn't find the card. Mina was worried because she used it that morning.",
+      "The librarian asked, “Where did you read before lunch?” Mina remembered that she sat near the new animal display. The three of them walked back to that corner.",
+      "All of a sudden, Mina saw a blue book on a chair. She lifted it and found her card underneath. She smiled and thanked Leo and the librarian.",
+      "In the end, Mina borrowed her books and had a good time reading with the class. She put the card in a zipped pocket before she left the library."
+    ],
+    "translations": [
+      "어제 Mina는 반과 함께 학교 도서관에 갔습니다. 모험책 두 권을 골라 데스크로 갔지만 도서관 카드가 주머니에 없었습니다.",
+      "가방을 확인하고 탁자 밑을 보았습니다. 친구 Leo가 도왔지만 카드를 찾지 못했습니다. 아침에는 카드를 사용해서 Mina는 걱정했습니다.",
+      "사서 선생님은 점심 전에 어디서 읽었는지 물었습니다. Mina는 새 동물 전시 근처에 앉았던 것을 기억했고 세 사람은 그곳으로 돌아갔습니다.",
+      "갑자기 Mina가 의자 위 파란 책을 보았습니다. 책을 들자 아래에서 카드를 찾았습니다. Mina는 웃으며 두 사람에게 고마워했습니다.",
+      "결국 Mina는 책을 빌리고 반과 즐겁게 읽었습니다. 도서관을 떠나기 전 카드를 지퍼 주머니에 넣었습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "yesterday",
+        "partOfSpeech": "adverb",
+        "meaning": "어제",
+        "context": "이미 끝난 과거의 날"
+      },
+      {
+        "term": "adventure",
+        "partOfSpeech": "noun",
+        "meaning": "모험",
+        "context": "흥미로운 사건이 이어지는 이야기"
+      },
+      {
+        "term": "pocket",
+        "partOfSpeech": "noun",
+        "meaning": "주머니",
+        "context": "옷이나 가방의 작은 수납 공간"
+      },
+      {
+        "term": "worried",
+        "partOfSpeech": "adjective",
+        "meaning": "걱정한",
+        "context": "카드를 잃어 마음이 불편한 상태"
+      },
+      {
+        "term": "librarian",
+        "partOfSpeech": "noun",
+        "meaning": "사서",
+        "context": "도서관에서 책을 관리하는 사람"
+      },
+      {
+        "term": "remembered",
+        "partOfSpeech": "verb",
+        "meaning": "기억했다",
+        "context": "전에 한 일을 떠올림"
+      },
+      {
+        "term": "display",
+        "partOfSpeech": "noun",
+        "meaning": "전시",
+        "context": "볼 수 있게 놓아둔 자료"
+      },
+      {
+        "term": "lifted",
+        "partOfSpeech": "verb",
+        "meaning": "들어 올렸다",
+        "context": "책을 위로 움직임"
+      },
+      {
+        "term": "underneath",
+        "partOfSpeech": "preposition",
+        "meaning": "아래에",
+        "context": "파란 책 밑의 위치"
+      },
+      {
+        "term": "borrowed",
+        "partOfSpeech": "verb",
+        "meaning": "빌렸다",
+        "context": "나중에 돌려주려고 책을 가져감"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Yesterday, Mina _____ to the library.",
+        "choices": [
+          "go",
+          "goes",
+          "went",
+          "going"
+        ],
+        "answer": 2,
+        "explanation": "go의 불규칙 과거형은 went입니다."
+      },
+      {
+        "question": "She _____ under the table.",
+        "choices": [
+          "looked",
+          "look",
+          "looks",
+          "did looked"
+        ],
+        "answer": 0,
+        "explanation": "끝난 과거 행동이므로 규칙 과거형 looked를 씁니다."
+      },
+      {
+        "question": "They _____ find the card at first.",
+        "choices": [
+          "don't",
+          "didn't",
+          "weren't",
+          "not"
+        ],
+        "answer": 1,
+        "explanation": "과거 부정은 didn't + 동사원형입니다."
+      },
+      {
+        "question": "_____ she find the card?",
+        "choices": [
+          "Does",
+          "Did",
+          "Was",
+          "Is"
+        ],
+        "answer": 1,
+        "explanation": "과거 행동 질문은 Did + 주어 + 동사원형입니다."
+      },
+      {
+        "question": "“In the end” means _____.",
+        "choices": [
+          "처음에",
+          "결국",
+          "매일",
+          "바로 지금"
+        ],
+        "answer": 1,
+        "explanation": "여러 일 뒤의 마지막 결과를 말할 때 쓰는 표현입니다."
+      },
+      {
+        "question": "What did Mina want to borrow?",
+        "choices": [
+          "Two adventure books",
+          "A blue chair",
+          "An animal card",
+          "Leo's bag"
+        ],
+        "answer": 0,
+        "explanation": "모험책 두 권을 골랐습니다."
+      },
+      {
+        "question": "Why was Mina worried?",
+        "choices": [
+          "The library was closed.",
+          "Her card was missing.",
+          "Leo went home.",
+          "She disliked books."
+        ],
+        "answer": 1,
+        "explanation": "도서관 카드가 주머니에 없어서 걱정했습니다."
+      },
+      {
+        "question": "Who asked about Mina's earlier reading place?",
+        "choices": [
+          "Leo",
+          "The teacher",
+          "The librarian",
+          "Her mother"
+        ],
+        "answer": 2,
+        "explanation": "사서가 점심 전에 어디서 읽었는지 물었습니다."
+      },
+      {
+        "question": "Where was the card?",
+        "choices": [
+          "In Leo's pocket",
+          "Under a blue book",
+          "On the desk",
+          "Inside her lunch box"
+        ],
+        "answer": 1,
+        "explanation": "의자 위 파란 책 아래에서 찾았습니다."
+      },
+      {
+        "question": "What did Mina do before leaving?",
+        "choices": [
+          "She hid the books.",
+          "She put the card in a zipped pocket.",
+          "She left the card on a chair.",
+          "She borrowed a chair."
+        ],
+        "answer": 1,
+        "explanation": "다시 잃지 않도록 지퍼 주머니에 넣었습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Where did you go yesterday?",
+      "What did you read last week?",
+      "Have you ever lost something important?",
+      "Who helped you find it?",
+      "What did you do in the end?"
+    ],
+    "rolePlay": {
+      "scenario": "You lost a library card and ask the librarian for help.",
+      "learnerRole": "Explain where you went and where you looked.",
+      "coachRole": "Ask simple past questions and suggest one place to check.",
+      "goal": "Use two regular and two irregular past verbs."
+    }
+  },
+  {
+    "date": "2026-10-02",
+    "title": "Student Daily English — 2026-10-02",
+    "grammarTopic": "Can, Can't, and Could for Ability and Requests",
+    "grammar": {
+      "title": "할 수 있어요, 도와주시겠어요?: can과 could",
+      "summary": "can은 현재 능력·가능·허락을 나타내고, can't는 할 수 없음을 말합니다. Can you...?는 요청, Could you...?는 조금 더 공손한 요청입니다. 조동사 뒤에는 항상 동사원형을 씁니다.",
+      "points": [
+        {
+          "title": "can + 동사원형: 능력",
+          "explanation": "할 수 있는 일을 말할 때 can 뒤에 동사원형을 씁니다. 주어가 he/she여도 동사에 -s를 붙이지 않습니다.",
+          "examples": [
+            "[A1] I can swim. — 나는 수영할 수 있어요.",
+            "[A1] She can draw well. — 그녀는 그림을 잘 그려요.",
+            "[A2] We can finish the poster before lunch. — 우리는 점심 전에 포스터를 끝낼 수 있어요.",
+            "[A2] Ben can explain the game in English. — Ben은 영어로 게임을 설명할 수 있어요."
+          ]
+        },
+        {
+          "title": "can't + 동사원형",
+          "explanation": "할 수 없거나 허용되지 않은 행동에는 can't를 씁니다. cannot은 뜻이 같고 조금 더 격식적입니다.",
+          "examples": [
+            "[A1] I can't reach the shelf. — 나는 선반에 손이 닿지 않아요.",
+            "[A1] You can't run in the hall. — 강당에서 뛰면 안 돼요.",
+            "[A2] Maya can't carry both boxes alone. — Maya는 혼자서 상자 두 개를 들 수 없어요.",
+            "[A2] We cannot use the lift during the drill. — 훈련 중에는 엘리베이터를 사용할 수 없어요."
+          ]
+        },
+        {
+          "title": "Can you...? 요청",
+          "explanation": "상대에게 무엇을 해 달라고 부탁할 때 Can you + 동사원형을 씁니다. Yes, of course나 Sorry, I can't로 답할 수 있습니다.",
+          "examples": [
+            "[A1] Can you help me? — 나를 도와줄 수 있니?",
+            "[A1] Can you open the door? — 문을 열어 줄 수 있니?",
+            "[A2] Can you show me how to use this ruler? — 이 자를 어떻게 쓰는지 보여 줄 수 있니?",
+            "[A2] Can you hold the box while I move the chair? — 내가 의자를 옮기는 동안 상자를 잡아 줄 수 있니?"
+          ]
+        },
+        {
+          "title": "Could you...? 공손한 요청",
+          "explanation": "could는 과거 능력에도 쓰지만, 요청에서는 can보다 조금 더 공손하게 들립니다. 대답은 현재 요청에 맞게 can으로 해도 됩니다.",
+          "examples": [
+            "[A1] Could you speak slowly, please? — 천천히 말해 주시겠어요?",
+            "[A1] Could you pass the tape? — 테이프를 건네주시겠어요?",
+            "[A2] Could you check this sentence for me? — 이 문장을 확인해 주시겠어요?",
+            "[A2] Could you help us move the chairs after class? — 수업 뒤 의자를 옮기는 것을 도와주시겠어요?"
+          ]
+        },
+        {
+          "title": "Can I / Could I...? 허락 구하기",
+          "explanation": "내가 어떤 행동을 해도 되는지 물을 때 Can I 또는 더 공손한 Could I를 씁니다.",
+          "examples": [
+            "[A1] Can I sit here? — 여기 앉아도 되나요?",
+            "[A1] Could I borrow your pencil? — 연필을 빌려도 될까요?",
+            "[A2] Can I use the computer after you finish? — 네가 끝낸 뒤 컴퓨터를 써도 될까?",
+            "[A2] Could I ask one more question, please? — 질문 하나 더 해도 될까요?"
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Could you help me?",
+        "meaning": "도와주시겠어요?",
+        "example": "Could you help me move this table? — 이 탁자를 옮기는 것을 도와주시겠어요?"
+      },
+      {
+        "term": "Of course.",
+        "meaning": "물론이지요.",
+        "example": "Of course. I can carry that box. — 물론이야. 그 상자를 들 수 있어."
+      },
+      {
+        "term": "No problem.",
+        "meaning": "문제없어요, 괜찮아요.",
+        "example": "No problem. We can do it together. — 문제없어. 같이 할 수 있어."
+      }
+    ],
+    "readingTitle": "Working Together in the Art Room",
+    "paragraphs": [
+      "The art class is preparing a small exhibition. The pupils can draw and paint, but they also need to move tables, hang pictures, and make labels.",
+      "Maya can write neat labels. Ben can reach the high board, but he can't hold the board and use the tape at the same time. He asks, “Could you help me, please?”",
+      "Maya says, “Of course.” She holds the board while Ben adds the tape. Then she asks, “Can you check this label?” Ben reads it and finds one missing letter.",
+      "Near the door, two younger pupils can't move a heavy table. They ask the teacher for help. The teacher shows them how four people can lift it safely together.",
+      "After an hour, the room is ready. Nobody can do every job alone, but everyone can do something useful. “No problem” becomes the class's favourite answer."
+    ],
+    "translations": [
+      "미술반은 작은 전시를 준비합니다. 학생들은 그림을 그릴 수 있지만 탁자를 옮기고 그림을 걸며 이름표도 만들어야 합니다.",
+      "Maya는 깔끔한 이름표를 쓸 수 있습니다. Ben은 높은 게시판에 닿지만 게시판을 잡으면서 테이프를 쓸 수 없어 도움을 부탁합니다.",
+      "Maya는 물론이라고 답하고 게시판을 잡습니다. 그다음 이름표를 확인해 달라고 부탁하자 Ben은 빠진 글자 하나를 찾습니다.",
+      "문 근처에서는 어린 학생 두 명이 무거운 탁자를 옮기지 못합니다. 선생님은 네 명이 함께 안전하게 드는 방법을 보여 줍니다.",
+      "한 시간 뒤 교실은 준비됐습니다. 누구도 모든 일을 혼자 할 수는 없지만 모두 유용한 일 하나는 할 수 있습니다. ‘문제없어’가 반의 가장 좋아하는 대답이 됩니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "exhibition",
+        "partOfSpeech": "noun",
+        "meaning": "전시회",
+        "context": "작품을 보여 주는 행사"
+      },
+      {
+        "term": "hang",
+        "partOfSpeech": "verb",
+        "meaning": "걸다",
+        "context": "그림을 벽이나 게시판에 붙임"
+      },
+      {
+        "term": "labels",
+        "partOfSpeech": "noun",
+        "meaning": "이름표들",
+        "context": "작품 정보를 적은 작은 종이"
+      },
+      {
+        "term": "neat",
+        "partOfSpeech": "adjective",
+        "meaning": "깔끔한",
+        "context": "글씨가 정돈된 모습"
+      },
+      {
+        "term": "reach",
+        "partOfSpeech": "verb",
+        "meaning": "닿다",
+        "context": "손이 높은 곳까지 미침"
+      },
+      {
+        "term": "tape",
+        "partOfSpeech": "noun",
+        "meaning": "테이프",
+        "context": "종이를 붙이는 물건"
+      },
+      {
+        "term": "missing",
+        "partOfSpeech": "adjective",
+        "meaning": "빠진",
+        "context": "필요한 글자가 없는 상태"
+      },
+      {
+        "term": "heavy",
+        "partOfSpeech": "adjective",
+        "meaning": "무거운",
+        "context": "들기 힘든 무게"
+      },
+      {
+        "term": "lift",
+        "partOfSpeech": "verb",
+        "meaning": "들어 올리다",
+        "context": "물건을 위로 움직임"
+      },
+      {
+        "term": "safely",
+        "partOfSpeech": "adverb",
+        "meaning": "안전하게",
+        "context": "다치지 않는 방법으로"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Maya _____ write neat labels.",
+        "choices": [
+          "cans",
+          "can",
+          "can to",
+          "is can"
+        ],
+        "answer": 1,
+        "explanation": "조동사 can은 형태가 변하지 않고 뒤에 동사원형을 씁니다."
+      },
+      {
+        "question": "Ben _____ hold both things alone.",
+        "choices": [
+          "doesn't can",
+          "can't",
+          "isn't can",
+          "can not to"
+        ],
+        "answer": 1,
+        "explanation": "할 수 없다는 뜻은 can't + 동사원형입니다."
+      },
+      {
+        "question": "Choose the polite request.",
+        "choices": [
+          "Could you help me, please?",
+          "You help me.",
+          "Could helping me?",
+          "Do you can help?"
+        ],
+        "answer": 0,
+        "explanation": "Could you + 동사원형은 공손한 부탁입니다."
+      },
+      {
+        "question": "_____ I borrow your ruler?",
+        "choices": [
+          "Am",
+          "Do",
+          "Can",
+          "Does"
+        ],
+        "answer": 2,
+        "explanation": "허락을 구할 때 Can I + 동사원형을 씁니다."
+      },
+      {
+        "question": "“No problem” means _____.",
+        "choices": [
+          "안 돼요",
+          "문제없어요",
+          "모르겠어요",
+          "조용히 하세요"
+        ],
+        "answer": 1,
+        "explanation": "도움을 기꺼이 주거나 괜찮다고 답할 때 쓰는 표현입니다."
+      },
+      {
+        "question": "What is the class preparing?",
+        "choices": [
+          "A football match",
+          "An exhibition",
+          "A maths test",
+          "A lunch menu"
+        ],
+        "answer": 1,
+        "explanation": "작품을 보여 줄 작은 전시를 준비합니다."
+      },
+      {
+        "question": "Why does Ben need help?",
+        "choices": [
+          "He cannot read.",
+          "He cannot hold the board and tape it at once.",
+          "He is outside.",
+          "He lost the board."
+        ],
+        "answer": 1,
+        "explanation": "게시판을 잡으면서 동시에 테이프를 붙일 수 없기 때문입니다."
+      },
+      {
+        "question": "What does Ben find?",
+        "choices": [
+          "A missing letter",
+          "A new picture",
+          "A broken chair",
+          "A paint brush"
+        ],
+        "answer": 0,
+        "explanation": "Maya의 이름표에서 빠진 글자 하나를 찾습니다."
+      },
+      {
+        "question": "How do the younger pupils move the table?",
+        "choices": [
+          "One pupil carries it.",
+          "Four people lift it safely.",
+          "They push it alone.",
+          "They leave it outside."
+        ],
+        "answer": 1,
+        "explanation": "선생님의 안내로 네 명이 함께 안전하게 듭니다."
+      },
+      {
+        "question": "What is the main lesson?",
+        "choices": [
+          "One person should do every job.",
+          "Everyone can contribute something useful.",
+          "Pupils cannot ask teachers.",
+          "Art needs no labels."
+        ],
+        "answer": 1,
+        "explanation": "각자 할 수 있는 일을 하고 서로 도움을 요청하면 함께 완성할 수 있습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What can you do well?",
+      "What can't you do yet?",
+      "When do you ask a classmate for help?",
+      "How can you make a request politely?",
+      "What job can you do for a class project?"
+    ],
+    "rolePlay": {
+      "scenario": "You are setting up a classroom display with a partner.",
+      "learnerRole": "Ask for two kinds of help and ask permission to use one item.",
+      "coachRole": "Respond politely, accept one request, and explain one safety limit.",
+      "goal": "Use can, can't, Could you, and Can I."
+    }
+  },
+  {
+    "date": "2026-10-03",
+    "title": "Student Daily English — 2026-10-03",
+    "grammarTopic": "Countable and Uncountable Nouns with Some and Any",
+    "grammar": {
+      "title": "사과 몇 개와 물 조금: 셀 수 있는 명사와 양 표현",
+      "summary": "셀 수 있는 명사는 one apple/two apples처럼 단수와 복수가 있습니다. 셀 수 없는 명사는 water, rice처럼 보통 복수 -s를 붙이지 않습니다. some과 any, many와 much, a few와 a little을 알맞게 사용합니다.",
+      "points": [
+        {
+          "title": "셀 수 있는 명사",
+          "explanation": "한 개씩 셀 수 있는 명사는 단수 앞에 a/an을 쓰고, 둘 이상이면 보통 -s를 붙입니다.",
+          "examples": [
+            "[A1] I have an apple. — 나는 사과 한 개가 있어요.",
+            "[A1] We need three plates. — 우리는 접시 세 개가 필요해요.",
+            "[A2] There are six sandwiches in the box. — 상자에 샌드위치 여섯 개가 있어요.",
+            "[A2] Each child brings a cup. — 아이마다 컵 하나를 가져와요."
+          ]
+        },
+        {
+          "title": "셀 수 없는 명사",
+          "explanation": "water, rice, bread, cheese처럼 하나씩 세기 어려운 명사는 보통 a/an이나 복수 -s를 쓰지 않습니다. 단위를 붙이면 셀 수 있습니다.",
+          "examples": [
+            "[A1] We need water. — 우리는 물이 필요해요.",
+            "[A1] There is some rice. — 밥이 조금 있어요.",
+            "[A2] Please buy two bottles of juice. — 주스 두 병을 사 주세요.",
+            "[A2] I ate three pieces of bread. — 나는 빵 세 조각을 먹었어요."
+          ]
+        },
+        {
+          "title": "some과 any",
+          "explanation": "긍정문에는 some, 부정문과 대부분의 질문에는 any를 씁니다. 부탁하거나 권할 때는 질문에서도 some을 쓸 수 있습니다.",
+          "examples": [
+            "[A1] We have some fruit. — 우리는 과일이 조금 있어요.",
+            "[A1] We don't have any milk. — 우유가 전혀 없어요.",
+            "[A2] Are there any clean cups? — 깨끗한 컵이 있나요?",
+            "[A2] Would you like some juice? — 주스를 좀 마실래요?"
+          ]
+        },
+        {
+          "title": "many와 much",
+          "explanation": "many는 셀 수 있는 복수명사, much는 셀 수 없는 명사와 함께 주로 질문·부정문에서 씁니다.",
+          "examples": [
+            "[A1] How many apples do we need? — 사과가 몇 개 필요해요?",
+            "[A1] How much water is there? — 물이 얼마나 있나요?",
+            "[A2] We don't need many plates. — 접시가 많이 필요하지 않아요.",
+            "[A2] There isn't much cheese left. — 치즈가 많이 남지 않았어요."
+          ]
+        },
+        {
+          "title": "a few와 a little",
+          "explanation": "a few는 셀 수 있는 것이 몇 개, a little은 셀 수 없는 것이 조금 있다는 긍정적인 뜻입니다.",
+          "examples": [
+            "[A1] We have a few bananas. — 바나나가 몇 개 있어요.",
+            "[A1] Add a little salt. — 소금을 조금 넣으세요.",
+            "[A2] I invited a few classmates to the picnic. — 소풍에 반 친구 몇 명을 초대했어요.",
+            "[A2] There is a little space in my bag. — 내 가방에 공간이 조금 있어요."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "a few",
+        "meaning": "몇 개의",
+        "example": "We need a few more cups. — 컵이 몇 개 더 필요해요."
+      },
+      {
+        "term": "a little",
+        "meaning": "조금의",
+        "example": "Add a little water to the juice. — 주스에 물을 조금 넣으세요."
+      },
+      {
+        "term": "How much is enough?",
+        "meaning": "얼마나 있어야 충분해요?",
+        "example": "How much water is enough for six people? — 여섯 명에게 물이 얼마나 있어야 충분해요?"
+      }
+    ],
+    "readingTitle": "Packing Food for a Small Picnic",
+    "paragraphs": [
+      "Six friends are planning a picnic in the park. They make a list before shopping because they do not want too much food or too many heavy bags.",
+      "They need six sandwiches and a few bananas. Hana brings some cheese, but there isn't much bread at home. Her father buys one large loaf.",
+      "Leo checks the drinks. They have some water, but they don't have any juice. He buys two bottles of orange juice and a bag of ice.",
+      "Maya packs six cups, a few plates, and some paper towels. There is a little space left in her bag, so she adds a small rubbish bag.",
+      "At the park, everyone has enough to eat and drink. They share the food and take all their rubbish home. Careful counting makes the picnic easy."
+    ],
+    "translations": [
+      "친구 여섯 명이 공원 소풍을 계획합니다. 음식과 무거운 가방이 너무 많지 않도록 쇼핑 전에 목록을 만듭니다.",
+      "샌드위치 여섯 개와 바나나 몇 개가 필요합니다. Hana는 치즈를 가져오지만 집에 빵이 많지 않아 아버지가 큰 빵 한 덩이를 삽니다.",
+      "Leo는 음료를 확인합니다. 물은 있지만 주스는 없어 오렌지 주스 두 병과 얼음 한 봉지를 삽니다.",
+      "Maya는 컵 여섯 개, 접시 몇 개, 종이 타월을 챙깁니다. 가방에 공간이 조금 남아 작은 쓰레기봉투도 넣습니다.",
+      "공원에서 모두 충분히 먹고 마십니다. 음식을 나누고 쓰레기를 모두 집으로 가져갑니다. 수량을 잘 세어 소풍이 편해집니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "picnic",
+        "partOfSpeech": "noun",
+        "meaning": "소풍",
+        "context": "밖에서 함께 음식을 먹는 활동"
+      },
+      {
+        "term": "list",
+        "partOfSpeech": "noun",
+        "meaning": "목록",
+        "context": "필요한 것을 적은 글"
+      },
+      {
+        "term": "heavy",
+        "partOfSpeech": "adjective",
+        "meaning": "무거운",
+        "context": "들기 힘든 무게"
+      },
+      {
+        "term": "sandwiches",
+        "partOfSpeech": "noun",
+        "meaning": "샌드위치들",
+        "context": "빵 사이에 재료를 넣은 음식"
+      },
+      {
+        "term": "loaf",
+        "partOfSpeech": "noun",
+        "meaning": "빵 한 덩이",
+        "context": "자르기 전 큰 빵 단위"
+      },
+      {
+        "term": "drinks",
+        "partOfSpeech": "noun",
+        "meaning": "음료들",
+        "context": "마시는 물이나 주스"
+      },
+      {
+        "term": "bottles",
+        "partOfSpeech": "noun",
+        "meaning": "병들",
+        "context": "액체를 담는 용기"
+      },
+      {
+        "term": "towels",
+        "partOfSpeech": "noun",
+        "meaning": "타월들",
+        "context": "닦을 때 쓰는 종이"
+      },
+      {
+        "term": "rubbish",
+        "partOfSpeech": "noun",
+        "meaning": "쓰레기",
+        "context": "버려야 하는 물건"
+      },
+      {
+        "term": "counting",
+        "partOfSpeech": "noun",
+        "meaning": "세기",
+        "context": "수량을 확인하는 행동"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "We need three _____.",
+        "choices": [
+          "plate",
+          "plates",
+          "platees",
+          "some plate"
+        ],
+        "answer": 1,
+        "explanation": "셀 수 있는 명사가 둘 이상이므로 복수형 plates를 씁니다."
+      },
+      {
+        "question": "There is _____ water.",
+        "choices": [
+          "an",
+          "some",
+          "many",
+          "a"
+        ],
+        "answer": 1,
+        "explanation": "water는 셀 수 없으며 긍정문에서 some을 쓸 수 있습니다."
+      },
+      {
+        "question": "We don't have _____ juice.",
+        "choices": [
+          "some",
+          "any",
+          "a few",
+          "many"
+        ],
+        "answer": 1,
+        "explanation": "부정문에서는 보통 any를 씁니다."
+      },
+      {
+        "question": "How _____ apples do we need?",
+        "choices": [
+          "much",
+          "many",
+          "little",
+          "any of"
+        ],
+        "answer": 1,
+        "explanation": "셀 수 있는 복수명사 apples에는 many를 씁니다."
+      },
+      {
+        "question": "“A little” is used with _____.",
+        "choices": [
+          "uncountable nouns",
+          "plural people only",
+          "past verbs",
+          "proper names"
+        ],
+        "answer": 0,
+        "explanation": "a little은 water, space 같은 셀 수 없는 명사와 사용합니다."
+      },
+      {
+        "question": "Why do the friends make a list?",
+        "choices": [
+          "To carry more bags",
+          "To avoid too much food and heavy bags",
+          "To cancel the picnic",
+          "To buy only bread"
+        ],
+        "answer": 1,
+        "explanation": "필요한 만큼만 준비해 음식과 가방이 지나치게 많지 않게 하려는 것입니다."
+      },
+      {
+        "question": "How many friends are going?",
+        "choices": [
+          "Four",
+          "Five",
+          "Six",
+          "Seven"
+        ],
+        "answer": 2,
+        "explanation": "첫 문단에서 친구 여섯 명이라고 했습니다."
+      },
+      {
+        "question": "What is missing at Leo's home?",
+        "choices": [
+          "Water",
+          "Juice",
+          "Cheese",
+          "Ice only"
+        ],
+        "answer": 1,
+        "explanation": "물은 있지만 주스가 전혀 없다고 했습니다."
+      },
+      {
+        "question": "Why can Maya add a rubbish bag?",
+        "choices": [
+          "There is a little space left.",
+          "She has no bag.",
+          "The cups are outside.",
+          "The plates are heavy."
+        ],
+        "answer": 0,
+        "explanation": "가방에 공간이 조금 남아서 쓰레기봉투를 추가합니다."
+      },
+      {
+        "question": "What do they do with rubbish?",
+        "choices": [
+          "Leave it in the park",
+          "Take it home",
+          "Put it in the juice bag",
+          "Give it to a friend"
+        ],
+        "answer": 1,
+        "explanation": "공원을 깨끗하게 쓰고 쓰레기를 모두 집으로 가져갑니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What food do you take on a picnic?",
+      "How many bottles of water does your family need?",
+      "Is there any fruit in your kitchen now?",
+      "What can you pack in a small bag?",
+      "How can a picnic group reduce rubbish?"
+    ],
+    "rolePlay": {
+      "scenario": "You and a friend are shopping for a six-person picnic.",
+      "learnerRole": "Say what you already have and ask about missing quantities.",
+      "coachRole": "Ask how many or how much, then suggest a few items.",
+      "goal": "Use some, any, many/much, a few, and a little."
+    }
+  },
+  {
+    "date": "2026-10-04",
+    "title": "Student Daily English — 2026-10-04",
+    "grammarTopic": "Be Going To and Will for the Future",
+    "grammar": {
+      "title": "계획과 바로 한 결정: be going to와 will",
+      "summary": "미리 정한 계획은 am/is/are going to + 동사원형으로 말합니다. 말하는 순간 정한 결정·약속이나 단순한 예측에는 will + 동사원형을 자주 씁니다. 시간표처럼 정해진 일정은 현재형으로도 표현합니다.",
+      "points": [
+        {
+          "title": "be going to: 미리 정한 계획",
+          "explanation": "이미 생각하고 준비한 미래 계획에는 주어에 맞는 be동사 + going to + 동사원형을 씁니다.",
+          "examples": [
+            "[A1] I am going to visit the museum. — 나는 박물관을 방문할 거예요.",
+            "[A1] We are going to take the bus. — 우리는 버스를 탈 거예요.",
+            "[A2] She is going to bring a notebook for sketches. — 그녀는 스케치할 공책을 가져올 거예요.",
+            "[A2] They are going to meet outside the main entrance. — 그들은 정문 밖에서 만날 거예요."
+          ]
+        },
+        {
+          "title": "be going to 부정과 질문",
+          "explanation": "be동사 뒤에 not을 넣어 계획이 아님을 말하고, be동사를 앞으로 옮겨 계획을 질문합니다.",
+          "examples": [
+            "[A1] I am not going to stay home. — 나는 집에 있지 않을 거예요.",
+            "[A1] Are you going to come? — 너는 올 거니?",
+            "[A2] Is Leo going to bring his camera? — Leo는 카메라를 가져올 건가요?",
+            "[A2] We aren't going to buy lunch there. — 우리는 그곳에서 점심을 사지 않을 거예요."
+          ]
+        },
+        {
+          "title": "will: 지금 결정과 약속",
+          "explanation": "말하는 순간 결정하거나 도움을 약속할 때 will을 씁니다. 모든 주어에 will 형태가 같고, 줄임말은 I'll, we'll입니다.",
+          "examples": [
+            "[A1] I'll carry the bag. — 내가 가방을 들게.",
+            "[A1] We will call you later. — 우리가 나중에 전화할게요.",
+            "[A2] The map is confusing, so I'll check the route. — 지도가 헷갈리니 내가 길을 확인할게요.",
+            "[A2] I promise I will return the book tomorrow. — 내일 책을 돌려주겠다고 약속해요."
+          ]
+        },
+        {
+          "title": "will: 단순한 예측",
+          "explanation": "개인적인 생각이나 확실하지 않은 미래 예측에도 will을 씁니다. I think, probably와 자주 함께 옵니다.",
+          "examples": [
+            "[A1] It will be fun. — 재미있을 거예요.",
+            "[A1] I think it will rain. — 비가 올 것 같아요.",
+            "[A2] The dinosaur room will probably be busy. — 공룡 전시실은 아마 붐빌 거예요.",
+            "[A2] I don't think the trip will be boring. — 그 여행이 지루할 것 같지 않아요."
+          ]
+        },
+        {
+          "title": "정해진 일정과 시간 표현",
+          "explanation": "버스·수업·행사 시간처럼 확정된 일정은 현재형으로 말할 수 있습니다. 미래 시점을 분명히 하는 표현을 함께 씁니다.",
+          "examples": [
+            "[A1] The bus leaves at nine. — 버스는 9시에 출발해요.",
+            "[A1] The museum opens tomorrow. — 박물관은 내일 문을 열어요.",
+            "[A2] Our tour starts at half past ten. — 우리 투어는 10시 30분에 시작해요.",
+            "[A2] We are going to meet before the first bus leaves. — 첫 버스가 떠나기 전에 만날 거예요."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "I can't wait.",
+        "meaning": "정말 기대돼요.",
+        "example": "The trip is tomorrow. I can't wait! — 여행이 내일이야. 정말 기대돼!"
+      },
+      {
+        "term": "Sounds like a plan.",
+        "meaning": "좋은 계획이네요.",
+        "example": "Meet at the gate at eight? Sounds like a plan. — 8시에 문에서 만나자고? 좋은 계획이야."
+      },
+      {
+        "term": "Maybe next time.",
+        "meaning": "다음번에 할 수도 있어요.",
+        "example": "We can't see every room today. Maybe next time. — 오늘 모든 방을 볼 수는 없어. 다음번에 보자."
+      }
+    ],
+    "readingTitle": "Planning a Sunday Museum Trip",
+    "paragraphs": [
+      "Jin's family is going to visit the city museum on Sunday. They bought tickets yesterday, and they are going to take the nine o'clock bus.",
+      "Jin is going to bring a notebook because he wants to sketch old machines. His younger brother is going to bring a small camera. Their parents will carry the water.",
+      "The museum opens at ten, and their science tour starts at half past ten. Jin thinks the dinosaur room will be busy, so the family is going to visit it first.",
+      "Mum looks at the map and says, “This route is confusing.” Dad replies, “I'll check it on my phone.” Jin offers, “I'll find the correct bus stop.”",
+      "They will not see every room in one day. Maybe next time, they will visit the art floor. Jin smiles and says, “I can't wait. Sunday will be fun!”"
+    ],
+    "translations": [
+      "Jin의 가족은 일요일에 시립 박물관을 방문할 예정입니다. 어제 표를 샀고 9시 버스를 탈 계획입니다.",
+      "Jin은 오래된 기계를 스케치하려고 공책을 가져갈 예정입니다. 남동생은 작은 카메라를 가져가고 부모님은 물을 들기로 합니다.",
+      "박물관은 10시에 열고 과학 투어는 10시 30분에 시작합니다. Jin은 공룡 전시실이 붐빌 것 같아 가족과 먼저 갈 계획입니다.",
+      "엄마가 지도가 헷갈린다고 하자 아빠는 휴대전화로 확인하겠다고 합니다. Jin도 올바른 버스 정류장을 찾겠다고 즉시 제안합니다.",
+      "하루에 모든 전시실을 보지는 못할 것입니다. 다음번에는 미술 층을 방문할 수도 있습니다. Jin은 일요일이 재미있을 것이라며 기대합니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "museum",
+        "partOfSpeech": "noun",
+        "meaning": "박물관",
+        "context": "역사·과학 자료를 전시하는 곳"
+      },
+      {
+        "term": "tickets",
+        "partOfSpeech": "noun",
+        "meaning": "표들",
+        "context": "입장할 때 필요한 표"
+      },
+      {
+        "term": "sketch",
+        "partOfSpeech": "verb",
+        "meaning": "스케치하다",
+        "context": "간단한 그림을 그리다"
+      },
+      {
+        "term": "machines",
+        "partOfSpeech": "noun",
+        "meaning": "기계들",
+        "context": "여러 부품으로 일을 하는 장치"
+      },
+      {
+        "term": "camera",
+        "partOfSpeech": "noun",
+        "meaning": "카메라",
+        "context": "사진을 찍는 기기"
+      },
+      {
+        "term": "tour",
+        "partOfSpeech": "noun",
+        "meaning": "안내 관람",
+        "context": "설명을 들으며 둘러보는 활동"
+      },
+      {
+        "term": "dinosaur",
+        "partOfSpeech": "noun",
+        "meaning": "공룡",
+        "context": "아주 오래전에 살았던 동물"
+      },
+      {
+        "term": "route",
+        "partOfSpeech": "noun",
+        "meaning": "경로",
+        "context": "목적지까지 가는 길"
+      },
+      {
+        "term": "confusing",
+        "partOfSpeech": "adjective",
+        "meaning": "헷갈리는",
+        "context": "이해하거나 찾기 어려운"
+      },
+      {
+        "term": "correct",
+        "partOfSpeech": "adjective",
+        "meaning": "올바른",
+        "context": "틀리지 않고 맞는"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "We _____ visit the museum on Sunday.",
+        "choices": [
+          "are going to",
+          "going",
+          "will to",
+          "are go to"
+        ],
+        "answer": 0,
+        "explanation": "미리 정한 계획이므로 are going to + 동사원형을 씁니다."
+      },
+      {
+        "question": "Jin _____ bring a notebook.",
+        "choices": [
+          "is going to",
+          "are going to",
+          "going will",
+          "is going"
+        ],
+        "answer": 0,
+        "explanation": "단수 주어 Jin에는 is going to가 알맞습니다."
+      },
+      {
+        "question": "The map is confusing. I _____ check it.",
+        "choices": [
+          "am checking every day",
+          "will",
+          "will to",
+          "going"
+        ],
+        "answer": 1,
+        "explanation": "말하는 순간 정한 행동이므로 will + 동사원형을 씁니다."
+      },
+      {
+        "question": "Choose the correct question.",
+        "choices": [
+          "Are you going to come?",
+          "Do you going to come?",
+          "Will you to come?",
+          "Are going you come?"
+        ],
+        "answer": 0,
+        "explanation": "be동사 Are를 주어 앞으로 옮긴 going to 질문입니다."
+      },
+      {
+        "question": "“I can't wait” means _____.",
+        "choices": [
+          "기다릴 수 없어 화가 나요",
+          "정말 기대돼요",
+          "다음에 할게요",
+          "길을 모르겠어요"
+        ],
+        "answer": 1,
+        "explanation": "좋은 일이 빨리 오기를 바랄 만큼 기대된다는 뜻입니다."
+      },
+      {
+        "question": "How will the family travel?",
+        "choices": [
+          "By car",
+          "By train",
+          "By bus",
+          "On foot"
+        ],
+        "answer": 2,
+        "explanation": "9시 버스를 탈 계획입니다."
+      },
+      {
+        "question": "Why will Jin bring a notebook?",
+        "choices": [
+          "To write bus times only",
+          "To sketch old machines",
+          "To buy tickets",
+          "To take photos"
+        ],
+        "answer": 1,
+        "explanation": "오래된 기계를 간단히 그리기 위해 가져갑니다."
+      },
+      {
+        "question": "What starts at 10:30?",
+        "choices": [
+          "The bus",
+          "The science tour",
+          "The art floor",
+          "Lunch"
+        ],
+        "answer": 1,
+        "explanation": "과학 투어가 10시 30분에 시작합니다."
+      },
+      {
+        "question": "What does Dad decide at that moment?",
+        "choices": [
+          "To buy tickets",
+          "To check the route on his phone",
+          "To carry a camera",
+          "To cancel the trip"
+        ],
+        "answer": 1,
+        "explanation": "엄마의 말을 듣고 휴대전화로 경로를 확인하겠다고 즉시 결정합니다."
+      },
+      {
+        "question": "Why might they return another time?",
+        "choices": [
+          "The museum is closed.",
+          "They cannot see every room in one day.",
+          "They lost the tickets.",
+          "The bus leaves before ten."
+        ],
+        "answer": 1,
+        "explanation": "하루에 모든 전시실을 볼 수 없어서 다음번 미술 층 방문을 생각합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What are you going to do next weekend?",
+      "What would you bring to a museum?",
+      "Which museum room will probably be busy?",
+      "What can you decide to help your family?",
+      "What future plan makes you say, “I can't wait”?"
+    ],
+    "rolePlay": {
+      "scenario": "You and a family member plan a Sunday museum visit.",
+      "learnerRole": "Describe two plans and make one immediate offer to help.",
+      "coachRole": "Ask about travel and time, then make one prediction.",
+      "goal": "Use be going to, will, and one fixed timetable sentence."
+    }
+  }
+]
+
