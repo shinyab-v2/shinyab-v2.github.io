@@ -1,0 +1,1962 @@
+[
+  {
+    "date": "2026-09-28",
+    "title": "Daily English — 2026-09-28",
+    "grammarTopic": "Preposition + Relative Pronouns and Quantified Relatives",
+    "grammar": {
+      "title": "전치사와 관계대명사: 격식·수량·소유 관계를 정확히 연결하기",
+      "summary": "관계절의 전치사는 일상 영어에서는 문장 끝에, 격식 있는 영어에서는 whom/which 앞에 둘 수 있습니다. 또한 some of whom, both of which처럼 수량 표현을 관계대명사와 결합하면 앞선 사람이나 사물의 일부를 간결하게 설명할 수 있습니다.",
+      "points": [
+        {
+          "title": "일상형: 전치사를 관계절 끝에 두기",
+          "explanation": "말하기와 일반적인 글에서는 전치사를 관계절의 동사 뒤에 두는 방식이 가장 자연스럽습니다. 사람은 who/whom, 사물은 which를 쓸 수 있고, 목적격 관계대명사는 생략할 수도 있습니다.",
+          "examples": [
+            "This is the parent I spoke to yesterday. — 이분은 제가 어제 이야기한 학부모입니다.",
+            "The programme that we applied for starts in October. — 우리가 신청한 프로그램은 10월에 시작합니다.",
+            "She is the coordinator who I sent the form to. — 그녀는 제가 양식을 보낸 담당자입니다.",
+            "That is the issue we need to focus on. — 그것이 우리가 집중해야 할 문제입니다."
+          ]
+        },
+        {
+          "title": "격식형: 전치사 + whom/which",
+          "explanation": "보고서나 공식 이메일에서는 전치사를 whom 또는 which 앞에 둘 수 있습니다. 이 구조에서는 사람에게 who나 that을 쓸 수 없고, 관계대명사를 생략할 수도 없습니다.",
+          "examples": [
+            "The parent to whom I spoke was very helpful. — 제가 이야기한 학부모는 매우 도움이 되었습니다.",
+            "The programme for which we applied begins soon. — 우리가 신청한 프로그램이 곧 시작합니다.",
+            "The room in which the meeting was held was crowded. — 회의가 열린 방은 붐볐습니다.",
+            "The colleague with whom I worked translated the notice. — 함께 일한 동료가 안내문을 번역했습니다."
+          ]
+        },
+        {
+          "title": "수량 표현 + of whom/which",
+          "explanation": "some, many, both, neither, most 같은 수량 표현 뒤에 of whom 또는 of which를 붙이면 앞선 집단이나 사물의 일부를 설명할 수 있습니다. 두 절은 보통 쉼표로 구분하며 비제한적 정보를 덧붙입니다.",
+          "examples": [
+            "The committee has ten members, three of whom speak Korean. — 위원회에는 10명이 있고 그중 세 명이 한국어를 합니다.",
+            "We received six proposals, two of which were practical. — 제안 여섯 개를 받았고 그중 두 개가 실용적이었습니다.",
+            "The school offered two times, neither of which suited everyone. — 학교가 두 시간을 제안했지만 어느 것도 모두에게 맞지 않았습니다.",
+            "Several parents replied, most of whom preferred Friday. — 여러 학부모가 답했고 대부분은 금요일을 선호했습니다."
+          ]
+        },
+        {
+          "title": "whose로 사람과 사물의 소유 관계 나타내기",
+          "explanation": "whose + 명사는 사람뿐 아니라 조직이나 사물의 소유·관련 관계에도 사용할 수 있습니다. of which도 가능하지만 whose가 더 간결하고 자연스러운 경우가 많습니다.",
+          "examples": [
+            "We contacted the parents whose children use the bus. — 자녀가 버스를 이용하는 학부모들에게 연락했습니다.",
+            "The school whose policy changed sent an update. — 정책이 바뀐 학교가 새 안내를 보냈습니다.",
+            "They chose a platform whose interface supports several languages. — 여러 언어를 지원하는 인터페이스의 플랫폼을 선택했습니다.",
+            "I met a coordinator whose advice clarified the process. — 절차를 명확히 해 준 조언을 한 담당자를 만났습니다."
+          ]
+        },
+        {
+          "title": "쉼표와 선행사를 명확하게 관리하기",
+          "explanation": "추가 정보인 비제한적 관계절은 쉼표로 구분하고 that을 쓰지 않습니다. 특히 of whom/which 구조에서는 바로 앞의 선행사가 무엇인지 분명해야 오해를 막을 수 있습니다.",
+          "examples": [
+            "Our coordinator, who speaks Mandarin, led the session. — 중국어를 하는 우리 담당자가 세션을 진행했습니다.",
+            "The final plan, to which everyone agreed, was published. — 모두가 동의한 최종 계획이 게시되었습니다.",
+            "We invited four interpreters, all of whom arrived early. — 통역사 네 명을 초대했고 모두 일찍 도착했습니다.",
+            "The team reviewed three options, one of which required extra funding. — 팀은 세 가지 선택지를 검토했고 그중 하나는 추가 예산이 필요했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "bring someone up to speed",
+        "meaning": "누군가에게 최신 상황을 알려 주다",
+        "example": "I called Mina to bring her up to speed before the meeting. — 회의 전에 Mina에게 최신 상황을 알려 주려고 전화했습니다."
+      },
+      {
+        "term": "have a say",
+        "meaning": "의견을 말하거나 결정에 참여할 권리가 있다",
+        "example": "Every family should have a say in the final schedule. — 모든 가정이 최종 일정에 의견을 낼 수 있어야 합니다."
+      },
+      {
+        "term": "see eye to eye",
+        "meaning": "의견이 일치하다",
+        "example": "We did not see eye to eye at first, but we found a compromise. — 처음에는 의견이 달랐지만 타협점을 찾았습니다."
+      }
+    ],
+    "readingTitle": "A Parent Committee That Made Every Voice Count",
+    "paragraphs": [
+      "An international school invited twelve parents to review its after-school programme. The committee included families from several language backgrounds, some of whom had joined the school recently. Before the first meeting, the coordinator sent a short bilingual summary to bring everyone up to speed. She also listed the three decisions on which the school needed advice.",
+      "The first issue was the pickup time. Several parents worked late, while others depended on buses whose schedules could not be changed. The school had proposed two options, neither of which suited every family. Rather than forcing an immediate vote, the coordinator asked each parent to explain the practical effect of both choices.",
+      "The group then discussed communication. The online portal, through which most notices were delivered, was difficult to use on older phones. Two parents described missing urgent messages because translated versions appeared a day late. Everyone agreed that families should have a say in how important updates were shared.",
+      "By the second meeting, the school had tested three solutions, one of which allowed notices to appear in five languages at the same time. The parents did not see eye to eye on every detail, but they agreed to trial the new portal for six weeks and collect feedback after each activity.",
+      "The final report named the staff member to whom technical problems should be sent and the parent representatives with whom families could speak. Clear relative clauses were not the committee's goal, of course, but clear relationships were. By showing who was responsible, which options remained open, and whose needs were affected, the report turned a complicated discussion into a workable plan."
+    ],
+    "translations": [
+      "한 국제학교가 방과 후 프로그램을 검토하려고 학부모 12명을 초대했습니다. 위원회에는 여러 언어 배경의 가정이 포함되었고, 그중 일부는 최근에야 학교에 합류했습니다. 담당자는 첫 회의 전에 모두에게 최신 상황을 알려 주기 위해 짧은 이중 언어 요약과 조언이 필요한 세 가지 결정을 보냈습니다.",
+      "첫 쟁점은 하원 시간이었습니다. 몇몇 학부모는 늦게까지 일했고, 다른 이들은 변경할 수 없는 버스 시간표에 의존했습니다. 학교가 제시한 두 선택지 중 어느 것도 모든 가정에 맞지 않아, 담당자는 즉시 표결하는 대신 실제 영향을 설명해 달라고 요청했습니다.",
+      "그다음에는 의사소통을 논의했습니다. 대부분의 안내가 전달되는 온라인 포털은 오래된 휴대전화에서 쓰기 어려웠습니다. 두 학부모는 번역본이 하루 늦게 올라와 긴급 메시지를 놓친 경험을 설명했고, 중요한 공지 전달 방식에 모든 가정이 의견을 내야 한다는 데 동의했습니다.",
+      "두 번째 회의까지 학교는 세 가지 해결책을 시험했고, 그중 하나는 공지를 다섯 언어로 동시에 표시했습니다. 세부 사항 모두에 의견이 일치하지는 않았지만 새 포털을 6주간 시험하고 활동마다 피드백을 모으기로 했습니다.",
+      "최종 보고서는 기술 문제를 보낼 직원과 가정이 상담할 학부모 대표를 명시했습니다. 명확한 관계절 자체가 목표는 아니었지만 명확한 관계는 중요했습니다. 책임자, 남은 선택지, 영향을 받는 요구를 보여 줌으로써 복잡한 논의를 실행 가능한 계획으로 바꾸었습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "committee",
+        "partOfSpeech": "noun",
+        "meaning": "위원회",
+        "context": "프로그램을 검토하는 학부모 집단"
+      },
+      {
+        "term": "bilingual",
+        "partOfSpeech": "adjective",
+        "meaning": "이중 언어의",
+        "context": "두 언어로 작성된 요약"
+      },
+      {
+        "term": "coordinator",
+        "partOfSpeech": "noun",
+        "meaning": "담당 조정자",
+        "context": "회의와 의견 수렴을 진행하는 사람"
+      },
+      {
+        "term": "depended",
+        "partOfSpeech": "verb",
+        "meaning": "의존했다",
+        "context": "가정이 버스 일정에 기대는 상황"
+      },
+      {
+        "term": "forcing",
+        "partOfSpeech": "verb",
+        "meaning": "강요하는 것",
+        "context": "즉시 투표를 밀어붙이는 행동"
+      },
+      {
+        "term": "portal",
+        "partOfSpeech": "noun",
+        "meaning": "온라인 포털",
+        "context": "학교 공지를 전달하는 시스템"
+      },
+      {
+        "term": "urgent",
+        "partOfSpeech": "adjective",
+        "meaning": "긴급한",
+        "context": "빨리 확인해야 하는 메시지"
+      },
+      {
+        "term": "trial",
+        "partOfSpeech": "verb",
+        "meaning": "시험 운영하다",
+        "context": "새 시스템을 일정 기간 사용해 보는 것"
+      },
+      {
+        "term": "representatives",
+        "partOfSpeech": "noun",
+        "meaning": "대표자들",
+        "context": "다른 학부모의 의견을 전달하는 사람들"
+      },
+      {
+        "term": "workable",
+        "partOfSpeech": "adjective",
+        "meaning": "실행 가능한",
+        "context": "현실적으로 적용할 수 있는 계획"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "This is the parent _____ I spoke to yesterday.",
+        "choices": [
+          "who",
+          "which",
+          "whose",
+          "where"
+        ],
+        "answer": 0,
+        "explanation": "사람을 선행사로 하고 전치사가 관계절 끝에 있으므로 who가 자연스럽습니다. 목적격 who는 생략할 수도 있습니다."
+      },
+      {
+        "question": "The platform, _____ we sent the forms, is secure.",
+        "choices": [
+          "to which",
+          "to that",
+          "which to",
+          "to who"
+        ],
+        "answer": 0,
+        "explanation": "격식형에서는 전치사 to 뒤에 사물을 받는 which를 씁니다."
+      },
+      {
+        "question": "We invited six parents, two of _____ needed an interpreter.",
+        "choices": [
+          "who",
+          "whom",
+          "which",
+          "that"
+        ],
+        "answer": 1,
+        "explanation": "수량 표현 two of 뒤에서 사람을 받는 목적격 관계대명사는 whom입니다."
+      },
+      {
+        "question": "Choose the correct sentence.",
+        "choices": [
+          "The school which policy changed sent a notice.",
+          "The school whose policy changed sent a notice.",
+          "The school who's policy changed sent a notice.",
+          "The school of who policy changed sent a notice."
+        ],
+        "answer": 1,
+        "explanation": "whose + 명사로 학교와 정책의 관계를 자연스럽게 나타냅니다."
+      },
+      {
+        "question": "To “have a say” means to _____.",
+        "choices": [
+          "receive a translation",
+          "take part in a decision",
+          "avoid a meeting",
+          "change a bus route"
+        ],
+        "answer": 1,
+        "explanation": "have a say는 의견을 말하고 결정 과정에 참여할 권리가 있다는 뜻입니다."
+      },
+      {
+        "question": "Why did the coordinator send a bilingual summary?",
+        "choices": [
+          "To cancel the first meeting",
+          "To bring everyone up to speed",
+          "To replace the online portal",
+          "To announce a final vote"
+        ],
+        "answer": 1,
+        "explanation": "서로 다른 언어 배경의 학부모들이 회의 전 최신 상황을 이해하도록 하기 위해서였습니다."
+      },
+      {
+        "question": "Why was the pickup time difficult to decide?",
+        "choices": [
+          "No parents used buses.",
+          "Both proposed options caused practical problems for some families.",
+          "The school offered no options.",
+          "All parents worked the same hours."
+        ],
+        "answer": 1,
+        "explanation": "근무 시간과 버스 일정이 달라 제안된 두 선택지 중 어느 것도 모든 가정에 맞지 않았습니다."
+      },
+      {
+        "question": "What problem did two parents report?",
+        "choices": [
+          "Translated urgent notices appeared late.",
+          "The committee had too many interpreters.",
+          "The buses arrived too early.",
+          "The portal had no English version."
+        ],
+        "answer": 0,
+        "explanation": "긴급 공지의 번역본이 하루 늦게 표시되어 중요한 메시지를 놓쳤다고 했습니다."
+      },
+      {
+        "question": "What did the committee agree to do?",
+        "choices": [
+          "Use the old portal permanently",
+          "Trial a multilingual solution for six weeks",
+          "Vote without feedback",
+          "Print every notice"
+        ],
+        "answer": 1,
+        "explanation": "다섯 언어를 동시에 지원하는 새 포털을 6주간 시험하고 피드백을 모으기로 했습니다."
+      },
+      {
+        "question": "What made the final report practical?",
+        "choices": [
+          "It avoided naming responsibilities.",
+          "It clearly identified contacts, options, and affected needs.",
+          "It removed all relative clauses.",
+          "It promised that everyone would agree."
+        ],
+        "answer": 1,
+        "explanation": "책임자와 선택지, 영향을 받는 요구를 분명히 밝혀 실행 가능한 계획이 되었습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "When is it useful to involve several people in a decision?",
+      "Describe a group, some of whose members had different needs.",
+      "Do you prefer informal relative clauses or formal preposition-first structures? Why?",
+      "How can an organization make sure everyone has a say?",
+      "Tell me about a time when people did not see eye to eye but still found a solution."
+    ],
+    "rolePlay": {
+      "scenario": "You are discussing a new after-school schedule with a school coordinator.",
+      "learnerRole": "Explain your family's needs, refer to two options, and ask who is responsible for follow-up.",
+      "coachRole": "Clarify the options, ask follow-up questions, and propose a six-week trial.",
+      "goal": "Use at least two preposition-relative structures and one quantified relative naturally."
+    }
+  },
+  {
+    "date": "2026-09-29",
+    "title": "Daily English — 2026-09-29",
+    "grammarTopic": "Complex Noun Phrases and Noun Modifiers",
+    "grammar": {
+      "title": "복합 명사구: 핵심 명사와 수식어를 읽고 설계하기",
+      "summary": "영어 명사구는 관사·형용사·명사 수식어가 핵심 명사 앞에 오고, 전치사구·분사구·관계절이 뒤에 이어질 수 있습니다. 수식어가 길어질수록 핵심 명사를 먼저 찾고 모호한 명사 연쇄를 풀어 쓰는 능력이 중요합니다.",
+      "points": [
+        {
+          "title": "핵심 명사를 먼저 찾기",
+          "explanation": "긴 명사구에서 수와 문장의 역할을 결정하는 것은 보통 마지막 핵심 명사입니다. 앞의 단어들은 종류·용도·대상을 좁히며, 핵심 명사를 찾으면 복수형과 동사 일치를 판단하기 쉬워집니다.",
+          "examples": [
+            "The customer feedback dashboard needs an update. — 고객 피드백 대시보드에 업데이트가 필요합니다.",
+            "Our weekly service quality reports are ready. — 주간 서비스 품질 보고서가 준비되었습니다.",
+            "The mobile app notification settings have changed. — 모바일 앱 알림 설정이 변경되었습니다.",
+            "A clear data access policy reduces confusion. — 명확한 데이터 접근 정책은 혼란을 줄입니다."
+          ]
+        },
+        {
+          "title": "명사 + 명사 수식의 순서와 의미",
+          "explanation": "앞의 명사는 보통 단수형으로 뒤의 핵심 명사의 용도나 종류를 나타냅니다. 여러 명사를 연달아 쓰면 간결하지만 관계가 모호해질 수 있으므로 독자가 즉시 이해할 순서인지 확인해야 합니다.",
+          "examples": [
+            "We reviewed the user account security settings. — 사용자 계정 보안 설정을 검토했습니다.",
+            "The team changed the project status page. — 팀이 프로젝트 상태 페이지를 변경했습니다.",
+            "Please open the staff training schedule. — 직원 교육 일정을 열어 주세요.",
+            "They designed a school transport feedback form. — 학교 교통 피드백 양식을 설계했습니다."
+          ]
+        },
+        {
+          "title": "of-구와 전치사구로 관계를 풀어 쓰기",
+          "explanation": "소유·부분·내용 관계는 of-구로, 위치·대상·출처 같은 관계는 다른 전치사구로 명사 뒤에서 설명할 수 있습니다. 긴 명사 연쇄보다 의미가 명확해지는 경우가 많습니다.",
+          "examples": [
+            "The results of the survey were surprising. — 설문 결과는 놀라웠습니다.",
+            "We improved access to the dashboard. — 대시보드 접근성을 개선했습니다.",
+            "The labels on the mobile screen were too small. — 모바일 화면의 레이블이 너무 작았습니다.",
+            "A summary for new users appears at the top. — 신규 사용자를 위한 요약이 맨 위에 표시됩니다."
+          ]
+        },
+        {
+          "title": "분사와 관계절로 정보 압축하기",
+          "explanation": "현재분사는 능동·진행 의미, 과거분사는 수동·완료 의미로 명사를 뒤에서 수식할 수 있습니다. 정보가 복잡하거나 행위자를 밝혀야 하면 완전한 관계절이 더 명확합니다.",
+          "examples": [
+            "The team reviewing the labels requested more space. — 레이블을 검토하는 팀이 더 많은 공간을 요청했습니다.",
+            "The comments collected last week revealed a pattern. — 지난주 수집된 의견에서 한 가지 패턴이 드러났습니다.",
+            "Users working on small screens preferred shorter text. — 작은 화면에서 작업하는 사용자들은 더 짧은 문구를 선호했습니다.",
+            "The chart that compares monthly results needs a title. — 월별 결과를 비교하는 차트에는 제목이 필요합니다."
+          ]
+        },
+        {
+          "title": "모호한 명사 연쇄는 나누거나 다시 쓰기",
+          "explanation": "세 개 이상의 명사가 이어지면 단어 사이의 관계를 여러 방식으로 해석할 수 있습니다. 하이픈, of-구, 관계절, 두 문장으로의 분리를 이용해 독자가 추측하지 않게 해야 합니다.",
+          "examples": [
+            "The team revised the mobile-dashboard labels. — 팀이 모바일 대시보드의 레이블을 수정했습니다.",
+            "We created a guide to security settings for new users. — 신규 사용자를 위한 보안 설정 안내서를 만들었습니다.",
+            "The report describes errors in customer accounts. — 보고서는 고객 계정의 오류를 설명합니다.",
+            "We need a plan for reviewing data quality, not a vague data quality review plan. — 모호한 명사 연쇄가 아니라 데이터 품질 검토 계획이 필요합니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "in a nutshell",
+        "meaning": "아주 간단히 요약하면",
+        "example": "In a nutshell, the labels were accurate but difficult to scan. — 간단히 말하면 레이블은 정확했지만 훑어보기 어려웠습니다."
+      },
+      {
+        "term": "speak volumes",
+        "meaning": "말없이도 많은 것을 보여 주다",
+        "example": "The support requests speak volumes about the confusing menu. — 지원 요청 건수는 메뉴가 얼마나 혼란스러운지 잘 보여 줍니다."
+      },
+      {
+        "term": "spell something out",
+        "meaning": "아주 분명하게 설명하다",
+        "example": "The guide spells out what each setting controls. — 안내서는 각 설정이 무엇을 제어하는지 명확히 설명합니다."
+      }
+    ],
+    "readingTitle": "When Shorter Labels Made a Dashboard Clearer",
+    "paragraphs": [
+      "A product team had built a customer support performance dashboard for regional managers. The dashboard contained accurate data, but its crowded mobile-screen layout created daily confusion. Managers often opened the wrong report, and the growing number of support requests began to speak volumes about the design problem.",
+      "The team first examined its longest noun phrases. Labels such as “regional customer issue response status overview” forced readers to hold too many relationships in mind. In a nutshell, every word seemed relevant, but no word clearly showed the main action. The designers replaced the label with “Response status by region” and added a short explanation below it.",
+      "They also reviewed comments collected during user interviews. Managers working on smaller screens wanted labels they could scan quickly. New employees needed a guide to the reporting categories, while experienced managers wanted direct access to detailed results. One label could not perform all three jobs without becoming overloaded.",
+      "The revised dashboard used short headings, optional descriptions, and a glossary that spelled out unfamiliar terms. A menu for monthly service-quality reports replaced the vague “monthly service quality report access section.” The team also added examples of the decisions supported by each chart, which helped users choose the right information.",
+      "After two weeks, incorrect report openings fell by thirty percent. The change did not require new data or advanced technology. It required the team to identify each core noun, clarify the relationship between modifiers, and move extra detail to a more suitable place. Clear noun phrases made the interface feel simpler because users no longer had to decode the team's internal language."
+    ],
+    "translations": [
+      "제품 팀은 지역 관리자를 위한 고객 지원 성과 대시보드를 만들었습니다. 데이터는 정확했지만 빽빽한 모바일 화면 배치가 매일 혼란을 일으켰고, 잘못된 보고서를 여는 관리자와 증가하는 지원 요청이 설계 문제를 보여 주었습니다.",
+      "팀은 가장 긴 명사구부터 살폈습니다. ‘지역 고객 문제 대응 상태 개요’ 같은 레이블은 너무 많은 관계를 기억하게 했습니다. 모든 단어가 관련 있어 보였지만 핵심 행동이 드러나지 않아 ‘지역별 대응 상태’로 바꾸고 아래에 짧은 설명을 추가했습니다.",
+      "사용자 인터뷰에서 수집한 의견도 검토했습니다. 작은 화면 사용자는 빨리 훑을 레이블을, 신입 직원은 보고 범주 안내를, 숙련 관리자는 상세 결과로의 직접 접근을 원했습니다. 하나의 레이블이 세 역할을 모두 하면 과도하게 복잡해졌습니다.",
+      "수정된 대시보드는 짧은 제목, 선택적 설명, 낯선 용어를 분명히 설명하는 용어집을 사용했습니다. 모호한 긴 레이블은 ‘월간 서비스 품질 보고서’ 메뉴로 바꾸고, 각 차트가 지원하는 의사결정 예시도 더했습니다.",
+      "2주 뒤 잘못된 보고서 열기는 30퍼센트 감소했습니다. 새 데이터나 고급 기술이 아니라 핵심 명사를 찾고 수식어 관계를 명확히 하며 세부 내용을 알맞은 위치로 옮긴 결과였습니다. 사용자는 더 이상 팀 내부 언어를 해독할 필요가 없었습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "dashboard",
+        "partOfSpeech": "noun",
+        "meaning": "대시보드",
+        "context": "성과 자료를 한 화면에 보여 주는 도구"
+      },
+      {
+        "term": "crowded",
+        "partOfSpeech": "adjective",
+        "meaning": "빽빽한",
+        "context": "정보가 지나치게 많은 화면"
+      },
+      {
+        "term": "regional",
+        "partOfSpeech": "adjective",
+        "meaning": "지역의",
+        "context": "지역별 관리와 보고를 나타냄"
+      },
+      {
+        "term": "relevant",
+        "partOfSpeech": "adjective",
+        "meaning": "관련 있는",
+        "context": "레이블에 필요해 보이는 정보"
+      },
+      {
+        "term": "scan",
+        "partOfSpeech": "verb",
+        "meaning": "빠르게 훑어보다",
+        "context": "화면에서 필요한 항목을 찾는 행동"
+      },
+      {
+        "term": "overloaded",
+        "partOfSpeech": "adjective",
+        "meaning": "과도하게 많은 기능을 맡은",
+        "context": "한 레이블이 너무 많은 역할을 하는 상태"
+      },
+      {
+        "term": "optional",
+        "partOfSpeech": "adjective",
+        "meaning": "선택적인",
+        "context": "필요할 때만 볼 수 있는 설명"
+      },
+      {
+        "term": "glossary",
+        "partOfSpeech": "noun",
+        "meaning": "용어집",
+        "context": "낯선 용어를 설명하는 목록"
+      },
+      {
+        "term": "vague",
+        "partOfSpeech": "adjective",
+        "meaning": "모호한",
+        "context": "관계가 분명하지 않은 표현"
+      },
+      {
+        "term": "decode",
+        "partOfSpeech": "verb",
+        "meaning": "해독하다",
+        "context": "복잡한 내부 표현의 뜻을 풀어냄"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "In “customer feedback dashboard,” what is the core noun?",
+        "choices": [
+          "customer",
+          "feedback",
+          "dashboard",
+          "customer feedback"
+        ],
+        "answer": 2,
+        "explanation": "명사구의 중심은 마지막 명사 dashboard이고 앞의 두 명사는 종류와 내용을 제한합니다."
+      },
+      {
+        "question": "Which phrase is clearest?",
+        "choices": [
+          "user account password reset guide",
+          "a guide to resetting user-account passwords",
+          "user password account guide reset",
+          "reset guide account user password"
+        ],
+        "answer": 1,
+        "explanation": "전치사구와 동명사를 사용해 대상과 행동의 관계를 분명히 했습니다."
+      },
+      {
+        "question": "The comments _____ last week revealed a pattern.",
+        "choices": [
+          "collecting",
+          "collected",
+          "collect",
+          "were collect"
+        ],
+        "answer": 1,
+        "explanation": "의견이 수집된 것이므로 수동 의미의 과거분사 collected가 명사를 수식합니다."
+      },
+      {
+        "question": "Choose the natural noun modifier.",
+        "choices": [
+          "a shoes store",
+          "a shoe store",
+          "a stores shoe",
+          "a store shoes"
+        ],
+        "answer": 1,
+        "explanation": "용도를 나타내는 앞 명사는 보통 단수형이므로 shoe store가 자연스럽습니다."
+      },
+      {
+        "question": "To “spell something out” means to _____.",
+        "choices": [
+          "hide a detail",
+          "explain it very clearly",
+          "shorten every word",
+          "remove a heading"
+        ],
+        "answer": 1,
+        "explanation": "spell something out은 상대가 오해하지 않도록 아주 구체적이고 분명하게 설명한다는 뜻입니다."
+      },
+      {
+        "question": "What caused daily confusion?",
+        "choices": [
+          "Inaccurate data",
+          "A crowded mobile layout and complex labels",
+          "Too few regional managers",
+          "A missing desktop version"
+        ],
+        "answer": 1,
+        "explanation": "데이터는 정확했지만 모바일 배치와 복잡한 레이블이 사용을 어렵게 했습니다."
+      },
+      {
+        "question": "Why was the original long label ineffective?",
+        "choices": [
+          "It omitted every relevant word.",
+          "It made relationships and the main action hard to identify.",
+          "It was written in another language.",
+          "It contained no nouns."
+        ],
+        "answer": 1,
+        "explanation": "관련 단어는 많았지만 수식 관계와 핵심 행동을 빠르게 파악하기 어려웠습니다."
+      },
+      {
+        "question": "What did different users need?",
+        "choices": [
+          "Exactly the same amount of detail",
+          "Fast scanning, category guidance, or direct detail depending on experience",
+          "Only printed reports",
+          "More internal terminology"
+        ],
+        "answer": 1,
+        "explanation": "화면 크기와 경험 수준에 따라 빠른 탐색, 범주 안내, 상세 결과 접근 요구가 달랐습니다."
+      },
+      {
+        "question": "What replaced the vague access-section label?",
+        "choices": [
+          "A menu for monthly service-quality reports",
+          "A longer technical sentence",
+          "A hidden chart",
+          "A new database"
+        ],
+        "answer": 0,
+        "explanation": "긴 명사 연쇄를 월간 서비스 품질 보고서 메뉴라는 분명한 구조로 바꿨습니다."
+      },
+      {
+        "question": "What was the main lesson?",
+        "choices": [
+          "Better interfaces always require new technology.",
+          "Clear modifier relationships reduce the user's decoding effort.",
+          "All noun phrases should contain one word.",
+          "Optional descriptions should be removed."
+        ],
+        "answer": 1,
+        "explanation": "핵심 명사와 수식 관계를 분명히 하면 사용자가 내부 언어를 해석할 부담이 줄어듭니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Which long English noun phrases do you find difficult to understand?",
+      "How would you simplify the label “international student support request tracking system”?",
+      "When is a short label better than a detailed one?",
+      "Describe an interface whose confusing language slowed you down.",
+      "What information belongs in a heading, and what should move to a description?"
+    ],
+    "rolePlay": {
+      "scenario": "You and a designer are revising labels on a mobile dashboard.",
+      "learnerRole": "Identify two unclear noun phrases and propose clearer headings plus optional descriptions.",
+      "coachRole": "Ask what each label is meant to do and challenge any remaining ambiguity.",
+      "goal": "Use core nouns, postmodifiers, and at least one rewritten of-phrase."
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Daily English — 2026-09-30",
+    "grammarTopic": "Object + Infinitive and Bare Infinitive Complements",
+    "grammar": {
+      "title": "목적어 뒤의 동사 형태: to부정사와 원형부정사 선택하기",
+      "summary": "want/ask/allow 같은 동사는 목적어 + to부정사를, make/let 같은 사역동사는 목적어 + 동사원형을 취합니다. 지각동사 뒤에서는 동사원형과 -ing가 관찰한 행동의 전체 또는 진행 장면이라는 차이를 만듭니다.",
+      "points": [
+        {
+          "title": "want·expect·need + 목적어 + to부정사",
+          "explanation": "누가 행동하기를 원하거나 예상하거나 필요로 할 때 동사 뒤에 행동의 주체인 목적어와 to부정사를 둡니다. 주절과 부정사의 주어가 다르다는 점이 핵심입니다.",
+          "examples": [
+            "I want you to try the advanced exercise. — 나는 당신이 고급 연습을 해 보길 원합니다.",
+            "We expect the session to finish by noon. — 세션이 정오까지 끝날 것으로 예상합니다.",
+            "The coach needs everyone to submit one recording. — 코치는 모두가 녹음 하나를 제출해야 합니다.",
+            "Would you like me to demonstrate the first step? — 제가 첫 단계를 시범 보이길 원하시나요?"
+          ]
+        },
+        {
+          "title": "ask·tell·encourage + 목적어 + to부정사",
+          "explanation": "요청·지시·조언·설득을 나타내는 동사는 대개 행동할 사람을 목적어로 밝힌 뒤 to부정사를 씁니다. say는 이 구조를 직접 취하지 않으므로 tell이나 say to로 바꿉니다.",
+          "examples": [
+            "The trainer asked us to work in pairs. — 강사는 우리에게 둘씩 연습하라고 요청했습니다.",
+            "She told me to slow down. — 그녀는 내게 속도를 늦추라고 말했습니다.",
+            "We encouraged him to explain his reasoning. — 우리는 그에게 생각의 근거를 설명하도록 격려했습니다.",
+            "The guide reminded the group to save its work. — 안내자는 그룹에 작업을 저장하라고 상기시켰습니다."
+          ]
+        },
+        {
+          "title": "allow·enable·force + 목적어 + to부정사",
+          "explanation": "허용·가능하게 함·강제를 나타내는 동사도 능동태에서는 목적어 + to부정사를 취합니다. 목적어 없이 일반 규칙을 말할 때는 allow + -ing가 가능하지만 allow to do만 단독으로 쓰지는 않습니다.",
+          "examples": [
+            "The app allows learners to replay each sentence. — 앱은 학습자가 각 문장을 다시 듣게 합니다.",
+            "Clear examples enabled me to understand the pattern. — 명확한 예문 덕분에 패턴을 이해할 수 있었습니다.",
+            "The deadline forced the team to simplify the task. — 마감 때문에 팀은 과제를 단순화해야 했습니다.",
+            "The platform does not allow recording in this room. — 플랫폼은 이 방에서의 녹음을 허용하지 않습니다."
+          ]
+        },
+        {
+          "title": "make·let·have + 목적어 + 동사원형",
+          "explanation": "능동태 사역구문 make, let, have 뒤에는 to 없는 동사원형을 씁니다. make가 수동태가 되면 be made to do처럼 to가 다시 나타납니다.",
+          "examples": [
+            "The coach made us repeat the phrase. — 코치는 우리에게 그 표현을 반복하게 했습니다.",
+            "Let the learner finish the answer. — 학습자가 답을 끝내게 두세요.",
+            "I had my partner check the instructions. — 파트너에게 지시문을 확인하게 했습니다.",
+            "We were made to repeat the safety drill. — 우리는 안전 훈련을 반복해야 했습니다."
+          ]
+        },
+        {
+          "title": "help와 지각동사의 선택",
+          "explanation": "help 뒤에는 목적어 + 동사원형 또는 to부정사가 모두 가능합니다. see/hear/watch + 목적어 + 동사원형은 행동 전체를, -ing는 진행 중인 일부 장면을 관찰했다는 느낌을 줍니다.",
+          "examples": [
+            "The checklist helped me organize the session. — 체크리스트가 세션을 정리하는 데 도움이 됐습니다.",
+            "The checklist helped me to organize the session. — 체크리스트가 세션을 정리하는 데 도움이 됐습니다.",
+            "I watched the learner complete the entire task. — 학습자가 과제 전체를 끝내는 것을 지켜봤습니다.",
+            "I watched the learner practising the opening lines. — 학습자가 도입부를 연습 중인 모습을 지켜봤습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "bring out the best in",
+        "meaning": "~의 장점을 최대한 끌어내다",
+        "example": "Patient feedback can bring out the best in a nervous learner. — 인내심 있는 피드백은 긴장한 학습자의 장점을 끌어낼 수 있습니다."
+      },
+      {
+        "term": "learn by doing",
+        "meaning": "직접 해 보며 배우다",
+        "example": "We learn by doing, so the workshop includes several short tasks. — 우리는 직접 하며 배우므로 워크숍에는 짧은 과제가 여러 개 있습니다."
+      },
+      {
+        "term": "give someone a hand",
+        "meaning": "누군가를 돕다",
+        "example": "Could you give me a hand with the recording setup? — 녹음 설정을 좀 도와주시겠어요?"
+      }
+    ],
+    "readingTitle": "A Workshop Designed for Different Kinds of Learners",
+    "paragraphs": [
+      "Leena was asked to lead a software workshop for twenty employees. Some had used the program for years, while others had never opened it. The manager wanted everyone to complete the same project by the end of the morning, but Leena expected beginners to need more guidance and advanced users to want greater independence.",
+      "She began with a five-minute demonstration and asked participants to watch her build a simple page from start to finish. Then she let experienced users choose an optional challenge. A printed checklist helped beginners follow the core steps, and two assistants moved around the room to give anyone a hand.",
+      "Leena believed people learn by doing, so she avoided explaining every feature in advance. She had each pair create a page, test it, and describe one decision. When she heard someone asking a useful question, she invited that person to repeat it for the group. Clear questions often brought out the best in the discussion.",
+      "One pair became stuck because a security setting did not allow them to publish their page. Instead of making them wait, an assistant enabled the pair to continue in a practice space. Leena reminded them to record the problem so the technical team could investigate it later.",
+      "By noon, every participant had completed the core project. The beginners said the checklist had helped them stay oriented, while experienced users appreciated being allowed to explore. The workshop succeeded because Leena did not force one method to fit everyone. She made the goal shared, let the routes vary, and encouraged learners to support one another."
+    ],
+    "translations": [
+      "Leena는 직원 20명을 위한 소프트웨어 워크숍 진행을 요청받았습니다. 일부는 수년간 프로그램을 썼지만 다른 이들은 처음이었습니다. 관리자는 모두가 같은 프로젝트를 마치길 원했지만, Leena는 초보자에게 더 많은 안내가 필요하고 숙련자는 자율성을 원할 것으로 예상했습니다.",
+      "5분 시범에서 간단한 페이지를 처음부터 끝까지 만드는 과정을 보게 한 뒤, 숙련자에게 선택 과제를 고르게 했습니다. 인쇄된 체크리스트는 초보자가 핵심 단계를 따르도록 도왔고 보조 강사들은 필요한 사람을 도왔습니다.",
+      "직접 하며 배운다고 믿어 모든 기능을 미리 설명하지 않았습니다. 각 조가 페이지를 만들고 시험한 뒤 결정 하나를 설명하게 했습니다. 유용한 질문을 들으면 전체에게 다시 말하게 했고, 명확한 질문은 토론의 장점을 끌어냈습니다.",
+      "한 조는 보안 설정 때문에 페이지를 게시할 수 없었습니다. 기다리게 하는 대신 보조 강사가 연습 공간에서 계속하도록 했고, Leena는 기술 팀이 나중에 조사할 수 있도록 문제를 기록하라고 상기시켰습니다.",
+      "정오까지 모두가 핵심 프로젝트를 완료했습니다. 초보자는 체크리스트 덕분에 방향을 잃지 않았고 숙련자는 탐색할 수 있어 좋았습니다. 한 방식을 강요하지 않고 목표는 공유하되 경로는 다양하게 하며 서로 돕게 한 것이 성공 요인이었습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "guidance",
+        "partOfSpeech": "noun",
+        "meaning": "안내",
+        "context": "초보자에게 필요한 단계별 도움"
+      },
+      {
+        "term": "independence",
+        "partOfSpeech": "noun",
+        "meaning": "자율성",
+        "context": "숙련자가 스스로 탐색할 자유"
+      },
+      {
+        "term": "demonstration",
+        "partOfSpeech": "noun",
+        "meaning": "시범",
+        "context": "과정을 직접 보여 주는 설명"
+      },
+      {
+        "term": "optional",
+        "partOfSpeech": "adjective",
+        "meaning": "선택적인",
+        "context": "원하는 사람이 고르는 추가 과제"
+      },
+      {
+        "term": "participants",
+        "partOfSpeech": "noun",
+        "meaning": "참가자들",
+        "context": "워크숍에서 학습하는 직원들"
+      },
+      {
+        "term": "advance",
+        "partOfSpeech": "noun",
+        "meaning": "사전",
+        "context": "활동보다 앞선 시점"
+      },
+      {
+        "term": "stuck",
+        "partOfSpeech": "adjective",
+        "meaning": "막힌",
+        "context": "문제를 해결하지 못하고 진행이 멈춘 상태"
+      },
+      {
+        "term": "enabled",
+        "partOfSpeech": "verb",
+        "meaning": "가능하게 했다",
+        "context": "연습 공간에서 계속하도록 지원함"
+      },
+      {
+        "term": "oriented",
+        "partOfSpeech": "adjective",
+        "meaning": "상황과 방향을 아는",
+        "context": "다음 단계를 파악하는 상태"
+      },
+      {
+        "term": "routes",
+        "partOfSpeech": "noun",
+        "meaning": "경로들",
+        "context": "공통 목표에 도달하는 서로 다른 방법"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "The manager wants everyone _____ the project.",
+        "choices": [
+          "complete",
+          "to complete",
+          "completing",
+          "completed"
+        ],
+        "answer": 1,
+        "explanation": "want + 목적어 + to부정사 구조이므로 to complete가 필요합니다."
+      },
+      {
+        "question": "The trainer made us _____ the phrase.",
+        "choices": [
+          "to repeat",
+          "repeating",
+          "repeat",
+          "repeated"
+        ],
+        "answer": 2,
+        "explanation": "능동태 make + 목적어 뒤에는 to 없는 동사원형을 씁니다."
+      },
+      {
+        "question": "The app allows users _____ each sentence.",
+        "choices": [
+          "replay",
+          "to replay",
+          "replaying",
+          "replayed"
+        ],
+        "answer": 1,
+        "explanation": "allow + 목적어 + to부정사 구조가 올바릅니다."
+      },
+      {
+        "question": "Which sentence focuses on the whole completed action?",
+        "choices": [
+          "I watched her build the page.",
+          "I watched her building the page.",
+          "I watched her to build the page.",
+          "I watched she built the page."
+        ],
+        "answer": 0,
+        "explanation": "지각동사 + 목적어 + 동사원형은 행동 전체를 보았다는 뜻입니다."
+      },
+      {
+        "question": "To “give someone a hand” means to _____.",
+        "choices": [
+          "applaud loudly",
+          "help that person",
+          "assign a deadline",
+          "stop a workshop"
+        ],
+        "answer": 1,
+        "explanation": "give someone a hand는 문맥상 누군가를 돕는다는 관용 표현입니다."
+      },
+      {
+        "question": "Why did Leena expect different needs?",
+        "choices": [
+          "The participants had different levels of experience.",
+          "The project had no clear goal.",
+          "The manager cancelled the workshop.",
+          "Only beginners attended."
+        ],
+        "answer": 0,
+        "explanation": "프로그램을 수년간 사용한 사람과 처음 여는 사람이 함께 있었기 때문입니다."
+      },
+      {
+        "question": "What did experienced users choose?",
+        "choices": [
+          "A mandatory longer lecture",
+          "An optional challenge",
+          "A different workshop date",
+          "A printed certificate"
+        ],
+        "answer": 1,
+        "explanation": "시범 후 숙련자는 선택형 추가 과제를 고를 수 있었습니다."
+      },
+      {
+        "question": "Why did Leena limit advance explanation?",
+        "choices": [
+          "She had forgotten the features.",
+          "She believed people learn by doing.",
+          "The assistants refused to speak.",
+          "The room had no projector."
+        ],
+        "answer": 1,
+        "explanation": "모든 기능을 먼저 설명하기보다 직접 과제를 수행하며 배우게 하려는 선택이었습니다."
+      },
+      {
+        "question": "How was the blocked pair helped?",
+        "choices": [
+          "They were sent home.",
+          "They continued in a practice space.",
+          "They published without security.",
+          "They copied another pair's page."
+        ],
+        "answer": 1,
+        "explanation": "보안 문제를 우회해 연습 공간에서 작업을 이어 가도록 했습니다."
+      },
+      {
+        "question": "What principle made the workshop successful?",
+        "choices": [
+          "Everyone had to use exactly the same method.",
+          "A shared goal allowed different learning routes.",
+          "Advanced users taught the entire session.",
+          "Technical problems were ignored."
+        ],
+        "answer": 1,
+        "explanation": "공통 목표는 유지하되 수준에 따라 경로와 지원 방식을 달리했습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Do you learn better by watching, reading, or doing? Give an example.",
+      "What would you want a coach to do during a difficult speaking task?",
+      "When should a trainer let learners struggle, and when should they give them a hand?",
+      "Describe a tool that enables you to learn more independently.",
+      "What brings out the best in a group discussion?"
+    ],
+    "rolePlay": {
+      "scenario": "You are helping plan a mixed-level English speaking workshop.",
+      "learnerRole": "Explain what you want beginners and advanced learners to do, and request specific support.",
+      "coachRole": "Question the plan, suggest resources, and agree on a flexible workshop structure.",
+      "goal": "Use three different object-complement patterns accurately."
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Daily English — 2026-10-01",
+    "grammarTopic": "Adverbs and Adverb Placement",
+    "grammar": {
+      "title": "부사의 위치: 의미와 초점을 원하는 자리에 놓기",
+      "summary": "부사는 종류에 따라 문장 앞·중간·끝에 놓이며, 위치가 바뀌면 자연스러움이나 의미 초점이 달라집니다. 특히 only, even, just 같은 초점 부사는 바로 뒤의 요소를 제한하므로 모호하지 않게 배치해야 합니다.",
+      "points": [
+        {
+          "title": "빈도부사의 중간 위치",
+          "explanation": "always, usually, often, rarely 같은 빈도부사는 일반동사 앞, be동사 뒤, 첫 조동사 뒤에 옵니다. 문장 앞이나 끝으로 이동하면 강조가 달라질 수 있지만 기본 위치를 익히는 것이 안전합니다.",
+          "examples": [
+            "I usually check the message twice. — 나는 보통 메시지를 두 번 확인합니다.",
+            "She is often available after lunch. — 그녀는 점심 뒤에 자주 시간이 됩니다.",
+            "We have rarely received such detailed feedback. — 우리는 그렇게 상세한 피드백을 거의 받아 본 적이 없습니다.",
+            "The team will probably finish today. — 팀은 아마 오늘 끝낼 것입니다."
+          ]
+        },
+        {
+          "title": "방식·장소·시간 부사의 기본 순서",
+          "explanation": "여러 부사구가 문장 끝에 올 때는 보통 방식-장소-시간 순서가 자연스럽습니다. 짧은 시간 표현은 문장 앞에 놓아 배경을 설정할 수도 있습니다.",
+          "examples": [
+            "She explained the change clearly in the meeting yesterday. — 그녀는 어제 회의에서 변경 사항을 명확히 설명했습니다.",
+            "We worked quietly at home all morning. — 우리는 오전 내내 집에서 조용히 일했습니다.",
+            "On Monday, I replied carefully from the office. — 월요일에 사무실에서 신중히 답했습니다.",
+            "The update appeared automatically on every device overnight. — 업데이트가 밤사이 모든 기기에 자동으로 표시되었습니다."
+          ]
+        },
+        {
+          "title": "only의 위치가 바꾸는 의미",
+          "explanation": "only는 일반적으로 바로 뒤의 단어나 구를 제한합니다. 말할 때는 강세가 의미를 도울 수 있지만 글에서는 위치만으로 뜻이 분명해야 합니다.",
+          "examples": [
+            "Only Mina reviewed the draft. — Mina만 초안을 검토했습니다.",
+            "Mina only reviewed the draft. — Mina는 초안을 검토하기만 했습니다.",
+            "Mina reviewed only the introduction. — Mina는 도입부만 검토했습니다.",
+            "Mina reviewed the draft only on Friday. — Mina는 금요일에만 초안을 검토했습니다."
+          ]
+        },
+        {
+          "title": "문장부사와 관점부사",
+          "explanation": "fortunately, however, frankly 같은 문장부사는 전체 문장에 대한 화자의 태도나 연결 관계를 나타내며 보통 쉼표로 구분합니다. technically, financially 같은 관점부사는 어떤 기준에서 판단하는지 제시합니다.",
+          "examples": [
+            "Fortunately, nobody acted on the unclear message. — 다행히 모호한 메시지에 따라 행동한 사람은 없었습니다.",
+            "Frankly, the instruction needs rewriting. — 솔직히 그 지시문은 다시 써야 합니다.",
+            "Technically, the old link still works. — 기술적으로는 기존 링크가 여전히 작동합니다.",
+            "The plan is, however, too expensive. — 하지만 그 계획은 너무 비쌉니다."
+          ]
+        },
+        {
+          "title": "even·just·also와 모호성 점검",
+          "explanation": "초점 부사는 강조할 요소 가까이에 둡니다. just는 '단지', '방금', '정확히' 등 여러 뜻이 있어 문맥과 위치를 함께 확인해야 하며, also는 보통 일반동사 앞과 be동사 뒤에 옵니다.",
+          "examples": [
+            "Even the director misunderstood the note. — 심지어 이사도 메모를 오해했습니다.",
+            "I just wanted a short summary. — 나는 그저 짧은 요약을 원했습니다.",
+            "The update has just arrived. — 업데이트가 방금 도착했습니다.",
+            "The revised message is also easier to translate. — 수정된 메시지는 번역하기도 더 쉽습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "choose your words carefully",
+        "meaning": "말을 신중하게 고르다",
+        "example": "Choose your words carefully when a deadline could be misunderstood. — 마감일을 오해할 수 있을 때는 표현을 신중히 고르세요."
+      },
+      {
+        "term": "take something the wrong way",
+        "meaning": "말이나 행동을 잘못 받아들이다",
+        "example": "I hope you don't take the short reply the wrong way. — 짧은 답장을 오해하지 않으면 좋겠습니다."
+      },
+      {
+        "term": "say what you mean",
+        "meaning": "의도한 바를 분명히 말하다",
+        "example": "If the request is urgent, say what you mean directly. — 요청이 긴급하다면 의도를 직접 분명히 말하세요."
+      }
+    ],
+    "readingTitle": "The Cost of Putting “Only” in the Wrong Place",
+    "paragraphs": [
+      "A project manager sent a short message on Thursday afternoon: “Please only update the budget table on Friday.” She intended to say that the budget table was the only document requiring an update. However, one colleague understood that the table could be updated only on Friday, not before or after that day.",
+      "The colleague delayed work that could have been completed immediately. Another teammate interpreted the message differently and updated the table but not the explanatory note beside it. Fortunately, nobody deleted important data, yet the team lost several hours clarifying a sentence of just nine words.",
+      "During the next meeting, the manager admitted that readers could easily take the message the wrong way. Spoken stress might have shown whether only limited the action, the object, or the time, but a written chat message offered no reliable stress. The group moved only next to the phrase it was meant to restrict: “On Friday, please update only the budget table and its note.”",
+      "They also agreed to choose their words carefully around deadlines. Time expressions would appear at the beginning of urgent messages, while sentence adverbs such as fortunately or technically would be separated with commas. Team members would state directly whether a task was optional, exclusive, or recently completed.",
+      "The revised habit felt slightly slower at first, but it prevented longer discussions later. The lesson was not that every message needed a grammar analysis. It was that small words often carry large decisions. When timing, scope, or responsibility matters, writers should say what they mean and place the key adverb where readers cannot reasonably attach it elsewhere."
+    ],
+    "translations": [
+      "프로젝트 관리자는 목요일 오후 ‘금요일에 예산표만 업데이트해 주세요’라는 짧은 메시지를 보냈습니다. 예산표가 유일한 업데이트 대상이라는 뜻이었지만, 한 동료는 금요일에만 작업할 수 있다는 뜻으로 이해했습니다.",
+      "그 동료는 즉시 할 수 있던 작업을 미뤘고, 다른 팀원은 표는 수정했지만 옆 설명문은 수정하지 않았습니다. 중요한 데이터가 삭제되지는 않았지만 아홉 단어짜리 문장을 해석하느라 몇 시간을 잃었습니다.",
+      "다음 회의에서 관리자는 메시지를 오해하기 쉬웠다고 인정했습니다. 말할 때의 강세는 only가 행동·대상·시간 중 무엇을 제한하는지 보여 줄 수 있지만 채팅에는 강세가 없습니다. 그래서 제한 대상 바로 옆으로 only를 옮겼습니다.",
+      "마감 관련 표현을 신중히 고르기로도 했습니다. 긴급 메시지는 시간 표현을 앞에 두고, 문장부사는 쉼표로 구분하며, 과제가 선택인지 유일한 대상인지 방금 끝났는지 직접 밝히기로 했습니다.",
+      "처음에는 새 습관이 조금 느렸지만 나중의 긴 논의를 막았습니다. 모든 메시지를 문법 분석하자는 것이 아니라, 작은 단어가 큰 결정을 담는다는 교훈이었습니다. 시간·범위·책임이 중요할 때는 의도를 분명히 하고 핵심 부사를 오해할 수 없는 위치에 둬야 합니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "intended",
+        "partOfSpeech": "verb",
+        "meaning": "의도했다",
+        "context": "관리자가 전달하려 했던 의미"
+      },
+      {
+        "term": "requiring",
+        "partOfSpeech": "verb",
+        "meaning": "필요로 하는",
+        "context": "업데이트가 필요한 문서"
+      },
+      {
+        "term": "delayed",
+        "partOfSpeech": "verb",
+        "meaning": "미뤘다",
+        "context": "즉시 가능한 작업을 나중으로 넘김"
+      },
+      {
+        "term": "interpreted",
+        "partOfSpeech": "verb",
+        "meaning": "해석했다",
+        "context": "같은 문장을 다른 뜻으로 이해함"
+      },
+      {
+        "term": "clarifying",
+        "partOfSpeech": "verb",
+        "meaning": "명확히 하는",
+        "context": "모호한 문장의 뜻을 확인하는 과정"
+      },
+      {
+        "term": "stress",
+        "partOfSpeech": "noun",
+        "meaning": "강세",
+        "context": "말할 때 특정 단어를 두드러지게 하는 것"
+      },
+      {
+        "term": "restrict",
+        "partOfSpeech": "verb",
+        "meaning": "제한하다",
+        "context": "only가 의미 범위를 좁힘"
+      },
+      {
+        "term": "exclusive",
+        "partOfSpeech": "adjective",
+        "meaning": "배타적인, 유일한",
+        "context": "다른 대상을 제외하는 과제"
+      },
+      {
+        "term": "scope",
+        "partOfSpeech": "noun",
+        "meaning": "범위",
+        "context": "과제에 포함되는 대상"
+      },
+      {
+        "term": "responsibility",
+        "partOfSpeech": "noun",
+        "meaning": "책임",
+        "context": "누가 일을 맡는지에 관한 범위"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Choose the natural position: She _____ checks the figures before sending them.",
+        "choices": [
+          "carefully always",
+          "always",
+          "checks always",
+          "is always"
+        ],
+        "answer": 1,
+        "explanation": "일반동사 checks 앞에 빈도부사 always를 두는 것이 기본 위치입니다."
+      },
+      {
+        "question": "Which sentence means that nobody except Mina called?",
+        "choices": [
+          "Mina only called.",
+          "Only Mina called.",
+          "Mina called only.",
+          "Mina called yesterday only."
+        ],
+        "answer": 1,
+        "explanation": "Only가 주어 Mina 바로 앞에 있어 사람의 범위를 제한합니다."
+      },
+      {
+        "question": "Choose the usual end-position order.",
+        "choices": [
+          "She spoke yesterday clearly at work.",
+          "She spoke clearly at work yesterday.",
+          "She yesterday at work spoke clearly.",
+          "Clearly yesterday she spoke at work."
+        ],
+        "answer": 1,
+        "explanation": "방식 clearly, 장소 at work, 시간 yesterday 순서가 자연스럽습니다."
+      },
+      {
+        "question": "Which sentence uses a sentence adverb correctly?",
+        "choices": [
+          "Fortunately nobody, was hurt.",
+          "Fortunately, nobody was hurt.",
+          "Nobody fortunately was, hurt.",
+          "Nobody was hurt fortunately however."
+        ],
+        "answer": 1,
+        "explanation": "문장 전체에 대한 평가를 나타내는 Fortunately를 문장 앞에서 쉼표로 구분했습니다."
+      },
+      {
+        "question": "To “take something the wrong way” means to _____.",
+        "choices": [
+          "copy it exactly",
+          "misunderstand its intention",
+          "send it quickly",
+          "place it nearby"
+        ],
+        "answer": 1,
+        "explanation": "말이나 행동의 의도를 부정적으로 또는 다르게 오해한다는 뜻입니다."
+      },
+      {
+        "question": "What did the manager intend?",
+        "choices": [
+          "The table was the only document to update.",
+          "Work was forbidden before Friday.",
+          "Only one colleague could work.",
+          "The explanatory note should be deleted."
+        ],
+        "answer": 0,
+        "explanation": "관리자는 업데이트 대상이 예산표뿐이라는 범위 제한을 의도했습니다."
+      },
+      {
+        "question": "Why did written communication make the ambiguity worse?",
+        "choices": [
+          "The message was too long.",
+          "It provided no reliable spoken stress.",
+          "The budget used unfamiliar numbers.",
+          "Nobody read the message."
+        ],
+        "answer": 1,
+        "explanation": "말의 강세로 제한 범위를 표시할 수 없어서 only의 위치에 더 의존해야 했습니다."
+      },
+      {
+        "question": "How did the team revise the message?",
+        "choices": [
+          "They removed every time expression.",
+          "They placed only next to the object it restricted.",
+          "They used more technical adverbs.",
+          "They replaced the table."
+        ],
+        "answer": 1,
+        "explanation": "only를 제한 대상인 the budget table 가까이에 놓아 범위를 분명히 했습니다."
+      },
+      {
+        "question": "What new habit concerned urgent messages?",
+        "choices": [
+          "Put time expressions near the beginning.",
+          "Avoid all commas.",
+          "Use only in every sentence.",
+          "Leave responsibility unstated."
+        ],
+        "answer": 0,
+        "explanation": "긴급 메시지에서는 시간 배경을 앞에 제시해 독자가 즉시 이해하도록 했습니다."
+      },
+      {
+        "question": "What is the central lesson?",
+        "choices": [
+          "Adverbs should always be removed.",
+          "Small-word placement can affect real decisions.",
+          "Spoken messages are never ambiguous.",
+          "Every message needs a full grammar analysis."
+        ],
+        "answer": 1,
+        "explanation": "only 같은 작은 부사의 위치가 시간과 업무 범위를 바꾸어 실제 행동에 영향을 줄 수 있습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Have you ever misunderstood a short message because of one small word?",
+      "How does stress change the meaning of “I only asked her yesterday”?",
+      "Where do you usually place time expressions in work messages?",
+      "When is it useful to choose your words especially carefully?",
+      "Rewrite one potentially ambiguous instruction using a clearer adverb position."
+    ],
+    "rolePlay": {
+      "scenario": "A project message caused two different interpretations of a deadline.",
+      "learnerRole": "Explain what you intended and rewrite the instruction with unambiguous adverb placement.",
+      "coachRole": "Describe your interpretation, ask about timing and scope, and test the revised wording.",
+      "goal": "Clarify time, scope, and responsibility using accurate adverb placement."
+    }
+  },
+  {
+    "date": "2026-10-02",
+    "title": "Daily English — 2026-10-02",
+    "grammarTopic": "Subject–Verb Agreement in Complex Sentences",
+    "grammar": {
+      "title": "복잡한 문장의 주어-동사 일치: 진짜 중심어 찾기",
+      "summary": "동사는 바로 앞의 명사가 아니라 주어 명사구의 중심어와 수를 맞춥니다. 전치사구, either/neither, 집합명사, 수량·거리, there 구문, 관계절이 끼어들어도 의미상 주어와 문법적 구조를 함께 확인해야 합니다.",
+      "points": [
+        {
+          "title": "전치사구 앞의 중심어와 일치",
+          "explanation": "of, with, along with, as well as 뒤의 명사가 동사에 가까워도 주어의 수를 바꾸지 않습니다. 긴 주어에서는 전치사구를 잠시 지우고 중심 명사를 찾으면 오류를 줄일 수 있습니다.",
+          "examples": [
+            "The list of safety checks is on the desk. — 안전 점검 목록이 책상 위에 있습니다.",
+            "The results of the latest tests are encouraging. — 최신 시험 결과는 고무적입니다.",
+            "The manager, along with two engineers, is attending. — 관리자는 엔지니어 두 명과 함께 참석합니다.",
+            "The cables as well as the main device need inspection. — 본체뿐 아니라 케이블도 검사가 필요합니다."
+          ]
+        },
+        {
+          "title": "either/neither와 상관접속사",
+          "explanation": "either와 neither가 단독 대명사일 때는 격식 문법에서 보통 단수 동사를 씁니다. either A or B, neither A nor B에서는 가까운 주어에 동사를 맞추는 근접 일치가 일반적이지만 수가 다른 조합은 다시 쓰면 더 매끄럽습니다.",
+          "examples": [
+            "Neither of the options is ideal. — 두 선택지 중 어느 것도 이상적이지 않습니다.",
+            "Either answer is acceptable. — 어느 답이든 받아들일 수 있습니다.",
+            "Either the technicians or the manager is available. — 기술자들이나 관리자 중 한쪽이 가능합니다.",
+            "Either the manager or the technicians are available. — 관리자나 기술자들 중 한쪽이 가능합니다."
+          ]
+        },
+        {
+          "title": "집합명사의 단일 집단과 구성원",
+          "explanation": "team, committee, staff 같은 집합명사는 미국 영어에서는 대체로 단수로, 영국 영어에서는 구성원들의 개별 행동을 강조할 때 복수로도 취급합니다. 한 문서 안에서는 관점과 대명사를 일관되게 유지합니다.",
+          "examples": [
+            "The committee has reached its decision. — 위원회가 하나의 결정을 내렸습니다.",
+            "The committee are divided in their opinions. — 위원들이 의견상 나뉘어 있습니다.",
+            "Our team is testing the alarm today. — 우리 팀은 오늘 경보를 시험합니다.",
+            "The staff are putting on their protective equipment. — 직원들이 각자 보호 장비를 착용하고 있습니다."
+          ]
+        },
+        {
+          "title": "금액·시간·거리와 데이터 명사",
+          "explanation": "하나의 총량으로 보는 금액·기간·거리는 단수 동사를 씁니다. data는 격식 과학 문맥에서 복수로 쓸 수 있지만 일반 비즈니스 영어에서는 단수 집합명사로도 널리 쓰이므로 독자와 스타일에 맞춥니다.",
+          "examples": [
+            "Ten minutes is enough for the inspection. — 점검에는 10분이면 충분합니다.",
+            "Five kilometres is too far to walk in this heat. — 이 더위에 5킬로미터는 걷기엔 너무 멉니다.",
+            "The data are consistent with the hypothesis. — 그 데이터는 가설과 일치합니다.",
+            "The data is stored securely. — 데이터는 안전하게 저장됩니다."
+          ]
+        },
+        {
+          "title": "there 구문과 관계절의 일치",
+          "explanation": "there is/are에서 동사는 뒤따르는 실제 명사와 수를 맞춥니다. 관계절 안의 동사는 관계대명사가 가리키는 선행사의 수에 맞추며, one of those who 뒤에는 보통 복수 동사를 씁니다.",
+          "examples": [
+            "There is one issue left. — 문제 하나가 남아 있습니다.",
+            "There are three issues left. — 문제 세 개가 남아 있습니다.",
+            "She is one of the engineers who check the system daily. — 그녀는 시스템을 매일 점검하는 엔지니어 중 한 명입니다.",
+            "She is the only engineer who checks the system daily. — 그녀는 시스템을 매일 점검하는 유일한 엔지니어입니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "add up",
+        "meaning": "말이 되다, 앞뒤가 맞다",
+        "example": "The totals do not add up, so we should check the source. — 합계가 맞지 않으니 출처를 확인해야 합니다."
+      },
+      {
+        "term": "be on solid ground",
+        "meaning": "확실한 근거를 갖고 있다",
+        "example": "We are on solid ground because two teams verified the result. — 두 팀이 결과를 검증했으므로 확실한 근거가 있습니다."
+      },
+      {
+        "term": "the devil is in the details",
+        "meaning": "세부 사항이 성패를 좌우한다",
+        "example": "The plan looks simple, but the devil is in the details. — 계획은 간단해 보이지만 성패는 세부 사항에 달려 있습니다."
+      }
+    ],
+    "readingTitle": "A Safety Report Whose Numbers Did Not Agree",
+    "paragraphs": [
+      "The safety committee was reviewing a monthly equipment report when one result seemed wrong. The list of completed inspections showed ninety-eight devices, but the totals in the regional tables showed one hundred. Neither of the explanations offered by the software was convincing, and the numbers simply did not add up.",
+      "A manager, along with two engineers, checked the original forms. There were two devices whose serial numbers appeared twice. One of the engineers who review the database each week noticed that both duplicates came from the same mobile form. Ten minutes was enough to reproduce the problem.",
+      "The committee then considered the practical risk. The data was stored securely, but inaccurate counts could make a site appear safer than it was. Either the form designers or the database manager needed to change the process. To avoid an awkward agreement pattern, the chair wrote a clearer sentence: “The form team and database manager must agree on a fix.”",
+      "The team tested three possible changes. Two were easy to implement, but neither was reliable when a connection failed. The third option required an extra confirmation screen and prevented duplicate submissions. After two regional teams verified it, the committee felt it was on solid ground.",
+      "The final report corrected the total and explained the grammar as carefully as the numbers. A polished dashboard is useful, but the devil is in the details: a nearby plural noun should not control the wrong verb, and a repeated serial number should not control a safety decision. Careful agreement helped the team describe careful verification."
+    ],
+    "translations": [
+      "안전 위원회가 월간 장비 보고서를 검토하던 중 한 결과가 잘못되어 보였습니다. 완료된 점검 목록은 98개였지만 지역 표의 합계는 100개였습니다. 소프트웨어가 제시한 어느 설명도 설득력이 없었고 숫자가 맞지 않았습니다.",
+      "관리자와 엔지니어 두 명이 원본 양식을 확인했습니다. 일련번호가 두 번 나온 장비가 두 개 있었고, 매주 데이터베이스를 검토하는 엔지니어 중 한 명이 두 중복 모두 같은 모바일 양식에서 왔음을 발견했습니다. 10분이면 문제를 재현하기에 충분했습니다.",
+      "위원회는 실제 위험을 검토했습니다. 데이터는 안전하게 저장됐지만 부정확한 수치는 현장을 실제보다 안전해 보이게 할 수 있었습니다. 어색한 수 일치를 피하려고 의장은 양식 팀과 데이터베이스 관리자가 해결책에 합의해야 한다고 다시 썼습니다.",
+      "세 가지 변경안을 시험했습니다. 둘은 구현하기 쉬웠지만 연결이 끊기면 어느 것도 신뢰할 수 없었습니다. 세 번째는 확인 화면을 추가해 중복 제출을 막았습니다. 두 지역 팀이 검증한 뒤 위원회는 확실한 근거가 있다고 판단했습니다.",
+      "최종 보고서는 합계를 고치고 숫자만큼 문법도 신중히 설명했습니다. 잘 만든 대시보드는 유용하지만 성패는 세부에 달려 있습니다. 가까운 복수 명사가 잘못된 동사를 결정해서도, 반복 일련번호가 안전 결정을 좌우해서도 안 됩니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "inspections",
+        "partOfSpeech": "noun",
+        "meaning": "점검들",
+        "context": "완료된 장비 검사"
+      },
+      {
+        "term": "convincing",
+        "partOfSpeech": "adjective",
+        "meaning": "설득력 있는",
+        "context": "문제를 충분히 설명하는"
+      },
+      {
+        "term": "duplicates",
+        "partOfSpeech": "noun",
+        "meaning": "중복 항목들",
+        "context": "두 번 기록된 일련번호"
+      },
+      {
+        "term": "reproduce",
+        "partOfSpeech": "verb",
+        "meaning": "재현하다",
+        "context": "같은 오류를 다시 발생시키다"
+      },
+      {
+        "term": "inaccurate",
+        "partOfSpeech": "adjective",
+        "meaning": "부정확한",
+        "context": "실제와 맞지 않는 수치"
+      },
+      {
+        "term": "awkward",
+        "partOfSpeech": "adjective",
+        "meaning": "어색한",
+        "context": "읽기 불편한 일치 구조"
+      },
+      {
+        "term": "implement",
+        "partOfSpeech": "verb",
+        "meaning": "구현하다",
+        "context": "변경 사항을 시스템에 적용하다"
+      },
+      {
+        "term": "confirmation",
+        "partOfSpeech": "noun",
+        "meaning": "확인",
+        "context": "제출 전 다시 검토하는 화면"
+      },
+      {
+        "term": "verified",
+        "partOfSpeech": "verb",
+        "meaning": "검증했다",
+        "context": "결과가 맞는지 독립적으로 확인함"
+      },
+      {
+        "term": "verification",
+        "partOfSpeech": "noun",
+        "meaning": "검증",
+        "context": "정확성을 확인하는 절차"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "The list of checks _____ on the desk.",
+        "choices": [
+          "are",
+          "is",
+          "were",
+          "have"
+        ],
+        "answer": 1,
+        "explanation": "주어의 중심어 list가 단수이므로 of checks의 복수형과 관계없이 is를 씁니다."
+      },
+      {
+        "question": "Neither of the options _____ reliable.",
+        "choices": [
+          "are",
+          "is",
+          "were",
+          "have been"
+        ],
+        "answer": 1,
+        "explanation": "격식 문법에서 neither of + 복수명사는 보통 단수 동사를 취합니다."
+      },
+      {
+        "question": "Either the manager or the technicians _____ available.",
+        "choices": [
+          "is",
+          "are",
+          "was",
+          "has"
+        ],
+        "answer": 1,
+        "explanation": "or에 가까운 주어 technicians가 복수이므로 are가 자연스럽습니다."
+      },
+      {
+        "question": "Ten minutes _____ enough.",
+        "choices": [
+          "are",
+          "were",
+          "is",
+          "have"
+        ],
+        "answer": 2,
+        "explanation": "10분을 하나의 시간 총량으로 보므로 단수 동사를 씁니다."
+      },
+      {
+        "question": "To say numbers “add up” means they _____.",
+        "choices": [
+          "are hidden",
+          "are consistent and make sense",
+          "increase automatically",
+          "use plural verbs"
+        ],
+        "answer": 1,
+        "explanation": "add up은 합계가 맞거나 설명이 논리적으로 앞뒤가 맞는다는 뜻입니다."
+      },
+      {
+        "question": "What first revealed a problem?",
+        "choices": [
+          "The two reported totals were different.",
+          "A device stopped working.",
+          "The committee lost its forms.",
+          "The database was insecure."
+        ],
+        "answer": 0,
+        "explanation": "점검 목록의 98개와 지역 표의 100개가 일치하지 않았습니다."
+      },
+      {
+        "question": "What caused the count difference?",
+        "choices": [
+          "Two missing engineers",
+          "Duplicate serial numbers from one form",
+          "An incorrect inspection time",
+          "A regional translation"
+        ],
+        "answer": 1,
+        "explanation": "같은 모바일 양식에서 일련번호 두 개가 중복 제출되었습니다."
+      },
+      {
+        "question": "Why did the chair rewrite the responsibility sentence?",
+        "choices": [
+          "To hide who was responsible",
+          "To avoid an awkward agreement pattern and improve clarity",
+          "To remove the database manager",
+          "To use a collective noun"
+        ],
+        "answer": 1,
+        "explanation": "수가 다른 주어를 either/or로 연결한 어색함을 피하고 공동 책임을 명확히 했습니다."
+      },
+      {
+        "question": "Which solution worked reliably?",
+        "choices": [
+          "The two simplest changes",
+          "An extra confirmation screen",
+          "Deleting regional tables",
+          "A longer inspection"
+        ],
+        "answer": 1,
+        "explanation": "추가 확인 화면이 연결 문제에서도 중복 제출을 막았습니다."
+      },
+      {
+        "question": "How are grammar and safety linked in the reading?",
+        "choices": [
+          "Both require attention to the correct controlling details.",
+          "Grammar automatically fixes data.",
+          "Plural nouns always indicate danger.",
+          "Reports should avoid all numbers."
+        ],
+        "answer": 0,
+        "explanation": "동사 일치와 안전 판단 모두 가까이 보이는 요소가 아니라 실제로 결정해야 할 핵심을 정확히 확인해야 합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Which subject–verb agreement errors are easiest for you to make?",
+      "Do you treat collective nouns as singular or plural in the English you use?",
+      "How would you rewrite an either/or sentence with subjects of different numbers?",
+      "Describe a time when numbers did not add up.",
+      "Why can small reporting errors create large practical risks?"
+    ],
+    "rolePlay": {
+      "scenario": "You found inconsistent totals in a monthly safety report.",
+      "learnerRole": "Explain the disagreement, identify who needs to check it, and recommend a verification step.",
+      "coachRole": "Ask for the source data, challenge unclear responsibility, and summarize the agreed action.",
+      "goal": "Use complex subjects with accurate agreement while keeping responsibility clear."
+    }
+  },
+  {
+    "date": "2026-10-03",
+    "title": "Daily English — 2026-10-03",
+    "grammarTopic": "Purpose, Result, and Degree Clauses",
+    "grammar": {
+      "title": "목적과 결과 표현: 의도한 행동과 실제 결과 구별하기",
+      "summary": "to/in order to/so as to는 같은 주어의 목적을, so that은 다른 주어·조동사가 포함된 목적을 나타냅니다. so/such...that은 실제 결과를, too...to와 enough to는 가능 여부를 표현하며, only to는 예상과 다른 결과를 강조합니다.",
+      "points": [
+        {
+          "title": "to·in order to·so as to로 목적 말하기",
+          "explanation": "주절의 주어가 어떤 목표를 위해 행동할 때 to부정사를 씁니다. in order to는 목적을 더 분명히 강조하고, so as to는 다소 격식적이며 부정형은 in order not to/so as not to가 자연스럽습니다.",
+          "examples": [
+            "We checked the batteries to prepare for the storm. — 폭풍에 대비하려고 배터리를 확인했습니다.",
+            "I wrote a list in order to avoid forgetting medicine. — 약을 잊지 않으려고 목록을 썼습니다.",
+            "They spoke quietly so as not to wake the children. — 아이들을 깨우지 않으려고 조용히 말했습니다.",
+            "We left early in order not to get caught in traffic. — 교통 체증에 걸리지 않으려고 일찍 떠났습니다."
+          ]
+        },
+        {
+          "title": "so that + 주어 + 조동사",
+          "explanation": "목적절의 주어가 주절과 다르거나 can/could/will/would 같은 조동사로 가능성과 의도를 밝힐 때 so that을 씁니다. 구어에서는 that을 생략하기도 합니다.",
+          "examples": [
+            "We labelled the bags so that everyone could find them. — 모두가 찾을 수 있도록 가방에 표시했습니다.",
+            "Keep the phone charged so that you can receive alerts. — 경보를 받을 수 있도록 휴대전화를 충전해 두세요.",
+            "I shared the route so that my family would know where I was. — 가족이 내 위치를 알도록 경로를 공유했습니다.",
+            "She repeated the number so everyone could write it down. — 모두가 적을 수 있도록 번호를 반복했습니다."
+          ]
+        },
+        {
+          "title": "so + 형용사/부사 + that 결과절",
+          "explanation": "정도가 매우 커서 실제 결과가 생겼음을 나타낼 때 so와 that절을 사용합니다. 명사가 중심이면 such + (a/an) + 형용사 + 명사 + that 구조를 씁니다.",
+          "examples": [
+            "The rain was so heavy that the road closed. — 비가 너무 많이 와서 도로가 폐쇄되었습니다.",
+            "The warning arrived so late that we had already left. — 경보가 너무 늦게 와서 우리는 이미 떠났습니다.",
+            "It was such a useful checklist that every family copied it. — 매우 유용한 체크리스트여서 모든 가정이 복사했습니다.",
+            "They gave such clear instructions that nobody panicked. — 아주 명확한 지시를 주어서 아무도 당황하지 않았습니다."
+          ]
+        },
+        {
+          "title": "too...to와 enough to의 가능 여부",
+          "explanation": "too + 형용사/부사 + to는 정도가 지나쳐 행동이 불가능하거나 부적절하다는 뜻이고, 형용사/부사 + enough to는 행동이 가능할 만큼 충분하다는 뜻입니다. 명사 앞에서는 enough + 명사를 씁니다.",
+          "examples": [
+            "The water was too deep to cross safely. — 물이 너무 깊어 안전하게 건널 수 없었습니다.",
+            "The torch was bright enough to light the stairs. — 손전등은 계단을 비추기에 충분히 밝았습니다.",
+            "We had enough water to last two days. — 이틀을 버틸 충분한 물이 있었습니다.",
+            "The instructions were too vague for children to follow. — 지시가 너무 모호해 아이들이 따를 수 없었습니다."
+          ]
+        },
+        {
+          "title": "only to로 예상 밖 결과 강조하기",
+          "explanation": "목적을 갖고 한 행동 뒤에 only to + 동사원형을 쓰면 기대와 달리 실망스럽거나 놀라운 결과를 발견했다는 뜻입니다. 목적 표현과 형태는 비슷하지만 실제 결과이므로 문맥을 구별해야 합니다.",
+          "examples": [
+            "We reached the shop only to find it closed. — 가게에 도착했지만 문이 닫혀 있었습니다.",
+            "She charged the radio only to discover the battery was damaged. — 라디오를 충전했지만 배터리가 손상된 것을 알았습니다.",
+            "They followed the map only to arrive at a blocked road. — 지도를 따라갔지만 막힌 도로에 도착했습니다.",
+            "I opened the emergency box only to see that the medicine had expired. — 비상 상자를 열었지만 약이 만료된 것을 보았습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "plan ahead",
+        "meaning": "미리 계획하다",
+        "example": "We plan ahead so that small problems do not become emergencies. — 작은 문제가 비상사태가 되지 않도록 미리 계획합니다."
+      },
+      {
+        "term": "be prepared for anything",
+        "meaning": "어떤 상황에도 대비하다",
+        "example": "A portable charger helps us be prepared for anything. — 보조 배터리는 어떤 상황에도 대비하게 해 줍니다."
+      },
+      {
+        "term": "better safe than sorry",
+        "meaning": "후회하는 것보다 조심하는 것이 낫다",
+        "example": "Take extra water; better safe than sorry. — 물을 더 챙기세요. 후회하는 것보다 조심하는 편이 낫습니다."
+      }
+    ],
+    "readingTitle": "A Family Plan Built for a Weekend Storm",
+    "paragraphs": [
+      "Heavy rain was forecast for the weekend, so Nari's family decided to plan ahead. They were not expecting a disaster; they simply wanted to be prepared for anything. Nari checked the local alert system to make sure every phone could receive warnings, while her partner charged two portable batteries.",
+      "They placed medicine, water, and copies of important documents in one bag so that anyone could carry it quickly. Each child chose a torch bright enough to light the stairs. The family also wrote emergency numbers on paper in case the internet became too unreliable to use.",
+      "During a short practice, they followed their usual exit route only to find that construction materials blocked the side gate. They chose another path and walked it slowly so the younger child could remember each turn. It was such a useful discovery that they informed two neighbours who used the same gate.",
+      "The forecast later weakened, and the storm caused only minor flooding. Still, the preparation was not wasted. Their old radio was too damaged to use, so they replaced it. They also realized they had enough drinking water to last one day, not the two days recommended by local guidance.",
+      "The family did not buy expensive equipment or imagine every possible danger. They made likely problems easier to manage and gave every family member a clear role. A simple plan, clear purposes, and one realistic practice revealed gaps that a checklist alone had missed. As Nari said while adding two bottles of water, better safe than sorry."
+    ],
+    "translations": [
+      "주말에 폭우가 예보되어 Nari의 가족은 미리 계획했습니다. 재난을 예상한 것이 아니라 어떤 상황에도 대비하려는 것이었습니다. 모든 휴대전화가 경보를 받는지 확인하고 보조 배터리 두 개를 충전했습니다.",
+      "누구나 빨리 들 수 있도록 약, 물, 중요 문서 사본을 한 가방에 넣었습니다. 아이들은 계단을 비추기에 충분한 손전등을 골랐고, 인터넷을 쓰기 어려울 경우를 대비해 긴급 전화번호를 종이에 적었습니다.",
+      "짧은 연습 중 평소 출구로 갔지만 공사 자재가 옆문을 막고 있었습니다. 다른 길을 골라 어린아이가 방향을 기억하도록 천천히 걸었습니다. 유용한 발견이어서 같은 문을 쓰는 이웃 두 명에게도 알렸습니다.",
+      "예보는 약해졌고 폭풍은 가벼운 침수만 일으켰습니다. 그래도 준비는 헛되지 않았습니다. 낡은 라디오는 너무 손상되어 교체했고, 식수는 권장된 이틀이 아니라 하루 분량뿐임을 알았습니다.",
+      "비싼 장비를 사거나 모든 위험을 상상한 것이 아니라 발생 가능성이 큰 문제를 다루기 쉽게 만들었습니다. 간단한 계획과 명확한 목적, 현실적인 연습 한 번이 체크리스트가 놓친 빈틈을 보여 주었습니다. 물 두 병을 더하며 ‘후회보다 조심이 낫다’고 말했습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "forecast",
+        "partOfSpeech": "verb",
+        "meaning": "예보되었다",
+        "context": "주말 폭우가 예상됨"
+      },
+      {
+        "term": "portable",
+        "partOfSpeech": "adjective",
+        "meaning": "휴대용의",
+        "context": "이동하며 쓸 수 있는 배터리"
+      },
+      {
+        "term": "documents",
+        "partOfSpeech": "noun",
+        "meaning": "문서들",
+        "context": "비상시에 필요한 중요 자료"
+      },
+      {
+        "term": "torch",
+        "partOfSpeech": "noun",
+        "meaning": "손전등",
+        "context": "계단을 비추는 휴대 조명"
+      },
+      {
+        "term": "unreliable",
+        "partOfSpeech": "adjective",
+        "meaning": "신뢰하기 어려운",
+        "context": "인터넷이 안정적으로 작동하지 않는 상태"
+      },
+      {
+        "term": "construction",
+        "partOfSpeech": "noun",
+        "meaning": "공사",
+        "context": "출구를 막은 작업과 자재"
+      },
+      {
+        "term": "informed",
+        "partOfSpeech": "verb",
+        "meaning": "알렸다",
+        "context": "이웃에게 막힌 길을 전달함"
+      },
+      {
+        "term": "minor",
+        "partOfSpeech": "adjective",
+        "meaning": "경미한",
+        "context": "피해가 크지 않은 침수"
+      },
+      {
+        "term": "guidance",
+        "partOfSpeech": "noun",
+        "meaning": "지침",
+        "context": "권장 식수량을 알려 주는 정보"
+      },
+      {
+        "term": "equipment",
+        "partOfSpeech": "noun",
+        "meaning": "장비",
+        "context": "비상시에 사용할 물품"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "We checked the batteries _____ for the storm.",
+        "choices": [
+          "prepare",
+          "to prepare",
+          "so preparing",
+          "for prepare"
+        ],
+        "answer": 1,
+        "explanation": "같은 주어가 가진 목적을 나타내므로 to부정사를 씁니다."
+      },
+      {
+        "question": "Label the bags so that everyone _____ find them.",
+        "choices": [
+          "can",
+          "to",
+          "finding",
+          "has"
+        ],
+        "answer": 0,
+        "explanation": "so that 목적절에는 주어 everyone과 가능성을 나타내는 조동사 can이 필요합니다."
+      },
+      {
+        "question": "It was _____ useful checklist that everyone copied it.",
+        "choices": [
+          "so a",
+          "such a",
+          "too",
+          "enough a"
+        ],
+        "answer": 1,
+        "explanation": "단수 가산명사가 중심이므로 such a + 형용사 + 명사 + that 구조를 씁니다."
+      },
+      {
+        "question": "The water was too deep _____ safely.",
+        "choices": [
+          "cross",
+          "to cross",
+          "crossing",
+          "that cross"
+        ],
+        "answer": 1,
+        "explanation": "too + 형용사 + to부정사는 행동하기에 정도가 지나침을 나타냅니다."
+      },
+      {
+        "question": "“Better safe than sorry” recommends _____.",
+        "choices": [
+          "taking a sensible precaution",
+          "ignoring unlikely risks",
+          "buying expensive equipment",
+          "waiting for damage"
+        ],
+        "answer": 0,
+        "explanation": "나중에 후회하기보다 합리적으로 미리 조심하는 편이 낫다는 뜻입니다."
+      },
+      {
+        "question": "Why did the family prepare?",
+        "choices": [
+          "A disaster had already happened.",
+          "Heavy rain was forecast for the weekend.",
+          "Their phones were broken.",
+          "The school required a drill."
+        ],
+        "answer": 1,
+        "explanation": "주말 폭우 예보를 보고 발생 가능한 문제에 대비했습니다."
+      },
+      {
+        "question": "Why were emergency numbers written on paper?",
+        "choices": [
+          "To decorate the bag",
+          "In case the internet became unreliable",
+          "Because phones were prohibited",
+          "So neighbours could buy equipment"
+        ],
+        "answer": 1,
+        "explanation": "인터넷 연결을 신뢰할 수 없을 때도 번호를 확인하기 위해서였습니다."
+      },
+      {
+        "question": "What unexpected result occurred during practice?",
+        "choices": [
+          "The batteries exploded.",
+          "Construction blocked the usual side gate.",
+          "The storm arrived early.",
+          "The documents were missing."
+        ],
+        "answer": 1,
+        "explanation": "평소 탈출 경로를 따라갔지만 공사 자재가 옆문을 막고 있음을 발견했습니다."
+      },
+      {
+        "question": "What supply gap did they identify?",
+        "choices": [
+          "No torches",
+          "Only one day's drinking water",
+          "No important documents",
+          "Too many radios"
+        ],
+        "answer": 1,
+        "explanation": "지역 지침은 이틀분을 권했지만 실제 식수는 하루분뿐이었습니다."
+      },
+      {
+        "question": "What is the reading's main point?",
+        "choices": [
+          "Preparation must cover every imaginable danger.",
+          "A simple realistic practice can reveal practical gaps.",
+          "Storm plans are useful only when damage is severe.",
+          "Checklists make practice unnecessary."
+        ],
+        "answer": 1,
+        "explanation": "현실적인 연습은 목록만으로 발견하지 못한 실제 경로와 물품의 빈틈을 보여 줍니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What do you keep ready for a power cut or severe weather?",
+      "How would you explain the purpose of three items in an emergency bag?",
+      "Have you ever prepared for something only to discover an unexpected problem?",
+      "When does “better safe than sorry” become excessive caution?",
+      "What simple practice could reveal a weakness in one of your plans?"
+    ],
+    "rolePlay": {
+      "scenario": "Your household is preparing for a weekend storm.",
+      "learnerRole": "Explain the purpose of key supplies and propose a short practice drill.",
+      "coachRole": "Ask about likely risks, identify anything too weak or insufficient, and suggest one backup.",
+      "goal": "Use to, so that, such/so...that, and enough/too accurately."
+    }
+  },
+  {
+    "date": "2026-10-04",
+    "title": "Daily English — 2026-10-04",
+    "grammarTopic": "Pronoun Reference and Cohesion",
+    "grammar": {
+      "title": "대명사와 지시어: 독자가 가리키는 대상을 놓치지 않게 쓰기",
+      "summary": "it, this, that, they 같은 표현은 앞선 명사나 생각을 분명히 가리켜야 합니다. 대명사의 선행사가 둘 이상이거나 this가 문장 전체를 막연히 받을 때는 핵심 명사를 반복하거나 this + 요약 명사, one/ones 등을 사용해 응집성과 정확성을 높입니다.",
+      "points": [
+        {
+          "title": "대명사의 선행사를 하나로 명확히 하기",
+          "explanation": "대명사는 수와 의미가 맞는 선행사를 가져야 합니다. 바로 앞에 가능한 명사가 둘 이상이면 독자는 추측해야 하므로 이름이나 핵심 명사를 반복하는 편이 낫습니다.",
+          "examples": [
+            "When Jina called Sora, she was driving. — Jina가 Sora에게 전화했을 때 그녀는 운전 중이었습니다(모호함).",
+            "Jina called Sora while Sora was driving. — Sora가 운전 중일 때 Jina가 전화했습니다.",
+            "The report reached the manager, but it was incomplete. — 보고서가 관리자에게 도착했지만 보고서가 미완성이었습니다.",
+            "The managers revised the plan because they found an error. — 관리자들이 오류를 발견해 계획을 수정했습니다."
+          ]
+        },
+        {
+          "title": "it·this·that의 기능 구별",
+          "explanation": "it은 이미 확인된 특정 대상을 이어 받고, this/that은 대상이나 앞선 생각 전체를 가리키며 거리·태도를 덧붙일 수 있습니다. 문장 전체를 받을 때 this + 명사를 쓰면 무엇을 요약하는지 더 분명합니다.",
+          "examples": [
+            "I opened the report and read it carefully. — 보고서를 열어 주의 깊게 읽었습니다.",
+            "The deadline moved forward. This change surprised the team. — 마감이 앞당겨졌고 이 변경이 팀을 놀라게 했습니다.",
+            "The server failed twice. That worried the client. — 서버가 두 번 멈췄고 그 일이 고객을 걱정시켰습니다.",
+            "This evidence supports the recommendation. — 이 증거는 권고안을 뒷받침합니다."
+          ]
+        },
+        {
+          "title": "one/ones로 가산명사 반복 피하기",
+          "explanation": "같은 종류의 가산명사를 반복하지 않으려면 단수 one, 복수 ones를 사용합니다. 소유격 뒤에는 one/ones를 흔히 생략할 수 있지만, 불가산명사 대신 one을 쓰지는 않습니다.",
+          "examples": [
+            "The first chart is clearer than the second one. — 첫 번째 차트가 두 번째 차트보다 더 명확합니다.",
+            "Use the updated files, not the old ones. — 이전 파일이 아니라 업데이트된 파일을 사용하세요.",
+            "My summary is shorter than yours. — 내 요약이 당신 것보다 짧습니다.",
+            "We need new equipment, not old equipment. — 낡은 장비가 아니라 새 장비가 필요합니다."
+          ]
+        },
+        {
+          "title": "former/latter와 목록 참조",
+          "explanation": "두 대상을 바로 앞에서 언급했을 때 the former는 첫 번째, the latter는 두 번째를 가리킵니다. 격식 글에서 유용하지만 긴 문단이나 세 개 이상의 항목에서는 이름을 반복하는 편이 더 명확합니다.",
+          "examples": [
+            "We compared email and chat; the former was more detailed. — 이메일과 채팅을 비교했는데 전자가 더 상세했습니다.",
+            "Accuracy and speed both matter, but the latter is easier to measure. — 정확성과 속도 모두 중요하지만 후자가 측정하기 쉽습니다.",
+            "The analyst and the editor disagreed; the former wanted more evidence. — 분석가와 편집자가 의견이 달랐고 전자는 더 많은 근거를 원했습니다.",
+            "For three or more options, repeat the option's name. — 선택지가 세 개 이상이면 이름을 반복하세요."
+          ]
+        },
+        {
+          "title": "막연한 they·you·it 대신 행위자 밝히기",
+          "explanation": "출처가 불분명한 they say, 일반인을 뜻하는 you, 가주어 it이 연속되면 책임과 근거가 흐려질 수 있습니다. 필요한 곳에서는 실제 조직·사람·자료를 주어로 밝혀 문장을 단단하게 만듭니다.",
+          "examples": [
+            "The health ministry recommends annual checks. — 보건부는 연례 검사를 권고합니다.",
+            "The guide advises visitors to book early. — 안내서는 방문객에게 일찍 예약하라고 조언합니다.",
+            "The research team found that response times improved. — 연구팀은 응답 시간이 개선됐음을 발견했습니다.",
+            "It is important to name the source of a claim. — 주장의 출처를 밝히는 것이 중요합니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "make something crystal clear",
+        "meaning": "무엇을 아주 명확하게 하다",
+        "example": "The revised paragraph makes the responsibility crystal clear. — 수정된 문단은 책임 소재를 아주 명확히 합니다."
+      },
+      {
+        "term": "leave no room for doubt",
+        "meaning": "의심이나 오해의 여지를 전혀 남기지 않다",
+        "example": "Name the owner and date to leave no room for doubt. — 담당자와 날짜를 명시해 의심의 여지를 없애세요."
+      },
+      {
+        "term": "lose track of",
+        "meaning": "무엇을 놓치거나 더 이상 따라가지 못하다",
+        "example": "Readers lose track of the argument when every sentence begins with “this.” — 모든 문장이 this로 시작하면 독자는 논지를 놓칩니다."
+      }
+    ],
+    "readingTitle": "The Report That Finally Named Who Did What",
+    "paragraphs": [
+      "A medical technology team drafted a report about a delayed software test. The first version said, “The laboratory sent the results to the developer after they changed the format, but they could not open it.” Every pronoun had a possible meaning, yet nobody could state with confidence who changed what or which file would not open.",
+      "The editor asked the writer to name each actor once. The laboratory had changed the result format, and the developer could not open the revised file. This clarification made the sequence immediately easier to follow. It also showed that the delay began before the developer received the data.",
+      "A second problem appeared throughout the recommendations. Several paragraphs began with “This shows” or “They should,” even when the previous sentence contained two findings and three teams. Readers could easily lose track of the intended reference. The editor replaced vague phrases with summary nouns such as “This timing error” and named the responsible team.",
+      "The report compared automatic checks with manual reviews. The former were faster, while the latter caught unusual formatting problems. Because only two methods were involved, former and latter remained clear. In a section comparing four file types, however, the writer repeated each type's name instead of using a chain of pronouns.",
+      "The final version did not avoid repetition at any cost. It repeated crucial nouns when accuracy mattered and used pronouns when the reference was unmistakable. The changes made responsibility crystal clear and left no room for doubt about the next action: the laboratory would send a standard file, and the developer would confirm receipt within one hour."
+    ],
+    "translations": [
+      "의료 기술 팀이 지연된 소프트웨어 시험 보고서를 작성했습니다. 첫 버전에는 ‘실험실이 형식을 바꾼 뒤 개발자에게 결과를 보냈지만 그들은 그것을 열 수 없었다’고 적혀 있었습니다. 모든 대명사가 여러 대상을 가리킬 수 있어 누가 무엇을 바꿨고 어떤 파일이 열리지 않았는지 확신할 수 없었습니다.",
+      "편집자는 각 행위자를 한 번씩 분명히 쓰게 했습니다. 실험실이 결과 형식을 바꿨고 개발자는 수정 파일을 열 수 없었습니다. 이 설명은 순서를 즉시 쉽게 만들고, 지연이 개발자가 데이터를 받기 전에 시작됐음을 보여 주었습니다.",
+      "권고 부분에도 문제가 있었습니다. 앞 문장에 결과 두 개와 팀 세 개가 있어도 여러 문단이 ‘이것은 보여 준다’나 ‘그들이 해야 한다’로 시작했습니다. 독자는 지시 대상을 놓치기 쉬워 편집자는 ‘이 시간 오류’ 같은 요약 명사와 담당 팀 이름으로 바꿨습니다.",
+      "보고서는 자동 검사와 수동 검토를 비교했습니다. 전자는 빠르고 후자는 특이한 형식 문제를 잡았습니다. 두 방법뿐이라 former/latter가 명확했지만, 네 파일 형식을 비교할 때는 대명사 연쇄 대신 각 이름을 반복했습니다.",
+      "최종본은 무조건 반복을 피하지 않았습니다. 정확성이 중요하면 핵심 명사를 반복하고 지시 대상이 분명할 때만 대명사를 사용했습니다. 책임과 다음 행동이 분명해져 실험실은 표준 파일을 보내고 개발자는 한 시간 안에 수신을 확인하기로 했습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "drafted",
+        "partOfSpeech": "verb",
+        "meaning": "초안을 작성했다",
+        "context": "지연된 시험에 관한 보고서를 처음 씀"
+      },
+      {
+        "term": "pronoun",
+        "partOfSpeech": "noun",
+        "meaning": "대명사",
+        "context": "명사를 대신하는 it, they 같은 단어"
+      },
+      {
+        "term": "confidence",
+        "partOfSpeech": "noun",
+        "meaning": "확신",
+        "context": "지시 대상을 분명히 말할 수 있는 상태"
+      },
+      {
+        "term": "actor",
+        "partOfSpeech": "noun",
+        "meaning": "행위자",
+        "context": "특정 행동을 수행한 팀이나 사람"
+      },
+      {
+        "term": "clarification",
+        "partOfSpeech": "noun",
+        "meaning": "명확화",
+        "context": "모호한 내용을 구체적으로 다시 밝힘"
+      },
+      {
+        "term": "sequence",
+        "partOfSpeech": "noun",
+        "meaning": "순서",
+        "context": "사건이 일어난 차례"
+      },
+      {
+        "term": "recommendations",
+        "partOfSpeech": "noun",
+        "meaning": "권고 사항들",
+        "context": "보고서가 제안하는 다음 행동"
+      },
+      {
+        "term": "vague",
+        "partOfSpeech": "adjective",
+        "meaning": "모호한",
+        "context": "가리키는 대상이 분명하지 않은"
+      },
+      {
+        "term": "unusual",
+        "partOfSpeech": "adjective",
+        "meaning": "특이한",
+        "context": "일반적이지 않은 형식 문제"
+      },
+      {
+        "term": "unmistakable",
+        "partOfSpeech": "adjective",
+        "meaning": "오해할 수 없이 분명한",
+        "context": "대명사의 지시 대상이 확실한 상태"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Jina called Sora while _____ was driving. Which revision clearly means Sora drove?",
+        "choices": [
+          "she",
+          "Jina",
+          "Sora",
+          "they"
+        ],
+        "answer": 2,
+        "explanation": "가능한 두 여성 명사가 있으므로 Sora를 반복해야 운전자가 분명합니다."
+      },
+      {
+        "question": "The deadline moved forward. _____ surprised the team.",
+        "choices": [
+          "It deadline",
+          "This change",
+          "One",
+          "The former"
+        ],
+        "answer": 1,
+        "explanation": "앞 문장 전체를 this + 요약 명사 change로 받아 의미를 분명히 합니다."
+      },
+      {
+        "question": "Use the new files, not the old _____.",
+        "choices": [
+          "one",
+          "ones",
+          "it",
+          "former"
+        ],
+        "answer": 1,
+        "explanation": "복수 가산명사 files의 반복을 피하므로 복수 대용어 ones를 씁니다."
+      },
+      {
+        "question": "We compared speed and accuracy; the latter means _____.",
+        "choices": [
+          "speed",
+          "accuracy",
+          "both qualities",
+          "neither quality"
+        ],
+        "answer": 1,
+        "explanation": "the latter는 바로 앞의 두 항목 중 두 번째인 accuracy를 가리킵니다."
+      },
+      {
+        "question": "To “leave no room for doubt” means to _____.",
+        "choices": [
+          "keep the source secret",
+          "make something completely clear",
+          "avoid all repetition",
+          "delay a decision"
+        ],
+        "answer": 1,
+        "explanation": "의심하거나 다르게 해석할 가능성이 없도록 완전히 명확히 한다는 뜻입니다."
+      },
+      {
+        "question": "Why was the first report ambiguous?",
+        "choices": [
+          "It contained no test results.",
+          "Several pronouns could refer to multiple actors or files.",
+          "It named every actor repeatedly.",
+          "The developer wrote it in another language."
+        ],
+        "answer": 1,
+        "explanation": "they와 it이 여러 팀·행동·파일을 가리킬 수 있어 사건을 확정할 수 없었습니다."
+      },
+      {
+        "question": "What did the first clarification reveal?",
+        "choices": [
+          "The developer changed the format.",
+          "The delay began before the developer received the data.",
+          "The laboratory could open every file.",
+          "The test was not delayed."
+        ],
+        "answer": 1,
+        "explanation": "실험실이 형식을 바꾼 뒤 개발자가 파일을 받았으므로 문제의 시작 시점이 드러났습니다."
+      },
+      {
+        "question": "How were vague “This shows” phrases improved?",
+        "choices": [
+          "They were deleted without replacement.",
+          "They became summary nouns such as “This timing error.”",
+          "They were changed to “It.”",
+          "They were moved to the title."
+        ],
+        "answer": 1,
+        "explanation": "this 뒤에 구체적인 요약 명사를 붙여 어떤 앞선 내용을 받는지 밝혔습니다."
+      },
+      {
+        "question": "Why were former and latter acceptable in one section?",
+        "choices": [
+          "Only two methods were being compared.",
+          "The terms referred to four file types.",
+          "They replaced uncountable nouns.",
+          "The section had no previous nouns."
+        ],
+        "answer": 0,
+        "explanation": "두 항목이 바로 앞에 명확히 제시되어 전자와 후자를 쉽게 추적할 수 있었습니다."
+      },
+      {
+        "question": "What principle guided the final version?",
+        "choices": [
+          "Avoid every repeated noun.",
+          "Use pronouns only when reference is unmistakable.",
+          "Use they for every organization.",
+          "Replace actors with passive voice."
+        ],
+        "answer": 1,
+        "explanation": "반복 회피보다 정확성을 우선하고 선행사가 확실할 때만 대명사를 사용했습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Which English pronouns most often create ambiguity for you?",
+      "When is repeating a noun better than using a pronoun?",
+      "How would you improve a paragraph that repeatedly begins with “This shows”?",
+      "Do you use former and latter in your writing? Why or why not?",
+      "Describe a message where naming the responsible person would leave no room for doubt."
+    ],
+    "rolePlay": {
+      "scenario": "You are editing an incident report with unclear pronouns.",
+      "learnerRole": "Point out two ambiguous references and propose precise replacements.",
+      "coachRole": "Explain the intended actors and sequence, then accept or refine the edits.",
+      "goal": "Produce a clear action summary using pronouns only when their references are unmistakable."
+    }
+  }
+]
