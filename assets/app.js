@@ -9,7 +9,7 @@ const learningItems = [
   {
     icon: "E",
     title: "영어 공부",
-    description: "B2 Daily English · 문법·이디엄·5분 읽기·숨김 번역·퀴즈·Voice 리뷰·개인 단어장",
+    description: "B1–B2 Daily English · 문법·이디엄·5분 읽기·숨김 번역·퀴즈·Voice 리뷰·개인 단어장",
     state: "정식 학습 앱 →",
     url: "english/"
   },

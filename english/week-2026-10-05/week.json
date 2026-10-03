@@ -1,0 +1,1962 @@
+[
+  {
+    "date": "2026-10-05",
+    "title": "Daily English — 2026-10-05",
+    "grammarTopic": "Participle Clauses: -ing, -ed, and Having + Past Participle",
+    "grammar": {
+      "title": "분사절: 두 사건의 관계를 간결하고 정확하게 연결하기",
+      "summary": "분사절은 주절과 주어가 같을 때 시간·이유·결과·조건을 짧게 묶는 B1–B2 문법입니다. 현재분사(-ing)는 능동적이거나 동시에 진행되는 의미, 과거분사(-ed)는 수동·상태, having + 과거분사는 주절보다 먼저 끝난 일을 나타냅니다. 주어가 어긋나는 dangling participle을 특히 조심해야 합니다.",
+      "points": [
+        {
+          "title": "-ing: 동시에 일어나는 능동 행동",
+          "explanation": "주절의 주어가 직접 하는 두 행동이 동시에 일어나면 접속사와 주어를 줄이고 -ing 분사절을 쓸 수 있습니다. 분사절의 숨은 주어는 반드시 주절의 주어와 같아야 합니다.",
+          "examples": [
+            "Walking through the station, I checked the platform number. — 역을 걸어가면서 승강장 번호를 확인했습니다.",
+            "She answered the email, waiting for the bus. — 그녀는 버스를 기다리면서 이메일에 답했습니다.",
+            "Looking at the updated chart, we noticed a sudden change. — 갱신된 차트를 보면서 우리는 갑작스러운 변화를 발견했습니다.",
+            "He sat by the window, reading the instructions carefully. — 그는 창가에 앉아 안내문을 주의 깊게 읽었습니다."
+          ]
+        },
+        {
+          "title": "-ing: 이유 또는 자연스러운 결과",
+          "explanation": "because 절을 -ing로 줄여 이유를 나타낼 수 있고, 앞 문장 전체의 자연스러운 결과를 쉼표 뒤 -ing로 덧붙일 수도 있습니다. 결과 분사절은 의도보다 실제 결과에 초점을 둡니다.",
+          "examples": [
+            "Knowing the road was busy, we left thirty minutes early. — 길이 붐빌 것을 알아서 30분 일찍 출발했습니다.",
+            "Not understanding the message, I asked for clarification. — 메시지를 이해하지 못해서 설명을 요청했습니다.",
+            "The train was cancelled, leaving hundreds of passengers stranded. — 열차가 취소되어 수백 명의 승객이 발이 묶였습니다.",
+            "The team simplified the form, reducing the average completion time. — 팀이 양식을 단순화해 평균 작성 시간을 줄였습니다."
+          ]
+        },
+        {
+          "title": "-ed: 수동 의미와 상태",
+          "explanation": "주절의 주어가 어떤 행동을 받았거나 특정 상태에 놓였을 때 과거분사로 시작합니다. When/If + 주어 + be가 생략된 것으로 이해하면 쉽습니다.",
+          "examples": [
+            "Designed for mobile users, the page loads quickly. — 모바일 사용자를 위해 설계된 그 페이지는 빠르게 열립니다.",
+            "Surprised by the result, the manager requested another test. — 결과에 놀란 관리자는 재시험을 요청했습니다.",
+            "Used correctly, the tool can save several hours. — 올바르게 사용하면 그 도구는 몇 시간을 절약할 수 있습니다.",
+            "Located near the station, the hotel is easy to reach. — 역 근처에 위치한 그 호텔은 찾아가기 쉽습니다."
+          ]
+        },
+        {
+          "title": "Having + p.p.: 먼저 완료된 사건",
+          "explanation": "분사절의 행동이 주절보다 분명히 먼저 끝났음을 강조할 때 having + 과거분사를 씁니다. 수동이면 having been + 과거분사를 사용합니다.",
+          "examples": [
+            "Having checked the figures twice, I sent the report. — 수치를 두 번 확인한 뒤 보고서를 보냈습니다.",
+            "Having missed the last bus, we called a taxi. — 마지막 버스를 놓친 뒤 우리는 택시를 불렀습니다.",
+            "Having been warned about the delay, the clients adjusted their plans. — 지연을 미리 통보받은 고객들은 계획을 조정했습니다.",
+            "Not having received a reply, she contacted the office again. — 답장을 받지 못해서 그녀는 사무실에 다시 연락했습니다."
+          ]
+        },
+        {
+          "title": "주어 일치와 분사절의 위치",
+          "explanation": "문장 앞의 분사절은 보통 주절 전체를 수식하고, 문장 뒤의 분사절은 동시 행동이나 결과를 덧붙입니다. 분사절의 행위자가 주절의 주어와 다르면 완전한 절을 써야 합니다.",
+          "examples": [
+            "Driving to work, I saw a rainbow. — 출근길에 운전하면서 저는 무지개를 보았습니다.",
+            "While I was driving to work, a rainbow appeared. — 제가 출근길에 운전하는 동안 무지개가 나타났습니다.",
+            "After reading the policy, the parents raised two questions. — 정책을 읽은 뒤 학부모들은 두 가지 질문을 제기했습니다.",
+            "The parents read the policy, and two questions arose. — 학부모들이 정책을 읽었고 두 가지 질문이 생겼습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "take a closer look",
+        "meaning": "더 자세히 살펴보다",
+        "example": "Taking a closer look, we found that the totals did not match. — 더 자세히 살펴보니 합계가 맞지 않았습니다."
+      },
+      {
+        "term": "learn the hard way",
+        "meaning": "힘든 경험을 통해 깨닫다",
+        "example": "We learned the hard way that rushed checks create bigger delays. — 서둘러 확인하면 더 큰 지연이 생긴다는 것을 힘든 경험으로 배웠습니다."
+      },
+      {
+        "term": "put two and two together",
+        "meaning": "정황을 종합해 결론을 내리다",
+        "example": "She put two and two together and realised the file was outdated. — 그녀는 정황을 종합해 파일이 오래된 것임을 알아챘습니다."
+      }
+    ],
+    "readingTitle": "The Report That Changed After One Careful Read",
+    "paragraphs": [
+      "Preparing for a quarterly meeting, Mina reviewed a performance report that had already passed two internal checks. The document looked polished, and every chart carried a clear label. Taking a closer look, however, she noticed that the total number of cases in the introduction differed from the figure in the results section.",
+      "Knowing that a small mismatch could weaken confidence in the whole report, she traced both numbers back to their sources. One table included cases collected after the official cut-off date, while the summary used the approved dataset. The extra cases had improved the headline result, making the programme appear more effective than the agreed analysis showed.",
+      "Having identified the cause, Mina did not simply replace the number. She documented the difference, asked the analyst to rerun the table and informed the project lead. Surprised by the gap, the lead postponed the meeting by one day rather than present a result that might later need to be withdrawn.",
+      "The team had learned the hard way that attractive charts cannot compensate for unclear data rules. They added an automatic check comparing totals across sections. Used before every review, the check now flags inconsistent sample sizes and records which dataset produced each figure.",
+      "Having been corrected before publication, the report caused no external confusion. Mina's careful reading did more than fix a number; it improved the process. By putting two and two together, she turned a minor inconsistency into a practical safeguard for future work."
+    ],
+    "translations": [
+      "분기 회의를 준비하며 Mina는 이미 두 차례 내부 검토를 통과한 성과 보고서를 살폈습니다. 문서는 잘 다듬어져 있었지만, 자세히 보니 서론의 전체 사례 수가 결과 부분의 수치와 달랐습니다.",
+      "작은 불일치도 보고서 전체의 신뢰를 떨어뜨릴 수 있음을 알고 두 수치의 출처를 추적했습니다. 한 표에는 공식 마감일 뒤 수집된 사례가 포함됐고 요약에는 승인된 데이터셋이 사용됐습니다. 추가 사례 때문에 대표 결과가 실제 합의된 분석보다 좋아 보였습니다.",
+      "원인을 찾은 뒤 Mina는 숫자만 바꾸지 않았습니다. 차이를 기록하고 분석가에게 표를 다시 계산하게 했으며 프로젝트 책임자에게 알렸습니다. 책임자는 결과에 놀라 나중에 철회할 수 있는 내용을 발표하는 대신 회의를 하루 미뤘습니다.",
+      "팀은 보기 좋은 차트가 불명확한 데이터 규칙을 보완할 수 없다는 것을 힘든 경험으로 배웠습니다. 여러 부분의 합계를 비교하는 자동 점검을 추가했고, 현재는 표본 수 불일치와 각 수치의 데이터셋을 기록합니다.",
+      "출판 전에 수정된 덕분에 외부 혼란은 없었습니다. Mina의 세심한 검토는 숫자 하나를 고친 데 그치지 않고 절차를 개선했습니다. 정황을 종합해 작은 불일치를 미래의 실용적인 안전장치로 바꿨습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "quarterly",
+        "partOfSpeech": "adjective",
+        "meaning": "분기별의",
+        "context": "3개월마다 열리는 회의"
+      },
+      {
+        "term": "polished",
+        "partOfSpeech": "adjective",
+        "meaning": "잘 다듬어진",
+        "context": "완성도가 높아 보이는 문서"
+      },
+      {
+        "term": "mismatch",
+        "partOfSpeech": "noun",
+        "meaning": "불일치",
+        "context": "서로 달라서는 안 되는 두 수치의 차이"
+      },
+      {
+        "term": "cut-off",
+        "partOfSpeech": "noun",
+        "meaning": "마감 시점",
+        "context": "분석에 포함할 자료의 기준일"
+      },
+      {
+        "term": "headline",
+        "partOfSpeech": "adjective",
+        "meaning": "대표적인",
+        "context": "가장 눈에 띄게 제시되는 결과"
+      },
+      {
+        "term": "rerun",
+        "partOfSpeech": "verb",
+        "meaning": "다시 실행하다",
+        "context": "분석이나 계산을 새로 수행하는 것"
+      },
+      {
+        "term": "postponed",
+        "partOfSpeech": "verb",
+        "meaning": "연기했다",
+        "context": "회의 날짜를 뒤로 미룬 행동"
+      },
+      {
+        "term": "compensate",
+        "partOfSpeech": "verb",
+        "meaning": "보완하다",
+        "context": "다른 약점을 상쇄하는 것"
+      },
+      {
+        "term": "inconsistent",
+        "partOfSpeech": "adjective",
+        "meaning": "일관되지 않은",
+        "context": "부분마다 표본 수가 다른 상태"
+      },
+      {
+        "term": "safeguard",
+        "partOfSpeech": "noun",
+        "meaning": "안전장치",
+        "context": "향후 오류를 막는 절차"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "_____ the figures twice, I sent the report.",
+        "choices": [
+          "Having checked",
+          "Checked having",
+          "Being check",
+          "Have checking"
+        ],
+        "answer": 0,
+        "explanation": "주절보다 먼저 완료된 능동 행동이므로 having checked가 알맞습니다."
+      },
+      {
+        "question": "_____ for mobile users, the page loads quickly.",
+        "choices": [
+          "Designing",
+          "Designed",
+          "Having design",
+          "To designing"
+        ],
+        "answer": 1,
+        "explanation": "페이지가 설계된 것이므로 수동 의미의 과거분사 Designed를 씁니다."
+      },
+      {
+        "question": "Choose the sentence without a dangling participle.",
+        "choices": [
+          "Walking home, the rain started.",
+          "Walking home, I felt the rain start.",
+          "Walking home, the street was quiet.",
+          "Walking home, my phone rang me."
+        ],
+        "answer": 1,
+        "explanation": "분사절의 숨은 주어와 주절 주어 I가 일치합니다."
+      },
+      {
+        "question": "The train was cancelled, _____ many passengers stranded.",
+        "choices": [
+          "left",
+          "leaving",
+          "having leave",
+          "was leaving"
+        ],
+        "answer": 1,
+        "explanation": "앞 사건의 자연스러운 결과는 쉼표 뒤 leaving으로 나타냅니다."
+      },
+      {
+        "question": "Not _____ a reply, she contacted the office again.",
+        "choices": [
+          "received",
+          "having received",
+          "receive",
+          "to receive"
+        ],
+        "answer": 1,
+        "explanation": "먼저 일어난 부정 완료는 not having + 과거분사를 씁니다."
+      },
+      {
+        "question": "What first made Mina suspicious?",
+        "choices": [
+          "A missing chart",
+          "Two different case totals",
+          "An angry client",
+          "A late meeting"
+        ],
+        "answer": 1,
+        "explanation": "서론과 결과 부분의 전체 사례 수가 달랐습니다."
+      },
+      {
+        "question": "Why did the headline result look better?",
+        "choices": [
+          "A new method was approved",
+          "Late cases were included in one table",
+          "The labels were clearer",
+          "The meeting was shorter"
+        ],
+        "answer": 1,
+        "explanation": "한 표에 공식 마감일 이후 사례가 포함되었습니다."
+      },
+      {
+        "question": "What did the project lead do?",
+        "choices": [
+          "Published immediately",
+          "Deleted the whole report",
+          "Postponed the meeting by one day",
+          "Ignored the difference"
+        ],
+        "answer": 2,
+        "explanation": "철회 가능성이 있는 결과를 발표하지 않기 위해 하루 연기했습니다."
+      },
+      {
+        "question": "What does the new automatic check compare?",
+        "choices": [
+          "Font sizes",
+          "Totals across report sections",
+          "Meeting calendars",
+          "Client names only"
+        ],
+        "answer": 1,
+        "explanation": "보고서 여러 부분의 전체 수와 데이터 출처를 점검합니다."
+      },
+      {
+        "question": "What is the main lesson?",
+        "choices": [
+          "Polished design guarantees accuracy",
+          "A small inconsistency can reveal a process weakness",
+          "All extra data should be deleted",
+          "Meetings should always be delayed"
+        ],
+        "answer": 1,
+        "explanation": "작은 수치 불일치가 더 큰 절차 문제를 드러내고 개선으로 이어졌습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "When do you usually take a closer look at information?",
+      "Describe a mistake you discovered before it became serious.",
+      "How can teams prevent numbers from becoming inconsistent?",
+      "Is postponing a meeting sometimes the responsible choice? Why?",
+      "Use a participle clause to explain something you checked recently."
+    ],
+    "rolePlay": {
+      "scenario": "You have found two different totals in a report just before a meeting.",
+      "learnerRole": "Explain what you found, what you have already checked and what action you recommend.",
+      "coachRole": "Act as the project lead, ask for evidence and decide whether to postpone the meeting.",
+      "goal": "Use one -ing clause, one -ed clause and one having + past participle clause."
+    }
+  },
+  {
+    "date": "2026-10-06",
+    "title": "Daily English — 2026-10-06",
+    "grammarTopic": "Reporting Verbs and Their Complement Patterns",
+    "grammar": {
+      "title": "보고 동사: 말의 내용뿐 아니라 태도와 의도를 전달하기",
+      "summary": "say와 tell만 반복하지 않고 admit, deny, suggest, warn, remind, promise 같은 동사를 쓰면 화자의 태도와 발화 목적을 정확히 전달할 수 있습니다. 각 동사는 that절, -ing, 목적어 + to부정사처럼 허용하는 문형이 다르므로 동사와 패턴을 한 묶음으로 익혀야 합니다.",
+      "points": [
+        {
+          "title": "that절: explain, admit, deny, claim, promise",
+          "explanation": "사실·주장·인정 내용을 완전한 절로 보고할 때 that절을 씁니다. that은 일상 영어에서 생략될 수 있지만, 주어와 동사가 있는 절 구조는 유지됩니다.",
+          "examples": [
+            "She explained that the deadline had changed. — 그녀는 마감일이 변경됐다고 설명했습니다.",
+            "He admitted that he had used the wrong file. — 그는 잘못된 파일을 사용했다고 인정했습니다.",
+            "The supplier claimed that the package had been sent. — 공급업체는 소포를 보냈다고 주장했습니다.",
+            "They promised that they would reply by Friday. — 그들은 금요일까지 답하겠다고 약속했습니다."
+          ]
+        },
+        {
+          "title": "동사 + -ing: admit, deny, suggest, recommend",
+          "explanation": "행동 자체를 목적어로 받을 때 -ing를 씁니다. suggest와 recommend 뒤에 사람 목적어 + to부정사를 직접 쓰지 않는 것이 표준적입니다.",
+          "examples": [
+            "He admitted sending the form late. — 그는 양식을 늦게 보낸 것을 인정했습니다.",
+            "She denied sharing the password. — 그녀는 비밀번호를 공유한 것을 부인했습니다.",
+            "I suggest testing the smaller group first. — 더 작은 집단부터 시험해 보기를 제안합니다.",
+            "The adviser recommended waiting for written confirmation. — 조언자는 서면 확인을 기다리라고 권했습니다."
+          ]
+        },
+        {
+          "title": "동사 + 목적어 + to부정사: advise, remind, warn, encourage",
+          "explanation": "누가 행동해야 하는지를 밝히는 동사는 사람 목적어 뒤에 to부정사를 씁니다. warn은 warn someone not to do 또는 warn someone about something으로도 씁니다.",
+          "examples": [
+            "The teacher advised us to check the instructions again. — 선생님은 안내문을 다시 확인하라고 조언했습니다.",
+            "Please remind me to bring my passport. — 여권을 가져오도록 제게 알려 주세요.",
+            "They warned visitors not to use the damaged stairs. — 방문객들에게 파손된 계단을 이용하지 말라고 경고했습니다.",
+            "Her manager encouraged her to apply for the role. — 관리자는 그녀에게 그 역할에 지원하라고 격려했습니다."
+          ]
+        },
+        {
+          "title": "suggest/recommend + that + 주어 + 동사원형",
+          "explanation": "격식 있는 제안에서는 that절 안에 동사원형을 쓰는 mandative subjunctive가 가능합니다. 영국 영어에서는 should + 동사원형도 매우 자연스럽습니다.",
+          "examples": [
+            "They suggested that the meeting start at nine. — 그들은 회의를 9시에 시작하자고 제안했습니다.",
+            "I recommend that each result be checked independently. — 각 결과를 독립적으로 확인할 것을 권합니다.",
+            "The doctor suggested that he should rest for two days. — 의사는 그에게 이틀간 쉬라고 권했습니다.",
+            "We requested that the supplier provide written evidence. — 공급업체가 서면 증거를 제공하도록 요청했습니다."
+          ]
+        },
+        {
+          "title": "시제·대명사·시간 표현의 관점 이동",
+          "explanation": "과거 시점에서 말을 전달하면 보통 현재가 과거로, 과거가 과거완료로 이동합니다. 아직 유효한 일반 사실은 현재시제를 유지할 수 있으며, today/next week 같은 표현도 보고 시점에 맞춰 바꿉니다.",
+          "examples": [
+            "She said, ‘I am busy.’ → She said that she was busy. — 그녀는 바쁘다고 말했습니다.",
+            "He said, ‘I sent it yesterday.’ → He said that he had sent it the day before. — 그는 전날 그것을 보냈다고 말했습니다.",
+            "The guide explained that water boils at 100°C. — 안내자는 물이 100도에서 끓는다고 설명했습니다.",
+            "Mina promised that she would call the following week. — Mina는 그다음 주에 전화하겠다고 약속했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "own up to",
+        "meaning": "잘못을 솔직히 인정하다",
+        "example": "The vendor eventually owned up to sending the wrong version. — 공급업체는 결국 잘못된 버전을 보낸 것을 인정했습니다."
+      },
+      {
+        "term": "stand by one's word",
+        "meaning": "약속을 지키다",
+        "example": "She stood by her word and delivered the update on time. — 그녀는 약속을 지켜 제때 업데이트를 전달했습니다."
+      },
+      {
+        "term": "get the wrong end of the stick",
+        "meaning": "상황을 잘못 이해하다",
+        "example": "I got the wrong end of the stick and prepared the wrong document. — 상황을 잘못 이해해 엉뚱한 문서를 준비했습니다."
+      }
+    ],
+    "readingTitle": "A Message That Sounded More Certain Than It Was",
+    "paragraphs": [
+      "A project coordinator received a short message from a supplier: “We expect the replacement part to leave our warehouse on Thursday.” During a team call, he reported that the supplier had promised delivery by Thursday. The stronger wording made everyone believe the schedule was guaranteed.",
+      "Two days later, the part had not even left the warehouse. The supplier denied promising a delivery date and explained that the original message had only described an expectation. Several colleagues felt that the supplier had broken its word, while the coordinator realised that he had unintentionally changed the level of certainty.",
+      "He owned up to summarising the message inaccurately. Rather than blame him, the manager advised the team to quote critical statements or record the exact reporting verb. She also suggested adding a confidence label such as confirmed, expected or possible beside every external date.",
+      "The coordinator contacted the supplier and requested that it provide a confirmed dispatch date. The supplier warned the team not to book installation staff until the parcel had been collected. It promised that tracking information would be shared immediately afterwards and stood by its word.",
+      "The delay still caused inconvenience, but the revised process prevented another misunderstanding. Reporting verbs were no longer treated as decorative synonyms. By distinguishing promise from expect and confirm from suggest, the team preserved the speaker's original level of commitment."
+    ],
+    "translations": [
+      "프로젝트 담당자는 공급업체로부터 교체 부품이 목요일에 창고를 떠날 것으로 예상한다는 메시지를 받았습니다. 그러나 팀 통화에서 목요일까지 배송하겠다고 약속했다고 보고해 모두가 일정이 확정됐다고 믿게 했습니다.",
+      "이틀 뒤에도 부품은 출고되지 않았습니다. 공급업체는 배송일을 약속한 적이 없으며 원래 메시지는 예상만 표현했다고 설명했습니다. 담당자는 자신이 확실성 수준을 의도치 않게 바꿨음을 깨달았습니다.",
+      "그는 메시지를 부정확하게 요약한 것을 인정했습니다. 관리자는 비난하는 대신 중요한 말은 그대로 인용하거나 정확한 보고 동사를 기록하라고 조언했고, 외부 일정에 확정·예상·가능 라벨을 붙이자고 제안했습니다.",
+      "담당자는 공급업체에 확정 출고일을 제공하라고 요청했습니다. 공급업체는 소포가 수거되기 전 설치 인력을 예약하지 말라고 경고했고, 이후 즉시 추적 정보를 공유하겠다는 약속을 지켰습니다.",
+      "지연은 불편을 초래했지만 새 절차는 또 다른 오해를 막았습니다. 팀은 promise와 expect, confirm과 suggest를 구별함으로써 원 화자의 약속 수준을 보존했습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "supplier",
+        "partOfSpeech": "noun",
+        "meaning": "공급업체",
+        "context": "교체 부품을 보내는 회사"
+      },
+      {
+        "term": "warehouse",
+        "partOfSpeech": "noun",
+        "meaning": "창고",
+        "context": "물품을 보관하고 출고하는 장소"
+      },
+      {
+        "term": "guaranteed",
+        "partOfSpeech": "adjective",
+        "meaning": "보장된",
+        "context": "반드시 지켜질 것으로 이해된 일정"
+      },
+      {
+        "term": "certainty",
+        "partOfSpeech": "noun",
+        "meaning": "확실성",
+        "context": "표현이 사실이라고 믿게 하는 정도"
+      },
+      {
+        "term": "unintentionally",
+        "partOfSpeech": "adverb",
+        "meaning": "의도치 않게",
+        "context": "고의가 아닌 방식으로"
+      },
+      {
+        "term": "inaccurately",
+        "partOfSpeech": "adverb",
+        "meaning": "부정확하게",
+        "context": "원래 뜻과 다르게 요약한 방식"
+      },
+      {
+        "term": "confidence",
+        "partOfSpeech": "noun",
+        "meaning": "신뢰 수준",
+        "context": "일정의 확정 정도"
+      },
+      {
+        "term": "dispatch",
+        "partOfSpeech": "noun",
+        "meaning": "발송",
+        "context": "창고에서 물품을 보내는 것"
+      },
+      {
+        "term": "collected",
+        "partOfSpeech": "verb",
+        "meaning": "수거된",
+        "context": "운송사가 소포를 가져간 상태"
+      },
+      {
+        "term": "commitment",
+        "partOfSpeech": "noun",
+        "meaning": "약속 수준",
+        "context": "화자가 책임지겠다는 정도"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "He admitted _____ the wrong file.",
+        "choices": [
+          "to use",
+          "using",
+          "use",
+          "used"
+        ],
+        "answer": 1,
+        "explanation": "admit 뒤에는 행동을 나타내는 -ing가 옵니다."
+      },
+      {
+        "question": "The manager advised us _____ the wording.",
+        "choices": [
+          "check",
+          "checking",
+          "to check",
+          "checked"
+        ],
+        "answer": 2,
+        "explanation": "advise + 사람 + to부정사 구조입니다."
+      },
+      {
+        "question": "Choose the standard sentence.",
+        "choices": [
+          "She suggested me to wait.",
+          "She suggested waiting.",
+          "She suggested me waiting.",
+          "She suggested to wait me."
+        ],
+        "answer": 1,
+        "explanation": "suggest는 -ing 또는 that절을 받으며 사람 + to부정사를 직접 쓰지 않습니다."
+      },
+      {
+        "question": "They requested that the supplier _____ written evidence.",
+        "choices": [
+          "provides",
+          "provided",
+          "provide",
+          "providing"
+        ],
+        "answer": 2,
+        "explanation": "격식 있는 요구의 that절에는 동사원형 provide를 쓸 수 있습니다."
+      },
+      {
+        "question": "He said, ‘I sent it yesterday.’ Which report is best?",
+        "choices": [
+          "He said he sends it yesterday.",
+          "He said he had sent it the day before.",
+          "He said he sent it tomorrow.",
+          "He told that he sent it."
+        ],
+        "answer": 1,
+        "explanation": "보고 시점보다 앞선 과거는 과거완료, yesterday는 the day before로 이동합니다."
+      },
+      {
+        "question": "What did the coordinator report incorrectly?",
+        "choices": [
+          "A promised Thursday delivery",
+          "A cancelled order",
+          "A lower price",
+          "A damaged warehouse"
+        ],
+        "answer": 0,
+        "explanation": "단순한 출고 예상을 배송 약속으로 더 강하게 전달했습니다."
+      },
+      {
+        "question": "Why did colleagues think the supplier had broken its word?",
+        "choices": [
+          "They saw the exact message",
+          "The coordinator used stronger reporting language",
+          "The supplier changed the price",
+          "Tracking showed delivery"
+        ],
+        "answer": 1,
+        "explanation": "promise라는 강한 보고 동사 때문에 일정이 보장된 것으로 이해했습니다."
+      },
+      {
+        "question": "What new labels did the manager suggest?",
+        "choices": [
+          "Cheap, average, expensive",
+          "Confirmed, expected, possible",
+          "Early, middle, late",
+          "Local, national, global"
+        ],
+        "answer": 1,
+        "explanation": "외부 일정의 확정 정도를 세 단계로 표시하자고 했습니다."
+      },
+      {
+        "question": "When could the team book installation staff?",
+        "choices": [
+          "Before ordering",
+          "After parcel collection",
+          "Before confirmation",
+          "Whenever they wanted"
+        ],
+        "answer": 1,
+        "explanation": "공급업체는 소포가 수거된 뒤에 예약하라고 경고했습니다."
+      },
+      {
+        "question": "What is the central lesson?",
+        "choices": [
+          "All reported speech must be direct quotation",
+          "Reporting verbs carry different levels of commitment",
+          "Suppliers never keep promises",
+          "Schedules should avoid dates"
+        ],
+        "answer": 1,
+        "explanation": "보고 동사는 단순 동의어가 아니라 확실성과 약속 수준을 전달합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "When is it better to quote someone directly?",
+      "Which reporting verbs do you use most often?",
+      "Describe a time when someone got the wrong end of the stick.",
+      "How can a team record uncertain dates clearly?",
+      "Report one promise and one suggestion you heard recently."
+    ],
+    "rolePlay": {
+      "scenario": "A colleague has reported an expected date as a confirmed promise.",
+      "learnerRole": "Clarify the original wording, own up to any misunderstanding and propose a new process.",
+      "coachRole": "Act as the manager and ask what was actually said before giving advice.",
+      "goal": "Use admit + -ing, advise + object + to-infinitive and suggest + that/-ing."
+    }
+  },
+  {
+    "date": "2026-10-07",
+    "title": "Daily English — 2026-10-07",
+    "grammarTopic": "Modal Deduction: Present and Past Evidence",
+    "grammar": {
+      "title": "추론 조동사: 증거의 강도를 현재와 과거에 맞춰 표현하기",
+      "summary": "must, might/may/could, can't는 의무가 아니라 증거를 바탕으로 한 추론에도 쓰입니다. 현재 상태는 modal + 동사원형, 과거 사건은 modal + have + 과거분사로 나타냅니다. 확실성의 강도와 시점을 함께 선택해야 자연스럽습니다.",
+      "points": [
+        {
+          "title": "must: 강한 긍정 추론",
+          "explanation": "직접 확인하지 않았지만 증거상 거의 확실한 결론에는 must를 씁니다. 현재는 must be/do, 과거는 must have + 과거분사입니다.",
+          "examples": [
+            "The lights are on, so someone must be inside. — 불이 켜져 있으니 누군가 안에 있는 게 틀림없습니다.",
+            "She knows every detail; she must work here. — 모든 세부를 아니 이곳에서 일하는 게 틀림없습니다.",
+            "The ground is wet; it must have rained. — 땅이 젖어 있으니 비가 왔던 게 틀림없습니다.",
+            "He arrived early, so he must have taken the first train. — 일찍 도착했으니 첫 기차를 탔던 게 틀림없습니다."
+          ]
+        },
+        {
+          "title": "may/might/could: 가능한 추론",
+          "explanation": "여러 설명 중 하나일 가능성에는 may, might, could를 씁니다. 세 표현의 차이는 대개 작지만 might가 더 조심스럽게 들릴 수 있습니다.",
+          "examples": [
+            "The delay might be caused by traffic. — 지연은 교통 때문일지도 모릅니다.",
+            "She may know the answer. — 그녀가 답을 알 수도 있습니다.",
+            "They could have used an older version. — 그들이 이전 버전을 사용했을 수도 있습니다.",
+            "The email might have gone to your spam folder. — 이메일이 스팸 폴더로 갔을지도 모릅니다."
+          ]
+        },
+        {
+          "title": "can't/couldn't: 강한 부정 추론",
+          "explanation": "증거상 사실일 수 없다고 판단할 때 현재에는 can't, 과거에는 can't/couldn't have + 과거분사를 씁니다. mustn't는 금지를 나타내므로 부정 추론에 쓰지 않습니다.",
+          "examples": [
+            "That can't be the final price; tax is missing. — 세금이 빠졌으니 그것이 최종 가격일 리 없습니다.",
+            "He can't know already; nobody has told him. — 아무도 말하지 않았으니 그가 벌써 알 리 없습니다.",
+            "She can't have sent it yesterday; the file was created today. — 파일이 오늘 생성됐으니 그녀가 어제 보냈을 리 없습니다.",
+            "They couldn't have seen the notice because it was not published. — 공지가 게시되지 않았으니 그들이 봤을 리 없습니다."
+          ]
+        },
+        {
+          "title": "진행 중 추론: modal + be/have been + -ing",
+          "explanation": "지금 진행 중인 행동은 modal + be + -ing, 과거 일정 시간 동안 진행됐을 행동은 modal + have been + -ing로 표현합니다.",
+          "examples": [
+            "They must be waiting outside. — 그들은 밖에서 기다리고 있는 게 틀림없습니다.",
+            "She might be working from home today. — 그녀는 오늘 재택근무 중일지도 모릅니다.",
+            "He must have been driving when you called. — 네가 전화했을 때 그는 운전 중이었음이 틀림없습니다.",
+            "The server may have been restarting during the outage. — 장애 중 서버가 재시작 중이었을 수도 있습니다."
+          ]
+        },
+        {
+          "title": "사실·추론·가능성을 분리하기",
+          "explanation": "증거가 불충분할 때 must로 단정하지 말고 might를 사용합니다. 추론 뒤에는 because, given, judging by 등을 써서 근거를 밝히면 말이 더 책임 있게 들립니다.",
+          "examples": [
+            "Given the timestamp, the update must have happened overnight. — 타임스탬프를 보면 업데이트는 밤사이에 일어난 게 틀림없습니다.",
+            "Judging by her message, she might be upset. — 메시지로 판단하면 그녀가 속상할지도 모릅니다.",
+            "The figure could be wrong because one source is missing. — 출처 하나가 빠져 수치가 틀릴 수도 있습니다.",
+            "This can't be a network issue, given that every other service works. — 다른 서비스가 모두 작동하므로 네트워크 문제일 리 없습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "jump to conclusions",
+        "meaning": "성급히 결론 내리다",
+        "example": "Let's not jump to conclusions before checking the logs. — 로그를 확인하기 전에 성급히 결론 내리지 맙시다."
+      },
+      {
+        "term": "add up",
+        "meaning": "말이 되다, 앞뒤가 맞다",
+        "example": "Her explanation does not add up with the timestamp. — 그녀의 설명은 타임스탬프와 앞뒤가 맞지 않습니다."
+      },
+      {
+        "term": "a likely story",
+        "meaning": "그럴듯하지만 의심스러운 이야기",
+        "example": "It sounds like a likely story, but we still need evidence. — 그럴듯한 이야기지만 여전히 증거가 필요합니다."
+      }
+    ],
+    "readingTitle": "The Missing Laptop and the Dangerous First Guess",
+    "paragraphs": [
+      "When a shared laptop disappeared from a meeting room, the team first assumed that a visitor must have taken it. The room had been busy all morning, and an external technician had left shortly before anyone noticed the loss. The timing seemed suspicious, but it was not proof.",
+      "The security officer asked everyone not to jump to conclusions. The technician could have moved the laptop while repairing a cable, but a staff member might also have borrowed it. Door records showed that the technician had left with only a small tool bag, so the computer could not have been inside it.",
+      "A colleague then noticed that the charging cable was missing too. Someone must have intended to use the laptop elsewhere rather than steal it quickly. The booking calendar showed a workshop in another building. The trainer might have taken the equipment without updating the shared register.",
+      "The officer called the trainer, who confirmed that the laptop was in the workshop room. She had collected it early because she expected the main room to be locked. She must have been setting up when the team began searching, and she had forgotten to send a message.",
+      "The evidence finally added up, and no theft had occurred. The team added a simple checkout form and a visible equipment label. The incident showed why a plausible first guess is still only a guess: responsible decisions separate what must be true, what might be true and what cannot be true."
+    ],
+    "translations": [
+      "공용 노트북이 회의실에서 사라지자 팀은 방문자가 가져간 게 틀림없다고 처음에 생각했습니다. 외부 기술자가 사라진 사실을 알기 직전에 떠나 의심스러웠지만, 시간상 정황은 증거가 아니었습니다.",
+      "보안 담당자는 성급히 결론 내리지 말라고 했습니다. 기술자가 케이블을 고치며 옮겼을 수도 있고 직원이 빌렸을 수도 있었습니다. 출입 기록상 기술자는 작은 공구 가방만 들고 나갔으므로 노트북이 그 안에 있었을 리 없었습니다.",
+      "충전 케이블도 사라진 것을 보고 누군가 급히 훔친 것이 아니라 다른 곳에서 쓰려 했음이 틀림없다고 판단했습니다. 다른 건물의 워크숍 예약을 보고 강사가 기록을 갱신하지 않고 가져갔을 가능성을 떠올렸습니다.",
+      "강사에게 전화하자 노트북이 워크숍실에 있다고 확인했습니다. 본 회의실이 잠길 것으로 예상해 일찍 가져갔고, 팀이 찾기 시작했을 때 설치 중이었음이 분명했습니다. 다만 메시지 보내는 것을 잊었습니다.",
+      "증거가 모두 맞아떨어졌고 도난은 없었습니다. 팀은 간단한 대여 양식과 눈에 띄는 장비 라벨을 추가했습니다. 그럴듯한 첫 추측도 추측일 뿐이며, 책임 있는 결정은 확실·가능·불가능을 구분해야 합니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "disappeared",
+        "partOfSpeech": "verb",
+        "meaning": "사라졌다",
+        "context": "공용 노트북을 찾을 수 없게 된 상황"
+      },
+      {
+        "term": "assumed",
+        "partOfSpeech": "verb",
+        "meaning": "추정했다",
+        "context": "충분한 확인 없이 사실로 여긴 행동"
+      },
+      {
+        "term": "suspicious",
+        "partOfSpeech": "adjective",
+        "meaning": "의심스러운",
+        "context": "정황상 이상하게 보이는 상태"
+      },
+      {
+        "term": "proof",
+        "partOfSpeech": "noun",
+        "meaning": "증거",
+        "context": "결론을 확실히 뒷받침하는 정보"
+      },
+      {
+        "term": "security",
+        "partOfSpeech": "noun",
+        "meaning": "보안",
+        "context": "사건을 확인하는 담당 업무"
+      },
+      {
+        "term": "records",
+        "partOfSpeech": "noun",
+        "meaning": "기록",
+        "context": "출입 사실을 남긴 자료"
+      },
+      {
+        "term": "charging",
+        "partOfSpeech": "adjective",
+        "meaning": "충전용의",
+        "context": "노트북 전원 케이블의 용도"
+      },
+      {
+        "term": "register",
+        "partOfSpeech": "noun",
+        "meaning": "대여 기록부",
+        "context": "장비 이동을 기록하는 문서"
+      },
+      {
+        "term": "confirmed",
+        "partOfSpeech": "verb",
+        "meaning": "확인했다",
+        "context": "사실임을 분명히 밝힌 행동"
+      },
+      {
+        "term": "plausible",
+        "partOfSpeech": "adjective",
+        "meaning": "그럴듯한",
+        "context": "가능해 보이지만 확정되지 않은"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "The ground is wet. It _____ overnight.",
+        "choices": [
+          "must rain",
+          "must have rained",
+          "can't rain",
+          "might raining"
+        ],
+        "answer": 1,
+        "explanation": "과거에 끝난 일에 대한 강한 추론은 must have + 과거분사입니다."
+      },
+      {
+        "question": "She _____ the file yesterday; it was created today.",
+        "choices": [
+          "must send",
+          "can't have sent",
+          "might sent",
+          "mustn't have send"
+        ],
+        "answer": 1,
+        "explanation": "증거상 과거 행동이 불가능하므로 can't have sent가 알맞습니다."
+      },
+      {
+        "question": "They may _____ outside now.",
+        "choices": [
+          "wait",
+          "be waiting",
+          "have waited yesterday",
+          "to wait"
+        ],
+        "answer": 1,
+        "explanation": "지금 진행 중일 가능성은 may be + -ing로 나타냅니다."
+      },
+      {
+        "question": "Which sentence expresses possibility, not certainty?",
+        "choices": [
+          "He must be home.",
+          "He can't be home.",
+          "He might be home.",
+          "He is home."
+        ],
+        "answer": 2,
+        "explanation": "might는 가능한 설명 중 하나임을 나타냅니다."
+      },
+      {
+        "question": "Choose the correct negative deduction.",
+        "choices": [
+          "It mustn't be true.",
+          "It can't be true.",
+          "It don't must be true.",
+          "It not might true."
+        ],
+        "answer": 1,
+        "explanation": "강한 부정 추론에는 can't를 사용합니다."
+      },
+      {
+        "question": "Why did the technician first seem suspicious?",
+        "choices": [
+          "He owned the laptop",
+          "He left shortly before the loss was noticed",
+          "He cancelled the meeting",
+          "He carried a large case"
+        ],
+        "answer": 1,
+        "explanation": "사라진 사실을 알기 직전에 떠났기 때문입니다."
+      },
+      {
+        "question": "What evidence reduced suspicion of the technician?",
+        "choices": [
+          "His tool bag was too small for the laptop",
+          "He had no tools",
+          "The door had no records",
+          "He called the trainer"
+        ],
+        "answer": 0,
+        "explanation": "작은 공구 가방에는 노트북을 넣을 수 없었습니다."
+      },
+      {
+        "question": "What clue suggested planned use rather than quick theft?",
+        "choices": [
+          "The screen was broken",
+          "The charging cable was also gone",
+          "The room was locked",
+          "The label was missing"
+        ],
+        "answer": 1,
+        "explanation": "충전 케이블까지 가져간 것은 다른 곳에서 사용하려는 정황이었습니다."
+      },
+      {
+        "question": "Where was the laptop?",
+        "choices": [
+          "In the technician's car",
+          "At a workshop in another building",
+          "In the security office",
+          "Under the meeting table"
+        ],
+        "answer": 1,
+        "explanation": "강사가 다른 건물 워크숍실에서 사용하고 있었습니다."
+      },
+      {
+        "question": "What did the team learn?",
+        "choices": [
+          "First guesses are always correct",
+          "Evidence should guide degrees of certainty",
+          "Visitors should be banned",
+          "Shared equipment is unnecessary"
+        ],
+        "answer": 1,
+        "explanation": "추론의 확실성은 증거 수준에 맞춰야 합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "When have you jumped to conclusions?",
+      "What evidence helps you decide that something must be true?",
+      "How do must and might change the tone of a claim?",
+      "What system would you use to track shared equipment?",
+      "Make three deductions about a familiar situation: must, might and can't."
+    ],
+    "rolePlay": {
+      "scenario": "A shared device is missing, and several explanations are possible.",
+      "learnerRole": "Present the evidence and make one must, one might and one can't deduction.",
+      "coachRole": "Challenge each conclusion and ask what evidence supports it.",
+      "goal": "Avoid treating a possibility as a fact; use present and past modal deduction accurately."
+    }
+  },
+  {
+    "date": "2026-10-08",
+    "title": "Daily English — 2026-10-08",
+    "grammarTopic": "Comparatives: Modifiers, Parallel Change, and Preference",
+    "grammar": {
+      "title": "비교 표현 확장: 차이의 크기와 변화의 관계를 정교하게 말하기",
+      "summary": "비교급은 단순히 A가 B보다 크다고 말하는 데서 끝나지 않습니다. much, slightly로 차이의 크기를 조절하고, the more ... the more ...로 두 변화의 관계를 나타내며, 비교 대상과 생략 구조를 명확히 해야 합니다.",
+      "points": [
+        {
+          "title": "비교급의 차이를 조절하는 부사",
+          "explanation": "much, far, considerably는 큰 차이, slightly, a little, marginally는 작은 차이를 나타냅니다. very는 원급에는 쓰지만 비교급을 직접 수식하지 않습니다.",
+          "examples": [
+            "The revised form is much easier to complete. — 수정된 양식은 작성하기 훨씬 쉽습니다.",
+            "This route is slightly longer but far safer. — 이 길은 조금 더 길지만 훨씬 안전합니다.",
+            "The second estimate was considerably more accurate. — 두 번째 추정치가 상당히 더 정확했습니다.",
+            "Attendance was marginally lower than last month. — 참석률은 지난달보다 아주 조금 낮았습니다."
+          ]
+        },
+        {
+          "title": "the + 비교급, the + 비교급",
+          "explanation": "한쪽이 변할수록 다른 쪽도 함께 변하는 관계는 the + 비교급 두 절로 나타냅니다. 여기서 the는 관사가 아니라 변화의 상관관계를 표시합니다.",
+          "examples": [
+            "The earlier we leave, the less traffic we will face. — 일찍 떠날수록 교통 체증을 덜 겪습니다.",
+            "The more clearly you explain the goal, the easier the task becomes. — 목표를 분명히 설명할수록 과제가 쉬워집니다.",
+            "The longer we wait, the more expensive the repair may be. — 오래 기다릴수록 수리비가 더 비싸질 수 있습니다.",
+            "The fewer options people see, the faster they decide. — 선택지가 적을수록 사람들은 더 빨리 결정합니다."
+          ]
+        },
+        {
+          "title": "점진적 변화: 비교급 and 비교급",
+          "explanation": "시간이 흐르며 같은 성질이 계속 증가하거나 감소할 때 비교급을 반복합니다. 긴 형용사는 more and more, less and less를 씁니다.",
+          "examples": [
+            "The queue became longer and longer. — 줄이 점점 더 길어졌습니다.",
+            "The instructions are getting clearer and clearer. — 안내문이 점점 더 명확해지고 있습니다.",
+            "Remote meetings have become more and more common. — 원격 회의가 점점 더 흔해졌습니다.",
+            "The old system is becoming less and less reliable. — 오래된 시스템은 점점 신뢰하기 어려워지고 있습니다."
+          ]
+        },
+        {
+          "title": "as ... as, not nearly as, twice as",
+          "explanation": "동등 비교는 as + 원급 + as를 씁니다. not nearly as는 큰 열세, not quite as는 작은 열세를 나타내며 배수 표현은 twice/three times as ... as 형태가 안전합니다.",
+          "examples": [
+            "The mobile page is as useful as the desktop version. — 모바일 페이지는 데스크톱 버전만큼 유용합니다.",
+            "The old process was not nearly as reliable as the new one. — 예전 절차는 새 절차만큼 전혀 신뢰할 만하지 않았습니다.",
+            "This model is not quite as fast as the larger one. — 이 모델은 큰 모델만큼은 조금 빠르지 않습니다.",
+            "The new battery lasts twice as long as the old one. — 새 배터리는 기존 것보다 두 배 오래갑니다."
+          ]
+        },
+        {
+          "title": "비교 대상과 대명사 명확히 하기",
+          "explanation": "비교하는 두 대상은 문법적으로 평행해야 합니다. 소유 관계는 that of/those of를 쓰고, 반복되는 명사는 one/ones로 대신하면 모호함을 줄일 수 있습니다.",
+          "examples": [
+            "The cost of renting is lower than that of buying. — 임대 비용은 구매 비용보다 낮습니다.",
+            "Our results were more stable than those of the previous team. — 우리 결과는 이전 팀의 결과보다 안정적이었습니다.",
+            "This explanation is clearer than the one in the manual. — 이 설명은 설명서의 것보다 명확합니다.",
+            "Travelling by train is less stressful than driving. — 기차 여행은 운전보다 스트레스가 적습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "by far",
+        "meaning": "단연코, 훨씬",
+        "example": "The revised plan is by far the most practical option. — 수정안이 단연코 가장 실용적인 선택입니다."
+      },
+      {
+        "term": "a close call",
+        "meaning": "간발의 차이, 아슬아슬한 상황",
+        "example": "It was a close call, but the second design won. — 간발의 차이였지만 두 번째 디자인이 선정됐습니다."
+      },
+      {
+        "term": "come out on top",
+        "meaning": "경쟁에서 가장 좋은 결과를 얻다",
+        "example": "The simpler service came out on top in the user test. — 사용자 시험에서 더 단순한 서비스가 가장 좋은 결과를 얻었습니다."
+      }
+    ],
+    "readingTitle": "Why the Cheapest Option Was Not the Best Value",
+    "paragraphs": [
+      "A community centre compared three companies to replace its ageing air-conditioning system. The first quotation was by far the cheapest, while the third was almost twice as expensive. At first, several committee members believed the decision was obvious: the lower the price, the better the value.",
+      "The facilities manager asked the group to compare more than the purchase cost. The cheapest unit used considerably more electricity and was not nearly as quiet as the other models. Its warranty was also two years shorter than that of the most expensive option, and replacement parts were becoming harder and harder to find.",
+      "The second system was slightly more expensive than the first but far more efficient. It was not quite as quiet as the premium model, yet its maintenance cost was lower. The more carefully the committee examined ten-year costs, the less attractive the cheapest quotation became.",
+      "After energy, repairs and warranty coverage were included, the second option came out on top. Its estimated ten-year cost was only marginally higher than the cheapest system's, but its reliability score was much better. The final vote was a close call because some members still preferred the lowest immediate price.",
+      "The committee learned that comparisons depend on what is being measured. A price can be lower while total value is worse. By making the compared categories parallel and stating the size of each difference, the group replaced a quick impression with a defensible decision."
+    ],
+    "translations": [
+      "지역 센터는 노후 냉방 시스템을 교체하려고 세 회사를 비교했습니다. 첫 견적이 단연 가장 저렴했고 세 번째는 거의 두 배 비쌌습니다. 일부 위원은 가격이 낮을수록 가치가 좋다고 생각했습니다.",
+      "시설 관리자는 구매 가격 외 요소도 비교하자고 했습니다. 가장 싼 장치는 전기를 상당히 더 많이 쓰고 다른 모델만큼 조용하지 않았습니다. 보증기간도 최고가 모델보다 2년 짧고 부품은 점점 구하기 어려워졌습니다.",
+      "두 번째 시스템은 첫 번째보다 조금 비쌌지만 훨씬 효율적이었습니다. 프리미엄 모델만큼 완전히 조용하지는 않았지만 유지비가 낮았습니다. 10년 비용을 자세히 볼수록 가장 싼 견적의 매력이 줄었습니다.",
+      "에너지·수리·보증을 포함하자 두 번째 선택이 1위를 차지했습니다. 10년 추정 비용은 가장 싼 시스템보다 아주 조금 높았지만 신뢰성 점수가 훨씬 좋았습니다. 즉시 가격을 선호하는 위원도 있어 표결은 간발의 차이였습니다.",
+      "위원회는 무엇을 측정하느냐에 따라 비교 결과가 달라진다는 것을 배웠습니다. 비교 범주를 평행하게 하고 차이의 크기를 밝힘으로써 방어 가능한 결정을 내렸습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "quotation",
+        "partOfSpeech": "noun",
+        "meaning": "견적",
+        "context": "업체가 제시한 가격과 조건"
+      },
+      {
+        "term": "obvious",
+        "partOfSpeech": "adjective",
+        "meaning": "명백한",
+        "context": "추가 검토 없이 답이 분명해 보이는"
+      },
+      {
+        "term": "facilities",
+        "partOfSpeech": "noun",
+        "meaning": "시설",
+        "context": "건물과 설비 관리 영역"
+      },
+      {
+        "term": "considerably",
+        "partOfSpeech": "adverb",
+        "meaning": "상당히",
+        "context": "큰 차이를 나타내는 비교급 수식어"
+      },
+      {
+        "term": "warranty",
+        "partOfSpeech": "noun",
+        "meaning": "보증",
+        "context": "고장 시 수리 책임 기간"
+      },
+      {
+        "term": "premium",
+        "partOfSpeech": "adjective",
+        "meaning": "고급의",
+        "context": "가격과 성능이 높은 모델"
+      },
+      {
+        "term": "maintenance",
+        "partOfSpeech": "noun",
+        "meaning": "유지보수",
+        "context": "정상 작동을 위한 관리와 수리"
+      },
+      {
+        "term": "marginally",
+        "partOfSpeech": "adverb",
+        "meaning": "아주 조금",
+        "context": "작은 차이를 나타내는 말"
+      },
+      {
+        "term": "immediate",
+        "partOfSpeech": "adjective",
+        "meaning": "당장의",
+        "context": "장기 비용과 대비되는 현재 비용"
+      },
+      {
+        "term": "defensible",
+        "partOfSpeech": "adjective",
+        "meaning": "근거로 방어 가능한",
+        "context": "논리와 자료로 설명할 수 있는"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "This route is _____ safer than the old one.",
+        "choices": [
+          "very",
+          "far",
+          "many",
+          "most"
+        ],
+        "answer": 1,
+        "explanation": "비교급 safer의 큰 차이는 far로 수식합니다."
+      },
+      {
+        "question": "_____ we explain the goal, _____ the task becomes.",
+        "choices": [
+          "The clear / the easy",
+          "The more clearly / the easier",
+          "More clearly / easier",
+          "The clearest / the easiest"
+        ],
+        "answer": 1,
+        "explanation": "두 변화의 상관관계는 the + 비교급 구조를 두 번 씁니다."
+      },
+      {
+        "question": "The system is becoming _____.",
+        "choices": [
+          "more and more reliable",
+          "reliabler and reliabler",
+          "very more reliable",
+          "most reliable and more"
+        ],
+        "answer": 0,
+        "explanation": "긴 형용사의 점진적 변화는 more and more + 형용사입니다."
+      },
+      {
+        "question": "The cost of renting is lower than _____ buying.",
+        "choices": [
+          "buy",
+          "one of",
+          "that of",
+          "those"
+        ],
+        "answer": 2,
+        "explanation": "앞의 cost를 반복하지 않기 위해 단수 대명 표현 that of를 씁니다."
+      },
+      {
+        "question": "The new battery lasts _____ the old one.",
+        "choices": [
+          "twice longer than",
+          "twice as long as",
+          "as twice long as",
+          "two times longer as"
+        ],
+        "answer": 1,
+        "explanation": "배수 비교의 안전한 표준형은 twice as + 원급 + as입니다."
+      },
+      {
+        "question": "Why did the cheapest unit lose its early advantage?",
+        "choices": [
+          "It was unavailable",
+          "Its long-term energy and maintenance costs were worse",
+          "It had the longest warranty",
+          "It was too quiet"
+        ],
+        "answer": 1,
+        "explanation": "구매가는 낮았지만 에너지·부품·보증 조건이 불리했습니다."
+      },
+      {
+        "question": "Which option came out on top?",
+        "choices": [
+          "The first",
+          "The second",
+          "The third",
+          "None"
+        ],
+        "answer": 1,
+        "explanation": "10년 총비용과 신뢰성을 함께 보자 두 번째가 선정됐습니다."
+      },
+      {
+        "question": "How did the second system compare with the premium model?",
+        "choices": [
+          "It was quieter",
+          "It was not quite as quiet but cheaper to maintain",
+          "It cost twice as much",
+          "It had no warranty"
+        ],
+        "answer": 1,
+        "explanation": "조금 덜 조용했지만 유지비는 낮았습니다."
+      },
+      {
+        "question": "Why was the final vote a close call?",
+        "choices": [
+          "Members used no data",
+          "Some still preferred the lowest immediate price",
+          "All systems were identical",
+          "The manager did not vote"
+        ],
+        "answer": 1,
+        "explanation": "일부 위원이 장기 가치보다 당장 낮은 가격을 선호했습니다."
+      },
+      {
+        "question": "What is the reading's main point?",
+        "choices": [
+          "The cheapest price always gives best value",
+          "Good comparisons define parallel measures and difference size",
+          "Premium products should always win",
+          "Energy costs never matter"
+        ],
+        "answer": 1,
+        "explanation": "비교 기준과 차이의 크기를 분명히 해야 합리적 판단이 가능합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "When is the cheapest option not the best value?",
+      "Which factors do you compare before a large purchase?",
+      "Use the more ... the more ... to describe a habit.",
+      "Describe two services using much, slightly and not nearly as.",
+      "Have you ever made a close-call decision?"
+    ],
+    "rolePlay": {
+      "scenario": "You are comparing two service plans with different prices, reliability and support.",
+      "learnerRole": "Recommend one plan and quantify at least three differences.",
+      "coachRole": "Question whether the higher price offers better value.",
+      "goal": "Use two comparison modifiers, one as ... as structure and one the more ... the more sentence."
+    }
+  },
+  {
+    "date": "2026-10-09",
+    "title": "Daily English — 2026-10-09",
+    "grammarTopic": "Future Continuous, Future Perfect, and Future Perfect Continuous",
+    "grammar": {
+      "title": "미래 시제 확장: 특정 시점의 진행·완료·기간을 구분하기",
+      "summary": "will do는 단순 예측이나 즉석 결정을 나타내지만, 미래의 기준 시점을 중심으로 상황을 보면 will be doing, will have done, will have been doing이 필요합니다. by와 for의 의미를 함께 익히면 일정·목표·진행 상태를 더 정확히 전달할 수 있습니다.",
+      "points": [
+        {
+          "title": "will be + -ing: 미래 특정 시점의 진행",
+          "explanation": "미래 어느 시점에 진행 중일 행동이나 자연스럽게 예정된 일을 나타냅니다. 상대의 계획을 부담 없이 물을 때도 씁니다.",
+          "examples": [
+            "This time tomorrow, we will be flying to Bangkok. — 내일 이맘때 우리는 방콕으로 비행 중일 것입니다.",
+            "At three, I will be meeting the supplier. — 3시에는 공급업체와 회의 중일 것입니다.",
+            "Will you be using the car this evening? — 오늘 저녁 차를 사용하실 예정인가요?",
+            "The team will be testing the update throughout the week. — 팀은 일주일 내내 업데이트를 시험하고 있을 것입니다."
+          ]
+        },
+        {
+          "title": "will have + p.p.: 미래 기준 시점 이전 완료",
+          "explanation": "by, by the time, before와 자주 쓰며 미래의 기준 시점보다 먼저 끝날 일을 나타냅니다.",
+          "examples": [
+            "By Friday, we will have completed the first review. — 금요일까지 첫 검토를 완료했을 것입니다.",
+            "She will have left before the meeting starts. — 회의가 시작하기 전에 그녀는 떠났을 것입니다.",
+            "By the time you arrive, I will have prepared the documents. — 네가 도착할 때까지 문서를 준비해 두었을 것입니다.",
+            "The new bridge will have opened by next summer. — 내년 여름까지 새 다리가 개통했을 것입니다."
+          ]
+        },
+        {
+          "title": "will have been + -ing: 미래까지 이어지는 기간",
+          "explanation": "미래 기준 시점까지 얼마나 오래 계속됐는지를 강조합니다. for + 기간과 함께 쓰는 경우가 많습니다.",
+          "examples": [
+            "In December, I will have been working here for five years. — 12월이면 이곳에서 일한 지 5년이 됩니다.",
+            "By noon, they will have been travelling for eight hours. — 정오면 그들은 8시간째 이동 중일 것입니다.",
+            "Next month, the system will have been running for a year. — 다음 달이면 시스템이 1년째 운영됩니다.",
+            "By the end of the trial, we will have been collecting data for six weeks. — 시험 종료 시점이면 6주 동안 데이터를 수집한 셈입니다."
+          ]
+        },
+        {
+          "title": "시간절에서는 현재시제",
+          "explanation": "when, after, before, until, as soon as가 미래를 가리켜도 시간절 안에는 보통 will을 쓰지 않습니다. 주절에 미래형을 사용합니다.",
+          "examples": [
+            "I will call you when I arrive. — 도착하면 전화하겠습니다.",
+            "We will begin after everyone has signed in. — 모두가 로그인한 뒤 시작하겠습니다.",
+            "By the time the meeting starts, she will have read the report. — 회의가 시작할 때쯤 그녀는 보고서를 읽었을 것입니다.",
+            "Wait here until the technician comes. — 기술자가 올 때까지 여기서 기다리세요."
+          ]
+        },
+        {
+          "title": "형태 선택: 결과, 진행 장면, 누적 기간",
+          "explanation": "완료 결과가 중요하면 future perfect, 그 시점의 활동 장면은 future continuous, 계속된 기간은 future perfect continuous를 선택합니다.",
+          "examples": [
+            "At ten, I will be writing the final section. — 10시에는 마지막 부분을 작성 중일 것입니다.",
+            "By ten, I will have written the final section. — 10시까지 마지막 부분을 작성해 놓았을 것입니다.",
+            "By ten, I will have been writing for three hours. — 10시면 3시간째 작성 중일 것입니다.",
+            "We will have resolved the urgent issues, but we will still be monitoring performance. — 긴급 문제는 해결했겠지만 성능은 계속 모니터링 중일 것입니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "ahead of schedule",
+        "meaning": "예정보다 일찍",
+        "example": "The first stage finished two days ahead of schedule. — 첫 단계가 예정보다 이틀 일찍 끝났습니다."
+      },
+      {
+        "term": "down to the wire",
+        "meaning": "마지막 순간까지 아슬아슬하게",
+        "example": "Testing may go down to the wire, but quality comes first. — 시험이 막판까지 갈 수 있지만 품질이 우선입니다."
+      },
+      {
+        "term": "on track",
+        "meaning": "계획대로 진행 중인",
+        "example": "We are on track to complete the review by Friday. — 금요일까지 검토를 끝낼 계획대로 진행 중입니다."
+      }
+    ],
+    "readingTitle": "Planning a Launch Without Pretending to Know the Future",
+    "paragraphs": [
+      "A small software team planned to launch a booking service at the end of November. The manager created a timeline that separated what the team would be doing at each stage from what it would have completed. This prevented a progress activity from being mistaken for a finished result.",
+      "By the first Friday, the developers will have completed the payment flow. During the following week, they will be testing it with twenty users. By the time the security review begins, the system will have been processing test payments for ten days, giving the reviewers enough evidence to assess stability.",
+      "The schedule was on track, but the manager did not promise that every problem would have disappeared by launch day. She explained that the urgent issues would have been resolved, while the team would still be monitoring minor performance changes. That distinction made the plan more credible.",
+      "A supplier then delivered one component three days ahead of schedule. The team used the extra time for accessibility testing rather than moving the public launch forward. If later testing went down to the wire, the reserved time would protect the release date without reducing quality.",
+      "By the end of November, the team will have worked through four formal gates. It will also have been collecting feedback throughout the month. The future remains uncertain, but a good plan shows the expected state at each checkpoint instead of treating every intention as a guaranteed outcome."
+    ],
+    "translations": [
+      "소규모 소프트웨어 팀은 11월 말 예약 서비스 출시를 계획했습니다. 관리자는 각 단계에 진행 중일 일과 완료됐을 일을 구분한 일정표를 만들어 진행 활동을 완료 결과로 오해하지 않게 했습니다.",
+      "첫 금요일까지 개발자는 결제 흐름을 완료할 것입니다. 다음 주에는 20명의 사용자와 시험 중일 것입니다. 보안 검토가 시작될 때쯤 시스템은 10일간 시험 결제를 처리한 상태라 안정성 평가에 충분한 근거가 생깁니다.",
+      "일정은 계획대로였지만 관리자는 출시일까지 모든 문제가 사라질 것이라고 약속하지 않았습니다. 긴급 문제는 해결되어 있겠지만 작은 성능 변화는 계속 모니터링 중일 것이라고 구분해 계획의 신뢰도를 높였습니다.",
+      "공급업체가 부품 하나를 예정보다 사흘 일찍 보냈지만 팀은 출시를 앞당기지 않고 접근성 시험에 시간을 사용했습니다. 이후 시험이 막판까지 가더라도 확보한 시간이 품질을 낮추지 않고 출시일을 지킬 수 있게 합니다.",
+      "11월 말까지 팀은 네 개의 공식 관문을 통과할 것이며 한 달 내내 피드백을 수집한 셈이 됩니다. 좋은 계획은 모든 의도를 보장된 결과로 취급하지 않고 점검 시점마다 예상 상태를 보여 줍니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "timeline",
+        "partOfSpeech": "noun",
+        "meaning": "일정표",
+        "context": "단계별 계획을 시간순으로 표시한 것"
+      },
+      {
+        "term": "separated",
+        "partOfSpeech": "verb",
+        "meaning": "구분했다",
+        "context": "진행과 완료를 나눠 표현한 행동"
+      },
+      {
+        "term": "processing",
+        "partOfSpeech": "verb",
+        "meaning": "처리하는 중인",
+        "context": "시험 결제를 다루는 활동"
+      },
+      {
+        "term": "stability",
+        "partOfSpeech": "noun",
+        "meaning": "안정성",
+        "context": "시스템이 문제없이 일관되게 작동하는 정도"
+      },
+      {
+        "term": "credible",
+        "partOfSpeech": "adjective",
+        "meaning": "신뢰할 만한",
+        "context": "과장하지 않아 믿을 수 있는"
+      },
+      {
+        "term": "component",
+        "partOfSpeech": "noun",
+        "meaning": "구성 요소",
+        "context": "서비스에 필요한 한 부품"
+      },
+      {
+        "term": "accessibility",
+        "partOfSpeech": "noun",
+        "meaning": "접근성",
+        "context": "다양한 사용자가 이용할 수 있는 정도"
+      },
+      {
+        "term": "reserved",
+        "partOfSpeech": "adjective",
+        "meaning": "확보해 둔",
+        "context": "예상치 못한 일에 대비한 시간"
+      },
+      {
+        "term": "checkpoint",
+        "partOfSpeech": "noun",
+        "meaning": "점검 시점",
+        "context": "상태를 확인하는 계획상의 지점"
+      },
+      {
+        "term": "guaranteed",
+        "partOfSpeech": "adjective",
+        "meaning": "보장된",
+        "context": "반드시 일어난다고 확정된"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "At three, I _____ the supplier.",
+        "choices": [
+          "will meet completed",
+          "will be meeting",
+          "will have meet",
+          "am have meeting"
+        ],
+        "answer": 1,
+        "explanation": "미래 특정 시점에 진행 중일 활동은 future continuous입니다."
+      },
+      {
+        "question": "By Friday, we _____ the review.",
+        "choices": [
+          "will have completed",
+          "will be completing yesterday",
+          "will completed",
+          "have complete"
+        ],
+        "answer": 0,
+        "explanation": "미래 마감 시점 이전 완료는 will have + 과거분사입니다."
+      },
+      {
+        "question": "In December, she _____ here for five years.",
+        "choices": [
+          "will work",
+          "will have been working",
+          "is worked",
+          "will be work"
+        ],
+        "answer": 1,
+        "explanation": "미래 시점까지 계속된 기간을 강조합니다."
+      },
+      {
+        "question": "I will call you when I _____.",
+        "choices": [
+          "will arrive",
+          "arrive",
+          "will have arrive",
+          "arriving"
+        ],
+        "answer": 1,
+        "explanation": "미래 시간절의 when 뒤에는 현재시제를 씁니다."
+      },
+      {
+        "question": "Which focuses on the completed result by ten?",
+        "choices": [
+          "I will be writing at ten.",
+          "I will have written it by ten.",
+          "I write at ten.",
+          "I will have been writing at ten."
+        ],
+        "answer": 1,
+        "explanation": "by ten까지 결과물이 완성됨을 future perfect가 나타냅니다."
+      },
+      {
+        "question": "Why did the manager separate ongoing and completed work?",
+        "choices": [
+          "To make the timeline longer",
+          "To avoid treating activity as a finished result",
+          "To cancel testing",
+          "To promise perfection"
+        ],
+        "answer": 1,
+        "explanation": "진행 중인 시험과 완료된 산출물을 혼동하지 않기 위해서였습니다."
+      },
+      {
+        "question": "How long will test payments have been running before security review?",
+        "choices": [
+          "Two days",
+          "Ten days",
+          "One month",
+          "Four weeks"
+        ],
+        "answer": 1,
+        "explanation": "보안 검토 전까지 10일간 처리된 상태입니다."
+      },
+      {
+        "question": "What will still be happening after urgent issues are resolved?",
+        "choices": [
+          "Public sales will stop",
+          "Performance monitoring",
+          "Payment design",
+          "Supplier selection"
+        ],
+        "answer": 1,
+        "explanation": "긴급 문제 완료 뒤에도 작은 성능 변화는 계속 관찰합니다."
+      },
+      {
+        "question": "How was the early component used?",
+        "choices": [
+          "The launch was moved forward",
+          "Extra accessibility testing was added",
+          "Testing was cancelled",
+          "The component was returned"
+        ],
+        "answer": 1,
+        "explanation": "확보한 시간을 접근성 시험에 사용했습니다."
+      },
+      {
+        "question": "What makes the plan credible?",
+        "choices": [
+          "It guarantees every intention",
+          "It states expected states at checkpoints and admits uncertainty",
+          "It removes all deadlines",
+          "It avoids collecting feedback"
+        ],
+        "answer": 1,
+        "explanation": "각 시점의 예상 진행·완료 상태를 구분하고 불확실성을 인정합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What will you be doing this time tomorrow?",
+      "What will you have completed by the end of this week?",
+      "How long will you have been living in your current city next year?",
+      "Why should a plan distinguish activity from completion?",
+      "Have you ever finished something ahead of schedule?"
+    ],
+    "rolePlay": {
+      "scenario": "You are reviewing a project plan one month before launch.",
+      "learnerRole": "Explain what will be happening, what will have finished and what will have been continuing at three checkpoints.",
+      "coachRole": "Ask challenging questions about deadlines and remaining uncertainty.",
+      "goal": "Use all three future forms and at least one expression from today's lesson."
+    }
+  },
+  {
+    "date": "2026-10-10",
+    "title": "Daily English — 2026-10-10",
+    "grammarTopic": "Nominalisation in Formal and Professional Writing",
+    "grammar": {
+      "title": "명사화: 행동을 개념으로 바꾸되 책임과 의미는 숨기지 않기",
+      "summary": "동사·형용사를 명사로 바꾸면 문장이 더 압축되고 공식적으로 들리지만, 지나치게 쓰면 누가 무엇을 했는지 흐려집니다. 명사화의 형태, 전치사 결합, 정보 밀도와 동사형 복원을 함께 연습합니다.",
+      "points": [
+        {
+          "title": "동사에서 명사로: decide → decision",
+          "explanation": "행동이나 과정을 하나의 개념으로 다루고 싶을 때 명사화를 사용합니다. 어미는 -tion, -ment, -al, -ance 등으로 다양하므로 단어 단위로 익힙니다.",
+          "examples": [
+            "The committee decided to delay the launch. — 위원회는 출시를 미루기로 결정했습니다.",
+            "The committee made a decision to delay the launch. — 위원회는 출시 연기 결정을 내렸습니다.",
+            "We analysed the results carefully. — 우리는 결과를 주의 깊게 분석했습니다.",
+            "A careful analysis of the results revealed two risks. — 결과에 대한 면밀한 분석에서 두 위험이 드러났습니다."
+          ]
+        },
+        {
+          "title": "형용사에서 명사로: accurate → accuracy",
+          "explanation": "성질 자체를 논의할 때 형용사를 명사로 바꿉니다. 명사형 뒤에는 의미에 맞는 전치사를 선택해야 합니다.",
+          "examples": [
+            "The measurement was accurate. — 측정은 정확했습니다.",
+            "The accuracy of the measurement was confirmed. — 측정의 정확성이 확인되었습니다.",
+            "The process is reliable. — 그 절차는 신뢰할 만합니다.",
+            "Reliability is essential for clinical use. — 임상 사용에는 신뢰성이 필수적입니다."
+          ]
+        },
+        {
+          "title": "명사화 + 전치사 조합",
+          "explanation": "명사화 뒤의 대상은 보통 of, 원인·행위자는 by, 목적은 for 등으로 연결합니다. 원래 동사의 주어와 목적어 관계를 확인해야 합니다.",
+          "examples": [
+            "The introduction of the new policy caused confusion. — 새 정책의 도입이 혼란을 일으켰습니다.",
+            "Approval of the plan by the board took two weeks. — 이사회의 계획 승인은 2주가 걸렸습니다.",
+            "There was a demand for clearer guidance. — 더 명확한 지침에 대한 요구가 있었습니다.",
+            "The reduction in waiting time improved satisfaction. — 대기 시간 감소가 만족도를 높였습니다."
+          ]
+        },
+        {
+          "title": "동사를 되살려 문장을 명확하게 만들기",
+          "explanation": "make a recommendation, conduct an investigation처럼 빈 동사 + 명사화가 길어지면 recommend, investigate 같은 강한 동사로 되돌릴 수 있습니다.",
+          "examples": [
+            "We conducted an evaluation of the service. → We evaluated the service. — 우리는 서비스를 평가했습니다.",
+            "The team made an improvement to the form. → The team improved the form. — 팀은 양식을 개선했습니다.",
+            "A discussion of the issue took place. → We discussed the issue. — 우리는 그 문제를 논의했습니다.",
+            "The manager gave approval for the change. → The manager approved the change. — 관리자는 변경을 승인했습니다."
+          ]
+        },
+        {
+          "title": "행위자와 책임을 숨기지 않기",
+          "explanation": "명사화는 객관적으로 들리지만 행위자를 삭제할 수 있습니다. 사고·결정·오류처럼 책임이 중요한 문장에서는 by + 행위자를 밝히거나 능동 동사를 사용합니다.",
+          "examples": [
+            "An incorrect decision was made. — 잘못된 결정이 내려졌습니다.",
+            "The review team made an incorrect decision. — 검토팀이 잘못된 결정을 내렸습니다.",
+            "There was a failure to send the warning. — 경고를 보내지 못한 일이 있었습니다.",
+            "The coordinator failed to send the warning. — 담당자가 경고를 보내지 못했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "hide behind jargon",
+        "meaning": "전문용어 뒤에 숨다",
+        "example": "A clear report should not hide responsibility behind jargon. — 명확한 보고서는 전문용어로 책임을 숨겨서는 안 됩니다."
+      },
+      {
+        "term": "spell something out",
+        "meaning": "명확히 풀어서 설명하다",
+        "example": "Please spell out who approved the change. — 누가 변경을 승인했는지 분명히 설명해 주세요."
+      },
+      {
+        "term": "in plain English",
+        "meaning": "쉬운 말로",
+        "example": "The conclusion should be written in plain English. — 결론은 쉬운 말로 작성해야 합니다."
+      }
+    ],
+    "readingTitle": "The Formal Report That Nobody Could Act On",
+    "paragraphs": [
+      "A review team produced a formal report after a service interruption. Its opening sentence read: “A failure in the communication of the implementation of the configuration modification resulted in a delay in the restoration of service.” The sentence sounded official, but nobody could quickly tell what had happened or who was responsible.",
+      "The operations manager asked the writers to spell it out in plain English. After checking the records, they rewrote the sentence: “The deployment team changed a configuration but did not tell the support team, so support restored the service late.” The active verbs revealed a sequence that the chain of nominalisations had hidden.",
+      "Not every nominalisation was removed. The report kept useful concepts such as configuration change, service restoration and communication failure because these labels helped organise repeated ideas. However, each section named the person or team responsible for the relevant decision.",
+      "The revision also reduced empty phrases. “An investigation was conducted” became “The safety team investigated”, and “approval was given by management” became “Management approved”. The shorter sentences were not less professional; they were more precise and easier to act on.",
+      "The final report balanced formal concepts with clear actions. Its analysis explained the cause, its recommendations named owners, and its timeline showed deadlines. The lesson was simple: nominalisation is a useful tool for packaging ideas, but writers should not hide behind jargon when readers need to know who did what."
+    ],
+    "translations": [
+      "서비스 중단 후 검토팀은 공식 보고서를 작성했지만 첫 문장은 명사화가 길게 이어져 무슨 일이 있었고 누가 책임졌는지 빠르게 알 수 없었습니다.",
+      "운영 관리자는 쉬운 말로 명확히 쓰라고 요청했습니다. 기록을 확인한 뒤 배포팀이 설정을 바꾸고 지원팀에 알리지 않아 복구가 늦었다고 고쳤습니다. 능동 동사가 명사화에 숨은 순서를 드러냈습니다.",
+      "모든 명사화를 없애지는 않았습니다. 설정 변경, 서비스 복구, 의사소통 실패 같은 개념은 반복되는 생각을 정리하는 데 유용했지만, 각 부분은 결정 책임자를 명시했습니다.",
+      "빈 표현도 줄였습니다. 조사가 수행되었다는 문장은 안전팀이 조사했다고, 관리진에 의해 승인이 주어졌다는 문장은 관리진이 승인했다고 바꿨습니다. 짧아졌지만 덜 전문적인 것이 아니라 더 정확하고 실행하기 쉬워졌습니다.",
+      "최종 보고서는 공식 개념과 명확한 행동을 균형 있게 담았습니다. 명사화는 생각을 묶는 유용한 도구지만 독자가 누가 무엇을 했는지 알아야 할 때 전문용어 뒤에 숨어서는 안 됩니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "interruption",
+        "partOfSpeech": "noun",
+        "meaning": "중단",
+        "context": "서비스가 일시적으로 멈춘 사건"
+      },
+      {
+        "term": "implementation",
+        "partOfSpeech": "noun",
+        "meaning": "구현",
+        "context": "변경을 실제 시스템에 적용하는 과정"
+      },
+      {
+        "term": "configuration",
+        "partOfSpeech": "noun",
+        "meaning": "설정",
+        "context": "시스템 동작을 결정하는 값"
+      },
+      {
+        "term": "restoration",
+        "partOfSpeech": "noun",
+        "meaning": "복구",
+        "context": "서비스를 정상으로 되돌리는 과정"
+      },
+      {
+        "term": "sequence",
+        "partOfSpeech": "noun",
+        "meaning": "순서",
+        "context": "사건이 차례로 일어난 흐름"
+      },
+      {
+        "term": "nominalisations",
+        "partOfSpeech": "noun",
+        "meaning": "명사화 표현들",
+        "context": "동사나 형용사를 명사로 바꾼 형태"
+      },
+      {
+        "term": "relevant",
+        "partOfSpeech": "adjective",
+        "meaning": "관련된",
+        "context": "특정 결정과 직접 관계가 있는"
+      },
+      {
+        "term": "precise",
+        "partOfSpeech": "adjective",
+        "meaning": "정확한",
+        "context": "모호하지 않고 세부가 분명한"
+      },
+      {
+        "term": "recommendations",
+        "partOfSpeech": "noun",
+        "meaning": "권고 사항",
+        "context": "문제 해결을 위해 제시한 행동"
+      },
+      {
+        "term": "jargon",
+        "partOfSpeech": "noun",
+        "meaning": "전문용어",
+        "context": "분야 내부에서는 익숙하지만 일반 독자에게 어려운 말"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which is the noun form of decide?",
+        "choices": [
+          "decisive",
+          "decision",
+          "decidingly",
+          "decided"
+        ],
+        "answer": 1,
+        "explanation": "decide의 대표 명사형은 decision입니다."
+      },
+      {
+        "question": "Choose the concise verb form of ‘conducted an evaluation of’.",
+        "choices": [
+          "evaluated",
+          "was evaluation",
+          "made evaluating",
+          "evaluationed"
+        ],
+        "answer": 0,
+        "explanation": "빈 동사 + 명사화를 강한 동사 evaluated로 바꿀 수 있습니다."
+      },
+      {
+        "question": "Approval _____ the plan _____ the board took two weeks.",
+        "choices": [
+          "of / by",
+          "by / of",
+          "for / to",
+          "at / from"
+        ],
+        "answer": 0,
+        "explanation": "승인 대상은 of, 승인 행위자는 by로 연결합니다."
+      },
+      {
+        "question": "Which sentence makes responsibility clearest?",
+        "choices": [
+          "A failure occurred.",
+          "There was a failure in warning.",
+          "The coordinator failed to send the warning.",
+          "A warning failure was experienced."
+        ],
+        "answer": 2,
+        "explanation": "행위자와 구체적 행동을 능동 동사로 밝힙니다."
+      },
+      {
+        "question": "Nominalisation is most useful when it _____.",
+        "choices": [
+          "always removes the actor",
+          "packages a repeated process as a concept",
+          "makes every sentence longer",
+          "replaces all verbs"
+        ],
+        "answer": 1,
+        "explanation": "반복되는 과정이나 성질을 하나의 개념으로 다룰 때 유용합니다."
+      },
+      {
+        "question": "Why was the opening sentence difficult?",
+        "choices": [
+          "It used no nouns",
+          "A chain of nominalisations hid action and responsibility",
+          "It was too informal",
+          "It named too many people"
+        ],
+        "answer": 1,
+        "explanation": "긴 명사화 연결로 사건과 행위자가 가려졌습니다."
+      },
+      {
+        "question": "What did the active rewrite reveal?",
+        "choices": [
+          "The report font",
+          "The sequence of the configuration change and missed communication",
+          "A new supplier",
+          "The service price"
+        ],
+        "answer": 1,
+        "explanation": "배포팀의 변경과 통보 누락, 지원팀의 늦은 복구 순서가 드러났습니다."
+      },
+      {
+        "question": "Why were some nominalisations kept?",
+        "choices": [
+          "They organised repeated concepts",
+          "They hid errors successfully",
+          "They increased word count",
+          "They removed deadlines"
+        ],
+        "answer": 0,
+        "explanation": "핵심 개념을 일관된 라벨로 정리하는 데 도움이 됐습니다."
+      },
+      {
+        "question": "How did the final recommendations improve?",
+        "choices": [
+          "They removed owners",
+          "They named owners and deadlines",
+          "They used more jargon",
+          "They avoided action verbs"
+        ],
+        "answer": 1,
+        "explanation": "실행 책임자와 완료 시점을 분명히 했습니다."
+      },
+      {
+        "question": "What balance does the reading recommend?",
+        "choices": [
+          "Only formal nouns",
+          "Only short spoken phrases",
+          "Formal concepts plus clear actors and actions",
+          "No technical terms at all"
+        ],
+        "answer": 2,
+        "explanation": "유용한 개념은 유지하되 책임과 행동을 능동적으로 밝혀야 합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "When does formal writing become too difficult to act on?",
+      "Which jargon do you often use at work?",
+      "Rewrite one nominalised sentence with a strong verb.",
+      "How can a report sound professional and still use plain English?",
+      "Why is naming an actor important after a failure?"
+    ],
+    "rolePlay": {
+      "scenario": "You are revising a confusing incident report full of nominalisations.",
+      "learnerRole": "Explain two unclear sentences, rewrite them with clear actors and keep one useful nominalised concept.",
+      "coachRole": "Act as the report owner and ask why each revision is more actionable.",
+      "goal": "Use analysis, approval or recommendation accurately while restoring strong verbs elsewhere."
+    }
+  },
+  {
+    "date": "2026-10-11",
+    "title": "Daily English — 2026-10-11",
+    "grammarTopic": "Prepositions Followed by -ing and Adjective Complement Patterns",
+    "grammar": {
+      "title": "전치사 뒤 -ing: 동사·형용사·표현을 정확한 결합으로 익히기",
+      "summary": "전치사 뒤에 동작을 놓을 때는 동사원형이 아니라 -ing를 씁니다. 동사+전치사, 형용사+전치사, 명사+전치사는 각각 고정 결합이 많고, to가 부정사 표지가 아니라 전치사인 표현에도 -ing가 옵니다.",
+      "points": [
+        {
+          "title": "기본 규칙: 전치사 + 명사/-ing",
+          "explanation": "in, on, at, for, about, without, by 같은 전치사 뒤에서 동작은 동명사 -ing 형태로 명사 역할을 합니다.",
+          "examples": [
+            "You can improve by practising every day. — 매일 연습함으로써 향상될 수 있습니다.",
+            "She left without saying goodbye. — 그녀는 작별 인사 없이 떠났습니다.",
+            "Thank you for helping me. — 도와주셔서 감사합니다.",
+            "We talked about moving the meeting. — 우리는 회의를 옮기는 것에 대해 이야기했습니다."
+          ]
+        },
+        {
+          "title": "동사 + 전치사 + -ing",
+          "explanation": "insist on, apologise for, succeed in, think about처럼 동사와 전치사를 한 덩어리로 익혀야 합니다.",
+          "examples": [
+            "He insisted on checking every figure. — 그는 모든 수치를 확인해야 한다고 고집했습니다.",
+            "She apologised for arriving late. — 그녀는 늦게 도착한 것을 사과했습니다.",
+            "The team succeeded in reducing waiting time. — 팀은 대기 시간을 줄이는 데 성공했습니다.",
+            "I am thinking about taking an evening course. — 저녁 강좌 수강을 생각 중입니다."
+          ]
+        },
+        {
+          "title": "형용사 + 전치사 + -ing",
+          "explanation": "interested in, good at, responsible for, worried about 등의 형용사 결합 뒤에도 -ing를 씁니다.",
+          "examples": [
+            "She is interested in learning Mandarin. — 그녀는 중국어 학습에 관심이 있습니다.",
+            "He is good at explaining complex ideas. — 그는 복잡한 생각을 설명하는 데 능숙합니다.",
+            "Who is responsible for updating the page? — 페이지 갱신은 누가 담당합니까?",
+            "They are worried about missing the deadline. — 그들은 마감일을 놓칠까 걱정합니다."
+          ]
+        },
+        {
+          "title": "전치사 to + -ing",
+          "explanation": "look forward to, be used to, object to, contribute to의 to는 부정사 표지가 아니라 전치사이므로 뒤에 명사나 -ing가 옵니다.",
+          "examples": [
+            "I look forward to hearing from you. — 연락을 기다리겠습니다.",
+            "She is used to working across time zones. — 그녀는 여러 시간대에 걸쳐 일하는 데 익숙합니다.",
+            "Residents objected to closing the library early. — 주민들은 도서관 조기 폐관에 반대했습니다.",
+            "Regular feedback contributes to improving quality. — 정기 피드백은 품질 향상에 기여합니다."
+          ]
+        },
+        {
+          "title": "주어를 밝힐 때: 목적격/소유격 + -ing",
+          "explanation": "-ing 행동의 행위자를 밝힐 때 일상 영어에서는 me/him/them, 격식 영어에서는 my/his/their 같은 소유격을 쓸 수 있습니다.",
+          "examples": [
+            "I appreciate you helping at short notice. — 갑작스러운 요청에도 도와줘서 고맙습니다.",
+            "I appreciate your helping at short notice. — 갑작스러운 요청에도 도와주신 점에 감사드립니다.",
+            "We objected to them changing the date without notice. — 우리는 그들이 예고 없이 날짜를 바꾸는 데 반대했습니다.",
+            "There is little chance of the train arriving on time. — 열차가 제시간에 도착할 가능성은 거의 없습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "get around to",
+        "meaning": "미뤄 둔 일을 마침내 하다",
+        "example": "I finally got around to updating the document. — 마침내 미뤄 둔 문서를 갱신했습니다."
+      },
+      {
+        "term": "be on the verge of",
+        "meaning": "막 ~하려는 참이다",
+        "example": "The team was on the verge of cancelling the trial. — 팀은 시험을 취소하기 직전이었습니다."
+      },
+      {
+        "term": "have reservations about",
+        "meaning": "~에 우려나 망설임이 있다",
+        "example": "Some parents had reservations about changing the schedule. — 일부 학부모는 일정 변경에 우려가 있었습니다."
+      }
+    ],
+    "readingTitle": "How a Small Feedback Habit Saved a Community Course",
+    "paragraphs": [
+      "A community centre was on the verge of cancelling an evening English course because attendance had fallen for three months. The organiser blamed busy families, but she had reservations about closing the class without asking learners why they had stopped coming.",
+      "She finally got around to sending a three-question survey. Several adults apologised for not attending regularly and explained that they were worried about arriving late after work. Others objected to spending the first twenty minutes reviewing homework they had not had time to finish.",
+      "The teacher was interested in hearing practical suggestions and insisted on testing changes before cancelling anything. He proposed starting with a short speaking activity and succeeded in moving homework review to an optional online session. Learners could now join without feeling embarrassed about missing an assignment.",
+      "The organiser thanked everyone for sharing honest feedback. She was responsible for updating the timetable and looked forward to seeing whether the changes worked. After six weeks, attendance had risen by forty percent, and more learners were staying until the end.",
+      "The course improved not because one person had a perfect idea, but because the centre created a safe way of listening. By asking before deciding, it avoided making a confident but inaccurate assumption. The experience contributed to changing how all community courses collected feedback."
+    ],
+    "translations": [
+      "지역 센터는 3개월 동안 출석이 줄어 저녁 영어 수업을 취소하기 직전이었습니다. 담당자는 바쁜 가정을 원인으로 생각했지만 학습자에게 이유를 묻지 않고 폐강하는 데 우려가 있었습니다.",
+      "마침내 세 문항 설문을 보냈습니다. 여러 성인은 규칙적으로 참석하지 못한 것을 사과하며 퇴근 후 늦을까 걱정된다고 했습니다. 숙제를 하지 못했는데 첫 20분을 숙제 검토에 쓰는 데 반대하는 사람도 있었습니다.",
+      "교사는 실용적인 제안을 듣는 데 관심이 있었고 취소 전 변경을 시험해야 한다고 주장했습니다. 짧은 말하기로 시작하고 숙제 검토를 선택형 온라인 시간으로 옮기는 데 성공해 과제를 놓쳐도 당황하지 않고 참여할 수 있게 했습니다.",
+      "담당자는 솔직한 피드백에 감사했고 시간표 갱신을 맡았습니다. 6주 뒤 출석은 40% 증가했고 끝까지 남는 학습자가 늘었습니다.",
+      "한 사람의 완벽한 생각이 아니라 안전하게 의견을 듣는 습관이 수업을 개선했습니다. 결정 전에 질문함으로써 자신만만하지만 부정확한 가정을 피했고, 이 경험은 모든 지역 강좌의 피드백 방식을 바꾸는 데 기여했습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "attendance",
+        "partOfSpeech": "noun",
+        "meaning": "출석",
+        "context": "수업에 실제로 참여한 정도"
+      },
+      {
+        "term": "cancelling",
+        "partOfSpeech": "gerund",
+        "meaning": "취소하는 것",
+        "context": "강좌를 종료하려던 계획"
+      },
+      {
+        "term": "regularly",
+        "partOfSpeech": "adverb",
+        "meaning": "규칙적으로",
+        "context": "빠짐없이 반복해서 참여하는 방식"
+      },
+      {
+        "term": "embarrassed",
+        "partOfSpeech": "adjective",
+        "meaning": "당황한, 창피한",
+        "context": "숙제를 놓쳐 불편한 기분"
+      },
+      {
+        "term": "optional",
+        "partOfSpeech": "adjective",
+        "meaning": "선택 가능한",
+        "context": "반드시 참여하지 않아도 되는"
+      },
+      {
+        "term": "timetable",
+        "partOfSpeech": "noun",
+        "meaning": "시간표",
+        "context": "수업 시간과 활동 순서"
+      },
+      {
+        "term": "feedback",
+        "partOfSpeech": "noun",
+        "meaning": "의견, 피드백",
+        "context": "개선을 위해 학습자가 전한 경험"
+      },
+      {
+        "term": "assumption",
+        "partOfSpeech": "noun",
+        "meaning": "가정",
+        "context": "확인 전에 사실이라고 여긴 생각"
+      },
+      {
+        "term": "contributed",
+        "partOfSpeech": "verb",
+        "meaning": "기여했다",
+        "context": "변화를 만드는 데 일부 역할을 한 것"
+      },
+      {
+        "term": "community",
+        "partOfSpeech": "noun",
+        "meaning": "지역 공동체",
+        "context": "센터의 강좌를 이용하는 사람들"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Thank you for _____ me.",
+        "choices": [
+          "help",
+          "helping",
+          "to helping",
+          "helped"
+        ],
+        "answer": 1,
+        "explanation": "전치사 for 뒤에는 명사 역할의 -ing가 옵니다."
+      },
+      {
+        "question": "The team succeeded _____ waiting time.",
+        "choices": [
+          "to reduce",
+          "in reducing",
+          "on reduce",
+          "for reduced"
+        ],
+        "answer": 1,
+        "explanation": "succeed in + -ing가 고정 결합입니다."
+      },
+      {
+        "question": "Who is responsible _____ the page?",
+        "choices": [
+          "to update",
+          "for updating",
+          "in update",
+          "at updated"
+        ],
+        "answer": 1,
+        "explanation": "responsible for + -ing를 씁니다."
+      },
+      {
+        "question": "I look forward to _____ from you.",
+        "choices": [
+          "hear",
+          "hearing",
+          "have heard",
+          "be hear"
+        ],
+        "answer": 1,
+        "explanation": "look forward to의 to는 전치사이므로 -ing가 옵니다."
+      },
+      {
+        "question": "We objected to _____ the date without notice.",
+        "choices": [
+          "them changing",
+          "they change",
+          "them to change",
+          "their change it"
+        ],
+        "answer": 0,
+        "explanation": "행위자를 밝힌 전치사 + 목적격 + -ing 구조입니다."
+      },
+      {
+        "question": "Why was the course nearly cancelled?",
+        "choices": [
+          "The teacher left",
+          "Attendance had fallen for three months",
+          "The building closed",
+          "The survey was too long"
+        ],
+        "answer": 1,
+        "explanation": "3개월 연속 출석 감소가 원인이었습니다."
+      },
+      {
+        "question": "What worried working adults?",
+        "choices": [
+          "Arriving late",
+          "The course ending early",
+          "Learning online only",
+          "The teacher changing jobs"
+        ],
+        "answer": 0,
+        "explanation": "퇴근 뒤 수업에 늦게 도착할까 걱정했습니다."
+      },
+      {
+        "question": "What change did the teacher make?",
+        "choices": [
+          "He removed speaking",
+          "He moved homework review to an optional online session",
+          "He doubled homework",
+          "He cancelled feedback"
+        ],
+        "answer": 1,
+        "explanation": "숙제 검토를 선택 가능한 온라인 시간으로 옮겼습니다."
+      },
+      {
+        "question": "What happened after six weeks?",
+        "choices": [
+          "Attendance fell again",
+          "Attendance rose by forty percent",
+          "The course became shorter",
+          "Everyone completed homework"
+        ],
+        "answer": 1,
+        "explanation": "출석이 40% 증가했습니다."
+      },
+      {
+        "question": "What is the main lesson?",
+        "choices": [
+          "Assumptions are faster than feedback",
+          "Listening safely before deciding can reveal practical solutions",
+          "Evening courses always fail",
+          "Homework should never be reviewed"
+        ],
+        "answer": 1,
+        "explanation": "결정 전 의견을 듣는 습관이 잘못된 가정을 고치고 해결책을 만들었습니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What are you interested in learning next?",
+      "What task have you finally got around to doing?",
+      "Have you ever had reservations about a change?",
+      "What are you responsible for doing each week?",
+      "How can a group collect honest feedback?"
+    ],
+    "rolePlay": {
+      "scenario": "An evening class may be cancelled because attendance is low.",
+      "learnerRole": "Explain why you object to cancelling it immediately and suggest two changes.",
+      "coachRole": "Act as the organiser, describe your concerns and ask who will be responsible for each change.",
+      "goal": "Use four different preposition + -ing patterns and one practical expression."
+    }
+  }
+]

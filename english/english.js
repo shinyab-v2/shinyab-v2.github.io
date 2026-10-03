@@ -319,10 +319,10 @@ function buildVoicePrompt(lesson) {
   const rolePlay = lesson.rolePlay ? `Scenario: ${lesson.rolePlay.scenario}\nYour role: ${lesson.rolePlay.learnerRole}\nCoach role: ${lesson.rolePlay.coachRole}\nGoal: ${lesson.rolePlay.goal}` : "";
   const speakingPractice = discussionQuestions || rolePlay ? `\n\nDISCUSSION QUESTIONS\n${discussionQuestions || "  Use natural follow-up questions connected to the lesson."}\n\nROLE-PLAY\n${rolePlay || "  No separate role-play is provided for this lesson."}` : "";
 
-  return `You are my B2 English speaking coach. I already completed this Daily English lesson by myself on mobile. Now conduct a focused 12–15 minute review in Voice.
+  return `You are my British English speaking coach for a B1–B2 learner. I already completed this Daily English lesson by myself on mobile. Now conduct a focused 12–15 minute review in Voice.
 
 Follow these rules strictly:
-1. Speak mainly in English. Use short Korean explanations only when a correction would otherwise be unclear.
+1. Use British English for about 90–95% of the session. Use one short Korean explanation only when a correction would otherwise be unclear, then return to English immediately.
 2. Ask exactly one question at a time and wait until I finish my whole answer. Do not interrupt a short pause. If you are unsure whether I finished, ask, “Are you finished?”
 3. After every answer, give brief feedback in this order: meaning → grammar → a more natural expression → one pronunciation point.
 4. Then ask me to repeat the corrected sentence. Confirm it briefly before moving to the next question.
