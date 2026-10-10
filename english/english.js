@@ -111,20 +111,20 @@ function highlightVocabulary(text, vocabulary) {
   });
 }
 
-function renderTranslations(translations = []) {
-  if (!Array.isArray(translations) || !translations.length) return "";
-  const paragraphs = translations.map((translation, index) => `
-    <p><span class="translation-number" aria-hidden="true">${index + 1}</span>${escapeHtml(translation)}</p>
-  `).join("");
-  return `
-    <details class="reading-translation">
-      <summary>
-        <span class="translation-label">한국어 번역 보기</span>
-        <span class="translation-chevron" aria-hidden="true">⌄</span>
-      </summary>
-      <div class="translation-content">${paragraphs}</div>
-    </details>
-  `;
+function renderReading(paragraphs = [], translations = [], vocabulary = []) {
+  return paragraphs.map((paragraph, index) => {
+    const translation = translations[index];
+    const translationBlock = translation ? `
+      <details class="reading-translation" data-paragraph="${index + 1}">
+        <summary>
+          <span class="translation-label">${index + 1}단락 한국어 번역 보기</span>
+          <span class="translation-chevron" aria-hidden="true">⌄</span>
+        </summary>
+        <div class="translation-content"><p>${escapeHtml(translation)}</p></div>
+      </details>
+    ` : "";
+    return `<div class="reading-paragraph"><p>${highlightVocabulary(paragraph, vocabulary)}</p>${translationBlock}</div>`;
+  }).join("");
 }
 
 function positionPopover(target) {
@@ -414,11 +414,14 @@ function renderLesson(lesson) {
   document.querySelector("#word-count").textContent = `${lesson.vocabulary.length} words`;
   renderGrammar(lesson.grammar);
   renderIdioms(lesson.idioms || []);
-  const reading = lesson.paragraphs.map((paragraph) => `<p>${highlightVocabulary(paragraph, lesson.vocabulary)}</p>`).join("");
-  nodes.content.innerHTML = reading + renderTranslations(lesson.translations);
-  const translation = nodes.content.querySelector(".reading-translation");
-  translation?.addEventListener("toggle", () => {
-    translation.querySelector(".translation-label").textContent = translation.open ? "한국어 번역 숨기기" : "한국어 번역 보기";
+  nodes.content.innerHTML = renderReading(lesson.paragraphs, lesson.translations, lesson.vocabulary);
+  nodes.content.querySelectorAll(".reading-translation").forEach((translation) => {
+    translation.addEventListener("toggle", () => {
+      const paragraph = translation.dataset.paragraph;
+      translation.querySelector(".translation-label").textContent = translation.open
+        ? `${paragraph}단락 한국어 번역 숨기기`
+        : `${paragraph}단락 한국어 번역 보기`;
+    });
   });
   renderGlossary(lesson.vocabulary);
   renderQuiz(lesson.quiz || []);
