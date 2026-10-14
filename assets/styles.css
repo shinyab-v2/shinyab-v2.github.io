@@ -106,3 +106,12 @@ footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 28px 0;
 @media (prefers-reduced-motion: reduce) {
   .project-card, .learning-item-link { transition: none; }
 }
+
+/* B2 English learning card: nested topic links */
+.b2-english { background: linear-gradient(145deg,#f5f8ff 0%,#fff 65%); border-color:#cfddf7; }
+.b2-english .icon { background:#e1eafe; color:#244da1; }
+.b2-links { display:grid; gap:7px; margin-top:20px; }
+.b2-links a { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:9px 12px; border:1px solid #e0e7f3; background:#fff; border-radius:10px; font-size:13px; font-weight:650; line-height:1.35; transition:background-color .15s ease,border-color .15s ease; }
+.b2-links a:hover,.b2-links a:focus-visible { background:#eaf1ff; border-color:#a9c1ef; outline:2px solid transparent; }
+.b2-links .b2-all { background:#254d99; color:#fff; border-color:#254d99; }
+.b2-links .b2-all:hover,.b2-links .b2-all:focus-visible { background:#173a7b; color:#fff; }
