@@ -1,0 +1,1997 @@
+[
+  {
+    "date": "2026-10-19",
+    "title": "Daily English — 2026-10-19",
+    "grammarTopic": "Conditionals: Unless, Provided That, In Case, Even If",
+    "grammar": {
+      "title": "조건을 정확하게 표현하는 다섯 가지 연결 표현",
+      "summary": "if를 반복하지 않고도 조건의 강도와 목적을 표현할 수 있습니다. unless는 ‘~하지 않는 한’, provided that은 ‘~라는 조건으로’, as long as는 ‘~하는 한’, in case는 ‘~할 경우에 대비해’, even if는 ‘설령 ~하더라도’입니다. 미래 의미라도 조건절에서는 보통 현재시제를 사용합니다.",
+      "points": [
+        {
+          "title": "unless = if ... not",
+          "explanation": "unless 자체에 부정 의미가 있으므로 뒤에 또 not을 넣지 않는 것이 기본입니다.",
+          "examples": [
+            "Unless it rains, we will meet outside. — 비가 오지 않으면 밖에서 만날 겁니다.",
+            "I won't approve it unless the figures match. — 수치가 일치하지 않으면 승인하지 않겠습니다.",
+            "Unless you ask, nobody will know you need help. — 요청하지 않으면 아무도 도움이 필요한 줄 모릅니다.",
+            "We cannot proceed unless the client agrees. — 고객이 동의하지 않으면 진행할 수 없습니다.",
+            "Unless the train is delayed, she will arrive by noon. — 열차가 지연되지 않으면 그녀는 정오까지 도착합니다."
+          ]
+        },
+        {
+          "title": "provided that / providing that",
+          "explanation": "공식적 규정이나 계약의 전제 조건을 강조합니다. 구어에서는 as long as가 자연스러운 경우가 많습니다.",
+          "examples": [
+            "You may work remotely provided that the team agrees. — 팀이 동의한다는 조건으로 원격 근무할 수 있습니다.",
+            "We can extend the trial provided that costs stay low. — 비용이 낮게 유지된다면 시험 기간을 늘릴 수 있습니다.",
+            "The room is free provided that you book ahead. — 미리 예약하면 방을 무료로 사용할 수 있습니다.",
+            "Funding will continue providing that progress is documented. — 진행 상황을 문서화한다는 조건으로 지원이 계속됩니다.",
+            "Guests can enter provided that they show identification. — 신분증을 보여 주면 손님이 입장할 수 있습니다."
+          ]
+        },
+        {
+          "title": "as long as / so long as",
+          "explanation": "실제로 유지되어야 하는 조건을 말합니다. ‘기간 동안’이라는 시간 의미도 있으므로 문맥을 구별합니다.",
+          "examples": [
+            "You can borrow my laptop as long as you return it tonight. — 오늘 밤 돌려준다면 노트북을 빌려도 됩니다.",
+            "As long as we communicate, problems are manageable. — 소통하기만 하면 문제를 관리할 수 있습니다.",
+            "I'll support the plan as long as safety comes first. — 안전을 최우선으로 한다면 계획을 지지합니다.",
+            "We can wait here as long as the library stays open. — 도서관이 열려 있는 동안 여기서 기다릴 수 있습니다.",
+            "So long as every member contributes, the project will succeed. — 모두 기여하는 한 프로젝트는 성공할 것입니다."
+          ]
+        },
+        {
+          "title": "in case vs if",
+          "explanation": "in case는 예상 가능한 문제에 미리 대비하는 행동이고, if는 실제 조건이 성립했을 때의 반응입니다.",
+          "examples": [
+            "Take an umbrella in case it rains. — 비가 올 경우에 대비해 우산을 챙기세요.",
+            "If it rains, we will cancel the picnic. — 비가 오면 소풍을 취소할 겁니다.",
+            "Save a copy in case the original is deleted. — 원본이 삭제될 경우에 대비해 사본을 저장하세요.",
+            "Call me if the delivery is late. — 배송이 늦어지면 전화하세요.",
+            "She brought a charger in case her battery ran out. — 배터리가 방전될 경우에 대비해 충전기를 가져왔습니다."
+          ]
+        },
+        {
+          "title": "even if / even though",
+          "explanation": "even if는 아직 일어나지 않은 가상의 조건, even though는 실제로 인정하는 사실을 표현합니다.",
+          "examples": [
+            "Even if we disagree, we should listen respectfully. — 의견이 다르더라도 존중하며 들어야 합니다.",
+            "I'll attend even if the meeting starts early. — 회의가 일찍 시작해도 참석하겠습니다.",
+            "Even though it was raining, the match continued. — 실제로 비가 왔지만 경기는 계속됐습니다.",
+            "Even if the first attempt fails, we'll learn from it. — 첫 시도가 실패해도 배울 것입니다.",
+            "Even though the task was difficult, the team finished on time. — 과제가 어려웠지만 팀은 제시간에 끝냈습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "have a backup plan",
+        "meaning": "대비책을 마련하다",
+        "example": "We have a backup plan in case the outdoor event is cancelled. — 야외 행사가 취소될 경우에 대비한 계획이 있습니다."
+      },
+      {
+        "term": "play it safe",
+        "meaning": "안전을 우선해 신중하게 행동하다",
+        "example": "Let's play it safe and save another copy. — 안전하게 사본을 하나 더 저장합시다."
+      },
+      {
+        "term": "come rain or shine",
+        "meaning": "날씨나 상황과 관계없이 반드시",
+        "example": "The volunteers meet every Saturday, come rain or shine. — 자원봉사자들은 날씨와 관계없이 매주 토요일 모입니다."
+      }
+    ],
+    "readingTitle": "A Library Event with a Weather Plan",
+    "paragraphs": [
+      "The neighbourhood library planned an outdoor reading event. The organiser checked the forecast, but the weather remained uncertain. She created a backup plan in case heavy rain interrupted the programme.",
+      "Volunteers could use the garden provided that the ground was dry. Unless conditions improved, the library would move the event indoors. The team agreed to play it safe rather than risk damaged books.",
+      "As long as families registered online, staff could prepare enough seats. They also printed a small list in case the internet connection failed. Registration remained open until Friday evening.",
+      "On Saturday, clouds covered the sky, but the rain held off. Even if the event had moved inside, the children would still have enjoyed the stories. The organiser thanked every volunteer for staying flexible.",
+      "The event began at ten and attracted more families than expected. The organisers decided to run the programme monthly, come rain or shine. Their lesson was simple: preparation creates more freedom than luck."
+    ],
+    "translations": [
+      "동네 도서관은 야외 독서 행사를 계획했습니다. 주최자는 예보를 확인했지만 날씨는 여전히 불확실했습니다. 폭우로 행사가 중단될 경우에 대비해 대안을 준비했습니다.",
+      "땅이 마른다는 조건으로 봉사자들은 정원을 사용할 수 있었습니다. 상황이 나아지지 않으면 도서관은 행사를 실내로 옮길 예정이었습니다. 팀은 책이 손상될 위험보다 안전을 우선하기로 했습니다.",
+      "가족들이 온라인으로 등록하는 한 직원들은 충분한 좌석을 준비할 수 있었습니다. 인터넷 연결이 끊길 경우에 대비해 명단도 인쇄했습니다. 등록은 금요일 저녁까지 열려 있었습니다.",
+      "토요일에는 하늘에 구름이 꼈지만 비는 내리지 않았습니다. 실내로 옮겼더라도 아이들은 이야기를 즐겼을 것입니다. 주최자는 유연하게 대응한 모든 봉사자에게 감사했습니다.",
+      "행사는 열 시에 시작했고 예상보다 많은 가족이 왔습니다. 주최자들은 날씨와 관계없이 매달 행사를 진행하기로 했습니다. 그들이 얻은 교훈은 단순했습니다. 준비는 운보다 더 큰 선택의 자유를 줍니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "neighbourhood",
+        "partOfSpeech": "noun",
+        "meaning": "동네",
+        "context": "행사를 연 지역 사회"
+      },
+      {
+        "term": "forecast",
+        "partOfSpeech": "noun",
+        "meaning": "일기예보",
+        "context": "야외 행사 전 확인하는 정보"
+      },
+      {
+        "term": "uncertain",
+        "partOfSpeech": "adjective",
+        "meaning": "불확실한",
+        "context": "계속 바뀔 수 있는 날씨"
+      },
+      {
+        "term": "organiser",
+        "partOfSpeech": "noun",
+        "meaning": "주최자",
+        "context": "행사 책임자"
+      },
+      {
+        "term": "volunteers",
+        "partOfSpeech": "noun",
+        "meaning": "자원봉사자들",
+        "context": "준비를 돕는 사람들"
+      },
+      {
+        "term": "conditions",
+        "partOfSpeech": "noun",
+        "meaning": "상황·조건",
+        "context": "야외 행사에 적합한 환경"
+      },
+      {
+        "term": "damaged",
+        "partOfSpeech": "adjective",
+        "meaning": "손상된",
+        "context": "비에 젖어 망가진 책"
+      },
+      {
+        "term": "registered",
+        "partOfSpeech": "verb",
+        "meaning": "등록했다",
+        "context": "온라인 신청 완료"
+      },
+      {
+        "term": "flexible",
+        "partOfSpeech": "adjective",
+        "meaning": "유연한",
+        "context": "계획을 바꿀 준비가 된"
+      },
+      {
+        "term": "preparation",
+        "partOfSpeech": "noun",
+        "meaning": "준비",
+        "context": "대비책을 세우는 행동"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "I won't leave _____ everyone is ready.",
+        "choices": [
+          "unless",
+          "provided",
+          "even though",
+          "in case"
+        ],
+        "answer": 0,
+        "explanation": "‘모두 준비되지 않으면 떠나지 않겠다’는 unless입니다."
+      },
+      {
+        "question": "Take a copy _____ the file disappears.",
+        "choices": [
+          "even though",
+          "in case",
+          "unless",
+          "if only"
+        ],
+        "answer": 1,
+        "explanation": "미리 대비한다는 뜻으로 in case가 알맞습니다."
+      },
+      {
+        "question": "You may join _____ you follow the safety rules.",
+        "choices": [
+          "even though",
+          "in case",
+          "provided that",
+          "unless"
+        ],
+        "answer": 2,
+        "explanation": "조건부 허가는 provided that입니다."
+      },
+      {
+        "question": "_____ we disagree, we can remain friends.",
+        "choices": [
+          "Because of",
+          "Unless not",
+          "In case of",
+          "Even if"
+        ],
+        "answer": 3,
+        "explanation": "가정되는 불일치에도 결과는 유지되므로 even if입니다."
+      },
+      {
+        "question": "Which is correct?",
+        "choices": [
+          "Unless you don't pay, you cannot enter.",
+          "Unless you pay, you cannot enter.",
+          "Unless you will pay, you cannot enter.",
+          "Unless paying, cannot you enter."
+        ],
+        "answer": 1,
+        "explanation": "unless 뒤는 보통 현재시제이고 이중 부정을 피합니다."
+      },
+      {
+        "question": "Why did the organiser make another plan?",
+        "choices": [
+          "To prepare for rain",
+          "To cancel the library",
+          "To sell the books",
+          "To shorten registration"
+        ],
+        "answer": 0,
+        "explanation": "폭우에 대비해 실내 대체 계획을 세웠습니다."
+      },
+      {
+        "question": "What would happen if the ground stayed wet?",
+        "choices": [
+          "The event would move indoors.",
+          "All stories would be cancelled.",
+          "Families would pay a fee.",
+          "The event would start at midnight."
+        ],
+        "answer": 0,
+        "explanation": "땅이 마르지 않으면 실내로 옮기기로 했습니다."
+      },
+      {
+        "question": "What additional precaution did staff take?",
+        "choices": [
+          "They bought more books.",
+          "They printed the registration list.",
+          "They closed the website.",
+          "They hired a new teacher."
+        ],
+        "answer": 1,
+        "explanation": "인터넷 연결 문제에 대비해 명단을 인쇄했습니다."
+      },
+      {
+        "question": "What does \"neighbourhood\" mean in the reading?",
+        "choices": [
+          "불확실한",
+          "자원봉사자들",
+          "동네",
+          "손상된"
+        ],
+        "answer": 2,
+        "explanation": "\"neighbourhood\"는 동네이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"forecast\" mean in the reading?",
+        "choices": [
+          "주최자",
+          "상황·조건",
+          "일기예보",
+          "등록했다"
+        ],
+        "answer": 2,
+        "explanation": "\"forecast\"는 일기예보이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "When do you need a backup plan?",
+      "How is in case different from if?",
+      "What conditions make a team successful?",
+      "Would you attend an outdoor event if it rained?",
+      "Describe a decision you would make even if others disagreed."
+    ],
+    "rolePlay": {
+      "scenario": "A community event might be affected by rain.",
+      "learnerRole": "Propose conditions and backup plans using unless, in case, and even if.",
+      "coachRole": "Ask follow-up questions and correct conditional meanings one at a time.",
+      "goal": "Express permission, preparation and hypothetical conditions accurately."
+    }
+  },
+  {
+    "date": "2026-10-20",
+    "title": "Daily English — 2026-10-20",
+    "grammarTopic": "Relative Clauses: Defining, Non-defining, and Reduced",
+    "grammar": {
+      "title": "관계절로 정보를 정확히 덧붙이기",
+      "summary": "관계절은 명사 뒤에서 정보를 추가합니다. 정의적 관계절은 무엇을 말하는지 구분하며 쉼표를 쓰지 않습니다. 계속적 관계절은 부가 정보를 제공하고 쉼표가 필요하며 that을 쓰지 않습니다. 목적격 관계대명사는 생략할 수 있고, 능동·수동 관계절 일부는 분사구로 줄일 수 있습니다.",
+      "points": [
+        {
+          "title": "who / which / that in defining clauses",
+          "explanation": "사람은 who/that, 사물은 which/that을 주로 씁니다. 필수 정보를 주는 관계절에는 쉼표가 없습니다.",
+          "examples": [
+            "The engineer who called yesterday has an update. — 어제 전화한 엔지니어에게 새 소식이 있습니다.",
+            "The report that arrived this morning is accurate. — 오늘 아침 도착한 보고서는 정확합니다.",
+            "I need a tool which works offline. — 오프라인에서도 작동하는 도구가 필요합니다.",
+            "The neighbour who owns the shop is helpful. — 그 가게를 소유한 이웃은 친절합니다.",
+            "We chose a route that avoids heavy traffic. — 교통 체증을 피하는 경로를 골랐습니다."
+          ]
+        },
+        {
+          "title": "non-defining: commas and no that",
+          "explanation": "이미 정해진 사람·사물에 추가 설명을 붙이며 관계절을 빼도 주절이 성립합니다. 쉼표로 감싸고 who/which를 씁니다.",
+          "examples": [
+            "Mina, who lives nearby, volunteers on Sundays. — 근처에 사는 Mina는 일요일에 봉사합니다.",
+            "Our laptop, which we bought last year, still works. — 작년에 산 노트북은 아직 작동합니다.",
+            "The town hall, which opened in 1920, needs repairs. — 1920년에 문을 연 시청은 수리가 필요합니다.",
+            "Sam, whose sister is a doctor, gave useful advice. — 누나가 의사인 Sam이 유용한 조언을 했습니다.",
+            "The project, which started in March, is nearly finished. — 3월에 시작한 프로젝트는 거의 끝났습니다."
+          ]
+        },
+        {
+          "title": "whose / where / when",
+          "explanation": "whose는 소유 관계, where는 장소, when은 시간을 연결합니다. where는 in which, when은 on which 등으로 바꿀 수 있습니다.",
+          "examples": [
+            "She met a writer whose books she admires. — 그녀는 자신의 책을 존경하는 작가를 만났습니다.",
+            "This is the café where we first met. — 이곳은 우리가 처음 만난 카페입니다.",
+            "I remember the day when the team succeeded. — 팀이 성공했던 날을 기억합니다.",
+            "The company whose office moved sent a notice. — 사무실을 옮긴 회사가 공지를 보냈습니다.",
+            "We visited the hall where the exhibition began. — 전시가 시작된 홀을 방문했습니다."
+          ]
+        },
+        {
+          "title": "omission of object relatives",
+          "explanation": "관계대명사가 관계절 안에서 목적어일 때는 생략할 수 있지만 주어 역할이면 생략할 수 없습니다.",
+          "examples": [
+            "The book I borrowed is excellent. — 내가 빌린 책은 훌륭합니다.",
+            "The person we interviewed was confident. — 우리가 면접한 사람은 자신감이 있었습니다.",
+            "The meal she recommended was delicious. — 그녀가 추천한 음식은 맛있었습니다.",
+            "The camera I bought has a good lens. — 내가 산 카메라는 렌즈가 좋습니다.",
+            "The students who joined early got seats. — 일찍 참여한 학생들은 자리를 얻었습니다."
+          ]
+        },
+        {
+          "title": "reduced clauses: -ing / -ed",
+          "explanation": "능동 진행·일반 행동은 -ing, 수동 의미는 과거분사를 이용해 관계절을 줄일 수 있습니다.",
+          "examples": [
+            "The woman standing near the door is our guide. — 문 근처에 서 있는 여성이 안내자입니다.",
+            "The documents sent yesterday need signatures. — 어제 발송된 문서에는 서명이 필요합니다.",
+            "Anyone working remotely must log in securely. — 원격 근무자는 안전하게 로그인해야 합니다.",
+            "The bridge built in 1880 is still used. — 1880년에 지어진 다리는 아직 사용됩니다.",
+            "The people waiting outside have tickets. — 밖에서 기다리는 사람들은 표를 가지고 있습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "fill in the gaps",
+        "meaning": "빈틈을 메우다",
+        "example": "A clear checklist helps us fill in the gaps in our plan. — 명확한 점검표가 계획의 빈틈을 메워 줍니다."
+      },
+      {
+        "term": "get the picture",
+        "meaning": "상황을 이해하다",
+        "example": "After reading the report, I got the picture. — 보고서를 읽고 상황을 이해했습니다."
+      },
+      {
+        "term": "the bigger picture",
+        "meaning": "전체적인 상황",
+        "example": "A short interview can help us see the bigger picture. — 짧은 인터뷰가 전체 상황을 보는 데 도움이 됩니다."
+      }
+    ],
+    "readingTitle": "The Exhibition That Connected Generations",
+    "paragraphs": [
+      "A local museum planned an exhibition about people who had shaped the town. The curator, who had recently moved there, interviewed residents whose families had lived nearby for decades.",
+      "One resident brought a photograph taken in 1955. It showed the market where her grandfather had sold vegetables. The curator found a diary that described the same street on busy Saturdays.",
+      "The team invited students studying local history to record short interviews. The questions they prepared helped fill in the gaps between photographs and memories. Every volunteer learned to check dates carefully.",
+      "During the opening, visitors listened to stories told by older residents. A teacher, whose class had helped design the signs, said the voices gave the exhibition warmth. Even children got the picture without reading every label.",
+      "The museum published an online archive where future generations could explore the material. The bigger picture was not simply a history of buildings: it was a record of neighbours who had helped one another."
+    ],
+    "translations": [
+      "지역 박물관은 마을에 영향을 준 사람들에 관한 전시를 기획했습니다. 최근 이주한 큐레이터는 가족이 수십 년 동안 근처에 살았던 주민들을 인터뷰했습니다.",
+      "한 주민이 1955년에 찍힌 사진을 가져왔습니다. 사진에는 할아버지가 채소를 팔던 시장이 담겨 있었습니다. 큐레이터는 토요일의 붐비는 그 거리를 설명한 일기도 찾았습니다.",
+      "팀은 지역 역사를 공부하는 학생들을 초청해 짧은 인터뷰를 녹음하게 했습니다. 학생들이 준비한 질문은 사진과 기억 사이의 빈틈을 메우는 데 도움이 됐습니다. 모든 자원봉사자는 날짜를 신중하게 확인하는 법을 배웠습니다.",
+      "개막식에서 방문객들은 어르신들이 들려준 이야기를 들었습니다. 자신의 반 학생들이 안내판 제작을 도운 교사는 목소리가 전시에 따뜻함을 더했다고 말했습니다. 아이들도 모든 설명을 읽지 않고 상황을 이해했습니다.",
+      "박물관은 미래 세대가 자료를 살펴볼 수 있는 온라인 기록 보관소를 공개했습니다. 전체적인 이야기는 건물의 역사만이 아니라 서로 도운 이웃들의 기록이었습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "museum",
+        "partOfSpeech": "noun",
+        "meaning": "박물관",
+        "context": "지역 역사를 소개하는 곳"
+      },
+      {
+        "term": "exhibition",
+        "partOfSpeech": "noun",
+        "meaning": "전시",
+        "context": "지역 사람들에 대한 전시"
+      },
+      {
+        "term": "curator",
+        "partOfSpeech": "noun",
+        "meaning": "큐레이터",
+        "context": "전시 기획자"
+      },
+      {
+        "term": "residents",
+        "partOfSpeech": "noun",
+        "meaning": "주민들",
+        "context": "지역에 사는 사람들"
+      },
+      {
+        "term": "photograph",
+        "partOfSpeech": "noun",
+        "meaning": "사진",
+        "context": "1955년에 촬영된 장면"
+      },
+      {
+        "term": "diary",
+        "partOfSpeech": "noun",
+        "meaning": "일기",
+        "context": "과거 거리의 모습에 관한 기록"
+      },
+      {
+        "term": "volunteer",
+        "partOfSpeech": "noun",
+        "meaning": "자원봉사자",
+        "context": "작업을 돕는 사람"
+      },
+      {
+        "term": "interviews",
+        "partOfSpeech": "noun",
+        "meaning": "인터뷰",
+        "context": "과거 이야기를 묻고 기록"
+      },
+      {
+        "term": "archive",
+        "partOfSpeech": "noun",
+        "meaning": "기록 보관소",
+        "context": "온라인 역사 자료 모음"
+      },
+      {
+        "term": "generations",
+        "partOfSpeech": "noun",
+        "meaning": "세대들",
+        "context": "시간에 걸친 사람들의 집단"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "The woman _____ teaches English lives upstairs.",
+        "choices": [
+          "which",
+          "who",
+          "where",
+          "whose"
+        ],
+        "answer": 1,
+        "explanation": "사람을 수식하고 관계절 안의 주어이므로 who입니다."
+      },
+      {
+        "question": "My tablet, _____ I bought recently, is broken.",
+        "choices": [
+          "that",
+          "where",
+          "which",
+          "who"
+        ],
+        "answer": 2,
+        "explanation": "쉼표가 있는 계속적 관계절에서는 which를 씁니다."
+      },
+      {
+        "question": "This is the room _____ the interviews took place.",
+        "choices": [
+          "where",
+          "whose",
+          "who",
+          "which is"
+        ],
+        "answer": 0,
+        "explanation": "장소를 수식하는 where가 필요합니다."
+      },
+      {
+        "question": "The files _____ last week are ready.",
+        "choices": [
+          "sending",
+          "send",
+          "were sent",
+          "sent"
+        ],
+        "answer": 3,
+        "explanation": "수동 관계절을 과거분사 sent로 줄였습니다."
+      },
+      {
+        "question": "Which is a correct omission?",
+        "choices": [
+          "The person called me is kind.",
+          "The film we watched was moving.",
+          "The man lives nearby is a teacher.",
+          "The students arrived late apologised."
+        ],
+        "answer": 1,
+        "explanation": "목적격 관계대명사는 생략 가능하지만 주격은 생략 불가능합니다."
+      },
+      {
+        "question": "What did one resident contribute?",
+        "choices": [
+          "An old photograph",
+          "A new computer",
+          "A building plan",
+          "A ticket"
+        ],
+        "answer": 0,
+        "explanation": "1955년에 찍힌 사진을 제공했습니다."
+      },
+      {
+        "question": "Who recorded interviews?",
+        "choices": [
+          "The shop owners",
+          "Students studying local history",
+          "Tourists",
+          "The mayor"
+        ],
+        "answer": 1,
+        "explanation": "지역 역사 공부 중인 학생들이 녹음했습니다."
+      },
+      {
+        "question": "What became available online?",
+        "choices": [
+          "A new café",
+          "A ticketing system",
+          "An archive",
+          "A sports programme"
+        ],
+        "answer": 2,
+        "explanation": "기록 보관소를 온라인으로 공개했습니다."
+      },
+      {
+        "question": "What does \"museum\" mean in the reading?",
+        "choices": [
+          "큐레이터",
+          "사진",
+          "박물관",
+          "자원봉사자"
+        ],
+        "answer": 2,
+        "explanation": "\"museum\"는 박물관이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"exhibition\" mean in the reading?",
+        "choices": [
+          "주민들",
+          "일기",
+          "전시",
+          "인터뷰"
+        ],
+        "answer": 2,
+        "explanation": "\"exhibition\"는 전시이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Who is someone whose work you admire?",
+      "Describe a place where you feel comfortable.",
+      "How do defining and non-defining clauses differ?",
+      "Give an example of a reduced relative clause.",
+      "Why are personal stories important to local history?"
+    ],
+    "rolePlay": {
+      "scenario": "Help a museum prepare a short exhibition description.",
+      "learnerRole": "Describe people and objects using defining, non-defining and reduced clauses.",
+      "coachRole": "Ask for missing details and check commas, pronouns and clause reduction.",
+      "goal": "Combine information clearly without ambiguous references."
+    }
+  },
+  {
+    "date": "2026-10-21",
+    "title": "Daily English — 2026-10-21",
+    "grammarTopic": "Inversion for Emphasis: Rarely, Not Only, Only After",
+    "grammar": {
+      "title": "도치 구문: 강조하는 표현을 문장 앞으로 옮기기",
+      "summary": "부정 또는 제한 부사구를 문두에 두면 조동사와 주어의 순서가 질문과 비슷하게 바뀝니다. 단순현재·과거는 do/does/did를 추가하고 본동사는 원형을 씁니다. Not only가 문두에 오면 첫 절에 도치를 적용하며, Only after와 같은 표현은 주절을 도치합니다.",
+      "points": [
+        {
+          "title": "rarely / seldom / never",
+          "explanation": "빈도 부정어가 문두로 이동하면 조동사·be동사를 주어 앞으로 둡니다.",
+          "examples": [
+            "Rarely do we see such a clear result. — 이렇게 명확한 결과는 거의 보지 못합니다.",
+            "Never have I forgotten that lesson. — 그 교훈을 한 번도 잊은 적이 없습니다.",
+            "Seldom does she miss a deadline. — 그녀는 마감일을 거의 놓치지 않습니다.",
+            "Rarely has the town faced such a challenge. — 마을이 이런 도전에 직면한 적은 드뭅니다.",
+            "Never did he question their honesty. — 그는 그들의 정직성을 의심한 적이 없습니다."
+          ]
+        },
+        {
+          "title": "not only ... but also",
+          "explanation": "not only가 첫 절의 맨 앞에 오면 첫 절에 도치가 일어나고 두 번째 절은 보통 정상 어순입니다.",
+          "examples": [
+            "Not only did the team finish early, but it also saved money. — 팀은 일찍 끝냈을 뿐 아니라 비용도 절감했습니다.",
+            "Not only can she write clearly, but she can also speak confidently. — 그녀는 글도 명확히 쓰고 자신감 있게 말합니다.",
+            "Not only was the room quiet, but it was also bright. — 방은 조용할 뿐 아니라 밝았습니다.",
+            "Not only have we reduced waste, but we have also improved quality. — 폐기물을 줄였을 뿐 아니라 품질도 높였습니다.",
+            "Not only does he coach children, but he also mentors teachers. — 그는 아이들을 가르칠 뿐 아니라 교사도 지도합니다."
+          ]
+        },
+        {
+          "title": "only after / only when / only then",
+          "explanation": "Only가 시간·조건 부사구를 수식해 문두에 오면 그 뒤의 주절에서 도치합니다.",
+          "examples": [
+            "Only after the test did we release the update. — 테스트 이후에야 업데이트를 출시했습니다.",
+            "Only when the lights went out did we notice the problem. — 불이 꺼지고 나서야 문제를 알아차렸습니다.",
+            "Only then did I understand her concern. — 그제야 그녀의 우려를 이해했습니다.",
+            "Only after she explained did the team agree. — 설명을 듣고 나서야 팀이 동의했습니다.",
+            "Only when the data is checked can we publish it. — 데이터를 확인한 뒤에야 발표할 수 있습니다."
+          ]
+        },
+        {
+          "title": "hardly ... when / no sooner ... than",
+          "explanation": "연속된 과거 두 사건을 강조할 때 사용합니다. 일반적으로 첫 절은 과거완료 도치입니다.",
+          "examples": [
+            "Hardly had we arrived when the storm began. — 도착하자마자 폭풍이 시작됐습니다.",
+            "No sooner had I opened the file than the system crashed. — 파일을 열자마자 시스템이 멈췄습니다.",
+            "Hardly had she spoken when everyone raised a hand. — 그녀가 말하자마자 모두 손을 들었습니다.",
+            "No sooner had the show ended than the audience applauded. — 공연이 끝나자마자 관객이 박수쳤습니다.",
+            "Hardly had they sat down when the alarm sounded. — 자리에 앉자마자 경보가 울렸습니다."
+          ]
+        },
+        {
+          "title": "under no circumstances / little",
+          "explanation": "강한 금지나 예상하지 못한 사실을 문두에서 강조합니다. 격식 있는 글에 유용합니다.",
+          "examples": [
+            "Under no circumstances should you share your password. — 어떤 상황에서도 비밀번호를 공유하면 안 됩니다.",
+            "Under no circumstances will we ignore safety warnings. — 어떠한 경우에도 안전 경고를 무시하지 않겠습니다.",
+            "Little did I know how valuable the advice would be. — 그 조언이 얼마나 귀중할지 전혀 몰랐습니다.",
+            "At no time was the building unsafe. — 건물이 위험했던 순간은 전혀 없었습니다.",
+            "On no account must this equipment be left unattended. — 이 장비는 절대 방치해서는 안 됩니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "against the clock",
+        "meaning": "시간에 쫓기며",
+        "example": "We worked against the clock to finish the display. — 전시를 끝내기 위해 시간에 쫓기며 일했습니다."
+      },
+      {
+        "term": "at the last minute",
+        "meaning": "마지막 순간에",
+        "example": "The speaker changed the slides at the last minute. — 발표자가 마지막 순간에 슬라이드를 바꿨습니다."
+      },
+      {
+        "term": "make a difference",
+        "meaning": "변화를 만들어 내다",
+        "example": "One small correction can make a difference. — 작은 수정 하나가 차이를 만들 수 있습니다."
+      }
+    ],
+    "readingTitle": "The Day the System Went Quiet",
+    "paragraphs": [
+      "A small community centre prepared an online talk. Rarely had the staff managed such a large audience, so they tested every microphone and camera. The team worked against the clock to finish the setup.",
+      "Hardly had the speaker started when the sound disappeared. At first, the audience could see the slides but could not hear a word. The speaker checked the microphone at the last minute.",
+      "Only after the technician restarted the audio service did the problem become clear. An old setting had blocked the live sound. Not only did the technician fix the issue, but she also explained why it happened.",
+      "Under no circumstances were staff allowed to restart the entire system without saving the recording. They followed a short checklist and invited one attendee to confirm the sound. Only then did the session continue.",
+      "The delay lasted seven minutes. Nevertheless, the audience praised the clear explanation and friendly response. Little did the staff know that their calm teamwork would make a difference to the centre's reputation."
+    ],
+    "translations": [
+      "작은 주민센터는 온라인 강연을 준비했습니다. 직원들이 이렇게 많은 청중을 관리한 적은 드물어서 모든 마이크와 카메라를 시험했습니다. 팀은 준비를 마치려고 시간에 쫓겨 일했습니다.",
+      "연사가 말을 시작하자마자 소리가 사라졌습니다. 처음에 청중은 슬라이드는 볼 수 있었지만 말을 하나도 들을 수 없었습니다. 연사는 마지막 순간에 마이크를 확인했습니다.",
+      "기술자가 오디오 서비스를 재시작한 후에야 문제가 명확해졌습니다. 오래된 설정이 실시간 소리를 차단하고 있었습니다. 기술자는 문제를 고쳤을 뿐 아니라 원인도 설명했습니다.",
+      "직원들은 녹음을 저장하지 않고 시스템 전체를 재시작해서는 안 됐습니다. 짧은 점검표를 따르고 참가자 한 명에게 소리 확인을 요청했습니다. 그제야 강연이 계속됐습니다.",
+      "지연은 7분 동안 이어졌습니다. 그렇지만 청중은 명확한 설명과 친절한 대응을 칭찬했습니다. 직원들은 침착한 협업이 센터의 평판에 큰 영향을 줄 줄은 몰랐습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "audience",
+        "partOfSpeech": "noun",
+        "meaning": "청중",
+        "context": "온라인 강연을 듣는 사람들"
+      },
+      {
+        "term": "microphone",
+        "partOfSpeech": "noun",
+        "meaning": "마이크",
+        "context": "발표자의 목소리를 전달하는 장치"
+      },
+      {
+        "term": "setup",
+        "partOfSpeech": "noun",
+        "meaning": "설치·준비",
+        "context": "행사 시작 전 장비 준비"
+      },
+      {
+        "term": "disappeared",
+        "partOfSpeech": "verb",
+        "meaning": "사라졌다",
+        "context": "음성이 갑자기 끊김"
+      },
+      {
+        "term": "technician",
+        "partOfSpeech": "noun",
+        "meaning": "기술자",
+        "context": "오디오 문제를 해결한 사람"
+      },
+      {
+        "term": "setting",
+        "partOfSpeech": "noun",
+        "meaning": "설정",
+        "context": "소리를 차단한 기존 구성"
+      },
+      {
+        "term": "recording",
+        "partOfSpeech": "noun",
+        "meaning": "녹음",
+        "context": "저장해야 했던 강연 기록"
+      },
+      {
+        "term": "checklist",
+        "partOfSpeech": "noun",
+        "meaning": "점검표",
+        "context": "재시작 전 확인할 항목"
+      },
+      {
+        "term": "attendee",
+        "partOfSpeech": "noun",
+        "meaning": "참가자",
+        "context": "소리를 확인해 준 사람"
+      },
+      {
+        "term": "reputation",
+        "partOfSpeech": "noun",
+        "meaning": "평판",
+        "context": "센터에 대한 사람들의 평가"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Rarely _____ such an efficient team.",
+        "choices": [
+          "we see",
+          "do we see",
+          "see we",
+          "we have see"
+        ],
+        "answer": 1,
+        "explanation": "Rarely가 문두에 오면 do + 주어 + 동사원형 도치입니다."
+      },
+      {
+        "question": "Not only _____ the issue, but she also explained it.",
+        "choices": [
+          "she fixed",
+          "fix she did",
+          "did she fix",
+          "she did fixed"
+        ],
+        "answer": 2,
+        "explanation": "Not only 문두에서 did she fix 어순을 씁니다."
+      },
+      {
+        "question": "Only after the test _____ the update.",
+        "choices": [
+          "did they release",
+          "they released",
+          "released they",
+          "they did released"
+        ],
+        "answer": 0,
+        "explanation": "Only after 뒤 주절에서 도치합니다."
+      },
+      {
+        "question": "Hardly _____ when the lights went out.",
+        "choices": [
+          "we had arrived",
+          "did we arrived",
+          "had arrived we",
+          "had we arrived"
+        ],
+        "answer": 3,
+        "explanation": "Hardly had + 주어 + 과거분사 + when입니다."
+      },
+      {
+        "question": "Under no circumstances _____ the door unlocked.",
+        "choices": [
+          "you should leave",
+          "should you leave",
+          "leave you should",
+          "you do leave"
+        ],
+        "answer": 1,
+        "explanation": "금지 강조에서는 should you leave를 씁니다."
+      },
+      {
+        "question": "What failed during the talk?",
+        "choices": [
+          "The projector",
+          "The sound",
+          "The entrance door",
+          "The website login"
+        ],
+        "answer": 1,
+        "explanation": "오디오가 사라졌습니다."
+      },
+      {
+        "question": "What caused the technical problem?",
+        "choices": [
+          "An old setting",
+          "A broken window",
+          "A missing presentation",
+          "Bad weather"
+        ],
+        "answer": 0,
+        "explanation": "오래된 설정이 실시간 음성을 차단했습니다."
+      },
+      {
+        "question": "How long did the delay last?",
+        "choices": [
+          "Two minutes",
+          "Five minutes",
+          "Seven minutes",
+          "Twenty minutes"
+        ],
+        "answer": 2,
+        "explanation": "지연은 7분이었습니다."
+      },
+      {
+        "question": "What does \"audience\" mean in the reading?",
+        "choices": [
+          "설치·준비",
+          "기술자",
+          "청중",
+          "녹음"
+        ],
+        "answer": 2,
+        "explanation": "\"audience\"는 청중이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"microphone\" mean in the reading?",
+        "choices": [
+          "사라졌다",
+          "설정",
+          "마이크",
+          "점검표"
+        ],
+        "answer": 2,
+        "explanation": "\"microphone\"는 마이크이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Rewrite a normal sentence using rarely.",
+      "When is inversion too formal for casual speech?",
+      "How can teams respond calmly to technical errors?",
+      "Create a not only ... but also sentence about your week.",
+      "Explain a process using only after."
+    ],
+    "rolePlay": {
+      "scenario": "Report a short technical outage at a public event.",
+      "learnerRole": "Explain what happened using inversion to highlight unusual events and safety rules.",
+      "coachRole": "Ask for a timeline and check auxiliary verbs and word order.",
+      "goal": "Use emphatic inversion without sacrificing clarity."
+    }
+  },
+  {
+    "date": "2026-10-22",
+    "title": "Daily English — 2026-10-22",
+    "grammarTopic": "Causative Structures: Have, Get, Make, and Let",
+    "grammar": {
+      "title": "시키다·맡기다·허락하다: 사역 구문 제대로 구별하기",
+      "summary": "have/get something done은 다른 사람이 내 일을 처리해 준 결과에 초점을 둡니다. have someone do, get someone to do는 사람에게 행동을 부탁하거나 성사시키고, make someone do는 강한 강제, let someone do는 허락입니다. 목적어와 동사 형태를 반드시 함께 확인하세요.",
+      "points": [
+        {
+          "title": "have something done",
+          "explanation": "서비스를 받거나 다른 사람에게 작업을 맡기는 표현입니다. have + 사물 + 과거분사 구조입니다.",
+          "examples": [
+            "I had my bike repaired yesterday. — 어제 자전거 수리를 맡겼습니다.",
+            "We have the office cleaned every Friday. — 우리는 매주 금요일 사무실 청소를 맡깁니다.",
+            "She is having her photo taken. — 그녀는 사진 촬영을 받고 있습니다.",
+            "They had the contract translated. — 그들은 계약서 번역을 맡겼습니다.",
+            "I'll have the windows checked next week. — 다음 주 창문 점검을 맡길 겁니다."
+          ]
+        },
+        {
+          "title": "get something done",
+          "explanation": "have와 비슷하지만 결과를 얻거나 일을 마무리하는 느낌이 강하며 회화에서 흔합니다.",
+          "examples": [
+            "I finally got my passport renewed. — 마침내 여권을 갱신했습니다.",
+            "We need to get the printer fixed. — 프린터를 수리받아야 합니다.",
+            "He got his jacket cleaned before the interview. — 그는 면접 전에 재킷을 세탁 맡겼습니다.",
+            "She got the forms signed by noon. — 그녀는 정오까지 서류 서명을 받아 냈습니다.",
+            "Let's get the room painted before winter. — 겨울 전에 방 도색을 끝내 봅시다."
+          ]
+        },
+        {
+          "title": "have someone do / get someone to do",
+          "explanation": "특정 사람이 행동하도록 할 때 have + 사람 + 원형, get + 사람 + to부정사를 사용합니다.",
+          "examples": [
+            "I'll have the assistant send the email. — 조수에게 이메일을 보내게 하겠습니다.",
+            "We had the driver wait outside. — 운전기사에게 밖에서 기다리게 했습니다.",
+            "She got her colleague to review the report. — 동료에게 보고서를 검토해 달라고 했습니다.",
+            "Can you get him to call me? — 그에게 전화하도록 해 줄 수 있나요?",
+            "The manager had everyone sign the register. — 관리자는 모두에게 등록부에 서명하게 했습니다."
+          ]
+        },
+        {
+          "title": "make someone do vs let someone do",
+          "explanation": "make는 강제·원인, let은 허락을 나타냅니다. 둘 다 사람 뒤에 to 없는 동사원형이 옵니다.",
+          "examples": [
+            "The rule made us wear helmets. — 규정 때문에 우리는 헬멧을 써야 했습니다.",
+            "My parents let me choose the course. — 부모님은 내가 수업을 선택하게 해 주셨습니다.",
+            "The noise made her leave early. — 소음 때문에 그녀는 일찍 떠났습니다.",
+            "The teacher let students ask more questions. — 선생님은 학생들이 질문을 더 하게 허락했습니다.",
+            "Don't let one mistake stop you. — 실수 한 번 때문에 포기하지 마세요."
+          ]
+        },
+        {
+          "title": "passive causative and common traps",
+          "explanation": "make의 수동태는 be made to do이지만 let의 수동태는 흔히 be allowed to do로 바꿉니다. 누가 직접 행동하는지도 구별합니다.",
+          "examples": [
+            "We were made to wait for an hour. — 우리는 한 시간 기다려야 했습니다.",
+            "Students were allowed to bring notes. — 학생들은 노트를 가져올 수 있었습니다.",
+            "He had the report checked, not wrote it himself. — 그는 보고서를 직접 쓴 것이 아니라 검토를 맡겼습니다.",
+            "I got the documents delivered to my house. — 문서를 집으로 배송받았습니다.",
+            "The coach made the players practise twice. — 코치는 선수들에게 두 번 연습하게 했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "get the ball rolling",
+        "meaning": "일을 본격적으로 시작하다",
+        "example": "Let's get the ball rolling by booking the repair. — 수리를 예약하며 일을 시작합시다."
+      },
+      {
+        "term": "take care of",
+        "meaning": "처리하다·돌보다",
+        "example": "The technician will take care of the wiring. — 기술자가 배선을 처리할 겁니다."
+      },
+      {
+        "term": "leave it to someone",
+        "meaning": "누군가에게 맡기다",
+        "example": "I'll leave the design to our specialist. — 디자인은 전문가에게 맡기겠습니다."
+      }
+    ],
+    "readingTitle": "Repair Day at the Community Workshop",
+    "paragraphs": [
+      "The local workshop wanted to make its old classroom safer. The coordinator got the ball rolling by calling a technician. She planned to have the damaged lights replaced before the next course.",
+      "The manager had a volunteer move the chairs, then got another volunteer to label the storage boxes. The safety rules made everyone wear gloves, but the coordinator let experienced volunteers choose their own tasks.",
+      "A technician arrived at nine and promised to take care of the wiring. The group had the windows checked at the same time. They also got a new sign printed with clear emergency directions.",
+      "One volunteer tried to repair a loose socket without help. The coordinator stopped him and made him wait for the professional. Later, she let him test the desk lamps only after the electricity was safe.",
+      "By afternoon, the classroom was brighter and safer. The manager decided to leave future repairs to qualified workers. Getting things done quickly mattered, but making people work safely mattered more."
+    ],
+    "translations": [
+      "지역 작업실은 낡은 교실을 더 안전하게 만들고 싶었습니다. 담당자는 기술자에게 전화하며 일을 시작했습니다. 다음 강좌 전에 손상된 조명을 교체받을 계획이었습니다.",
+      "관리자는 한 봉사자에게 의자를 옮기게 하고 다른 봉사자에게는 보관 상자에 이름표를 붙이게 했습니다. 안전 규정 때문에 모두 장갑을 착용해야 했지만, 담당자는 경험 많은 봉사자들이 맡을 일을 고르게 했습니다.",
+      "기술자는 9시에 도착해 배선을 처리하겠다고 약속했습니다. 팀은 동시에 창문 점검을 맡겼습니다. 분명한 비상 안내가 적힌 새 표지판도 인쇄했습니다.",
+      "한 봉사자가 도움 없이 헐거운 콘센트를 고치려 했습니다. 담당자는 그를 멈추고 전문가를 기다리게 했습니다. 이후 전기가 안전해진 다음에야 책상 램프를 시험하게 허락했습니다.",
+      "오후가 되자 교실은 더 밝고 안전해졌습니다. 관리자는 앞으로 수리는 자격을 갖춘 작업자에게 맡기기로 했습니다. 일을 빨리 끝내는 것도 중요했지만 사람들을 안전하게 일하게 하는 것이 더 중요했습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "workshop",
+        "partOfSpeech": "noun",
+        "meaning": "작업실",
+        "context": "지역 기술 수업 공간"
+      },
+      {
+        "term": "coordinator",
+        "partOfSpeech": "noun",
+        "meaning": "담당자",
+        "context": "수리 과정을 총괄한 사람"
+      },
+      {
+        "term": "technician",
+        "partOfSpeech": "noun",
+        "meaning": "기술자",
+        "context": "전문적인 수리 담당"
+      },
+      {
+        "term": "damaged",
+        "partOfSpeech": "adjective",
+        "meaning": "손상된",
+        "context": "교체해야 할 조명"
+      },
+      {
+        "term": "storage",
+        "partOfSpeech": "noun",
+        "meaning": "보관",
+        "context": "상자를 정리하는 공간"
+      },
+      {
+        "term": "gloves",
+        "partOfSpeech": "noun",
+        "meaning": "장갑",
+        "context": "안전하게 일할 때 착용"
+      },
+      {
+        "term": "wiring",
+        "partOfSpeech": "noun",
+        "meaning": "배선",
+        "context": "전기선 연결 부분"
+      },
+      {
+        "term": "emergency",
+        "partOfSpeech": "noun",
+        "meaning": "비상상황",
+        "context": "표지판에 적힌 대처 방법"
+      },
+      {
+        "term": "socket",
+        "partOfSpeech": "noun",
+        "meaning": "콘센트",
+        "context": "전기를 연결하는 부분"
+      },
+      {
+        "term": "qualified",
+        "partOfSpeech": "adjective",
+        "meaning": "자격을 갖춘",
+        "context": "전문성을 인정받은 작업자"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "I had the laptop _____ yesterday.",
+        "choices": [
+          "repair",
+          "repairing",
+          "repaired",
+          "to repair"
+        ],
+        "answer": 2,
+        "explanation": "have + 사물 + 과거분사입니다."
+      },
+      {
+        "question": "We got the driver _____ outside.",
+        "choices": [
+          "to wait",
+          "wait",
+          "waiting",
+          "waited"
+        ],
+        "answer": 0,
+        "explanation": "get + 사람 + to부정사입니다."
+      },
+      {
+        "question": "The rules made us _____ safety glasses.",
+        "choices": [
+          "to wear",
+          "wearing",
+          "wore",
+          "wear"
+        ],
+        "answer": 3,
+        "explanation": "make + 사람 + 동사원형입니다."
+      },
+      {
+        "question": "The teacher let us _____ early.",
+        "choices": [
+          "leaving",
+          "leave",
+          "to leave",
+          "left"
+        ],
+        "answer": 1,
+        "explanation": "let + 사람 + 동사원형입니다."
+      },
+      {
+        "question": "They were made _____ for an hour.",
+        "choices": [
+          "wait",
+          "waiting",
+          "to wait",
+          "waited"
+        ],
+        "answer": 2,
+        "explanation": "make의 수동태는 be made to do입니다."
+      },
+      {
+        "question": "What did the workshop replace?",
+        "choices": [
+          "Old chairs",
+          "Damaged lights",
+          "Computers",
+          "Doors"
+        ],
+        "answer": 1,
+        "explanation": "손상된 조명을 교체했습니다."
+      },
+      {
+        "question": "Why did the coordinator stop a volunteer?",
+        "choices": [
+          "He arrived late",
+          "He lost a key",
+          "He was attempting an unsafe repair",
+          "He forgot his phone"
+        ],
+        "answer": 2,
+        "explanation": "전문가 없이 콘센트를 고치려 했기 때문입니다."
+      },
+      {
+        "question": "Who would handle future repairs?",
+        "choices": [
+          "Qualified workers",
+          "Children",
+          "Visitors",
+          "The librarian"
+        ],
+        "answer": 0,
+        "explanation": "자격 있는 작업자들에게 맡기기로 했습니다."
+      },
+      {
+        "question": "What does \"workshop\" mean in the reading?",
+        "choices": [
+          "기술자",
+          "보관",
+          "작업실",
+          "배선"
+        ],
+        "answer": 2,
+        "explanation": "\"workshop\"는 작업실이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"coordinator\" mean in the reading?",
+        "choices": [
+          "손상된",
+          "장갑",
+          "담당자",
+          "비상상황"
+        ],
+        "answer": 2,
+        "explanation": "\"coordinator\"는 담당자이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What tasks would you have a professional do?",
+      "What is the difference between make and let?",
+      "Tell a story about getting something fixed.",
+      "How do you get someone to cooperate politely?",
+      "Why should some repairs be left to experts?"
+    ],
+    "rolePlay": {
+      "scenario": "You are organising repairs for a shared office.",
+      "learnerRole": "Delegate tasks and explain which repairs you will have done by professionals.",
+      "coachRole": "Ask who will do the work and correct causative verb patterns.",
+      "goal": "Distinguish service, persuasion, force and permission."
+    }
+  },
+  {
+    "date": "2026-10-23",
+    "title": "Daily English — 2026-10-23",
+    "grammarTopic": "Wish, If Only, and Would Rather",
+    "grammar": {
+      "title": "바람과 아쉬움: 현재와 과거를 다르게 표현하기",
+      "summary": "wish + 과거형은 현재 현실과 다른 바람, wish + had p.p.는 과거에 대한 후회, wish + would는 다른 사람이나 상황이 바뀌기를 바라는 불만에 가깝습니다. if only는 감정을 더 강하게 표현합니다. would rather 뒤 주어가 같으면 동사원형, 다른 주어면 과거형을 씁니다.",
+      "points": [
+        {
+          "title": "wish + past simple (present unreal)",
+          "explanation": "현재 사실과 반대되는 바람을 표현합니다. be동사는 격식체에서 were가 선호됩니다.",
+          "examples": [
+            "I wish I had more free time. — 시간이 좀 더 있었으면 좋겠습니다.",
+            "She wishes she lived closer to work. — 직장 근처에 살았으면 합니다.",
+            "I wish I were better at public speaking. — 발표를 더 잘했으면 좋겠습니다.",
+            "We wish the office were quieter. — 사무실이 더 조용했으면 합니다.",
+            "He wishes he knew the answer. — 답을 알았으면 좋겠다고 생각합니다."
+          ]
+        },
+        {
+          "title": "wish + past perfect (past regret)",
+          "explanation": "이미 끝난 일을 다르게 했으면 좋았겠다는 후회입니다. 과거의 사실을 바꾸는 것은 불가능합니다.",
+          "examples": [
+            "I wish I had checked the address. — 주소를 확인했더라면 좋았을 텐데요.",
+            "She wishes she had saved the file. — 파일을 저장했더라면 좋았을 텐데요.",
+            "We wish we had left earlier. — 더 일찍 출발했더라면 좋았을 텐데요.",
+            "He wishes he hadn't ignored the warning. — 경고를 무시하지 않았더라면 좋았을 텐데요.",
+            "I wish I had taken more photographs. — 사진을 더 찍었더라면 좋았을 텐데요."
+          ]
+        },
+        {
+          "title": "wish + would (annoying changes)",
+          "explanation": "상대방의 반복 행동이나 바꿀 수 있는 상황의 변화를 바랄 때 씁니다. 자신의 의지적 행동에는 일반적으로 wish I would를 피합니다.",
+          "examples": [
+            "I wish the neighbours would turn down the music. — 이웃들이 음악 소리를 줄여 줬으면 합니다.",
+            "I wish the bus would arrive on time. — 버스가 정시에 왔으면 좋겠습니다.",
+            "She wishes her brother would tidy his room. — 남동생이 방을 치웠으면 합니다.",
+            "We wish the printer would stop jamming. — 프린터가 더 이상 걸리지 않았으면 합니다.",
+            "I wish people would listen before interrupting. — 사람들이 끼어들기 전에 들어 줬으면 합니다."
+          ]
+        },
+        {
+          "title": "if only: stronger emotion",
+          "explanation": "wish보다 강한 아쉬움·소망을 나타내며, 현재는 과거형·과거 후회는 과거완료로 표현합니다.",
+          "examples": [
+            "If only I knew where my keys were! — 열쇠가 어디 있는지 알면 좋으련만!",
+            "If only we had booked sooner! — 더 일찍 예약했더라면!",
+            "If only the weather were warmer! — 날씨가 더 따뜻하면 좋으련만!",
+            "If only she had called before leaving! — 떠나기 전에 전화했더라면!",
+            "If only there were another option! — 다른 선택지가 있으면 좋으련만!"
+          ]
+        },
+        {
+          "title": "would rather (+ different subjects)",
+          "explanation": "같은 주어의 선호는 would rather + 동사원형입니다. 다른 사람이 하기를 바라는 것은 would rather + 주어 + 과거형입니다.",
+          "examples": [
+            "I'd rather stay home tonight. — 오늘 밤 집에 있는 게 낫겠습니다.",
+            "We'd rather not discuss it now. — 지금은 그 일을 논의하지 않았으면 합니다.",
+            "I'd rather you told me the truth. — 당신이 진실을 말해 줬으면 좋겠습니다.",
+            "She'd rather he didn't call so late. — 그가 그렇게 늦게 전화하지 않기를 바랍니다.",
+            "Would you rather walk or take the bus? — 걷는 게 좋나요, 버스를 타는 게 좋나요?"
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "learn the hard way",
+        "meaning": "힘든 경험을 통해 배우다",
+        "example": "I learned the hard way that backups are important. — 백업이 중요하다는 걸 힘든 경험으로 배웠습니다."
+      },
+      {
+        "term": "a second chance",
+        "meaning": "다시 해 볼 기회",
+        "example": "The organiser gave us a second chance. — 주최자가 우리에게 다시 기회를 줬습니다."
+      },
+      {
+        "term": "make up for",
+        "meaning": "만회하다",
+        "example": "We worked late to make up for the delay. — 지연을 만회하기 위해 늦게까지 일했습니다."
+      }
+    ],
+    "readingTitle": "A Missed Train and a Better Habit",
+    "paragraphs": [
+      "Owen planned a weekend trip to visit his sister. He left home later than usual and found heavy traffic near the station. When he missed the train, he said, “I wish I had left earlier.”",
+      "He called his sister, who offered him a second chance to join the family dinner the following day. Owen replied that he would rather travel in the morning. He wished the traffic were easier to predict.",
+      "At first, Owen complained, “If only the buses would run more often!” Then he realised the main problem was his own planning. He had ignored a reminder to check the timetable.",
+      "He learned the hard way that a little preparation could prevent stress. He made a simple checklist and asked his sister, “I'd rather you reminded me when the next family event is planned.”",
+      "On Sunday, Owen arrived early and helped prepare dinner. His small contribution did not erase the missed train, but it helped make up for the inconvenience. He decided to focus on better choices rather than regrets."
+    ],
+    "translations": [
+      "Owen은 주말에 여동생을 방문할 여행을 계획했습니다. 평소보다 늦게 집을 나섰고 역 근처에서 심한 교통 체증을 만났습니다. 열차를 놓치자 ‘더 일찍 출발했더라면’이라고 말했습니다.",
+      "그는 여동생에게 전화했고, 여동생은 다음 날 가족 저녁 식사에 다시 참여할 기회를 주었습니다. Owen은 아침에 이동하는 편이 낫다고 답했습니다. 교통 상황을 예측하기 더 쉬웠으면 좋겠다고 생각했습니다.",
+      "처음에 Owen은 ‘버스가 더 자주 다니면 좋을 텐데!’라며 불평했습니다. 그러다 핵심 문제는 자신의 계획이라는 걸 깨달았습니다. 시간표를 확인하라는 알림을 무시했던 것입니다.",
+      "그는 약간의 준비가 스트레스를 막을 수 있다는 것을 힘든 경험으로 배웠습니다. 간단한 점검표를 만들고 여동생에게 다음 가족 행사가 계획되면 알려 달라고 부탁했습니다.",
+      "일요일에 Owen은 일찍 도착해 저녁 준비를 도왔습니다. 작은 기여가 놓친 열차를 없던 일로 만들진 못했지만 불편을 만회하는 데 도움이 됐습니다. 그는 후회보다 더 나은 선택에 집중하기로 했습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "traffic",
+        "partOfSpeech": "noun",
+        "meaning": "교통체증",
+        "context": "역 근처의 차량 정체"
+      },
+      {
+        "term": "station",
+        "partOfSpeech": "noun",
+        "meaning": "역",
+        "context": "열차를 놓친 장소"
+      },
+      {
+        "term": "timetable",
+        "partOfSpeech": "noun",
+        "meaning": "시간표",
+        "context": "교통편 일정 안내"
+      },
+      {
+        "term": "complained",
+        "partOfSpeech": "verb",
+        "meaning": "불평했다",
+        "context": "버스 배차에 대한 반응"
+      },
+      {
+        "term": "reminder",
+        "partOfSpeech": "noun",
+        "meaning": "알림",
+        "context": "시간표 확인 요청"
+      },
+      {
+        "term": "planning",
+        "partOfSpeech": "noun",
+        "meaning": "계획",
+        "context": "미리 이동을 준비하는 일"
+      },
+      {
+        "term": "checklist",
+        "partOfSpeech": "noun",
+        "meaning": "점검표",
+        "context": "출발 전 확인 목록"
+      },
+      {
+        "term": "contribution",
+        "partOfSpeech": "noun",
+        "meaning": "기여",
+        "context": "저녁 준비를 돕는 행동"
+      },
+      {
+        "term": "inconvenience",
+        "partOfSpeech": "noun",
+        "meaning": "불편",
+        "context": "열차를 놓쳐 생긴 문제"
+      },
+      {
+        "term": "regrets",
+        "partOfSpeech": "noun",
+        "meaning": "후회",
+        "context": "과거 선택에 대한 아쉬움"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "I wish I _____ more time today.",
+        "choices": [
+          "have",
+          "had",
+          "will have",
+          "had had"
+        ],
+        "answer": 1,
+        "explanation": "현재와 다른 소망은 wish + 과거형입니다."
+      },
+      {
+        "question": "She wishes she _____ the earlier train yesterday.",
+        "choices": [
+          "catches",
+          "caught",
+          "will catch",
+          "had caught"
+        ],
+        "answer": 3,
+        "explanation": "이미 지난 일에 대한 후회는 과거완료입니다."
+      },
+      {
+        "question": "I wish he _____ interrupting me.",
+        "choices": [
+          "would stop",
+          "had stopped yesterday",
+          "stops",
+          "to stop"
+        ],
+        "answer": 0,
+        "explanation": "상대의 반복되는 행동 변화를 바라므로 would stop입니다."
+      },
+      {
+        "question": "I'd rather _____ at home tonight.",
+        "choices": [
+          "staying",
+          "to stay",
+          "stay",
+          "stayed"
+        ],
+        "answer": 2,
+        "explanation": "같은 주어의 선호는 동사원형입니다."
+      },
+      {
+        "question": "I'd rather you _____ before arriving.",
+        "choices": [
+          "call",
+          "called",
+          "will call",
+          "to call"
+        ],
+        "answer": 1,
+        "explanation": "다른 주어가 할 행동을 바라므로 과거형 called입니다."
+      },
+      {
+        "question": "Why did Owen miss the train?",
+        "choices": [
+          "He was ill",
+          "He left late and encountered traffic",
+          "He lost his ticket",
+          "The train was cancelled"
+        ],
+        "answer": 1,
+        "explanation": "늦게 출발했고 교통 체증이 있었습니다."
+      },
+      {
+        "question": "What did Owen ignore?",
+        "choices": [
+          "A text about dinner",
+          "A weather alert",
+          "A timetable reminder",
+          "A phone call from work"
+        ],
+        "answer": 2,
+        "explanation": "시간표 확인 알림을 무시했습니다."
+      },
+      {
+        "question": "How did he make up for the inconvenience?",
+        "choices": [
+          "By helping prepare dinner",
+          "By buying a car",
+          "By paying a fine",
+          "By changing jobs"
+        ],
+        "answer": 0,
+        "explanation": "저녁 준비를 도왔습니다."
+      },
+      {
+        "question": "What does \"traffic\" mean in the reading?",
+        "choices": [
+          "시간표",
+          "알림",
+          "교통체증",
+          "점검표"
+        ],
+        "answer": 2,
+        "explanation": "\"traffic\"는 교통체증이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"station\" mean in the reading?",
+        "choices": [
+          "불평했다",
+          "계획",
+          "역",
+          "기여"
+        ],
+        "answer": 2,
+        "explanation": "\"station\"는 역이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What do you wish were different in your daily routine?",
+      "Describe a past choice you wish you had changed.",
+      "When is wish + would natural?",
+      "What would you rather do this weekend?",
+      "How can regret motivate better habits?"
+    ],
+    "rolePlay": {
+      "scenario": "You missed an important journey and are planning next time.",
+      "learnerRole": "Express present wishes, past regrets, and preferences.",
+      "coachRole": "Distinguish real past facts from hypothetical wishes and correct tense usage.",
+      "goal": "Use wish, if only and would rather accurately."
+    }
+  },
+  {
+    "date": "2026-10-24",
+    "title": "Daily English — 2026-10-24",
+    "grammarTopic": "Concession and Contrast: Although, Despite, Whereas, Nevertheless",
+    "grammar": {
+      "title": "양보와 대조를 자연스럽게 이어 주는 연결어",
+      "summary": "although/even though 뒤에는 완전한 절, despite/in spite of 뒤에는 명사 또는 -ing가 옵니다. whereas/while은 서로 다른 사실을 비교하고, however/nevertheless는 별도 문장이나 절 사이를 연결합니다. 문법뿐 아니라 글의 톤과 쉼표·세미콜론까지 구별합니다.",
+      "points": [
+        {
+          "title": "although / even though + clause",
+          "explanation": "예상과 어긋나는 사실을 인정하는 양보절을 만듭니다. even though가 대비를 더 강하게 표현합니다.",
+          "examples": [
+            "Although the task was difficult, we completed it. — 과제가 어려웠지만 완료했습니다.",
+            "Even though she was tired, she kept studying. — 피곤했는데도 공부를 계속했습니다.",
+            "I enjoyed the talk although it was long. — 강연이 길었지만 재미있었습니다.",
+            "Although the price rose, demand remained strong. — 가격이 올랐지만 수요는 강했습니다.",
+            "Even though it rained, the market stayed open. — 비가 왔지만 시장은 계속 열렸습니다."
+          ]
+        },
+        {
+          "title": "despite / in spite of + noun or -ing",
+          "explanation": "전치사이므로 명사·대명사·동명사가 필요합니다. despite of는 틀립니다. despite the fact that은 절을 받을 수 있습니다.",
+          "examples": [
+            "Despite the rain, we went walking. — 비에도 불구하고 산책했습니다.",
+            "In spite of her busy schedule, she volunteered. — 바쁜 일정에도 그녀는 봉사했습니다.",
+            "Despite being nervous, he gave a clear talk. — 긴장했지만 그는 명확히 발표했습니다.",
+            "In spite of the delay, they were cheerful. — 지연에도 그들은 밝았습니다.",
+            "Despite the fact that costs increased, we continued. — 비용이 증가했음에도 계속했습니다."
+          ]
+        },
+        {
+          "title": "whereas / while: direct comparison",
+          "explanation": "두 사람이나 사물의 다른 특징을 나란히 제시합니다. while은 시간 의미도 있어 문맥에 따라 구별합니다.",
+          "examples": [
+            "I prefer quiet cafés, whereas my friend likes busy ones. — 나는 조용한 카페를 선호하지만 친구는 붐비는 곳을 좋아합니다.",
+            "The north is dry, while the south gets more rain. — 북쪽은 건조하지만 남쪽은 비가 더 옵니다.",
+            "She works mornings, whereas he works evenings. — 그녀는 오전에, 그는 저녁에 일합니다.",
+            "The first plan was cheap, while the second was faster. — 첫 계획은 저렴했지만 두 번째는 빨랐습니다.",
+            "This tool is simple, whereas that one has more features. — 이 도구는 단순하지만 저 도구는 기능이 더 많습니다."
+          ]
+        },
+        {
+          "title": "however / nevertheless: sentence connectors",
+          "explanation": "연결부사로서 보통 새 문장 시작이나 세미콜론 뒤에 쓰고 쉼표를 동반합니다. but과 문법적 위치가 다릅니다.",
+          "examples": [
+            "The road was closed. However, we found another route. — 도로가 닫혔지만 다른 길을 찾았습니다.",
+            "She felt uncertain; nevertheless, she agreed to try. — 그녀는 확신이 없었지만 그래도 시도하기로 했습니다.",
+            "The first test failed. However, the next one passed. — 첫 시험은 실패했지만 다음은 통과했습니다.",
+            "Funding was limited; nevertheless, the event succeeded. — 자금은 부족했지만 행사는 성공했습니다.",
+            "The device is expensive. However, it is durable. — 기기는 비싸지만 내구성이 좋습니다."
+          ]
+        },
+        {
+          "title": "even so / on the other hand",
+          "explanation": "even so는 예상과 다른 결과를 인정하며, on the other hand는 다른 관점이나 선택지를 제시합니다.",
+          "examples": [
+            "The deadline is close. Even so, we should review the data. — 마감이 가깝지만 그래도 데이터를 검토해야 합니다.",
+            "The bus is cheaper. On the other hand, the train is faster. — 버스는 싸지만 반면 기차는 더 빠릅니다.",
+            "He had little experience. Even so, he learned quickly. — 경험은 적었지만 빠르게 배웠습니다.",
+            "Working alone is flexible. On the other hand, teamwork brings support. — 혼자 일하면 자유롭지만 팀워크는 도움을 줍니다.",
+            "The weather looks poor. Even so, we can enjoy the museum. — 날씨가 나빠 보여도 박물관을 즐길 수 있습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "look on the bright side",
+        "meaning": "좋은 면을 보다",
+        "example": "Look on the bright side: we still have time to improve. — 좋은 면을 보자면 개선할 시간은 남아 있습니다."
+      },
+      {
+        "term": "a mixed bag",
+        "meaning": "장점과 단점이 섞인 것",
+        "example": "The new timetable is a mixed bag for commuters. — 새 시간표는 통근자에게 장단점이 있습니다."
+      },
+      {
+        "term": "weigh the pros and cons",
+        "meaning": "장단점을 따져 보다",
+        "example": "We weighed the pros and cons before choosing. — 선택하기 전에 장단점을 따져 봤습니다."
+      }
+    ],
+    "readingTitle": "Choosing a Greener Way to Commute",
+    "paragraphs": [
+      "A local business wanted employees to travel more sustainably. The manager compared buses, bicycles and shared cars. Although everyone supported the idea, staff had different schedules and needs.",
+      "Buses were affordable, whereas shared cars offered more flexibility. Cycling was healthy; however, heavy rain made some journeys difficult. The options were a mixed bag rather than a simple choice.",
+      "Despite the uncertainty, the manager ran a short survey. Some staff preferred reliable arrival times, while others valued lower costs. They decided to weigh the pros and cons using actual journey records.",
+      "Even though the first trial attracted only a few volunteers, their feedback was useful. A train route was longer; nevertheless, it was more predictable during rush hour. The company improved its guidance rather than forcing one solution.",
+      "The team finally offered several travel options. The manager said, “Look on the bright side: small changes can add up.” Their goal was not a perfect commute for everyone but a practical improvement over time."
+    ],
+    "translations": [
+      "지역 기업은 직원들이 더 친환경적으로 출퇴근하길 원했습니다. 관리자는 버스, 자전거, 공유 차량을 비교했습니다. 모두 아이디어를 지지했지만 직원들의 일정과 필요는 달랐습니다.",
+      "버스는 저렴했지만 공유 차량은 유연성이 더 컸습니다. 자전거는 건강에 좋았지만 폭우 때문에 일부 이동이 어려웠습니다. 선택지에는 장단점이 함께 있어 단순히 고르기 어려웠습니다.",
+      "불확실성에도 불구하고 관리자는 짧은 설문을 실시했습니다. 일부 직원은 정확한 도착 시간을, 다른 직원은 낮은 비용을 중시했습니다. 실제 이동 기록을 이용해 장단점을 따져 보기로 했습니다.",
+      "첫 시범 운영에 참가한 봉사자는 적었지만 피드백은 유용했습니다. 기차 경로는 길었지만 출퇴근 혼잡 시간에는 더 예측 가능했습니다. 회사는 하나의 해결책을 강요하는 대신 안내를 개선했습니다.",
+      "팀은 마침내 여러 통근 수단을 제안했습니다. 관리자는 ‘좋은 면을 보세요. 작은 변화가 쌓일 수 있습니다’라고 말했습니다. 목표는 모두에게 완벽한 통근이 아니라 시간이 흐르며 실용적으로 개선하는 것이었습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "sustainably",
+        "partOfSpeech": "adverb",
+        "meaning": "지속 가능하게",
+        "context": "환경을 생각한 출퇴근 방식"
+      },
+      {
+        "term": "manager",
+        "partOfSpeech": "noun",
+        "meaning": "관리자",
+        "context": "직원 통근 계획 담당"
+      },
+      {
+        "term": "schedules",
+        "partOfSpeech": "noun",
+        "meaning": "일정들",
+        "context": "직원들의 시간표"
+      },
+      {
+        "term": "affordable",
+        "partOfSpeech": "adjective",
+        "meaning": "부담 가능한",
+        "context": "가격이 너무 비싸지 않은"
+      },
+      {
+        "term": "flexibility",
+        "partOfSpeech": "noun",
+        "meaning": "유연성",
+        "context": "상황에 맞게 바꾸는 가능성"
+      },
+      {
+        "term": "uncertainty",
+        "partOfSpeech": "noun",
+        "meaning": "불확실성",
+        "context": "결과를 확신할 수 없는 상태"
+      },
+      {
+        "term": "survey",
+        "partOfSpeech": "noun",
+        "meaning": "설문조사",
+        "context": "직원 의견 수집"
+      },
+      {
+        "term": "arrival",
+        "partOfSpeech": "noun",
+        "meaning": "도착",
+        "context": "목적지에 이르는 것"
+      },
+      {
+        "term": "predictable",
+        "partOfSpeech": "adjective",
+        "meaning": "예측 가능한",
+        "context": "도착 시간을 가늠할 수 있는"
+      },
+      {
+        "term": "guidance",
+        "partOfSpeech": "noun",
+        "meaning": "안내",
+        "context": "직원에게 제공한 정보"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "_____ the rain, the event continued.",
+        "choices": [
+          "Although",
+          "Despite",
+          "However",
+          "Whereas"
+        ],
+        "answer": 1,
+        "explanation": "명사 the rain 앞에는 despite입니다."
+      },
+      {
+        "question": "_____ she was tired, she stayed.",
+        "choices": [
+          "Although",
+          "Despite",
+          "In spite of",
+          "However"
+        ],
+        "answer": 0,
+        "explanation": "완전한 절 앞에는 although입니다."
+      },
+      {
+        "question": "The room was small; _____, it was comfortable.",
+        "choices": [
+          "despite",
+          "although",
+          "whereas",
+          "nevertheless"
+        ],
+        "answer": 3,
+        "explanation": "세미콜론 뒤 연결부사 nevertheless가 어울립니다."
+      },
+      {
+        "question": "He likes cities, _____ she prefers villages.",
+        "choices": [
+          "despite",
+          "although of",
+          "whereas",
+          "nevertheless of"
+        ],
+        "answer": 2,
+        "explanation": "두 주어의 선호를 직접 대비하는 whereas입니다."
+      },
+      {
+        "question": "Which is grammatically correct?",
+        "choices": [
+          "Despite of the cold, we went out.",
+          "Despite being tired, we continued.",
+          "Although the noise, we studied.",
+          "However it rained, we left."
+        ],
+        "answer": 1,
+        "explanation": "despite 다음에는 동명사도 올 수 있습니다."
+      },
+      {
+        "question": "What was the company's goal?",
+        "choices": [
+          "To reduce environmental impact of commuting",
+          "To buy a bus company",
+          "To ban bicycles",
+          "To close the office"
+        ],
+        "answer": 0,
+        "explanation": "더 지속 가능한 출퇴근을 장려하려 했습니다."
+      },
+      {
+        "question": "Why was cycling challenging?",
+        "choices": [
+          "The roads were always closed",
+          "Heavy rain could make it difficult",
+          "Staff disliked exercise",
+          "Bikes were unavailable"
+        ],
+        "answer": 1,
+        "explanation": "폭우가 일부 자전거 이동을 어렵게 했습니다."
+      },
+      {
+        "question": "What did the team finally offer?",
+        "choices": [
+          "One mandatory option",
+          "A new car for each worker",
+          "Several travel options",
+          "No transport guidance"
+        ],
+        "answer": 2,
+        "explanation": "여러 출퇴근 선택지를 마련했습니다."
+      },
+      {
+        "question": "What does \"sustainably\" mean in the reading?",
+        "choices": [
+          "일정들",
+          "유연성",
+          "지속 가능하게",
+          "설문조사"
+        ],
+        "answer": 2,
+        "explanation": "\"sustainably\"는 지속 가능하게이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"manager\" mean in the reading?",
+        "choices": [
+          "부담 가능한",
+          "불확실성",
+          "관리자",
+          "도착"
+        ],
+        "answer": 2,
+        "explanation": "\"manager\"는 관리자이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "How would you weigh the pros and cons of two jobs?",
+      "Contrast two transport options using whereas.",
+      "Explain the difference between despite and although.",
+      "What can make a mixed solution better than a single rule?",
+      "Describe an unexpected success using nevertheless."
+    ],
+    "rolePlay": {
+      "scenario": "A company is choosing sustainable commuting support.",
+      "learnerRole": "Compare transport options using concessions and contrast connectors.",
+      "coachRole": "Challenge the advantages and disadvantages and correct clause structure.",
+      "goal": "Link ideas with accurate punctuation and syntax."
+    }
+  },
+  {
+    "date": "2026-10-25",
+    "title": "Daily English — 2026-10-25",
+    "grammarTopic": "Narrative Tenses: Past Simple, Past Continuous, Past Perfect",
+    "grammar": {
+      "title": "이야기를 설득력 있게 구성하는 과거 시제",
+      "summary": "과거단순은 사건의 진행 순서를, 과거진행은 당시의 배경·진행 중 행동을, 과거완료는 다른 과거 사건보다 앞선 일을 나타냅니다. had been -ing는 과거의 특정 시점까지 이어진 활동의 길이나 과정을 강조합니다. 이야기를 쓰기 전에 기준 시점과 사건의 선후관계를 표시해 보세요.",
+      "points": [
+        {
+          "title": "past simple: completed events",
+          "explanation": "이야기에서 차례로 일어난 핵심 사건을 과거형으로 표현합니다.",
+          "examples": [
+            "She opened the envelope and read the letter. — 그녀는 봉투를 열고 편지를 읽었습니다.",
+            "We entered the hall and found our seats. — 우리는 홀에 들어가 자리를 찾았습니다.",
+            "The guide greeted us at nine. — 안내자는 아홉 시에 인사했습니다.",
+            "He checked the map and turned left. — 그는 지도를 확인하고 왼쪽으로 돌았습니다.",
+            "They finished dinner and walked home. — 그들은 식사를 마치고 걸어서 귀가했습니다."
+          ]
+        },
+        {
+          "title": "past continuous: background",
+          "explanation": "과거 특정 시점에 진행 중이던 일이나 배경 상황을 표현하며, 짧은 사건이 그중에 끼어들 수 있습니다.",
+          "examples": [
+            "I was reading when the lights went out. — 책을 읽고 있는데 불이 꺼졌습니다.",
+            "They were waiting while the rain was falling. — 비가 내리는 동안 기다리고 있었습니다.",
+            "The sun was setting as we reached the coast. — 해안에 도착할 때 해가 지고 있었습니다.",
+            "She was cooking when her phone rang. — 요리 중에 전화가 울렸습니다.",
+            "We were talking when the guide arrived. — 대화하고 있을 때 안내자가 도착했습니다."
+          ]
+        },
+        {
+          "title": "past perfect: the earlier past",
+          "explanation": "두 과거 사건 중 더 먼저 완료된 사건에는 had + 과거분사를 써서 시간 순서를 분명히 합니다.",
+          "examples": [
+            "The train had left before I reached the station. — 역에 도착하기 전에 열차가 떠났습니다.",
+            "She was tired because she had worked late. — 늦게 일했기 때문에 피곤했습니다.",
+            "By the time we arrived, the film had begun. — 도착했을 때 영화는 이미 시작했습니다.",
+            "I recognised the place because I had visited it before. — 전에 방문한 적이 있어 장소를 알아봤습니다.",
+            "They had packed everything before the taxi came. — 택시가 오기 전에 모든 짐을 쌌습니다."
+          ]
+        },
+        {
+          "title": "past perfect continuous: duration",
+          "explanation": "과거 기준점까지 얼마나 오래 활동이 이어졌는지 표현합니다. 결과 상태나 기간에 주목합니다.",
+          "examples": [
+            "He had been waiting for an hour when I called. — 내가 전화했을 때 그는 한 시간째 기다리고 있었습니다.",
+            "They had been studying all morning before the test. — 시험 전 내내 오전 동안 공부하고 있었습니다.",
+            "She was tired because she had been walking. — 걷고 있었기 때문에 피곤했습니다.",
+            "We had been planning for weeks before the festival. — 축제 전 몇 주 동안 계획하고 있었습니다.",
+            "It had been raining for days when the river rose. — 강이 불어났을 때 비가 여러 날 내리고 있었습니다."
+          ]
+        },
+        {
+          "title": "time signals and narrative consistency",
+          "explanation": "when, while, before, by the time 등은 시제를 고르는 힌트이지 항상 한 가지 시제를 강요하지는 않습니다.",
+          "examples": [
+            "When I arrived, she was leaving. — 내가 도착했을 때 그녀는 떠나는 중이었습니다.",
+            "When I arrived, she had left. — 내가 도착했을 때 그녀는 이미 떠났습니다.",
+            "While he was talking, the audience took notes. — 그가 말하는 동안 청중은 필기했습니다.",
+            "By the time the guests came, we had prepared the food. — 손님이 왔을 때는 음식 준비를 마쳤습니다.",
+            "After we had checked the tickets, we entered the hall. — 표를 확인한 뒤 홀로 들어갔습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "out of the blue",
+        "meaning": "갑자기·뜻밖에",
+        "example": "A message arrived out of the blue. — 갑자기 메시지가 도착했습니다."
+      },
+      {
+        "term": "piece things together",
+        "meaning": "정보를 모아 전말을 파악하다",
+        "example": "We pieced things together from several notes. — 우리는 여러 메모를 모아 상황을 파악했습니다."
+      },
+      {
+        "term": "in the nick of time",
+        "meaning": "아슬아슬하게 제시간에",
+        "example": "The documents arrived in the nick of time. — 서류가 아슬아슬하게 제시간에 도착했습니다."
+      }
+    ],
+    "readingTitle": "A Photograph Found in the Attic",
+    "paragraphs": [
+      "Sophie was cleaning her grandmother's attic when she found an old photograph. Dust covered the box, and the label had become difficult to read. She had been searching for family letters all morning.",
+      "The photograph showed a young woman standing beside a bicycle. Sophie recognised the garden because she had visited the house many times as a child. But she did not know who the woman was.",
+      "Out of the blue, her grandmother called. Sophie described the picture and heard a surprised laugh. Her grandmother explained that she had bought the bicycle with money she had saved from a summer job.",
+      "They began to piece things together using a faded letter and a handwritten date. The grandmother had been training for a long ride before the photograph was taken. She had reached the finish line in the nick of time.",
+      "By evening, Sophie had written a short family story. She attached the photograph and saved a digital copy. What had begun as a routine cleaning task became an unexpected conversation about courage and independence."
+    ],
+    "translations": [
+      "Sophie는 할머니 집 다락방을 청소하다 오래된 사진을 발견했습니다. 상자에는 먼지가 쌓여 있었고 라벨도 읽기 어려워졌습니다. 그녀는 오전 내내 가족 편지를 찾고 있었습니다.",
+      "사진에는 자전거 옆에 서 있는 젊은 여성이 담겨 있었습니다. Sophie는 어린 시절 그 집을 여러 번 방문했기 때문에 정원을 알아봤습니다. 하지만 여성이 누구인지는 몰랐습니다.",
+      "갑자기 할머니에게서 전화가 왔습니다. Sophie가 사진을 설명하자 놀란 웃음소리가 들렸습니다. 할머니는 여름 아르바이트로 모은 돈으로 자전거를 샀다고 설명했습니다.",
+      "그들은 빛바랜 편지와 손글씨 날짜를 이용해 사실을 맞춰 나갔습니다. 사진을 찍기 전에 할머니는 장거리 자전거 타기를 준비하고 있었습니다. 할머니는 아슬아슬하게 제한시간 내 결승점에 도착했습니다.",
+      "저녁 무렵 Sophie는 짧은 가족 이야기를 작성했습니다. 사진을 붙이고 디지털 사본을 저장했습니다. 평범한 청소에서 시작된 일이 용기와 독립에 대한 뜻밖의 대화가 됐습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "attic",
+        "partOfSpeech": "noun",
+        "meaning": "다락방",
+        "context": "사진이 발견된 공간"
+      },
+      {
+        "term": "photograph",
+        "partOfSpeech": "noun",
+        "meaning": "사진",
+        "context": "과거의 장면"
+      },
+      {
+        "term": "dust",
+        "partOfSpeech": "noun",
+        "meaning": "먼지",
+        "context": "오래된 상자 표면"
+      },
+      {
+        "term": "label",
+        "partOfSpeech": "noun",
+        "meaning": "라벨",
+        "context": "상자를 설명하는 표식"
+      },
+      {
+        "term": "bicycle",
+        "partOfSpeech": "noun",
+        "meaning": "자전거",
+        "context": "할머니의 오래된 자전거"
+      },
+      {
+        "term": "recognised",
+        "partOfSpeech": "verb",
+        "meaning": "알아봤다",
+        "context": "익숙한 정원을 식별"
+      },
+      {
+        "term": "faded",
+        "partOfSpeech": "adjective",
+        "meaning": "빛바랜",
+        "context": "시간이 지나 색이 옅어진"
+      },
+      {
+        "term": "handwritten",
+        "partOfSpeech": "adjective",
+        "meaning": "손으로 쓴",
+        "context": "날짜를 적은 방식"
+      },
+      {
+        "term": "training",
+        "partOfSpeech": "noun",
+        "meaning": "훈련",
+        "context": "긴 자전거 여행 준비"
+      },
+      {
+        "term": "independence",
+        "partOfSpeech": "noun",
+        "meaning": "독립",
+        "context": "스스로 결정하는 자유"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "I _____ when the phone rang.",
+        "choices": [
+          "studied",
+          "was studying",
+          "had studying",
+          "have studied"
+        ],
+        "answer": 1,
+        "explanation": "배경이 되는 진행 중 행동은 과거진행입니다."
+      },
+      {
+        "question": "By the time we arrived, the train _____.",
+        "choices": [
+          "left",
+          "was leaving",
+          "had left",
+          "has leave"
+        ],
+        "answer": 2,
+        "explanation": "더 앞선 과거 사건은 과거완료입니다."
+      },
+      {
+        "question": "She was tired because she _____ for hours.",
+        "choices": [
+          "had been walking",
+          "will be walking",
+          "walks",
+          "is walking"
+        ],
+        "answer": 0,
+        "explanation": "과거 기준점까지 이어진 활동은 과거완료진행입니다."
+      },
+      {
+        "question": "They opened the door and _____ inside.",
+        "choices": [
+          "going",
+          "had go",
+          "were go",
+          "went"
+        ],
+        "answer": 3,
+        "explanation": "연속된 완료 사건은 과거단순입니다."
+      },
+      {
+        "question": "Which means she left before I arrived?",
+        "choices": [
+          "She was leaving when I arrived.",
+          "She had left when I arrived.",
+          "She leaves when I arrived.",
+          "She is leaving when I arrived."
+        ],
+        "answer": 1,
+        "explanation": "had left는 내가 도착하기 전에 출발을 마쳤다는 뜻입니다."
+      },
+      {
+        "question": "Where did Sophie find the photograph?",
+        "choices": [
+          "In the attic",
+          "At school",
+          "In a restaurant",
+          "On a train"
+        ],
+        "answer": 0,
+        "explanation": "다락방에서 발견했습니다."
+      },
+      {
+        "question": "Whose bicycle appeared in the photo?",
+        "choices": [
+          "Sophie's",
+          "The neighbour's",
+          "Her grandmother's",
+          "A museum's"
+        ],
+        "answer": 2,
+        "explanation": "할머니가 예전에 구매한 자전거입니다."
+      },
+      {
+        "question": "What did Sophie do by evening?",
+        "choices": [
+          "Sold the bicycle",
+          "Wrote and saved a family story",
+          "Visited a hospital",
+          "Painted the attic"
+        ],
+        "answer": 1,
+        "explanation": "가족 이야기를 써서 사진과 함께 저장했습니다."
+      },
+      {
+        "question": "What does \"attic\" mean in the reading?",
+        "choices": [
+          "먼지",
+          "자전거",
+          "다락방",
+          "빛바랜"
+        ],
+        "answer": 2,
+        "explanation": "\"attic\"는 다락방이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"photograph\" mean in the reading?",
+        "choices": [
+          "라벨",
+          "알아봤다",
+          "사진",
+          "손으로 쓴"
+        ],
+        "answer": 2,
+        "explanation": "\"photograph\"는 사진이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Tell a short story using three different past tenses.",
+      "What is the difference between was leaving and had left?",
+      "Describe a time you discovered something unexpectedly.",
+      "How do you verify an old memory?",
+      "Why do time expressions help readers follow a story?"
+    ],
+    "rolePlay": {
+      "scenario": "Tell your friend about an unexpected family discovery.",
+      "learnerRole": "Narrate sequential events, background actions and earlier memories.",
+      "coachRole": "Ask which event happened first and correct tense sequencing.",
+      "goal": "Tell a coherent story using four past forms."
+    }
+  }
+]
