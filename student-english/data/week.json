@@ -5913,5 +5913,2000 @@
       "coachRole": "Ask about colour, label and location, first with A1 questions and then one A2 follow-up.",
       "goal": "Use a/an by sound, the for known objects and no article for general plurals."
     }
+  },
+  {
+    "date": "2026-10-19",
+    "title": "Student Daily English — 2026-10-19",
+    "grammarTopic": "Past Simple: Regular Verbs and Did",
+    "grammar": {
+      "title": "규칙동사 과거형: 어제 한 일을 말하기",
+      "summary": "과거에 끝난 일을 말할 때 동사에 -ed를 붙이는 경우가 많습니다. 어제(yesterday), 지난주(last week), 이틀 전(two days ago)처럼 이미 끝난 시간을 함께 쓸 수 있습니다. 질문과 부정문에서는 did/didn't를 사용하므로 뒤의 동사는 원형입니다. A1은 긍정문을, A2는 질문과 이유를 덧붙입니다.",
+      "points": [
+        {
+          "title": "regular past: -ed",
+          "explanation": "대부분의 규칙동사는 -ed를 붙여 과거형을 만듭니다. 원래 형태와 발음은 구별해 익힙니다.",
+          "examples": [
+            "[A1] I played football yesterday. — 나는 어제 축구를 했어.",
+            "[A1] She watched a film last night. — 그녀는 어젯밤 영화를 봤어.",
+            "[A1] We cleaned our room. — 우리는 방을 청소했어.",
+            "[A2] They visited the museum after lunch. — 그들은 점심 뒤 박물관을 방문했어.",
+            "[A2] I helped my brother because he was busy. — 동생이 바빴기 때문에 도와줬어."
+          ]
+        },
+        {
+          "title": "spelling: -d / -ied / doubled consonant",
+          "explanation": "-e로 끝나면 -d, 자음+y면 y를 i로 바꿔 -ed, 일부 짧은 동사는 끝 자음을 하나 더 씁니다.",
+          "examples": [
+            "[A1] I liked the story. — 나는 그 이야기가 좋았어.",
+            "[A1] She tried again. — 그녀는 다시 시도했어.",
+            "[A1] We stopped at the gate. — 우리는 문에서 멈췄어.",
+            "[A2] He carried the books to the library. — 그는 책들을 도서관으로 옮겼어.",
+            "[A2] I planned my weekend on Friday. — 나는 금요일에 주말을 계획했어."
+          ]
+        },
+        {
+          "title": "didn't + base form",
+          "explanation": "과거 부정문에서는 did not 또는 didn't 다음에 동사원형을 사용합니다. didn't played는 틀립니다.",
+          "examples": [
+            "[A1] I didn't play tennis. — 나는 테니스를 치지 않았어.",
+            "[A1] She didn't watch TV. — 그녀는 TV를 보지 않았어.",
+            "[A1] We didn't walk home. — 우리는 걸어서 집에 가지 않았어.",
+            "[A2] He didn't finish the drawing because he was tired. — 피곤해서 그림을 끝내지 못했어.",
+            "[A2] They didn't visit the park when it rained. — 비가 올 때 그들은 공원에 가지 않았어."
+          ]
+        },
+        {
+          "title": "Did + subject + base form?",
+          "explanation": "과거를 물을 때 Did를 앞으로 이동하고 일반동사는 원형으로 씁니다.",
+          "examples": [
+            "[A1] Did you play today? — 너 오늘 놀았니?",
+            "[A1] Did she call you? — 그녀가 너에게 전화했니?",
+            "[A1] Did they arrive early? — 그들은 일찍 도착했니?",
+            "[A2] Did you practise before the match? — 시합 전에 연습했니?",
+            "[A2] Did the teacher explain the homework clearly? — 선생님이 숙제를 분명하게 설명하셨니?"
+          ]
+        },
+        {
+          "title": "short answers and time words",
+          "explanation": "Did 질문에는 Yes, I did. / No, I didn't.로 답합니다. 시간 표현은 과거를 알아보는 힌트입니다.",
+          "examples": [
+            "[A1] Did you smile? Yes, I did. — 너 웃었니? 응.",
+            "[A1] Did he study? No, he didn't. — 그는 공부했니? 아니.",
+            "[A1] I waited yesterday. — 나는 어제 기다렸어.",
+            "[A2] We talked for an hour last Saturday. — 지난 토요일 우리는 한 시간 동안 이야기했어.",
+            "[A2] She started the project three days ago. — 그녀는 사흘 전에 프로젝트를 시작했어."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Good job!",
+        "meaning": "잘했어!",
+        "example": "Good job! You finished the poster. — 잘했어! 포스터를 완성했구나."
+      },
+      {
+        "term": "That sounds fun.",
+        "meaning": "재미있겠다.",
+        "example": "You visited the zoo? That sounds fun! — 동물원에 갔다고? 재미있겠다!"
+      },
+      {
+        "term": "What happened?",
+        "meaning": "무슨 일이 있었어?",
+        "example": "You look worried. What happened? — 걱정스러워 보이는데 무슨 일이 있었어?"
+      }
+    ],
+    "readingTitle": "The School Garden Project",
+    "paragraphs": [
+      "On Monday, our class visited the school garden. We cleaned the paths and collected dry leaves. Our teacher explained the plan before we started.",
+      "Mina carried a small bucket. Tom planted two flowers near the gate. I watered the plants and checked the soil.",
+      "We stopped for a short break. Tom asked, “Did you enjoy the work?” I smiled and said, “Yes, I did!”",
+      "After the break, we painted a sign. We didn't use too much paint. The teacher helped us write a clear message.",
+      "At the end, we looked at the garden. It looked beautiful. Our teacher said, “Good job!” We felt proud of our work."
+    ],
+    "translations": [
+      "월요일에 우리 반은 학교 정원을 방문했어요. 길을 청소하고 마른 잎을 모았어요. 시작 전에 선생님이 계획을 설명했어요.",
+      "Mina는 작은 양동이를 옮겼어요. Tom은 문 근처에 꽃 두 송이를 심었어요. 나는 식물에 물을 주고 흙을 확인했어요.",
+      "우리는 잠시 쉬었어요. Tom이 ‘일이 재미있었니?’라고 물었고 나는 웃으며 ‘응!’이라고 답했어요.",
+      "휴식 후에 우리는 표지판을 칠했어요. 페인트를 너무 많이 쓰지 않았어요. 선생님은 분명한 문구를 쓰도록 도와주셨어요.",
+      "마지막에 우리는 정원을 봤어요. 정원은 아름다워 보였어요. 선생님은 ‘잘했어!’라고 말씀하셨어요. 우리는 한 일이 자랑스러웠어요."
+    ],
+    "vocabulary": [
+      {
+        "term": "garden",
+        "partOfSpeech": "noun",
+        "meaning": "정원",
+        "context": "학교에서 가꾸는 곳"
+      },
+      {
+        "term": "paths",
+        "partOfSpeech": "noun",
+        "meaning": "길들",
+        "context": "정원 사이를 걷는 길"
+      },
+      {
+        "term": "collected",
+        "partOfSpeech": "verb",
+        "meaning": "모았다",
+        "context": "마른 잎을 한데 모음"
+      },
+      {
+        "term": "bucket",
+        "partOfSpeech": "noun",
+        "meaning": "양동이",
+        "context": "물이나 물건을 담는 통"
+      },
+      {
+        "term": "planted",
+        "partOfSpeech": "verb",
+        "meaning": "심었다",
+        "context": "흙에 꽃을 심음"
+      },
+      {
+        "term": "soil",
+        "partOfSpeech": "noun",
+        "meaning": "흙",
+        "context": "식물이 자라는 땅"
+      },
+      {
+        "term": "break",
+        "partOfSpeech": "noun",
+        "meaning": "휴식",
+        "context": "일하다 잠시 쉼"
+      },
+      {
+        "term": "paint",
+        "partOfSpeech": "noun",
+        "meaning": "페인트",
+        "context": "표지판에 칠할 색"
+      },
+      {
+        "term": "sign",
+        "partOfSpeech": "noun",
+        "meaning": "표지판",
+        "context": "안내 문구를 쓴 판"
+      },
+      {
+        "term": "proud",
+        "partOfSpeech": "adjective",
+        "meaning": "자랑스러운",
+        "context": "자신이 한 일을 기쁘게 여김"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Yesterday I _____ my room.",
+        "choices": [
+          "clean",
+          "cleaned",
+          "cleaning",
+          "cleans"
+        ],
+        "answer": 1,
+        "explanation": "yesterday와 함께 규칙동사 과거형 cleaned를 사용합니다."
+      },
+      {
+        "question": "She _____ her bag before school.",
+        "choices": [
+          "carryed",
+          "carry",
+          "carried",
+          "carrying"
+        ],
+        "answer": 2,
+        "explanation": "자음 + y는 y를 i로 바꾸고 -ed를 붙입니다."
+      },
+      {
+        "question": "We didn't _____ television.",
+        "choices": [
+          "watched",
+          "watches",
+          "watching",
+          "watch"
+        ],
+        "answer": 3,
+        "explanation": "didn't 다음에는 동사원형 watch가 옵니다."
+      },
+      {
+        "question": "_____ you walk home yesterday?",
+        "choices": [
+          "Did",
+          "Do",
+          "Does",
+          "Are"
+        ],
+        "answer": 0,
+        "explanation": "과거의 일반동사 질문은 Did로 시작합니다."
+      },
+      {
+        "question": "Did Tom help? Yes, he _____.",
+        "choices": [
+          "does",
+          "did",
+          "was",
+          "help"
+        ],
+        "answer": 1,
+        "explanation": "Did 질문에 대한 짧은 대답은 Yes, he did.입니다."
+      },
+      {
+        "question": "Where did the students work?",
+        "choices": [
+          "At a swimming pool",
+          "In the school garden",
+          "At a station",
+          "In a shop"
+        ],
+        "answer": 1,
+        "explanation": "학교 정원에서 일했습니다."
+      },
+      {
+        "question": "What did Tom plant?",
+        "choices": [
+          "Two flowers",
+          "Four trees",
+          "Three carrots",
+          "A big tree"
+        ],
+        "answer": 0,
+        "explanation": "Tom은 꽃 두 송이를 심었습니다."
+      },
+      {
+        "question": "What did the class paint?",
+        "choices": [
+          "A chair",
+          "A door",
+          "A sign",
+          "A bike"
+        ],
+        "answer": 2,
+        "explanation": "표지판에 색을 칠했습니다."
+      },
+      {
+        "question": "What does \"garden\" mean in the reading?",
+        "choices": [
+          "모았다",
+          "정원",
+          "심었다",
+          "휴식"
+        ],
+        "answer": 1,
+        "explanation": "\"garden\"는 정원이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"paths\" mean in the reading?",
+        "choices": [
+          "양동이",
+          "길들",
+          "흙",
+          "페인트"
+        ],
+        "answer": 1,
+        "explanation": "\"paths\"는 길들이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What did you do yesterday?",
+      "Did you help someone last week?",
+      "Tell me three activities you completed.",
+      "What didn't you do yesterday?",
+      "How do you feel after finishing a project?"
+    ],
+    "rolePlay": {
+      "scenario": "Tell a classmate about a school project yesterday.",
+      "learnerRole": "Describe three regular-past actions and answer Did questions.",
+      "coachRole": "Ask simple A1 questions followed by A2 why questions using British English.",
+      "goal": "Use -ed forms, didn't and Did correctly."
+    }
+  },
+  {
+    "date": "2026-10-20",
+    "title": "Student Daily English — 2026-10-20",
+    "grammarTopic": "Past Simple: Common Irregular Verbs",
+    "grammar": {
+      "title": "불규칙동사 과거형: went, saw, ate, bought",
+      "summary": "자주 쓰는 동사에는 -ed를 붙이지 않는 불규칙 과거형이 있습니다. go→went, see→saw, eat→ate, buy→bought처럼 짝으로 외우세요. 과거 부정문과 의문문은 여전히 didn't/did + 원형입니다. A2는 순서 표현(first, then, finally)으로 짧은 경험담을 만들어요.",
+      "points": [
+        {
+          "title": "go / come / get",
+          "explanation": "go→went, come→came, get→got처럼 이동·도착 동사의 과거형을 연습합니다.",
+          "examples": [
+            "[A1] I went to the library. — 나는 도서관에 갔어.",
+            "[A1] She came home late. — 그녀는 늦게 집에 왔어.",
+            "[A1] We got a new book. — 우리는 새 책을 받았어.",
+            "[A2] They went to the beach after breakfast. — 그들은 아침 식사 후 해변에 갔어.",
+            "[A2] I got home before it started raining. — 비가 오기 전에 집에 도착했어."
+          ]
+        },
+        {
+          "title": "see / take / give",
+          "explanation": "see→saw, take→took, give→gave를 활용해 보고·가지고·주는 행동을 말합니다.",
+          "examples": [
+            "[A1] I saw a bird. — 나는 새를 봤어.",
+            "[A1] Dad took a photo. — 아빠가 사진을 찍으셨어.",
+            "[A1] She gave me a card. — 그녀가 나에게 카드를 줬어.",
+            "[A2] We saw a rainbow after the rain. — 비가 온 뒤 무지개를 봤어.",
+            "[A2] He took his sister to the playground. — 그는 여동생을 놀이터에 데려갔어."
+          ]
+        },
+        {
+          "title": "eat / drink / buy",
+          "explanation": "eat→ate, drink→drank, buy→bought는 음식·물건에 관한 경험담에 자주 등장합니다.",
+          "examples": [
+            "[A1] I ate an apple. — 나는 사과를 먹었어.",
+            "[A1] We drank water. — 우리는 물을 마셨어.",
+            "[A1] She bought a pencil. — 그녀는 연필을 샀어.",
+            "[A2] I ate lunch before I went shopping. — 쇼핑 가기 전에 점심을 먹었어.",
+            "[A2] We bought a gift because it was her birthday. — 그녀의 생일이라 선물을 샀어."
+          ]
+        },
+        {
+          "title": "did / didn't with irregular verbs",
+          "explanation": "did는 과거를 나타내므로 did 다음에는 went가 아닌 go, saw가 아닌 see를 씁니다.",
+          "examples": [
+            "[A1] Did you go out? — 밖에 나갔니?",
+            "[A1] I didn't see him. — 나는 그를 보지 못했어.",
+            "[A1] Did she eat lunch? — 그녀는 점심을 먹었니?",
+            "[A2] Did they buy the tickets yesterday? — 그들은 어제 표를 샀니?",
+            "[A2] He didn't take his umbrella because it was sunny. — 날씨가 맑아서 그는 우산을 가져가지 않았어."
+          ]
+        },
+        {
+          "title": "tell a story: first / then / finally",
+          "explanation": "과거 사건을 순서대로 말할 때 시간 부사와 동사를 함께 사용합니다.",
+          "examples": [
+            "[A1] First, I woke up. — 먼저 나는 일어났어.",
+            "[A1] Then I ate breakfast. — 그러고 나서 아침을 먹었어.",
+            "[A1] Finally, I went home. — 마지막으로 집에 갔어.",
+            "[A2] First, we went to the market; then we bought fruit. — 먼저 시장에 갔다가 과일을 샀어.",
+            "[A2] Finally, we took the bus home and had dinner. — 마지막으로 버스를 타고 집에 와서 저녁을 먹었어."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Guess what!",
+        "meaning": "있잖아, 놀라운 소식이 있어!",
+        "example": "Guess what! I saw a rainbow. — 있잖아! 무지개를 봤어."
+      },
+      {
+        "term": "Lucky you!",
+        "meaning": "너 정말 운 좋다!",
+        "example": "You met your favourite player? Lucky you! — 좋아하는 선수를 만났다고? 정말 운 좋다!"
+      },
+      {
+        "term": "What a day!",
+        "meaning": "정말 여러 일이 있었던 날이야!",
+        "example": "We did so much today. What a day! — 오늘 정말 많은 걸 했어. 대단한 하루야!"
+      }
+    ],
+    "readingTitle": "Saturday at the Town Market",
+    "paragraphs": [
+      "Last Saturday, Ben went to the town market with his dad. They came early and saw many colourful stalls.",
+      "First, they bought fresh fruit. Ben ate a banana and drank some water. His dad took a photo of the busy market.",
+      "Then Ben saw a man making small toys. The man gave Ben a wooden bird to hold. Ben smiled and said, “Guess what! It can move!”",
+      "Later, they got a sandwich and sat by a fountain. Ben didn't buy the toy, but he enjoyed watching the maker at work.",
+      "Finally, they went home by bus. Ben told his mum about the market and the wooden bird. He said, “What a day!”"
+    ],
+    "translations": [
+      "지난 토요일 Ben은 아빠와 마을 시장에 갔어요. 일찍 도착해서 알록달록한 가판대를 많이 봤어요.",
+      "먼저 신선한 과일을 샀어요. Ben은 바나나를 먹고 물을 마셨어요. 아빠는 붐비는 시장 사진을 찍었어요.",
+      "그다음 Ben은 작은 장난감을 만드는 남자를 봤어요. 남자는 Ben에게 나무 새를 쥐어 주었어요. Ben은 웃으며 ‘있잖아! 움직일 수 있어!’라고 말했어요.",
+      "나중에 샌드위치를 사서 분수 옆에 앉았어요. Ben은 장난감을 사지는 않았지만 제작하는 모습을 즐겁게 봤어요.",
+      "마지막으로 버스를 타고 집에 왔어요. Ben은 엄마에게 시장과 나무 새 이야기를 들려주며 ‘정말 대단한 하루였어!’라고 말했어요."
+    ],
+    "vocabulary": [
+      {
+        "term": "market",
+        "partOfSpeech": "noun",
+        "meaning": "시장",
+        "context": "물건을 파는 장소"
+      },
+      {
+        "term": "stalls",
+        "partOfSpeech": "noun",
+        "meaning": "가판대들",
+        "context": "시장 판매대"
+      },
+      {
+        "term": "fruit",
+        "partOfSpeech": "noun",
+        "meaning": "과일",
+        "context": "시장에서 산 먹거리"
+      },
+      {
+        "term": "banana",
+        "partOfSpeech": "noun",
+        "meaning": "바나나",
+        "context": "Ben이 먹은 과일"
+      },
+      {
+        "term": "photo",
+        "partOfSpeech": "noun",
+        "meaning": "사진",
+        "context": "아빠가 찍은 시장 사진"
+      },
+      {
+        "term": "wooden",
+        "partOfSpeech": "adjective",
+        "meaning": "나무로 만든",
+        "context": "장난감의 재료"
+      },
+      {
+        "term": "fountain",
+        "partOfSpeech": "noun",
+        "meaning": "분수",
+        "context": "샌드위치를 먹은 장소"
+      },
+      {
+        "term": "sandwich",
+        "partOfSpeech": "noun",
+        "meaning": "샌드위치",
+        "context": "시장 간식"
+      },
+      {
+        "term": "maker",
+        "partOfSpeech": "noun",
+        "meaning": "만드는 사람",
+        "context": "장난감 제작자"
+      },
+      {
+        "term": "bus",
+        "partOfSpeech": "noun",
+        "meaning": "버스",
+        "context": "집에 돌아갈 때 이용한 교통수단"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Yesterday we _____ to school.",
+        "choices": [
+          "goed",
+          "go",
+          "went",
+          "going"
+        ],
+        "answer": 2,
+        "explanation": "go의 과거형은 went입니다."
+      },
+      {
+        "question": "She _____ a lovely bird.",
+        "choices": [
+          "saw",
+          "see",
+          "seed",
+          "seeing"
+        ],
+        "answer": 0,
+        "explanation": "see의 과거형은 saw입니다."
+      },
+      {
+        "question": "He _____ a photo.",
+        "choices": [
+          "taked",
+          "taking",
+          "take",
+          "took"
+        ],
+        "answer": 3,
+        "explanation": "take의 과거형은 took입니다."
+      },
+      {
+        "question": "Did you _____ lunch?",
+        "choices": [
+          "ate",
+          "eat",
+          "eaten",
+          "eating"
+        ],
+        "answer": 1,
+        "explanation": "Did 뒤에는 동사원형 eat을 씁니다."
+      },
+      {
+        "question": "I didn't _____ a ticket.",
+        "choices": [
+          "bought",
+          "buy",
+          "buyed",
+          "buying"
+        ],
+        "answer": 1,
+        "explanation": "didn't 뒤에는 buy 원형입니다."
+      },
+      {
+        "question": "Where did Ben go?",
+        "choices": [
+          "To the town market",
+          "To school",
+          "To a hospital",
+          "To the airport"
+        ],
+        "answer": 0,
+        "explanation": "마을 시장에 갔습니다."
+      },
+      {
+        "question": "What did Ben eat first?",
+        "choices": [
+          "A sandwich",
+          "An orange",
+          "A banana",
+          "A cake"
+        ],
+        "answer": 2,
+        "explanation": "먼저 바나나를 먹었습니다."
+      },
+      {
+        "question": "What was the small toy made of?",
+        "choices": [
+          "Paper",
+          "Wood",
+          "Glass",
+          "Metal"
+        ],
+        "answer": 1,
+        "explanation": "장난감은 나무로 만들어졌습니다."
+      },
+      {
+        "question": "What does \"market\" mean in the reading?",
+        "choices": [
+          "과일",
+          "시장",
+          "사진",
+          "분수"
+        ],
+        "answer": 1,
+        "explanation": "\"market\"는 시장이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"stalls\" mean in the reading?",
+        "choices": [
+          "바나나",
+          "가판대들",
+          "나무로 만든",
+          "샌드위치"
+        ],
+        "answer": 1,
+        "explanation": "\"stalls\"는 가판대들이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Where did you go last weekend?",
+      "What did you eat yesterday?",
+      "Name five irregular verbs and their past forms.",
+      "What did you see on your last trip?",
+      "Tell a story using first, then and finally."
+    ],
+    "rolePlay": {
+      "scenario": "Describe a visit to a market last weekend.",
+      "learnerRole": "Use went, saw, took, ate and bought in a short story.",
+      "coachRole": "Ask A1 Did questions and one A2 sequence question.",
+      "goal": "Recall irregular past forms and use base verbs after did."
+    }
+  },
+  {
+    "date": "2026-10-21",
+    "title": "Student Daily English — 2026-10-21",
+    "grammarTopic": "Be Going To: Plans and Predictions",
+    "grammar": {
+      "title": "be going to: 계획과 근거 있는 예측 말하기",
+      "summary": "이미 생각해 둔 미래 계획에는 am/is/are going to + 동사원형을 씁니다. 눈앞의 증거를 바탕으로 한 예측에도 사용할 수 있습니다. 부정문은 isn't/aren't going to, 질문은 Are you going to...?입니다. A2에서는 because, before, after를 붙여 이유와 순서를 말해 보세요.",
+      "points": [
+        {
+          "title": "am/is/are going to + verb",
+          "explanation": "사전에 정한 계획을 이야기합니다. be동사는 주어에 따라 바뀌고 뒤의 동사는 원형입니다.",
+          "examples": [
+            "[A1] I am going to read. — 나는 책을 읽을 거야.",
+            "[A1] She is going to swim. — 그녀는 수영할 거야.",
+            "[A1] We are going to cook. — 우리는 요리할 거야.",
+            "[A2] I'm going to visit my cousin on Sunday. — 일요일에 사촌을 방문할 거야.",
+            "[A2] They're going to practise after school. — 그들은 방과 후 연습할 거야."
+          ]
+        },
+        {
+          "title": "negative plans",
+          "explanation": "계획이 없거나 하지 않기로 정한 미래 행동은 be not going to로 표현합니다.",
+          "examples": [
+            "[A1] I am not going to run. — 나는 달리지 않을 거야.",
+            "[A1] He isn't going to play. — 그는 놀지 않을 거야.",
+            "[A1] They aren't going to sing. — 그들은 노래하지 않을 거야.",
+            "[A2] We aren't going to travel because the weather looks bad. — 날씨가 나빠 보여 여행하지 않을 거야.",
+            "[A2] She isn't going to buy another notebook today. — 그녀는 오늘 공책을 더 사지 않을 거야."
+          ]
+        },
+        {
+          "title": "Are you going to ...?",
+          "explanation": "질문을 만들 때 be동사를 주어 앞으로 옮깁니다. 짧게 Yes, I am. / No, I'm not.로 답합니다.",
+          "examples": [
+            "[A1] Are you going to dance? — 춤출 거니?",
+            "[A1] Is he going to help? — 그는 도울 거니?",
+            "[A1] Are they going to come? — 그들은 올 거니?",
+            "[A2] What are you going to make for lunch? — 점심으로 무엇을 만들 거니?",
+            "[A2] When is your class going to visit the library? — 너희 반은 언제 도서관에 갈 거니?"
+          ]
+        },
+        {
+          "title": "evidence-based prediction",
+          "explanation": "보이는 근거가 있을 때 앞으로 일어날 가능성이 높은 일을 예측할 수 있습니다.",
+          "examples": [
+            "[A1] Look! It's going to rain. — 봐! 비가 오겠어.",
+            "[A1] The glass is going to fall. — 유리잔이 떨어지겠어.",
+            "[A1] He's going to win. — 그가 이기겠어.",
+            "[A2] Those dark clouds mean it's going to rain soon. — 저 먹구름을 보니 곧 비가 오겠어.",
+            "[A2] The bus is very full; we aren't going to get seats. — 버스가 꽉 차서 우리는 앉지 못하겠어."
+          ]
+        },
+        {
+          "title": "going to vs present continuous",
+          "explanation": "going to는 의도·계획을, 현재진행은 시간·장소까지 정해진 약속이나 일정에 자주 씁니다.",
+          "examples": [
+            "[A1] I'm going to study tonight. — 오늘 밤 공부할 거야.",
+            "[A1] I'm meeting Tom at six. — 여섯 시에 Tom을 만나기로 했어.",
+            "[A1] She's going to call Mum. — 엄마께 전화할 거야.",
+            "[A2] We're meeting our coach at the sports hall on Friday. — 금요일 체육관에서 코치를 만나기로 했어.",
+            "[A2] I'm going to practise more before the match. — 경기 전에 더 연습할 계획이야."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Sounds like a plan!",
+        "meaning": "좋은 계획이야!",
+        "example": "We'll meet at ten? Sounds like a plan! — 열 시에 만나자고? 좋은 계획이야!"
+      },
+      {
+        "term": "Count me in!",
+        "meaning": "나도 참여할게!",
+        "example": "You're making a poster? Count me in! — 포스터 만든다고? 나도 할게!"
+      },
+      {
+        "term": "Fingers crossed!",
+        "meaning": "잘되길 바라!",
+        "example": "Your team plays tomorrow? Fingers crossed! — 내일 경기라니 잘되길 바라!"
+      }
+    ],
+    "readingTitle": "Our Class Picnic Plan",
+    "paragraphs": [
+      "Our class is going to have a picnic on Friday. We are going to visit a small park near the school. Everyone is excited.",
+      "Mia is going to bring sandwiches, and Leo is going to bring fruit. I am going to carry a large bottle of water. We aren't going to buy food at the park.",
+      "Our teacher asks, “Are you going to play a game?” We answer, “Yes, we are!” We are going to play a simple team game after lunch.",
+      "On Thursday, we see dark clouds. Our teacher says, “It might rain tomorrow.” We check the forecast and prepare a backup plan.",
+      "If the weather is bad, we are going to eat in the school hall. “Sounds like a plan!” says Mia. We are going to enjoy the day together."
+    ],
+    "translations": [
+      "우리 반은 금요일에 소풍을 갈 거예요. 학교 근처의 작은 공원에 갈 계획이에요. 모두 신이 났어요.",
+      "Mia는 샌드위치를, Leo는 과일을 가져올 거예요. 나는 큰 물병을 가져갈 거예요. 공원에서 음식을 사지는 않을 계획이에요.",
+      "선생님이 ‘게임을 할 계획이니?’라고 물으셨어요. 우리는 ‘네!’라고 답했어요. 점심 뒤 간단한 팀 게임을 할 거예요.",
+      "목요일에 먹구름을 봤어요. 선생님은 ‘내일 비가 올 수도 있겠구나’라고 말씀하셨어요. 우리는 예보를 확인하고 대체 계획을 준비했어요.",
+      "날씨가 나쁘면 학교 강당에서 먹을 계획이에요. Mia가 ‘좋은 계획이야!’라고 말했어요. 우리는 함께 하루를 즐길 거예요."
+    ],
+    "vocabulary": [
+      {
+        "term": "picnic",
+        "partOfSpeech": "noun",
+        "meaning": "소풍",
+        "context": "밖에서 함께 식사하는 활동"
+      },
+      {
+        "term": "park",
+        "partOfSpeech": "noun",
+        "meaning": "공원",
+        "context": "학급이 가려는 장소"
+      },
+      {
+        "term": "excited",
+        "partOfSpeech": "adjective",
+        "meaning": "신이 난",
+        "context": "소풍을 기대하는 기분"
+      },
+      {
+        "term": "sandwiches",
+        "partOfSpeech": "noun",
+        "meaning": "샌드위치들",
+        "context": "준비할 점심 음식"
+      },
+      {
+        "term": "fruit",
+        "partOfSpeech": "noun",
+        "meaning": "과일",
+        "context": "Leo가 가져올 음식"
+      },
+      {
+        "term": "bottle",
+        "partOfSpeech": "noun",
+        "meaning": "병",
+        "context": "마실 물을 담는 용기"
+      },
+      {
+        "term": "game",
+        "partOfSpeech": "noun",
+        "meaning": "게임",
+        "context": "점심 후에 할 활동"
+      },
+      {
+        "term": "clouds",
+        "partOfSpeech": "noun",
+        "meaning": "구름들",
+        "context": "비를 예측하게 하는 하늘 모습"
+      },
+      {
+        "term": "forecast",
+        "partOfSpeech": "noun",
+        "meaning": "예보",
+        "context": "날씨를 알려 주는 정보"
+      },
+      {
+        "term": "hall",
+        "partOfSpeech": "noun",
+        "meaning": "강당",
+        "context": "비 올 때 사용할 장소"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "She _____ going to sing.",
+        "choices": [
+          "am",
+          "are",
+          "is",
+          "be"
+        ],
+        "answer": 2,
+        "explanation": "she의 be동사는 is입니다."
+      },
+      {
+        "question": "We aren't going to _____ outside.",
+        "choices": [
+          "played",
+          "play",
+          "playing",
+          "plays"
+        ],
+        "answer": 1,
+        "explanation": "going to 다음은 동사원형입니다."
+      },
+      {
+        "question": "_____ you going to study?",
+        "choices": [
+          "Are",
+          "Do",
+          "Does",
+          "Did"
+        ],
+        "answer": 0,
+        "explanation": "be going to 의문문은 Are you ...?입니다."
+      },
+      {
+        "question": "Look at those clouds. It _____ rain.",
+        "choices": [
+          "will been",
+          "go",
+          "was going",
+          "is going to"
+        ],
+        "answer": 3,
+        "explanation": "보이는 증거가 있는 예측에는 is going to를 씁니다."
+      },
+      {
+        "question": "Is he going to help? Yes, he _____.",
+        "choices": [
+          "does",
+          "will",
+          "is",
+          "did"
+        ],
+        "answer": 2,
+        "explanation": "be 질문에는 be동사로 답합니다."
+      },
+      {
+        "question": "When is the picnic planned?",
+        "choices": [
+          "Monday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "answer": 1,
+        "explanation": "소풍은 금요일 예정입니다."
+      },
+      {
+        "question": "Who will bring the fruit?",
+        "choices": [
+          "Leo",
+          "Mia",
+          "The teacher",
+          "The driver"
+        ],
+        "answer": 0,
+        "explanation": "Leo가 과일을 가져옵니다."
+      },
+      {
+        "question": "Where will they eat if the weather is bad?",
+        "choices": [
+          "At the airport",
+          "By a river",
+          "In the school hall",
+          "In a café"
+        ],
+        "answer": 2,
+        "explanation": "비가 오면 학교 강당에서 먹습니다."
+      },
+      {
+        "question": "What does \"picnic\" mean in the reading?",
+        "choices": [
+          "신이 난",
+          "소풍",
+          "과일",
+          "게임"
+        ],
+        "answer": 1,
+        "explanation": "\"picnic\"는 소풍이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"park\" mean in the reading?",
+        "choices": [
+          "샌드위치들",
+          "공원",
+          "병",
+          "구름들"
+        ],
+        "answer": 1,
+        "explanation": "\"park\"는 공원이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What are you going to do tomorrow?",
+      "Are you going to read this evening?",
+      "What is your family going to do at the weekend?",
+      "What will you do if your outdoor plan is cancelled?",
+      "Describe a prediction based on something you can see."
+    ],
+    "rolePlay": {
+      "scenario": "Plan a class picnic with a partner.",
+      "learnerRole": "Tell the tutor what you and classmates are going to bring and do.",
+      "coachRole": "Ask when, where and why questions in British English.",
+      "goal": "Use affirmative, negative and question forms of be going to."
+    }
+  },
+  {
+    "date": "2026-10-22",
+    "title": "Student Daily English — 2026-10-22",
+    "grammarTopic": "Will and Won't: Decisions, Promises, and Predictions",
+    "grammar": {
+      "title": "will / won't: 지금 결정하고 약속하기",
+      "summary": "will + 동사원형은 말하는 순간의 결정, 제안, 약속, 개인적인 예측을 나타낼 수 있습니다. 부정은 will not = won't입니다. 미리 정한 계획은 going to가 자연스러운 경우가 많습니다. 'will'을 쓰는 이유를 문맥에서 확인해 보세요.",
+      "points": [
+        {
+          "title": "will for decisions now",
+          "explanation": "대화하는 순간 새로 결정한 행동을 표현합니다. I will은 I'll로 줄여 말할 수 있습니다.",
+          "examples": [
+            "[A1] I'll open the window. — 내가 창문을 열게.",
+            "[A1] I'll answer the phone. — 내가 전화받을게.",
+            "[A1] We'll take the bus. — 우리 버스를 탈게.",
+            "[A2] The bag looks heavy, so I'll carry it for you. — 가방이 무거워 보여서 내가 들어 줄게.",
+            "[A2] I think I'll stay inside because it's raining. — 비가 와서 안에 있을 것 같아."
+          ]
+        },
+        {
+          "title": "offers and promises",
+          "explanation": "상대방을 돕겠다는 제안과 앞으로 지키겠다는 약속에도 will을 씁니다.",
+          "examples": [
+            "[A1] I'll help you. — 내가 도와줄게.",
+            "[A1] I'll call you later. — 나중에 전화할게.",
+            "[A1] We'll be careful. — 우리는 조심할게.",
+            "[A2] I'll explain the exercise again if you need help. — 필요하면 연습문제를 다시 설명해 줄게.",
+            "[A2] I promise I'll return the book on Monday. — 월요일에 책을 돌려주겠다고 약속할게."
+          ]
+        },
+        {
+          "title": "won't for refusal and negative prediction",
+          "explanation": "won't는 앞으로 하지 않을 행동이나 일어나지 않을 것이라는 예상에 사용합니다.",
+          "examples": [
+            "[A1] I won't be late. — 늦지 않을게.",
+            "[A1] She won't come today. — 그녀는 오늘 오지 않을 거야.",
+            "[A1] It won't rain. — 비가 오지 않을 거야.",
+            "[A2] We won't forget your birthday next year. — 내년엔 네 생일을 잊지 않을게.",
+            "[A2] The test won't be difficult if we practise. — 연습하면 시험이 어렵지 않을 거야."
+          ]
+        },
+        {
+          "title": "Will ...? and short answers",
+          "explanation": "미래의 의사·가능성을 묻습니다. Yes, I will. / No, I won't.로 짧게 답합니다.",
+          "examples": [
+            "[A1] Will you come? — 올 거니?",
+            "[A1] Will it snow? — 눈이 올까?",
+            "[A1] Will he help? — 그가 도와줄까?",
+            "[A2] Will you join us after school? — 방과 후 우리와 함께할래?",
+            "[A2] Will the shop open before nine tomorrow? — 가게가 내일 9시 전에 열까요?"
+          ]
+        },
+        {
+          "title": "will vs going to",
+          "explanation": "will은 즉석 결정에, going to는 사전에 정한 계획에 잘 어울립니다. 두 표현 모두 예측에 쓰일 수 있습니다.",
+          "examples": [
+            "[A1] I'm going to bake a cake. — 케이크를 만들 계획이야.",
+            "[A1] I'll get the eggs! — 내가 달걀을 가져올게!",
+            "[A1] We'll see you tomorrow. — 내일 보자.",
+            "[A2] We are going to visit Grandma on Sunday. — 일요일에 할머니를 방문할 계획이야.",
+            "[A2] I forgot my pencil, so I'll borrow one. — 연필을 잊었으니 하나 빌릴게."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Don't worry.",
+        "meaning": "걱정하지 마.",
+        "example": "Don't worry. I'll help you. — 걱정하지 마. 내가 도와줄게."
+      },
+      {
+        "term": "You can count on me.",
+        "meaning": "나를 믿어도 돼.",
+        "example": "You can count on me. I'll bring the books. — 나를 믿어도 돼. 책을 가져올게."
+      },
+      {
+        "term": "I hope so.",
+        "meaning": "그랬으면 좋겠어.",
+        "example": "Will our team win? I hope so. — 우리 팀이 이길까? 그러면 좋겠다."
+      }
+    ],
+    "readingTitle": "The Lost School Bag",
+    "paragraphs": [
+      "After school, Noah cannot find his bag. He checks the classroom and the library. His friend Lily sees that he looks worried.",
+      "Lily says, “Don't worry. I'll help you.” They return to the sports hall together. Noah says, “I won't leave my bag there again.”",
+      "They see a teacher by the door. Lily asks, “Will you help us look?” The teacher smiles and says, “Yes, I will.”",
+      "The teacher opens a cupboard. Inside is Noah's bag. Noah feels happy and says, “I'll write my name on it tonight.”",
+      "Lily laughs. “Good idea! We'll remember this day.” Noah thanks everyone. He knows he can count on his friends when he needs help."
+    ],
+    "translations": [
+      "방과 후 Noah는 가방을 찾지 못해요. 교실과 도서관을 확인해요. 친구 Lily는 Noah가 걱정하는 표정인 것을 봐요.",
+      "Lily가 ‘걱정하지 마. 내가 도와줄게’라고 말해요. 둘은 함께 체육관으로 돌아가요. Noah는 ‘다시는 거기에 가방을 두지 않을 거야’라고 말해요.",
+      "그들은 문 옆의 선생님을 봐요. Lily가 ‘찾는 걸 도와주시겠어요?’라고 물어요. 선생님은 웃으며 ‘그럼’이라고 답해요.",
+      "선생님이 찬장을 열어요. 그 안에 Noah의 가방이 있어요. Noah는 기뻐하며 ‘오늘 밤 내 이름을 적을게’라고 말해요.",
+      "Lily가 웃으며 ‘좋은 생각이야! 오늘을 기억할 거야’라고 말해요. Noah는 모두에게 감사해요. 도움이 필요할 때 친구들을 믿을 수 있다는 걸 알아요."
+    ],
+    "vocabulary": [
+      {
+        "term": "bag",
+        "partOfSpeech": "noun",
+        "meaning": "가방",
+        "context": "Noah가 잃어버린 물건"
+      },
+      {
+        "term": "classroom",
+        "partOfSpeech": "noun",
+        "meaning": "교실",
+        "context": "가방을 찾는 장소"
+      },
+      {
+        "term": "library",
+        "partOfSpeech": "noun",
+        "meaning": "도서관",
+        "context": "책을 읽는 장소"
+      },
+      {
+        "term": "worried",
+        "partOfSpeech": "adjective",
+        "meaning": "걱정하는",
+        "context": "가방이 없어 불안한 기분"
+      },
+      {
+        "term": "sports",
+        "partOfSpeech": "noun",
+        "meaning": "스포츠·운동",
+        "context": "체육관을 설명하는 말"
+      },
+      {
+        "term": "teacher",
+        "partOfSpeech": "noun",
+        "meaning": "선생님",
+        "context": "찾는 일을 도와주는 사람"
+      },
+      {
+        "term": "door",
+        "partOfSpeech": "noun",
+        "meaning": "문",
+        "context": "선생님이 서 있던 곳"
+      },
+      {
+        "term": "cupboard",
+        "partOfSpeech": "noun",
+        "meaning": "찬장",
+        "context": "가방이 들어 있던 수납장"
+      },
+      {
+        "term": "remember",
+        "partOfSpeech": "verb",
+        "meaning": "기억하다",
+        "context": "잊지 않고 떠올리다"
+      },
+      {
+        "term": "friends",
+        "partOfSpeech": "noun",
+        "meaning": "친구들",
+        "context": "도움이 될 수 있는 사람들"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "I _____ carry that box for you.",
+        "choices": [
+          "am",
+          "will",
+          "did",
+          "was"
+        ],
+        "answer": 1,
+        "explanation": "즉석에서 돕겠다는 결정에는 will입니다."
+      },
+      {
+        "question": "She _____ be late. She promised.",
+        "choices": [
+          "doesn't",
+          "isn't",
+          "didn't",
+          "won't"
+        ],
+        "answer": 3,
+        "explanation": "미래 부정 표현은 won't입니다."
+      },
+      {
+        "question": "Will you help? Yes, I _____.",
+        "choices": [
+          "will",
+          "am",
+          "do",
+          "did"
+        ],
+        "answer": 0,
+        "explanation": "Will 질문에 대한 짧은 긍정 답은 Yes, I will입니다."
+      },
+      {
+        "question": "I _____ going to meet Tom on Saturday.",
+        "choices": [
+          "will",
+          "do",
+          "am",
+          "did"
+        ],
+        "answer": 2,
+        "explanation": "미리 정한 계획은 am going to로 나타냅니다."
+      },
+      {
+        "question": "Which is a natural instant decision?",
+        "choices": [
+          "I was getting the chair.",
+          "I'll get a chair for you.",
+          "I have get a chair.",
+          "I am chair going."
+        ],
+        "answer": 1,
+        "explanation": "말하는 순간 돕기로 한 결정에는 I'll을 쓸 수 있습니다."
+      },
+      {
+        "question": "What did Noah lose?",
+        "choices": [
+          "His shoes",
+          "His pencil",
+          "His bag",
+          "His lunch"
+        ],
+        "answer": 2,
+        "explanation": "학교 가방을 찾지 못했습니다."
+      },
+      {
+        "question": "Who first offered to help?",
+        "choices": [
+          "Lily",
+          "His dad",
+          "A coach",
+          "A shopkeeper"
+        ],
+        "answer": 0,
+        "explanation": "Lily가 먼저 도와주겠다고 말했습니다."
+      },
+      {
+        "question": "Where was the bag?",
+        "choices": [
+          "In a garden",
+          "On the bus",
+          "Under a table",
+          "In a cupboard"
+        ],
+        "answer": 3,
+        "explanation": "찬장 안에 있었습니다."
+      },
+      {
+        "question": "What does \"bag\" mean in the reading?",
+        "choices": [
+          "도서관",
+          "가방",
+          "스포츠·운동",
+          "문"
+        ],
+        "answer": 1,
+        "explanation": "\"bag\"는 가방이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"classroom\" mean in the reading?",
+        "choices": [
+          "걱정하는",
+          "교실",
+          "선생님",
+          "찬장"
+        ],
+        "answer": 1,
+        "explanation": "\"classroom\"는 교실이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What will you do if a friend needs help?",
+      "Make a promise using I'll.",
+      "What won't you do tomorrow?",
+      "Ask a polite Will you ...? question.",
+      "Explain one difference between will and going to."
+    ],
+    "rolePlay": {
+      "scenario": "Your friend has lost something at school.",
+      "learnerRole": "Offer help and make promises with will and won't.",
+      "coachRole": "Ask what you will do now and check the basic future forms.",
+      "goal": "Use will for offers, decisions, and promises."
+    }
+  },
+  {
+    "date": "2026-10-23",
+    "title": "Student Daily English — 2026-10-23",
+    "grammarTopic": "Can and Could: Ability, Permission, Requests",
+    "grammar": {
+      "title": "can / could: 할 수 있다와 정중한 부탁",
+      "summary": "can은 현재 능력과 허락을, could는 과거 능력 또는 좀 더 정중한 부탁을 표현합니다. 부정은 can't/cannot, couldn't입니다. 부탁에서는 Could you...?가 Can you...?보다 공손하게 들릴 수 있지만 상황에 따라 둘 다 자연스럽습니다. A2는 이유를 붙여 답을 확장해 보세요.",
+      "points": [
+        {
+          "title": "can / can't: ability",
+          "explanation": "현재 할 수 있는 일과 할 수 없는 일을 말할 때 can/can't + 동사원형을 사용합니다.",
+          "examples": [
+            "[A1] I can swim. — 나는 수영할 수 있어.",
+            "[A1] She can sing. — 그녀는 노래할 수 있어.",
+            "[A1] He can't ride a bike. — 그는 자전거를 탈 수 없어.",
+            "[A2] I can read short stories without help. — 나는 도움 없이 짧은 이야기를 읽을 수 있어.",
+            "[A2] We can't play outside because it's raining. — 비가 와서 밖에서 놀 수 없어."
+          ]
+        },
+        {
+          "title": "could / couldn't: past ability",
+          "explanation": "과거에 할 수 있었던 일반적인 능력에는 could를, 없었던 능력에는 couldn't를 씁니다.",
+          "examples": [
+            "[A1] I could run fast. — 나는 빨리 달릴 수 있었어.",
+            "[A1] She couldn't swim then. — 그때 그녀는 수영할 수 없었어.",
+            "[A1] We could count to ten. — 우리는 열까지 셀 수 있었어.",
+            "[A2] My grandad could ride a horse when he was young. — 할아버지는 젊을 때 말을 탈 수 있었어.",
+            "[A2] I couldn't understand the words before the lesson. — 수업 전에는 그 단어를 이해할 수 없었어."
+          ]
+        },
+        {
+          "title": "Can I ...? for permission",
+          "explanation": "내가 어떤 행동을 해도 되는지 허락을 구할 때 Can I ...?라고 묻습니다.",
+          "examples": [
+            "[A1] Can I sit here? — 여기 앉아도 될까요?",
+            "[A1] Can I go out? — 밖에 나가도 될까요?",
+            "[A1] Can I use this pen? — 이 펜을 사용해도 될까요?",
+            "[A2] Can I borrow your ruler for a minute? — 잠깐 자를 빌려도 될까요?",
+            "[A2] Can we open the window because the room is hot? — 방이 더워서 창문을 열어도 될까요?"
+          ]
+        },
+        {
+          "title": "Can you ...? / Could you ...?",
+          "explanation": "상대에게 부탁할 때 Can you...?는 일상적이고 Could you...?는 더 정중합니다.",
+          "examples": [
+            "[A1] Can you help me? — 나를 도와줄 수 있어?",
+            "[A1] Could you wait? — 기다려 주시겠어요?",
+            "[A1] Can you close the door? — 문을 닫아 줄래?",
+            "[A2] Could you explain that word again, please? — 그 단어를 다시 설명해 주시겠어요?",
+            "[A2] Could you speak more slowly, please? — 좀 더 천천히 말씀해 주시겠어요?"
+          ]
+        },
+        {
+          "title": "answers and word order",
+          "explanation": "조동사 can/could 다음은 항상 동사원형입니다. 의문문은 Can/Could + 주어 + 동사원형입니다.",
+          "examples": [
+            "[A1] Can he play? Yes, he can. — 그가 놀 수 있니? 응.",
+            "[A1] Can she drive? No, she can't. — 그녀가 운전할 수 있니? 아니.",
+            "[A1] Could you read then? Yes, I could. — 그때 글을 읽을 수 있었니? 응.",
+            "[A2] Can your brother speak French? No, he can't yet. — 네 동생은 프랑스어를 할 줄 아니? 아직 아니.",
+            "[A2] Could you help me after lunch? Of course I can. — 점심 후에 도와주시겠어요? 물론이죠."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Of course!",
+        "meaning": "물론이지!",
+        "example": "Can you help? Of course! — 도와줄 수 있어? 물론이지!"
+      },
+      {
+        "term": "No problem.",
+        "meaning": "문제없어.",
+        "example": "Could you repeat that? No problem. — 다시 말해 주실래요? 문제없어요."
+      },
+      {
+        "term": "Give me a hand.",
+        "meaning": "나 좀 도와줘.",
+        "example": "Please give me a hand with this box. — 이 상자 좀 옮기는 걸 도와줘."
+      }
+    ],
+    "readingTitle": "Helping at the School Fair",
+    "paragraphs": [
+      "Our school has a fair on Friday. I can draw colourful signs, and my friend Amy can make paper flowers.",
+      "At first, we can't move a heavy table. I say, “Could you give me a hand, please?” A teacher answers, “Of course!”",
+      "Amy asks, “Can I put the flowers near the entrance?” The teacher says yes. She can arrange them beside the welcome desk.",
+      "A younger student cannot find the games area. I say, “I can show you.” He smiles and asks, “Could you walk with me?”",
+      "By lunchtime, everyone is ready. Last year, I couldn't speak confidently to visitors. This year, I can welcome them with a big smile."
+    ],
+    "translations": [
+      "금요일에 학교 축제가 있어요. 나는 알록달록한 표지판을 그릴 수 있고 친구 Amy는 종이꽃을 만들 수 있어요.",
+      "처음에는 무거운 책상을 옮길 수 없어요. 나는 ‘좀 도와주시겠어요?’라고 말해요. 선생님은 ‘물론이지!’라고 답하세요.",
+      "Amy가 ‘입구 근처에 꽃을 놔도 될까요?’라고 물어요. 선생님이 허락하세요. Amy는 환영 데스크 옆에 꽃을 놓을 수 있어요.",
+      "어린 학생이 게임 구역을 찾지 못해요. 내가 ‘안내해 줄 수 있어’라고 말하자 그는 웃으며 ‘함께 걸어 주실래요?’라고 물어요.",
+      "점심때쯤 모두 준비가 됐어요. 작년에는 방문객에게 자신 있게 말할 수 없었어요. 올해는 환하게 웃으며 맞이할 수 있어요."
+    ],
+    "vocabulary": [
+      {
+        "term": "fair",
+        "partOfSpeech": "noun",
+        "meaning": "축제·장터",
+        "context": "학교에서 연 행사"
+      },
+      {
+        "term": "colourful",
+        "partOfSpeech": "adjective",
+        "meaning": "다채로운",
+        "context": "여러 색의 표지판"
+      },
+      {
+        "term": "paper",
+        "partOfSpeech": "noun",
+        "meaning": "종이",
+        "context": "꽃을 만들 재료"
+      },
+      {
+        "term": "heavy",
+        "partOfSpeech": "adjective",
+        "meaning": "무거운",
+        "context": "옮기기 힘든 책상"
+      },
+      {
+        "term": "table",
+        "partOfSpeech": "noun",
+        "meaning": "책상·테이블",
+        "context": "옮기려는 가구"
+      },
+      {
+        "term": "entrance",
+        "partOfSpeech": "noun",
+        "meaning": "입구",
+        "context": "사람들이 들어오는 곳"
+      },
+      {
+        "term": "arrange",
+        "partOfSpeech": "verb",
+        "meaning": "배치하다",
+        "context": "꽃을 알맞은 곳에 놓음"
+      },
+      {
+        "term": "welcome",
+        "partOfSpeech": "noun",
+        "meaning": "환영",
+        "context": "방문객을 맞이하는 행동"
+      },
+      {
+        "term": "visitors",
+        "partOfSpeech": "noun",
+        "meaning": "방문객들",
+        "context": "학교 축제를 보러 온 사람들"
+      },
+      {
+        "term": "confidently",
+        "partOfSpeech": "adverb",
+        "meaning": "자신 있게",
+        "context": "부끄러워하지 않고 말하는 방식"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "She can _____ very well.",
+        "choices": [
+          "swims",
+          "swam",
+          "swim",
+          "swimming"
+        ],
+        "answer": 2,
+        "explanation": "can 다음에는 동사원형 swim이 옵니다."
+      },
+      {
+        "question": "I _____ read when I was four.",
+        "choices": [
+          "could",
+          "can to",
+          "am",
+          "do"
+        ],
+        "answer": 0,
+        "explanation": "과거 능력을 나타낼 때 could를 씁니다."
+      },
+      {
+        "question": "_____ I borrow your pen?",
+        "choices": [
+          "Do",
+          "Did",
+          "Am",
+          "Can"
+        ],
+        "answer": 3,
+        "explanation": "허락 요청은 Can I ...?입니다."
+      },
+      {
+        "question": "_____ you help me, please?",
+        "choices": [
+          "Does",
+          "Could",
+          "Were",
+          "Has"
+        ],
+        "answer": 1,
+        "explanation": "정중한 부탁에는 Could you...?가 적절합니다."
+      },
+      {
+        "question": "Can he dance? No, he _____.",
+        "choices": [
+          "doesn't",
+          "didn't",
+          "can't",
+          "wasn't"
+        ],
+        "answer": 2,
+        "explanation": "can 질문에 대한 부정 대답은 can't입니다."
+      },
+      {
+        "question": "What could the speaker draw?",
+        "choices": [
+          "Colourful signs",
+          "Wooden boats",
+          "Maps of the city",
+          "Paper birds"
+        ],
+        "answer": 0,
+        "explanation": "알록달록한 표지판을 그릴 수 있었습니다."
+      },
+      {
+        "question": "What did Amy make?",
+        "choices": [
+          "Sandwiches",
+          "Paper flowers",
+          "A wooden table",
+          "New desks"
+        ],
+        "answer": 1,
+        "explanation": "종이꽃을 만들었습니다."
+      },
+      {
+        "question": "What changed since last year?",
+        "choices": [
+          "The speaker became taller",
+          "The fair moved",
+          "The speaker could welcome visitors confidently",
+          "No one attended"
+        ],
+        "answer": 2,
+        "explanation": "방문객을 자신 있게 맞이하게 됐습니다."
+      },
+      {
+        "question": "What does \"fair\" mean in the reading?",
+        "choices": [
+          "종이",
+          "축제·장터",
+          "책상·테이블",
+          "배치하다"
+        ],
+        "answer": 1,
+        "explanation": "\"fair\"는 축제·장터이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"colourful\" mean in the reading?",
+        "choices": [
+          "무거운",
+          "다채로운",
+          "입구",
+          "환영"
+        ],
+        "answer": 1,
+        "explanation": "\"colourful\"는 다채로운이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "What can you do well?",
+      "What couldn't you do when you were younger?",
+      "Ask your teacher for permission politely.",
+      "How would you ask someone to repeat a word?",
+      "Why is it useful to ask for help?"
+    ],
+    "rolePlay": {
+      "scenario": "Help visitors at a school fair.",
+      "learnerRole": "Describe abilities and ask for permission or help.",
+      "coachRole": "Play a visitor and a teacher; correct polite requests and verb forms.",
+      "goal": "Differentiate present ability, past ability and polite requests."
+    }
+  },
+  {
+    "date": "2026-10-24",
+    "title": "Student Daily English — 2026-10-24",
+    "grammarTopic": "Some, Any, Much, Many, A Few, A Little",
+    "grammar": {
+      "title": "some / any / much / many: 양과 수량 표현하기",
+      "summary": "셀 수 있는 명사(countable)와 셀 수 없는 명사(uncountable)를 먼저 구별하세요. some은 보통 긍정문, any는 질문·부정문에 많이 쓰지만 권유·제안에서는 some을 사용하기도 합니다. many/a few는 셀 수 있는 복수 명사, much/a little은 셀 수 없는 명사와 함께 사용합니다.",
+      "points": [
+        {
+          "title": "some / any: usual patterns",
+          "explanation": "some은 긍정문, any는 질문과 부정문에서 흔하지만 의미에 따라 예외도 있습니다.",
+          "examples": [
+            "[A1] I have some apples. — 사과가 몇 개 있어.",
+            "[A1] Do you have any milk? — 우유가 좀 있니?",
+            "[A1] We don't have any eggs. — 달걀이 하나도 없어.",
+            "[A2] Could I have some water, please? — 물 좀 주시겠어요?",
+            "[A2] Are there any seats near the window? — 창가 근처에 자리가 있나요?"
+          ]
+        },
+        {
+          "title": "many vs much",
+          "explanation": "many는 셀 수 있는 복수 명사, much는 셀 수 없는 명사의 양을 말합니다.",
+          "examples": [
+            "[A1] How many books? — 책이 몇 권이니?",
+            "[A1] How much water? — 물이 얼마나 있니?",
+            "[A1] We have many pencils. — 연필이 많이 있어.",
+            "[A2] There isn't much time before the bus arrives. — 버스가 오기 전 시간이 별로 없어.",
+            "[A2] How many visitors came to the fair? — 축제에 방문객이 몇 명 왔니?"
+          ]
+        },
+        {
+          "title": "a few vs a little",
+          "explanation": "a few는 셀 수 있는 복수의 소량, a little은 셀 수 없는 양의 소량을 뜻합니다.",
+          "examples": [
+            "[A1] I have a few coins. — 동전이 몇 개 있어.",
+            "[A1] We need a little salt. — 소금이 조금 필요해.",
+            "[A1] She has a few friends. — 그녀에게는 친구가 몇 명 있어.",
+            "[A2] Add a little sugar if the drink is too sour. — 음료가 너무 시면 설탕을 조금 넣어.",
+            "[A2] We saw a few birds beside the lake. — 우리는 호수 옆에서 새 몇 마리를 봤어."
+          ]
+        },
+        {
+          "title": "a lot of and enough",
+          "explanation": "a lot of는 셀 수 있는 명사와 없는 명사에 모두 쓸 수 있습니다. enough는 ‘충분한’ 양입니다.",
+          "examples": [
+            "[A1] We have a lot of bread. — 빵이 많이 있어.",
+            "[A1] There are a lot of children. — 아이들이 많이 있어.",
+            "[A1] Do we have enough water? — 물이 충분히 있니?",
+            "[A2] We bought enough food for everyone at the picnic. — 소풍에서 모두 먹을 음식을 충분히 샀어.",
+            "[A2] She has a lot of homework this evening. — 오늘 저녁 숙제가 많아."
+          ]
+        },
+        {
+          "title": "too much / too many",
+          "explanation": "too much는 셀 수 없는 양이 지나치게 많을 때, too many는 셀 수 있는 수가 지나치게 많을 때 씁니다.",
+          "examples": [
+            "[A1] Too much sugar! — 설탕이 너무 많아!",
+            "[A1] Too many bags! — 가방이 너무 많아!",
+            "[A1] I ate too much cake. — 나는 케이크를 너무 많이 먹었어.",
+            "[A2] There were too many people in the small room. — 작은 방에 사람이 너무 많았어.",
+            "[A2] Don't use too much paint on the poster. — 포스터에 페인트를 너무 많이 쓰지 마."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Just a little.",
+        "meaning": "조금만.",
+        "example": "Would you like some milk? Just a little. — 우유 좀 마실래? 조금만."
+      },
+      {
+        "term": "Plenty of.",
+        "meaning": "충분히 많은.",
+        "example": "We have plenty of time. — 우리에게는 시간이 충분히 많아."
+      },
+      {
+        "term": "That's enough.",
+        "meaning": "그 정도면 충분해.",
+        "example": "Stop pouring the juice. That's enough. — 주스 그만 따라. 충분해."
+      }
+    ],
+    "readingTitle": "Making Fruit Cups Together",
+    "paragraphs": [
+      "On Saturday, Ella and her brother make fruit cups. They check the kitchen. They have some apples and bananas, but they don't have any grapes.",
+      "Ella asks, “How many cups do we need?” Her brother says, “Six.” They have plenty of small cups on the shelf.",
+      "They wash the fruit and cut it carefully. Ella adds a few strawberries and a little yoghurt to each cup. She doesn't use much honey.",
+      "Her brother wants to add many sweets. Ella says, “That's too much sugar. Let's add some more fruit instead.” He agrees.",
+      "At last, they have enough fruit cups for the family. Their mum tastes one and says, “That's lovely!” They put the rest in the fridge."
+    ],
+    "translations": [
+      "토요일에 Ella와 남동생은 과일 컵을 만들어요. 부엌을 확인해요. 사과와 바나나는 있지만 포도는 없어요.",
+      "Ella가 ‘컵이 몇 개 필요해?’라고 물어요. 동생이 ‘여섯 개’라고 대답해요. 선반에는 작은 컵이 충분히 있어요.",
+      "그들은 과일을 씻고 조심히 잘라요. Ella는 컵마다 딸기 몇 개와 요구르트를 조금 넣어요. 꿀은 많이 쓰지 않아요.",
+      "남동생은 사탕을 많이 넣고 싶어 해요. Ella는 ‘설탕이 너무 많아. 대신 과일을 조금 더 넣자’라고 말해요. 동생은 동의해요.",
+      "마침내 가족에게 충분한 과일 컵이 생겨요. 엄마가 하나를 맛보고 ‘정말 맛있다!’라고 말씀하세요. 남은 것은 냉장고에 넣어요."
+    ],
+    "vocabulary": [
+      {
+        "term": "kitchen",
+        "partOfSpeech": "noun",
+        "meaning": "부엌",
+        "context": "과일 컵을 만든 장소"
+      },
+      {
+        "term": "apples",
+        "partOfSpeech": "noun",
+        "meaning": "사과들",
+        "context": "준비한 과일"
+      },
+      {
+        "term": "grapes",
+        "partOfSpeech": "noun",
+        "meaning": "포도",
+        "context": "처음에는 없던 과일"
+      },
+      {
+        "term": "cups",
+        "partOfSpeech": "noun",
+        "meaning": "컵들",
+        "context": "과일을 담는 용기"
+      },
+      {
+        "term": "shelf",
+        "partOfSpeech": "noun",
+        "meaning": "선반",
+        "context": "컵이 있던 곳"
+      },
+      {
+        "term": "strawberries",
+        "partOfSpeech": "noun",
+        "meaning": "딸기들",
+        "context": "조금 추가한 과일"
+      },
+      {
+        "term": "yoghurt",
+        "partOfSpeech": "noun",
+        "meaning": "요구르트",
+        "context": "컵에 조금 넣은 유제품"
+      },
+      {
+        "term": "honey",
+        "partOfSpeech": "noun",
+        "meaning": "꿀",
+        "context": "적게 사용한 단맛 재료"
+      },
+      {
+        "term": "sugar",
+        "partOfSpeech": "noun",
+        "meaning": "설탕",
+        "context": "많으면 안 좋은 재료"
+      },
+      {
+        "term": "fridge",
+        "partOfSpeech": "noun",
+        "meaning": "냉장고",
+        "context": "남은 음식을 보관할 곳"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "How _____ apples are there?",
+        "choices": [
+          "much",
+          "many",
+          "little",
+          "any much"
+        ],
+        "answer": 1,
+        "explanation": "셀 수 있는 apples에는 many를 사용합니다."
+      },
+      {
+        "question": "How _____ juice do we need?",
+        "choices": [
+          "much",
+          "many",
+          "few",
+          "any many"
+        ],
+        "answer": 0,
+        "explanation": "셀 수 없는 juice에는 much를 씁니다."
+      },
+      {
+        "question": "We don't have _____ eggs.",
+        "choices": [
+          "some",
+          "a little",
+          "any",
+          "much"
+        ],
+        "answer": 2,
+        "explanation": "부정문에서 eggs 앞에는 any가 자연스럽습니다."
+      },
+      {
+        "question": "Add _____ salt, please.",
+        "choices": [
+          "a few",
+          "many",
+          "some few",
+          "a little"
+        ],
+        "answer": 3,
+        "explanation": "셀 수 없는 salt의 소량은 a little입니다."
+      },
+      {
+        "question": "There are _____ chairs in this small room.",
+        "choices": [
+          "too much",
+          "too many",
+          "a little",
+          "much"
+        ],
+        "answer": 1,
+        "explanation": "셀 수 있는 복수 chairs에는 too many를 씁니다."
+      },
+      {
+        "question": "What fruit did they not have at first?",
+        "choices": [
+          "Grapes",
+          "Apples",
+          "Bananas",
+          "Strawberries"
+        ],
+        "answer": 0,
+        "explanation": "처음에 포도가 없었습니다."
+      },
+      {
+        "question": "How many cups did they need?",
+        "choices": [
+          "Three",
+          "Four",
+          "Five",
+          "Six"
+        ],
+        "answer": 3,
+        "explanation": "컵 여섯 개가 필요했습니다."
+      },
+      {
+        "question": "What did Ella say about adding sweets?",
+        "choices": [
+          "There was no fruit",
+          "They needed more sugar",
+          "There was already too much sugar",
+          "They had no cups"
+        ],
+        "answer": 2,
+        "explanation": "설탕이 너무 많다고 말했습니다."
+      },
+      {
+        "question": "What does \"kitchen\" mean in the reading?",
+        "choices": [
+          "포도",
+          "부엌",
+          "선반",
+          "요구르트"
+        ],
+        "answer": 1,
+        "explanation": "\"kitchen\"는 부엌이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"apples\" mean in the reading?",
+        "choices": [
+          "컵들",
+          "사과들",
+          "딸기들",
+          "꿀"
+        ],
+        "answer": 1,
+        "explanation": "\"apples\"는 사과들이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "How many books are in your bag?",
+      "How much water do you drink daily?",
+      "What food do you have in your kitchen?",
+      "When would you say That's enough?",
+      "Make two questions using any and some."
+    ],
+    "rolePlay": {
+      "scenario": "Plan snacks for a small family picnic.",
+      "learnerRole": "Say how much food you have and ask about missing items.",
+      "coachRole": "Ask countable and uncountable quantity questions using British English.",
+      "goal": "Choose suitable quantifiers and avoid much/many confusion."
+    }
+  },
+  {
+    "date": "2026-10-25",
+    "title": "Student Daily English — 2026-10-25",
+    "grammarTopic": "Imperatives and Giving Directions",
+    "grammar": {
+      "title": "길 안내와 지시: Go straight, Turn left, Don't...",
+      "summary": "명령문은 주어 you를 보통 생략하고 동사원형으로 시작합니다. 길을 알려 줄 때 go straight, turn left/right, cross, go past, next to, opposite, between을 사용해요. 금지하는 명령은 Don't + 동사원형, 정중하게는 please를 덧붙입니다. A2에서는 first, then, finally로 순서를 설명해 봅니다.",
+      "points": [
+        {
+          "title": "imperatives: base verb",
+          "explanation": "친구에게 방법이나 순서를 알려 줄 때 동사원형으로 시작합니다.",
+          "examples": [
+            "[A1] Open your book. — 책을 펴.",
+            "[A1] Sit down, please. — 앉으세요.",
+            "[A1] Listen carefully. — 주의 깊게 들어.",
+            "[A2] Check the map before you leave. — 출발하기 전에 지도를 확인해.",
+            "[A2] Follow the signs to find the main entrance. — 정문을 찾으려면 표지판을 따라가."
+          ]
+        },
+        {
+          "title": "negative imperatives: Don't",
+          "explanation": "하지 말라는 경고·금지는 Don't + 동사원형을 씁니다.",
+          "examples": [
+            "[A1] Don't run. — 뛰지 마.",
+            "[A1] Don't touch that. — 저것을 만지지 마.",
+            "[A1] Don't shout. — 소리 지르지 마.",
+            "[A2] Don't cross the road when the light is red. — 신호가 빨간불일 때 길을 건너지 마.",
+            "[A2] Don't forget to bring your library card. — 도서관 카드를 가져오는 걸 잊지 마."
+          ]
+        },
+        {
+          "title": "go straight / turn left / turn right",
+          "explanation": "출발점부터 방향을 말하는 가장 기본적인 길 안내입니다.",
+          "examples": [
+            "[A1] Go straight. — 쭉 가.",
+            "[A1] Turn left here. — 여기서 왼쪽으로 돌아.",
+            "[A1] Turn right at the bank. — 은행에서 오른쪽으로 돌아.",
+            "[A2] Go straight until you reach the traffic lights. — 신호등에 도착할 때까지 직진해.",
+            "[A2] Turn left after the bridge and walk for two minutes. — 다리 뒤에서 왼쪽으로 돌아 2분 걸어."
+          ]
+        },
+        {
+          "title": "past / next to / opposite / between",
+          "explanation": "go past는 지나가다, next to는 바로 옆, opposite는 맞은편, between은 둘 사이를 뜻합니다.",
+          "examples": [
+            "[A1] Go past the shop. — 가게를 지나가.",
+            "[A1] It's next to the café. — 그것은 카페 옆에 있어.",
+            "[A1] It's opposite the park. — 그것은 공원 맞은편에 있어.",
+            "[A2] The library is between the bank and the school. — 도서관은 은행과 학교 사이에 있어.",
+            "[A2] Walk past the post office and turn right. — 우체국을 지나 오른쪽으로 돌아."
+          ]
+        },
+        {
+          "title": "first / then / finally: full directions",
+          "explanation": "순서 표현을 연결하면 듣는 사람이 길을 따라가기 쉬워집니다. 중요한 장소를 기준점으로 제시하세요.",
+          "examples": [
+            "[A1] First, go straight. — 먼저 직진해.",
+            "[A1] Then, turn left. — 그런 다음 왼쪽으로 돌아.",
+            "[A1] Finally, stop here. — 마지막으로 여기서 멈춰.",
+            "[A2] First, cross at the zebra crossing; then go past the park. — 먼저 횡단보도에서 건너고 공원을 지나가.",
+            "[A2] Finally, you'll see the museum opposite the library. — 마지막으로 도서관 맞은편에 박물관이 보일 거야."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "Excuse me.",
+        "meaning": "실례합니다.",
+        "example": "Excuse me. Where is the station? — 실례합니다. 역이 어디인가요?"
+      },
+      {
+        "term": "It's just around the corner.",
+        "meaning": "바로 모퉁이를 돌면 있어요.",
+        "example": "The library? It's just around the corner. — 도서관이요? 바로 모퉁이를 돌면 있어요."
+      },
+      {
+        "term": "You're welcome.",
+        "meaning": "천만에요.",
+        "example": "Thank you for the directions. You're welcome. — 길 안내 감사해요. 천만에요."
+      }
+    ],
+    "readingTitle": "Finding the Town Library",
+    "paragraphs": [
+      "Oliver is visiting a new town. He wants to find the library, but he cannot see it on the map. He asks a woman for help.",
+      "“Excuse me. Where is the library?” he asks. The woman smiles and says, “Go straight to the traffic lights.”",
+      "“Then turn left and walk past the bakery. Don't cross the busy road here. Use the zebra crossing near the park.”",
+      "Oliver follows the directions. He sees the library opposite a small café. It is between the museum and the post office.",
+      "He enters the library and meets a friendly librarian. “Thank you for the directions,” he says. The librarian smiles and says, “You're welcome!”"
+    ],
+    "translations": [
+      "Oliver는 새로운 마을을 방문했어요. 도서관을 찾고 싶지만 지도에서 보이지 않아요. 그는 여성에게 도움을 요청해요.",
+      "그가 ‘실례합니다. 도서관이 어디인가요?’라고 묻자 여성은 웃으며 ‘신호등까지 직진하세요’라고 말해요.",
+      "‘그다음 왼쪽으로 돌아 빵집을 지나가세요. 여기서 붐비는 도로를 건너지 말고 공원 근처 횡단보도를 이용하세요.’",
+      "Oliver는 안내대로 걸어요. 작은 카페 맞은편에 도서관이 보여요. 도서관은 박물관과 우체국 사이에 있어요.",
+      "그는 도서관에 들어가 친절한 사서를 만나요. ‘길 안내 감사합니다’라고 말하자 사서는 웃으며 ‘천만에요!’라고 답해요."
+    ],
+    "vocabulary": [
+      {
+        "term": "town",
+        "partOfSpeech": "noun",
+        "meaning": "마을",
+        "context": "Oliver가 방문한 곳"
+      },
+      {
+        "term": "library",
+        "partOfSpeech": "noun",
+        "meaning": "도서관",
+        "context": "찾으려는 목적지"
+      },
+      {
+        "term": "map",
+        "partOfSpeech": "noun",
+        "meaning": "지도",
+        "context": "장소를 찾는 자료"
+      },
+      {
+        "term": "traffic",
+        "partOfSpeech": "noun",
+        "meaning": "교통",
+        "context": "신호등을 설명하는 단어"
+      },
+      {
+        "term": "bakery",
+        "partOfSpeech": "noun",
+        "meaning": "빵집",
+        "context": "길을 따라 지나가는 가게"
+      },
+      {
+        "term": "crossing",
+        "partOfSpeech": "noun",
+        "meaning": "횡단보도",
+        "context": "안전하게 길을 건너는 곳"
+      },
+      {
+        "term": "park",
+        "partOfSpeech": "noun",
+        "meaning": "공원",
+        "context": "횡단보도가 있는 근처 장소"
+      },
+      {
+        "term": "café",
+        "partOfSpeech": "noun",
+        "meaning": "카페",
+        "context": "도서관 맞은편 장소"
+      },
+      {
+        "term": "museum",
+        "partOfSpeech": "noun",
+        "meaning": "박물관",
+        "context": "도서관 옆 건물"
+      },
+      {
+        "term": "librarian",
+        "partOfSpeech": "noun",
+        "meaning": "사서",
+        "context": "도서관에서 일하는 사람"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "_____ straight to the bank.",
+        "choices": [
+          "Goes",
+          "Going",
+          "Go",
+          "To go"
+        ],
+        "answer": 2,
+        "explanation": "명령문은 동사원형 Go로 시작합니다."
+      },
+      {
+        "question": "_____ run across the road.",
+        "choices": [
+          "Don't",
+          "Doesn't",
+          "Didn't",
+          "Isn't"
+        ],
+        "answer": 0,
+        "explanation": "금지 명령은 Don't + 동사원형입니다."
+      },
+      {
+        "question": "Turn _____ at the corner.",
+        "choices": [
+          "straightly",
+          "past",
+          "next",
+          "left"
+        ],
+        "answer": 3,
+        "explanation": "Turn left/right가 올바른 길 안내입니다."
+      },
+      {
+        "question": "The shop is _____ the bank and the café.",
+        "choices": [
+          "opposite to of",
+          "between",
+          "going",
+          "acrossed"
+        ],
+        "answer": 1,
+        "explanation": "둘 사이 위치는 between A and B입니다."
+      },
+      {
+        "question": "Which is a polite instruction?",
+        "choices": [
+          "You to sit now.",
+          "Does sit please.",
+          "Please sit down.",
+          "Sitting you please."
+        ],
+        "answer": 2,
+        "explanation": "Please + 동사원형으로 정중한 지시를 할 수 있습니다."
+      },
+      {
+        "question": "Where did Oliver want to go?",
+        "choices": [
+          "To the library",
+          "To the station",
+          "To the zoo",
+          "To the swimming pool"
+        ],
+        "answer": 0,
+        "explanation": "도서관을 찾으려고 했습니다."
+      },
+      {
+        "question": "What shop did he walk past?",
+        "choices": [
+          "A clothes shop",
+          "A bakery",
+          "A toy shop",
+          "A bookshop"
+        ],
+        "answer": 1,
+        "explanation": "빵집을 지나갔습니다."
+      },
+      {
+        "question": "Where was the library?",
+        "choices": [
+          "Inside a shopping centre",
+          "Under the bridge",
+          "Beside a river",
+          "Between the museum and the post office"
+        ],
+        "answer": 3,
+        "explanation": "박물관과 우체국 사이에 있었습니다."
+      },
+      {
+        "question": "What does \"town\" mean in the reading?",
+        "choices": [
+          "지도",
+          "마을",
+          "빵집",
+          "공원"
+        ],
+        "answer": 1,
+        "explanation": "\"town\"는 마을이라는 뜻입니다."
+      },
+      {
+        "question": "What does \"library\" mean in the reading?",
+        "choices": [
+          "교통",
+          "도서관",
+          "횡단보도",
+          "카페"
+        ],
+        "answer": 1,
+        "explanation": "\"library\"는 도서관이라는 뜻입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "How do you get from your home to a shop?",
+      "Where is the nearest library?",
+      "Give three instructions using imperatives.",
+      "What safety rule starts with Don't?",
+      "How would you ask a stranger for directions politely?"
+    ],
+    "rolePlay": {
+      "scenario": "A visitor asks you how to get to the library.",
+      "learnerRole": "Give safe step-by-step directions using landmarks.",
+      "coachRole": "Pretend to be the visitor and ask where to turn next.",
+      "goal": "Give clear imperative directions with place prepositions."
+    }
   }
 ]
