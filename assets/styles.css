@@ -115,3 +115,7 @@ footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 28px 0;
 .b2-links a:hover,.b2-links a:focus-visible { background:#eaf1ff; border-color:#a9c1ef; outline:2px solid transparent; }
 .b2-links .b2-all { background:#254d99; color:#fff; border-color:#254d99; }
 .b2-links .b2-all:hover,.b2-links .b2-all:focus-visible { background:#173a7b; color:#fff; }
+
+/* Dedicated English book-reading card */
+.book-reading { background: linear-gradient(145deg, #eefaf7 0%, #fff 65%); border-color: #cce9df; }
+.book-reading .icon { background: #daf4ea; color: #0b7055; }
