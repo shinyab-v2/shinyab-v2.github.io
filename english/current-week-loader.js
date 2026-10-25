@@ -27,16 +27,17 @@
 
     const [baseResponse, ...weekResponses] = await Promise.all([
       nativeFetch(input, init),
-      ...weeklySources.map((source) => nativeFetch(source))
+      ...weeklySources.map((source) => nativeFetch(source, { cache: "no-store" }).catch(() => null))
     ]);
 
-    if (!baseResponse.ok) return baseResponse;
-    const base = await baseResponse.json();
+    const base = baseResponse.ok ? await baseResponse.json() : { english: [] };
     const week = [];
     for (const response of weekResponses) {
-      if (!response.ok) continue;
-      const payload = await response.json();
-      week.push(...normalize(payload));
+      if (!response || !response.ok) continue;
+      try {
+        const payload = await response.json();
+        week.push(...normalize(payload));
+      } catch (error) { console.warn("Weekly lesson JSON could not be parsed", error); }
     }
 
     const byDate = new Map((base.english || []).map((lesson) => [lesson.date, lesson]));
