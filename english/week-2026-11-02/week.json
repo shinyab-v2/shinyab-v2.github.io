@@ -1,0 +1,1427 @@
+[
+  {
+    "date": "2026-11-02",
+    "title": "Daily English — 2026-11-02",
+    "grammarTopic": "Hedging and Evidence: Seem, Appear, Tend To and Be Likely To",
+    "grammar": {
+      "title": "추측의 강도 조절: 근거를 과장하지 않는 B2 영어",
+      "summary": "좋은 영어 설명은 모든 사실을 단정하지 않습니다. seem/appear는 관찰에 근거한 인상, tend to는 여러 번 관찰된 경향, be likely to는 가능성에 대한 판단을 나타냅니다. may/might, suggest, apparently 등을 함께 사용하면 증거의 강도를 정확하게 구분할 수 있습니다. 이는 직장 보고서와 일상적인 의견 교환에서 특히 중요합니다.",
+      "points": [
+        {
+          "title": "seem / appear + to부정사: 관찰된 인상",
+          "explanation": "seem과 appear는 관찰자가 얻은 인상을 전달하므로 확정적 사실 진술보다 부드럽습니다. appear가 조금 더 격식 있습니다. seem/appear + 형용사, seem/appear to be + 명사, seem/appear to have + 과거분사도 구별하세요. 완료부정사는 인상이 형성된 시점보다 앞선 사건을 가리킵니다.",
+          "examples": [
+            "The figures seem to support the original estimate. — 수치들은 최초 추정치를 뒷받침하는 듯합니다.",
+            "The new timetable appears to be more convenient. — 새 시간표는 더 편리한 것 같습니다.",
+            "The manager seems concerned about the delay. — 관리자는 지연을 걱정하는 듯합니다.",
+            "Several people appear to have misunderstood the notice. — 여러 사람이 안내문을 잘못 이해했던 것 같습니다.",
+            "It seems that the afternoon session is more popular. — 오후 세션이 더 인기 있는 것 같습니다."
+          ]
+        },
+        {
+          "title": "tend to: 개별 사건이 아닌 일반적 경향",
+          "explanation": "tend to는 자주 나타나는 패턴을 표현하지만 항상 그렇다는 뜻은 아닙니다. usually와 의미가 비슷한 경우도 있지만, tend to는 여러 관찰에서 도출한 경향을 강조합니다. 단 한 번의 사례로 'tend to'를 단정하지 않도록 주의합니다.",
+          "examples": [
+            "Visitors tend to arrive earlier on Saturdays. — 방문객들은 토요일에 더 일찍 오는 경향이 있습니다.",
+            "I tend to check the source before sharing a claim. — 저는 주장을 공유하기 전에 출처를 확인하는 편입니다.",
+            "Shorter meetings tend to produce clearer decisions. — 짧은 회의가 더 명확한 결정을 내리는 경향이 있습니다.",
+            "People tend to remember stories better than figures. — 사람들은 수치보다 이야기를 더 잘 기억하는 경향이 있습니다.",
+            "The room tends to become noisy after lunch. — 그 방은 점심 이후에 시끄러워지는 경향이 있습니다."
+          ]
+        },
+        {
+          "title": "be likely / unlikely to: 예상되는 가능성",
+          "explanation": "be likely to는 어떤 결과가 일어날 개연성이 높다는 판단이며, be unlikely to는 낮다는 판단입니다. 반드시 발생하거나 발생하지 않는다는 보장은 아닙니다. 'It is likely that + 절'도 가능합니다. 주어가 사람이든 사건이든 자연스럽게 쓰입니다.",
+          "examples": [
+            "The trial is likely to continue for another week. — 시범 운영은 일주일 더 이어질 가능성이 큽니다.",
+            "Attendance is unlikely to double overnight. — 참석 인원이 하루아침에 두 배가 될 가능성은 낮습니다.",
+            "It is likely that we will need more volunteers. — 자원봉사자가 더 필요할 가능성이 큽니다.",
+            "She is unlikely to accept without further details. — 그녀가 추가 설명 없이 수락할 가능성은 낮습니다.",
+            "Rain is likely to affect the outdoor programme. — 비가 야외 프로그램에 영향을 줄 가능성이 큽니다."
+          ]
+        },
+        {
+          "title": "may / might / may well: 조심스러운 가능성",
+          "explanation": "may와 might는 가능한 설명·결과를 제시하되 확실하다고 주장하지 않습니다. 두 표현의 차이는 문맥에 따라 작고, might가 더 조심스럽게 들릴 수 있습니다. may well은 '충분히 그럴 법하다'라는 강한 가능성의 뉘앙스이며 must처럼 확정하지는 않습니다.",
+          "examples": [
+            "The change may help people who work late. — 그 변경은 늦게 일하는 사람들에게 도움이 될 수도 있습니다.",
+            "We might have overlooked a practical problem. — 우리가 현실적인 문제 하나를 놓쳤을 수도 있습니다.",
+            "The lower turnout may reflect the bad weather. — 참석률이 낮은 것은 악천후를 반영한 것일 수 있습니다.",
+            "She may well be right about the costs. — 비용에 관한 그녀의 말이 충분히 맞을 법합니다.",
+            "The figures might change after the final review. — 최종 검토 후 수치가 달라질 수도 있습니다."
+          ]
+        },
+        {
+          "title": "suggest / indicate / apparently: 증거와 결론 구분",
+          "explanation": "자료나 관찰이 무언가를 '시사한다'면 suggest 또는 indicate를 사용합니다. 이것은 증명(prove)과 다릅니다. apparently는 전해 들었거나 겉으로 드러난 정보가 사실인 듯할 때 쓰며 출처가 불확실하다면 확인이 필요합니다. 'The data suggests that ...'가 자연스럽습니다.",
+          "examples": [
+            "The survey suggests that evening hours would be useful. — 설문은 저녁 운영 시간이 유용할 것임을 시사합니다.",
+            "Early results indicate a modest improvement. — 초기 결과는 소폭 개선을 보여 줍니다.",
+            "Apparently, the entrance was closed for repairs. — 듣자 하니 입구가 수리를 위해 닫혔다고 합니다.",
+            "These comments do not prove that the trial has succeeded. — 이런 의견만으로 시범 운영이 성공했다고 증명되지는 않습니다.",
+            "The evidence suggests a pattern, but we need more data. — 증거는 일정한 경향을 시사하지만 더 많은 자료가 필요합니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "hold off on",
+        "meaning": "잠시 미루다",
+        "example": "We should hold off on a final decision until Friday. — 금요일까지 최종 결정을 미루는 편이 좋겠습니다."
+      },
+      {
+        "term": "a step in the right direction",
+        "meaning": "올바른 방향으로 나아가는 한 걸음",
+        "example": "The longer opening hours are a step in the right direction. — 운영 시간을 늘린 것은 올바른 방향의 첫걸음입니다."
+      },
+      {
+        "term": "read too much into",
+        "meaning": "지나치게 의미를 부여하다",
+        "example": "Don't read too much into one quiet afternoon. — 한산했던 오후 한 번에 너무 큰 의미를 부여하지 마세요."
+      }
+    ],
+    "readingTitle": "The Library Trial That Needed Better Evidence",
+    "paragraphs": [
+      "The local library began a two-week trial of later opening hours after several residents requested more flexibility. Volunteers recorded attendance at different times, and staff collected feedback from visitors. The first evening was busy, which seemed to confirm that the change would be popular.",
+      "By the middle of the trial, however, the pattern was less clear. Attendance was high on Tuesday but fell sharply on Thursday. A school event had brought extra families into the area, while heavy rain had probably discouraged others. One evening's figures could not explain the whole picture.",
+      "The manager was cautious. She said the survey suggested that people valued evening access, but the library was unlikely to recover the extra staffing costs immediately. She also noticed that older visitors tended to arrive before six, whereas students often came later.",
+      "Rather than announce a permanent shift, the team decided to hold off on a final decision. They would extend the trial for one week and ask visitors why they had chosen particular hours. The manager believed that gathering stronger evidence was a step in the right direction.",
+      "At the review meeting, the volunteers agreed not to read too much into a single crowded evening. The trial might well lead to a new timetable, but it had already taught the library something valuable: a useful decision needs more than an exciting first impression."
+    ],
+    "translations": [
+      "지역 도서관은 주민 여러 명이 시간 선택의 폭을 넓혀 달라고 요청하자 운영 시간을 늦추는 2주간의 시범 운영을 시작했습니다. 자원봉사자들은 시간대별 방문 인원을 기록했고 직원들은 이용자 의견을 모았습니다. 첫날 저녁은 붐볐고, 이는 변화가 인기를 얻을 것이라는 생각을 뒷받침하는 듯했습니다.",
+      "하지만 시범 운영 중반이 되자 패턴이 덜 명확해졌습니다. 화요일의 방문 인원은 많았지만 목요일에는 급격히 줄었습니다. 학교 행사가 그 지역으로 가족들을 더 많이 불러들인 반면, 폭우 때문에 다른 사람들은 방문하지 않았을 가능성이 있었습니다. 저녁 한 번의 수치로는 전체 상황을 설명할 수 없었습니다.",
+      "관리자는 신중했습니다. 설문은 사람들이 저녁 이용을 중요하게 여긴다는 점을 시사하지만 도서관이 추가 인건비를 즉시 회수할 가능성은 낮다고 말했습니다. 또한 나이 든 이용자는 대체로 6시 전에 오고 학생들은 그보다 늦게 오는 경우가 많다는 점도 알아챘습니다.",
+      "팀은 운영 시간의 영구 변경을 발표하는 대신 최종 결정을 미루기로 했습니다. 시범 운영을 일주일 연장하고 이용자들이 특정 시간에 방문한 이유를 묻기로 했습니다. 관리자는 더 탄탄한 근거를 모으는 것이 올바른 방향으로 나아가는 한 걸음이라고 생각했습니다.",
+      "검토 회의에서 자원봉사자들은 한 번 붐볐던 저녁에 지나치게 큰 의미를 부여하지 않기로 했습니다. 시범 운영은 새 시간표로 이어질 수도 있지만 이미 도서관에 중요한 교훈을 주었습니다. 유용한 결정을 내리려면 흥미로운 첫인상 이상의 것이 필요하다는 점입니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "trial",
+        "partOfSpeech": "noun",
+        "meaning": "시범 운영",
+        "context": "two-week trial은 제도 변경 전 일정 기간 시험해 보는 운영"
+      },
+      {
+        "term": "flexibility",
+        "partOfSpeech": "noun",
+        "meaning": "유연성·선택의 폭",
+        "context": "more flexibility는 이용 시간의 선택지가 넓어지는 것"
+      },
+      {
+        "term": "volunteers",
+        "partOfSpeech": "plural noun",
+        "meaning": "자원봉사자들",
+        "context": "방문 인원 기록과 검토 회의에 참여한 사람들"
+      },
+      {
+        "term": "attendance",
+        "partOfSpeech": "noun",
+        "meaning": "참석·방문 인원",
+        "context": "요일과 시간에 따른 실제 도서관 방문 수"
+      },
+      {
+        "term": "feedback",
+        "partOfSpeech": "noun",
+        "meaning": "의견·반응",
+        "context": "도서관 이용자에게서 수집한 평가"
+      },
+      {
+        "term": "pattern",
+        "partOfSpeech": "noun",
+        "meaning": "양상·경향",
+        "context": "하루가 아닌 여러 날의 이용 흐름"
+      },
+      {
+        "term": "cautious",
+        "partOfSpeech": "adjective",
+        "meaning": "신중한",
+        "context": "추가 근거 없이 결과를 단정하지 않는 태도"
+      },
+      {
+        "term": "survey",
+        "partOfSpeech": "noun",
+        "meaning": "설문조사",
+        "context": "저녁 운영 시간에 대한 이용자 의견 조사"
+      },
+      {
+        "term": "shift",
+        "partOfSpeech": "noun",
+        "meaning": "변경·전환",
+        "context": "운영 시간을 바꾸는 결정"
+      },
+      {
+        "term": "evidence",
+        "partOfSpeech": "noun",
+        "meaning": "근거·증거",
+        "context": "영구 변경 여부를 판단하기 위한 더 탄탄한 자료"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "The figures ___ to support the estimate, but they are not conclusive.",
+        "choices": [
+          "seem",
+          "seems",
+          "seeming",
+          "to seem"
+        ],
+        "answer": 0,
+        "explanation": "복수 주어 figures 뒤에는 seem이 맞습니다. '...인 듯하다'는 확정적 결론을 피합니다."
+      },
+      {
+        "question": "Which sentence describes a general tendency rather than a single event?",
+        "choices": [
+          "Visitors tend to arrive early.",
+          "Visitors arrived early yesterday.",
+          "Visitors must arrive early.",
+          "Visitors have arrived now."
+        ],
+        "answer": 0,
+        "explanation": "tend to는 반복되는 일반적 경향입니다. 다른 문장은 특정 사건이나 의무를 나타냅니다."
+      },
+      {
+        "question": "Complete: The event is ___ to sell out if tickets remain expensive.",
+        "choices": [
+          "unlike",
+          "unlikely",
+          "unliking",
+          "unlikeness"
+        ],
+        "answer": 1,
+        "explanation": "be unlikely to + 동사원형은 발생 가능성이 낮다는 뜻입니다."
+      },
+      {
+        "question": "What does 'may well' suggest in 'She may well be right'?",
+        "choices": [
+          "She is certainly wrong.",
+          "It is impossible to know.",
+          "She is quite possibly right.",
+          "She has already proved it."
+        ],
+        "answer": 2,
+        "explanation": "may well은 '충분히 그럴 법하다'라는 비교적 높은 가능성이며 확정은 아닙니다."
+      },
+      {
+        "question": "Which verb best avoids claiming that the results prove a conclusion?",
+        "choices": [
+          "guarantee",
+          "suggest",
+          "establish beyond doubt",
+          "demonstrate conclusively"
+        ],
+        "answer": 1,
+        "explanation": "suggest는 자료가 시사하는 바를 나타낼 뿐 확정적 입증은 아닙니다."
+      },
+      {
+        "question": "Why was Thursday's attendance lower, according to the text?",
+        "choices": [
+          "The library permanently closed.",
+          "Heavy rain probably discouraged some people.",
+          "The volunteers stopped recording.",
+          "The trial had already ended."
+        ],
+        "answer": 1,
+        "explanation": "지문은 폭우 때문에 일부 이용자의 방문이 줄었을 가능성을 언급합니다."
+      },
+      {
+        "question": "What did the manager decide to do?",
+        "choices": [
+          "Cancel the survey.",
+          "Make the change permanent immediately.",
+          "Extend the trial and ask visitors more questions.",
+          "Reduce all opening hours."
+        ],
+        "answer": 2,
+        "explanation": "관리자는 기간을 일주일 늘리고 시간대 선택 이유를 더 알아보기로 했습니다."
+      },
+      {
+        "question": "What is the central lesson of the reading?",
+        "choices": [
+          "A single busy evening proves demand.",
+          "Visitors should always come after six.",
+          "Staff costs are unimportant.",
+          "Decisions should be based on stronger evidence."
+        ],
+        "answer": 3,
+        "explanation": "지문은 첫인상보다 충분한 근거가 중요하다고 마무리합니다."
+      },
+      {
+        "question": "In the reading, 'attendance' means:",
+        "choices": [
+          "the number of visitors present",
+          "the size of a building",
+          "the quality of the books",
+          "the price of admission"
+        ],
+        "answer": 0,
+        "explanation": "attendance는 특정 시간에 방문하거나 참석한 사람의 수입니다."
+      },
+      {
+        "question": "In the reading, 'cautious' is closest to:",
+        "choices": [
+          "careless",
+          "enthusiastic",
+          "careful about conclusions",
+          "angry about costs"
+        ],
+        "answer": 2,
+        "explanation": "cautious는 성급한 판단을 피하는 신중함을 뜻합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Tell me about a recent claim that seemed convincing at first. What evidence did you check?",
+      "What do people in your neighbourhood tend to do at weekends?",
+      "What change is likely to improve a service you use regularly?",
+      "Why might someone read too much into one positive result?",
+      "How would you politely explain that the evidence suggests, but does not prove, a conclusion?"
+    ],
+    "rolePlay": {
+      "scenario": "지역 도서관 운영 시간 평가 회의",
+      "learnerRole": "신중한 분석 담당자로서 관찰, 경향, 가능성 및 추가로 필요한 자료를 영어로 설명한다.",
+      "coachRole": "회의 사회자로서 한 번에 한 가지 근거를 묻고 과도한 확신을 발견하면 자연스러운 B2 표현으로 교정한다.",
+      "goal": "seem, tend to, likely, might, suggest를 구분하여 근거 중심의 제안을 3문장 이상으로 말한다."
+    }
+  },
+  {
+    "date": "2026-11-03",
+    "title": "Daily English — 2026-11-03",
+    "grammarTopic": "Indirect Questions and Embedded Clauses",
+    "grammar": {
+      "title": "간접의문문: 질문을 공손하고 정확하게 묻기",
+      "summary": "직접의문문은 'Where is the entrance?'처럼 도치가 있지만, 문장 안에 들어간 간접의문문에서는 'Could you tell me where the entrance is?'처럼 평서문 어순을 사용합니다. if/whether, 의문사, 조동사, 정중한 도입부를 구분하면 안내·고객 응대·업무 이메일에서 자연스럽게 질문할 수 있습니다.",
+      "points": [
+        {
+          "title": "의문사가 있는 간접의문문: 평서문 어순",
+          "explanation": "Could you tell me, Do you know, I wonder 다음의 의문사절은 독립된 질문이 아니므로 주어와 동사를 다시 뒤집지 않습니다. Where is the lift?가 들어가면 where the lift is가 됩니다. 문장 전체는 정중한 질문이지만 내부 절에서는 도치하지 않습니다.",
+          "examples": [
+            "Could you tell me where the lift is? — 승강기가 어디에 있는지 알려 주실 수 있나요?",
+            "Do you know when the exhibition starts? — 전시가 언제 시작하는지 아세요?",
+            "I wonder why the sign has changed. — 표지판이 왜 바뀌었는지 궁금합니다.",
+            "Can you explain how this ticket works? — 이 표가 어떻게 사용되는지 설명해 주실 수 있나요?",
+            "Would you mind telling me which route is quicker? — 어느 경로가 더 빠른지 알려 주시겠어요?"
+          ]
+        },
+        {
+          "title": "Yes/No 질문을 if 또는 whether 절로",
+          "explanation": "원래 Yes/No로 대답하는 질문에는 if 또는 whether를 사용합니다. whether는 조금 더 격식 있고 두 선택지를 명확히 드러낼 때 특히 알맞습니다. 'I don't know if ...'는 자연스럽지만, 전치사 뒤나 'whether to + 동사원형'에는 일반적으로 whether를 사용합니다.",
+          "examples": [
+            "Could you check whether the entrance is open? — 입구가 열려 있는지 확인해 주시겠어요?",
+            "Do you know if the bus stops here? — 버스가 여기에 정차하는지 아세요?",
+            "We discussed whether we should wait. — 우리는 기다려야 할지를 논의했습니다.",
+            "She asked whether the ticket included a transfer. — 그녀는 표에 환승이 포함되는지 물었습니다.",
+            "I am not sure if the lift is working. — 승강기가 작동하는지 확실하지 않습니다."
+          ]
+        },
+        {
+          "title": "조동사 do/does/did의 불필요한 도치 제거",
+          "explanation": "직접의문문에 do/does/did가 들어 있더라도 간접의문문에서는 보통 평서문 시제와 동사형으로 바꿉니다. 'where does it stop'이 아니라 'where it stops'가 정답입니다. 다만 do가 '하다'라는 본동사일 경우에는 남습니다.",
+          "examples": [
+            "Can you tell me where this bus stops? — 이 버스가 어디에 서는지 알려 주시겠어요?",
+            "Do you know why she left early? — 그녀가 왜 일찍 떠났는지 아세요?",
+            "Could you explain how the machine works? — 그 기계가 어떻게 작동하는지 설명해 주시겠어요?",
+            "I wonder what the driver said. — 운전기사가 무슨 말을 했는지 궁금합니다.",
+            "Please show me what I need to do next. — 다음에 제가 무엇을 해야 하는지 보여 주세요."
+          ]
+        },
+        {
+          "title": "what / how / where + to부정사: 선택과 방법",
+          "explanation": "간접의문문의 내용이 '무엇을 할지', '어떻게 할지' 같은 의사 결정이라면 의문사 + to부정사로 간결하게 표현할 수 있습니다. 'where to go'는 가능하지만 이유를 설명하는 'why to go'는 일반적으로 어색하므로 문장을 풀어 씁니다.",
+          "examples": [
+            "I am not sure which platform to use. — 어느 승강장을 이용해야 할지 확실하지 않습니다.",
+            "Please explain how to reach the gallery. — 전시관에 어떻게 가는지 설명해 주세요.",
+            "We need to decide where to meet. — 어디에서 만날지 결정해야 합니다.",
+            "She showed me what to press. — 그녀는 무엇을 눌러야 하는지 보여 주었습니다.",
+            "Could you tell us when to leave? — 언제 출발해야 하는지 알려 주시겠어요?"
+          ]
+        },
+        {
+          "title": "공손한 도입부와 질문 부호",
+          "explanation": "Could you tell me ...?처럼 문장 전체가 질문이면 물음표로 끝나지만, I wonder ... / I'd like to know ... 같은 진술문은 보통 마침표를 씁니다. 명령조를 부드럽게 할 때 Do you happen to know ...?도 유용합니다. 불필요한 'please' 반복보다는 정확한 구조가 중요합니다.",
+          "examples": [
+            "Do you happen to know whether the shop is open? — 혹시 그 가게가 영업 중인지 아시나요?",
+            "I'd like to know how long the journey takes. — 이동에 얼마나 걸리는지 알고 싶습니다.",
+            "Could you let me know when the results are ready? — 결과가 준비되면 언제인지 알려 주시겠어요?",
+            "I wonder whether there is a quieter route. — 더 조용한 경로가 있는지 궁금합니다.",
+            "Would it be possible to explain where we should wait? — 어디에서 기다려야 하는지 설명해 주실 수 있을까요?"
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "find your way around",
+        "meaning": "길이나 공간 구조를 익히다",
+        "example": "It took me a while to find my way around the station. — 역의 구조를 익히는 데 시간이 좀 걸렸습니다."
+      },
+      {
+        "term": "point someone in the right direction",
+        "meaning": "어디로 가야 하는지 안내하다",
+        "example": "The receptionist pointed us in the right direction. — 접수 직원이 우리가 가야 할 방향을 알려 주었습니다."
+      },
+      {
+        "term": "double-check",
+        "meaning": "다시 확인하다",
+        "example": "Let's double-check the platform before boarding. — 탑승 전에 승강장을 다시 확인합시다."
+      }
+    ],
+    "readingTitle": "An Accessible Route Across Town",
+    "paragraphs": [
+      "When Maya's aunt planned her first visit to the city, Maya offered to meet her at the station. Her aunt used a walking stick, so an accessible route mattered more than the shortest distance. Maya checked the timetable and looked for information about lifts before the journey.",
+      "At the information desk, she asked, 'Could you tell me whether the north entrance is open?' A member of staff explained that it was closed for repairs. Maya then asked which entrance had step-free access and where the nearest lift was located.",
+      "The staff member pointed her towards a quieter passage. However, the signs near the platform were confusing, and Maya was unsure whether they needed to transfer to another train. Rather than guess, she asked someone to explain how the transfer worked.",
+      "An employee drew a simple map and showed Maya which route to follow. He also advised her to double-check the lift status on the morning of the visit. With clear directions, Maya began to find her way around the station without feeling rushed.",
+      "On Saturday, Maya met her aunt and guided her through the accessible entrance. The journey took a little longer, but it was comfortable. Her aunt thanked Maya for thinking ahead. Maya realised that a helpful question can matter more than pretending you already know the answer."
+    ],
+    "translations": [
+      "Maya의 이모가 처음으로 그 도시를 방문할 계획을 세우자 Maya는 역에서 만나기로 했습니다. 이모는 지팡이를 사용했으므로 가장 짧은 거리보다 접근하기 편한 경로가 더 중요했습니다. Maya는 시간표를 확인하고 이동 전에 승강기에 관한 정보를 찾아봤습니다.",
+      "안내 데스크에서 Maya는 북쪽 입구가 열려 있는지 알려 줄 수 있는지 물었습니다. 직원은 수리 때문에 닫혔다고 설명했습니다. 그러자 Maya는 계단 없이 이용할 수 있는 입구가 어디인지, 가장 가까운 승강기가 어디에 있는지 물었습니다.",
+      "직원은 더 조용한 통로를 안내했습니다. 하지만 승강장 근처의 표지판은 혼란스러웠고 Maya는 다른 열차로 갈아타야 하는지 확신할 수 없었습니다. 짐작하기보다 환승 방법을 설명해 달라고 요청했습니다.",
+      "직원은 간단한 지도를 그려 어느 길로 가야 하는지 보여 주었습니다. 또한 방문 당일 아침 승강기 작동 상태를 다시 확인하라고 조언했습니다. 명확한 길 안내를 받은 Maya는 서두르지 않고 역의 구조를 익힐 수 있었습니다.",
+      "토요일에 Maya는 이모를 만나 이용하기 편한 입구로 안내했습니다. 이동에는 시간이 조금 더 걸렸지만 편안했습니다. 이모는 미리 배려해 준 Maya에게 고마워했습니다. Maya는 이미 답을 알고 있는 척하는 것보다 도움이 되는 질문을 하는 것이 더 중요할 수 있음을 깨달았습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "accessible",
+        "partOfSpeech": "adjective",
+        "meaning": "접근하기 편한·이동 약자가 이용할 수 있는",
+        "context": "accessible route는 계단 등 장애물을 피한 경로"
+      },
+      {
+        "term": "timetable",
+        "partOfSpeech": "noun",
+        "meaning": "시간표",
+        "context": "열차 출발 시간을 확인하는 표"
+      },
+      {
+        "term": "lifts",
+        "partOfSpeech": "plural noun",
+        "meaning": "승강기들",
+        "context": "British English에서 엘리베이터를 가리키는 표현"
+      },
+      {
+        "term": "entrance",
+        "partOfSpeech": "noun",
+        "meaning": "입구",
+        "context": "북쪽 출입구의 폐쇄 여부를 확인함"
+      },
+      {
+        "term": "staff",
+        "partOfSpeech": "collective noun",
+        "meaning": "직원들",
+        "context": "안내 데스크에서 길을 설명한 사람들"
+      },
+      {
+        "term": "platform",
+        "partOfSpeech": "noun",
+        "meaning": "승강장",
+        "context": "열차를 타는 구역"
+      },
+      {
+        "term": "signs",
+        "partOfSpeech": "plural noun",
+        "meaning": "표지판들",
+        "context": "승강장 근처에서 길을 알려 주는 표시"
+      },
+      {
+        "term": "transfer",
+        "partOfSpeech": "noun",
+        "meaning": "환승",
+        "context": "다른 열차로 갈아타는 절차"
+      },
+      {
+        "term": "directions",
+        "partOfSpeech": "plural noun",
+        "meaning": "길 안내",
+        "context": "직원이 제공한 정확한 이동 설명"
+      },
+      {
+        "term": "passage",
+        "partOfSpeech": "noun",
+        "meaning": "통로",
+        "context": "혼잡하지 않은 이동 경로"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Choose the correct indirect question.",
+        "choices": [
+          "Could you tell me where is the lift?",
+          "Could you tell me where the lift is?",
+          "Could you tell me where does the lift be?",
+          "Could you tell me where be the lift?"
+        ],
+        "answer": 1,
+        "explanation": "간접의문문에서는 where + 주어(the lift) + 동사(is) 어순이 됩니다."
+      },
+      {
+        "question": "Which is correct when asking a yes/no question indirectly?",
+        "choices": [
+          "I wonder if the entrance is open.",
+          "I wonder does the entrance open.",
+          "I wonder is the entrance open.",
+          "I wonder whether is open the entrance."
+        ],
+        "answer": 0,
+        "explanation": "if + 평서문 어순을 사용합니다."
+      },
+      {
+        "question": "Choose the correct sentence.",
+        "choices": [
+          "Do you know why did she leave?",
+          "Do you know why she did leave early?",
+          "Do you know why she left early?",
+          "Do you know why left she early?"
+        ],
+        "answer": 2,
+        "explanation": "일반적인 간접의문문은 주어+과거형을 사용해 did 도치를 없앱니다. 강조를 위한 did와 구분합니다."
+      },
+      {
+        "question": "Complete: I'm not sure ___ platform to use.",
+        "choices": [
+          "who",
+          "which",
+          "whose",
+          "whether"
+        ],
+        "answer": 1,
+        "explanation": "명사 platform 앞에 선택을 나타내는 which + 명사 + to부정사가 자연스럽습니다."
+      },
+      {
+        "question": "Which sentence is normally written as a statement with a full stop?",
+        "choices": [
+          "Could you tell me when it opens?",
+          "Do you know where to go?",
+          "Would you mind checking the route?",
+          "I wonder when the office opens."
+        ],
+        "answer": 3,
+        "explanation": "I wonder는 궁금하다는 진술이므로 일반적으로 마침표로 끝냅니다."
+      },
+      {
+        "question": "Why did Maya prefer an accessible route?",
+        "choices": [
+          "Her aunt used a walking stick.",
+          "The museum was free.",
+          "She wanted to avoid all trains.",
+          "The journey had to be the shortest possible."
+        ],
+        "answer": 0,
+        "explanation": "이모가 지팡이를 사용했기 때문에 접근성이 중요했습니다."
+      },
+      {
+        "question": "What was wrong with the north entrance?",
+        "choices": [
+          "It was too crowded.",
+          "It was reserved for staff.",
+          "It was closed for repairs.",
+          "It had no signs at all."
+        ],
+        "answer": 2,
+        "explanation": "직원은 북쪽 입구가 수리를 위해 닫혔다고 설명했습니다."
+      },
+      {
+        "question": "What did the employee suggest checking again on the day?",
+        "choices": [
+          "The ticket price.",
+          "The lift status.",
+          "The weather forecast.",
+          "The opening speech."
+        ],
+        "answer": 1,
+        "explanation": "직원은 방문 당일 승강기 작동 상태를 다시 확인하도록 권했습니다."
+      },
+      {
+        "question": "In this reading, 'transfer' means:",
+        "choices": [
+          "a refund",
+          "a written complaint",
+          "changing from one train to another",
+          "a staff meeting"
+        ],
+        "answer": 2,
+        "explanation": "transfer는 열차 사이의 환승을 뜻합니다."
+      },
+      {
+        "question": "Which word describes a route that is easy for a person with limited mobility to use?",
+        "choices": [
+          "cautious",
+          "accessible",
+          "temporary",
+          "distant"
+        ],
+        "answer": 1,
+        "explanation": "accessible은 이동 접근성이 확보된 상태를 말합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "How would you politely ask a stranger where the nearest lift is?",
+      "What would you say if you needed to know whether a train stops at your station?",
+      "Why might an accessible route be better than the shortest route?",
+      "What could you ask a receptionist to help you find your way around a building?",
+      "Make an indirect question with 'which route to take' and explain your choice."
+    ],
+    "rolePlay": {
+      "scenario": "처음 방문한 교통 허브에서 접근성 있는 경로 찾기",
+      "learnerRole": "방문자로서 간접의문문을 사용하여 입구, 승강기, 환승 방법을 묻는다.",
+      "coachRole": "역 안내원 역할로 매번 하나의 질문에 답하고 도치 오류가 있으면 짧게 교정한 뒤 학습자의 재발화를 요청한다.",
+      "goal": "where/which/how와 if/whether를 포함한 자연스러운 간접의문문 4개를 구사한다."
+    }
+  },
+  {
+    "date": "2026-11-04",
+    "title": "Daily English — 2026-11-04",
+    "grammarTopic": "Cleft Sentences: It Is ... That and What ... Is",
+    "grammar": {
+      "title": "분열문: 정말 중요한 정보를 정확히 강조하기",
+      "summary": "영어는 단어를 크게 말하는 것뿐 아니라 문장 구조를 바꿔 초점을 줄 수 있습니다. It was X that ...는 이미 알려진 사건 중 X를 강조하고, What ... is ...는 핵심 문제·필요·결과를 앞으로 끌어옵니다. 강조하고 싶은 정보가 사람인지, 시간인지, 이유인지에 따라 구조와 의미가 달라집니다.",
+      "points": [
+        {
+          "title": "It is/was + 강조 대상 + that/who: 정보에 초점",
+          "explanation": "분열문(It-cleft)은 원래 문장의 한 성분을 강조합니다. 사람을 강조할 때 who를 쓸 수 있고 that도 일반적으로 가능합니다. 강조하는 사건의 시간에 맞춰 is/was를 고릅니다. 'It was Anna who fixed it'은 다른 사람이 아니라 Anna였다는 대비를 나타낼 수 있습니다.",
+          "examples": [
+            "It was Nadia who spotted the fault. — 결함을 발견한 사람은 바로 Nadia였습니다.",
+            "It is the small details that matter most. — 가장 중요한 것은 바로 작은 세부 사항입니다.",
+            "It was the battery that needed replacing. — 교체가 필요했던 것은 바로 배터리였습니다.",
+            "It was our neighbour who suggested the workshop. — 그 수리 워크숍을 제안한 사람은 바로 이웃이었습니다.",
+            "It is regular practice that builds confidence. — 자신감을 키워 주는 것은 바로 꾸준한 연습입니다."
+          ]
+        },
+        {
+          "title": "시간·장소·이유에 초점 주기",
+          "explanation": "시간이나 장소처럼 상황 정보를 강조할 수도 있습니다. 'It was on Friday that ...'는 금요일이 핵심이라는 뜻입니다. 이유를 강조할 때 'It was because ... that ...'가 가능하며, when/where가 일부 구어 문맥에서 보이더라도 that이 안정적인 선택입니다.",
+          "examples": [
+            "It was on Monday that the volunteers met. — 자원봉사자들이 만난 날은 바로 월요일이었습니다.",
+            "It was in the back room that we found the tools. — 공구를 발견한 곳은 바로 뒤쪽 방이었습니다.",
+            "It was because the label was unclear that people complained. — 사람들이 불평한 이유는 바로 표시가 불분명했기 때문입니다.",
+            "It was after lunch that the lamp stopped working. — 전등이 작동을 멈춘 때는 바로 점심 이후였습니다.",
+            "It was at the second meeting that we agreed on a solution. — 해결책에 합의한 것은 바로 두 번째 회의에서였습니다."
+          ]
+        },
+        {
+          "title": "What + 절 + be: 핵심 내용 먼저 제시",
+          "explanation": "what-cleft는 '...한 것/중요한 것'을 주어 자리에 놓고 뒤에서 핵심을 말합니다. What we need is ...에서 what은 단순 의문사가 아니라 '-하는 것'이라는 관계절의 역할을 합니다. 주어처럼 보이는 what절은 보통 단수 취급하지만 보어와의 일치가 문맥에 따라 달라질 수 있어 실용 표현을 먼저 익히세요.",
+          "examples": [
+            "What we need is a clearer manual. — 우리에게 필요한 것은 더 명확한 설명서입니다.",
+            "What surprised me was the simple solution. — 저를 놀라게 한 것은 간단한 해결책이었습니다.",
+            "What matters is whether the device is safe. — 중요한 것은 기기가 안전한지 여부입니다.",
+            "What the team wanted was more time to test. — 팀이 원했던 것은 시험할 시간이 더 있는 것이었습니다.",
+            "What helped most was everyone's patience. — 가장 큰 도움이 된 것은 모두의 인내심이었습니다."
+          ]
+        },
+        {
+          "title": "What happened was ...: 사건 설명의 출발점",
+          "explanation": "대화에서 상대가 예상하지 못한 상황을 설명할 때 What happened was (that) ...를 사용합니다. 논리적 핵심을 뒤에 배치해 설명을 정돈합니다. What I mean is ...는 앞말을 명확히 고치거나 정정할 때 유용합니다. 뒤 문장이 사실상 주절의 완결 내용을 채워 줍니다.",
+          "examples": [
+            "What happened was that the old socket had become loose. — 실제로 일어난 일은 오래된 소켓이 헐거워졌다는 것이었습니다.",
+            "What I mean is that we should test it twice. — 제 말은 두 번 시험해 봐야 한다는 뜻입니다.",
+            "What we discovered was that the switch was fine. — 우리가 알아낸 것은 스위치에는 문제가 없었다는 점입니다.",
+            "What worries me is that the cable is damaged. — 제가 걱정하는 것은 케이블이 손상됐다는 점입니다.",
+            "What made the visit worthwhile was the advice. — 그 방문을 가치 있게 만든 것은 바로 조언이었습니다."
+          ]
+        },
+        {
+          "title": "All / The thing / The reason + 절: 제한과 강조",
+          "explanation": "All I need is ...는 필요한 것을 하나로 좁히고, The thing that ...는 대화의 초점을 바꿉니다. The reason ... is that ...에서 이유를 설명하는 보어절은 because보다 that이 격식 있는 문장에서 더 일반적입니다. 중복된 'the reason is because'는 가급적 피하세요.",
+          "examples": [
+            "All I need is a working torch. — 제게 필요한 것은 작동하는 손전등 하나뿐입니다.",
+            "All she wanted was a safe repair. — 그녀가 원했던 것은 안전한 수리뿐이었습니다.",
+            "The thing that impressed me was his honesty. — 저에게 인상 깊었던 것은 그의 정직함이었습니다.",
+            "The reason we waited is that the equipment was hot. — 우리가 기다린 이유는 장비가 뜨거웠기 때문입니다.",
+            "The one thing we must check is the fuse. — 우리가 반드시 확인할 단 한 가지는 퓨즈입니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "get to the bottom of",
+        "meaning": "문제의 원인을 끝까지 파악하다",
+        "example": "We need to get to the bottom of the fault. — 우리는 결함의 근본 원인을 알아내야 합니다."
+      },
+      {
+        "term": "a fresh pair of eyes",
+        "meaning": "새로운 시각으로 검토해 줄 사람",
+        "example": "A fresh pair of eyes helped us notice the loose cable. — 새로운 시각으로 봐 준 사람이 헐거운 케이블을 발견하는 데 도움이 됐습니다."
+      },
+      {
+        "term": "make all the difference",
+        "meaning": "결정적으로 큰 차이를 만들다",
+        "example": "One clear explanation can make all the difference. — 명확한 설명 하나가 결정적인 차이를 만들 수 있습니다."
+      }
+    ],
+    "readingTitle": "What Really Fixed the Old Lamp",
+    "paragraphs": [
+      "At a neighbourhood repair workshop, people brought broken household items to learn whether they could be used again. A student arrived with a desk lamp that had stopped working. He expected the volunteers to tell him to buy a replacement.",
+      "The first volunteer checked the plug and switch but found nothing unusual. It was Nadia, a retired electrician, who noticed a faint clicking sound near the base. She asked for the manual and suggested examining the socket rather than replacing the whole lamp.",
+      "The team used basic equipment to test the connection. What they discovered was that a loose socket had interrupted the power. It was a small fault, but fixing it required patience and a careful safety check. Nobody wanted to take unnecessary risks.",
+      "Once the lamp worked again, the student asked what had made the repair possible. Nadia replied, 'What helped most was asking the right question.' A fresh pair of eyes had made all the difference. The other volunteers agreed that guessing would have wasted time.",
+      "Before leaving, the student wrote a short note for the workshop noticeboard. He explained that the solution had been simple, but the method mattered more than the result. It was the team's willingness to investigate that had saved a useful piece of equipment."
+    ],
+    "translations": [
+      "동네 수리 워크숍에서 사람들은 고장 난 가정용품을 가져와 다시 사용할 수 있는지 알아보았습니다. 한 학생이 작동을 멈춘 책상 전등을 가져왔습니다. 그는 자원봉사자들이 새 제품을 사라고 할 것으로 예상했습니다.",
+      "첫 번째 자원봉사자는 플러그와 스위치를 확인했지만 특별한 문제를 찾지 못했습니다. 받침대 근처에서 희미한 딸깍 소리를 발견한 사람은 은퇴한 전기 기술자 Nadia였습니다. 그녀는 설명서를 요청하고 전등 전체를 교체하기보다 소켓을 살펴보자고 제안했습니다.",
+      "팀은 기본 장비를 사용해 연결 상태를 시험했습니다. 그들이 알아낸 것은 헐거운 소켓 때문에 전원이 끊겼다는 사실이었습니다. 작은 결함이었지만 고치려면 인내심과 꼼꼼한 안전 점검이 필요했습니다. 누구도 불필요한 위험을 감수하고 싶어 하지 않았습니다.",
+      "전등이 다시 작동하자 학생은 무엇이 수리를 가능하게 했는지 물었습니다. Nadia는 '가장 도움이 된 것은 올바른 질문을 한 것이었어요'라고 대답했습니다. 새로운 시각이 결정적인 차이를 만든 것입니다. 다른 자원봉사자들도 짐작만 했다면 시간을 낭비했을 것이라는 데 동의했습니다.",
+      "떠나기 전 학생은 워크숍 게시판에 짧은 메모를 남겼습니다. 해결책은 간단했지만 결과보다 방법이 더 중요했다고 설명했습니다. 유용한 장비를 살릴 수 있었던 것은 바로 원인을 조사하려는 팀의 태도였습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "workshop",
+        "partOfSpeech": "noun",
+        "meaning": "실습·수리 워크숍",
+        "context": "고장 난 물건을 함께 고쳐 보는 지역 행사"
+      },
+      {
+        "term": "lamp",
+        "partOfSpeech": "noun",
+        "meaning": "전등",
+        "context": "학생이 가져온 고장 난 책상 조명"
+      },
+      {
+        "term": "volunteers",
+        "partOfSpeech": "plural noun",
+        "meaning": "자원봉사자들",
+        "context": "수리 과정에 참여한 도움 제공자"
+      },
+      {
+        "term": "plug",
+        "partOfSpeech": "noun",
+        "meaning": "전기 플러그",
+        "context": "첫 번째로 점검한 부품"
+      },
+      {
+        "term": "socket",
+        "partOfSpeech": "noun",
+        "meaning": "소켓·접속부",
+        "context": "전기 연결이 헐거워진 부분"
+      },
+      {
+        "term": "manual",
+        "partOfSpeech": "noun",
+        "meaning": "설명서",
+        "context": "Nadia가 확인하려고 요청한 문서"
+      },
+      {
+        "term": "equipment",
+        "partOfSpeech": "noun",
+        "meaning": "장비",
+        "context": "안전하게 전기 연결을 시험하는 기구"
+      },
+      {
+        "term": "fault",
+        "partOfSpeech": "noun",
+        "meaning": "결함·고장 원인",
+        "context": "전기 공급을 끊은 작은 문제"
+      },
+      {
+        "term": "patience",
+        "partOfSpeech": "noun",
+        "meaning": "인내심",
+        "context": "수리를 차분하게 완수하는 데 필요한 태도"
+      },
+      {
+        "term": "solution",
+        "partOfSpeech": "noun",
+        "meaning": "해결책",
+        "context": "결함을 고치는 방법"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which sentence correctly emphasises the person who noticed the problem?",
+        "choices": [
+          "It Nadia was who noticed the fault.",
+          "It was Nadia who noticed the fault.",
+          "What was Nadia noticed the fault.",
+          "It is who Nadia noticed the fault."
+        ],
+        "answer": 1,
+        "explanation": "It was + 강조 대상(Nadia) + who + 나머지 절을 사용합니다."
+      },
+      {
+        "question": "Complete: It was ___ Monday that the team met.",
+        "choices": [
+          "in",
+          "on",
+          "at",
+          "by"
+        ],
+        "answer": 1,
+        "explanation": "요일을 강조하는 표현은 It was on Monday that ...입니다."
+      },
+      {
+        "question": "Complete: What we need ___ a clearer manual.",
+        "choices": [
+          "are",
+          "were",
+          "is",
+          "have"
+        ],
+        "answer": 2,
+        "explanation": "여기서 What we need를 하나의 필요 사항으로 볼 때 is가 자연스럽습니다."
+      },
+      {
+        "question": "Which structure best introduces a clarification of a surprising event?",
+        "choices": [
+          "What happened was that the socket was loose.",
+          "What was happened the socket was loose.",
+          "It what happened that the socket was loose.",
+          "What happened it was the socket loose."
+        ],
+        "answer": 0,
+        "explanation": "What happened was that ...는 사건의 핵심을 뒤에서 설명하는 분열문입니다."
+      },
+      {
+        "question": "Choose the natural formal explanation.",
+        "choices": [
+          "The reason is because we waited.",
+          "The reason is that the equipment was hot.",
+          "The reason why is because hot.",
+          "The reason we waited it was hot."
+        ],
+        "answer": 1,
+        "explanation": "The reason ... is that ... 구조가 명확하고 간결합니다."
+      },
+      {
+        "question": "Who first noticed the unusual clicking sound?",
+        "choices": [
+          "The student",
+          "The first volunteer",
+          "The shop owner",
+          "Nadia"
+        ],
+        "answer": 3,
+        "explanation": "지문은 소리를 알아챈 사람이 Nadia였다고 강조합니다."
+      },
+      {
+        "question": "What actually stopped the lamp from working?",
+        "choices": [
+          "A loose socket",
+          "A missing battery",
+          "A broken bulb only",
+          "A faulty timetable"
+        ],
+        "answer": 0,
+        "explanation": "느슨한 소켓이 전기 공급을 끊었다고 설명합니다."
+      },
+      {
+        "question": "What did the student say mattered more than the result?",
+        "choices": [
+          "The price of a new lamp",
+          "The number of visitors",
+          "The method of finding the fault",
+          "The size of the workshop"
+        ],
+        "answer": 2,
+        "explanation": "학생은 결과보다 수리 방법이 중요했다고 적었습니다."
+      },
+      {
+        "question": "In the text, a 'manual' is:",
+        "choices": [
+          "a type of switch",
+          "a set of instructions",
+          "a small battery",
+          "a repair invoice"
+        ],
+        "answer": 1,
+        "explanation": "manual은 사용하거나 수리할 때 참고하는 설명서입니다."
+      },
+      {
+        "question": "What does 'patience' mean in the repair story?",
+        "choices": [
+          "speed",
+          "anger",
+          "luck",
+          "the ability to wait and work carefully"
+        ],
+        "answer": 3,
+        "explanation": "patience는 차분히 기다리고 신중하게 해내는 인내심을 뜻합니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Describe a time when it was one small detail that changed the result.",
+      "What is the one thing that helps you learn English most?",
+      "Tell me about a problem using 'What happened was that ...'.",
+      "Who was it that gave you particularly useful advice recently?",
+      "Use 'The reason ... is that ...' to explain a decision you made."
+    ],
+    "rolePlay": {
+      "scenario": "고장 원인과 해결책을 팀원에게 설명하는 회의",
+      "learnerRole": "수리 과정을 설명하는 담당자로서 누가 문제를 발견했고 무엇이 핵심이었는지 강조한다.",
+      "coachRole": "팀장 역할로 한 번에 한 가지 세부 사항을 물으며 it-cleft와 what-cleft의 문장 구조를 교정한다.",
+      "goal": "It was ... that/who와 What ... was ...를 각각 2회 이상 사용해 원인과 해결책을 강조한다."
+    }
+  },
+  {
+    "date": "2026-11-05",
+    "title": "Daily English — 2026-11-05",
+    "grammarTopic": "Ellipsis and Substitution: One, Do So, So and Neither",
+    "grammar": {
+      "title": "생략과 대용: 불필요한 반복 없이 자연스럽게 연결하기",
+      "summary": "B2 영어에서는 이미 알고 있는 명사나 행동을 매번 반복하지 않고 one/ones, do so, so/neither + 조동사, I think so / I hope not 등으로 자연스럽게 대체합니다. 어떤 정보가 생략됐는지 선행 문맥에서 복원할 수 있어야 하며, 관사와 대용어의 수·형태도 중요합니다.",
+      "points": [
+        {
+          "title": "one / ones: 앞에서 말한 셀 수 있는 명사 대신",
+          "explanation": "one은 앞서 언급한 단수 가산명사의 유형을, ones는 복수 가산명사를 대신합니다. 'the red one'과 'the blue ones'처럼 수식어와 함께 자주 씁니다. 동일한 개체를 가리킬 때 쓰는 it/them과 '같은 종류의 다른 것'을 고를 때 쓰는 one/ones를 구분하세요.",
+          "examples": [
+            "I prefer the larger menu to the smaller one. — 저는 작은 메뉴보다 큰 메뉴가 더 좋습니다.",
+            "These labels are clearer than the old ones. — 이 표시는 옛날 것들보다 더 명확합니다.",
+            "I lost my pen, so I bought a new one. — 펜을 잃어버려 새것을 샀습니다.",
+            "Which chair would you like? The one by the window. — 어느 의자가 좋으세요? 창가에 있는 것이요.",
+            "Those instructions are too long; use the shorter ones. — 그 안내문들은 너무 길어요. 더 짧은 것들을 사용하세요."
+          ]
+        },
+        {
+          "title": "do so / do it: 앞선 행동 대체",
+          "explanation": "do so는 앞에서 언급한 행동을 다소 격식 있게 반복하지 않을 때, do it은 보다 일상적으로 그 행동을 가리킬 때 사용합니다. do so는 일반적으로 의도적으로 행하는 동작에 자연스럽고 감정·상태를 나타내는 동사와는 어색할 수 있습니다. 문맥을 분명히 해야 합니다.",
+          "examples": [
+            "Please read the notice, and ask others to do so. — 안내문을 읽고 다른 사람들에게도 그렇게 해 달라고 부탁하세요.",
+            "Anyone wishing to give feedback can do so online. — 의견을 내고 싶은 사람은 누구나 온라인으로 할 수 있습니다.",
+            "She checked the ingredients, and I did so as well. — 그녀가 재료를 확인했고 저도 그렇게 했습니다.",
+            "If you want to update the menu, do it before Friday. — 메뉴를 수정하고 싶다면 금요일 전에 하세요.",
+            "The team promised to revise the labels and did so promptly. — 팀은 표시를 고치겠다고 약속했고 곧바로 실행했습니다."
+          ]
+        },
+        {
+          "title": "So + 조동사 + 주어 / Neither + 조동사 + 주어",
+          "explanation": "긍정문에 동의할 때 So do I / So have we처럼 조동사(또는 be)를 앞세웁니다. 부정문에는 Neither do I / Neither can she를 씁니다. 시제·조동사를 선행 문장과 맞추세요. 'So I do'는 '정말 그렇군요'라는 확인으로 쓰일 수 있으므로 'So do I'와 다릅니다.",
+          "examples": [
+            "I enjoy clear instructions. So do I. — 저는 명확한 안내문이 좋아요. 저도 그래요.",
+            "She has read the new policy. So have we. — 그녀는 새 정책을 읽었어요. 저희도 읽었어요.",
+            "I can't eat peanuts. Neither can my brother. — 저는 땅콩을 못 먹어요. 제 남동생도 못 먹어요.",
+            "He wasn't satisfied. Neither were the customers. — 그는 만족하지 못했어요. 고객들도 마찬가지였어요.",
+            "We will attend the meeting. So will they. — 우리는 회의에 참석할 거예요. 그들도 참석할 거예요."
+          ]
+        },
+        {
+          "title": "I think so / I hope not / I'm afraid so",
+          "explanation": "이 표현들에서 so 또는 not은 앞선 절 전체의 내용을 대신합니다. 예를 들어 Will it work? — I hope so.에서 so는 it will work를 가리킵니다. think, hope, suppose, be afraid 등에서 자주 쓰지만 모든 동사 뒤에 자유롭게 붙일 수는 없습니다.",
+          "examples": [
+            "Will the new sign help? I think so. — 새 표지판이 도움이 될까요? 그럴 것 같아요.",
+            "Is the café closing? I hope not. — 카페가 문을 닫나요? 그러지 않기를 바라요.",
+            "Do you think the plan will work? I suppose so. — 계획이 통할 것 같으세요? 아마 그럴 것 같아요.",
+            "Is the delivery delayed? I'm afraid so. — 배송이 늦어졌나요? 유감이지만 그런 것 같습니다.",
+            "Will everyone find the menu readable? We hope so. — 모두가 메뉴를 읽기 쉬워할까요? 그러길 바랍니다."
+          ]
+        },
+        {
+          "title": "동사구·절의 생략: 공통 내용을 한 번만 표현",
+          "explanation": "두 절에 반복되는 동사나 보어를 생략할 수 있습니다. 특히 but, and 뒤에서 의미가 명확할 때 자연스럽습니다. 생략된 요소는 앞부분과 문법적으로 호응해야 합니다. 'Some preferred X; others, Y'는 문어체에서 쉼표가 빠진 동사를 표시하기도 합니다.",
+          "examples": [
+            "Some customers chose tea, and others chose coffee. — 일부 고객은 차를 골랐고 다른 고객은 커피를 골랐습니다.",
+            "She can read the small print, but I can't. — 그녀는 작은 글씨를 읽을 수 있지만 저는 못 읽습니다.",
+            "I haven't tried the new dish, but my friend has. — 저는 새 요리를 먹어 보지 않았지만 친구는 먹어 봤습니다.",
+            "They promised to respond, and they did. — 그들은 답하겠다고 약속했고 실제로 답했습니다.",
+            "The café is quieter than it used to be. — 그 카페는 예전보다 조용합니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "cut down on",
+        "meaning": "줄이다·축소하다",
+        "example": "We should cut down on unnecessary wording. — 불필요한 문구를 줄여야 합니다."
+      },
+      {
+        "term": "make sense",
+        "meaning": "이해가 되다·말이 되다",
+        "example": "The new labels make sense to everyone. — 새 표시는 누구에게나 이해가 됩니다."
+      },
+      {
+        "term": "on the same page",
+        "meaning": "같은 내용을 이해하거나 같은 의견이다",
+        "example": "Let's check that we're all on the same page. — 모두 같은 내용을 이해하고 있는지 확인합시다."
+      }
+    ],
+    "readingTitle": "A Menu Everyone Could Understand",
+    "paragraphs": [
+      "A small café received suggestions from regular customers about its menu. Several people found the ingredient labels confusing, while others struggled with the tiny print. The manager wanted to make the information easier to understand without producing an expensive new booklet.",
+      "One employee designed a clearer menu with larger text and simple allergy symbols. Another preferred the colourful old one, but agreed that the new labels were easier to read. The staff compared several versions and asked customers which ones they found most useful.",
+      "A customer with a nut allergy explained that she always checked ingredients before ordering. So did her partner. Neither of them wanted a meal that might contain an ingredient they could not safely eat. The manager promised to double-check the alternatives, and did so.",
+      "During a short meeting, someone asked whether the new layout would work. 'I think so,' said the designer, 'but we should test it.' Staff invited ten regular customers to give feedback and encouraged anyone with further suggestions to do so online.",
+      "The trial produced practical changes: the café enlarged the print, listed common allergens clearly and cut down on unnecessary wording. The team agreed that they were finally on the same page. A readable menu did more than save time; it gave customers confidence when choosing their food."
+    ],
+    "translations": [
+      "작은 카페는 단골손님들에게 메뉴에 관한 제안을 받았습니다. 여러 사람은 재료 표시가 혼란스럽다고 느꼈고 다른 사람들은 아주 작은 글씨 때문에 어려움을 겪었습니다. 관리자는 값비싼 새 책자를 만들지 않고 정보를 더 이해하기 쉽게 만들고 싶었습니다.",
+      "한 직원은 더 큰 글씨와 간단한 알레르기 표시가 들어간 명확한 메뉴를 만들었습니다. 다른 직원은 화려한 옛 메뉴를 더 좋아했지만 새 표시가 읽기 쉽다는 데 동의했습니다. 직원들은 여러 버전을 비교하고 고객들에게 어떤 것들이 가장 유용한지 물었습니다.",
+      "견과류 알레르기가 있는 한 고객은 주문 전에 항상 재료를 확인한다고 설명했습니다. 동반자도 마찬가지였습니다. 두 사람 모두 안전하게 먹을 수 없는 재료가 들어 있을지 모르는 음식을 원하지 않았습니다. 관리자는 대체 메뉴를 다시 확인하겠다고 약속했고 실제로 그렇게 했습니다.",
+      "짧은 회의 중 누군가 새 구성이 효과가 있을지 물었습니다. 디자이너는 '그럴 것 같지만 시험해 봐야겠어요'라고 답했습니다. 직원들은 단골 열 명을 초대해 의견을 받았고 추가 제안이 있는 사람은 온라인으로 보내도록 권했습니다.",
+      "시범 운영은 실용적인 변화를 가져왔습니다. 카페는 글씨를 키우고 흔한 알레르기 유발 성분을 명확히 표시했으며 불필요한 문구를 줄였습니다. 팀은 마침내 모두가 같은 내용을 이해하게 됐다고 생각했습니다. 읽기 쉬운 메뉴는 시간을 절약하는 데 그치지 않고 손님이 음식을 고를 때 자신감을 주었습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "suggestions",
+        "partOfSpeech": "plural noun",
+        "meaning": "제안들",
+        "context": "손님들이 메뉴 개선을 위해 전달한 의견"
+      },
+      {
+        "term": "menu",
+        "partOfSpeech": "noun",
+        "meaning": "메뉴·차림표",
+        "context": "식품 정보가 적힌 카페의 메뉴"
+      },
+      {
+        "term": "ingredient",
+        "partOfSpeech": "noun",
+        "meaning": "재료·성분",
+        "context": "ingredient labels처럼 메뉴에 적힌 음식 재료 정보"
+      },
+      {
+        "term": "labels",
+        "partOfSpeech": "plural noun",
+        "meaning": "표시·라벨들",
+        "context": "알레르기와 재료를 설명하는 표기"
+      },
+      {
+        "term": "print",
+        "partOfSpeech": "noun",
+        "meaning": "인쇄 글씨",
+        "context": "tiny print와 larger print는 글자 크기"
+      },
+      {
+        "term": "allergy",
+        "partOfSpeech": "noun",
+        "meaning": "알레르기",
+        "context": "특정 식품에 대한 건강상 반응"
+      },
+      {
+        "term": "alternatives",
+        "partOfSpeech": "plural noun",
+        "meaning": "대체 선택지",
+        "context": "알레르기를 피할 수 있는 다른 음식"
+      },
+      {
+        "term": "feedback",
+        "partOfSpeech": "noun",
+        "meaning": "의견·평가",
+        "context": "시범 메뉴를 읽은 고객의 반응"
+      },
+      {
+        "term": "allergens",
+        "partOfSpeech": "plural noun",
+        "meaning": "알레르기 유발 물질",
+        "context": "특정 알레르기 반응을 일으킬 수 있는 음식 성분"
+      },
+      {
+        "term": "confidence",
+        "partOfSpeech": "noun",
+        "meaning": "자신감·안심",
+        "context": "고객이 메뉴를 이해하고 선택할 때 얻는 확신"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Complete: I prefer the blue cups to the red ___.",
+        "choices": [
+          "one",
+          "it",
+          "ones",
+          "that"
+        ],
+        "answer": 2,
+        "explanation": "앞의 복수 가산명사 cups를 대신하므로 ones가 필요합니다."
+      },
+      {
+        "question": "Complete: Anyone who wants to respond can ___ online.",
+        "choices": [
+          "do so",
+          "be so",
+          "have so",
+          "such do"
+        ],
+        "answer": 0,
+        "explanation": "do so는 앞에서 언급한 respond라는 행동을 반복하지 않고 대체합니다."
+      },
+      {
+        "question": "A: 'I can't eat nuts.' B: '___ can I.'",
+        "choices": [
+          "So",
+          "Neither",
+          "Either",
+          "Also"
+        ],
+        "answer": 1,
+        "explanation": "부정문에 동의할 때 Neither + 조동사 + 주어를 씁니다."
+      },
+      {
+        "question": "A: 'Will the idea work?' B: 'I hope ___.'",
+        "choices": [
+          "yes",
+          "it",
+          "so",
+          "doing"
+        ],
+        "answer": 2,
+        "explanation": "I hope so에서 so가 'the idea will work'라는 앞선 내용을 대신합니다."
+      },
+      {
+        "question": "Which response correctly agrees with 'I have finished'?",
+        "choices": [
+          "So do I.",
+          "Neither have I.",
+          "So did I.",
+          "So have I."
+        ],
+        "answer": 3,
+        "explanation": "현재완료 have finished에는 So have I로 시제·조동사를 맞춥니다."
+      },
+      {
+        "question": "What was a problem with the original menu?",
+        "choices": [
+          "The tiny print was hard to read.",
+          "It had no prices at all.",
+          "It was only available online.",
+          "It listed too many desserts."
+        ],
+        "answer": 0,
+        "explanation": "기존 메뉴의 작은 글씨와 혼란스러운 재료 표기가 문제였습니다."
+      },
+      {
+        "question": "Why did the customer with a nut allergy check ingredients?",
+        "choices": [
+          "She was planning a party.",
+          "She wanted a discount.",
+          "She needed to avoid unsafe ingredients.",
+          "She worked as a food critic."
+        ],
+        "answer": 2,
+        "explanation": "알레르기가 있는 고객은 안전하지 않은 재료를 피하기 위해 확인했습니다."
+      },
+      {
+        "question": "What did the team do before deciding on changes?",
+        "choices": [
+          "Close the café.",
+          "Ask regular customers for feedback.",
+          "Remove all allergy symbols.",
+          "Print thousands of copies."
+        ],
+        "answer": 1,
+        "explanation": "단골 열 명을 초대해 새 메뉴에 대한 의견을 받았습니다."
+      },
+      {
+        "question": "In the text, 'allergens' are:",
+        "choices": [
+          "people who make menus",
+          "alternative dishes",
+          "printing machines",
+          "substances that can trigger allergies"
+        ],
+        "answer": 3,
+        "explanation": "allergens는 알레르기 반응을 유발하는 물질입니다."
+      },
+      {
+        "question": "In 'larger print', the word 'print' refers to:",
+        "choices": [
+          "written text and its size",
+          "money earned",
+          "a food allergy",
+          "a train platform"
+        ],
+        "answer": 0,
+        "explanation": "이 문맥에서 print는 인쇄된 글자, 특히 읽기 쉬운 글씨 크기를 가리킵니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Describe something you own and compare it with a newer one.",
+      "Say that you agree with a positive statement using 'So do I'.",
+      "Say that you agree with a negative statement using 'Neither can I'.",
+      "Explain a task you have done and ask another person to do so.",
+      "Do you think shorter messages are always clearer? Answer using 'I think so' or 'I don't think so' and give a reason."
+    ],
+    "rolePlay": {
+      "scenario": "카페 메뉴를 개선하는 팀 회의",
+      "learnerRole": "직원으로서 old one/new ones, do so, So/Neither 동의를 활용해 수정안을 논의한다.",
+      "coachRole": "동료 직원으로서 의견을 하나씩 제시하며 대용어의 수와 조동사 일치가 어색하면 교정한다.",
+      "goal": "명사 대용, 행동 대용, 긍정·부정 동의, I think so를 각각 정확히 사용한다."
+    }
+  },
+  {
+    "date": "2026-11-06",
+    "title": "Daily English — 2026-11-06",
+    "grammarTopic": "Future in the Past: Was Going To, Was About To, Was Due To and Would",
+    "grammar": {
+      "title": "과거 시점에서 바라본 미래: 예정·직전·전망의 차이",
+      "summary": "현재에서 미래를 예측하는 것과 과거 시점에서 '그때는 앞으로 일어날 일이라고 생각했다'고 설명하는 것은 다릅니다. was going to는 과거의 계획·예상, was about to는 막 일어나려던 일, was due to는 일정상 예정, would는 과거의 발언·관점에서 바라본 미래를 나타냅니다. 실제 실행 여부는 뒤 문맥으로 판단합니다.",
+      "points": [
+        {
+          "title": "was/were going to: 과거의 의도·예상",
+          "explanation": "과거에 세운 계획이나 당시에는 그럴 것 같았던 결과에 was/were going to를 사용합니다. 실제로 실행됐는지는 문장 자체로 확정되지 않습니다. 'I was going to call, but ...'처럼 계획이 바뀌었을 때 특히 자주 씁니다.",
+          "examples": [
+            "We were going to hold the event outdoors. — 우리는 행사를 야외에서 열 계획이었습니다.",
+            "I was going to send the notice yesterday, but the details changed. — 어제 안내문을 보낼 생각이었지만 세부 사항이 바뀌었습니다.",
+            "She thought the journey was going to take an hour. — 그녀는 이동에 한 시간이 걸릴 것이라고 생각했습니다.",
+            "The organisers were going to invite local artists. — 주최 측은 지역 예술가들을 초대할 예정이었습니다.",
+            "It looked as though the rain was going to continue. — 비가 계속 내릴 것처럼 보였습니다."
+          ]
+        },
+        {
+          "title": "was/were about to: 바로 직전의 상황",
+          "explanation": "be about to는 아주 가까운 미래의 행동을 나타내고, 과거형 was/were about to는 그 순간 막 행동하려던 상황입니다. 흔히 when과 연결해 돌발 사건을 설명합니다. 단순히 몇 달 뒤로 예정된 일을 표현하는 데는 부적절합니다.",
+          "examples": [
+            "We were about to open the doors when the alarm rang. — 경보가 울렸을 때 우리는 막 문을 열려던 참이었습니다.",
+            "She was about to speak when the lights went out. — 불이 꺼졌을 때 그녀는 막 말하려던 참이었습니다.",
+            "I was about to leave, but the curator called. — 막 떠나려던 참이었지만 큐레이터가 전화했습니다.",
+            "The visitors were about to enter the hall. — 방문객들은 막 전시장에 들어가려던 참이었습니다.",
+            "He was about to press Send when he noticed the error. — 오류를 발견했을 때 그는 막 전송 버튼을 누르려던 참이었습니다."
+          ]
+        },
+        {
+          "title": "was/were due to: 일정상 예정",
+          "explanation": "be due to + 동사원형은 공식 일정이나 약속상 어떤 일이 일어날 예정임을 나타냅니다. was due to는 과거 시점의 일정입니다. 'The train was due to arrive at six'는 6시가 도착 예정 시간이었다는 뜻이지 실제 정시 도착을 보장하지는 않습니다.",
+          "examples": [
+            "The exhibition was due to open at ten. — 전시는 10시에 개막할 예정이었습니다.",
+            "The train was due to arrive just before noon. — 열차는 정오 직전에 도착할 예정이었습니다.",
+            "The artist was due to give a short talk. — 그 예술가는 짧은 강연을 할 예정이었습니다.",
+            "Several deliveries were due to reach the venue on Friday. — 여러 물품이 금요일에 행사장에 도착할 예정이었습니다.",
+            "The final decision was due to be announced that afternoon. — 최종 결정은 그날 오후 발표될 예정이었습니다."
+          ]
+        },
+        {
+          "title": "would: 과거 시점에서 본 나중의 일",
+          "explanation": "현재 관점의 will이 과거의 발언·생각에 들어가면 흔히 would가 됩니다. 'She said the event would begin at six'처럼 과거에 들은 앞으로의 일을 전달할 수 있습니다. 이는 가정법의 would와 형태는 같지만 문맥상 기능이 다릅니다.",
+          "examples": [
+            "The curator said the artwork would arrive by Friday. — 큐레이터는 작품이 금요일까지 도착할 것이라고 말했습니다.",
+            "We believed the new venue would be safer. — 우리는 새 장소가 더 안전할 것이라고 믿었습니다.",
+            "She promised she would update the website. — 그녀는 웹사이트를 업데이트하겠다고 약속했습니다.",
+            "They expected visitors would need clearer directions. — 그들은 방문객에게 더 명확한 길 안내가 필요할 것으로 예상했습니다.",
+            "I knew the change would disappoint some people. — 그 변경으로 일부 사람이 실망할 것임을 알고 있었습니다."
+          ]
+        },
+        {
+          "title": "was supposed to / was meant to: 기대·책임과 어긋남",
+          "explanation": "was supposed to는 규정·약속·기대에 따른 행동, was meant to는 의도된 목적이나 계획을 나타냅니다. 실제로 하지 못한 일을 설명할 때 자주 쓰지만 반드시 실패를 의미하는 것은 아닙니다. was due to는 시간표 중심인 반면 supposed to는 역할·의무가 더 두드러집니다.",
+          "examples": [
+            "The notice was supposed to reach everyone by Thursday. — 안내문은 목요일까지 모두에게 전달돼야 했습니다.",
+            "We were meant to meet outside the gallery. — 우리는 전시관 밖에서 만나기로 했었습니다.",
+            "The display was supposed to include six paintings. — 전시에는 그림 여섯 점이 포함될 예정이었습니다.",
+            "The organisers were meant to check the forecast first. — 주최 측은 먼저 일기예보를 확인하기로 돼 있었습니다.",
+            "The guide was supposed to arrive before the visitors. — 안내원은 방문객보다 먼저 도착해야 했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "change of plans",
+        "meaning": "계획 변경",
+        "example": "There has been a change of plans because of the weather. — 날씨 때문에 계획이 변경됐습니다."
+      },
+      {
+        "term": "at short notice",
+        "meaning": "갑작스럽게·촉박하게 통보하고",
+        "example": "The venue changed at short notice. — 행사 장소가 촉박하게 변경됐습니다."
+      },
+      {
+        "term": "keep someone posted",
+        "meaning": "새 소식을 계속 알려 주다",
+        "example": "We'll keep visitors posted about the new opening time. — 새 개장 시간에 관해 방문객들에게 계속 알려 드리겠습니다."
+      }
+    ],
+    "readingTitle": "The Exhibition That Almost Opened in the Wrong Place",
+    "paragraphs": [
+      "A community exhibition was due to open in a riverside gallery on Saturday morning. The organisers had arranged artwork, printed notices and invited local visitors. They were going to hold a short welcome talk beside the entrance, followed by guided tours.",
+      "On Friday afternoon, the forecast warned of heavy rain. The curator was about to approve the final display when a maintenance worker reported water entering a storage room. The team decided that the venue might not be safe if the weather worsened.",
+      "They had expected the exhibition would attract families from nearby streets, so cancelling it entirely seemed disappointing. Instead, a local school offered its assembly hall. The organisers moved the smaller artwork, revised the layout and checked the lighting before leaving.",
+      "Because the change happened at short notice, some visitors still arrived at the gallery. The original notice was supposed to direct everyone to the new venue, but a few printed copies had been missed. Volunteers stood outside, explained the change of plans and promised to keep visitors posted.",
+      "The exhibition eventually opened one hour later than planned. The curator admitted that they had been going to focus on the artwork alone, but the experience had taught them to prepare for unexpected problems. Visitors appreciated the clear directions, and the school hall became a welcoming space."
+    ],
+    "translations": [
+      "지역 전시는 토요일 아침 강변 전시관에서 개막할 예정이었습니다. 주최 측은 작품을 배치하고 안내문을 인쇄했으며 지역 방문객들을 초대했습니다. 입구 옆에서 짧은 환영 인사를 한 뒤 안내 투어를 진행할 계획이었습니다.",
+      "금요일 오후 일기예보는 폭우를 경고했습니다. 큐레이터가 마지막 전시 배치를 막 승인하려던 순간 관리 직원이 보관실에 물이 들어오고 있다고 보고했습니다. 팀은 날씨가 악화되면 장소가 안전하지 않을 수 있다고 판단했습니다.",
+      "주최 측은 전시가 인근 거리의 가족들을 끌어들일 것으로 예상했으므로 전체 취소는 아쉬운 일이었습니다. 대신 지역 학교가 강당을 제공했습니다. 주최 측은 작은 작품들을 옮기고 배치를 수정한 뒤 떠나기 전에 조명을 점검했습니다.",
+      "변경이 촉박하게 이뤄져 일부 방문객은 여전히 원래 전시관으로 왔습니다. 기존 안내문은 모두를 새 장소로 안내해야 했지만 인쇄물 몇 부가 누락됐습니다. 자원봉사자들이 밖에 서서 계획 변경을 설명하고 새 소식을 계속 알려 주겠다고 약속했습니다.",
+      "전시는 결국 계획보다 한 시간 늦게 시작됐습니다. 큐레이터는 원래 작품에만 집중할 생각이었지만 이번 경험으로 예상치 못한 문제에 대비해야 한다는 점을 배웠다고 인정했습니다. 방문객들은 명확한 길 안내에 고마워했고 학교 강당은 따뜻하게 방문객을 맞는 공간이 됐습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "exhibition",
+        "partOfSpeech": "noun",
+        "meaning": "전시회",
+        "context": "지역 예술 작품을 공개하는 행사"
+      },
+      {
+        "term": "organisers",
+        "partOfSpeech": "plural noun",
+        "meaning": "주최 측·주최자들",
+        "context": "행사 장소와 안내를 준비한 사람들"
+      },
+      {
+        "term": "artwork",
+        "partOfSpeech": "uncountable noun",
+        "meaning": "미술 작품",
+        "context": "전시를 위해 배치·이동한 작품들"
+      },
+      {
+        "term": "notices",
+        "partOfSpeech": "plural noun",
+        "meaning": "안내문들",
+        "context": "원래 행사 장소와 변경 사항을 알려 주는 인쇄물"
+      },
+      {
+        "term": "forecast",
+        "partOfSpeech": "noun",
+        "meaning": "일기예보",
+        "context": "폭우 가능성을 경고한 기상 정보"
+      },
+      {
+        "term": "curator",
+        "partOfSpeech": "noun",
+        "meaning": "전시 기획·관리 책임자",
+        "context": "작품 배치 결정을 승인하려던 인물"
+      },
+      {
+        "term": "display",
+        "partOfSpeech": "noun",
+        "meaning": "전시 배치·진열",
+        "context": "작품이 놓인 구성"
+      },
+      {
+        "term": "venue",
+        "partOfSpeech": "noun",
+        "meaning": "행사 장소",
+        "context": "전시가 열리는 전시관 또는 강당"
+      },
+      {
+        "term": "visitors",
+        "partOfSpeech": "plural noun",
+        "meaning": "방문객들",
+        "context": "전시를 보러 온 사람들"
+      },
+      {
+        "term": "lighting",
+        "partOfSpeech": "noun",
+        "meaning": "조명",
+        "context": "새 전시 장소에서 점검한 빛과 조명 설비"
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Complete: We ___ going to hold the event outdoors.",
+        "choices": [
+          "was",
+          "are",
+          "were",
+          "will"
+        ],
+        "answer": 2,
+        "explanation": "과거의 계획과 복수 주어 we에 맞춰 were going to를 씁니다."
+      },
+      {
+        "question": "Complete: She was ___ to speak when the lights went out.",
+        "choices": [
+          "about",
+          "due",
+          "meant",
+          "going"
+        ],
+        "answer": 0,
+        "explanation": "was about to는 막 행동하려던 직전의 상황을 나타냅니다."
+      },
+      {
+        "question": "What does 'was due to open at ten' mainly describe?",
+        "choices": [
+          "A proven opening time",
+          "A scheduled opening time",
+          "An impossible opening",
+          "A personal preference"
+        ],
+        "answer": 1,
+        "explanation": "was due to는 과거의 공식 일정상 예정 시간을 말합니다."
+      },
+      {
+        "question": "Complete: The curator said the paintings ___ arrive by Friday.",
+        "choices": [
+          "will",
+          "are",
+          "would",
+          "had"
+        ],
+        "answer": 2,
+        "explanation": "과거의 발언 속 미래는 would arrive로 자연스럽게 표현합니다."
+      },
+      {
+        "question": "Which sentence expresses an expectation or responsibility in the past?",
+        "choices": [
+          "The guide was supposed to arrive early.",
+          "The guide is arriving now.",
+          "The guide arrives every day.",
+          "The guide has just arrived."
+        ],
+        "answer": 0,
+        "explanation": "was supposed to는 과거에 요구되거나 기대됐던 행동을 표현합니다."
+      },
+      {
+        "question": "Why did the organisers change the venue?",
+        "choices": [
+          "The art had been sold.",
+          "The school invited more artists.",
+          "The gallery had doubled its prices.",
+          "Water was entering a storage room and heavy rain was forecast."
+        ],
+        "answer": 3,
+        "explanation": "보관실에 물이 들어왔고 폭우 예보도 있어 안전을 우려했습니다."
+      },
+      {
+        "question": "Where was the exhibition moved?",
+        "choices": [
+          "A railway station",
+          "A local school's assembly hall",
+          "A restaurant",
+          "A private flat"
+        ],
+        "answer": 1,
+        "explanation": "지역 학교가 강당을 대체 장소로 제공했습니다."
+      },
+      {
+        "question": "How late did the exhibition eventually open?",
+        "choices": [
+          "One hour late",
+          "Three days late",
+          "Exactly on time",
+          "One week late"
+        ],
+        "answer": 0,
+        "explanation": "전시는 당초 계획보다 한 시간 늦게 시작됐습니다."
+      },
+      {
+        "question": "In the reading, 'venue' means:",
+        "choices": [
+          "a prediction",
+          "a speaker",
+          "the place where an event is held",
+          "a work of art"
+        ],
+        "answer": 2,
+        "explanation": "venue는 전시나 행사가 열리는 장소입니다."
+      },
+      {
+        "question": "A weather 'forecast' is:",
+        "choices": [
+          "an exhibition ticket",
+          "a prediction of future weather",
+          "a written apology",
+          "a type of lighting"
+        ],
+        "answer": 1,
+        "explanation": "forecast는 앞으로의 날씨에 대한 예보입니다."
+      }
+    ],
+    "discussionQuestions": [
+      "Tell me about something you were going to do but changed your mind about.",
+      "Describe a time when you were about to leave and something happened.",
+      "What event was due to take place recently in your area?",
+      "Report a past promise using 'She said she would ...'.",
+      "Explain a change of plans and say how you would keep people posted."
+    ],
+    "rolePlay": {
+      "scenario": "전시 장소 변경에 관한 방문객 안내",
+      "learnerRole": "주최 측 담당자로서 원래 일정·변경 직전의 사건·대체 계획을 설명한다.",
+      "coachRole": "방문객 역할로 한 번에 하나씩 질문하고 was going to/about to/due to/would의 의미와 시제를 교정한다.",
+      "goal": "과거의 계획과 실제 결과를 구분해 5문장 이상으로 명확하게 설명한다."
+    }
+  }
+]
