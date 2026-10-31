@@ -470,7 +470,7 @@
         "question": "Choose the correct sentence.",
         "choices": [
           "Do you know why did she leave?",
-          "Do you know why she did leave early?",
+          "Do you know why she leaves did?",
           "Do you know why she left early?",
           "Do you know why left she early?"
         ],
@@ -910,7 +910,7 @@
           "title": "동사구·절의 생략: 공통 내용을 한 번만 표현",
           "explanation": "두 절에 반복되는 동사나 보어를 생략할 수 있습니다. 특히 but, and 뒤에서 의미가 명확할 때 자연스럽습니다. 생략된 요소는 앞부분과 문법적으로 호응해야 합니다. 'Some preferred X; others, Y'는 문어체에서 쉼표가 빠진 동사를 표시하기도 합니다.",
           "examples": [
-            "Some customers chose tea, and others chose coffee. — 일부 고객은 차를 골랐고 다른 고객은 커피를 골랐습니다.",
+            "Some customers chose tea; others, coffee. — 일부 고객은 차를 골랐고 다른 고객은 커피를 골랐습니다.",
             "She can read the small print, but I can't. — 그녀는 작은 글씨를 읽을 수 있지만 저는 못 읽습니다.",
             "I haven't tried the new dish, but my friend has. — 저는 새 요리를 먹어 보지 않았지만 친구는 먹어 봤습니다.",
             "They promised to respond, and they did. — 그들은 답하겠다고 약속했고 실제로 답했습니다.",
@@ -1300,7 +1300,7 @@
     ],
     "quiz": [
       {
-        "question": "Complete: We ___ going to hold the event outdoors.",
+        "question": "Complete this account of a past plan: Last Friday, we ___ going to hold the event outdoors.",
         "choices": [
           "was",
           "are",
