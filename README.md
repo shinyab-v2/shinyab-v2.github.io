@@ -18,6 +18,13 @@ GitHub Pages 기반의 개인 프로젝트·학습 링크 허브입니다.
 - `https://shinyab-v2.github.io/english/`
 - `https://shinyab-v2.github.io/ai/`
 
+## Daily English 주간 콘텐츠 제작 (새 채팅에서도 동일하게)
+
+- **표준 요구사항:** [requirements/daily-english/README.md](requirements/daily-english/README.md)
+- **복사해서 쓰는 간단 프롬프트:** [requirements/daily-english/QUICK_PROMPT.md](requirements/daily-english/QUICK_PROMPT.md)
+- 성인 **B1–B2**와 학생 **A1–A2** 자료를 매주 7일씩 생성하며, 기존 JSON 스키마·히스토리·Voice 기능을 보존하고 Pages 배포까지 검증합니다.
+- 예시: **"GitHub shinyab-v2/shinyab-v2.github.io의 Daily English 요구사항대로 차주 B1~B2·A1~A2 7일치를 만들어 main에 배포해줘."**
+
 ## Investment Workstation 보안 설정
 
 GitHub Pages는 정적 사이트이므로 금융 데이터의 접근 권한을 보호하지 않습니다. 실제 보안 경계는 Google Apps Script 배포에서 설정해야 합니다.
