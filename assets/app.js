@@ -61,3 +61,14 @@ learningItems.forEach((item) => {
 document.querySelector("#updated-at").textContent = new Intl.DateTimeFormat("ko-KR", {
   year: "numeric", month: "2-digit", day: "2-digit"
 }).format(new Date());
+
+
+const investmentCard = document.querySelector(".project-card.investment");
+if (investmentCard) {
+  investmentCard.addEventListener("click", () => {
+    const linkSpan = investmentCard.querySelector(".card-link");
+    if (linkSpan) {
+      linkSpan.innerHTML = "<span>연결 중… Google 인증 확인</span><span>⏳</span>";
+    }
+  });
+}
