@@ -1,238 +1,41 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Computational graph, chain rule, requires_grad와 detach, residual connection의 gradient 흐름을 추적합니다."><title>AI 전문 개발 학습 #02 — Autograd & Gradient Flow</title><link rel="stylesheet" href="ai.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><div class="lesson-meta"><span class="pill">2026.09.01</span><span class="pill">딥러닝 기초·수학</span><span class="pill">채팅 원문</span></div><h1 class="lesson-title">AI 전문 개발 학습 #02 — Autograd & Gradient Flow</h1><p class="lesson-summary">Computational graph, chain rule, requires_grad와 detach, residual connection의 gradient 흐름을 추적합니다.</p><div class="lesson-body" id="lesson-body">
-<p><strong>예상 학습시간: 45~60분</strong></p>
-<p>여기부터 모델을 단순히 forward하는 개발자와 <strong>학습 자체를
-이해하는 개발자</strong>의 차이가 생깁니다.</p>
-<hr />
-<h2 id="아주-간단한-예제">1. 아주 간단한 예제</h2>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.tensor(<span class="fl">2.0</span>, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span></span></code></pre></div>
-<p>수학적으로:</p>
-<pre class="text"><code>y = x²</code></pre>
-<p>따라서:</p>
-<pre class="text"><code>dy/dx = 2x</code></pre>
-<p>x=2이면:</p>
-<pre class="text"><code>dy/dx = 4</code></pre>
-<p>PyTorch에서는:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>y.backward()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.grad)</span></code></pre></div>
-<p>결과:</p>
-<pre class="text"><code>tensor(4.)</code></pre>
-<p>입니다.</p>
-<p>PyTorch Autograd는 연산 과정에서 backward에 필요한 계산 그래프와
-정보를 관리합니다.</p>
-<hr />
-<h2 id="computational-graph">2. Computational Graph</h2>
-<p>조금 더 복잡하게:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> torch.tensor(<span class="fl">2.0</span>, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> x <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> b <span class="op">+</span> <span class="dv">1</span></span></code></pre></div>
-<p>forward:</p>
-<pre class="text"><code>x
-│
-×3
-│
-a
-│
-square
-│
-b
-│
-+1
-│
-y</code></pre>
-<p>수학적으로:</p>
-<pre class="text"><code>a = 3x
-b = a²
-y = b + 1</code></pre>
-<p>따라서:</p>
-<pre class="text"><code>dy/db = 1
-db/da = 2a
-da/dx = 3</code></pre>
-<p>Chain rule:</p>
-<pre class="text"><code>dy/dx
-=
-dy/db × db/da × da/dx</code></pre>
-<p>x=2이면 a=6이므로:</p>
-<pre class="text"><code>1 × 12 × 3
-= 36</code></pre>
-<hr />
-<h2 id="실제-neural-network에서는">3. 실제 Neural Network에서는</h2>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>↓</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Conv1</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>↓</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>ReLU</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>↓</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>Conv2</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>↓</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>ReLU</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>↓</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>Classifier</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>↓</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>Loss</span></code></pre></div>
-<p>Backward는 반대 방향입니다.</p>
-<pre class="text"><code>Loss
- ↑
-Classifier
- ↑
-Conv2
- ↑
-Conv1</code></pre>
-<p>각 parameter에 대해:</p>
-<pre class="text"><code>∂Loss / ∂Weight</code></pre>
-<p>를 계산합니다.</p>
-<p>optimizer는 이 gradient를 사용합니다.</p>
-<p>단순화하면:</p>
-<pre class="text"><code>Wnew = Wold - learning_rate × gradient</code></pre>
-<p>입니다.</p>
-<hr />
-<h2 id="requires_grad">4. requires_grad</h2>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> model.parameters():</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(p.requires_grad)</span></code></pre></div>
-<p>대부분:</p>
-<pre class="text"><code>True</code></pre>
-<p>입니다.</p>
-<p>Fine-tuning에서 자주 하는:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> model.backbone.parameters():</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    p.requires_grad <span class="op">=</span> <span class="va">False</span></span></code></pre></div>
-<p>는 단순히</p>
-<blockquote>
-<p>parameter가 update되지 않는다.</p>
-</blockquote>
-<p>보다 조금 더 정확하게는,</p>
-<blockquote>
-<p>해당 parameter에 대해 autograd가 gradient를 기록하도록 요구하지
-않는다.</p>
-</blockquote>
-<p>는 의미입니다.</p>
-<p>PyTorch에는 module 전체 parameter의 <code>requires_grad</code>를
-변경하는 <code>requires_grad_()</code>도 제공됩니다.</p>
-<hr />
-<h2 id="detach는-무엇인가">5. detach()는 무엇인가?</h2>
-<p>예:</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>feature <span class="op">=</span> backbone(x)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>feature2 <span class="op">=</span> feature.detach()</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> head(feature2)</span></code></pre></div>
-<p>graph 관점:</p>
-<pre class="text"><code>backbone
-   ↓
- feature
-   X ← gradient 차단
- feature2
-   ↓
- head</code></pre>
-<p>따라서 head는 학습되지만 해당 경로를 통한 gradient가 backbone까지
-전달되지 않습니다.</p>
-<p>이것은 매우 중요합니다.</p>
-<hr />
-<h2 id="residual-connection">6. Residual Connection</h2>
-<p>ResNet의 핵심 구조:</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> F(x) <span class="op">+</span> x</span></code></pre></div>
-<p>입니다.</p>
-<p>미분하면:</p>
-<pre class="text"><code>dy/dx = dF/dx + 1</code></pre>
-<p>여기서 <code>+1</code>이 중요합니다.</p>
-<p>gradient가 복잡한 F(x)를 통하지 않고도 identity path를 통해 전달될 수
-있습니다.</p>
-<pre class="text"><code>x ─────────────────┐
-│                  │
-Conv                │
-↓                   │
-ReLU                │
-↓                   │
-Conv                │
-│                   │
-└──────── + ←───────┘
-           │
-           y</code></pre>
-<p>이것이 deep network 학습을 훨씬 쉽게 만든 핵심 아이디어 중
-하나입니다.</p>
-<hr />
-<h2 id="gradient-vanishing">7. Gradient Vanishing</h2>
-<p>만약 gradient가 각 layer에서:</p>
-<pre class="text"><code>0.1</code></pre>
-<p>배씩 줄어든다고 가정하면 10 layer를 통과하면:</p>
-<pre class="text"><code>0.1^10</code></pre>
-<p>입니다.</p>
-<p>즉:</p>
-<pre class="text"><code>0.0000000001</code></pre>
-<p>수준이 됩니다.</p>
-<p>앞쪽 layer는 사실상 학습되지 않을 수 있습니다.</p>
-<p>이를 gradient vanishing이라고 합니다.</p>
-<p>반대로 계속 커지면:</p>
-<p><strong>gradient explosion</strong></p>
-<p>입니다.</p>
-<hr />
-<h2 id="실제-gradient-확인">8. 실제 Gradient 확인</h2>
-<p>다음 코드는 앞으로 모델 debugging에 매우 중요합니다.</p>
-<div class="sourceCode" id="cb28"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>loss.backward()</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, param <span class="kw">in</span> model.named_parameters():</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> param.grad <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>            name,</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>            param.grad.<span class="bu">abs</span>().mean().item()</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div>
-<p>예:</p>
-<pre class="text"><code>encoder.conv1.weight  0.000001
-encoder.conv2.weight  0.000003
-encoder.conv3.weight  0.0042
-head.weight           0.0821</code></pre>
-<p>이런 결과가 계속 나온다면:</p>
-<pre class="text"><code>앞쪽 encoder gradient가 지나치게 작다.</code></pre>
-<p>라는 의심을 할 수 있습니다.</p>
-<hr />
-<h2 id="gradient-hook">9. Gradient Hook</h2>
-<p>Tensor에 hook을 걸 수도 있습니다.</p>
-<div class="sourceCode" id="cb31"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_grad(grad):</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(grad.<span class="bu">abs</span>().mean())</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>feature.register_hook(print_grad)</span></code></pre></div>
-<p>backward 때 feature gradient를 볼 수 있습니다.</p>
-<p>PyTorch는 module/tensor hook을 통해 activation이나 gradient를
-검사하는 기능을 제공하며, 현재 공식 튜토리얼에서도 gradient
-visualization/debugging 용도로 설명합니다.</p>
-<hr />
-<h2 id="실전-디버깅-사고법">10. 실전 디버깅 사고법</h2>
-<p>예를 들어 ultrasound detection model에서:</p>
-<pre class="text"><code>Loss가 감소하지 않는다.</code></pre>
-<p>라고 합시다.</p>
-<p>learning rate부터 무작정 변경하면 안 됩니다.</p>
-<p>다음 순서로 확인합니다.</p>
-<pre class="text"><code>① Input 정상?
-        ↓
-② Label 정상?
-        ↓
-③ Forward output 정상?
-        ↓
-④ Loss 계산 정상?
-        ↓
-⑤ Gradient 생성?
-        ↓
-⑥ 각 layer까지 gradient 전달?
-        ↓
-⑦ optimizer가 parameter update?</code></pre>
-<p>예:</p>
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, p <span class="kw">in</span> model.named_parameters():</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p.grad <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;NO GRAD:&quot;</span>, name)</span></code></pre></div>
-<p>이것만으로도 상당히 많은 학습 문제를 찾을 수 있습니다.</p>
-<hr />
-</div></article><aside class="toc"><strong>이 페이지에서</strong><nav id="toc-links"></nav></aside></main><footer><a href="./">← AI 학습 목록으로 돌아가기</a></footer><script type="application/json" id="lesson-source">"**예상 학습시간: 45~60분**\n\n여기부터 모델을 단순히 forward하는 개발자와 **학습 자체를 이해하는 개발자**의 차이가 생깁니다.\n\n---\n\n## 1. 아주 간단한 예제\n\n```python\nx = torch.tensor(2.0, requires_grad=True)\n\ny = x ** 2\n```\n\n수학적으로:\n\n```text\ny = x²\n```\n\n따라서:\n\n```text\ndy/dx = 2x\n```\n\nx=2이면:\n\n```text\ndy/dx = 4\n```\n\nPyTorch에서는:\n\n```python\ny.backward()\n\nprint(x.grad)\n```\n\n결과:\n\n```text\ntensor(4.)\n```\n\n입니다.\n\nPyTorch Autograd는 연산 과정에서 backward에 필요한 계산 그래프와 정보를 관리합니다.\n\n---\n\n## 2. Computational Graph\n\n조금 더 복잡하게:\n\n```python\nx = torch.tensor(2.0, requires_grad=True)\n\na = x * 3\nb = a ** 2\ny = b + 1\n```\n\nforward:\n\n```text\nx\n│\n×3\n│\na\n│\nsquare\n│\nb\n│\n+1\n│\ny\n```\n\n수학적으로:\n\n```text\na = 3x\nb = a²\ny = b + 1\n```\n\n따라서:\n\n```text\ndy/db = 1\ndb/da = 2a\nda/dx = 3\n```\n\nChain rule:\n\n```text\ndy/dx\n=\ndy/db × db/da × da/dx\n```\n\nx=2이면 a=6이므로:\n\n```text\n1 × 12 × 3\n= 36\n```\n\n---\n\n## 3. 실제 Neural Network에서는\n\n```python\nx\n↓\nConv1\n↓\nReLU\n↓\nConv2\n↓\nReLU\n↓\nClassifier\n↓\nLoss\n```\n\nBackward는 반대 방향입니다.\n\n```text\nLoss\n ↑\nClassifier\n ↑\nConv2\n ↑\nConv1\n```\n\n각 parameter에 대해:\n\n```text\n∂Loss / ∂Weight\n```\n\n를 계산합니다.\n\noptimizer는 이 gradient를 사용합니다.\n\n단순화하면:\n\n```text\nWnew = Wold - learning_rate × gradient\n```\n\n입니다.\n\n---\n\n## 4. requires_grad\n\n```python\nfor p in model.parameters():\n    print(p.requires_grad)\n```\n\n대부분:\n\n```text\nTrue\n```\n\n입니다.\n\nFine-tuning에서 자주 하는:\n\n```python\nfor p in model.backbone.parameters():\n    p.requires_grad = False\n```\n\n는 단순히\n\n> parameter가 update되지 않는다.\n\n보다 조금 더 정확하게는,\n\n> 해당 parameter에 대해 autograd가 gradient를 기록하도록 요구하지 않는다.\n\n는 의미입니다.\n\nPyTorch에는 module 전체 parameter의 `requires_grad`를 변경하는 `requires_grad_()`도 제공됩니다.\n\n---\n\n## 5. detach()는 무엇인가?\n\n예:\n\n```python\nfeature = backbone(x)\n\nfeature2 = feature.detach()\n\noutput = head(feature2)\n```\n\ngraph 관점:\n\n```text\nbackbone\n   ↓\n feature\n   X ← gradient 차단\n feature2\n   ↓\n head\n```\n\n따라서 head는 학습되지만 해당 경로를 통한 gradient가 backbone까지 전달되지 않습니다.\n\n이것은 매우 중요합니다.\n\n---\n\n## 6. Residual Connection\n\nResNet의 핵심 구조:\n\n```python\ny = F(x) + x\n```\n\n입니다.\n\n미분하면:\n\n```text\ndy/dx = dF/dx + 1\n```\n\n여기서 `+1`이 중요합니다.\n\ngradient가 복잡한 F(x)를 통하지 않고도 identity path를 통해 전달될 수 있습니다.\n\n```text\nx ─────────────────┐\n│                  │\nConv                │\n↓                   │\nReLU                │\n↓                   │\nConv                │\n│                   │\n└──────── + ←───────┘\n           │\n           y\n```\n\n이것이 deep network 학습을 훨씬 쉽게 만든 핵심 아이디어 중 하나입니다.\n\n---\n\n## 7. Gradient Vanishing\n\n만약 gradient가 각 layer에서:\n\n```text\n0.1\n```\n\n배씩 줄어든다고 가정하면 10 layer를 통과하면:\n\n```text\n0.1^10\n```\n\n입니다.\n\n즉:\n\n```text\n0.0000000001\n```\n\n수준이 됩니다.\n\n앞쪽 layer는 사실상 학습되지 않을 수 있습니다.\n\n이를 gradient vanishing이라고 합니다.\n\n반대로 계속 커지면:\n\n**gradient explosion**\n\n입니다.\n\n---\n\n## 8. 실제 Gradient 확인\n\n다음 코드는 앞으로 모델 debugging에 매우 중요합니다.\n\n```python\nloss.backward()\n\nfor name, param in model.named_parameters():\n    if param.grad is not None:\n        print(\n            name,\n            param.grad.abs().mean().item()\n        )\n```\n\n예:\n\n```text\nencoder.conv1.weight  0.000001\nencoder.conv2.weight  0.000003\nencoder.conv3.weight  0.0042\nhead.weight           0.0821\n```\n\n이런 결과가 계속 나온다면:\n\n```text\n앞쪽 encoder gradient가 지나치게 작다.\n```\n\n라는 의심을 할 수 있습니다.\n\n---\n\n## 9. Gradient Hook\n\nTensor에 hook을 걸 수도 있습니다.\n\n```python\ndef print_grad(grad):\n    print(grad.abs().mean())\n\nfeature.register_hook(print_grad)\n```\n\nbackward 때 feature gradient를 볼 수 있습니다.\n\nPyTorch는 module/tensor hook을 통해 activation이나 gradient를 검사하는 기능을 제공하며, 현재 공식 튜토리얼에서도 gradient visualization/debugging 용도로 설명합니다.\n\n---\n\n## 10. 실전 디버깅 사고법\n\n예를 들어 ultrasound detection model에서:\n\n```text\nLoss가 감소하지 않는다.\n```\n\n라고 합시다.\n\nlearning rate부터 무작정 변경하면 안 됩니다.\n\n다음 순서로 확인합니다.\n\n```text\n① Input 정상?\n        ↓\n② Label 정상?\n        ↓\n③ Forward output 정상?\n        ↓\n④ Loss 계산 정상?\n        ↓\n⑤ Gradient 생성?\n        ↓\n⑥ 각 layer까지 gradient 전달?\n        ↓\n⑦ optimizer가 parameter update?\n```\n\n예:\n\n```python\nfor name, p in model.named_parameters():\n    if p.grad is None:\n        print(\"NO GRAD:\", name)\n```\n\n이것만으로도 상당히 많은 학습 문제를 찾을 수 있습니다.\n\n---"</script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script><script defer src="lesson.js"></script></body></html>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="PyTorch Autograd C++ 엔진 내부 구조(Node, Edge, AccumulateGrad), 동적 계산 그래프의 수명 주기, Custom autograd.Function 작성, In-place 에러 디버깅을 완벽 해부하는 심화 학습"><title>AI 전문 개발 학습 #02 · Autograd C++ 엔진과 Gradient Flow 완전 해부</title><link rel="stylesheet" href="ai.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><style>.callout{background:#f4f7fb;border-left:4px solid #2563eb;border-radius:10px;padding:14px 16px;margin:18px 0}.warn{background:#fff7ed;border-left-color:#f59e0b}.diagram{background:#0f172a;color:#e2e8f0;border-radius:18px;padding:18px;margin:22px 0;overflow:auto}.diagram svg{min-width:760px;width:100%;height:auto}.lesson-main table{width:100%;border-collapse:collapse;margin:16px 0}.lesson-main th,.lesson-main td{padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}.lesson-main th{background:#f8fafc;font-weight:700}.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:18px 0}.toc a{text-decoration:none;color:#1d4ed8;background:#eff6ff;padding:9px 11px;border-radius:10px;font-weight:700;font-size:14px}</style></head><body><header class="topbar"><a class="brand" href="./"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="./">목록으로</a></header><main class="lesson-layout"><article class="lesson-main"><p class="eyebrow">2026.09.01 · ADVANCED CORE · AUTOGRAD INTERNALS</p><h1 class="lesson-title">AI 전문 개발 학습 #02<br>Autograd C++ 엔진과 Gradient Flow 완전 해부</h1><p class="lesson-summary">PyTorch의 핵심 엔진인 Autograd의 C++ 내부 구현(Node, Edge, AccumulateGrad)을 파헤치고, 동적 계산 그래프의 생성과 소멸, Custom autograd.Function 구현, 그리고 실무에서 가장 흔히 겪는 In-place 연산 에러를 원리적으로 디버깅합니다.</p><div class="toc"><a href="#objectives">1. 학습 목표 및 핵심 용어</a><a href="#autograd-engine">2. Autograd의 C++ 내부 아키텍처 (Node &amp; Edge)</a><a href="#graph-lifecycle">3. 계산 그래프의 생명주기와 retain_graph</a><a href="#leaf-tensors">4. Leaf vs Non-leaf Tensor와 Gradient 축적</a><a href="#custom-function">5. 실전 Custom autograd.Function 구현</a><a href="#inplace-debug">6. In-place 수정 에러의 원리와 디버깅 (_version)</a><a href="#ultrasound-grad">7. 의료 초음파 모델에서의 Gradient 소실/폭주 대책</a><a href="#quiz">8. 복습 퀴즈 및 상세 해설</a></div><div class="callout"><strong>💡 Senior AI Engineer의 시각</strong><br>단순히 <code>loss.backward()</code>와 <code>optimizer.step()</code>을 실행하는 것만으로는 복잡한 커스텀 손실 함수, GAN, Gradient Penalty, Multi-task Learning을 안정적으로 제어할 수 없습니다. 시니어 엔지니어는 텐서 연산 시 백그라운드에 형성되는 <strong>C++ Directed Acyclic Graph (DAG)</strong>를 머릿속으로 시각화하고, 메모리에 캐싱되는 Activation의 수명 주기를 정확히 통제할 수 있어야 합니다.</div><section id="objectives"><h2>1. 학습 목표 및 핵심 용어 정의</h2><ul><li>Autograd 엔진의 C++ 핵심 구조체인 <code>torch::autograd::Node</code>, <code>Edge</code>, <code>AccumulateGrad</code>의 역할을 설명할 수 있습니다.</li><li>Forward 연산 시 동적으로 그래프가 조립되고 Backward 완료 시 즉시 소멸하는 이유와, <code>retain_graph=True</code>가 필요한 수학적·실무적 상황을 규명합니다.</li><li>파이토치가 허용하지 않는 In-place 연산 에러(<code>RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation</code>)를 텐서 버전 카운터(<code>_version</code>) 관점에서 완벽히 진단하고 수정할 수 있습니다.</li><li>의료 영상의 미세한 명암 대비 보존을 위한 미분 가능한 커스텀 연산자(Custom Function)를 안정적으로 직접 구현할 수 있습니다.</li></ul><h3>주요 기술 용어 정의</h3><table><thead><tr><th>용어 (Full Name)</th><th>한국어 의미</th><th>기능 및 실무적 의미</th></tr></thead><tbody><tr><td><strong>Autograd Engine</strong></td><td>자동 미분 엔진</td><td>PyTorch의 역전파를 담당하는 C++ 기반 비순환 방향 그래프(DAG) 평가 엔진. 수치 미분이 아닌 역방향 자동 미분(Reverse-mode AD)을 수행합니다.</td></tr><tr><td><strong>Node (torch::autograd::Node)</strong></td><td>그래프 연산 노드</td><td>연산 단위(예: <code>AddBackward0</code>, <code>ConvolutionBackward0</code>)를 캡슐화한 C++ 객체. Python에서는 <code>tensor.grad_fn</code>으로 참조됩니다.</td></tr><tr><td><strong>Edge</strong></td><td>그래프 엣지</td><td>한 노드의 출력 gradient를 다음 역전파 노드의 입력 슬롯으로 전달하는 C++ 연결 포인터 구조.</td></tr><tr><td><strong>AccumulateGrad</strong></td><td>기울기 누산 노드</td><td>사용자가 생성한 Leaf Tensor(가중치 파라미터 등)의 종점에 연결되어, 역전파된 gradient를 <code>param.grad</code> 텐서에 덧셈($+=$)으로 누적하는 특수 노드.</td></tr><tr><td><strong>Leaf Tensor</strong></td><td>리프 텐서</td><td>계산 그래프의 시작점이자 말단 노드. 사용자가 직접 생성했거나 <code>nn.Parameter</code>로 등록된 텐서만 해당하며, 오직 Leaf Tensor만이 기본적으로 <code>.grad</code>를 유지합니다.</td></tr><tr><td><strong>Vector-Jacobian Product (VJP)</strong></td><td>벡터-야코비안 곱</td><td>Reverse-mode AD의 본질. 거대한 야코비안 행렬 전체를 메모리에 올리지 않고, 상위 gradient 벡터 $v$와 국소 야코비안 $J$의 곱 $v^T J$만을 즉시 계산하여 메모리를 절약합니다.</td></tr></tbody></table></section><section id="autograd-engine"><h2>2. Autograd의 C++ 내부 아키텍처 (Node &amp; Edge)</h2><p>PyTorch에서 <code>requires_grad=True</code>인 텐서에 연산을 가하면, PyTorch C++ 백엔드는 결과를 계산하는 동시에 역방향 연산을 수행할 <code>torch::autograd::Node</code>를 힙(Heap) 메모리에 동적으로 인스턴스화합니다.</p><div class="diagram"><svg viewBox="0 0 940 340" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arr-fwd" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#38bdf8"/></marker><marker id="arr-bwd" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#f43f5e"/></marker></defs><text x="30" y="32" fill="#f8fafc" font-size="22" font-weight="700">Forward 계산 및 Backward DAG (Directed Acyclic Graph) 매핑</text><rect x="30" y="60" width="160" height="90" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/><text x="110" y="90" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="700">Leaf Tensor: W</text><text x="110" y="115" text-anchor="middle" fill="#cbd5e1" font-size="14">requires_grad=True</text><text x="110" y="135" text-anchor="middle" fill="#93c5fd" font-size="13">grad_fn = None</text><rect x="30" y="180" width="160" height="90" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/><text x="110" y="210" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="700">Leaf Tensor: X</text><text x="110" y="235" text-anchor="middle" fill="#cbd5e1" font-size="14">requires_grad=False</text><text x="110" y="255" text-anchor="middle" fill="#94a3b8" font-size="13">(입력 데이터)</text><line x1="190" y1="105" x2="310" y2="140" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arr-fwd)"/><line x1="190" y1="225" x2="310" y2="160" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arr-fwd)"/><rect x="320" y="95" width="220" height="110" rx="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="2"/><text x="430" y="125" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="700">H = W × X (MatMul)</text><text x="430" y="155" text-anchor="middle" fill="#ccfbf1" font-size="14">C++ Node: MmBackward0</text><text x="430" y="185" text-anchor="middle" fill="#fcd34d" font-size="13">Saved Tensor: X, W (ctx)</text><line x1="540" y1="150" x2="650" y2="150" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arr-fwd)"/><rect x="660" y="95" width="220" height="110" rx="10" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/><text x="770" y="125" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="700">Loss = Mean(H)</text><text x="770" y="155" text-anchor="middle" fill="#ffedd5" font-size="14">C++ Node: MeanBackward0</text><text x="770" y="185" text-anchor="middle" fill="#fcd34d" font-size="13">Root Node for Backward</text><path d="M 660 170 Q 600 240 430 220" stroke="#f43f5e" stroke-width="3" fill="none" marker-end="url(#arr-bwd)"/><path d="M 320 170 Q 250 250 130 160" stroke="#f43f5e" stroke-width="3" fill="none" marker-end="url(#arr-bwd)"/><rect x="40" y="285" width="860" height="45" rx="6" fill="#1e293b"/><text x="50" y="313" fill="#f43f5e" font-size="15" font-weight="700">Backward 역전파 흐름:</text><text x="230" y="313" fill="#f8fafc" font-size="14">Loss.backward() 호출 → MeanBackward0 → MmBackward0 → AccumulateGrad → W.grad 에 누적</text></svg></div><h3>Chain Rule과 Vector-Jacobian Product (VJP)</h3><p>스칼라 손실 $L$에 대하여 중간 출력 벡터 $y = f(x)$가 존재할 때, $x$에 대한 gradient는 야코비안 행렬 $J = \frac{\partial y}{\partial x}$와 상위 gradient 벡터 $v = \frac{\partial L}{\partial y}$의 곱으로 나타납니다.</p>$$\frac{\partial L}{\partial x} = v^T J = \sum_{j} \frac{\partial L}{\partial y_j} \frac{\partial y_j}{\partial x_i}$$<p>Autograd의 모든 <code>Node</code>는 전체 야코비안 $J$를 명시적으로 생성하지 않으며, 상위 노드로부터 전달받은 gradient 벡터 $v$에 대해 국소적인 벡터-야코비안 곱(VJP)만을 계산하여 하위 노드로 즉각 방출합니다.</p></section><section id="graph-lifecycle"><h2>3. 계산 그래프의 생명주기와 retain_graph</h2><h3>동적 계산 그래프(Dynamic Computational Graph)의 파괴</h3><p>PyTorch의 가장 큰 특징은 **Define-by-Run** 방식입니다. Forward가 수행될 때 매번 새로운 C++ DAG가 생성되며, <code>loss.backward()</code>가 끝나는 즉시 그래프를 구성하던 <code>Node</code>들과 활성화 텐서 버퍼(Saved Tensors)는 <strong>VRAM 절약을 위해 즉시 메모리에서 해제(Free)</strong>됩니다.</p><div class="callout warn"><strong>⚠️ RuntimeError: Trying to backward through the graph a second time</strong><br>동일한 계산 그래프에 대해 두 번째 <code>.backward()</code>를 호출하면 발생하는 치명적인 에러입니다. 이미 중간 버퍼가 소멸되었기 때문입니다. 만약 동일 그래프에 대해 여러 번 backward를 해야 하는 특수한 경우(예: GAN의 Discriminator를 서로 다른 Loss로 두 번 역전파할 때)에는 다음과 같이 명시해야 합니다.<pre class="sourceCode python"><code>loss1.backward(retain_graph=True) # 그래프와 activation 메모리 유지
+loss2.backward()                  # 최종 backward 시 비로소 해제</code></pre>단, <code>retain_graph=True</code>는 중간 텐서를 계속 VRAM에 유지하므로 메모리 누수(OOM)의 주원인이 될 수 있음을 반드시 유의해야 합니다.</div></section><section id="leaf-tensors"><h2>4. Leaf vs Non-leaf Tensor와 Gradient 축적</h2><div class="lesson-main"><table><thead><tr><th>구분</th><th>정의 및 특징</th><th>grad_fn</th><th>.grad 보존 여부</th></tr></thead><tbody><tr><td><strong>Leaf Tensor</strong></td><td>사용자가 직접 생성한 텐서(예: <code>torch.randn</code>) 또는 모델의 가중치 파라미터(<code>nn.Parameter</code>). 그래프의 잎(Leaf)에 위치.</td><td><code>None</code></td><td><strong>영구 보존됨</strong> (<code>param.grad</code>에 축적)</td></tr><tr><td><strong>Non-Leaf Tensor</strong></td><td>다른 텐서 간의 연산 결과로 생성된 중간 활성화 텐서 (예: <code>h = x @ w</code>, <code>out = relu(h)</code>).</td><td><code>AddBackward</code> 등 해당 연산 노드</td><td><strong>역전파 직후 폐기됨</strong> (기본값: <code>None</code>)</td></tr></tbody></table></div><p>만약 디버깅 목적으로 Non-leaf 텐서의 gradient를 확인하고 싶다면, backward 호출 전에 반드시 <code>h.retain_grad()</code>를 호출해야만 <code>h.grad</code>가 보존됩니다.</p><h3>기울기 누적(Gradient Accumulation)의 원리</h3><p>Autograd의 <code>AccumulateGrad</code> 노드는 <code>param.grad = new_grad</code>로 덮어쓰지 않고, <code>param.grad += new_grad</code>로 **누적(Accumulate)**합니다. 따라서 매 이터레이션마다 <code>optimizer.zero_grad()</code>를 호출하지 않으면 이전 배치의 gradient와 계속 합산되어 학습이 완전히 망가지게 됩니다.</p></section><section id="custom-function"><h2>5. 실전 Custom autograd.Function 구현</h2><p>기존 PyTorch 연산자의 조합만으로는 메모리 효율이 떨어지거나 미분이 불가능한 수식이 있을 때, <code>torch.autograd.Function</code>을 상속받아 정방향(Forward)과 역방향(Backward)을 직접 정의합니다.</p><div class="callout"><strong>의료 영상 시나리오: Speckle Noise 억제를 위한 Smooth Charbonnier Loss</strong><br>초음파의 심한 얼룩(Speckle) 잡음에 강인하도록 $L_1$과 $L_2$ 손실의 장점을 결합한 미분 가능한 Charbonnier 페널티 함수를 직접 작성합니다: $\phi(x) = \sqrt{x^2 + \epsilon^2}$.</div><pre class="sourceCode python"><code class="sourceCode python">import torch
+from torch.autograd import Function
+
+class CharbonnierLossFunction(Function):
+    @staticmethod
+    def forward(ctx, diff, eps=1e-3):
+        """
+        Forward: loss = sqrt(diff^2 + eps^2)
+        ctx(context)에 역전파에 필요한 텐서를 저장합니다.
+        """
+        ctx.eps = eps
+        loss = torch.sqrt(diff ** 2 + eps ** 2)
+        # 역전파 계산을 위해 diff와 loss를 저장 (메모리 절약을 위해 필요한 것만 저장)
+        ctx.save_for_backward(diff, loss)
+        return loss
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        """
+        Backward: d(Loss)/d(diff) = diff / sqrt(diff^2 + eps^2) = diff / loss
+        Chain Rule: incoming_grad (grad_output) * local_grad
+        """
+        diff, loss = ctx.saved_tensors
+        # VJP (Vector-Jacobian Product) 계산
+        grad_diff = grad_output * (diff / loss)
+        
+        # forward 인자 개수(diff, eps)와 반환하는 gradient 개수가 정확히 일치해야 함
+        # eps는 상사이므로 미분값은 None
+        return grad_diff, None
+
+# 실무 검증: gradcheck를 통한 수치 미분 검증
+diff_sample = torch.randn(4, 4, dtype=torch.float64, requires_grad=True)
+test_passed = torch.autograd.gradcheck(CharbonnierLossFunction.apply, (diff_sample, 1e-3), eps=1e-6, atol=1e-4)
+print(f"Charbonnier Custom Function Gradcheck 통과 여부: {test_passed}")
+</code></pre></section><section id="inplace-debug"><h2>6. In-place 수정 에러의 원리와 디버깅 (_version)</h2><h3>에러의 근본 메커니즘</h3><p>다음과 같은 실수를 자주 접하게 됩니다.</p><pre class="sourceCode python"><code class="sourceCode python">x = torch.randn(4, requires_grad=True)
+h = torch.relu(x)
+h += 1.0  # In-place 덧셈 연산!
+loss = h.sum()
+loss.backward()  # RuntimeError 발생!
+</code></pre><p><strong>발생 원인:</strong> <code>relu</code>의 역전파는 forward 출력값 $h$가 0보다 큰지 여부를 검사해야 하므로, $h$를 백그라운드에 저장해 둡니다. 그런데 <code>h += 1.0</code>으로 메모리 상의 원본 데이터를 덮어써 버리면, 나중에 <code>ReLUBackward</code>가 실행될 때 올바른 gradient를 계산할 수 없게 됩니다.</p><h3>_version 카운터 추적</h3><p>모든 텐서는 내부적으로 C++ <code>_version</code> 카운터를 가집니다. 텐서가 생성될 때 0이며, In-place 수정(<code>+=</code>, <code>.copy_()</code>, <code>[i] = ...</code>)이 일어날 때마다 1씩 증가합니다. <code>backward()</code>가 실행될 때 <strong>저장 시점의 버전과 현재 버전이 일치하지 않으면</strong> Autograd는 즉시 예외를 발생시키고 학습을 중단합니다.</p></section><section id="ultrasound-grad"><h2>7. 의료 초음파 모델에서의 Gradient 소실/폭주 대책</h2><p>초음파 영상은 반사파의 감쇄(Attenuation)와 음향 그림자(Acoustic Shadowing)로 인해 영상 내에 신호 강도가 매우 낮은 영역과 매우 높은 영역이 공존합니다. 이는 역전파 시 다음과 같은 치명적인 문제를 일으킵니다.</p><ul><li><strong>Gradient Vanishing (기울기 소실):</strong> 깊은 FPN 계층을 거치며 미세 병변의 미약한 에코(Hypoechoic) 신호 gradient가 $10^{-7}$ 이하로 감소하여 가중치 갱신이 멈춤. $\rightarrow$ Residual Skip Connection 및 Pre-Activation 구조 도입으로 해결.</li><li><strong>Gradient Exploding (기울기 폭주):</strong> 뼈나 결석 등 고반사체(Hyperechoic) 영역의 극단적인 예측 오차로 인해 초기 학습 시 gradient가 급증하여 가중치가 NaN으로 발산. $\rightarrow$ <code>torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)</code> 필수 적용.</li></ul></section><section id="quiz"><h2>8. 복습 퀴즈 및 상세 해설</h2><ol><li><strong>Q1. 텐서 $W$가 <code>nn.Parameter</code>일 때, 역전파가 끝나면 $W$의 gradient를 담당하는 Autograd 노드의 이름은 무엇인가?</strong><br><em>정답 및 해설:</em> <code>AccumulateGrad</code> 노드입니다. Leaf Tensor의 말단에 부착되어 역전파된 gradient를 파라미터의 <code>.grad</code> 필드에 합산합니다.</li><li><strong>Q2. 중간 피처맵 텐서 $H$의 <code>.grad</code>가 역전파 후 <code>None</code>인 이유는 무엇인가?</strong><br><em>정답 및 해설:</em> $H$는 Non-leaf Tensor이기 때문입니다. PyTorch는 VRAM 절약을 위해 오직 Leaf Tensor(가중치 등)의 gradient만 보존하고 중간 텐서의 gradient는 계산 직후 메모리에서 해제합니다. 보존하려면 <code>H.retain_grad()</code>를 호출해야 합니다.</li><li><strong>Q3. <code>loss.backward()</code>를 1회 실행한 후, 동일한 loss에 대해 다시 <code>loss.backward()</code>를 호출하면 에러가 발생하는 이유는?</strong><br><em>정답 및 해설:</em> 동적 계산 그래프와 역전파에 필요한 중간 캐시(Saved Tensors)가 첫 번째 backward 완료 직후 메모리에서 소멸(Free)되었기 때문입니다. 재사용하려면 <code>retain_graph=True</code> 옵션이 필요합니다.</li><li><strong>Q4. PyTorch 텐서의 <code>_version</code> 속성은 어떤 상황에서 숫자가 증가하는가?</strong><br><em>정답 및 해설:</em> In-place 연산(예: <code>x += 1</code>, <code>x.mul_()</code>, 슬라이스 대입 등)에 의해 메모리 상의 원본 데이터가 직접 수정될 때마다 1씩 증가합니다.</li><li><strong>Q5. <code>Custom Function</code> 작성 시 <code>backward</code> 메서드가 반환해야 하는 값들의 개수와 순서는 무엇과 일치해야 하는가?</strong><br><em>정답 및 해설:</em> <code>forward</code> 메서드가 입력받았던 인자들의 개수 및 순서(<code>ctx</code> 제외)와 정확히 일치해야 합니다. 미분이 불필요한 인자는 <code>None</code>을 반환해야 합니다.</li></ol></section></div></article><aside class="toc"><strong>이 페이지에서</strong><nav id="toc-links"></nav></aside></main><footer><a href="./">← AI 학습 목록으로 돌아가기</a></footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script><script defer src="lesson.js"></script></body></html>
