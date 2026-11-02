@@ -2,7 +2,104 @@
 dist = torch.sqrt((pred - gt) ** 2)
 
 # [올바른 방어 코드]: 미분 시 분모가 최소 2*sqrt(eps)로 안전함
-dist = torch.sqrt((pred - gt) ** 2 + 1e-8)</code></pre></div><h3>2) 로그 연산 ($y = \log(x)$)</h3><p>Cross Entropy나 Focal Loss에서 확률 $p \to 0$일 때 $\log(0) = -\infty$가 됩니다. 항상 <code>torch.clamp(p, min=1e-7, max=1.0 - 1e-7)</code>를 취하거나, 수치적으로 안정적인 <code>F.binary_cross_entropy_with_logits</code>를 사용해야 합니다.</p></section><section id="gradient-clipping"><h2>5. Gradient Clipping: clip_grad_norm_의 L2 스케일링</h2><p>PyTorch의 <code>clip_grad_norm_(parameters, max_norm)</code>은 모델의 모든 파라미터 그래디언트를 하나의 거대한 벡터 $g$로 연결한 뒤 글로벌 L2 Norm을 산출합니다.</p>$$\|g\|_2 = \sqrt{\sum_{i} \sum_{w \in p_i} w^2}$$<p>만약 $\|g\|_2 > \text{max\_norm}$ 이라면, 다음 스케일링 계수를 모든 그래디언트에 곱합니다.</p>$$g \leftarrow g \times \frac{\text{max\_norm}}{\|g\|_2 + 10^{-6}}$$<h3>기울기 클리핑의 기하학적 의미</h3><p>단순 값 제한(<code>clip_grad_value_</code>)은 각 좌표축을 독립적으로 잘라내어 <strong>경사 하강 방향 벡터 자체를 왜곡</strong>합니다. 반면 Norm 기반 클리핑은 <strong>방향(Direction)은 100% 동일하게 유지한 채 오직 이동 보폭(Step Size)만을 안전하게 축소</strong>하므로 최적화 경로의 일관성을 완벽히 보장합니다.</p></section><section id="ultrasound-debug"><h2>6. 의료 초음파: 고반사 병변의 Loss 폭주 디버깅</h2><p>초음파 영상에서 신장 결석(Kidney Stone), 유방 석회화(Microcalcification), 갈비뼈 표면은 초음파 빔을 100% 반사하여 <strong>극단적인 고반사(Hyperechoic, 픽셀값 255)</strong>와 그 직후의 <strong>완전 무신호(Acoustic Shadow, 픽셀값 0)</strong>라는 극단적인 대비를 형성합니다.</p><ul><li><strong>증상:</strong> 정상 조직 학습 중 결석 샘플이 포함된 미니배치를 만나는 순간, Regression Head의 Loss가 갑자기 $10^3$배로 튀며 가중치가 NaN으로 오염됨.</li><li><strong>원인 진단:</strong> 경계 영역의 급격한 계단형 음영으로 인해 Smooth L1 / CIoU 손실의 그래디언트가 국소적으로 폭발함.</li><li><strong>해결 조치:</strong><ol><li><code>max_norm=1.0</code> Gradient Clipping 필수 적용.</li><li>Loss 함수에 극단적 이상치에 둔감한 Huber Loss 또는 Charbonnier Loss 적용.</li><li>데이터 로더에서 고반사 아티팩트 영역에 대한 정규화(Percentile-based Clipping: 1%~99%) 선행.</li></ol></li></ul></section><section id="code-lab"><h2>7. PyTorch 실전 자동 진단 디버거 구현</h2><pre class="sourceCode python"><code class="sourceCode python">import torch
+dist = torch.sqrt((pred - gt) ** 2 + 1e-8)</code></pre></div><h3>2) 로그 연산 ($y = \log(x)$)</h3><p>Cross Entropy나 Focal Loss에서 확률 $p \to 0$일 때 $\log(0) = -\infty$가 됩니다. 항상 <code>torch.clamp(p, min=1e-7, max=1.0 - 1e-7)</code>를 취하거나, 수치적으로 안정적인 <code>F.binary_cross_entropy_with_logits</code>를 사용해야 합니다.</p></section><section id="gradient-clipping"><h2>5. Gradient Clipping: clip_grad_norm_의 직관적 원리와 시각화</h2>
+<p>딥러닝 초보자가 가장 직관적으로 이해할 수 있는 비유로 시작해 봅시다.</p>
+<div class="callout"><strong>🧭 비유로 이해하는 기울기 클리핑 (나침반과 안전 로프)</strong><br>
+우리가 안개 낀 산속에서 가장 낮은 골짜기(Loss가 최소인 지점)를 찾아 내려가고 있다고 상상해 봅시다.<br>
+• <strong>Gradient(기울기):</strong> 나침반 바늘입니다. 골짜기가 어느 쪽으로 가장 가파르게 내려가는지 <em>방향</em>과 <em>경사도(보폭)</em>를 알려줍니다.<br>
+• <strong>기울기 폭주(Exploding):</strong> 갑자기 나침반이 100m 앞 절벽으로 전력 질주하라고 지시하는 상황입니다. 그대로 한 걸음을 내딛으면 절벽 아래로 추락하여 모델 파라미터가 파괴되고 <code>NaN</code>이 발생합니다.<br>
+• <strong>Gradient Clipping(해결책):</strong> 나침반 바늘이 가리키는 <strong>"방향"은 단 0.1도도 바꾸지 않은 채</strong>, 한 걸음의 <strong>"최대 보폭(max_norm)"</strong>만 1m로 안전하게 제한하는 안전 로프입니다.</div>
+
+<h3>1) 수식 시각화 카드 (수식 기호 대신 그림으로 읽기)</h3>
+<p>PyTorch 공식 함수인 <code>torch.nn.utils.clip_grad_norm_(parameters, max_norm=1.0)</code>의 내부 수식을 직관적인 카드로 해부합니다.</p>
+
+<div class="diagram"><svg viewBox="0 0 940 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-eq" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/></marker>
+  </defs>
+  <text x="30" y="32" fill="#f8fafc" font-size="20" font-weight="700">Gradient Clipping 스케일링 수식 완전 해부</text>
+  
+  <!-- Left Box: New Grad -->
+  <rect x="30" y="60" width="160" height="90" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="110" y="95" text-anchor="middle" fill="#38bdf8" font-size="22" font-weight="700">g_new</text>
+  <text x="110" y="125" text-anchor="middle" fill="#f8fafc" font-size="13">수정된 안전한 기울기</text>
+  
+  <text x="215" y="115" text-anchor="middle" fill="#f8fafc" font-size="32" font-weight="700">=</text>
+  
+  <!-- Middle Box: Old Grad -->
+  <rect x="245" y="60" width="160" height="90" rx="10" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+  <text x="325" y="95" text-anchor="middle" fill="#f43f5e" font-size="22" font-weight="700">g_old</text>
+  <text x="325" y="125" text-anchor="middle" fill="#f8fafc" font-size="13">원래의 폭주한 기울기</text>
+  
+  <text x="430" y="115" text-anchor="middle" fill="#f8fafc" font-size="32" font-weight="700">×</text>
+  
+  <!-- Fraction Box -->
+  <rect x="460" y="50" width="450" height="110" rx="12" fill="#0f766e" stroke="#2dd4bf" stroke-width="2"/>
+  <!-- Numerator -->
+  <rect x="480" y="60" width="410" height="40" rx="6" fill="#134e4a"/>
+  <text x="685" y="86" text-anchor="middle" fill="#fcd34d" font-size="16" font-weight="700">max_norm (내가 허용한 최대 보폭 한계, 예: 1.0)</text>
+  <!-- Divider -->
+  <line x1="480" y1="105" x2="890" y2="105" stroke="#2dd4bf" stroke-width="3"/>
+  <!-- Denominator -->
+  <rect x="480" y="112" width="410" height="40" rx="6" fill="#134e4a"/>
+  <text x="685" y="138" text-anchor="middle" fill="#5eead4" font-size="16" font-weight="700">||g||_2 (실제 측정된 거대한 기울기 크기, 예: 100.0)</text>
+  
+  <!-- Explanation beneath -->
+  <text x="30" y="195" fill="#fcd34d" font-size="15" font-weight="700">💡 축소 비율 계산의 핵심:</text>
+  <text x="30" y="222" fill="#cbd5e1" font-size="14">• 실제 크기가 100.0이고 허용 한계가 1.0이라면, 축소 비율은 1.0 / 100.0 = 0.01 (1/100)이 됩니다.</text>
+  <text x="30" y="245" fill="#cbd5e1" font-size="14">• 원래 기울기 벡터 전체에 0.01을 곱하므로, <strong>기울기의 방향은 100% 보존되면서 길이만 1.0으로 단정하게 줄어듭니다!</strong></text>
+</svg></div>
+
+<h3>2) 기하학적 시각화: 왜 clip_grad_value 대신 clip_grad_norm인가?</h3>
+<p>초보자가 자주 하는 실수 중 하나는 단순히 <code>torch.clamp</code>나 <code>clip_grad_value_</code>로 숫자를 잘라내는 것입니다. 두 방식의 기하학적 차이를 시각화 다이어그램으로 비교해 봅시다.</p>
+
+<div class="diagram"><svg viewBox="0 0 940 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-green" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#34d399"/></marker>
+    <marker id="arr-orange" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#fb923c"/></marker>
+    <marker id="arr-gray" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#64748b"/></marker>
+  </defs>
+  <text x="30" y="32" fill="#f8fafc" font-size="20" font-weight="700">두 가지 클리핑 방식의 기하학적 방향 왜곡 비교</text>
+  
+  <!-- LEFT: clip_grad_norm_ (올바른 예) -->
+  <rect x="30" y="60" width="425" height="280" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <text x="242" y="90" text-anchor="middle" fill="#34d399" font-size="17" font-weight="700">✅ clip_grad_norm_ (L2 구형 제약)</text>
+  <!-- Circle constraint -->
+  <circle cx="150" cy="220" r="70" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="230" y="170" fill="#2dd4bf" font-size="12">허용 반경 (max_norm)</text>
+  <!-- Axis -->
+  <line x1="60" y1="220" x2="280" y2="220" stroke="#475569" stroke-width="1.5"/>
+  <line x1="150" y1="310" x2="150" y2="130" stroke="#475569" stroke-width="1.5"/>
+  <!-- Original Vector -->
+  <line x1="150" y1="220" x2="250" y2="120" stroke="#64748b" stroke-width="2.5" stroke-dasharray="3 3" marker-end="url(#arr-gray)"/>
+  <text x="260" y="115" fill="#94a3b8" font-size="13">원래 g (폭주)</text>
+  <!-- Clipped Vector -->
+  <line x1="150" y1="220" x2="200" y2="170" stroke="#34d399" stroke-width="4" marker-end="url(#arr-green)"/>
+  <text x="210" y="180" fill="#34d399" font-size="13" font-weight="700">클리핑된 g'</text>
+  
+  <text x="242" y="300" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="700">방향(각도 45도) 완전 보존!</text>
+  <text x="242" y="322" text-anchor="middle" fill="#cbd5e1" font-size="12">원래 가려던 최적화 방향으로 올바르게 보폭만 축소</text>
+
+  <!-- RIGHT: clip_grad_value_ (위험한 예) -->
+  <rect x="485" y="60" width="425" height="280" rx="12" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+  <text x="697" y="90" text-anchor="middle" fill="#f43f5e" font-size="17" font-weight="700">❌ clip_grad_value_ (사각형 박스 제약)</text>
+  <!-- Box constraint -->
+  <rect x="545" y="150" width="140" height="140" fill="none" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="695" y="170" fill="#f43f5e" font-size="12">각 축 독립 제한 [-c, c]</text>
+  <!-- Axis -->
+  <line x1="525" y1="220" x2="745" y2="220" stroke="#475569" stroke-width="1.5"/>
+  <line x1="615" y1="310" x2="615" y2="130" stroke="#475569" stroke-width="1.5"/>
+  <!-- Original Vector (steep) -->
+  <line x1="615" y1="220" x2="655" y2="120" stroke="#64748b" stroke-width="2.5" stroke-dasharray="3 3" marker-end="url(#arr-gray)"/>
+  <text x="665" y="115" fill="#94a3b8" font-size="13">원래 g (가파름)</text>
+  <!-- Clipped Vector (distorted) -->
+  <line x1="615" y1="220" x2="655" y2="150" stroke="#fb923c" stroke-width="4" marker-end="url(#arr-orange)"/>
+  <text x="665" y="160" fill="#fb923c" font-size="13" font-weight="700">왜곡된 g'</text>
+  
+  <text x="697" y="300" text-anchor="middle" fill="#fca5a5" font-size="14" font-weight="700">방향(각도)이 엉뚱하게 왜곡됨!</text>
+  <text x="697" y="322" text-anchor="middle" fill="#cbd5e1" font-size="12">Y축만 잘려서 전혀 다른 방향으로 이동 $\to$ 수렴 실패</text>
+</svg></div>
+</section><section id="ultrasound-debug"><h2>6. 의료 초음파: 고반사 병변의 Loss 폭주 디버깅</h2><p>초음파 영상에서 신장 결석(Kidney Stone), 유방 석회화(Microcalcification), 갈비뼈 표면은 초음파 빔을 100% 반사하여 <strong>극단적인 고반사(Hyperechoic, 픽셀값 255)</strong>와 그 직후의 <strong>완전 무신호(Acoustic Shadow, 픽셀값 0)</strong>라는 극단적인 대비를 형성합니다.</p><ul><li><strong>증상:</strong> 정상 조직 학습 중 결석 샘플이 포함된 미니배치를 만나는 순간, Regression Head의 Loss가 갑자기 $10^3$배로 튀며 가중치가 NaN으로 오염됨.</li><li><strong>원인 진단:</strong> 경계 영역의 급격한 계단형 음영으로 인해 Smooth L1 / CIoU 손실의 그래디언트가 국소적으로 폭발함.</li><li><strong>해결 조치:</strong><ol><li><code>max_norm=1.0</code> Gradient Clipping 필수 적용.</li><li>Loss 함수에 극단적 이상치에 둔감한 Huber Loss 또는 Charbonnier Loss 적용.</li><li>데이터 로더에서 고반사 아티팩트 영역에 대한 정규화(Percentile-based Clipping: 1%~99%) 선행.</li></ol></li></ul></section><section id="code-lab"><h2>7. PyTorch 실전 자동 진단 디버거 구현</h2><pre class="sourceCode python"><code class="sourceCode python">import torch
 import torch.nn as nn
 
 class TrainingDiagnosticDebugger:

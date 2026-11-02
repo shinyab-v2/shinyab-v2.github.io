@@ -1,23 +1,244 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AI 전문 개발 학습 커리큘럼과 날짜별 심화 학습 기록"><title>AI 전문 개발 학습</title><link rel="stylesheet" href="ai.css"></head><body><header class="topbar"><a class="brand" href="../"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="../">홈으로</a></header><main><section class="hero"><p class="eyebrow">AI ENGINEERING PATH</p><h1>모델을 사용하던 단계에서<br>구조를 설계하는 단계로.</h1><p class="lead">Tensor → 수학 → PyTorch → source code → architecture trade-off → debugging → deployment → ultrasound application까지 연결합니다. 핵심 구조는 단순 텍스트 그림 대신 반응형 SVG/visual diagram으로 학습합니다.</p><div class="summary"><div class="metric"><strong>39회</strong><span>현재 상세 학습</span></div><div class="metric"><strong>40분+</strong><span>회차별 목표 학습 시간</span></div><div class="metric"><strong>8개 Phase</strong><span>마스터 커리큘럼</span></div></div></section><section class="section"><div class="section-head"><h2>금주 AI Daily · 2026.11.02–11.06</h2><span class="section-note">Week 2: Detection Neck, Head, Attention, ViT &amp; Debugging Lab</span></div><div class="lesson-list">
-<a class="lesson-card" href="2026-11-06-training-debugging-lab.html"><time class="lesson-date">11.06</time><div><span class="badge">#11 · Debug Lab</span><h3>Training Debugging Lab: Gradient/Activation 추적</h3><p>Hook 기반 기울기·활성화 실시간 모니터링, sqrt 특이점 NaN 역추적, clip_grad_norm_ L2 스케일링.</p></div><span class="open">학습 →</span></a>
-<a class="lesson-card" href="2026-11-05-vit-source-code.html"><time class="lesson-date">11.05</time><div><span class="badge">#10 · ViT</span><h3>Vision Transformer (ViT) Source Code 해부</h3><p>Conv2d Patchify 트릭, [CLS] 토큰, 1D Positional Embedding, Pre-LN 인코더 블록과 Hybrid ViT.</p></div><span class="open">학습 →</span></a>
-<a class="lesson-card" href="2026-11-04-attention-qkv-mechanics.html"><time class="lesson-date">11.04</time><div><span class="badge">#09 · Attention</span><h3>Self-Attention &amp; Multi-Head QKV Mechanics</h3><p>Q/K/V 텐서 투영, 루트 dk 스케일링 증명, Multi-Head 차원 분할, O(S²) VRAM Footprint 분석.</p></div><span class="open">학습 →</span></a>
-<a class="lesson-card" href="2026-11-03-detection-head-assignment.html"><time class="lesson-date">11.03</time><div><span class="badge">#08 · Detection</span><h3>Detection Head &amp; Label Assignment</h3><p>Decoupled Head, Anchor-free 원리, ATSS 적응형 샘플 선택과 SimOTA 최적 수송 비용 행렬.</p></div><span class="open">학습 →</span></a>
-<a class="lesson-card" href="2026-11-02-detection-neck-fpn.html"><time class="lesson-date">11.02</time><div><span class="badge">#07 · Neck</span><h3>Modern Detection Neck: FPN·PANet·BiFPN</h3><p>Top-down / Bottom-up 경로, 1×1 Lateral Conv, 초음파 미세 병변 P2 피라미드 VRAM Trade-off.</p></div><span class="open">학습 →</span></a>
-</div></section><section class="section"><div class="section-head"><h2>이전 상세 학습 · Week 1 및 Core</h2><span class="section-note">#01–#06 Core Foundation</span></div><div class="lesson-list">
-<a class="lesson-card" href="2026-09-07-small-batch-normalization-deep.html"><time class="lesson-date">09.07</time><div><span class="badge">#06 · Norm</span><h3>Small-Batch Normalization 심화</h3><p>BN 배치 통계 vs running 통계, (N,H,W) 축 정규화, Gamma/Beta, GroupNorm·SyncBN 비교.</p></div><span class="open">보기 →</span></a>
-<a class="lesson-card" href="2026-09-04-residual-dilation.html"><time class="lesson-date">09.04</time><div><span class="badge">#05 · Conv</span><h3>Residual Block 수정: Dilation·Stride</h3><p>stride, projection, receptive field 확장과 초음파 고해상도 특징 맵 보존 계약.</p></div><span class="open">보기 →</span></a>
-<a class="lesson-card" href="2026-09-03-forward-fx.html"><time class="lesson-date">09.03</time><div><span class="badge">#04 · FX</span><h3>Forward Graph / torch.fx</h3><p>runtime trace, Symbolic IR, ShapeProp과 연산 그래프 변환.</p></div><span class="open">보기 →</span></a>
-<a class="lesson-card" href="2026-09-02-module-state-dict.html"><time class="lesson-date">09.02</time><div><span class="badge">#03 · Module</span><h3>nn.Module Internals &amp; State Dict</h3><p>Parameter, buffer 슬롯 등록 원리, state_dict 직렬화와 weight 마이그레이션.</p></div><span class="open">보기 →</span></a>
-<a class="lesson-card" href="2026-09-01-autograd.html"><time class="lesson-date">09.01</time><div><span class="badge">#02 · Engine</span><h3>Autograd C++ &amp; Gradient Flow</h3><p>C++ Autograd Engine, Node/Edge, DAG 수명주기, Custom Function, In-place 디버깅.</p></div><span class="open">보기 →</span></a>
-<a class="lesson-card" href="2026-08-31-tensor-shape.html"><time class="lesson-date">08.31</time><div><span class="badge">#01 · Tensor</span><h3>Tensor / Hardware Memory</h3><p>Storage·Strides·Im2col·GEMM·FLOPs와 초음파 고해상도 VRAM 최적화.</p></div><span class="open">보기 →</span></a>
-</div></section><section class="section"><div class="section-head"><h2>전문 개발 마스터 커리큘럼</h2><span class="section-note">8주 완성 로드맵 (총 40강)</span></div><div class="curriculum-roadmap">
-<div class="roadmap-stage done"><span class="num">Week 1</span><div><strong>PyTorch 내부 엔진 &amp; 저수준 연산 계약 (#01–#05)</strong><br><small>Tensor Strides, Autograd C++ DAG, nn.Module, torch.fx, Residual/Dilation</small></div><span class="roadmap-status">완료</span></div>
-<div class="roadmap-stage done"><span class="num">Week 2</span><div><strong>정규화 역학, 객체 검출 헤드 &amp; 트랜스포머 (#06–#10)</strong><br><small>Small-Batch Normalization, FPN/BiFPN, SimOTA Head, Self-Attention QKV, ViT Source Code</small></div><span class="roadmap-status">완료</span></div>
-<div class="roadmap-stage current"><span class="num">Week 3</span><div><strong>학습 디버깅, 가중치 전이 &amp; C++ 커스텀 연산 (#11–#15)</strong><br><small>Debugging Lab, Discriminative Fine-tuning, Loss Design, CUDA Kernel 기초, C++ Extension</small></div><span class="roadmap-status">진행중</span></div>
-<div class="roadmap-stage"><span class="num">Week 4</span><div><strong>논문 구현(Paper-to-Code) &amp; 의료 초음파 모델 (#16–#20)</strong><br><small>Paper-to-Code, B-mode Detection Pipeline, U-Net++, Speckle Augmentation, Domain Shift</small></div><span class="roadmap-status">대기</span></div>
-<div class="roadmap-stage"><span class="num">Week 5</span><div><strong>임상 평가 지표, 오류 분석 &amp; 데이터 누수 방지 (#21–#25)</strong><br><small>AUROC/FROC, Model Calibration, Systematic Error Analysis, Patient-level Split, Reproducibility</small></div><span class="roadmap-status">대기</span></div>
-<div class="roadmap-stage"><span class="num">Week 6</span><div><strong>극소 병변 검출 전략, 클래스 불균형 &amp; 해석성 (#26–#30)</strong><br><small>Small Lesion (P2), Hard Negative Mining, Grad-CAM/Score-CAM, Shortcut Learning, Architecture Audit</small></div><span class="roadmap-status">대기</span></div>
-<div class="roadmap-stage"><span class="num">Week 7</span><div><strong>대규모 분산 학습, 고성능 파이프라인 &amp; 프로파일링 (#31–#35)</strong><br><small>Zero-copy Pipeline, Training Loop, Mixed Precision (AMP), DDP Ring All-Reduce, Profiler</small></div><span class="roadmap-status">대기</span></div>
-<div class="roadmap-stage"><span class="num">Week 8</span><div><strong>온디바이스 에지 배포 (ONNX/TensorRT) &amp; 캡스톤 (#36–#40)</strong><br><small>ONNX Graph Export, Graph Surgeon, TensorRT Engine (FP16/INT8), CUDA Stream, End-to-End Lab</small></div><span class="roadmap-status">대기</span></div>
-</div></section><section class="section"><div class="section-head"><h2>학습자료 제작 기준</h2></div><div class="curriculum"><div class="module"><strong>Concept → Visual</strong><span>구조 개념은 반응형 SVG/diagram으로 시각화.</span></div><div class="module"><strong>Code ↔ Tensor ↔ Diagram</strong><span>코드와 shape, feature, gradient를 연결.</span></div><div class="module"><strong>Why &amp; Trade-off</strong><span>accuracy뿐 아니라 FLOPs, memory, latency, numerical correctness까지 분석.</span></div><div class="module"><strong>Medical AI Context</strong><span>ultrasound의 작은 병변, speckle, grayscale, variable resolution과 연결.</span></div></div></section></main><footer>AI 전문 개발 학습 · Project &amp; Learning Hub</footer></body></html>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="AI 전문 개발 마스터 커리큘럼 40강 전체 로드맵 및 학습 체크(캐싱) 대시보드"><title>AI 전문 개발 학습 — 마스터 커리큘럼 40강</title><link rel="stylesheet" href="ai.css"><style>
+/* 학습 체크 및 프로그레스 바 스타일 */
+.progress-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 28px;margin-top:28px;box-shadow:0 8px 24px rgba(23,32,51,.04)}
+.progress-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px}
+.progress-title{font-size:16px;font-weight:750;color:var(--navy)}
+.progress-stats{font-size:14px;color:var(--blue);font-weight:700}
+.progress-track{height:12px;background:#eef2ff;border-radius:999px;overflow:hidden;margin-bottom:14px;position:relative}
+.progress-bar{height:100%;background:linear-gradient(90deg,#3b82f6,#2563eb);border-radius:999px;transition:width .35s ease;width:0%}
+.progress-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.btn-action{padding:7px 12px;border:1px solid var(--line);background:#fafafa;border-radius:8px;font-size:12px;font-weight:600;color:var(--ink);cursor:pointer;transition:.15s}
+.btn-action:hover{background:#f3f4f6;border-color:#cbd5e1}
+
+/* 날짜 제거 및 체크박스 일체형 카드 */
+.lesson-card{display:grid;grid-template-columns:46px 1fr auto;gap:18px;align-items:center;padding:18px 22px;border:1px solid var(--line);border-radius:16px;background:#fff;transition:.2s;position:relative}
+.lesson-card.completed{background:#f8fafc;border-color:#cbd5e1}
+.lesson-card.completed h3{color:#64748b;text-decoration:line-through}
+.lesson-card.completed .badge{background:#e2e8f0;color:#64748b}
+
+/* 체크 토글 버튼 */
+.check-toggle{width:34px;height:34px;border-radius:10px;border:2px solid #cbd5e1;background:#fff;cursor:pointer;display:grid;place-items:center;color:transparent;transition:.18s;user-select:none}
+.check-toggle:hover{border-color:var(--blue);background:#eff6ff}
+.lesson-card.completed .check-toggle{background:#2563eb;border-color:#2563eb;color:#fff}
+.check-toggle svg{width:18px;height:18px;stroke-width:3}
+
+.phase-tag{padding:4px 8px;border-radius:6px;background:#f1f5f9;font-size:11px;font-weight:700;color:#475569;margin-left:8px}
+.coming-soon{opacity:.7}
+.coming-soon .open{color:var(--muted);cursor:default}
+</style></head><body><header class="topbar"><a class="brand" href="../"><span class="brand-mark">AI</span><span>AI 전문 개발 학습</span></a><a class="back" href="../">홈으로</a></header><main><section class="hero"><p class="eyebrow">AI ENGINEERING MASTER PATH</p><h1>모델을 사용하던 단계에서<br>구조를 설계하는 단계로.</h1><p class="lead">Tensor → 수학 → PyTorch → source code → architecture trade-off → debugging → deployment → ultrasound application까지 연결하는 8개 Phase, 40강 전체 마스터 커리큘럼입니다. 학습한 강좌를 체크하여 나만의 진도를 캐싱 관리하세요.</p>
+
+<!-- 실시간 학습 진도율 대시보드 -->
+<div class="progress-card">
+  <div class="progress-header">
+    <div class="progress-title">📚 나의 학습 완료 진도율</div>
+    <div class="progress-stats" id="progress-text">0 / 40 완료 (0%)</div>
+  </div>
+  <div class="progress-track">
+    <div class="progress-bar" id="progress-bar-inner"></div>
+  </div>
+  <div class="progress-actions">
+    <button class="btn-action" onclick="applyDefaultProgress()">기존 학습분(#01~#06) 체크</button>
+    <button class="btn-action" onclick="checkWeek2Progress()">Week 2(#07~#11) 추가 체크</button>
+    <button class="btn-action" onclick="resetAllProgress()">진도 초기화</button>
+  </div>
+</div>
+</section>
+
+<!-- ================= PHASE 1 ================= -->
+<section class="section"><div class="section-head"><h2>Phase 1. PyTorch 내부 엔진 &amp; 저수준 연산 계약</h2><span class="section-note">#01–#05 · Core Foundation</span></div><div class="lesson-list">
+
+<div class="lesson-card" data-lesson-id="01"><button class="check-toggle" onclick="toggleLesson('01')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#01 · Tensor Internals</span><h3>Tensor / Hardware Memory Layout</h3><p>Storage·Strides·Im2col·GEMM·FLOPs와 초음파 고해상도 VRAM 최적화.</p></div><a class="open" href="2026-08-31-tensor-shape.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="02"><button class="check-toggle" onclick="toggleLesson('02')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#02 · Engine</span><h3>Autograd C++ DAG &amp; Gradient Flow</h3><p>C++ Autograd Engine, Node/Edge, DAG 수명주기, Custom Function, In-place 디버깅.</p></div><a class="open" href="2026-09-01-autograd.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="03"><button class="check-toggle" onclick="toggleLesson('03')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#03 · Module</span><h3>nn.Module Internals &amp; State Dict</h3><p>Parameter, buffer 슬롯 등록 원리, state_dict 직렬화와 weight 마이그레이션.</p></div><a class="open" href="2026-09-02-module-state-dict.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="04"><button class="check-toggle" onclick="toggleLesson('04')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#04 · FX</span><h3>Forward Graph / torch.fx IR</h3><p>runtime trace, Symbolic IR, ShapeProp과 연산 그래프 변환.</p></div><a class="open" href="2026-09-03-forward-fx.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="05"><button class="check-toggle" onclick="toggleLesson('05')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#05 · Conv</span><h3>Residual Block 수정: Dilation·Stride</h3><p>stride, projection, receptive field 확장과 초음파 고해상도 특징 맵 보존 계약.</p></div><a class="open" href="2026-09-04-residual-dilation.html">학습 →</a></div>
+
+</div></section>
+
+<!-- ================= PHASE 2 ================= -->
+<section class="section"><div class="section-head"><h2>Phase 2. 정규화 역학, 객체 검출 헤드 &amp; 트랜스포머</h2><span class="section-note">#06–#10 · Model Architecture</span></div><div class="lesson-list">
+
+<div class="lesson-card" data-lesson-id="06"><button class="check-toggle" onclick="toggleLesson('06')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#06 · Norm</span><h3>Small-Batch Normalization 심화</h3><p>BN 배치 통계 vs running 통계, (N,H,W) 축 정규화, Gamma/Beta, GroupNorm·SyncBN 비교.</p></div><a class="open" href="2026-09-07-small-batch-normalization-deep.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="07"><button class="check-toggle" onclick="toggleLesson('07')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#07 · Neck</span><h3>Modern Detection Neck: FPN·PANet·BiFPN</h3><p>Top-down / Bottom-up 경로, 1×1 Lateral Conv, 초음파 미세 병변 P2 피라미드 VRAM Trade-off.</p></div><a class="open" href="2026-11-02-detection-neck-fpn.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="08"><button class="check-toggle" onclick="toggleLesson('08')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#08 · Detection</span><h3>Detection Head &amp; Label Assignment</h3><p>Decoupled Head, Anchor-free 원리, ATSS 적응형 샘플 선택과 SimOTA 최적 수송 비용 행렬.</p></div><a class="open" href="2026-11-03-detection-head-assignment.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="09"><button class="check-toggle" onclick="toggleLesson('09')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#09 · Attention</span><h3>Self-Attention &amp; Multi-Head QKV Mechanics</h3><p>Q/K/V 텐서 투영, 루트 dk 스케일링 증명, Multi-Head 차원 분할, O(S²) VRAM Footprint 분석.</p></div><a class="open" href="2026-11-04-attention-qkv-mechanics.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="10"><button class="check-toggle" onclick="toggleLesson('10')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#10 · ViT</span><h3>Vision Transformer (ViT) Source Code 해부</h3><p>Conv2d Patchify 트릭, [CLS] 토큰, 1D Positional Embedding, Pre-LN 인코더 블록과 Hybrid ViT.</p></div><a class="open" href="2026-11-05-vit-source-code.html">학습 →</a></div>
+
+</div></section>
+
+<!-- ================= PHASE 3 ================= -->
+<section class="section"><div class="section-head"><h2>Phase 3. 학습 디버깅, 가중치 전이 &amp; C++ 커스텀 연산</h2><span class="section-note">#11–#15 · Training Engineering</span></div><div class="lesson-list">
+
+<div class="lesson-card" data-lesson-id="11"><button class="check-toggle" onclick="toggleLesson('11')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#11 · Debug Lab</span><h3>Training Debugging Lab: Gradient/Activation 추적</h3><p>Hook 기반 기울기·활성화 실시간 모니터링, sqrt 특이점 NaN 역추적, clip_grad_norm_ L2 스케일링.</p></div><a class="open" href="2026-11-06-training-debugging-lab.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="12"><button class="check-toggle" onclick="toggleLesson('12')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#12 · Fine-tuning</span><h3>Advanced Fine-tuning Strategy</h3><p>freeze/unfreeze, discriminative LR, BN 통계 보존, checkpoint migration 설계.</p></div><a class="open" href="2026-09-15-finetuning-strategy.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="13"><button class="check-toggle" onclick="toggleLesson('13')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#13 · Loss</span><h3>Complex Loss Design: Focal &amp; Dice</h3><p>BCE·Focal·Dice·IoU와 불균형 극복을 위한 gradient weighting 수학적 설계.</p></div><a class="open" href="2026-09-11-loss-design.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="14"><button class="check-toggle" onclick="toggleLesson('14')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#14 · CUDA</span><h3>CUDA / Custom Operator 기초</h3><p>Grid·Block·Thread 계층 구조, 메모리 계층(Shared Memory)과 custom kernel correctness.</p></div><a class="open" href="2026-09-18-cuda-kernel.html">학습 →</a></div>
+
+<div class="lesson-card coming-soon" data-lesson-id="15"><button class="check-toggle" onclick="toggleLesson('15')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#15 · C++ Ext</span><h3>PyTorch C++ Extension &amp; Unit Test</h3><p>PyTorch C++ Extension 빌드, PyBind11 바인딩, 단위 테스트 및 수치 정밀도 검증.</p></div><span class="open">준비중</span></div>
+
+</div></section>
+
+<!-- ================= PHASE 4 ================= -->
+<section class="section"><div class="section-head"><h2>Phase 4. 논문 구현(Paper-to-Code) &amp; 의료 초음파 핵심 모델</h2><span class="section-note">#16–#20 · Ultrasound Vision</span></div><div class="lesson-list">
+
+<div class="lesson-card" data-lesson-id="16"><button class="check-toggle" onclick="toggleLesson('16')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#16 · Research</span><h3>Paper → Code Implementation</h3><p>논문 수식을 Tensor specification, PyTorch module, unit test, ablation으로 변환.</p></div><a class="open" href="2026-09-19-paper-to-code.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="17"><button class="check-toggle" onclick="toggleLesson('17')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#17 · Ultrasound</span><h3>Ultrasound Detection Pipeline</h3><p>B-mode Grayscale 전처리, Backbone–FPN–Head를 실제 유방 초음파 검출 프로젝트로 연결.</p></div><a class="open" href="2026-09-21-ultrasound-detection-pipeline.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="18"><button class="check-toggle" onclick="toggleLesson('18')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#18 · Segmentation</span><h3>Encoder–Decoder &amp; Boundary Skip</h3><p>U-Net++, nnU-Net 계열의 multi-scale 해상도 보존과 종양 경계 분할 분석.</p></div><a class="open" href="2026-09-23-ultrasound-segmentation.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="19"><button class="check-toggle" onclick="toggleLesson('19')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#19 · Data</span><h3>Augmentation &amp; Acoustic Physics</h3><p>음향 감쇄(Attenuation), 후방 음영(Shadowing) 시뮬레이션 및 Speckle 잡음 증강 기법.</p></div><a class="open" href="2026-09-24-ultrasound-augmentation-domain.html">학습 →</a></div>
+
+<div class="lesson-card coming-soon" data-lesson-id="20"><button class="check-toggle" onclick="toggleLesson('20')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#20 · Domain Shift</span><h3>Multi-Center Domain Shift 극복</h3><p>GE, Philips, Samsung 등 초음파 장비사별 주파수/게인 차이 및 기관 간 도메인 적응 기법.</p></div><span class="open">준비중</span></div>
+
+</div></section>
+
+<!-- ================= PHASE 5 ================= -->
+<section class="section"><div class="section-head"><h2>Phase 5. 임상 평가 지표, 오류 분석 &amp; 데이터 누수 방지</h2><span class="section-note">#21–#25 · Medical Evaluation</span></div><div class="lesson-list">
+
+<div class="lesson-card" data-lesson-id="21"><button class="check-toggle" onclick="toggleLesson('21')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#21 · Metrics</span><h3>Medical AI Metrics &amp; Operating Point</h3><p>AUROC·PR·sensitivity·FP/image와 임상 operating point 설계 및 FROC 곡선.</p></div><a class="open" href="2026-09-25-medical-ai-metrics.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="22"><button class="check-toggle" onclick="toggleLesson('22')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#22 · Calibration</span><h3>Model Calibration &amp; Error Analysis</h3><p>ECE(Expected Calibration Error), Temperature Scaling과 실패 사례 taxonomy 구축.</p></div><a class="open" href="2026-09-26-error-analysis.html">학습 →</a></div>
+
+<div class="lesson-card coming-soon" data-lesson-id="23"><button class="check-toggle" onclick="toggleLesson('23')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#23 · Error Taxonomy</span><h3>Clinical Error Taxonomy &amp; Ablation</h3><p>위양성(FP)/위음성(FN)의 임상적 원인 분류와 정량적 Ablation Study 실험 설계.</p></div><span class="open">준비중</span></div>
+
+<div class="lesson-card" data-lesson-id="24"><button class="check-toggle" onclick="toggleLesson('24')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#24 · Leakage</span><h3>Patient-level Split &amp; Data Leakage</h3><p>환자·시퀀스·장비 단위 leakage 차단과 독립된 외부 검증(External Validation) 설계.</p></div><a class="open" href="2026-09-29-data-split-leakage.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="25"><button class="check-toggle" onclick="toggleLesson('25')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#25 · Reproducibility</span><h3>Experiment Design &amp; Reproducibility</h3><p>Seed 고정, Deterministic CUDNN, 실험 추적 매니페스트 구축과 결과 재현성 확보.</p></div><a class="open" href="2026-09-28-experiment-design.html">학습 →</a></div>
+
+</div></section>
+
+<!-- ================= PHASE 6 ================= -->
+<section class="section"><div class="section-head"><h2>Phase 6. 극소 병변 검출 전략, 클래스 불균형 &amp; 모델 해석성</h2><span class="section-note">#26–#30 · Clinical Deep Dive</span></div><div class="lesson-list">
+
+<div class="lesson-card" data-lesson-id="26"><button class="check-toggle" onclick="toggleLesson('26')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#26 · Small Lesion</span><h3>Small Lesion Detection: P2 Pyramid</h3><p>Stride·FPN·P2 레벨 추가와 고해상도 미세 병변 보존의 계산량·메모리 trade-off 수치 분석.</p></div><a class="open" href="2026-09-30-small-lesion-strategy.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="27"><button class="check-toggle" onclick="toggleLesson('27')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#27 · Imbalance</span><h3>Class Imbalance &amp; Hard Negative Mining</h3><p>극심한 음성/양성 불균형 극복, Asymmetric Focal Loss와 어려운 음성 샘플 채굴 전략.</p></div><a class="open" href="2026-10-01-class-imbalance-hard-negative.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="28"><button class="check-toggle" onclick="toggleLesson('28')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#28 · XAI</span><h3>Grad-CAM &amp; Feature Visualization</h3><p>Gradient-weighted Class Activation Mapping과 어텐션 맵 시각화를 통한 예측 근거 설명.</p></div><a class="open" href="2026-10-02-model-interpretability.html">학습 →</a></div>
+
+<div class="lesson-card coming-soon" data-lesson-id="29"><button class="check-toggle" onclick="toggleLesson('29')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#29 · Shortcut</span><h3>Shortcut Learning 진단 및 편향 제거</h3><p>초음파 기기 마커, 병원별 텍스트 워터마크에 대한 숏컷 러닝 진단 및 편향 제거 기법.</p></div><span class="open">준비중</span></div>
+
+<div class="lesson-card" data-lesson-id="30"><button class="check-toggle" onclick="toggleLesson('30')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#30 · Review</span><h3>Comprehensive Project Review</h3><p>데이터·architecture·metric·deployment 파이프라인 1차 종합 감사 및 리팩토링 설계.</p></div><a class="open" href="2026-10-03-project-review.html">학습 →</a></div>
+
+</div></section>
+
+<!-- ================= PHASE 7 ================= -->
+<section class="section"><div class="section-head"><h2>Phase 7. 대규모 분산 학습, 고성능 파이프라인 &amp; 프로파일링</h2><span class="section-note">#31–#35 · Scale &amp; Performance</span></div><div class="lesson-list">
+
+<div class="lesson-card" data-lesson-id="31"><button class="check-toggle" onclick="toggleLesson('31')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#31 · Data Pipeline</span><h3>High-Performance Data Pipeline</h3><p>Dataset·DataLoader·Zero-copy 메모리 매핑과 RAM Disk, Prefetching 가속 엔지니어링.</p></div><a class="open" href="2026-10-05-dataset-pipeline.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="32"><button class="check-toggle" onclick="toggleLesson('32')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#32 · Training Loop</span><h3>Training Loop from Scratch</h3><p>forward→loss→backward→optimizer step, Multi-stage Warmup과 EMA 가중치 관리.</p></div><a class="open" href="2026-10-06-training-loop.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="33"><button class="check-toggle" onclick="toggleLesson('33')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#33 · Precision</span><h3>Mixed Precision (AMP) Deep Dive</h3><p>FP32·FP16·BF16 수치 형식 비교, GradScaler의 언더플로우 방지 및 Loss Scaling 메커니즘.</p></div><a class="open" href="2026-10-07-mixed-precision.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="34"><button class="check-toggle" onclick="toggleLesson('34')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#34 · DDP</span><h3>Distributed Training (DDP)</h3><p>DistributedDataParallel, Ring All-Reduce, DistributedSampler의 데이터·gradient 통신 흐름.</p></div><a class="open" href="2026-10-08-distributed-training.html">학습 →</a></div>
+
+<div class="lesson-card" data-lesson-id="35"><button class="check-toggle" onclick="toggleLesson('35')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#35 · Profiling</span><h3>GPU Memory &amp; Profiler</h3><p>PyTorch Profiler, Memory Snapshot, Activation Checkpointing을 통한 VRAM 병목 해소.</p></div><a class="open" href="2026-10-09-profiling-memory.html">학습 →</a></div>
+
+</div></section>
+
+<!-- ================= PHASE 8 ================= -->
+<section class="section"><div class="section-head"><h2>Phase 8. 온디바이스 에지 배포 (ONNX/TensorRT) &amp; 캡스톤</h2><span class="section-note">#36–#40 · Edge Deployment</span></div><div class="lesson-list">
+
+<div class="lesson-card" data-lesson-id="36"><button class="check-toggle" onclick="toggleLesson('36')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#36 · ONNX</span><h3>PyTorch to ONNX Graph Export</h3><p>Dynamic Axes, Symbolic Shape, Operator Fallback 및 ONNX 그래프 변환과 수치 검증.</p></div><a class="open" href="2026-09-16-onnx-graph.html">학습 →</a></div>
+
+<div class="lesson-card coming-soon" data-lesson-id="37"><button class="check-toggle" onclick="toggleLesson('37')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#37 · Graph Surgeon</span><h3>ONNX Graph Surgeon &amp; Optimization</h3><p>노드 가지치기(Pruning), 불필요한 Reshape/Cast 제거 및 전처리 연산의 그래프 통합.</p></div><span class="open">준비중</span></div>
+
+<div class="lesson-card" data-lesson-id="38"><button class="check-toggle" onclick="toggleLesson('38')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#38 · TensorRT</span><h3>TensorRT Engine Build &amp; Calibration</h3><p>Layer Fusion, FP16/INT8 양자화 Calibration, Dynamic Profile 및 초저지연 엔진 빌드.</p></div><a class="open" href="2026-09-17-tensorrt-engine.html">학습 →</a></div>
+
+<div class="lesson-card coming-soon" data-lesson-id="39"><button class="check-toggle" onclick="toggleLesson('39')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#39 · Async Inference</span><h3>On-device CUDA Stream 비동기 추론</h3><p>Host-Device 간 메모리 전송 은닉(Pipelining)과 초음파 실시간 30fps 비동기 추론 파이프라인.</p></div><span class="open">준비중</span></div>
+
+<div class="lesson-card" data-lesson-id="40"><button class="check-toggle" onclick="toggleLesson('40')" title="학습 완료 토글"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg></button><div><span class="badge">#40 · Capstone Lab</span><h3>End-to-End Capstone Lab</h3><p>Data→Forward→Loss→Gradient→Deployment 전체 파이프라인 통합 디버깅 및 실전 검증.</p></div><a class="open" href="2026-10-10-end-to-end-debug.html">학습 →</a></div>
+
+</div></section>
+
+</main><footer>AI 전문 개발 학습 · Master Curriculum 40강 &amp; Learning Hub</footer>
+
+<!-- 학습 진도 로컬스토리지 캐싱 스크립트 -->
+<script>
+const STORAGE_KEY = 'ai_daily_progress_v1';
+const TOTAL_LESSONS = 40;
+
+function getStoredProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : ["01", "02", "03", "04", "05", "06"]; // 기본값: 기학습된 #01~#06
+  } catch(e) {
+    return ["01", "02", "03", "04", "05", "06"];
+  }
+}
+
+function saveProgress(arr) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+  } catch(e) {}
+  updateUI();
+}
+
+function toggleLesson(id) {
+  let progress = getStoredProgress();
+  const index = progress.indexOf(id);
+  if (index > -1) {
+    progress.splice(index, 1);
+  } else {
+    progress.push(id);
+  }
+  saveProgress(progress);
+}
+
+function applyDefaultProgress() {
+  saveProgress(["01", "02", "03", "04", "05", "06"]);
+}
+
+function checkWeek2Progress() {
+  let progress = getStoredProgress();
+  const week2 = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"];
+  week2.forEach(id => {
+    if (!progress.includes(id)) progress.push(id);
+  });
+  saveProgress(progress);
+}
+
+function resetAllProgress() {
+  if (confirm("모든 학습 체크 기록을 초기화하시겠습니까?")) {
+    saveProgress([]);
+  }
+}
+
+function updateUI() {
+  const progress = getStoredProgress();
+  const count = progress.length;
+  const pct = Math.round((count / TOTAL_LESSONS) * 100);
+  
+  // 1. 프로그레스 바 & 텍스트 갱신
+  const textEl = document.getElementById('progress-text');
+  const barEl = document.getElementById('progress-bar-inner');
+  if (textEl) textEl.textContent = `${count} / ${TOTAL_LESSONS} 완료 (${pct}%)`;
+  if (barEl) barEl.style.width = `${pct}%`;
+  
+  // 2. 개별 카드 완료 클래스 토글
+  document.querySelectorAll('.lesson-card').forEach(card => {
+    const id = card.getAttribute('data-lesson-id');
+    if (progress.includes(id)) {
+      card.classList.add('completed');
+    } else {
+      card.classList.remove('completed');
+    }
+  });
+}
+
+// 초기 로드 시 UI 갱신
+document.addEventListener('DOMContentLoaded', updateUI);
+</script></body></html>
