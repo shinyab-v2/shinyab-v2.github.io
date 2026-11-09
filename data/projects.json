@@ -8,7 +8,7 @@
   "investment": {
     "title": "Investment Workstation",
     "path": "/investment/",
-    "targetUrl": "https://script.google.com/macros/s/AKfycbyVnHyGWx2VKB18MaQV4B6K1Bt8yWQICHtVJC-tFw2SpOkyImTOTckMV7RdXlAg8-Y/exec",
+    "targetUrl": "https://script.google.com/macros/s/AKfycbxUcy7ZEMObm-p1E9f1ght8c1IMGmtvkk2xV83bJlQRsXdB3rF92fQVGQWjp9K6Cfyk/exec",
     "status": "active",
     "requiresGoogleAuthentication": true
   },
