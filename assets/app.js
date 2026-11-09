@@ -68,7 +68,11 @@ if (investmentCard) {
   investmentCard.addEventListener("click", () => {
     const linkSpan = investmentCard.querySelector(".card-link");
     if (linkSpan) {
-      linkSpan.innerHTML = "<span>연결 중… Google 인증 확인</span><span>⏳</span>";
+      const originalHtml = linkSpan.innerHTML;
+      linkSpan.innerHTML = "<span>새 탭에서 연결 중…</span><span>⏳</span>";
+      setTimeout(() => {
+        linkSpan.innerHTML = originalHtml;
+      }, 3500);
     }
   });
 }
