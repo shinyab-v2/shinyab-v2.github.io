@@ -1,0 +1,1997 @@
+[
+  {
+    "date": "2026-11-09",
+    "title": "Daily English — 2026-11-09",
+    "grammarTopic": "Participle Clauses for Reason, Time, and Result",
+    "grammar": {
+      "title": "분사구문: 이유, 시간, 결과를 간결하고 명확하게 연결하기",
+      "summary": "분사구문은 부사절(because, when, while, after 등)을 현재분사(-ing)나 과거분사(-ed)를 활용해 문장을 군더더기 없이 세련되게 압축하는 B2 고급 문법입니다. 주절의 주어와 분사의 의미상 주어의 일치 여부, 시제 선후 관계, 능동과 수동의 구분을 정확히 파악해야 오해 없는 비즈니스 및 학술 문장을 구사할 수 있습니다.",
+      "points": [
+        {
+          "title": "현재분사(-ing)를 활용한 시간 및 동시동작 표현",
+          "explanation": "주절의 주어가 동시에 두 가지 동작을 수행하거나, 한 동작 직후 연속으로 다른 동작을 할 때 현재분사(-ing)를 사용합니다. 접속사(when, while, after)를 생략해도 문맥상 시간 관계가 명확하며, 필요시 강조를 위해 접속사를 분사 앞에 남겨두기도 합니다.",
+          "examples": [
+            "Reviewing the quarterly metrics, Sarah noticed a sudden drop in user engagement. — 분기 지표를 검토하면서 Sarah는 사용자 참여도가 급감한 것을 알아챘습니다.",
+            "Opening the feedback portal, the team found dozens of urgent bug reports. — 피드백 포털을 열자마자 팀은 수십 건의 긴급 버그 신고를 발견했습니다.",
+            "While testing the new checkout flow, we identified three critical friction points. — 새로운 결제 절차를 시험하는 동안 우리는 세 가지 결정적인 불편 지점을 확인했습니다.",
+            "Walking into the briefing room, the lead architect greeted the overseas clients. — 브리핑 룸으로 들어가며 수석 설계사는 해외 고객들에게 인사했습니다.",
+            "Updating the software architecture, engineers eliminated several redundant database queries. — 소프트웨어 구조를 갱신하면서 엔지니어들은 몇 가지 불필요한 데이터베이스 쿼리를 제거했습니다."
+          ]
+        },
+        {
+          "title": "이유와 원인을 나타내는 분사구문 (Because, Since, As 대체)",
+          "explanation": "because, since, as로 시작하는 이유 부사절은 분사구문으로 바꿔 문장을 훨씬 간결하게 만들 수 있습니다. 이유를 나타낼 때는 일반적으로 접속사를 완전히 생략하며, 분사구가 주절의 직접적인 배경 원인을 설명합니다.",
+          "examples": [
+            "Realising that the deadline was unrealistic, the product manager requested a two-week extension. — 마감일이 비현실적임을 깨달았기 때문에 제품 책임자는 2주의 연장을 요청했습니다.",
+            "Knowing how sensitive the financial data was, David encrypted every backup file. — 금융 데이터가 얼마나 민감한지 알고 있었기에 David는 모든 백업 파일을 암호화했습니다.",
+            "Fearing customer backlash, the board decided to postpone the controversial price increase. — 고객들의 반발을 두려워했기 때문에 이사회는 논란이 된 가격 인상을 연기하기로 결정했습니다.",
+            "Lacking sufficient server bandwidth, the startup struggled to accommodate the sudden influx of visitors. — 서버 대역폭이 부족했기 때문에 그 스타트업은 갑작스러운 방문자 유입을 감당하는 데 애를 먹었습니다.",
+            "Recognising her team's tireless dedication, the director approved bonus vouchers for everyone. — 팀의 지칠 줄 모르는 헌신을 인정했기 때문에 부서장은 전원에게 보너스 상품권을 승인했습니다."
+          ]
+        },
+        {
+          "title": "완료분사구문(Having + p.p.): 주절보다 앞선 사건 명시",
+          "explanation": "분사구문이 나타내는 사건이 주절의 시점보다 명백하게 이전에 일어났음을 나타낼 때는 [Having + 과거분사]를 사용합니다. 일반 분사구문(-ing)을 쓰면 동시 동작으로 오해될 수 있으므로 선후 관계가 중요할 때 필수적인 형식입니다.",
+          "examples": [
+            "Having conducted extensive usability interviews, the researchers revised the primary user personas. — 광범위한 사용성 인터뷰를 이미 마쳤기 때문에 연구원들은 기본 사용자 페르소나를 수정했습니다.",
+            "Having submitted the regulatory compliance dossier, Elena took a well-deserved weekend off. — 규제 준수 서류를 이미 제출했기 때문에 Elena는 마땅히 누려야 할 주말 휴식을 취했습니다.",
+            "Having seen identical failures in previous quarters, the operations team prepared a robust contingency plan. — 이전 분기들에서 동일한 실패를 이미 겪어 보았기에 운영팀은 탄탄한 비상 대책을 마련했습니다.",
+            "Having finalised the revised licensing contract, both companies held a joint press conference. — 수정된 라이선스 계약을 최종 마무리한 뒤 두 회사는 공동 기자회견을 열었습니다.",
+            "Having lost the original configuration keys, the administrator had to reset the entire testing cluster. — 원래의 환경설정 키를 잃어버렸기 때문에 관리자는 전체 테스트 클러스터를 초기화해야 했습니다."
+          ]
+        },
+        {
+          "title": "과거분사(-ed) 수동 분사구문: 피동적 배경과 조건",
+          "explanation": "주절의 주어와의 관계가 수동일 때는 Being이 생략되고 과거분사(-ed / p.p.)로 시작합니다. 이는 [Because it was / Although it was / If it is + p.p.]의 의미를 내포하며 격식 있는 문서나 기술 보고서에서 매우 자주 쓰입니다.",
+          "examples": [
+            "Faced with mounting customer complaints, the executive committee ordered a comprehensive security audit. — 늘어나는 고객 불만에 직면한 경영위원회는 포괄적인 보안 감사를 지시했습니다.",
+            "Published without peer review, the research paper drew sharp scepticism from domain experts. — 동료 평가 없이 출판되었기 때문에 그 연구 논문은 해당 분야 전문가들로부터 날카로운 회의론을 불러일으켰습니다.",
+            "Supported by generous regional innovation grants, the laboratory built a carbon-neutral cleanroom. — 넉넉한 지역 혁신 보조금의 지원을 받아 그 연구소는 탄소 중립 클린룸을 구축했습니다.",
+            "Trained in classical statistical inference, Clara brought fresh analytical rigor to our data science squad. — 고전 통계적 추론 훈련을 받았기에 Clara는 우리 데이터 과학 부서에 신선한 분석적 엄밀함을 가져다주었습니다.",
+            "Left unattended for three consecutive days, the automated batch pipeline failed quietly overnight. — 사흘 연속 방치되었기 때문에 자동화 배치 파이프라인은 밤새 소리 없이 중단되었습니다."
+          ]
+        },
+        {
+          "title": "부정 분사구문과 현수분사(Dangling Participle) 오류 방지",
+          "explanation": "분사구문의 부정은 분사 바로 앞에 Not이나 Never를 위치시킵니다(Not knowing..., Never having witnessed...). 가장 흔한 문법적 오류인 '현수분사(Dangling modifier)'는 분사구의 의미상 주어가 주절의 주어와 불일치할 때 발생하므로, 주절 주어가 분사의 행위 주체인지 반드시 점검해야 합니다.",
+          "examples": [
+            "Not wishing to delay the sprint launch, Liam resolved the merge conflicts immediately. — 스프린트 출시를 지연시키고 싶지 않았기에 Liam은 병합 충돌을 즉각 해결했습니다.",
+            "Never having managed an offshore development group, Sophia asked her mentor for tactical advice. — 해외 외주 개발 조직을 관리해 본 적이 없었기 때문에 Sophia는 멘토에게 전술적 조언을 구했습니다.",
+            "Not knowing which database table contained the corrupted records, the engineer halted the sync routine. — 어느 데이터베이스 테이블에 손상된 레코드가 있는지 알지 못했으므로 엔지니어는 동기화 루틴을 중단했습니다.",
+            "Carefully inspecting the component, the inspector found microscopic hairline fractures. (바른 문장: 조사관이 주어) — 부품을 면밀히 검사하면서 검사관은 미세한 균열을 발견했습니다.",
+            "Not being fully convinced by the initial trial results, the clinic decided against adopting the untested protocol. — 초기 임상시험 결과에 완전히 납득하지 못했기에 클리닉은 검증되지 않은 치료법 도입을 보류했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "in hindsight",
+        "meaning": "지나고 나서 보니, 뒤돌아보면",
+        "example": "In hindsight, we should have prioritized usability over adding twenty new settings. — 지나고 나서 보니 스무 개의 새 설정을 추가하는 것보다 사용성을 우선시했어야 했습니다."
+      },
+      {
+        "term": "leave no stone unturned",
+        "meaning": "모든 수단을 동원하다, 샅샅이 조사하다",
+        "example": "The investigative team left no stone unturned while reviewing the user complaints. — 조사팀은 사용자 불만을 검토하면서 모든 수단을 동원해 샅샅이 살폈습니다."
+      },
+      {
+        "term": "steer clear of",
+        "meaning": "~을 피하다, 멀리하다",
+        "example": "Novice designers are advised to steer clear of visual clutter on complex dashboards. — 초보 디자이너들은 복잡한 대시보드에서 시각적 난잡함을 피하라는 조언을 받습니다."
+      }
+    ],
+    "readingTitle": "Rethinking the Redesign: When Fewer Features Mean Better Focus",
+    "paragraphs": [
+      "When a leading project management software firm launched its ambitious annual redesign, the product council expected immediate praise from long-standing subscribers. Having invested over nine months of intensive engineering into the overhaul, executives anticipated higher customer loyalty. Instead, opening their inbox on Monday morning, the design leads encountered an alarming wave of criticism. Loyal users complained that the once streamlined interface had become needlessly complex. Features that previously required two swift clicks now demanded navigating through multi-layered menus.",
+      "Confronted by growing dissatisfaction, the lead researcher decided to steer clear of defensive justifications. Knowing that assumptions often mislead technical teams, she resolved to leave no stone unturned while investigating daily workflows. The research squad arranged twelve observational sessions with accountants, copywriters, and software architects. Watching participants interact with the updated workspace, researchers immediately spotted acute cognitive fatigue. Users felt hesitant before clicking buttons because visual indicators were ambiguous and cluttered.",
+      "In hindsight, the team recognised a pivotal oversight in their original strategic roadmap. Having prioritised feature volume over core task simplicity, the company had inadvertently penalised its most productive power users. The committee had assumed that every additional customisation toggle added genuine commercial value. In reality, customers valued dependable speed far above endless configuration options. The bloated dashboard had degraded customer retention and sparked trial cancellations across enterprise tiers.",
+      "Determined to remedy the damage, the design group proposed a bold corrective initiative. Rather than piling on auxiliary explanations or interactive tours, they recommended stripping away sixteen secondary settings. Having analysed telemetry logs, the team proved that fewer than two percent of subscribers ever touched those nested controls. By ruthlessly pruning visual distractions, the designers restored the calm clarity that had initially made the application famous.",
+      "Presenting the simplified revision to the steering board, the team won approval unanimously. Within six weeks of rolling out the refined interface, average task completion speeds improved by thirty-four percent. Customer support tickets dropped dramatically, and positive app store ratings rebounded to historical highs. The episode offered a lasting institutional lesson: genuine product refinement rarely stems from uncritical accumulation, but from the deliberate courage to simplify."
+    ],
+    "translations": [
+      "한 선도적인 프로젝트 관리 소프트웨어 기업이 야심 찬 연례 개편안을 출시했을 때, 제품 위원회는 오랜 구독자들로부터 즉각적인 찬사를 기대했습니다. 9개월이 넘는 집중적인 엔지니어링 투자를 개편에 쏟아부었기에 임원진은 고객 충성도가 더 높아질 것이라 예상했습니다. 그러나 월요일 아침 받은 편지함을 열자마자 디자인 팀장들은 놀랄 만큼 거센 비판의 물결을 마주했습니다. 충성도 높은 사용자들은 한때 날렵하고 효율적이었던 인터페이스가 불필요하게 복잡해졌다고 불평했습니다. 이전에는 신속한 두 번의 클릭으로 충분했던 기능들이 이제는 여러 겹의 메뉴를 탐색하도록 요구했습니다.",
+      "커지는 불만에 직면하자 수석 연구원은 방어적인 변명을 멀리하기로 결심했습니다. 지레짐작이 기술 조직을 오도하기 쉽다는 점을 알고 있었기에, 그녀는 일상 업무 흐름을 조사하는 동안 모든 수단을 동원해 샅샅이 살피기로 마음먹었습니다. 연구팀은 회계사, 카피라이터, 소프트웨어 설계자들을 대상으로 12회의 관찰 세션을 마련했습니다. 참가자들이 업데이트된 작업 공간을 다루는 모습을 지켜보면서, 연구원들은 극심한 인지적 피로를 즉시 발견했습니다. 시각적 표시가 모호하고 난잡했기 때문에 사용자들은 버튼을 누르기 전 주저했습니다.",
+      "뒤돌아보니 팀은 원래의 전략 로드맵에 있었던 중대한 실수를 깨달았습니다. 핵심 과업의 단순성보다 기능의 양을 우선시했기 때문에, 회사는 가장 생산적인 파워 유저들에게 의도치 않게 불편을 안겨주었습니다. 위원회는 추가적인 맞춤형 설정 토글 하나하나가 진정한 상업적 가치를 더해줄 것이라고 여겼습니다. 현실에서는 고객들이 끝없는 환경설정 옵션보다 신뢰할 수 있는 속도를 훨씬 더 높이 평가했습니다. 부풀려진 대시보드는 고객 유지율을 떨어뜨리고 기업 요금제 전반에서 무료 체험 취소를 촉발했습니다.",
+      "피해를 바로잡기로 결심한 디자인 부서는 대담한 시정 조치를 제안했습니다. 부가적인 툴팁 설명이나 대화형 둘러보기를 덧붙이는 대신, 그들은 16개의 부차적인 설정을 과감히 없애버릴 것을 권고했습니다. 원격 측정 로그를 이미 면밀히 분석했기에, 팀은 구독자의 2% 미만만이 그 중첩된 컨트롤을 사용했음을 입증했습니다. 시각적 방해 요소를 가차 없이 쳐냄으로써, 디자이너들은 처음에 이 애플리케이션을 유명하게 만들었던 차분한 명료함을 되살려냈습니다.",
+      "간소화된 수정안을 운영위원회에 발표하면서 팀은 만장일치로 승인을 얻어냈습니다. 정제된 인터페이스를 배포한 지 6주 만에 평균 작업 완료 속도는 34% 향상되었습니다. 고객 지원 문의는 급격히 감소했고 긍정적인 앱스토어 평점은 역대 최고 수준으로 반등했습니다. 이번 사건은 지속적인 조직적 교훈을 남겼습니다. 진정한 제품 개선은 무분별한 축적에서 나오는 것이 아니라, 과감히 단순화하는 결단력 있는 용기에서 비롯된다는 사실입니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "streamlined",
+        "partOfSpeech": "adjective",
+        "meaning": "날렵한, 간소화되어 효율적인",
+        "context": "불필요한 군더더기가 제거되어 빠르고 쓰기 편한 인터페이스를 가리킵니다."
+      },
+      {
+        "term": "cluttered",
+        "partOfSpeech": "adjective",
+        "meaning": "어수선한, 난잡한",
+        "context": "시각적 요소나 버튼이 과도하게 배치되어 정돈되지 못한 화면 상태를 뜻합니다."
+      },
+      {
+        "term": "oversight",
+        "partOfSpeech": "noun",
+        "meaning": "간과, 실수",
+        "context": "로드맵 기획 단계에서 중요한 사용자 가치를 놓쳐버린 판단 착오를 의미합니다."
+      },
+      {
+        "term": "ambiguous",
+        "partOfSpeech": "adjective",
+        "meaning": "모호한, 불분명한",
+        "context": "버튼이나 안내 표시의 의미가 한눈에 명확하지 않아 혼란을 주는 상태를 뜻합니다."
+      },
+      {
+        "term": "hesitant",
+        "partOfSpeech": "adjective",
+        "meaning": "망설이는, 주저하는",
+        "context": "복잡하고 헷갈리는 버튼 앞에서 클릭을 머뭇거리는 사용자의 심리를 묘사합니다."
+      },
+      {
+        "term": "unanimously",
+        "partOfSpeech": "adverb",
+        "meaning": "만장일치로",
+        "context": "위원회의 모든 구성원이 한 사람의 반대도 없이 전원 동의한 상태를 의미합니다."
+      },
+      {
+        "term": "fatigue",
+        "partOfSpeech": "noun",
+        "meaning": "피로, 피곤",
+        "context": "복잡한 화면을 보면서 뇌가 겪는 과도한 인지적 과부하 상태를 표현합니다."
+      },
+      {
+        "term": "retention",
+        "partOfSpeech": "noun",
+        "meaning": "유지율, 잔존율",
+        "context": "구독자가 이탈하거나 해지하지 않고 서비스를 계속해서 이용하는 비율입니다."
+      },
+      {
+        "term": "prioritise",
+        "partOfSpeech": "verb",
+        "meaning": "우선시하다, 우선순위를 두다",
+        "context": "여러 요구사항 중 단순성보다 기능 개수에 더 높은 우선권을 부여했던 행위를 말합니다."
+      },
+      {
+        "term": "remedy",
+        "partOfSpeech": "verb",
+        "meaning": "바로잡다, 개선하다",
+        "context": "잘못된 개편으로 인해 발생한 고객 불만과 피해를 적극적으로 수습하고 교정하는 것을 뜻합니다."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which sentence correctly demonstrates a participle clause expressing a reason?",
+        "choices": [
+          "Realising the schedule was unrealistic, the lead requested an extension.",
+          "Because realised the schedule was unrealistic, the lead requested an extension.",
+          "Having been realised the schedule was unrealistic, the lead requested an extension.",
+          "Realised the schedule was unrealistic, the lead was requesting an extension."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Realising the schedule was unrealistic, the lead requested an extension.】\n• 문법 원리: 이유를 나타내는 부사절(Because the lead realised...)을 분사구문으로 바꿀 때는 접속사 because를 생략하고 능동 현재분사 Realising을 사용합니다.\n• 오답 분석:\n  ② Because와 동사원형/과거형이 주어 없이 결합할 수 없습니다.\n  ③ Having been realised는 주어가 '깨달아짐을 당했다'는 기괴한 수동완료 표현입니다.\n  ④ 능동의 의미에서 과거분사 Realised만 단독으로 쓸 수 없습니다."
+      },
+      {
+        "question": "Choose the correct sentence to emphasize that the user research was completed *before* revising the designs.",
+        "choices": [
+          "Conducting the interviews, the team revised the wireframes.",
+          "Having conducted the interviews, the team revised the wireframes.",
+          "Conducted the interviews, the team revised the wireframes.",
+          "Being conducted the interviews, the team revised the wireframes."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Having conducted the interviews, the team revised the wireframes.】\n• 문법 원리: 인터뷰를 완료한 사건이 와이어프레임을 수정한 주절의 시점보다 앞선 완료 동작임을 나타낼 때는 완료분사구문 [Having + p.p.]를 써야 합니다.\n• 오답 분석:\n  ① Conducting은 수정 작업과 동시 동작으로 해석되기 쉽습니다.\n  ③ 능동 의미에 타동사의 과거분사 Conducted만 쓰는 것은 문법적으로 틀립니다.\n  ④ Being conducted는 '인터뷰를 당하고 있는 중'이라는 수동진행 의미가 되어 부적절합니다."
+      },
+      {
+        "question": "Identify the sentence that contains a dangling participle error.",
+        "choices": [
+          "Walking into the meeting room, the client was greeted by the project director.",
+          "Reviewing the customer survey, the researcher highlighted four recurring complaints.",
+          "Not wanting to disrupt the deployment schedule, David patched the code immediately.",
+          "Supported by federal grants, the laboratory installed advanced testing equipment."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Walking into the meeting room, the client was greeted by the project director.】\n• 문법 원리: 현수분사(Dangling participle)는 분사구문의 행위 주체와 주절의 주어가 일치하지 않는 오류입니다. 1번 문장에서 회의실로 걸어 들어간 주체가 client인지 director인지 주절의 수동태 주어(the client)와 어색하게 결합하여 왜곡을 낳습니다 (보통 인사를 건넨 director가 방에 들어왔음을 의도함).\n• 정상 문장: Walking into the meeting room, the project director greeted the client."
+      },
+      {
+        "question": "Choose the correct negative participle clause.",
+        "choices": [
+          "Not knowing which database was corrupted, the engineer halted the sync routine.",
+          "Knowing not which database was corrupted, the engineer halted the sync routine.",
+          "Without knowing not which database was corrupted, the engineer halted the sync routine.",
+          "Don't knowing which database was corrupted, the engineer halted the sync routine."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Not knowing which database was corrupted, the engineer halted the sync routine.】\n• 문법 원리: 분사구문의 부정은 분사 바로 앞에 Not 또는 Never를 둡니다.\n• 오답 분석:\n  ② Knowing not은 현대 영어에서 쓰이지 않는 고어적 어순입니다.\n  ③ Without 뒤에 knowing not처럼 중복 부정을 쓰면 비문입니다.\n  ④ 분사구문에 조동사 don't를 결합할 수 없습니다."
+      },
+      {
+        "question": "_____ by unexpected supply shortages, the manufacturing plant temporarily suspended operations.",
+        "choices": [
+          "Paralysed",
+          "Paralysing",
+          "Having paralysed",
+          "To paralyse"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Paralysed】\n• 문법 원리: 공장이 공급 부족에 의해 '마비된' 수동의 상태이므로 [Being]이 생략된 과거분사 Paralysed가 알맞습니다.\n• 오답 분석:\n  ② Paralysing은 공장이 무언가를 마비시키고 있다는 능동 의미입니다.\n  ③ Having paralysed는 공장이 다른 대상을 마비시켰다는 능동완료형입니다.\n  ④ To paralyse는 부사적 목적을 나타내어 문맥에 맞지 않습니다."
+      },
+      {
+        "question": "What does the idiom “leave no stone unturned” mean in the passage?",
+        "choices": [
+          "To examine every single possibility thoroughly",
+          "To demolish physical obstacles in construction",
+          "To keep trade secrets strictly confidential",
+          "To abandon an unprofitable venture quickly"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 To examine every single possibility thoroughly】\n• 표현 의미: 'leave no stone unturned'는 모든 돌을 다 들추어 본다는 비유로, 모든 수단과 가능성을 동원해 철저하게 조사한다는 뜻입니다."
+      },
+      {
+        "question": "According to the reading, what was the primary reason users were dissatisfied with the redesign?",
+        "choices": [
+          "The software subscription fee had suddenly doubled.",
+          "The previously streamlined interface became overly complex and cluttered.",
+          "The system crashed repeatedly during database migration.",
+          "The company removed all keyboard shortcuts for power users."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 The previously streamlined interface became overly complex and cluttered.】\n• 본문 근거: 1문단 'Loyal users complained that the once streamlined interface had become needlessly complex'와 2문단 'visual indicators were ambiguous and cluttered'에서 확인할 수 있습니다."
+      },
+      {
+        "question": "What strategic oversight did the product team discover in hindsight?",
+        "choices": [
+          "They had failed to patent their proprietary algorithm.",
+          "They had prioritised the quantity of features over simplicity and speed.",
+          "They had not hired enough senior frontend engineers.",
+          "They had outsourced customer support to an external agency."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 They had prioritised the quantity of features over simplicity and speed.】\n• 본문 근거: 3문단 'Having prioritised feature volume over core task simplicity, the company had inadvertently penalised its most productive power users.'"
+      },
+      {
+        "question": "How did the designers successfully resolve the problem?",
+        "choices": [
+          "By launching a massive marketing campaign with celebrity endorsements",
+          "By removing sixteen secondary settings and restoring visual clarity",
+          "By offering full annual refunds to all enterprise subscribers",
+          "By developing an entirely separate mobile application"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 By removing sixteen secondary settings and restoring visual clarity】\n• 본문 근거: 4문단 'they recommended stripping away sixteen secondary settings... By ruthlessly pruning visual distractions, the designers restored the calm clarity...'"
+      },
+      {
+        "question": "Which of the following words from the text means “to correct or improve a bad situation”?",
+        "choices": [
+          "remedy",
+          "fatigue",
+          "hesitant",
+          "oversight"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 remedy】\n• 단어 의미: remedy는 동사로 쓰여 '잘못된 일이나 피해를 바로잡다, 수습하다'라는 뜻을 지닙니다 (4문단 첫 문장 'Determined to remedy the damage...')."
+      }
+    ],
+    "discussionQuestions": [
+      "Have you ever experienced an application update where new features made your daily routine more difficult?",
+      "Why do corporate committees often fall into the trap of prioritizing feature volume over streamlined simplicity?",
+      "In your personal work, how do you decide whether a process needs more structure or aggressive pruning?",
+      "What steps can technical teams take during design phases to steer clear of premature assumptions?",
+      "Looking back at a past project, what is one major decision that you would approach differently in hindsight?"
+    ],
+    "rolePlay": {
+      "scenario": "A post-launch retrospective meeting between a lead UX researcher and a software engineering director who wants to understand why subscribers found the new dashboard cluttered.",
+      "learnerRole": "The lead UX researcher presenting observational findings, explaining user fatigue, and proposing the removal of secondary toggles.",
+      "coachRole": "The engineering director who initially pushed for feature expansion but is receptive to evidence-based simplification.",
+      "goal": "Use participle clauses and relevant idioms (in hindsight, steer clear of, leave no stone unturned) to justify pruning 16 settings and reach consensus on a streamlined update."
+    }
+  },
+  {
+    "date": "2026-11-10",
+    "title": "Daily English — 2026-11-10",
+    "grammarTopic": "Past Modals of Deduction and Speculation",
+    "grammar": {
+      "title": "과거 조동사 추측과 추론: Must have, Can't have, Might have, Should have",
+      "summary": "과거 사건의 원인을 규명하거나 과거 행동의 타당성을 평가할 때 조동사 뒤에 [have + 과거분사]를 결합합니다. 확신의 정도(강한 확신, 부정적 확신, 단순 추측)와 과거 의무에 대한 후회/비판(should have), 그리고 실제 행동 여부 차이(needn't have vs didn't need to)를 명확히 구분해야 합니다.",
+      "points": [
+        {
+          "title": "Must have + 과거분사: 과거 사실에 대한 강한 확신과 논리적 추론",
+          "explanation": "과거에 발생한 상황이나 증거를 바탕으로 '~했음에 틀림없다'라고 90% 이상 강하게 확신할 때 씁니다. 단순 추측이 아니라 눈앞의 구체적인 결과나 명백한 근거를 통해 과거 원인을 추론하는 표현입니다.",
+          "examples": [
+            "The database logs show zero traffic after 3 a.m.; the power failure must have severed the internal network. — 데이터베이스 로그에 새벽 3시 이후 트래픽이 전혀 없으니, 정전으로 인해 내부망이 끊어졌음에 틀림없습니다.",
+            "Seeing the pristine test results, the auditors concluded that the quality team must have followed every strict guideline. — 티 없이 깨끗한 시험 결과를 보고 감사관들은 품질팀이 모든 엄격한 지침을 준수했음에 틀림없다고 결론지었습니다.",
+            "The package arrived within twenty-four hours; they must have dispatched it via express courier. — 패키지가 24시간 만에 도착한 것을 보니 그들이 특급 배송으로 발송했음에 틀림없습니다.",
+            "Marcus looks thoroughly exhausted today; he must have worked through the entire night on the deployment script. — Marcus가 오늘 몹시 지쳐 보이는 걸 보니 배포 스크립트를 쓰느라 밤을 꼬박 새웠음에 틀림없습니다.",
+            "Given the surging pre-order numbers, the marketing campaign must have resonated strongly with young professionals. — 급증하는 사전 주문 숫자를 감안할 때 그 마케팅 캠페인이 젊은 직장인들의 큰 공감을 얻었음에 틀림없습니다."
+          ]
+        },
+        {
+          "title": "Can't have / Couldn't have + 과거분사: 과거의 불가능과 강한 부정적 확신",
+          "explanation": "과거 사실에 비추어 볼 때 어떤 일이 일어났을 리가 없다고 강력하게 단정할 때 씁니다. 'must not have'는 현대 영국 영어에서 과거 불가능의 추론으로 잘 쓰이지 않으며, 반드시 can't have 또는 couldn't have를 사용해야 합니다.",
+          "examples": [
+            "Julian can't have authorised the wire transfer yesterday because he was aboard a ten-hour flight without internet. — Julian은 어제 인터넷이 안 되는 10시간짜리 비행기에 탑승 중이었으므로 계좌 이체를 승인했을 리가 없습니다.",
+            "The automated backup couldn't have completed successfully; the storage volume was completely full. — 저장 공간이 완전히 꽉 차 있었으니 자동 백업이 성공적으로 끝났을 리 없습니다.",
+            "They can't have reviewed the proposal thoroughly; there are glaring spelling errors on the cover sheet. — 표지에 눈에 띄는 철자 오류가 있는 걸 보면 그들이 제안서를 면밀히 검토했을 리 없습니다.",
+            "Clara couldn't have known about the merger beforehand, as the confidential memo was only sent this morning. — 기밀 메모가 오늘 아침에야 발송되었기 때문에 Clara가 사전에 합병 사실을 알았을 리 없습니다.",
+            "The engine can't have overheated in freezing conditions unless the cooling fluid leaked entirely. — 냉각수가 완전히 유출되지 않았다면 영하의 기온에서 엔진이 과열되었을 리가 없습니다."
+          ]
+        },
+        {
+          "title": "May have / Might have / Could have + 과거분사: 불확실한 가능성과 추측",
+          "explanation": "과거에 어떤 일이 일어났을 수도 있지만 확신이 없을 때(~했을지도 모른다) 씁니다. could have는 '실제로 일어났을 가능성이 있었지만 일어나지 않은 일'을 나타낼 때도 자주 사용됩니다.",
+          "examples": [
+            "The microservice may have crashed due to a sudden spike in concurrent user requests. — 동시 접속자 수의 급격한 급증으로 인해 마이크로서비스가 중단되었을 수도 있습니다.",
+            "An undetected firmware glitch might have caused the sensor readings to drift over the weekend. — 감지되지 않은 펌웨어 결함 때문에 주말 동안 센서 측정값에 오차가 생겼을지도 모릅니다.",
+            "We could have lost the client permanently if Maya hadn't personally intervened to resolve the dispute. — Maya가 분쟁을 해결하기 위해 개인적으로 개입하지 않았더라면 우리는 그 고객을 영원히 잃었을 수도 있었습니다.",
+            "The courier might have delivered the signed contracts to the secondary warehouse by mistake. — 택배 기사가 서명된 계약서를 실수로 보조 물류창고에 배송했을 수도 있습니다.",
+            "The discrepancy may have originated from an outdated spreadsheet formula used by the branch office. — 그 불일치는 지사에서 사용하던 오래된 스프레드시트 수식에서 비롯되었을 가능성이 있습니다."
+          ]
+        },
+        {
+          "title": "Should have / Ought to have + 과거분사: 과거 의무 불이행에 대한 후회와 비판",
+          "explanation": "과거에 마땅히 했어야 했지만 실제로는 하지 않은 일에 대해 후회하거나 책임을 지적할 때 씁니다(~했어야 했는데 하지 않았다). 반대로 'should not have'는 하지 말았어야 할 일을 해버린 데 대한 비판을 뜻합니다.",
+          "examples": [
+            "We should have implemented automated smoke tests before migrating the production database. — 운영 데이터베이스를 이전하기 전에 마땅히 자동화 스모크 테스트를 구축했어야 했습니다.",
+            "The infrastructure lead ought to have notified executive stakeholders as soon as the latency exceeded two seconds. — 인프라 팀장은 지연 시간이 2초를 초과하자마자 즉시 경영진 이해관계자들에게 알렸어야 했습니다.",
+            "They shouldn't have deployed the untested code on a Friday afternoon right before the bank holiday. — 연휴 직전 금요일 오후에 검증되지 않은 코드를 배포하지 말았어야 했습니다.",
+            "I should have double-checked the supplier invoice before authorizing the international bank transfer. — 해외 은행 송금을 승인하기 전에 공급업체 청구서를 두 번 확인했어야 했습니다.",
+            "The team ought to have preserved the raw telemetry logs instead of letting the server overwrite them. — 서버가 덮어쓰도록 내버려 두는 대신 팀은 가공되지 않은 원격 측정 로그를 보존했어야 했습니다."
+          ]
+        },
+        {
+          "title": "Needn't have + 과거분사 vs Didn't need to: 불필요한 행동의 실제 수행 여부 대조",
+          "explanation": "B2 시험과 실무에서 가장 빈번히 혼동하는 문법입니다. 'needn't have done'은 [할 필요가 없었는데 실제로 해버려서 시간/노력을 낭비한 것]을 의미하며, 'didn't need to do'는 [할 필요가 없었음을 사전에 알아서 실제로 하지 않은 것]을 나타냅니다.",
+          "examples": [
+            "We needn't have printed two hundred paper agendas, as every attendee accessed the digital document on their tablet. (출력함) — 모든 참석자가 태블릿으로 디지털 문서를 열람했기 때문에 종이 안건 200부를 출력할 필요가 없었습니다.",
+            "Because the hotel provided complimentary shuttle buses, we didn't need to rent a vehicle at the airport. (렌트 안 함) — 호텔에서 무료 셔틀버스를 제공했기 때문에 우리는 공항에서 차량을 렌트할 필요가 없었습니다.",
+            "She needn't have spent three hours drafting that report because the director had already cancelled the initiative. (작성함) — 부서장이 이미 그 프로젝트를 취소했기 때문에 그녀는 보고서를 작성하느라 세 시간을 쓸 필요가 없었습니다.",
+            "The client accepted our draft without revisions, so the designers didn't need to work over the weekend. (일 안 함) — 고객이 수정 없이 우리 초안을 수락했기 때문에 디자이너들은 주말에 일할 필요가 없었습니다.",
+            "You needn't have brought your own laptop, as company workstations were fully provisioned for the lab. (가져옴) — 실습실에 회사 워크스테이션이 완벽히 구비되어 있었으므로 개인 노트북을 챙겨 오실 필요가 없었습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "ring a bell",
+        "meaning": "기억이 어렴풋이 나다, 낯익다",
+        "example": "Does the name of that legacy payment gateway ring a bell? — 그 구형 결제 대행사 이름이 어렴풋이 기억나시나요?"
+      },
+      {
+        "term": "take someone aback",
+        "meaning": "~를 깜짝 놀라게 하다, 당황하게 만들다",
+        "example": "The abrupt resignation of our senior infrastructure architect took the whole division aback. — 수석 인프라 설계사의 갑작스러운 사직은 부서 전체를 크게 당황하게 만들었습니다."
+      },
+      {
+        "term": "fall into place",
+        "meaning": "모든 것이 딱 맞아떨어지다, 순조롭게 풀리다",
+        "example": "Once we discovered the missing network configuration script, everything fell into place. — 누락된 네트워크 설정 스크립트를 발견하자 모든 의문이 자연스럽게 풀렸습니다."
+      }
+    ],
+    "readingTitle": "The Silent Server Outage: Unravelling an Architecture Puzzle",
+    "paragraphs": [
+      "At half-past two on Tuesday morning, the primary cloud monitoring alert triggered a catastrophic severity level. European transaction services had suddenly flatlined, leaving thousands of corporate subscribers unable to process payroll batches. The emergency notification took the on-call systems engineer aback, as the latest performance benchmarks had displayed impeccable health just hours earlier. He immediately logged into the administrative terminal to scrutinise the cluster nodes. The primary database cluster was running without error, yet no incoming requests were reaching the internal application handlers.",
+      "The engineering lead quickly joined the emergency bridge to examine the diagnostic telemetry. 'The core hardware is completely responsive, so a physical power breakdown can't have caused the outage,' she observed calmly. 'Furthermore, our redundant failover cluster should have engaged automatically within fifteen seconds of any service disruption.' When the team examined the load balancer routing tables, they noticed a peculiar discrepancy. Traffic was being redirected to an unroutable internal IP address that had been retired six months ago.",
+      "A junior developer wondered aloud whether an external security breach could have altered the routing manifest. However, the security specialist rejected that hypothesis after reviewing access logs. 'A malicious intruder couldn't have bypassed our hardware authentication keys without generating dozens of security alerts,' he argued. 'Someone must have executed an outdated deployment pipeline manually.' The mention of manual scripts seemed to ring a bell with the site reliability engineer, who remembered an archived maintenance job scheduled for quarterly clean-up.",
+      "Digging through the automated cron records, the team discovered the exact culprit. A forgotten maintenance daemon had executed an obsolete script at midnight, overwriting modern network routing parameters with legacy configurations. Once the engineers identified this obsolete task, every confusing anomaly fell into place. The system had not broken under unexpected traffic; rather, an unverified automated script had faithfully executed instructions that were completely out of date. The team realised they needn't have panicked about an external breach, though they certainly should have audited orphaned scheduled jobs months ago.",
+      "By daybreak, the engineers had restored the correct configuration maps, verified failover readiness, and permanently purged obsolete maintenance routines. In the formal post-mortem review, the director did not accuse any individual of being negligent, but senior staff did concur that governance standards required strengthening. Moving forward, every background script had to undergo peer review before running in production. The incident demonstrated that in complex distributed networks, minor discrepancies left unexamined can eventually trigger widespread operational paralysis."
+    ],
+    "translations": [
+      "화요일 새벽 2시 반, 기본 클라우드 모니터링 알람이 최고 심각도 수준의 경보를 울렸습니다. 유럽 지역 거래 서비스가 갑자기 전면 중단되어 수천 곳의 기업 구독자들이 급여 지급 배치를 처리할 수 없게 되었습니다. 불과 몇 시간 전만 해도 최신 성능 벤치마크가 완벽한 건전성을 보여주었기에, 이 비상 통보는 당직 시스템 엔지니어를 크게 당황하게 만들었습니다. 그는 클러스터 노드들을 면밀히 조사하기 위해 즉시 관리 터미널에 접속했습니다. 기본 데이터베이스 클러스터는 오류 없이 작동 중이었지만, 내부 애플리케이션 핸들러에는 아무런 요청도 도달하지 못하고 있었습니다.",
+      "엔지니어링 팀장이 진단 원격 측정 지표를 검토하기 위해 긴급 브리지에 빠르게 합류했습니다. '핵심 하드웨어가 완전히 정상 반응하고 있으므로 물리적 전원 차단이 이번 장애를 일으켰을 리는 없습니다.'라고 그녀는 차분히 관찰했습니다. '게다가 우리의 이중화 대체 장애 복구 클러스터는 서비스 중단 발생 15초 이내에 마땅히 자동 가동되었어야 했습니다.' 팀이 로드 밸런서 라우팅 테이블을 조사했을 때, 그들은 기이한 불일치를 발견했습니다. 트래픽이 6개월 전에 폐기된 라우팅 불가능한 내부 IP 주소로 재전송되고 있었습니다.",
+      "한 주니어 개발자는 외부 보안 침해가 라우팅 매니페스트를 변조했을 수도 있는지 조심스럽게 물었습니다. 그러나 보안 전문가는 접근 로그를 검토한 뒤 그 가설을 일축했습니다. '악의적인 침입자가 수십 건의 보안 경보를 발생시키지 않고 우리의 하드웨어 인증 키를 우회했을 리가 없습니다.'라고 그는 주장했습니다. '누군가가 오래된 배포 파이프라인을 수동으로 실행했음에 틀림없습니다.' 수동 스크립트에 대한 언급은 사이트 신뢰성 엔지니어에게 어렴풋한 기억을 떠올리게 했고, 그는 분기별 정리를 위해 예약되어 있던 보관된 유지보수 작업을 떠올렸습니다.",
+      "자동화된 cron 기록을 파헤친 끝에 팀은 정확한 주범을 발견했습니다. 잊혀진 유지보수 데몬이 자정에 구식 스크립트를 실행하여 현대적인 네트워크 라우팅 매개변수를 과거 설정으로 덮어써 버린 것이었습니다. 엔지니어들이 이 쓸모없는 작업을 확인하자, 모든 혼란스러운 이상 징후가 한순간에 딱 들어맞았습니다. 시스템이 예기치 못한 트래픽에 무너진 것이 아니라, 검증되지 않은 자동화 스크립트가 완전히 구식이 된 지시사항을 충실히 수행했던 것입니다. 팀은 외부 침해에 대해 그렇게 패닉에 빠질 필요가 없었음을 깨달았지만, 방치된 예약 작업을 몇 달 전에 진작 감사했어야 했다는 점은 분명했습니다.",
+      "동틀 녘이 되자 엔지니어들은 올바른 설정 맵을 복구하고 장애 복구 준비 상태를 검증했으며 쓸모없는 유지보수 루틴을 영구 삭제했습니다. 공식적인 사후 분석 회의에서 부서장은 어느 개인에게 태만했다고 비난하지는 않았지만, 시니어 구성원들은 거버넌스 표준 강화가 필요하다는 데 전적으로 동의했습니다. 앞으로는 모든 백그라운드 스크립트가 운영 환경에서 실행되기 전 동료 검토를 거쳐야 했습니다. 이번 사고는 복잡한 분산 네트워크에서 조사되지 않은 채 방치된 사소한 불일치가 결국 광범위한 운영 마비를 부를 수 있음을 보여주었습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "discrepancy",
+        "partOfSpeech": "noun",
+        "meaning": "불일치, 차이",
+        "context": "실제 라우팅 테이블과 예상된 네트워크 주소 사이의 어긋난 차이를 가리킵니다."
+      },
+      {
+        "term": "anomaly",
+        "partOfSpeech": "noun",
+        "meaning": "이상 징후, 변칙",
+        "context": "정상적인 시스템 모니터링 패턴에서 벗어난 불가사의한 비정상 동작을 뜻합니다."
+      },
+      {
+        "term": "redundant",
+        "partOfSpeech": "adjective",
+        "meaning": "이중화된, 여분의",
+        "context": "주 장비 고장 시 즉시 역할을 대체할 수 있도록 백업으로 마련된 대체 장비를 의미합니다."
+      },
+      {
+        "term": "negligent",
+        "partOfSpeech": "adjective",
+        "meaning": "태만한, 부주의한",
+        "context": "의무나 확인 절차를 소홀히 하여 문제를 방치한 책임을 가리킬 때 씁니다."
+      },
+      {
+        "term": "concur",
+        "partOfSpeech": "verb",
+        "meaning": "동의하다, 의견이 일치하다",
+        "context": "회의 참석자들이 정책 변경이나 원인 분석에 대해 같은 의견을 나타내는 것을 말합니다."
+      },
+      {
+        "term": "diagnostic",
+        "partOfSpeech": "adjective",
+        "meaning": "진단의, 원인 규명의",
+        "context": "장애의 원인을 추적하고 분석하기 위해 수집된 로그나 측정 지표를 수식합니다."
+      },
+      {
+        "term": "catastrophic",
+        "partOfSpeech": "adjective",
+        "meaning": "치명적인, 파멸적인",
+        "context": "전체 서비스가 완전히 중단될 정도의 가장 높은 심각도 경보를 수식합니다."
+      },
+      {
+        "term": "hypothesis",
+        "partOfSpeech": "noun",
+        "meaning": "가설, 추정",
+        "context": "외부 해커의 침입 가능성처럼 검증을 거치기 전 제시된 초기 설명을 뜻합니다."
+      },
+      {
+        "term": "scrutinise",
+        "partOfSpeech": "verb",
+        "meaning": "면밀히 조사하다, 정밀 검사하다",
+        "context": "숨은 원인을 찾기 위해 서버 로그와 노드 상태를 아주 꼼꼼하게 살피는 행위입니다."
+      },
+      {
+        "term": "culprit",
+        "partOfSpeech": "noun",
+        "meaning": "장애의 원인, 주범",
+        "context": "서버 장애와 잘못된 라우팅을 야기한 직접적인 원인 스크립트를 비유적으로 표현합니다."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which sentence expresses strong logical certainty about a past event?",
+        "choices": [
+          "Someone must have triggered the outdated pipeline manually.",
+          "Someone should have triggered the outdated pipeline manually.",
+          "Someone might trigger the outdated pipeline manually.",
+          "Someone needn't trigger the outdated pipeline manually."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Someone must have triggered the outdated pipeline manually.】\n• 문법 원리: [must have + p.p.]는 구체적 근거를 바탕으로 과거의 일에 대해 강하게 확신('~했음에 틀림없다')할 때 쓰는 표현입니다.\n• 오답 분석:\n  ② should have triggered는 '실행했어야 했는데 하지 않았다'는 후회나 비판입니다.\n  ③ might trigger는 미래/현재 가능성에 대한 약한 추측입니다.\n  ④ needn't trigger는 현재의 불필요를 나타냅니다."
+      },
+      {
+        "question": "Choose the correct sentence to express that an action was completely impossible in the past.",
+        "choices": [
+          "The intruder can't have bypassed the biometric security without raising alarms.",
+          "The intruder mustn't have bypassed the biometric security without raising alarms.",
+          "The intruder shouldn't have bypassed the biometric security without raising alarms.",
+          "The intruder needn't have bypassed the biometric security without raising alarms."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 The intruder can't have bypassed the biometric security without raising alarms.】\n• 문법 원리: 과거 사실에 대한 강한 부정적 확신(~했을 리가 없다)은 반드시 [can't have + p.p.] 또는 [couldn't have + p.p.]를 씁니다.\n• 오답 분석:\n  ② mustn't have는 영국/미국 표준 영어에서 과거 추론으로 인정되지 않습니다.\n  ③ shouldn't have는 '우회하지 말았어야 했는데 우회했다'는 과거 행동에 대한 비판입니다.\n  ④ needn't have는 '우회할 필요가 없었는데 우회했다'는 낭비를 의미합니다."
+      },
+      {
+        "question": "“We printed 300 brochures, but everyone downloaded the PDF on their phone.” Which structure fits best?",
+        "choices": [
+          "We didn't need to print the brochures.",
+          "We needn't have printed the brochures.",
+          "We must have printed the brochures.",
+          "We shouldn't print the brochures."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 We needn't have printed the brochures.】\n• 문법 원리: [needn't have + p.p.]는 '할 필요가 없었는데 실제로 행동을 해버린 경우'를 나타냅니다. 이미 브로슈어 300부를 인쇄했으므로 needn't have printed가 정확합니다.\n• didn't need to print는 사전에 불필요함을 알아서 '인쇄하지 않은 것'을 뜻하므로 문맥상 맞지 않습니다."
+      },
+      {
+        "question": "What does the engineer imply by saying: “The failover cluster should have engaged automatically”?",
+        "choices": [
+          "The failover cluster engaged smoothly and solved the problem.",
+          "The failover cluster was supposed to engage, but it failed to do so.",
+          "The engineers decided not to install a failover cluster.",
+          "The failover cluster might engage sometime tomorrow."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 The failover cluster was supposed to engage, but it failed to do so.】\n• 문법 원리: [should have + p.p.]는 과거에 마땅히 일어났어야 하지만 실제로는 일어나지 않은 일에 대한 지적이나 기대 불일치를 나타냅니다."
+      },
+      {
+        "question": "Why was a physical power outage ruled out by the engineering lead?",
+        "choices": [
+          "The utility company confirmed a city-wide blackout.",
+          "The core hardware was completely responsive and running without error.",
+          "The data centre had caught fire during the night.",
+          "The entire server building had been demolished."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 The core hardware was completely responsive and running without error.】\n• 본문 근거: 2문단 'The core hardware is completely responsive, so a physical power breakdown can't have caused the outage'에서 확인할 수 있습니다."
+      },
+      {
+        "question": "What does the idiom “ring a bell” mean in the context of the reading?",
+        "choices": [
+          "To sound an evacuation alarm",
+          "To awaken a vague memory or sound familiar",
+          "To celebrate a successful release",
+          "To make a telephone call to customer support"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To awaken a vague memory or sound familiar】\n• 표현 의미: 'ring a bell'은 어렴풋하게 기억을 떠올리게 하거나 낯익게 느껴진다는 뜻의 중요 관용구입니다 (3문단 'seemed to ring a bell with the site reliability engineer')."
+      },
+      {
+        "question": "What was the actual culprit behind the traffic failure?",
+        "choices": [
+          "A sophisticated ransomware attack by state-sponsored hackers",
+          "A forgotten cron daemon that ran an obsolete script overwriting routing maps",
+          "A hardware failure in the transatlantic fiber cable",
+          "An intentional sabotage by a disgruntled former employee"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 A forgotten cron daemon that ran an obsolete script overwriting routing maps】\n• 본문 근거: 4문단 'A forgotten maintenance daemon had executed an obsolete script at midnight, overwriting modern network routing parameters with legacy configurations.'"
+      },
+      {
+        "question": "What does the idiom “fall into place” mean in the passage?",
+        "choices": [
+          "To collapse physically onto the floor",
+          "To become clear, understandable, and properly aligned",
+          "To be demoted to an inferior job role",
+          "To drop in market share against competitors"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To become clear, understandable, and properly aligned】\n• 표현 의미: 'fall into place'는 모든 퍼즐 조각이 제자리를 찾듯 모든 의문이나 상황이 명쾌하게 이해되고 딱 맞아떨어지는 상태를 말합니다."
+      },
+      {
+        "question": "Which preventive measure did the team agree to implement following the review?",
+        "choices": [
+          "Banning all automated scripts permanently",
+          "Requiring peer review for every background script prior to production execution",
+          "Replacing the entire database engine with a proprietary alternative",
+          "Firing the on-call engineer who was on duty"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Requiring peer review for every background script prior to production execution】\n• 본문 근거: 5문단 'Moving forward, every background script had to undergo peer review before running in production.'"
+      },
+      {
+        "question": "Which of the following words means “to express agreement with an opinion”?",
+        "choices": [
+          "concur",
+          "scrutinise",
+          "anomaly",
+          "culprit"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 concur】\n• 단어 의미: concur는 다른 사람의 의견이나 판단에 공식적으로 동의하다(agree)라는 뜻입니다 (5문단 'senior staff did concur that governance standards required strengthening')."
+      }
+    ],
+    "discussionQuestions": [
+      "Have you ever experienced an unexpected technical malfunction that baffled everyone at first?",
+      "When investigating mistakes at work, how can teams foster psychological safety while maintaining accountability?",
+      "Why do automated background tasks often become high-risk liabilities as systems evolve over several years?",
+      "Can you share an instance where something someone said suddenly rang a bell and helped solve a complex problem?",
+      "What is an example of an occasion in your daily routine where you needn't have worried about an outcome?"
+    ],
+    "rolePlay": {
+      "scenario": "A post-incident debriefing between a senior systems architect and an operations director reviewing the overnight cloud database outage.",
+      "learnerRole": "The senior systems architect presenting deductions (must have, can't have, should have) to explain how an obsolete script caused the outage.",
+      "coachRole": "The operations director seeking clarity on whether external hackers were involved and determining future prevention policies.",
+      "goal": "Demonstrate accurate use of past deduction modals (can't have caused, must have executed, should have audited) and idioms (take aback, ring a bell, fall into place) to reassure leadership and agree on new peer-review protocols."
+    }
+  },
+  {
+    "date": "2026-11-11",
+    "title": "Daily English — 2026-11-11",
+    "grammarTopic": "Advanced Passive and Impersonal Passive Structures",
+    "grammar": {
+      "title": "고급 수동태와 비인칭 수동태: 객관적 보고와 세련된 정보 전달",
+      "summary": "B2 수준에서는 단순한 'be + p.p.'를 넘어 객관적 여론이나 언론 보도를 전달하는 비인칭 수동태(It is reported that...)와 주어 승격 구문(The site is said to be...), 수여동사의 수동태, 그리고 구어체 'get' 수동태의 뉘앙스 차이를 자유자재로 다룰 수 있어야 합니다.",
+      "points": [
+        {
+          "title": "비인칭 수동태: It is said / believed / thought / reported that...",
+          "explanation": "보고·주장·믿음을 나타내는 동사(say, think, believe, report, estimate 등)를 가주어 It과 수동태로 결합하여 일반적인 견해나 객관적 사실을 격식 있게 전달합니다. 발화자의 주관적 책임을 덜고 중립적인 보고 톤을 유지할 때 유용합니다.",
+          "examples": [
+            "It is widely believed that historic preservation accelerates urban regeneration. — 역사적 유산 보존이 도시 재생을 가속한다는 것이 널리 믿어지고 있습니다.",
+            "It was reported that municipal planners had rejected the commercial skyscraper proposal. — 도시 계획관들이 상업용 초고층 빌딩 제안을 거부했다고 보도되었습니다.",
+            "It is estimated that retrofitting existing brick structures reduces carbon footprints by forty percent. — 기존 벽돌 건물을 개보수하면 탄소 발자국이 40% 줄어드는 것으로 추정됩니다.",
+            "It has been suggested that local residents should co-manage the neighbourhood public park. — 지역 주민들이 동네 공공공원을 공동 관리해야 한다는 제안이 제기되었습니다.",
+            "It is thought that the Victorian textile mill dates back to the early 1850s. — 그 빅토리아 시대 직물 공장은 1850년대 초반으로 거슬러 올라가는 것으로 생각됩니다."
+          ]
+        },
+        {
+          "title": "주어 승격 수동태: Subject + is said / reported / known to be / have been",
+          "explanation": "that절의 주어를 문장의 주어로 끌어올리고 동사를 to부정사로 연결하는 고급 변형입니다. 주절과 같은 시점이면 [to + 동사원형], 주절보다 앞선 과거 사실이면 완료부정사 [to have + 과거분사]를 결합합니다.",
+          "examples": [
+            "The derelict warehouse is said to be one of the oldest iron-framed buildings in northern England. — 그 방치된 창고는 잉글랜드 북부에서 가장 오래된 철골 건물 중 하나로 전해집니다.",
+            "The architect is known to have pioneered sustainable timber construction across Scandinavia. — 그 건축가는 스칸디나비아 전역에서 지속 가능한 목조 건축을 개척한 것으로 알려져 있습니다.",
+            "The project is expected to generate hundreds of skilled apprenticeships for local youth. — 그 프로젝트는 지역 청년들을 위한 수백 개의 숙련 견습 일자리를 창출할 것으로 기대됩니다.",
+            "The former railway arches are reported to have housed secret telegraph workshops during the war. — 옛 철도 교각 아치들은 전쟁 기간 비밀 전신 작업장을 수용했던 것으로 전해집니다.",
+            "The city council is understood to have approved the final conservation zoning rules yesterday. — 시의회가 어제 최종 보존 구역 규정을 승인한 것으로 파악되고 있습니다."
+          ]
+        },
+        {
+          "title": "수여동사(두 개의 목적어를 취하는 동사)의 수동태",
+          "explanation": "give, offer, award, grant, send, pay 등의 동사는 간접목적어(사람)와 직접목적어(사물)를 갖습니다. 영어에서는 사람 주어를 수동태 주어로 삼는 형식(They were awarded a grant)이 훨씬 자연스럽고 선호됩니다. 사물을 주어로 할 때는 전치사 to가 보존됩니다.",
+          "examples": [
+            "The restoration studio was awarded a substantial national heritage grant last month. (사람/조직 주어) — 그 복원 스튜디오는 지난달 상당한 규모의 국립 문화유산 보조금을 수여받았습니다.",
+            "Every volunteer was given a guided architectural handbook before entering the conservation site. — 모든 자원봉사자는 보존 구역에 들어가기 전 해설 건축 핸드북을 지급받았습니다.",
+            "The community cooperative was offered an exclusive lease to run the community kitchen. — 지역 협동조합은 커뮤니티 주방을 운영할 수 있는 독점 임대권을 제안받았습니다.",
+            "An honorary fellowship was granted to the conservation officer by the Royal Institute. (사물 주어) — 그 보존 담당관에게 왕립 연구소의 명예 펠로우 자격이 수여되었습니다.",
+            "Displaced craftspeople were promised subsidised workshop spaces in the refurbished complex. — 이전된 장인들은 개보수된 단지 내에 보조금이 지원되는 작업실 공간을 약속받았습니다."
+          ]
+        },
+        {
+          "title": "Get 수동태 vs Be 수동태: 뉘앙스와 활용 상황 비교",
+          "explanation": "일상 구어체에서는 be 대신 get을 쓴 수동태가 자주 쓰입니다. get 수동태는 주로 '예상치 못한 불운·사고(get damaged, get rejected)'나 '스스로의 노력으로 어떤 상태에 도달함(get hired, get promoted)'을 나타내며, 상태보다는 동적인 변화에 초점을 맞춥니다. 격식 있는 공식 보고서에서는 여전히 be 수동태가 규범입니다.",
+          "examples": [
+            "Several historical stained-glass panels got damaged during the sudden storm last autumn. (구어적 불운) — 지난가을 갑작스러운 폭풍우 속에서 역사적인 스테인드글라스 패널 여러 장이 손상되었습니다.",
+            "After months of community lobbying, our planning application finally got approved. (노력 끝의 성취) — 수개월간의 지역 주민 청원 끝에 우리의 도시계획 신청서가 마침내 승인되었습니다.",
+            "The antique brick foundation got soaked when the drainage pipe burst overnight. — 밤새 배수관이 터졌을 때 유서 깊은 벽돌 기초가 물에 흠뻑 젖어버렸습니다.",
+            "The project manager got promoted after delivering the zero-emission school on schedule. — 프로젝트 매니저는 탄소 배출 제로 학교를 일정대로 완공한 뒤 승진했습니다.",
+            "Historic monuments must be protected by statutory law; they cannot merely get repaired after accidents happen. — 역사적 기념물은 성문법으로 보호되어야 하며, 사고가 난 뒤에 단순히 수리되는 것으로 끝나선 안 됩니다."
+          ]
+        },
+        {
+          "title": "수동태의 남용 방지와 정보 흐름(Given-to-New) 조화",
+          "explanation": "행위자를 숨기거나 책임을 회피하기 위해 수동태를 무분별하게 남용하면 글이 무겁고 모호해집니다. 이미 알려진 구정보(Given)를 주어 자리에 놓고 새로운 신정보(New)를 뒤에 둘 때, 또는 행위자가 불분명하거나 행위의 대상이 훨씬 중요할 때 선별적으로 수동태를 사용해야 글의 가독성이 살아납니다.",
+          "examples": [
+            "The crumbling mill was purchased by a community trust, which immediately initiated emergency roof repairs. — 무너져 가던 방적공장은 지역 신탁에 매입되었고, 신탁은 즉시 지붕 긴급 수리에 착수했습니다.",
+            "Energy audits were conducted by certified engineers, ensuring that insulation standards were fully satisfied. — 공인 엔지니어들에 의해 에너지 감사가 수행되었으며, 단열 기준이 완벽히 충족되도록 보장했습니다.",
+            "Rather than saying 'Mistakes were made,' transparent leaders state: 'Our team miscalculated the seismic load.' — '실수가 발생했다'고 말하기보다 투명한 리더는 '우리 팀이 내진 하중을 잘못 계산했습니다'라고 밝힙니다.",
+            "The industrial docklands, having lain abandoned for decades, are now being transformed into cultural hubs. — 수십 년간 버려져 있던 산업 부두 지대는 이제 문화 중심지로 탈바꿈하고 있습니다.",
+            "Each heritage grant application is rigorously reviewed by an independent architectural advisory panel. — 각 문화유산 보조금 신청서는 독립적인 건축 자문단에 의해 엄격하게 검토됩니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "word of mouth",
+        "meaning": "입소문, 구전",
+        "example": "The artisanal market inside the old depot flourished almost entirely through word of mouth. — 옛 차고지 내부의 장인 마켓은 거의 전적으로 입소문만을 통해 번창했습니다."
+      },
+      {
+        "term": "keep under wraps",
+        "meaning": "비밀로 부치다, 대외비로 유지하다",
+        "example": "City developers kept their ambitious riverside blueprints under wraps until the public consultation opened. — 도시 개발업체들은 시민 공청회가 열릴 때까지 야심 찬 강변 청사진을 대외비로 유지했습니다."
+      },
+      {
+        "term": "spill the beans",
+        "meaning": "비밀을 무심코 누설하다",
+        "example": "An enthusiastic intern accidentally spilled the beans on social media about the museum expansion. — 열정적인 인턴 한 명이 박물관 확장에 관한 정보를 소셜 미디어에 무심코 누설해 버렸습니다."
+      }
+    ],
+    "readingTitle": "Reviving Forgotten Heritage: Adaptive Reuse in Urban Architecture",
+    "paragraphs": [
+      "Across post-industrial towns in northern Britain, hundreds of Victorian brick factories once stood derelict, threatening to deteriorate into crumbling rubble. For decades, traditional planners argued that demolishing these historic structures was the most economical path toward modern economic regeneration. However, an enlightened coalition of civic architects and heritage advocates challenged that destructive orthodoxy. It is now widely believed that adaptive reuse—transforming obsolete factories into vibrant communal spaces—yields far richer social and environmental returns than complete demolition.",
+      "A prominent example is the former Hunslet Engine Foundry, which is reported to have manufactured steam locomotives during the height of the industrial revolution. After lying vacant for forty years, the site was awarded an extensive urban preservation grant by the municipal government. Initial development negotiations were kept under wraps to prevent predatory real-estate speculation. Yet before the formal press release, a local councillor inadvertently spilled the beans during a radio broadcast, igniting enthusiastic public debate about how the communal space should be designed.",
+      "Rather than erecting generic luxury apartments, the developer was offered an economic incentive package on condition that community access was prioritised. The central foundry hall was converted into co-working studios, while the adjacent boiler houses were redesigned to host independent bakeries and artist workshops. The aesthetic charm of exposed cast-iron columns and vintage red masonry was carefully preserved. It is understood that this harmonious contrast between industrial heritage and contemporary functionality has attracted creative entrepreneurs from across the region.",
+      "Crucially, the complex gained traction not through multimillion-pound marketing blitzes, but largely through genuine word of mouth. Local residents praised the site for providing inclusive public plazas and retaining a sense of collective memory. Environmental assessments confirmed that preserving the original brickwork prevented over three thousand tonnes of embodied carbon emissions. Sustainability experts agree that the greenest building is invariably the one that already exists, provided its structural core can be safely retrofitted.",
+      "Inevitably, balancing commercial viability with heritage integrity remains a subject of ongoing contention. Some purists argue that commercial additions compromise historical authenticity, while business operators stress that tenants must generate adequate revenue to fund perpetual maintenance. Nevertheless, the revitalised foundry demonstrates that architectural conservation need not be treated as a nostalgic museum piece. When historical fabric is meaningfully integrated into modern daily life, communities inherit both a physical link to their past and a dynamic foundation for the future."
+    ],
+    "translations": [
+      "영국 북부의 탈산업화 도시 곳곳에서 수백 채의 빅토리아 시대 벽돌 공장들이 한때 방치된 채 무너져 내리는 잔해로 변할 위기에 처해 있었습니다. 수십 년 동안 전통적인 도시 계획가들은 이러한 유서 깊은 건물을 철거하는 것이 현대적 경제 재생으로 가는 가장 경제적인 길이라고 주장했습니다. 그러나 깨어 있는 시민 건축가들과 문화유산 옹호자들의 연대는 그 파괴적인 정설에 맞섰습니다. 이제는 쓸모없어진 공장을 활기찬 공동체 공간으로 탈바꿈하는 '적응형 재사용'이 전면 철거보다 훨씬 풍성한 사회적·환경적 보답을 가져다준다는 사실이 널리 받아들여지고 있습니다.",
+      "대표적인 사례가 과거 헌슬렛 엔진 주조 공장으로, 산업혁명의 전성기 동안 증기 기관차를 생산했던 곳으로 전해집니다. 40년간 방치되었던 이 부지는 시 정부로부터 대규모 도시 보존 보조금을 수여받았습니다. 초기 개발 협상은 약탈적 부동산 투기를 막기 위해 대외비로 유지되었습니다. 그러나 공식 보도자료가 배포되기 전 한 지역 구의원이 라디오 방송 중에 무심코 비밀을 누설해 버렸고, 이는 공동체 공간을 어떻게 설계해야 하는지에 대한 열띤 대중적 토론을 촉발했습니다.",
+      "판에 박힌 고급 아파트를 짓는 대신 개발업체는 지역사회의 접근성을 우선시한다는 조건으로 경제적 인센티브 패키지를 제안받았습니다. 중앙 주조소 홀은 공유 업무 스튜디오로 전환되었고, 인접한 보일러실은 독립 제과점과 예술가 작업실을 수용하도록 재설계되었습니다. 노출된 주철 기둥과 유서 깊은 붉은 벽돌 구조가 뿜어내는 미적 매력은 세심하게 보존되었습니다. 산업 유산과 현대적 기능성 사이의 이 조화로운 대비가 지역 전역의 창의적인 기업가들을 끌어모은 것으로 이해되고 있습니다.",
+      "결정적으로 이 복합단지는 수백만 파운드짜리 대대적인 광고 공세가 아니라 주로 진솔한 입소문을 통해 추진력을 얻었습니다. 지역 주민들은 포용적인 공공 광장을 제공하고 집단적 기억을 간직해 준 것에 대해 찬사를 아끼지 않았습니다. 환경 평가 결과 원래의 벽돌 구조를 보존함으로써 3,000톤 이상의 내재 탄소 배출을 방지한 것으로 확인되었습니다. 지속가능성 전문가들은 구조적 핵심을 안전하게 개보수할 수만 있다면 가장 친환경적인 건물은 언제나 이미 존재하는 건물이라는 점에 동의합니다.",
+      "필연적으로 상업적 생존 가능성과 문화유산의 진정성 사이의 균형을 맞추는 문제는 여전히 지속적인 논쟁거리로 남아 있습니다. 일부 순수주의자들은 상업적 덧붙임이 역사적 진정성을 훼손한다고 주장하는 반면, 사업 운영자들은 세입자들이 영구적인 유지보수 비용을 충당할 충분한 수익을 창출해야 한다고 강조합니다. 그럼에도 활기를 되찾은 주조 공장은 건축적 보존이 결코 향수를 자극하는 박물관 유물로만 취급될 필요가 없음을 증명합니다. 역사적 토대가 현대의 일상 속에 의미 있게 통합될 때, 공동체는 과거로 향하는 물리적 연결고리와 미래를 향한 역동적인 기반을 동시에 물려받게 됩니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "derelict",
+        "partOfSpeech": "adjective",
+        "meaning": "버려진, 방치된",
+        "context": "오랜 세월 동안 관리되지 않고 버려진 공장이나 건축물 상태를 묘사합니다."
+      },
+      {
+        "term": "preservation",
+        "partOfSpeech": "noun",
+        "meaning": "보존, 보호",
+        "context": "역사적·문화적 가치가 있는 건축물이나 환경을 허물지 않고 지키는 활동을 뜻합니다."
+      },
+      {
+        "term": "revitalise",
+        "partOfSpeech": "verb",
+        "meaning": "새로운 활력을 불어넣다, 부흥시키다",
+        "context": "침체된 옛 산업 시설을 현대적인 복합 문화공간으로 다시 살려내는 것을 의미합니다."
+      },
+      {
+        "term": "communal",
+        "partOfSpeech": "adjective",
+        "meaning": "공동의, 지역사회의",
+        "context": "소수 개인의 전유물이 아니라 여러 주민이 함께 어울려 사용하는 공간을 수식합니다."
+      },
+      {
+        "term": "aesthetic",
+        "partOfSpeech": "noun",
+        "meaning": "미학, 미적 특성",
+        "context": "주철 기둥과 붉은 벽돌이 자아내는 고유하고 아름다운 시각적 매력을 나타냅니다."
+      },
+      {
+        "term": "incentive",
+        "partOfSpeech": "noun",
+        "meaning": "장려책, 인센티브",
+        "context": "시 정부가 공공성 확보를 대가로 개발자에게 제공한 세제 혜택이나 보조금을 말합니다."
+      },
+      {
+        "term": "sustainability",
+        "partOfSpeech": "noun",
+        "meaning": "지속가능성, 친환경성",
+        "context": "건축물을 철거하지 않고 보존하여 탄소 배출을 억제하는 친환경적 가치를 뜻합니다."
+      },
+      {
+        "term": "deteriorate",
+        "partOfSpeech": "verb",
+        "meaning": "악화되다, 쇠락하다",
+        "context": "건축물의 구조가 비바람에 삭아 점점 무너져 가는 퇴락 과정을 표현합니다."
+      },
+      {
+        "term": "contention",
+        "partOfSpeech": "noun",
+        "meaning": "논쟁, 갈등",
+        "context": "상업적 개발과 역사적 진정성 사이에서 발생하는 이해관계자들 간의 의견 대립을 의미합니다."
+      },
+      {
+        "term": "heritage",
+        "partOfSpeech": "noun",
+        "meaning": "유산, 역사적 전통",
+        "context": "과거 산업화 시대로부터 물려받은 건축 자산과 역사적 가치를 가리킵니다."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which of the following demonstrates a correct impersonal passive construction?",
+        "choices": [
+          "It is widely believed that adaptive reuse accelerates urban renewal.",
+          "They are widely believed that adaptive reuse accelerates urban renewal.",
+          "It widely believes that adaptive reuse accelerates urban renewal.",
+          "Adaptive reuse is widely believed that accelerates urban renewal."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 It is widely believed that adaptive reuse accelerates urban renewal.】\n• 문법 원리: 가주어 It과 [be + p.p.]를 결합하고 진주어 that절을 뒤에 배치하는 대표적인 비인칭 수동태 공식 [It is believed that...]입니다.\n• 오답 분석:\n  ② They are believed that은 어법상 불가능합니다.\n  ③ It widely believes는 능동태로 주어가 믿는 주체가 될 수 없습니다.\n  ④ 주어 승격 구문에서는 that절이 아닌 to부정사(is believed to accelerate)를 써야 합니다."
+      },
+      {
+        "question": "Rewrite the sentence into a subject-promoted passive: “People report that the old factory produced steam locomotives.”",
+        "choices": [
+          "The old factory is reported to produce steam locomotives.",
+          "The old factory is reported to have produced steam locomotives.",
+          "The old factory was reported that it produced steam locomotives.",
+          "The old factory reported to have produced steam locomotives."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 The old factory is reported to have produced steam locomotives.】\n• 문법 원리: 주절의 시제는 현재(is reported)이고 공장이 기관차를 생산한 것은 과거의 일이므로, 시간의 선후 관계를 표현하기 위해 완료부정사 [to have + p.p.]를 써야 합니다.\n• 오답 분석:\n  ① to produce는 현재 지속되는 동작으로 오해를 낳습니다.\n  ③ that절의 주어가 이미 앞으로 나갔으므로 that절을 중복할 수 없습니다.\n  ④ 수동태 be동사(is)가 누락되었습니다."
+      },
+      {
+        "question": "Choose the natural passive form when the verb takes two objects (award someone a grant).",
+        "choices": [
+          "The foundation was awarded a conservation grant by the council.",
+          "A conservation grant awarded the foundation by the council.",
+          "The foundation got award a conservation grant by the council.",
+          "To the foundation was awarded a conservation grant."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 The foundation was awarded a conservation grant by the council.】\n• 문법 원리: 영어에서는 수여동사의 간접목적어(수혜 대상)를 주어로 삼는 수동태(Someone was awarded something)가 가장 자연스럽고 빈번하게 사용됩니다."
+      },
+      {
+        "question": "In spoken British English, when is the “get” passive most characteristically employed?",
+        "choices": [
+          "In strictly legal statutes and scientific treaties",
+          "To describe unexpected adverse mishaps or achieved changes of state",
+          "Whenever the active voice is shorter and clearer",
+          "Exclusively in conditional clauses starting with unless"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To describe unexpected adverse mishaps or achieved changes of state】\n• 문법 원리: get 수동태(get damaged, get stuck, get promoted)는 일상 대화에서 뜻밖의 사고나 불운, 혹은 개인의 노력으로 쟁취한 상태 변화를 생생하게 표현할 때 자주 쓰입니다."
+      },
+      {
+        "question": "What does the idiom “keep under wraps” mean in the passage?",
+        "choices": [
+          "To wrap building materials in plastic protection",
+          "To keep a proposal or plan confidential from the public",
+          "To discard an architectural proposal into the trash",
+          "To publish blueprints openly in newspaper advertisements"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To keep a proposal or plan confidential from the public】\n• 표현 의미: 'keep under wraps'는 포장지로 싸두듯 어떤 정보나 계획을 대외비로 철저히 감추어 두다는 뜻입니다."
+      },
+      {
+        "question": "Why were the initial redevelopment blueprints kept secret initially?",
+        "choices": [
+          "To conceal safety violations in the brick structure",
+          "To prevent speculative and predatory real-estate buying",
+          "Because the architects had not finished their drawings",
+          "Because the building had collapsed overnight"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To prevent speculative and predatory real-estate buying】\n• 본문 근거: 2문단 'Initial development negotiations were kept under wraps to prevent predatory real-estate speculation.'"
+      },
+      {
+        "question": "What does the idiom “spill the beans” mean?",
+        "choices": [
+          "To ruin a culinary dish in a commercial kitchen",
+          "To prematurely or indiscreetly reveal a secret",
+          "To invest money in unprofitable agricultural projects",
+          "To argue loudly with local government officials"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To prematurely or indiscreetly reveal a secret】\n• 표현 의미: 'spill the beans'는 콩을 쏟아버리듯 비밀이나 기밀 정보를 부주의하게 무심코 누설하다는 관용구입니다 (2문단 'inadvertently spilled the beans during a radio broadcast')."
+      },
+      {
+        "question": "According to the reading, how did the revitalised foundry gain widespread community traction?",
+        "choices": [
+          "Through expensive television and billboard campaigns",
+          "Almost entirely through genuine word of mouth and local appreciation",
+          "By offering free luxury automobiles to incoming tenants",
+          "By demolishing all neighboring residential houses"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Almost entirely through genuine word of mouth and local appreciation】\n• 본문 근거: 4문단 'the complex gained traction not through multimillion-pound marketing blitzes, but largely through genuine word of mouth.'"
+      },
+      {
+        "question": "What environmental advantage of adaptive reuse is highlighted in the text?",
+        "choices": [
+          "It eliminates the need for heating and plumbing systems.",
+          "It prevents thousands of tonnes of embodied carbon emissions by retaining existing masonry.",
+          "It produces solar energy that powers the entire city.",
+          "It allows companies to avoid paying corporate taxes."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 It prevents thousands of tonnes of embodied carbon emissions by retaining existing masonry.】\n• 본문 근거: 4문단 'preserving the original brickwork prevented over three thousand tonnes of embodied carbon emissions.'"
+      },
+      {
+        "question": "Which term from the passage refers to “a building in a severely neglected, abandoned state”?",
+        "choices": [
+          "derelict",
+          "aesthetic",
+          "incentive",
+          "communal"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 derelict】\n• 단어 의미: derelict는 관리되지 않고 심각하게 버려지거나 방치된 건물을 뜻하는 형용사입니다 (1문단 'factories once stood derelict')."
+      }
+    ],
+    "discussionQuestions": [
+      "Do you prefer modern minimalist architecture or the adaptive reuse of historic brick structures?",
+      "Why is word-of-mouth marketing often perceived as far more credible than multimillion-pound promotional campaigns?",
+      "When public agencies plan major urban renewal, should negotiations be kept under wraps or made open from day one?",
+      "How can cities balance the preservation of cultural heritage with commercial profitability?",
+      "Can you describe a historical building in your own city that successfully revitalised its surrounding neighbourhood?"
+    ],
+    "rolePlay": {
+      "scenario": "A formal municipal planning hearing between a heritage conservation architect and an urban development officer debating the adaptive reuse of a former dockside warehouse.",
+      "learnerRole": "The heritage conservation architect advocating for adaptive reuse and presenting environmental data using advanced passives.",
+      "coachRole": "The urban development officer raising valid questions about commercial viability, construction costs, and community access.",
+      "goal": "Effectively employ impersonal passives (It is estimated that, The site is understood to have been) and idioms (word of mouth, keep under wraps, spill the beans) to justify securing an urban preservation grant."
+    }
+  },
+  {
+    "date": "2026-11-12",
+    "title": "Daily English — 2026-11-12",
+    "grammarTopic": "Inverted Conditionals and Formal Alternatives to If",
+    "grammar": {
+      "title": "조건문 도치와 if의 격식적 대용 표현: Had, Were, Should의 고급 활용",
+      "summary": "격식 있는 비즈니스 서한이나 기술 보고서에서는 접속사 if를 생략하고 조동사(Had, Were, Should)를 주어 앞으로 도치시켜 문장의 세련미와 격식을 높입니다. 또한 provided that, as long as, on condition that, supposing 등 if를 대체하는 정밀한 조건 표현들을 완벽히 구사해야 합니다.",
+      "points": [
+        {
+          "title": "Had + 주어 + p.p. (Third Conditional 도치): 과거 반대 사실의 격식적 가정",
+          "explanation": "If + 주어 + had p.p.에서 if를 생략하면 Had가 문두로 나가 주어와 도치됩니다(Had we known... = If we had known...). 이미 종료된 과거 사건을 다르게 가정하며 후회나 안도를 표현할 때 매우 격식 있는 어조를 부여합니다.",
+          "examples": [
+            "Had the logistics team not monitored the cold chain continuously, hundreds of vaccine vials would have spoiled. — 물류팀이 콜드체인을 지속적으로 모니터링하지 않았더라면 수백 병의 백신 바이알이 변질되었을 것입니다.",
+            "Had we received the satellite weather forecast earlier, we would have rerouted the cargo planes. — 위성 기상 예보를 더 일찍 받았더라면 우리는 화물 수송기의 경로를 변경했을 것입니다.",
+            "Had the backup generators failed to kick in, the temperature-sensitive serums would have been lost entirely. — 비상 발전기가 가동되지 못했더라면 온도에 민감한 혈청들은 완전히 유실되었을 것입니다.",
+            "Had they audited the transport vendor in the spring, this contractual dispute could have been avoided. — 봄에 운송업체를 감사했더라면 이러한 계약상의 분쟁은 피할 수 있었을 것입니다.",
+            "Had Elena not insisted on rigorous container pre-cooling, the entire medical batch would have suffered thermal shock. — Elena가 컨테이너 사전 냉각을 엄격히 고집하지 않았더라면 전체 의약품 배치가 열 충격을 받았을 것입니다."
+          ]
+        },
+        {
+          "title": "Were + 주어 + to 부정사 (Second Conditional 도치): 실현 가능성이 낮은 가상 조건",
+          "explanation": "현재 사실과 다르거나 실현 가능성이 극히 희박한 미래를 상상할 때 if를 생략하고 Were를 문두에 둡니다(Were the government to cut subsidies... = If the government were to cut...). 주로 기업 정책, 공공 규제 등의 가상 시나리오를 정중하게 논의할 때 사용됩니다.",
+          "examples": [
+            "Were the regional airstrip to close during winter storms, medical supplies would have to be parachuted by drone. — 만일 겨울 폭풍 동안 지역 활주로가 폐쇄된다면 의료 물자는 드론으로 낙하 전달되어야 할 것입니다.",
+            "Were the transport costs to escalate further, the humanitarian charity would require emergency donor funding. — 만일 운송 비용이 더 상승한다면 인도주의 자선단체는 긴급 기부자 자금을 필요로 할 것입니다.",
+            "Were you to inspect the insulated cooler liners, you would appreciate their superior thermal resistance. — 단열 쿨러 라이너를 직접 검사해 보신다면 그 탁월한 열 저항성을 실감하실 것입니다.",
+            "Were any breach of protocol to occur, the quality assurance director would launch an immediate investigation. — 만일 어떠한 규약 위반이라도 발생한다면 품질 보증 책임자가 즉각적인 조사에 착수할 것입니다.",
+            "Were the temperature monitoring sensors to drift by even one degree, the automated alarm system would alert the dispatch depot. — 온도 감지 센서가 1도라도 오차를 보인다면 자동 경보 시스템이 배송 기지에 알릴 것입니다."
+          ]
+        },
+        {
+          "title": "Should + 주어 + 동사원형 (First Conditional 도치): 공손하고 정중한 조건문",
+          "explanation": "If you need / If any problem arises와 같은 일상적 표현을 [Should + 주어 + 동사원형]으로 도치하면 고객 응대나 공식 안내문에서 '혹시라도 ~하시게 된다면'이라는 극도의 정중함을 전달할 수 있습니다.",
+          "examples": [
+            "Should you encounter any discrepancy in shipment temperature logs, please contact the dispatch desk immediately. — 혹시라도 선적 온도 기록에서 불일치를 발견하시게 되면 즉시 배차 데스크로 연락해 주십시오.",
+            "Should weather conditions deteriorate along the mountain pass, the convoy driver must seek sheltered parking. — 혹시라도 산길을 따라 기상 상황이 악화된다면 호송 운전자는 대피 주차장을 찾아야 합니다.",
+            "Should your clinic require supplementary ice packs, our secondary depot can dispatch them within ninety minutes. — 혹시 귀 클리닉에서 추가 아이스팩이 필요하시다면 저희 보조 기지에서 90분 이내에 발송해 드릴 수 있습니다.",
+            "Should any sensor battery deplete prematurely, the fail-safe indicator will flash amber. — 혹시라도 센서 배터리가 조기에 소모되면 안전장치 표시등이 황색으로 깜빡일 것입니다.",
+            "Should the cold-chain telemetry server experience downtime, offline dataloggers will preserve all thermal records. — 혹시라도 콜드체인 원격 측정 서버가 중단되더라도 오프라인 데이터로거가 모든 온도 기록을 보존할 것입니다."
+          ]
+        },
+        {
+          "title": "Had it not been for / Were it not for (~이 없었더라면 / 없다면)",
+          "explanation": "[Without ~] 또는 [But for ~]의 최고급 격식 도치 구문입니다. 과거 사건을 언급할 때는 [Had it not been for + 명사], 현재의 지탱 요소를 말할 때는 [Were it not for + 명사]를 씁니다.",
+          "examples": [
+            "Had it not been for the dedicated local volunteer pilots, remote highland communities would have lacked immunisation. — 헌신적인 현지 자원봉사 조종사들이 없었더라면 외딴 고원 공동체들은 예방접종을 받지 못했을 것입니다.",
+            "Were it not for community trust, humanitarian logistics operations could not function effectively in rugged terrain. — 지역사회의 신뢰가 없다면 인도주의 물류 작전은 험준한 지형에서 효과적으로 기능할 수 없을 것입니다.",
+            "Had it not been for reinforced vacuum insulation panels, the thermal buffer would have collapsed under tropical heat. — 강화된 진공 단열 패널이 없었더라면 열 완충 구역은 열대성 열기 아래 무너져 내렸을 것입니다.",
+            "Were it not for automated satellite telemetry, tracking vaccine containers across rainforest corridors would be nearly impossible. — 자동 위성 원격 측정이 없다면 열대우림 회랑을 가로지르는 백신 컨테이너를 추적하는 일은 거의 불가능할 것입니다.",
+            "Had it not been for the swift dispatch of emergency snowmobiles, the alpine clinic would have run out of antivenom. — 긴급 스노모빌의 신속한 파견이 없었더라면 고산 지대 클리닉은 항독소 혈청이 바닥났을 것입니다."
+          ]
+        },
+        {
+          "title": "if를 대체하는 격식 있는 정밀 조건 접속사들",
+          "explanation": "provided (that)과 as long as는 '오직 ~하는 조건 하에서만'이라는 긍정적 전제 조건을, on condition that은 계약서상의 법적 구속력을 갖는 조건을, supposing은 '가령 ~라고 상상해 보면'이라는 가설적 전제를 나타냅니다.",
+          "examples": [
+            "Perishable medicines remain completely viable provided that the internal temperature is maintained between two and eight degrees Celsius. — 내부 온도가 섭씨 2도에서 8도 사이로 유지되는 조건 하에서만 부패하기 쉬운 의약품은 온전히 효능을 유지합니다.",
+            "The clinic accepted the bulk shipment on condition that the distributor provided calibrated calibration certificates. — 클리닉은 유통업체가 교정된 검교정 성적서를 제공한다는 조건으로 대량 선적물을 수령했습니다.",
+            "Supposing the mountain pass remains blocked for three weeks, what alternate resupply routes can we deploy? — 가령 산길이 3주 동안 계속 막혀 있다고 가정하면 우리는 어떤 대체 재보급 경로를 투입할 수 있을까요?",
+            "You may operate the portable cooling unit in humid environments as long as the exterior ventilation grille is kept unobstructed. — 외부 통풍 그릴이 막히지 않은 상태로 유지되는 한 휴대용 냉각 장치를 습한 환경에서도 작동해도 좋습니다.",
+            "The pharmaceutical company will renew the distribution partnership provided that zero thermal breaches occur this quarter. — 이번 분기 동안 단 한 건의 온도 일탈도 발생하지 않는다는 조건으로 제약회사는 유통 파트너십을 갱신할 것입니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "a shot in the dark",
+        "meaning": "어림짐작, 막연한 추측",
+        "example": "Without accurate thermal telemetry, estimating vaccine viability in the tropics is merely a shot in the dark. — 정확한 온도 원격 측정 없이는 열대 지방에서 백신의 효능을 추정하는 것은 단순한 어림짐작에 불과합니다."
+      },
+      {
+        "term": "come what may",
+        "meaning": "무슨 일이 있어도, 어떤 난관이 닥쳐도",
+        "example": "The humanitarian transport crew pledged to reach the quarantined mountain settlement come what may. — 인도주의 수송 승무원들은 어떤 난관이 닥쳐도 격리된 산골 마을에 도달하겠다고 다짐했습니다."
+      },
+      {
+        "term": "touch and go",
+        "meaning": "아슬아슬한, 불확실하고 위태로운",
+        "example": "During the tropical torrential downpour, the status of the refrigerated medical shipment was touch and go. — 열대성 폭우가 쏟아지는 동안 냉장 의약품 선적물의 상태는 몹시 위태롭고 아슬아슬했습니다."
+      }
+    ],
+    "readingTitle": "Navigating the Cold Chain: Supply Logistics for Remote Clinics",
+    "paragraphs": [
+      "Delivering temperature-sensitive immunisation serums to mountainous outposts is one of the most perilous challenges in humanitarian logistics. Highly perishable biological agents lose their pharmaceutical efficacy unless they are preserved consistently between two and eight degrees Celsius throughout their voyage. Transport corridors across rugged highland terrain are notoriously prone to landslides, flash floods, and sudden temperature fluctuations. In such extreme operational environments, logistical success can never be left to a shot in the dark.",
+      "Last July, an emergency request arrived from a remote clinic nestled deep in an alpine canyon. A regional outbreak demanded the urgent arrival of three hundred paediatric vaccine doses within forty-eight hours. Had it not been for a rapid-response logistics protocol, the dispatch team would have lost precious planning hours. The operations manager immediately mobilised bespoke insulated containers outfitted with phase-change coolants and real-time satellite trackers. The convoy pledged to deliver the life-saving payload come what may.",
+      "Midway through the ascent, severe rockfalls blocked the primary arterial pass, forcing the transport crew onto an unpaved, hazardous gravel trail. For several hours, the entire expedition was touch and go as heavy rainfall threatened to wash away the narrow roadway. 'Should you notice any sudden temperature spike on the digital dataloggers, deploy the supplementary dry ice packs immediately,' the base supervisor instructed the field drivers. Fortunately, the reinforced container walls cushioned the precious vials against intense physical vibration.",
+      "Were the operations team to depend solely on conventional refrigeration vans, the mission would certainly have ended in catastrophic failure. Instead, the team had invested in ultra-durable passive coolers capable of maintaining thermal stability for over seventy-two hours without external electrical power. This remarkable engineering resilience allowed the drivers to navigate the arduous detour without risking pharmaceutical spoilage. Throughout the grueling twelve-hour delay, continuous satellite pings verified that the thermal core stayed steadily at four degrees Celsius.",
+      "The convoy arrived at the clinic at dawn, where medical staff successfully administered the serums to waiting families. The mission demonstrated that advanced cold-chain technology can effectively safeguard public health across the most unforgiving geography. Healthcare authorities subsequently mandated identical thermal insulation protocols across all national rural fleets. Provided that robust contingencies and disciplined telemetry are maintained, remote communities need never be deprived of vital modern healthcare."
+    ],
+    "translations": [
+      "온도에 민감한 예방접종 혈청을 산악 오지로 운송하는 것은 인도주의 물류에서 가장 험난한 과제 중 하나입니다. 부패하기 쉬운 생물학적 제제는 이동하는 내내 섭씨 2도에서 8도 사이로 일정하게 보존되지 않으면 의약적 효능을 상실합니다. 험준한 고원 지형을 통과하는 운송 회랑은 산사태, 돌발 홍수, 급격한 온도 변동에 취약하기로 악명이 높습니다. 이러한 극한의 작전 환경에서 물류의 성패는 결코 막연한 어림짐작에 맡겨질 수 없습니다.",
+      "지난 7월, 고산 협곡 깊숙이 자리 잡은 외딴 클리닉에서 긴급 요청이 접수되었습니다. 지역적 감염병 발생으로 인해 48시간 이내에 300회분의 소아용 백신이 긴급하게 도착해야 했습니다. 신속 대응 물류 규약이 없었더라면 배송팀은 귀중한 기획 시간을 허비했을 것입니다. 운영 책임자는 상변화 냉각재와 실시간 위성 추적기가 장착된 맞춤형 특수 단열 용기를 즉시 투입했습니다. 호송팀은 무슨 일이 있어도 생명을 구하는 화물을 전달하겠다고 다짐했습니다.",
+      "산을 오르던 중간 지점에서 심각한 낙석이 주요 간선 통로를 가로막아 수송 승무원들은 비포장의 위험한 자갈길로 우회해야 했습니다. 폭우가 좁은 도로를 쓸어버릴 듯 위협하면서 몇 시간 동안 탐사 전체의 상황은 몹시 위태롭고 아슬아슬했습니다. '디지털 데이터로거에서 갑작스러운 온도 상승을 발견하시게 되면 즉시 보조 드라이아이스 팩을 투입하십시오.'라고 기지 감독관이 현장 운전자들에게 지시했습니다. 다행히 강화된 용기 벽면이 격렬한 물리적 진동으로부터 귀중한 약병들을 완충해 주었습니다.",
+      "만일 운영팀이 오로지 재래식 냉장 밴에만 의존했더라면 그 임무는 분명 치명적인 실패로 끝났을 것입니다. 대신 팀은 외부 전력 없이도 72시간 이상 열적 안정성을 유지할 수 있는 초내구성 수동형 쿨러에 투자해 두었습니다. 이러한 놀라운 공학적 복원력 덕분에 운전자들은 의약품 변질의 위험 없이 험난한 우회로를 헤쳐 나갈 수 있었습니다. 피를 말리는 12시간의 지연 동안에도 지속적인 위성 신호는 내부 온도가 섭씨 4도로 굳건히 유지되고 있음을 입증했습니다.",
+      "호송대는 동틀 무렵 클리닉에 도착했고, 대기하던 의료진은 기다리던 가족들에게 혈청을 성공적으로 투여했습니다. 이번 임무는 첨단 콜드체인 기술이 가장 가혹한 지리적 조건 속에서도 공공 보건을 효과적으로 보호할 수 있음을 입증했습니다. 보건 당국은 이후 전국의 모든 농어촌 수송 차량에 동일한 단열 규약을 의무화했습니다. 탄탄한 비상 대책과 규율 있는 원격 측정이 유지되는 한, 외딴 지역 사회도 필수적인 현대 의료 혜택에서 결코 소외될 필요가 없습니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "perishable",
+        "partOfSpeech": "adjective",
+        "meaning": "부패하기 쉬운, 변질되기 쉬운",
+        "context": "적정 온도를 벗어나면 약효가 쉽게 상해 버리는 생물학적 백신 제제의 성질을 뜻합니다."
+      },
+      {
+        "term": "logistics",
+        "partOfSpeech": "noun",
+        "meaning": "물류, 보급 수송",
+        "context": "의약품을 기지에서 외딴 오지 클리닉까지 안전하게 계획하고 이송하는 전반적인 공급망 체계를 가리킵니다."
+      },
+      {
+        "term": "temperature-sensitive",
+        "partOfSpeech": "adjective",
+        "meaning": "온도에 민감한",
+        "context": "미세한 온도 변화에도 변질될 위험이 있어 엄격한 냉장 상태를 유지해야 하는 물품을 수식합니다."
+      },
+      {
+        "term": "resilience",
+        "partOfSpeech": "noun",
+        "meaning": "복원력, 탄력성, 내구성",
+        "context": "극한의 열악한 외부 환경과 충격 속에서도 본래의 냉각 성능을 지켜내는 장비의 견고함을 의미합니다."
+      },
+      {
+        "term": "remote",
+        "partOfSpeech": "adjective",
+        "meaning": "외딴, 인적이 드문",
+        "context": "도심에서 멀리 떨어져 험준한 산악 깊숙한 곳에 고립된 클리닉의 지리적 위치를 설명합니다."
+      },
+      {
+        "term": "contingencies",
+        "partOfSpeech": "noun",
+        "meaning": "비상 대책, 만일의 사태에 대한 대비책",
+        "context": "도로 차단이나 기상 악화 같은 예기치 못한 돌발 상황에 대비해 세워둔 사전 대응 계획들을 뜻합니다."
+      },
+      {
+        "term": "terrain",
+        "partOfSpeech": "noun",
+        "meaning": "지형, 지역",
+        "context": "바위산, 낙석 위험지대, 비포장 자갈길 등으로 이루어진 험준한 지리적 환경을 나타냅니다."
+      },
+      {
+        "term": "deploy",
+        "partOfSpeech": "verb",
+        "meaning": "투입하다, 배치하다",
+        "context": "비상 상황 시 추가 냉각재나 특수 장비를 현장에 즉각 투입하여 사용하는 것을 뜻합니다."
+      },
+      {
+        "term": "safeguard",
+        "partOfSpeech": "verb",
+        "meaning": "보호하다, 안전하게 지키다",
+        "context": "어려운 물류 환경 속에서도 국민과 환자의 건강 및 생명을 안전하게 지켜내는 행위를 의미합니다."
+      },
+      {
+        "term": "fluctuation",
+        "partOfSpeech": "noun",
+        "meaning": "변동, 오르내림",
+        "context": "외부 기온이나 저장고 내부 온도가 불규칙하게 치솟거나 떨어지는 현상을 가리킵니다."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Choose the correct inverted conditional sentence for past unreal regret.",
+        "choices": [
+          "Had we received the satellite alert earlier, we would have rerouted the convoy.",
+          "Did we receive the satellite alert earlier, we would have rerouted the convoy.",
+          "Were we received the satellite alert earlier, we would have rerouted the convoy.",
+          "Should we receive the satellite alert earlier, we would have rerouted the convoy."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Had we received the satellite alert earlier, we would have rerouted the convoy.】\n• 문법 원리: 과거 사실과 반대되는 가정법 과거완료(If we had received...)에서 if가 생략되면 [Had + 주어 + p.p.]의 도치 구문이 됩니다.\n• 오답 분석:\n  ② Did we receive는 직설법 일반의문문 어순으로 가정법에 쓸 수 없습니다.\n  ③ Were we received는 수동태가 되어 의미가 왜곡됩니다.\n  ④ Should we receive는 미래 가능성에 대한 도치로 뒤의 과거완료 결과절과 시제가 맞지 않습니다."
+      },
+      {
+        "question": "Which sentence correctly uses “Should” in a formal, polite conditional clause?",
+        "choices": [
+          "Should you notice any temperature anomalies, contact dispatch immediately.",
+          "Should you noticed any temperature anomalies, contact dispatch immediately.",
+          "Should you to notice any temperature anomalies, contact dispatch immediately.",
+          "Should if you notice any temperature anomalies, contact dispatch immediately."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Should you notice any temperature anomalies, contact dispatch immediately.】\n• 문법 원리: if절의 공손한 도치 구문은 [Should + 주어 + 동사원형] 공식입니다 (Should you notice...).\n• 오답 분석:\n  ② noticed(과거형), ③ to notice(to부정사), ④ Should if(중복 접속) 모두 비문입니다."
+      },
+      {
+        "question": "Rewrite using an inverted structure: “If the mountain pass were to collapse, we would use drones.”",
+        "choices": [
+          "Were the mountain pass to collapse, we would use drones.",
+          "Was the mountain pass to collapse, we would use drones.",
+          "Had the mountain pass collapsed, we would use drones.",
+          "Should the mountain pass to collapse, we would use drones."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Were the mountain pass to collapse, we would use drones.】\n• 문법 원리: [If + 주어 + were to 동사원형]에서 if가 생략되면 [Were + 주어 + to 동사원형]으로 도치됩니다."
+      },
+      {
+        "question": "What is the meaning of the formal structure “Had it not been for the volunteer pilots...”?",
+        "choices": [
+          "Even though volunteer pilots refused to help",
+          "Without the intervention and assistance of the volunteer pilots",
+          "Because the volunteer pilots charged expensive fees",
+          "Whenever volunteer pilots flew over the mountains"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Without the intervention and assistance of the volunteer pilots】\n• 문법 원리: [Had it not been for ~]는 '과거에 ~가 없었더라면'을 뜻하는 최고급 격식 도치 구문으로 Without ~의 과거 의미와 완전히 일치합니다."
+      },
+      {
+        "question": "Which formal conjunction means “only on the strict condition that”?",
+        "choices": [
+          "provided that",
+          "unless",
+          "even if",
+          "supposing that not"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 provided that】\n• 문법 원리: provided (that)은 '오직 ~하는 조건 하에서만(only if / on the condition that)'이라는 긍정적 필수 전제 조건을 격식 있게 표현할 때 사용됩니다."
+      },
+      {
+        "question": "What does the idiom “a shot in the dark” mean in the passage?",
+        "choices": [
+          "Firing a rifle during nighttime operations",
+          "A wild guess or an uncalculated gamble without data",
+          "A sudden power blackout in the hospital ward",
+          "A vaccine injection given without a needle"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 A wild guess or an uncalculated gamble without data】\n• 표현 의미: 'a shot in the dark'는 어둠 속에서 쏘는 총알처럼 명확한 근거나 데이터 없이 어림짐작으로 하는 도박이나 추측을 의미합니다."
+      },
+      {
+        "question": "Why was the mission described as “touch and go”?",
+        "choices": [
+          "The pilots touched down and immediately took off again.",
+          "Severe rockfalls and torrential rains made the vehicle journey precarious and uncertain.",
+          "The clinic patients refused to touch the vaccines.",
+          "The satellite tracking screens were entirely touch-controlled."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Severe rockfalls and torrential rains made the vehicle journey precarious and uncertain.】\n• 표현 의미: 'touch and go'는 위태롭고 아슬아슬하여 성공 여부가 불확실한 위기 상황을 뜻합니다 (3문단 'For several hours, the entire expedition was touch and go as heavy rainfall threatened to wash away the narrow roadway')."
+      },
+      {
+        "question": "What technology enabled the medical shipment to survive the twelve-hour delay without electricity?",
+        "choices": [
+          "Diesel generators running inside the truck",
+          "Ultra-durable passive coolers capable of retaining thermal stability for over 72 hours",
+          "Solar-powered drone propellers blowing cold air",
+          "Chemical preservatives injected directly into the serums"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Ultra-durable passive coolers capable of retaining thermal stability for over 72 hours】\n• 본문 근거: 4문단 'the team had invested in ultra-durable passive coolers capable of maintaining thermal stability for over seventy-two hours without external electrical power.'"
+      },
+      {
+        "question": "What does the phrase “come what may” convey about the convoy crew?",
+        "choices": [
+          "They planned to cancel the trip if it started raining in May.",
+          "They were firmly determined to deliver the medicine regardless of any obstacles.",
+          "They would wait until spring weather returned to the canyon.",
+          "They expected other medical teams to take over their responsibilities."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 They were firmly determined to deliver the medicine regardless of any obstacles.】\n• 표현 의미: 'come what may'는 '어떤 고난이나 장애물이 닥쳐오더라도 반드시'라는 굳은 결의를 나타내는 표현입니다."
+      },
+      {
+        "question": "Which of the following words means “easily spoiled or decayed if not refrigerated”?",
+        "choices": [
+          "perishable",
+          "remote",
+          "resilience",
+          "contingencies"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 perishable】\n• 단어 의미: perishable은 냉장 보관되지 않으면 상하거나 변질되기 쉬운 의약품이나 식품을 수식하는 형용사입니다 (1문단 'Highly perishable biological agents...')."
+      }
+    ],
+    "discussionQuestions": [
+      "What logistical hurdles do developing regions face when distributing temperature-sensitive medications?",
+      "Why is relying on passive insulation technology often more resilient than active electrical refrigeration in remote areas?",
+      "Can you describe a situation in your own career when success hung in the balance and felt completely touch and go?",
+      "How do automated satellite alerts help operations managers make timely contingency decisions under stress?",
+      "What principles should guide humanitarian teams when balancing employee physical safety with urgent patient needs?"
+    ],
+    "rolePlay": {
+      "scenario": "An urgent satellite phone coordination call between an alpine expedition logistics lead and the base operations controller during an unexpected mountain pass blockage.",
+      "learnerRole": "The field logistics lead reporting the rockfall, confirming container temperatures, and proposing an alternate gravel route.",
+      "coachRole": "The base operations controller evaluating safety protocols and confirming emergency dry ice procedures.",
+      "goal": "Fluently use inverted conditionals (Should you encounter, Had it not been for, Were we to reroute) and idioms (come what may, touch and go, a shot in the dark) to negotiate safe passage."
+    }
+  },
+  {
+    "date": "2026-11-13",
+    "title": "Daily English — 2026-11-13",
+    "grammarTopic": "The Subjunctive and Formulaic Expressions in Formal English",
+    "grammar": {
+      "title": "가정법 현재(Subjunctive)와 관용적 고정 표현: 규정, 권고, 원칙의 격식체",
+      "summary": "요구·제안·주장의 동사 및 필수·중요를 나타내는 형용사 뒤의 that절에서 주어의 인칭이나 시제와 무관하게 동사원형을 쓰는 가정법 현재(Mandative Subjunctive)를 다룹니다. 영국 영어의 'should + 동사원형' 대용법, 'Be that as it may'와 같은 격식 관용구, 'as if / as though'의 비현실적 상황 묘사를 정확히 익힙니다.",
+      "points": [
+        {
+          "title": "명령·요구·제안 동사 뒤의 가정법 현재 (Mandative Subjunctive)",
+          "explanation": "demand, insist, recommend, suggest, mandate, require, propose 등의 동사 뒤에 오는 that절에서는 주어의 인칭(he, she, it)이나 주절의 시제와 무관하게 항상 [동사원형]을 씁니다. 부정문은 [not + 동사원형]을 취합니다.",
+          "examples": [
+            "The environmental auditor insisted that the factory suspend chemical discharge immediately. — 환경 감사관은 공장이 화학 폐수 방류를 즉각 중단할 것을 강력히 요구했습니다.",
+            "Statutory regulations mandate that every battery manufacturer recycle at least seventy percent of raw cobalt. — 성문 규정은 모든 배터리 제조업체가 원자재 코발트의 70% 이상을 재활용할 것을 의무화하고 있습니다.",
+            "The ethics committee recommended that the managing director not participate in the vendor selection vote. — 윤리위원회는 대표이사가 공급업체 선정 투표에 참여하지 말 것을 권고했습니다.",
+            "Our quality assurance director proposed that an independent laboratory verify all wastewater samples. — 품질 보증 책임자는 독립 연구소가 모든 폐수 샘플을 검증할 것을 제안했습니다.",
+            "International maritime guidelines require that each vessel carry redundant navigation telemetry. — 국제 해사 지침은 각 선박이 이중화 항법 원격 측정 장비를 탑재할 것을 요구합니다."
+          ]
+        },
+        {
+          "title": "필수·긴급 형용사 뒤의 가정법 (Adjectives of Necessity and Urgency)",
+          "explanation": "It is essential, crucial, imperative, vital, mandatory, desirable 등의 형용사 뒤 that절에서도 동사원형(be 또는 일반동사 원형)을 사용합니다. 공공 정책이나 안전 지침 문서에서 흔히 볼 수 있는 최고 수준의 격식 표현입니다.",
+          "examples": [
+            "It is imperative that the effluent filtration unit be inspected twice weekly. — 유출수 여과 장치가 매주 2회 점검받는 것이 절대적으로 필요합니다.",
+            "It is crucial that full transparency be maintained throughout the industrial audit. — 산업 감사 전반에 걸쳐 완전한 투명성이 유지되는 것이 결정적으로 중요합니다.",
+            "It is vital that all factory supervisors understand the emergency shutdown sequence. — 모든 공장 감독관들이 비상 중단 절차를 숙지하는 것이 필수적입니다.",
+            "It was deemed essential that the contaminated sediment be removed without disturbing river wildlife. — 강가 야생동물을 교란하지 않고 오염된 퇴적물을 제거하는 것이 필수적인 것으로 간주되었습니다.",
+            "It is mandatory that each employee wear protective respiratory masks inside the compounding facility. — 배합 시설 내부에서는 각 직원이 보호용 방독 마스크를 착용하는 것이 의무화되어 있습니다."
+          ]
+        },
+        {
+          "title": "영국 영어의 자연스러운 대안: should + 동사원형",
+          "explanation": "미국 영어에서는 순수 가정법 동사원형(that he be)을 선호하는 반면, 현대 영국 영어에서는 격식체에서도 [should + 동사원형]을 자연스럽고 품위 있는 대안으로 매우 자주 사용합니다.",
+          "examples": [
+            "The compliance inspector recommended that the chemical plant should upgrade its thermal incinerator. (영국식 자연스러운 표현) — 준법 감시관은 화학 공장이 열 소각로를 업그레이드할 것을 권고했습니다.",
+            "It is essential that local community representatives should be consulted before plant expansion. — 공장 증설 이전에 지역 주민 대표들과 협의가 이루어져야 한다는 점이 필수적입니다.",
+            "The chief engineer insisted that we should not compromise on material specifications. — 수석 엔지니어는 우리가 자재 규격에 대해 결코 타협해서는 안 된다고 주장했습니다.",
+            "It was vital that emergency services should have unhindered access to the chemical storage depot. — 비상 구조대가 화학물질 저장고에 방해받지 않고 접근할 수 있어야 한다는 점이 대단히 중요했습니다.",
+            "The parliamentary committee suggested that carbon taxes should be tied directly to measured emissions. — 의회 위원회는 탄소세가 실측된 배출량에 직접 연동되어야 한다고 제안했습니다."
+          ]
+        },
+        {
+          "title": "가정법 고정 관용구 (Formulaic and Fixed Subjunctive Expressions)",
+          "explanation": "현대 영어의 일상 회화와 논설문에는 고대 가정법 형태가 화석처럼 굳어진 유용한 고정 관용구들이 있습니다. Be that as it may(비록 그렇다 하더라도), Suffice it to say(말하자면 충분하겠지만), Far be it from me to disagree(감히 반대할 생각은 없지만) 등이 대표적입니다.",
+          "examples": [
+            "The remediation process will be expensive; be that as it may, ecological preservation cannot be postponed. — 정화 작업에는 많은 비용이 들 것입니다. 비록 그렇다 하더라도 생태계 보존을 미룰 수는 없습니다.",
+            "Suffice it to say, the environmental tribunal was unimpressed by the company's lack of documentation. — 간단히 말하자면, 환경재판소는 회사의 서류 미비에 대해 전혀 호의적이지 않았습니다.",
+            "Far be it from me to dictate your production quotas, but safety thresholds must be respected. — 귀사의 생산 할당량을 제가 좌우할 생각은 전혀 없습니다만, 안전 임계치는 반드시 준수되어야 합니다.",
+            "Heaven forbid that an industrial spill should reach the municipal drinking water reservoir. — 산업 유출수가 시립 식수원에 도달하는 일은 결코 일어나지 말아야 합니다.",
+            "Come what may, the manufacturing plant must achieve net-zero carbon operations by the decade's end. — 어떤 고난이 닥쳐오더라도 그 제조 공장은 이번 10년 말까지 탄소 배출 넷제로를 달성해야 합니다."
+          ]
+        },
+        {
+          "title": "as if / as though 뒤의 비현실적 가정 (Unreal Comparisons)",
+          "explanation": "실제 사실과 다르거나 불가능한 상황을 빗대어 말할 때는 as if / as though 뒤에 가정법 과거(동사 과거형 또는 were)를 사용합니다. 반면 실제로 일어날 가능성이 충분한 상황이라면 직설법 현재/과거를 씁니다.",
+          "examples": [
+            "The plant manager spoke as if the chemical leak were an inconsequential minor puddle. (사실은 중대한 유출) — 공장장은 화학물질 유출이 마치 대수롭지 않은 작은 물웅덩이라도 되는 양 이야기했습니다.",
+            "They treat industrial compliance as though it were an optional bureaucratic formality. — 그들은 산업 규정 준수를 마치 선택적인 관료주의적 형식에 불과한 것처럼 취급합니다.",
+            "The machinery sounds as though it needed immediate lubrication before the next shift. — 기계에서 마치 다음 교대 근무 전에 즉각적인 윤활유 주입이 필요한 것 같은 소리가 납니다.",
+            "She carried herself with such calm authority as if she had directed multinational audits for decades. — 그녀는 마치 수십 년 동안 다국적 감사를 지휘해 온 것처럼 침착한 권위를 풍기며 행동했습니다.",
+            "The company reacted to the regulatory fine as though they had anticipated the financial penalty all along. — 회사는 마치 처음부터 재정적 과징금을 예상하고 있었던 것처럼 반응했습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "stand your ground",
+        "meaning": "입장을 굳건히 고수하다, 압력에 굴하지 않다",
+        "example": "Despite aggressive pushback from senior plant executives, the auditor stood her ground on safety standards. — 공장 고위 임원들의 거센 반발에도 불구하고 감사관은 안전 기준에 대해 자신의 입장을 굳건히 고수했습니다."
+      },
+      {
+        "term": "by the book",
+        "meaning": "원칙대로, 법규와 매뉴얼에 철저히 입각하여",
+        "example": "When handling toxic industrial solvents, every single procedure must be performed strictly by the book. — 유독성 산업 용제를 다룰 때는 모든 단일 절차가 철저히 원칙과 매뉴얼대로 수행되어야 합니다."
+      },
+      {
+        "term": "toe the line",
+        "meaning": "규율을 엄격히 준수하다, 방침을 충실히 따르다",
+        "example": "After the surprise audit, subcontractors realised they had to toe the line on environmental regulations. — 불시 감사가 끝난 후 하청업체들은 환경 규정을 엄격히 준수해야만 한다는 사실을 깨달았습니다."
+      }
+    ],
+    "readingTitle": "Setting the Standard: Environmental Audits in Sustainable Manufacturing",
+    "paragraphs": [
+      "In the competitive landscape of modern manufacturing, industrial facilities face unprecedented public scrutiny regarding their ecological stewardship. Environmental regulations are no longer polite suggestions; rather, statutory frameworks mandate that corporations eliminate hazardous emissions and embrace circular production models. For decades, traditional plant managers viewed environmental compliance as an unwelcome operational tax. However, forward-thinking manufacturers recognise that maintaining rigorous transparency is essential if a brand wishes to protect its commercial reputation among conscientious consumers.",
+      "Last month, an international certification authority dispatched a veteran environmental auditor to inspect an expansive chemical compounding facility. Her statutory remit was to investigate recurring anomalies in wastewater effluent discharges entering a protected regional estuary. During initial briefings, local plant supervisors spoke as though the temporary chemical spikes were harmless statistical quirks. They urged that the inspector overlook minor sampling variances in light of record-breaking export shipments. The auditor refused to compromise, calmly reminding plant leadership that environmental preservation is an absolute non-negotiable imperative.",
+      "Standing her ground despite considerable corporate pressure, the lead auditor insisted that every filtration stage be dismantled and scrutinised by the book. Accompanied by municipal testing specialists, her team examined automated telemetry dataloggers, holding lagoons, and biological neutralisation tanks. The diagnostic investigation revealed that plant operators had quietly diverted untreated effluent through an unmapped bypass conduit during peak production hours. Although production managers claimed the bypass was an emergency safety release, the regulatory statute strictly forbade any discharge of heavy metals.",
+      "Faced with incontrovertible chemical chromatography evidence, executive management realised that every facility employee must toe the line. The chief executive convened an extraordinary board meeting and mandated that all factory operations pause until technicians fully rectify the faulty filtration manifold. Independent engineering consultants were contracted to redesign the drainage layout, ensuring that no unmonitored effluent could escape undetected. The company also established an open stakeholder advisory panel, granting local environmental groups real-time digital access to all plant emission sensors.",
+      "Three months after completing the structural overhaul, the facility passed a rigorous re-inspection with distinction. Effluent purity levels consistently exceeded national potable water benchmarks, and recovered industrial solvents were recycled back into the manufacturing loop. The CEO publicly praised the audit for uncovering critical systemic liabilities before an ecological disaster occurred. The case proved that genuine corporate sustainability requires far more than glossy public relations brochures; it demands the integrity to hold every operational process accountable to the highest standard."
+    ],
+    "translations": [
+      "현대 제조 산업의 경쟁 구도 속에서 산업 시설들은 생태학적 책임과 관련해 전례 없는 대중적 감시를 마주하고 있습니다. 환경 규제는 더 이상 공손한 권고사항이 아닙니다. 성문법적 틀은 기업들이 유해 물질 배출을 근절하고 순환형 생산 모델을 도입할 것을 의무화하고 있습니다. 수십 년 동안 전통적인 공장 관리자들은 환경 준수를 달갑지 않은 운영상의 세금쯤으로 여겼습니다. 그러나 미래지향적인 제조업체들은 의식 있는 소비자들 사이에서 브랜드의 상업적 평판을 지키고자 한다면 엄격한 투명성을 유지하는 것이 필수적임을 잘 알고 있습니다.",
+      "지난달 한 국제 인증 기관은 대규모 화학 배합 시설을 점검하기 위해 베테랑 환경 감사관을 파견했습니다. 그녀의 법적 권한은 보호 구역으로 지정된 지역 어귀로 유입되는 폐수 방류수의 반복적인 이상 징후를 조사하는 것이었습니다. 초기 브리핑에서 현장 공장 감독관들은 마치 일시적인 화학물질 급증이 무해한 통계적 변덕이라도 되는 양 이야기했습니다. 그들은 기록적인 수출 출하량을 고려하여 조사관이 사소한 시료 채취 편차를 눈감아 줄 것을 촉구했습니다. 감사관은 타협을 거부하며 환경 보존은 절대 양보할 수 없는 필수 과제임을 공장 경영진에게 차분히 상기시켰습니다.",
+      "상당한 기업의 압력에도 불구하고 자신의 입장을 굳건히 고수하며, 수석 감사관은 모든 여과 단계를 해체하고 매뉴얼과 원칙대로 철저히 조사할 것을 강력히 요구했습니다. 시립 시험 전문가들과 동행하여 그녀의 팀은 자동 원격 측정 데이터로거, 저류지 연못, 생물학적 중화조를 조사했습니다. 진단 조사 결과 공장 운영자들이 생산 피크 시간대에 등록되지 않은 우회 관로를 통해 처리되지 않은 유출수를 몰래 방류해 온 사실이 밝혀졌습니다. 비록 생산 관리자들은 그 우회로가 비상 안전 방출구였다고 주장했지만, 규제 법규는 중금속 방류를 엄격히 금지하고 있었습니다.",
+      "반박할 수 없는 화학 크로마토그래피 증거에 직면하자 최고 경영진은 공장의 모든 직원이 방침과 규율을 엄격히 준수해야만 한다는 사실을 깨달았습니다. 대표이사는 임시 이사회를 소집하고 기술자들이 결함 있는 여과 배관을 완전히 바로잡을 때까지 모든 공장 가동을 중단할 것을 명령했습니다. 독립 엔지니어링 컨설턴트들이 배수 설계를 다시 하도록 계약되어 어떠한 미감시 유출수도 감지되지 않은 채 유출될 수 없도록 보장했습니다. 또한 회사는 개방형 이해관계자 자문단을 신설하여 지역 환경 단체에 공장의 모든 배출 센서에 대한 실시간 디지털 접근권을 부여했습니다.",
+      "구조적 개보수를 마친 지 3개월 후, 그 시설은 엄격한 재검사를 우수한 성적으로 통과했습니다. 방류수의 순도 수준은 국가 음용수 기준치를 지속적으로 상회했으며, 회수된 산업 용제는 제조 공정으로 다시 재활용되었습니다. 대표이사는 생태학적 재난이 발생하기 전 중대한 시스템적 위험을 찾아내 준 감사에 대해 공개적으로 감사를 표했습니다. 이번 사례는 진정한 기업의 지속가능성이 화려한 홍보용 브로슈어 그 이상을 요구한다는 점을 입증했습니다. 모든 운영 공정을 최고 수준의 기준에 맞춰 엄격하게 책임지게 하는 진실성을 요구하는 것입니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "compliance",
+        "partOfSpeech": "noun",
+        "meaning": "규정 준수, 법규 이행",
+        "context": "환경법이나 산업 안전 규정 등 법적 의무를 철저히 지키는 것을 뜻합니다."
+      },
+      {
+        "term": "mandate",
+        "partOfSpeech": "verb",
+        "meaning": "명령하다, 의무화하다",
+        "context": "법률이나 최고 경영진이 특정한 조치나 절차를 반드시 실행하도록 강제하는 행위입니다."
+      },
+      {
+        "term": "imperative",
+        "partOfSpeech": "noun",
+        "meaning": "반드시 해야 할 과제, 필수적 명령",
+        "context": "어떠한 타협도 허용될 수 없는 절대적인 환경 보호 의무를 나타냅니다."
+      },
+      {
+        "term": "rigorous",
+        "partOfSpeech": "adjective",
+        "meaning": "엄격한, 철저한",
+        "context": "사소한 오차나 결함도 용납하지 않는 정밀하고 까다로운 검사 기준을 수식합니다."
+      },
+      {
+        "term": "transparency",
+        "partOfSpeech": "noun",
+        "meaning": "투명성, 명확성",
+        "context": "배출 지표와 공장 운영 데이터를 감추지 않고 공공과 이해관계자에게 솔직히 공개하는 상태입니다."
+      },
+      {
+        "term": "effluent",
+        "partOfSpeech": "noun",
+        "meaning": "방류수, 공장 폐수",
+        "context": "공장 정화 처리 과정을 거쳐 강이나 바다로 흘려보내는 액체 배출물을 가리킵니다."
+      },
+      {
+        "term": "statutory",
+        "partOfSpeech": "adjective",
+        "meaning": "법에 명시된, 법정의",
+        "context": "법률이나 성문 규정에 의해 공식적으로 제정되어 구속력을 갖는 상태를 뜻합니다."
+      },
+      {
+        "term": "rectify",
+        "partOfSpeech": "verb",
+        "meaning": "바로잡다, 시정하다",
+        "context": "불법 배관이나 결함 있는 여과 장치를 올바른 상태로 완벽히 수리하고 교정하는 행위입니다."
+      },
+      {
+        "term": "stakeholder",
+        "partOfSpeech": "noun",
+        "meaning": "이해관계자",
+        "context": "지역 주민, 환경 단체, 주주 등 공장 운영에 직접적·간접적 이해를 가진 주체들을 총칭합니다."
+      },
+      {
+        "term": "compromise",
+        "partOfSpeech": "verb",
+        "meaning": "타협하다, 원칙을 양보하다",
+        "context": "기업의 압력이나 경제적 이익 앞에서 안전 기준을 낮추거나 양보하는 행위를 가리킵니다."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which of the following demonstrates the correct use of the mandative subjunctive?",
+        "choices": [
+          "The environmental auditor insisted that the factory suspend chemical discharge.",
+          "The environmental auditor insisted that the factory suspends chemical discharge.",
+          "The environmental auditor insisted that the factory suspended chemical discharge.",
+          "The environmental auditor insisted that the factory will suspend chemical discharge."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 The environmental auditor insisted that the factory suspend chemical discharge.】\n• 문법 원리: 요구·주장의 동사 insist 뒤의 that절에서는 주어의 인칭이나 주절 시제와 상관없이 항상 동사원형(suspend)을 씁니다.\n• 오답 분석:\n  ② suspends는 직설법 3인칭 단수 현재형으로 오답입니다.\n  ③ suspended는 과거형 시제 일치 오류입니다.\n  ④ will suspend는 조동사 결합 오류입니다."
+      },
+      {
+        "question": "Choose the correct sentence using an adjective of necessity in formal English.",
+        "choices": [
+          "It is imperative that the filtration equipment be inspected twice weekly.",
+          "It is imperative that the filtration equipment is inspected twice weekly.",
+          "It is imperative that the filtration equipment was inspected twice weekly.",
+          "It is imperative for the filtration equipment being inspected twice weekly."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 It is imperative that the filtration equipment be inspected twice weekly.】\n• 문법 원리: It is imperative that 뒤에서는 수동태 be동사의 원형 [be + p.p.]를 씁니다.\n• 오답 분석:\n  ② is inspected는 직설법 현재형입니다.\n  ③ was inspected는 과거형입니다.\n  ④ being inspected는 완전한 절의 형태가 아닙니다."
+      },
+      {
+        "question": "Which alternative represents the natural British English construction for subjunctive that-clauses?",
+        "choices": [
+          "The committee recommended that the managing director should step aside temporarily.",
+          "The committee recommended that the managing director must step aside temporarily.",
+          "The committee recommended that the managing director would step aside temporarily.",
+          "The committee recommended that the managing director could step aside temporarily."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 The committee recommended that the managing director should step aside temporarily.】\n• 문법 원리: 영국 영어에서는 순수 가정법 동사원형 대신 [should + 동사원형]을 쓰는 것이 격식 있고 매우 자연스러운 어법입니다."
+      },
+      {
+        "question": "What does the fixed expression “Be that as it may” mean in an argumentative essay?",
+        "choices": [
+          "Even if that is true / Nevertheless",
+          "Because everything is now complete",
+          "Whenever someone breaks the law",
+          "Before we make any final decision"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Even if that is true / Nevertheless】\n• 표현 의미: 'Be that as it may'는 '비록 그것이 사실이라 할지라도 / 그럼에도 불구하고'라는 뜻으로 앞선 주장을 인정하면서도 다른 중요한 사실을 제시할 때 쓰는 격식 연결어입니다."
+      },
+      {
+        "question": "“The plant manager spoke as if the chemical leak _____ an inconsequential matter.” Which form fits the unreal comparison?",
+        "choices": [
+          "were",
+          "is",
+          "has been",
+          "will be"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 were】\n• 문법 원리: 실제로는 심각한 유출이었음에도 불구하고 사소한 일인 것처럼 비현실적으로 빗대어 말하므로 [as if + 가정법 과거 were]가 알맞습니다."
+      },
+      {
+        "question": "What does the idiom “stand your ground” mean in the passage?",
+        "choices": [
+          "To purchase agricultural real estate",
+          "To maintain your principles firmly and refuse to yield to pressure",
+          "To stand motionless during an earthquake drill",
+          "To resign from your job in protest"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To maintain your principles firmly and refuse to yield to pressure】\n• 표현 의미: 'stand your ground'는 상대방의 압력이나 반발에 굴복하지 않고 자신의 입장과 원칙을 굳건히 지킨다는 뜻입니다 (3문단 'Standing her ground despite considerable corporate pressure...')."
+      },
+      {
+        "question": "What did the diagnostic investigation reveal about the plant's operations?",
+        "choices": [
+          "The factory was manufacturing illegal fireworks.",
+          "Untreated chemical effluent had been diverted through an unmapped bypass conduit.",
+          "All toxic waste had been safely converted into organic fertilizer.",
+          "The municipal inspectors had falsified their testing credentials."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Untreated chemical effluent had been diverted through an unmapped bypass conduit.】\n• 본문 근거: 3문단 'plant operators had quietly diverted untreated effluent through an unmapped bypass conduit during peak production hours.'"
+      },
+      {
+        "question": "What does the idiom “by the book” mean?",
+        "choices": [
+          "Selling second-hand paper textbooks",
+          "Strictly according to official rules, regulations, and manuals",
+          "Reading historical novels during work hours",
+          "Memorizing corporate marketing slogans"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Strictly according to official rules, regulations, and manuals】\n• 표현 의미: 'by the book'은 매뉴얼이나 법규에 적힌 그대로 철저하게 원칙에 입각하여 실행한다는 관용구입니다 (3문단 'scrutinised by the book')."
+      },
+      {
+        "question": "What does it mean for employees to “toe the line”?",
+        "choices": [
+          "To draw yellow lines across the factory floor",
+          "To strictly conform to rules, policies, and expected standards",
+          "To run competitive athletic races during lunchtime",
+          "To complain openly about corporate executive salaries"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To strictly conform to rules, policies, and expected standards】\n• 표현 의미: 'toe the line'은 선을 넘지 않고 방침이나 규율을 엄격하게 지키고 순응한다는 뜻입니다 (4문단 'every facility employee must toe the line')."
+      },
+      {
+        "question": "Which of the following words means “to correct or fix an error, defect, or wrongful state”?",
+        "choices": [
+          "rectify",
+          "effluent",
+          "stakeholder",
+          "mandate"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 rectify】\n• 단어 의미: rectify는 잘못된 상태나 결함을 바로잡다, 수리하다는 뜻의 타동사입니다 (4문단 'until technicians fully rectify the faulty filtration manifold')."
+      }
+    ],
+    "discussionQuestions": [
+      "Why is it essential that environmental audits be carried out by independent third-party experts?",
+      "When facing corporate pressure to cut corners, what personal strategies help professionals stand their ground?",
+      "How does granting local community stakeholders digital access to emission telemetry enhance corporate accountability?",
+      "In your experience, why is operating strictly by the book often the most economical choice over the long term?",
+      "How can companies ensure that lower-tier subcontractors toe the line on environmental and ethical guidelines?"
+    ],
+    "rolePlay": {
+      "scenario": "An executive compliance debriefing between a lead environmental auditor and a manufacturing plant manager following a surprise wastewater inspection.",
+      "learnerRole": "The lead environmental auditor presenting findings of the unmapped bypass conduit and insisting on immediate remediation.",
+      "coachRole": "The plant manager who attempts to downplay the incident as a temporary oversight before committing to compliance.",
+      "goal": "Fluently use mandative subjunctive structures (I insist that you suspend, It is imperative that all repairs be completed) and idioms (stand your ground, by the book, toe the line) to enforce regulatory standards."
+    }
+  },
+  {
+    "date": "2026-11-14",
+    "title": "Daily English — 2026-11-14",
+    "grammarTopic": "Discourse Markers and Linking Adverbials for Nuanced Stance",
+    "grammar": {
+      "title": "담화 표지와 접속부사: 정교한 논리 전개와 화자의 미묘한 입장 표현",
+      "summary": "글이나 발표의 설득력을 높이기 위해서는 문장과 문장을 단순히 and나 but으로 잇는 것을 넘어, 대조·양보(conversely, notwithstanding), 첨가(furthermore, what is more), 인과(consequently, thereby), 화자의 태도(admittedly, to put it mildly)를 드러내는 정밀한 담화 표지(Discourse Markers)를 전략적으로 구사해야 합니다.",
+      "points": [
+        {
+          "title": "대조와 양보의 연결부사 (Contrast and Concession)",
+          "explanation": "conversely는 '반대로, 역으로', on the contrary는 '그와 반대로(앞의 부정을 반박)', notwithstanding은 '~에도 불구하고(전치사 또는 후치부사)', mind you는 '하지만 말이지(구어적 양보 보충)'의 뉘앙스를 지닙니다. 단순 however보다 구체적인 논리적 대립각을 세울 때 쓰입니다.",
+          "examples": [
+            "Technical innovation without customer empathy rarely yields loyalty; conversely, deep customer understanding can revive outdated technology. — 고객 공감 없는 기술 혁신은 충성도를 낳기 어렵습니다. 반대로 깊은 고객 이해는 낙후된 기술도 되살릴 수 있습니다.",
+            "The commercial team did not oppose the design sprint; on the contrary, they volunteered to co-host the customer interviews. — 영업팀은 디자인 스프린트에 반대하지 않았습니다. 그와 반대로 고객 인터뷰 공동 진행을 자원했습니다.",
+            "Notwithstanding significant cross-departmental friction, the steering committee delivered the software release on schedule. — 상당한 부서 간 마찰에도 불구하고 운영위원회는 소프트웨어 출시를 일정대로 완료했습니다.",
+            "The workshop was mentally exhausting; mind you, it resolved misunderstandings that had festered for twelve months. — 워크숍은 정신적으로 지치는 일이었지만, 그렇기는 해도 12개월간 곪아왔던 오해들을 해결해 주었습니다.",
+            "Small enterprise squads can pivot product direction within days; conversely, massive multinational conglomerates require months of bureaucratic review. — 소규모 기업 조직은 며칠 만에 제품 방향을 바꿀 수 있지만, 반대로 거대 다국적 대기업은 수개월의 관료주의적 검토를 필요로 합니다."
+          ]
+        },
+        {
+          "title": "첨가와 강화의 담화 표지 (Addition and Elaboration)",
+          "explanation": "furthermore, moreover는 논증을 뒷받침하는 강력한 추가 근거를 더할 때, what is more는 한 단계 더 나아간 흥미롭거나 중요한 사실을 부각할 때, by the same token은 '마찬가지 이치로'라는 대등한 유추를 끌어낼 때 활용됩니다.",
+          "examples": [
+            "Cross-functional collaboration shortens design cycles; furthermore, it fosters a shared sense of collective ownership. — 부서 간 협업은 디자인 주기를 단축시킵니다. 더욱이 그것은 공동 소유 의식을 길러줍니다.",
+            "The revised architecture lowered cloud server costs by twenty percent; what is more, it boosted transaction speeds across all regions. — 수정된 구조는 클라우드 서버 비용을 20% 낮추었습니다. 게다가 모든 지역에서 거래 처리 속도를 향상시켰습니다.",
+            "Engineers must respect market realities; by the same token, commercial teams must understand software debt before promising custom features. — 엔지니어들은 시장의 현실을 존중해야 합니다. 마찬가지 이치로 영업팀도 맞춤형 기능을 약속하기 전에 소프트웨어 부채를 이해해야 합니다.",
+            "The sprint retrospective identified four recurring bottlenecks; in addition, the squad designed actionable remediation steps for each one. — 스프린트 회고는 4개의 반복적인 병목 지점을 파악했습니다. 아울러 스쿼드는 각각에 대한 실행 가능한 시정 단계를 수립했습니다.",
+            "Documenting code interfaces prevents onboarding confusion; moreover, it accelerates future security audits. — 코드 인터페이스를 문서화하면 신규 입사자의 혼란을 방지합니다. 더욱이 향후 보안 감사를 신속하게 해줍니다."
+          ]
+        },
+        {
+          "title": "결과와 인과의 정밀 표현 (Cause, Result, and Consequence)",
+          "explanation": "consequently와 accordingly는 논리적 귀결이나 적절한 후속 조치를 설명할 때 쓰이며, hence는 '이런 이유로', 분사 형태의 thereby(-함으로써)는 어떤 행위가 즉각적으로 가져오는 동시적 결과를 압축하여 나타냅니다.",
+          "examples": [
+            "The two divisions had operated in isolated functional silos for years; consequently, redundant tooling had quietly proliferated. — 두 부서는 수년간 고립된 기능적 사일로에서 일해 왔으며, 결과적으로 중복된 툴들이 소리 없이 급증했습니다.",
+            "The executive board mandated a singular corporate platform; accordingly, IT directors consolidated eleven legacy database portals. — 이사회는 단일한 기업용 플랫폼을 명령했으며, 이에 따라 IT 이사들은 11개의 기존 데이터베이스 포털을 통합했습니다.",
+            "The firm failed to register its intellectual property overseas; hence, foreign competitors launched unauthorized clones with impunity. — 그 회사는 해외에 지식재산권을 등록하지 못했으며, 이런 이유로 해외 경쟁사들이 처벌받지 않고 무단 복제물을 출시했습니다.",
+            "The team restructured their weekly backlog into unified user journeys, thereby eliminating duplicate feature requests. — 팀은 주간 백로그를 통합 사용자 여정으로 재구성함으로써 중복된 기능 요청을 제거했습니다.",
+            "Consumer expectations have shifted permanently toward instant delivery; hence, supply chain resilience has become a paramount priority. — 소비자 기대가 즉시 배송 쪽으로 영구히 이동했으며, 이러한 이유로 공급망 복원력은 가장 중요한 우선과제가 되었습니다."
+          ]
+        },
+        {
+          "title": "정리, 요약, 초점 전환의 담화 표지 (Summary, Dismissal, and Shift)",
+          "explanation": "at any rate(어쨌든, 좌우간), in brief(요약하자면), broadly speaking(대체로 말하자면), incidentally(그런데 말이죠, 덧붙이자면)는 복잡한 논의를 핵심으로 압축하거나 자연스럽게 대화의 초점을 환기할 때 필수적입니다.",
+          "examples": [
+            "The historical timeline was fiercely contested; at any rate, both departments agreed that communication had broken down. — 역사적 경과에 대해선 치열한 공방이 있었지만, 어쨌든 양 부서 모두 소통이 단절되었다는 점에는 동의했습니다.",
+            "In brief, product managers should define the 'what', while engineering architects must dictate the 'how'. — 요약하자면, 제품 매니저는 '무엇'을 정의해야 하고 엔지니어링 설계자는 '어떻게'를 결정해야 합니다.",
+            "Broadly speaking, teams with diverse functional backgrounds solve complex logistical hurdles faster than homogeneous squads. — 대체로 말하자면, 다양한 직무 배경을 지닌 팀이 동질적인 스쿼드보다 복잡한 물류 난제를 더 빠르게 해결합니다.",
+            "The workshop uncovered deep operational insights; incidentally, it also boosted team morale ahead of the product launch. — 워크숍은 깊이 있는 운영상의 통찰을 발견해 주었습니다. 덧붙여 말하자면, 제품 출시를 앞두고 팀 사기도 북돋워 주었습니다.",
+            "Whether the merger occurs this quarter or next year remains unconfirmed; in any case, systems integration planning must proceed immediately. — 합병이 이번 분기에 이뤄질지 내년에 이뤄질지는 아직 미확정입니다. 어느 쪽이든 시스템 통합 계획은 즉시 진행되어야 합니다."
+          ]
+        },
+        {
+          "title": "화자의 태도와 입장 표명 (Stance, Concession, and Speaker Qualification)",
+          "explanation": "admittedly는 '인정하건대, 물론'이라며 상대방의 타당한 지적을 수용할 때, frankly는 '솔직히 말해서', in retrospect는 '되돌아보건대', to put it mildly는 극단적인 상황을 점잖게 완곡어법으로 표현할 때 사용됩니다.",
+          "examples": [
+            "Admittedly, establishing cross-functional alignment requires substantial upfront time and emotional stamina. — 인정하건대, 부서 간 조율을 확립하는 데는 상당한 초기 시간과 감정적 체력이 소모됩니다.",
+            "The initial user feedback was discouraging, to put it mildly; every single beta tester encountered severe onboarding friction. — 초기 사용자 피드백은 완곡하게 말해서 실망스러웠습니다. 모든 베타 테스터가 극심한 온보딩 불편을 겪었습니다.",
+            "Frankly, our organisation spent too many quarters polishing features that solved non-existent customer problems. — 솔직히 말해서 우리 조직은 존재하지도 않는 고객 문제를 해결하는 기능을 다듬느라 너무 많은 분기를 낭비했습니다.",
+            "In retrospect, separating design and development across two distant regional offices was a strategic miscalculation. — 되돌아보건대, 디자인과 개발을 두 개의 멀리 떨어진 지사로 분리한 것은 전략적 오판이었습니다.",
+            "To put it bluntly, without genuine executive sponsorship, any cultural transformation effort will wither within six months. — 직설적으로 말해서, 진정한 경영진의 후원 없이는 어떠한 조직 문화 혁신 노력도 6개월 내에 시들해질 것입니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "get down to business",
+        "meaning": "본론으로 들어가다, 본격적인 일에 착수하다",
+        "example": "After twenty minutes of polite pleasantries, the steering committee finally got down to business. — 20분간의 의례적인 인사를 나눈 후 운영위원회는 마침내 본론으로 들어갔습니다."
+      },
+      {
+        "term": "strike a chord",
+        "meaning": "심금을 울리다, 깊은 공감을 자아내다",
+        "example": "Her proposal to eliminate redundant status meetings struck a chord with exhausted engineering leads. — 중복된 상태 보고 회의를 없애자는 그녀의 제안은 지친 엔지니어링 팀장들에게 깊은 공감을 불러일으켰습니다."
+      },
+      {
+        "term": "reach common ground",
+        "meaning": "합의점에 도달하다, 공통된 타협점을 찾다",
+        "example": "Through structured negotiation, design and commercial leads managed to reach common ground on release priorities. — 구조화된 협상을 통해 디자인 팀과 영업 팀장들은 출시 우선순위에 대해 공통의 합의점에 도달했습니다."
+      }
+    ],
+    "readingTitle": "Bridging the Divide: How Cross-Functional Alignment Drives Innovation",
+    "paragraphs": [
+      "In rapidly expanding modern technology enterprises, organizational friction between departments is an all too familiar hazard. Software engineers frequently prioritize code purity, automated testing coverage, and architectural resilience. Conversely, commercial sales directors focus on quarterly revenue targets, rapid client onboarding, and bespoke feature requests. When these two divergent perspectives operate in isolated corporate silos, misunderstandings inevitably flourish. Left unaddressed, such operational tribalism creates deep cynicism, stalling momentum and frustrating ambitious staff.",
+      "Last autumn, a prominent fintech venture experienced acute friction during the rollout of an international corporate payments engine. The product was technically sophisticated; notwithstanding its elegant code, enterprise adoption remained sluggish, to put it mildly. Frustrated commercial directors accused engineering teams of building ivory-tower solutions detached from actual customer workflows. Engineering managers, conversely, argued that sales teams made extravagant promises to prospective clients without considering technical feasibility.",
+      "Recognising that ongoing conflict threatened company survival, the chief operating officer intervened to orchestrate a four-day alignment summit. Once participants concluded initial pleasantries, the facilitator insisted that both sides get down to business. Rather than debating abstract grievances, each squad presented anonymised recordings of actual customer onboarding sessions. Watching prospective clients fumble through convoluted permission menus struck a chord with developers, who had previously dismissed commercial complaints as exaggerated sales theatrics.",
+      "The breakthrough emerged when the facilitator introduced a pragmatic shared framework: all future feature tickets had to link directly to measurable user outcomes. By pairing engineers with account executives during bi-weekly discovery calls, the company established genuine operational synergy. Through candid dialogue and collaborative backlog refinement, the departments were able to reach common ground regarding release milestones. What is more, cross-functional empathy dissolved the defensive posture that had plagued executive reviews for quarters.",
+      "Six months later, enterprise contract conversions jumped by forty-two percent, and internal employee attrition plummeted. The experience revealed a universal organizational truth: innovation does not occur when departments defend guarded turf. It flourishes when cross-functional partners embrace creative tension, align around unified stakeholder goals, and transform divergent instincts into coherent commercial strength."
+    ],
+    "translations": [
+      "빠르게 성장하는 현대 기술 기업에서 부서 간의 조직적 마찰은 너무나 흔한 위험 요인입니다. 소프트웨어 엔지니어들은 대개 코드의 순수성, 자동화 테스트 커버리지, 아키텍처의 복원력을 우선시합니다. 반대로 영업 이사들은 분기별 매출 목표, 신속한 고객 유치, 맞춤형 기능 요청에 집중합니다. 이 두 가지 서로 다른 관점이 고립된 기업 사일로 속에서 작동할 때 오해는 필연적으로 싹트게 됩니다. 방치될 경우 이러한 조직 내 편가르기는 깊은 냉소주의를 낳아 성장 동력을 멈추고 야심 찬 직원들을 좌절시킵니다.",
+      "지난가을 한 유명 핀테크 벤처 기업이 글로벌 기업 결제 엔진을 출시하는 과정에서 극심한 마찰을 겪었습니다. 제품은 기술적으로 정교했습니다. 우아한 코드에도 불구하고 기업들의 도입률은 완곡하게 말해 대단히 부진했습니다. 답답해진 영업 이사들은 엔지니어링 팀이 실제 고객의 업무 흐름과 동떨어진 상아탑 같은 솔루션을 만들고 있다고 비난했습니다. 반대로 엔지니어링 관리자들은 영업팀이 기술적 실현 가능성을 고려하지 않고 잠재 고객들에게 과장된 약속을 남발하고 있다고 주장했습니다.",
+      "지속적인 갈등이 회사의 생존을 위협하고 있음을 깨닫고, 최고운영책임자(COO)는 나흘간의 정렬 서밋을 조율하기 위해 개입했습니다. 참가자들이 초기 인사를 마치자마자 진행자는 양측이 즉시 본론으로 들어갈 것을 촉구했습니다. 추상적인 불만을 논쟁하는 대신 각 팀은 실제 고객 온보딩 세션의 익명 녹화본을 제시했습니다. 잠재 고객들이 복잡한 권한 설정 메뉴를 헤매는 모습을 지켜보는 것은, 이전까지 영업팀의 불만을 과장된 연극쯤으로 치부했던 개발자들의 심금을 깊이 울렸습니다.",
+      "진행자가 실용적인 공유 프레임워크를 도입했을 때 돌파구가 열렸습니다. 향후의 모든 기능 티켓은 측정 가능한 사용자 결과와 직접 연결되어야 했습니다. 격주로 열리는 고객 발굴 통화에 엔지니어와 고객 관리 담당자를 짝지어 참여시킴으로써, 회사는 진정한 운영상의 시너지를 구축했습니다. 솔직한 대화와 협력적인 백로그 정리를 통해 두 부서는 출시 마일스톤에 대한 공통의 합의점에 도달할 수 있었습니다. 게다가 부서 간 공감대는 여러 분기 동안 경영진 검토를 괴롭혀 왔던 방어적인 태도를 눈 녹듯 사라지게 했습니다.",
+      "6개월 후 기업 계약 전환율은 42% 급증했고 사내 직원 이직률은 곤두박질쳤습니다. 이번 경험은 보편적인 조직적 진실을 드러냈습니다. 혁신은 각 부서가 자신의 밥그릇을 지킬 때 일어나는 것이 아닙니다. 부서 간 파트너들이 창조적인 긴장을 포용하고, 통일된 이해관계자 목표를 중심으로 정렬하며, 서로 다른 본능을 일관된 상업적 경쟁력으로 탈바꿈시킬 때 비로소 꽃을 피우는 것입니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "silo",
+        "partOfSpeech": "noun",
+        "meaning": "사일로, 부서 간 장벽",
+        "context": "다른 부서와 소통하거나 협력하지 않고 자기 부서의 이익만 챙기는 고립된 조직 형태를 뜻합니다."
+      },
+      {
+        "term": "friction",
+        "partOfSpeech": "noun",
+        "meaning": "마찰, 갈등",
+        "context": "서로 다른 목표와 가치관을 가진 엔지니어링 팀과 영업팀 사이에서 발생하는 의견 충돌입니다."
+      },
+      {
+        "term": "alignment",
+        "partOfSpeech": "noun",
+        "meaning": "정렬, 조율, 일치",
+        "context": "서로 다른 조직 단위들이 하나의 공통된 목표와 우선순위를 향해 발을 맞추는 상태입니다."
+      },
+      {
+        "term": "cross-functional",
+        "partOfSpeech": "adjective",
+        "meaning": "다기능의, 부서 간을 넘나드는",
+        "context": "개발, 디자인, 영업, 마케팅 등 서로 다른 전문 역량을 가진 인재들이 모여 협업하는 방식을 수식합니다."
+      },
+      {
+        "term": "divergent",
+        "partOfSpeech": "adjective",
+        "meaning": "서로 다른, 갈라지는",
+        "context": "부서마다 서로 다르게 바라보는 관점이나 서로 충돌하는 이해관계를 표현합니다."
+      },
+      {
+        "term": "empathy",
+        "partOfSpeech": "noun",
+        "meaning": "공감, 감정 이입",
+        "context": "상대 부서의 고충과 업무적 압박을 자신의 입장처럼 깊이 이해하는 마음가짐입니다."
+      },
+      {
+        "term": "facilitator",
+        "partOfSpeech": "noun",
+        "meaning": "진행자, 조력자",
+        "context": "부서 간 워크숍에서 중립적인 입장에서 대화와 협상을 원활하게 이끌어 준 전문가를 뜻합니다."
+      },
+      {
+        "term": "stakeholder",
+        "partOfSpeech": "noun",
+        "meaning": "이해관계자",
+        "context": "고객, 투자자, 직원 등 프로젝트의 성공과 결과에 직접적인 이해가 걸린 대상들을 뜻합니다."
+      },
+      {
+        "term": "pragmatic",
+        "partOfSpeech": "adjective",
+        "meaning": "실용적인, 실무적인",
+        "context": "비현실적인 이론이나 교조적 원칙에 얽매이지 않고 실제 현장에서 문제를 해결하는 태도를 수식합니다."
+      },
+      {
+        "term": "synergy",
+        "partOfSpeech": "noun",
+        "meaning": "시너지, 상승효과",
+        "context": "개별 부서가 따로 일할 때보다 함께 긴밀히 협력할 때 훨씬 더 큰 성과를 창출하는 효과입니다."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which linking adverbial is used to introduce an opposite perspective or inverse fact?",
+        "choices": [
+          "conversely",
+          "furthermore",
+          "hence",
+          "broadly speaking"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 conversely】\n• 문법 원리: conversely는 '반대로, 역으로'라는 뜻으로 앞선 진술과 정반대되는 사실이나 관점을 대비시킬 때 쓰는 연결부사입니다."
+      },
+      {
+        "question": "Choose the discourse marker that indicates a concession or acceptance of an uncomfortable truth.",
+        "choices": [
+          "Admittedly",
+          "Consequently",
+          "Thereby",
+          "What is more"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 Admittedly】\n• 문법 원리: Admittedly는 '인정하건대, 물론 그렇기는 하지만'이라는 뜻으로 상대방의 비판이나 불리한 사실을 솔직히 인정하며 논의를 전개할 때 쓰입니다."
+      },
+      {
+        "question": "“The squad restructured their backlog, _____ eliminating duplicate customer tickets.” Which word correctly shows immediate resulting action?",
+        "choices": [
+          "thereby",
+          "notwithstanding",
+          "conversely",
+          "at any rate"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 thereby】\n• 문법 원리: thereby는 '그로 인해, 그렇게 함으로써'라는 뜻으로 [thereby + -ing(현재분사)] 구문으로 직전 행동이 낳은 직접적 결과를 압축 표현할 때 사용됩니다."
+      },
+      {
+        "question": "What does the speaker convey when using the understatement “to put it mildly”?",
+        "choices": [
+          "The situation was actually far more extreme, serious, or severe than described.",
+          "The speaker is whispering quietly so no one hears.",
+          "The food at the cafeteria was mildly spiced.",
+          "The proposal was completely trivial and uninteresting."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 The situation was actually far more extreme, serious, or severe than described.】\n• 표현 의미: 'to put it mildly'는 완곡어법(understatement)으로 실제로는 훨씬 더 심각하거나 충격적인 상황을 점잖게 표현할 때 덧붙이는 관용구입니다 (2문단 'enterprise adoption remained sluggish, to put it mildly')."
+      },
+      {
+        "question": "What does the idiom “strike a chord” mean in the context of the reading?",
+        "choices": [
+          "To play a musical instrument at the company party",
+          "To elicit strong emotional resonance, agreement, or sympathy",
+          "To hit a colleague during a physical dispute",
+          "To disconnect the electric power cord from a server"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To elicit strong emotional resonance, agreement, or sympathy】\n• 표현 의미: 'strike a chord'는 심금을 울리다, 깊은 공감이나 마음의 울림을 자아낸다는 뜻입니다 (3문단 'Watching prospective clients fumble... struck a chord with developers')."
+      },
+      {
+        "question": "What does the idiom “get down to business” mean?",
+        "choices": [
+          "To register a new corporation with the tax authority",
+          "To stop casual chatter and start addressing the essential tasks seriously",
+          "To travel downtown to purchase office stationery",
+          "To bankrupt a competing commercial enterprise"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To stop casual chatter and start addressing the essential tasks seriously】\n• 표현 의미: 'get down to business'는 사소한 잡담이나 인사치레를 멈추고 본격적인 본론과 핵심 과업에 착수하다는 관용구입니다."
+      },
+      {
+        "question": "Why did developer empathy increase during the alignment workshop?",
+        "choices": [
+          "They were promised substantial cash bonuses.",
+          "They watched actual video recordings of clients struggling with the software's convoluted menus.",
+          "The sales director resigned from the company.",
+          "The company switched to an open-source programming framework."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 They watched actual video recordings of clients struggling with the software's convoluted menus.】\n• 본문 근거: 3문단 'Watching prospective clients fumble through convoluted permission menus struck a chord with developers, who had previously dismissed commercial complaints...'"
+      },
+      {
+        "question": "What does the idiom “reach common ground” mean in negotiation?",
+        "choices": [
+          "To purchase a joint piece of land for office construction",
+          "To arrive at mutual agreement and shared understanding despite differences",
+          "To run together across a public athletic park",
+          "To fall down together onto the carpeted floor"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To arrive at mutual agreement and shared understanding despite differences】\n• 표현 의미: 'reach common ground'는 견해차를 좁혀 상호 간에 합의할 수 있는 공통된 타협점이나 일치점에 도달한다는 뜻입니다."
+      },
+      {
+        "question": "Which practical rule was implemented to align future engineering work with commercial outcomes?",
+        "choices": [
+          "All software code had to be written in plain English.",
+          "Every future feature ticket had to link directly to measurable user outcomes.",
+          "Sales executives were given root access to server databases.",
+          "Engineering meetings were permanently banned."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Every future feature ticket had to link directly to measurable user outcomes.】\n• 본문 근거: 4문단 'all future feature tickets had to link directly to measurable user outcomes.'"
+      },
+      {
+        "question": "Which of the following words refers to “a person who guides a group toward mutual understanding and common goals”?",
+        "choices": [
+          "facilitator",
+          "divergent",
+          "silo",
+          "friction"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 facilitator】\n• 단어 의미: facilitator는 중립적인 위치에서 워크숍이나 회의의 논의와 상호 이해를 원활하게 돕는 진행자/조력자를 뜻합니다 (3문단 'the facilitator insisted that both sides get down to business')."
+      }
+    ],
+    "discussionQuestions": [
+      "Why do engineering and commercial teams frequently misunderstand each other's professional pressures?",
+      "How does viewing unedited recordings of real customer struggles help dissolve internal defensive silos?",
+      "When a project falls behind schedule, how can leaders prevent departments from blaming one another?",
+      "What strategies can cross-functional partners use to reach common ground when priorities collide?",
+      "Can you share an experience where an honest conversation helped strike a chord and align a team?"
+    ],
+    "rolePlay": {
+      "scenario": "A cross-functional backlog prioritisation session between a lead software engineer and a commercial accounts director following customer churn.",
+      "learnerRole": "The lead software engineer proposing pragmatic compromise while explaining architectural constraints and technical debt.",
+      "coachRole": "The commercial accounts director who feels urgent sales pressure but is willing to collaborate on shared user outcomes.",
+      "goal": "Skillfully employ discourse markers (conversely, admittedly, thereby, what is more) and idioms (get down to business, strike a chord, reach common ground) to build collaborative consensus."
+    }
+  },
+  {
+    "date": "2026-11-15",
+    "title": "Daily English — 2026-11-15",
+    "grammarTopic": "Nominalisation and Information Packaging in Professional English",
+    "grammar": {
+      "title": "명사화(Nominalisation)와 정보 압축: 학술·비즈니스 영어의 정밀한 문장 구성",
+      "summary": "동사나 형용사를 명사 형태로 바꾸어(analyze → analysis, vulnerable → vulnerability) 많은 정보를 짧고 조밀하게 전달하는 명사화 기법을 배웁니다. 문장의 품격과 객관성을 높여주는 핵심 작문 기술이지만, 과도할 경우 가독성을 해치는 '좀비 명사(Zombie nouns)'를 경계하고 구정보(Given)와 신정보(New)의 자연스러운 흐름을 유지해야 합니다.",
+      "points": [
+        {
+          "title": "동사의 명사화 (Converting Action Verbs into Abstract Nouns)",
+          "explanation": "사건이나 동작(evaluate, implement, accelerate, fluctuate)을 추상명사(evaluation, implementation, acceleration, fluctuation)로 전환하면 절(clause)을 구(phrase)로 압축할 수 있으며, 문장의 주어로 삼아 객관적이고 중립적인 톤을 확립할 수 있습니다.",
+          "examples": [
+            "The rapid implementation of renewable energy microgrids stabilized regional power distribution. — 재생에너지 마이크로그리드의 신속한 도입은 지역 전력 배전을 안정화시켰습니다.",
+            "A continuous assessment of carbon emissions guided municipal zoning decisions. — 탄소 배출량에 대한 지속적인 평가는 시의 토지 구획 결정을 이끌었습니다.",
+            "The identification of oceanic thermal anomalies shed fresh light on storm intensification patterns. — 해양 열적 이상의 발견은 폭풍 강화 패턴에 새로운 빛을 비추었습니다.",
+            "Careful observation of wildlife migration routes prevented the fragmentation of alpine forest corridors. — 야생동물 이동 경로에 대한 세심한 관찰은 고산 삼림 회랑의 단절을 방지했습니다.",
+            "The elimination of single-use plastic packaging reduced landfill waste by eighteen percent. — 일회용 플라스틱 포장의 근절은 매립 폐기물을 18% 감소시켰습니다."
+          ]
+        },
+        {
+          "title": "형용사의 명사화 (Converting Descriptive Adjectives into Qualities)",
+          "explanation": "사물의 성질이나 상태를 나타내는 형용사(resilient, vulnerable, reliable, volatile)를 추상명사(resilience, vulnerability, reliability, volatility)로 바꾸면 측정 가능하고 비교 분석할 수 있는 학술적 개념으로 다룰 수 있습니다.",
+          "examples": [
+            "Urban planners must evaluate the vulnerability of coastal infrastructure to rising sea levels. — 도시 계획가들은 해수면 상승에 대한 해안 인프라의 취약성을 평가해야 합니다.",
+            "The reliability of satellite precipitation data is crucial for seasonal agricultural forecasting. — 위성 강수 데이터의 신뢰성은 계절별 농업 예측에 대단히 중요합니다.",
+            "The structural resilience of timber-framed towers was tested in seismic simulation chambers. — 목조 고층 건물의 구조적 복원력은 지진 시뮬레이션 챔버에서 시험되었습니다.",
+            "Market volatility in carbon credits hindered long-term investments in industrial reforestation. — 탄소 배출권의 시장 변동성은 산업적 재조림에 대한 장기 투자를 가로막았습니다.",
+            "The transparency of corporate emission disclosures reassured skeptical international environmental funds. — 기업 배출 공개의 투명성은 회의적이던 국제 환경 기금들을 안심시켰습니다."
+          ]
+        },
+        {
+          "title": "전치사구를 활용한 고밀도 정보 패키징 (Information Packaging)",
+          "explanation": "접속사가 이끄는 긴 부사절을 [전치사 + 명사구]로 축약하면 전문 문서 특유의 간결하고 밀도 높은 문장이 완성됩니다. 'with the introduction of', 'upon completion of', 'in response to' 등이 대표적인 결합 구조입니다.",
+          "examples": [
+            "With the deployment of autonomous seabed sensors, oceanographers tracked deep thermal currents with unprecedented accuracy. — 자율 해저 센서의 배치와 함께 해양학자들은 전례 없는 정확도로 심해 열대류를 추적했습니다.",
+            "Upon completion of the environmental impact assessment, the parliamentary committee approved the offshore wind concession. — 환경 영향 평가의 완료와 함께 의회 위원회는 해상 풍력 사업권을 승인했습니다.",
+            "In response to community concerns over airborne particulates, the port authority installed electric dust curtains. — 부유 입자상 물질에 대한 지역 주민들의 우려에 부응하여 항만 당국은 전기 분진 커튼을 설치했습니다.",
+            "Through the integration of historical weather logs, researchers created robust five-decade predictive models. — 역사적 기상 기록의 통합을 통해 연구원들은 신뢰할 수 있는 50년 예측 모델을 구축했습니다.",
+            "Despite initial public scepticism regarding synthetic biofuels, local transit fleets achieved a ninety-percent transition rate. — 합성 바이오연료에 대한 초기 대중의 회의론에도 불구하고 지역 대중교통 차량은 90%의 전환율을 달성했습니다."
+          ]
+        },
+        {
+          "title": "과도한 명사화('좀비 명사')의 경계와 가독성 회복",
+          "explanation": "모든 동사를 명사화(make an investigation of → investigate, perform an analysis on → analyze)하면 문장이 무거워지고 행위 주체가 사라지는 '좀비 명사(Zombie Nouns)' 현상이 발생합니다. 의미의 중심이 되는 핵심 동사를 살려 능동적이고 경쾌한 문장을 조합하는 균형 감각이 필수적입니다.",
+          "examples": [
+            "Heavier: The committee conducted an examination of the records. / Natural: The committee examined the records. — (무거운 문장) 위원회는 기록의 검토를 수행했다. / (자연스러운 문장) 위원회가 기록을 검토했다.",
+            "Heavier: There was a reduction in emissions by the plant. / Natural: The plant reduced its emissions by forty percent. — (무거운 문장) 공장에 의한 배출량의 감소가 있었다. / (자연스러운 문장) 공장이 배출량을 40% 줄였다.",
+            "Effective writers preserve active verbs for human actions while reserving nominalisation for established concepts. — 뛰어난 작가는 인간의 행동에는 능동 동사를 살려두고, 이미 정립된 개념을 다룰 때 명사화를 선별적으로 사용합니다.",
+            "The clear presentation of scientific data helped legislators grasp the urgency of environmental policy. — 과학 데이터의 명쾌한 제시는 입법자들이 환경 정책의 시급성을 파악하도록 도왔습니다.",
+            "Rather than saying 'The occurrence of a malfunction took place,' engineers report 'The sensor malfunctioned.' — '기능 이상의 발생이 일어났다'고 말하기보다 엔지니어들은 '센서가 고장 났다'고 보고합니다."
+          ]
+        },
+        {
+          "title": "구정보-신정보(Given-to-New) 흐름과 명사 헤드를 통한 문단 연결",
+          "explanation": "앞 문장의 서술어(신정보)를 다음 문장의 명사 주어(구정보)로 이어받으면 문맥의 응집력(Cohesion)이 극대화됩니다. 'The glacier melted rapidly. This rapid melting triggered downstream flooding.'과 같이 명사화 헤드가 문맥의 징검다리 역할을 합니다.",
+          "examples": [
+            "The volcanic eruption spewed sulfurous aerosols into the stratosphere. This aerosol injection temporarily lowered global surface temperatures. — 화산 폭발이 성층권으로 황 에어로졸을 뿜어냈습니다. 이 에어로졸 유입은 전 세계 지표면 온도를 일시적으로 낮추었습니다.",
+            "The researchers synthesized heat-resistant biodegradable polymers. This chemical breakthrough attracted immediate funding from clean packaging venture funds. — 연구원들은 내열성 생분해 폴리머를 합성했습니다. 이 화학적 돌파구는 친환경 포장 벤처 펀드로부터 즉각적인 투자를 유치했습니다.",
+            "Global atmospheric temperatures fluctuate across decadal oscillations. Such natural variability must be distinguished from anthropogenic warming trends. — 전 지구적 대기 온도는 10년 단위의 진동을 거치며 오르내립니다. 이러한 자연적 변동성은 인류 기원의 온난화 추세와 엄밀히 구별되어야 합니다.",
+            "The university launched an open-source oceanographic dataset. This public dissemination democratised marine ecosystem research worldwide. — 대학은 오픈소스 해양 데이터셋을 공개했습니다. 이러한 대중적 보급은 전 세계 해양 생태계 연구를 대중화시켰습니다.",
+            "City councils restricted diesel traffic in historic centres. This targeted intervention cut respiratory hospital admissions within six months. — 시의회는 역사적 중심가에서 디젤차 통행을 제한했습니다. 이 맞춤형 개입은 6개월 만에 호흡기 질환 입원율을 낮추었습니다."
+          ]
+        }
+      ]
+    },
+    "idioms": [
+      {
+        "term": "the bottom line",
+        "meaning": "최종 결론, 가장 핵심적인 요점",
+        "example": "After debating hundreds of scientific charts, the bottom line is that we must halve industrial emissions this decade. — 수백 장의 과학 도표를 토론한 끝에 나온 최종 결론은 우리가 이번 10년 안에 산업 배출량을 반으로 줄여야 한다는 것입니다."
+      },
+      {
+        "term": "read between the lines",
+        "meaning": "행간을 읽다, 숨은 의도나 함축된 의미를 파악하다",
+        "example": "Experienced policy advisers quickly read between the lines of the cautious intergovernmental climate report. — 노련한 정책 자문관들은 조심스러운 정부 간 기후 보고서의 행간을 재빨리 읽어냈습니다."
+      },
+      {
+        "term": "shed light on",
+        "meaning": "~을 명백히 밝히다, 규명하다",
+        "example": "The deep-core ice samples shed light on atmospheric carbon cycles from eight hundred thousand years ago. — 깊은 빙하 코어 샘플은 80만 년 전의 대기 탄소 순환을 명백하게 규명해 주었습니다."
+      }
+    ],
+    "readingTitle": "Demystifying Climate Data: Translating Atmospheric Science for Policy Makers",
+    "paragraphs": [
+      "Modern atmospheric science generates mathematical models of extraordinary sophistication, yet public understanding often lags far behind. Climate simulations produce terabytes of probabilistic forecasts, complete with dense statistical jargon, confidence intervals, and multivariate correlation matrices. For research climatologists, such mathematical density is essential for academic precision. For elected parliamentary lawmakers, however, unmediated technical jargon poses an almost impenetrable barrier to decisive legislation. Unless scientists succeed in making their findings accessible, vital ecological reforms risk languishing in legislative limbo.",
+      "A pioneering initiative in Edinburgh set out to transform how research institutes disseminate ecological projections. The project assembled an interdisciplinary squad of climatologists, data visualisation designers, and legislative staff. Their objective was not to dilute complex scientific truth, but to package it with compelling narrative clarity. By translating abstract thermodynamic equations into interactive visual maps, the team shed light on how localized precipitation shifts would directly affect regional agriculture, reservoir capacity, and municipal flood defenses.",
+      "During early parliamentary briefings, researchers noticed that lawmakers frequently struggled to read between the lines of dense uncertainty charts. When projections featured wide probability bands, politicians erroneously interpreted the range as scientific indecision. Recognising this dangerous misconception, the designers re-engineered the presentations. Rather than overwhelming delegates with hundreds of raw variables, they highlighted the core systemic drivers: the bottom line was that delay exponentially increased coastal adaptation costs.",
+      "The new communication paradigm replaced passive academic jargon with crisp, actionable insights. Crucially, the briefings retained intellectual rigor; every simplified summary linked directly to peer-reviewed datasets. Lawmakers could drill down into the underlying research whenever they needed to verify evidentiary nuance. The accessible visual dashboards empowered politicians to defend necessary carbon mitigation budgets during budget negotiations, effectively neutralizing sceptical opposition.",
+      "The success of the initiative prompted international bodies to adopt similar communication protocols across Europe. The lesson for the global scientific community is profound: generating groundbreaking data is only half the battle. To catalyze meaningful planetary action, scientists must cultivate the art of information packaging. When atmospheric research bridges the gap between laboratory rigor and civic comprehension, societies gain the collective resolve needed to mitigate ecological risks and protect future generations."
+    ],
+    "translations": [
+      "현대 대기과학은 놀라울 정도로 정교한 수학적 모델을 만들어내지만 대중의 이해는 종종 그 뒤에 한참 뒤처집니다. 기후 시뮬레이션은 빽빽한 통계 전문용어, 신뢰구간, 다변량 상관관계 행렬로 가득 찬 수 테라바이트의 확률적 예측을 쏟아냅니다. 기후학자들에게 이러한 수학적 밀도는 학술적 엄밀성을 위해 필수적입니다. 그러나 선출직 의회 입법자들에게 가공되지 않은 기술 전문용어는 결단력 있는 입법으로 가는 거의 건널 수 없는 장벽이 됩니다. 과학자들이 자신의 연구 결과를 알기 쉽게 전달하지 못한다면 중요한 생태학적 개혁은 입법적 표류 속에 방치될 위험에 처합니다.",
+      "에든버러의 한 선구적인 프로젝트는 연구기관들이 생태학적 예측치를 보급하는 방식을 혁신하기 위해 시작되었습니다. 이 프로젝트는 기후학자, 데이터 시각화 디자이너, 입법부 직원들로 구성된 다학제 팀을 모았습니다. 그들의 목표는 복잡한 과학적 진실을 희석하는 것이 아니라 설득력 있는 서사적 명료성으로 포장하는 것이었습니다. 추상적인 열역학 방정식을 인터랙티브 시각 지도 형태로 변환함으로써 팀은 국지적 강수량 변화가 지역 농업, 저수지 용량, 도시 수해 방지 시설에 어떻게 직접적인 영향을 미치는지 명백히 규명해 냈습니다.",
+      "초기 의회 브리핑에서 연구원들은 의원들이 빽빽한 불확실성 도표의 행간을 읽어내는 데 자주 애를 먹는다는 점을 알아챘습니다. 예측치에 넓은 확률 대역이 포함되어 있을 때 정치인들은 그 범위를 과학적 우유부단함으로 잘못 해석했습니다. 이러한 위험한 오해를 인식한 디자이너들은 발표 방식을 전면 개편했습니다. 수백 개의 가공되지 않은 변수로 의원들을 압도하는 대신 그들은 핵심적인 시스템 동인을 부각시켰습니다. 최종 결론은 대응을 미룰수록 해안 적응 비용이 기하급수적으로 증가한다는 점이었습니다.",
+      "새로운 소통 패러다임은 수동적인 학술 전문용어를 명쾌하고 실행 가능한 통찰로 대체했습니다. 결정적으로 브리핑은 지적 엄밀성을 유지했습니다. 단순화된 모든 요약은 동료 평가를 거친 원본 데이터셋과 직접 연결되었습니다. 의원들은 증거의 미묘한 뉘앙스를 검증해야 할 때마다 언제든 기저 연구를 깊이 파고들 수 있었습니다. 이해하기 쉬운 시각적 대시보드는 정치인들이 예산 협상 과정에서 필수적인 탄소 감축 예산을 방어할 수 있도록 힘을 실어주어 회의적인 반대파를 효과적으로 무력화했습니다.",
+      "이 이니셔티브의 성공은 국제기구들이 유럽 전역에서 유사한 소통 규약을 채택하도록 자극했습니다. 전 세계 과학계에 던지는 교훈은 심오합니다. 획기적인 데이터를 생성하는 것은 승부의 절반에 불과하다는 점입니다. 의미 있는 지구적 행동을 촉발하기 위해 과학자들은 정보 패키징의 기술을 연마해야 합니다. 대기과학 연구가 실험실의 엄밀성과 시민사회의 이해 사이의 간극을 좁힐 때, 사회는 생태학적 위험을 완화하고 미래 세대를 보호하는 데 필요한 집단적 결의를 얻게 됩니다."
+    ],
+    "vocabulary": [
+      {
+        "term": "disseminate",
+        "partOfSpeech": "verb",
+        "meaning": "보급하다, 전파하다",
+        "context": "학술 연구 결과나 기후 예측 데이터를 공공과 정책 결정자들에게 널리 알리는 행위를 뜻합니다."
+      },
+      {
+        "term": "density",
+        "partOfSpeech": "noun",
+        "meaning": "밀도, 조밀함",
+        "context": "수학적 공식이나 통계 전문용어가 한 페이지에 과도하게 압축되어 복잡한 상태를 나타냅니다."
+      },
+      {
+        "term": "projections",
+        "partOfSpeech": "noun",
+        "meaning": "예측, 전망치",
+        "context": "과거 데이터와 물리 방정식을 바탕으로 미래의 기후 변화 추이를 추산한 통계적 전망입니다."
+      },
+      {
+        "term": "jargon",
+        "partOfSpeech": "noun",
+        "meaning": "전문용어, 은어",
+        "context": "일반인이 이해하기 어려운 학술적·기술적 분야 특유의 난해한 단어들을 뜻합니다."
+      },
+      {
+        "term": "compelling",
+        "partOfSpeech": "adjective",
+        "meaning": "설득력 있는, 눈을 뗄 수 없는",
+        "context": "듣는 사람을 즉시 설득하고 강한 인상을 남기는 명쾌한 이야기 전개나 시각 자료를 수식합니다."
+      },
+      {
+        "term": "nuance",
+        "partOfSpeech": "noun",
+        "meaning": "미묘한 차이, 뉘앙스",
+        "context": "단순화된 요약 속에서도 놓치지 말아야 할 학술 데이터의 정밀하고 섬세한 세부 사항입니다."
+      },
+      {
+        "term": "accessible",
+        "partOfSpeech": "adjective",
+        "meaning": "이해하기 쉬운, 접근하기 쉬운",
+        "context": "비전문가인 국회의원이나 일반 시민도 어려움 없이 직관적으로 파악할 수 있는 상태를 뜻합니다."
+      },
+      {
+        "term": "correlation",
+        "partOfSpeech": "noun",
+        "meaning": "상관관계",
+        "context": "온실가스 농도 증가와 이상 기후 발생 빈도 사이의 통계적 상호 연관성을 가리킵니다."
+      },
+      {
+        "term": "mitigate",
+        "partOfSpeech": "verb",
+        "meaning": "완화하다, 경감하다",
+        "context": "선제적인 환경 정책을 통해 기후 재난의 파괴적 영향이나 위험을 줄이는 것을 의미합니다."
+      },
+      {
+        "term": "paradigm",
+        "partOfSpeech": "noun",
+        "meaning": "패러다임, 사고의 틀",
+        "context": "어려운 학술 용어 나열에서 직관적인 시각적 스토리텔링으로의 근본적인 소통 방식의 전환입니다."
+      }
+    ],
+    "quiz": [
+      {
+        "question": "Which of the following demonstrates effective nominalisation to condense an action clause?",
+        "choices": [
+          "The rapid implementation of microgrids stabilized the energy supply.",
+          "Because they rapidly implemented microgrids, the energy supply was stabilized.",
+          "They made a rapid implementation of microgrids and stabilized energy.",
+          "Microgrids were implemented rapidly, which this stabilized energy."
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 The rapid implementation of microgrids stabilized the energy supply.】\n• 문법 원리: 동사 implement를 명사화(implementation)하여 문두의 명사구 주어로 배치함으로써 정보를 간결하고 객관적으로 압축한 전형적인 B2/C1 학술 작문입니다."
+      },
+      {
+        "question": "What is meant by the stylistic flaw known as “zombie nouns”?",
+        "choices": [
+          "Writing novels exclusively about science fiction monsters",
+          "Overusing abstract nominalisations that choke readability and bury active verbs",
+          "Inventing ungrammatical words that do not exist in the dictionary",
+          "Misspelling plural nouns in technical engineering reports"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Overusing abstract nominalisations that choke readability and bury active verbs】\n• 문법 원리: 좀비 명사(Zombie nouns)란 동사로 쓰면 생생하고 명쾌할 문장을 불필요하게 추상명사로 변환하여(예: conduct an examination of 대신 examine) 문장을 무겁고 딱딱하게 만드는 문체적 결함을 비유한 용어입니다."
+      },
+      {
+        "question": "Which prepositional phrase is commonly used in professional English to package a conditional trigger?",
+        "choices": [
+          "With the deployment of",
+          "Under the running away of",
+          "Beside the talking of",
+          "Behind the walking of"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 With the deployment of】\n• 문법 원리: [With the deployment of + 명사구]는 '~의 배치와 함께 / ~가 배치됨으로써'라는 상황 배경을 경제적으로 압축하는 대표적인 고밀도 정보 패키징 표현입니다."
+      },
+      {
+        "question": "What does the idiom “the bottom line” mean in the passage?",
+        "choices": [
+          "The lowest row on an accounting spreadsheet",
+          "The fundamental conclusion or most important takeaway",
+          "The geographical coastline along the ocean",
+          "The bottom shelf in an academic library"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 The fundamental conclusion or most important takeaway】\n• 표현 의미: 'the bottom line'은 모든 부차적인 설명을 걷어내고 난 뒤의 '최종 결론이자 가장 중요한 본질'을 뜻합니다 (3문단 'the bottom line was that delay exponentially increased coastal adaptation costs')."
+      },
+      {
+        "question": "What does the idiom “shed light on” mean in the passage?",
+        "choices": [
+          "To illuminate a dark room with an electric lamp",
+          "To clarify, reveal, or explain a complex issue clearly",
+          "To remove light bulbs from an office building",
+          "To paint solar panels with reflective white coating"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To clarify, reveal, or explain a complex issue clearly】\n• 표현 의미: 'shed light on'은 어두운 곳을 비추듯 복잡하거나 베일에 싸여 있던 현상의 원인이나 전모를 명백하게 규명하다는 관용구입니다 (2문단 'shed light on how localized precipitation shifts...')."
+      },
+      {
+        "question": "What does the idiom “read between the lines” mean?",
+        "choices": [
+          "To draw parallel pencil marks between sentences",
+          "To discern hidden meaning or implicit intentions not openly expressed",
+          "To skip alternate paragraphs when reading a book",
+          "To read a technical text using magnifying glasses"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 To discern hidden meaning or implicit intentions not openly expressed】\n• 표현 의미: 'read between the lines'는 행간을 읽다, 즉 글자 그대로 드러나지 않은 숨겨진 함축이나 본뜻을 예리하게 파악하다는 뜻입니다 (3문단 'struggled to read between the lines of dense uncertainty charts')."
+      },
+      {
+        "question": "Why did parliamentarians initially misinterpret the climate scientists' data?",
+        "choices": [
+          "The scientists deliberately forged the research results.",
+          "Lawmakers misinterpreted wide probability bands as evidence of scientific indecision.",
+          "The briefing papers were written in classical Latin.",
+          "The charts were missing numerical axis labels."
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 Lawmakers misinterpreted wide probability bands as evidence of scientific indecision.】\n• 본문 근거: 3문단 'When projections featured wide probability bands, politicians erroneously interpreted the range as scientific indecision.'"
+      },
+      {
+        "question": "How did the visual communication redesign successfully resolve the impasse?",
+        "choices": [
+          "By replacing all scientific data with fictional cartoons",
+          "By pairing simplified visual takeaways with direct links to deep evidentiary data",
+          "By eliminating all environmental regulations from the bill",
+          "By firing the climate research scientists"
+        ],
+        "answer": 1,
+        "explanation": "【정답: 2번 By pairing simplified visual takeaways with direct links to deep evidentiary data】\n• 본문 근거: 4문단 'Crucially, the briefings retained intellectual rigor; every simplified summary linked directly to peer-reviewed datasets. Lawmakers could drill down...'"
+      },
+      {
+        "question": "Which of the following words means “to spread information, data, or ideas widely”?",
+        "choices": [
+          "disseminate",
+          "mitigate",
+          "density",
+          "jargon"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 disseminate】\n• 단어 의미: disseminate는 연구 데이터, 사상, 지식 등을 공공이나 학계에 널리 보급하고 전파하다는 뜻의 동사입니다 (2문단 'transform how research institutes disseminate ecological projections')."
+      },
+      {
+        "question": "Which of the following words means “to lessen the gravity, harm, or severity of something bad”?",
+        "choices": [
+          "mitigate",
+          "paradigm",
+          "nuance",
+          "correlation"
+        ],
+        "answer": 0,
+        "explanation": "【정답: 1번 mitigate】\n• 단어 의미: mitigate는 기후 재난이나 환경적 피해, 고통의 심각성을 줄이다, 완화하다는 뜻의 핵심 어휘입니다 (5문단 'mitigate ecological risks')."
+      }
+    ],
+    "discussionQuestions": [
+      "Why do scientists often struggle to communicate high-stakes data to non-expert policy makers?",
+      "How can writers strike the right balance between professional nominalisation and engaging, readable prose?",
+      "When reading corporate sustainability announcements, how do you read between the lines to spot greenwashing?",
+      "In your own field of work, what is the bottom line when presenting complex technical recommendations to leadership?",
+      "Can you share an example of a visual infographic that successfully shed light on a complicated topic for you?"
+    ],
+    "rolePlay": {
+      "scenario": "A policy briefing consultation between a senior climate data visualizer and a parliamentary legislative director discussing an upcoming national carbon budget.",
+      "learnerRole": "The senior climate data visualizer presenting interactive dashboards, avoiding zombie nouns, and distilling the bottom line.",
+      "coachRole": "The parliamentary legislative director asking probing questions about scientific certainty, local economic costs, and mitigation timelines.",
+      "goal": "Demonstrate sophisticated nominalisation techniques (The implementation of, The vulnerability of) and idioms (the bottom line, shed light on, read between the lines) to secure legislative support."
+    }
+  }
+]
